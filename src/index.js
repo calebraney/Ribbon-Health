@@ -1,7 +1,7 @@
 'use strict';
 
 // Line Types
-const scrollSections = document.querySelectorAll('[scroll="section"]');
+const scrollSections = document.querySelectorAll('[scroll-section]');
 
 const scrollLineAnimation = function (trigger, mobile = false) {
   let scrollStart = 'top 90%';
@@ -37,7 +37,7 @@ const scrollLineAnimation = function (trigger, mobile = false) {
   const lines = trigger.querySelectorAll('.line-fill');
   lines.forEach((line) => {
     // if parent is invisible or scroll is set to false return;
-    if (line.getAttribute('scroll') === 'false' || line.offsetParent === null) {
+    if (line.hasAttribute('scroll-false') || line.offsetParent === null) {
       return;
     }
     // horizontal will be true if the direction is horizontal and false if it is vertical

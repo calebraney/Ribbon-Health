@@ -1,10 +1,10 @@
-require("esbuild")
+require('esbuild')
   .build({
-    entryPoints: ["src/index.js"],
+    entryPoints: ['src/index.js'],
     bundle: true,
-    minify: false,
+    minify: true,
     watch: true,
     sourcemap: false,
-    outfile: "dist/index.js",
+    outfile: 'dist/index.js',
   })
   .catch(() => ProcessingInstruction.exit(1));

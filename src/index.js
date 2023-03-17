@@ -1,5 +1,5 @@
 'use strict';
-
+// v1.2.1
 // Line Types
 const scrollSections = document.querySelectorAll('[scroll-section]');
 

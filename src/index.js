@@ -40,7 +40,7 @@ const scrollLineAnimation = function (trigger, mobile = false) {
     if (line.hasAttribute('scroll-false') || line.offsetParent === null) {
       return;
     }
-    // horizontal will be true if the direction is horizontal and false if it is vertical
+    // horizontal will be true by default
     let horizontal = true;
     // if mobile is false and scroll is = v set horizontal to false
     if (!mobile && line.hasAttribute('scroll-desktop-v')) {

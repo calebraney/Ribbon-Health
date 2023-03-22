@@ -1,9 +1,6 @@
-'use strict';
-// v1.2.1
 // Line Types
-const scrollSections = document.querySelectorAll('[scroll-section]');
 
-const scrollLineAnimation = function (trigger, mobile = false) {
+export const scrollLineAnimation = function (trigger, mobile = false) {
   let scrollStart = 'top 90%';
   let scrollEnd = 'bottom 90%';
   if (trigger.hasAttribute('scroll-start')) {
@@ -63,6 +60,8 @@ const scrollLineAnimation = function (trigger, mobile = false) {
   });
 };
 
+//define sections and run animations
+const lineSections = document.querySelectorAll('[scroll-section]');
 let mm = gsap.matchMedia();
 mm.add(
   {
@@ -76,7 +75,7 @@ mm.add(
 
     if (!reduceMotion) {
       //Run if reduce motion is off
-      scrollSections.forEach((section) => {
+      lineSections.forEach((section) => {
         scrollLineAnimation(section, isMobile);
       });
     }

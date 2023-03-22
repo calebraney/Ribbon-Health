@@ -1,10 +1,12 @@
-require('esbuild')
+import * as esbuild from 'esbuild';
+
+await esbuild
   .build({
-    entryPoints: ['src/index.js'],
+    entryPoints: ['src/home.js', 'src/product.js', 'src/case-study.js', 'src/use-cases.js'],
     bundle: true,
     minify: true,
     watch: true,
     sourcemap: false,
-    outfile: 'dist/index.js',
+    outdir: 'dist/',
   })
   .catch(() => ProcessingInstruction.exit(1));

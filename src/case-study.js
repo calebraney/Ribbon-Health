@@ -3,6 +3,7 @@ import { scrollLineAnimation } from './line.js';
 window.Webflow ||= [];
 window.Webflow.push(() => {
   //When Webflow is Loaded
+
   //define sections and run animations
   const lineSections = document.querySelectorAll('[scroll-section]');
   let mm = gsap.matchMedia();

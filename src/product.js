@@ -76,7 +76,6 @@ window.Webflow.push(() => {
     ACTIVE_CLASS = 'is-active';
     processItems.forEach((item, index) => {
       const image = processImages[index];
-      console.log(image);
       const imageTL = gsap.timeline({
         scrollTrigger: {
           trigger: item,
@@ -88,7 +87,6 @@ window.Webflow.push(() => {
           },
           onLeave: () => {
             // don't remove class on leave of the last item
-            console.log(index, processImages.length);
             if (index !== processImages.length - 1) {
               image.classList.remove(ACTIVE_CLASS);
             }
@@ -104,22 +102,81 @@ window.Webflow.push(() => {
           },
         },
       });
+      const itemSquare = item.querySelector('.product-process_square');
+      const itemContents = item.querySelectorAll('h2, h3, p, .button');
       const textTL = gsap.timeline({
         scrollTrigger: {
           trigger: item,
-          start: 'top bottom',
-          end: 'top center',
+          start: 'top 80%',
+          end: 'top top',
           scrub: 0.5,
         },
       });
-      textTL.fromTo(
-        item,
+      textTL.from(itemContents, {
+        opacity: 0,
+      });
+      textTL.from(
+        itemSquare,
         {
-          opacity: 0,
+          backgroundColor: '#f9f9d7',
         },
+        '<'
+      );
+    });
+  };
+  const iconHighlightAnimation = function (start = 'top 1%', end = 'bottom 99%') {
+    const iconSection = document.querySelector('[cr-icon-highlight="section"]');
+    const iconItems = document.querySelectorAll('[cr-icon-highlight="item"]');
+
+    const iconTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: iconSection,
+        start: start,
+        end: end,
+        scrub: 0.5,
+      },
+      defaults: {
+        // children inherit these defaults
+        duration: 0.5,
+        ease: 'power1.out',
+      },
+    });
+    iconItems.forEach((item) => {
+      const itemIcon = item.querySelector('[cr-icon-highlight="icon"]');
+      const itemText = item.querySelector('.product-icons_span');
+      // iconTL.set(
+      //   itemText,
+      //   {
+      //     fontWeight: 300,
+      //   },
+      //   '<'
+      // );
+      iconTL.to(
+        itemIcon,
         {
           opacity: 1,
-        }
+          // scale: 1.1,
+        },
+        '<'
+      );
+      iconTL.to(
+        itemText,
+        {
+          fontWeight: 600,
+        },
+        '<'
+      );
+      iconTL.to(itemIcon, {
+        opacity: 0,
+        scale: 1,
+        delay: 1,
+      });
+      iconTL.to(
+        itemText,
+        {
+          fontWeight: 300,
+        },
+        '<'
       );
     });
   };
@@ -148,6 +205,11 @@ window.Webflow.push(() => {
       if (isDesktop) {
         //Run on desktop
         processAnimation();
+        iconHighlightAnimation();
+      }
+      if (isMobile) {
+        //Run on desktop
+        iconHighlightAnimation('top 40%', 'bottom 40%');
       }
     }
   );

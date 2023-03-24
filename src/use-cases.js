@@ -59,6 +59,43 @@ const scrollTableAnimation = function (mobile = false) {
     });
   });
 };
+const useCaseHeaderAnimation = function (mobile = false) {
+  const headerItems = document.querySelectorAll('[cr-use-case-header="item"]');
+  const dividers = document.querySelectorAll('.use-case-header_component .line-divider');
+
+  const ACTIVE_CLASS = 'is-active';
+
+  headerItems.forEach((item) => {
+    // add an event listener to each item
+    item.addEventListener('click', function (e) {
+      const targetItem = this;
+      const icon = document.querySelectorAll('.use-case-header_icon');
+      const h3 = document.querySelectorAll('.use-case-header_h3');
+      const paragraph = document.querySelectorAll('.use-case-header_paragraph');
+      // guard clause
+      if (Flip.isFlipping(item)) return;
+      // get state
+      let state = Flip.getState(headerItems, icon, h3, paragraph, dividers, {
+        props: 'fontSize,color,maxWidth,flexBasis,flexGrow,flexShrink',
+      });
+      //adjust active class
+      headerItems.forEach((item) => {
+        //adjust active class
+        if (item === targetItem) {
+          item.classList.add(ACTIVE_CLASS);
+        } else {
+          item.classList.remove(ACTIVE_CLASS);
+        }
+      });
+      // animate with flip
+      Flip.from(state, {
+        duration: 1.2,
+        delay: 0.1,
+        ease: 'power2.out',
+      });
+    });
+  });
+};
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -84,7 +121,7 @@ window.Webflow.push(() => {
     },
     (context) => {
       let { isMobile, isDesktop, reduceMotion } = context.conditions;
-
+      useCaseHeaderAnimation();
       if (!reduceMotion) {
         //Run if reduce motion is off
         lineSections.forEach((section) => {

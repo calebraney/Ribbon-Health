@@ -27,14 +27,11 @@ window.Webflow.push(() => {
     });
   };
   const homeSplitScroll = function (startPoint = 'top 60%', endPoint = 'bottom 60%') {
-    console.log('mobile');
     ACTIVE_CLASS = 'is-active';
-    // BLACK = '#000000';
-    // JADE = '#00585c';
-    // CHARTREUSE = '#e4ea7d';
     const triggerEl = document.querySelector('.split-hover_component');
     const items = document.querySelectorAll('.split-hover_item-text');
     const images = document.querySelectorAll('.split-hover_image');
+    if (!triggerEl || items.length === 0 || images.length === 0) return;
     const updateClass = function (currentItem, currentIndex) {
       currentImage = images[currentIndex];
       //remove active class from every item
@@ -52,7 +49,6 @@ window.Webflow.push(() => {
         trigger: triggerEl,
         start: startPoint,
         end: endPoint,
-        // toggleActions: 'play none none none',
         scrub: true,
       },
       defaults: {
@@ -61,22 +57,6 @@ window.Webflow.push(() => {
       },
     });
     items.forEach((item, index) => {
-      // const textSpan = item.querySelector('.split-hover_highlight');
-      // // for every item except the first
-      // if (index !== 0) {
-      // }
-
-      // homeSplitTL.to(item, {
-      //   color: BLACK,
-      //   opacity: 1,
-      // });
-      // homeSplitTL.to(
-      //   textSpan,
-      //   {
-      //     color: JADE,
-      //   },
-      //   '<'
-      // );
       homeSplitTL.call(updateClass, [item, index], '+=1');
     });
   };

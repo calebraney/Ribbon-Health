@@ -3,15 +3,6 @@ import { scrollLineAnimation } from './line.js';
 window.Webflow ||= [];
 window.Webflow.push(() => {
   //When Webflow is Loaded
-  // split hover animation
-  //SWITCH TO SCROLL BASED
-  // $('.split-hover_item-text').on('mouseenter', function () {
-  //   let itemIndex = $(this).index();
-  //   $('.split-hover_item-text').removeClass('is-active');
-  //   $('.split-hover_image').removeClass('is-active');
-  //   $(this).addClass('is-active');
-  //   $('.split-hover_image').eq(itemIndex).addClass('is-active');
-  // });
   // Split Scroll animation
   const homeSplitScroll = function (startPoint = 'top center', endPoint = 'bottom center') {
     ACTIVE_CLASS = 'is-active';

@@ -114,7 +114,7 @@ window.Webflow.push(() => {
       });
       const itemSquare = item.querySelector('.product-process_square');
       const itemContents = item.querySelectorAll('h2, h3, p, .button');
-      const textTL = gsap.timeline({
+      const fadeTL = gsap.timeline({
         scrollTrigger: {
           trigger: item,
           start: 'top 80%',
@@ -122,10 +122,10 @@ window.Webflow.push(() => {
           scrub: 0.5,
         },
       });
-      textTL.from(itemContents, {
+      fadeTL.from(itemContents, {
         opacity: 0,
       });
-      textTL.from(
+      fadeTL.from(
         itemSquare,
         {
           backgroundColor: '#f9f9d7',
@@ -182,6 +182,39 @@ window.Webflow.push(() => {
       );
     });
   };
+  const productDataAnimation = function (start = 'top 1%', end = 'bottom 99%') {
+    const items = document.querySelectorAll('[cr-produducts-data-item]');
+    if (!items) return;
+
+    items.forEach((item) => {
+      const itemSquare = item.querySelector('.products-data_square');
+      const itemContents = item.querySelectorAll('h2, h3, p, .button');
+
+      // add a seperate timeline to fade in each item
+      const fadeTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          start: 'top bottom',
+          end: 'top center',
+          scrub: 0.5,
+        },
+        defaults: {
+          ease: 'none',
+          duration: 1,
+        },
+      });
+      fadeTL.from(itemContents, {
+        opacity: 0.1,
+      });
+      fadeTL.from(
+        itemSquare,
+        {
+          backgroundColor: '#d3efed',
+        },
+        '<'
+      );
+    });
+  };
 
   window.onresize = headerAnimation;
   //define sections and run animations
@@ -208,6 +241,7 @@ window.Webflow.push(() => {
         //Run on desktop
         processAnimation();
         iconHighlightAnimation();
+        productDataAnimation();
       }
       if (isMobile) {
         //Run on desktop

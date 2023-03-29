@@ -58,13 +58,13 @@ window.Webflow.push(() => {
     const headerTL = gsap.timeline({
       scrollTrigger: {
         trigger: headerComponent,
-        start: 'top 5rem',
-        end: 'bottom 20%',
+        start: 'top 6rem',
+        end: 'bottom 10rem',
         scrub: 0.5,
       },
       defaults: {
         duration: 1,
-        ease: 'power2.Out',
+        ease: 'power1.Out',
       },
     });
     headerTL.fromTo(

@@ -26,60 +26,33 @@ window.Webflow.push(() => {
       });
     });
   };
-  // Split Scroll animation
-  const homeSplitScroll = function (startPoint = 'top 65%', endPoint = 'bottom 65%') {
+  const homeSplitScroll = function (startPoint = 'top 60%', endPoint = 'bottom 60%') {
+    console.log('mobile');
     ACTIVE_CLASS = 'is-active';
-    const items = document.querySelectorAll('.split-hover_item-text');
-    const images = document.querySelectorAll('.split-hover_image');
-    items.forEach((item, index) => {
-      const image = images[index];
-      const updateActive = function (addClass = false) {
-        if (addClass) {
-          item.classList.add(ACTIVE_CLASS);
-          image.classList.add(ACTIVE_CLASS);
-        } else {
-          item.classList.remove(ACTIVE_CLASS);
-          image.classList.remove(ACTIVE_CLASS);
-        }
-      };
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          start: startPoint,
-          end: endPoint,
-          scrub: true,
-          onEnter: () => {
-            updateActive(true);
-          },
-          onLeave: () => {
-            // don't remove class on leave of the last item
-            if (index !== items.length - 1) {
-              updateActive(false);
-            }
-          },
-          onEnterBack: () => {
-            updateActive(true);
-          },
-          onLeaveBack: () => {
-            if (index !== 0) {
-              updateActive(false);
-            }
-          },
-        },
-      });
-    });
-  };
-  const homeSplitScrollMobile = function (startPoint = 'top 30%', endPoint = 'bottom 90%') {
-    ACTIVE_CLASS = 'is-active';
+    // BLACK = '#000000';
+    // JADE = '#00585c';
+    // CHARTREUSE = '#e4ea7d';
     const triggerEl = document.querySelector('.split-hover_component');
     const items = document.querySelectorAll('.split-hover_item-text');
     const images = document.querySelectorAll('.split-hover_image');
+    const updateClass = function (currentItem, currentIndex) {
+      currentImage = images[currentIndex];
+      //remove active class from every item
+      items.forEach((itemEl, index) => {
+        const imageEl = images[index];
+        itemEl.classList.remove(ACTIVE_CLASS);
+        imageEl.classList.remove(ACTIVE_CLASS);
+      });
+      currentItem.classList.add(ACTIVE_CLASS);
+      currentImage.classList.add(ACTIVE_CLASS);
+    };
 
-    const tl = gsap.timeline({
+    const homeSplitTL = gsap.timeline({
       scrollTrigger: {
         trigger: triggerEl,
         start: startPoint,
         end: endPoint,
+        // toggleActions: 'play none none none',
         scrub: true,
       },
       defaults: {
@@ -88,19 +61,26 @@ window.Webflow.push(() => {
       },
     });
     items.forEach((item, index) => {
-      const image = images[index];
-      tl.add(function () {
-        //remove active class from every item
-        items.forEach((itemEl, index) => {
-          const imageEl = images[index];
-          itemEl.classList.remove(ACTIVE_CLASS);
-          imageEl.classList.remove(ACTIVE_CLASS);
-        });
-        image.classList.add(ACTIVE_CLASS);
-        item.classList.add(ACTIVE_CLASS);
-      }, index);
+      // const textSpan = item.querySelector('.split-hover_highlight');
+      // // for every item except the first
+      // if (index !== 0) {
+      // }
+
+      // homeSplitTL.to(item, {
+      //   color: BLACK,
+      //   opacity: 1,
+      // });
+      // homeSplitTL.to(
+      //   textSpan,
+      //   {
+      //     color: JADE,
+      //   },
+      //   '<'
+      // );
+      homeSplitTL.call(updateClass, [item, index], '+=1');
     });
   };
+
   //define sections and run animations
   const lineSections = document.querySelectorAll('[scroll-section]');
   let mm = gsap.matchMedia();
@@ -125,7 +105,7 @@ window.Webflow.push(() => {
         homeSplitScroll();
       }
       if (isMobile) {
-        homeSplitScrollMobile();
+        homeSplitScroll('top 50%', 'top top');
       }
     }
   );

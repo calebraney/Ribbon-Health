@@ -3,14 +3,36 @@ import { scrollLineAnimation } from './line.js';
 window.Webflow ||= [];
 window.Webflow.push(() => {
   //When Webflow is Loaded
+  // Home Header
+  const homeHeader = function (startPoint = 'top 5rem', endPoint = 'bottom 10%') {
+    const triggerEl = document.querySelector('.section_home-header');
+    const images = document.querySelectorAll('.home-header_image.is-top');
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerEl,
+        start: startPoint,
+        end: endPoint,
+        scrub: true,
+      },
+      defaults: {
+        duration: 1,
+        ease: 'none',
+      },
+    });
+    images.forEach((image, index) => {
+      tl.to(image, {
+        opacity: 1,
+      });
+    });
+  };
   // Split Scroll animation
-  const homeSplitScroll = function (startPoint = 'top center', endPoint = 'bottom center') {
+  const homeSplitScroll = function (startPoint = 'top 65%', endPoint = 'bottom 65%') {
     ACTIVE_CLASS = 'is-active';
     const items = document.querySelectorAll('.split-hover_item-text');
     const images = document.querySelectorAll('.split-hover_image');
     items.forEach((item, index) => {
       const image = images[index];
-      console.log(item, image);
       const updateActive = function (addClass = false) {
         if (addClass) {
           item.classList.add(ACTIVE_CLASS);
@@ -99,6 +121,7 @@ window.Webflow.push(() => {
         });
       }
       if (isDesktop) {
+        homeHeader();
         homeSplitScroll();
       }
       if (isMobile) {

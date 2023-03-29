@@ -64,7 +64,7 @@ window.Webflow.push(() => {
       },
       defaults: {
         duration: 1,
-        ease: 'power1.Out',
+        ease: 'none',
       },
     });
     headerTL.fromTo(

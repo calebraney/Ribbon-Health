@@ -18,7 +18,15 @@ window.Webflow.push(() => {
     // headerComponent.style.height = `${NUM_COLS / 1.5}rem`;
     const w = canvas.clientWidth;
     const h = canvas.clientHeight;
-    const FILL_COLOR = '#cde200';
+    const FILL_COLORS = [
+      '#00585c',
+      '#008484',
+      '#91c9c5',
+      '#d3efed',
+      '#cde200',
+      '#e4ea7d',
+      '#f9f9d7',
+    ];
     // get random int helper function
     const randomInt = (min, max) => Math.floor(Math.random() * (max - min) + 1) + min;
     //create the squares
@@ -31,12 +39,14 @@ window.Webflow.push(() => {
           // randomly select if this square will be added
           let seed = randomInt(0, 20);
           if (seed < 3) {
+            // select a random color from the fill colors array
+            let color = FILL_COLORS[randomInt(0, 7) - 1];
             const square = new Path.Rectangle({
               point: new Point(x, y),
               size: [space, space],
               applyMatrix: false,
             });
-            square.fillColor = FILL_COLOR;
+            square.fillColor = color;
             squares.push(square);
           }
         }

@@ -146,7 +146,6 @@ window.Webflow.push(() => {
         scrub: 0.5,
       },
       defaults: {
-        // children inherit these defaults
         duration: 0.5,
         ease: 'power1.out',
       },
@@ -154,13 +153,6 @@ window.Webflow.push(() => {
     iconItems.forEach((item) => {
       const itemIcon = item.querySelector('[cr-icon-highlight="icon"]');
       const itemText = item.querySelector('.product-icons_span');
-      // iconTL.set(
-      //   itemText,
-      //   {
-      //     fontWeight: 300,
-      //   },
-      //   '<'
-      // );
       iconTL.to(
         itemIcon,
         {

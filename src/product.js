@@ -6,7 +6,7 @@ window.Webflow.push(() => {
   //When Webflow is Loaded
 
   // Header Animation
-  const headerAnimation = function (reduceMotion = false) {
+  const headerAnimation = function (reduceMotion = false, isMobile = false) {
     // get core variables
     const { Path, Point, Group, Color } = paperCore;
     const canvas = document.querySelector('#paper-canvas');
@@ -14,7 +14,11 @@ window.Webflow.push(() => {
     if (!canvas || !headerComponent) return;
     paperCore.setup(canvas);
     paperCore.project.clear();
-    const NUM_COLS = 80;
+    let NUM_COLS = 80;
+    // change number of columns on mobile
+    if (isMobile) {
+      NUM_COLS = 40;
+    }
     // headerComponent.style.height = `${NUM_COLS / 1.5}rem`;
     const w = canvas.clientWidth;
     const h = canvas.clientHeight;
@@ -230,7 +234,7 @@ window.Webflow.push(() => {
     (context) => {
       let { isMobile, isDesktop, reduceMotion } = context.conditions;
 
-      headerAnimation(reduceMotion);
+      headerAnimation(reduceMotion, isMobile);
       if (!reduceMotion) {
         //Run if reduce motion is off
         lineSections.forEach((section) => {

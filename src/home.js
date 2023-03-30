@@ -40,7 +40,7 @@ window.Webflow.push(() => {
     const updateClass = function (currentItem, currentIndex) {
       currentImage = images[currentIndex];
       //remove active class from every item
-      allItems.forEach((itemEl, index) => {
+      items.forEach((itemEl, index) => {
         const imageEl = images[index];
         itemEl.classList.remove(ACTIVE_CLASS);
         imageEl.classList.remove(ACTIVE_CLASS);

@@ -1,6 +1,10 @@
 import { scrollLineAnimation } from './line.js';
 import paperCore from 'paper';
 
+// global variables for header animation tracking
+let headerTL;
+let progress = 0;
+
 window.Webflow ||= [];
 window.Webflow.push(() => {
   //When Webflow is Loaded
@@ -59,7 +63,8 @@ window.Webflow.push(() => {
     };
     const squarePaths = createSquares(w, h, NUM_COLS);
     if (reduceMotion) return;
-    const headerTL = gsap.timeline({
+
+    headerTL = gsap.timeline({
       scrollTrigger: {
         trigger: headerComponent,
         start: 'top 6rem',
@@ -82,6 +87,7 @@ window.Webflow.push(() => {
       },
       0
     );
+    headerTL.progress(progress);
   };
 
   const processAnimation = function () {
@@ -220,7 +226,6 @@ window.Webflow.push(() => {
     });
   };
 
-  window.onresize = headerAnimation;
   //define sections and run animations
   const lineSections = document.querySelectorAll('[scroll-section]');
   let mm = gsap.matchMedia();
@@ -235,6 +240,12 @@ window.Webflow.push(() => {
       let { isMobile, isDesktop, reduceMotion } = context.conditions;
 
       headerAnimation(reduceMotion, isMobile);
+      // run headder animation on resize
+      window.addEventListener('resize', function () {
+        progress = headerTL.progress;
+        headerTL.kill();
+        headerAnimation(reduceMotion, isMobile);
+      });
       if (!reduceMotion) {
         //Run if reduce motion is off
         lineSections.forEach((section) => {

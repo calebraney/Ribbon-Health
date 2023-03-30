@@ -244,12 +244,7 @@ window.Webflow.push(() => {
       let { isMobile, isDesktop, reduceMotion } = context.conditions;
 
       headerAnimation(reduceMotion, isMobile);
-      // run headder animation on resize
-      window.addEventListener('resize', function () {
-        progress = headerTL.progress;
-        headerTL.kill();
-        headerAnimation(reduceMotion, isMobile);
-      });
+
       if (!reduceMotion) {
         //Run if reduce motion is off
         lineSections.forEach((section) => {
@@ -261,6 +256,12 @@ window.Webflow.push(() => {
         processAnimation();
         iconHighlightAnimation();
         productDataAnimation();
+        // run headder animation on resize
+        window.addEventListener('resize', function () {
+          progress = headerTL.progress;
+          headerTL.kill();
+          headerAnimation(reduceMotion, isMobile);
+        });
       }
       if (isMobile) {
         //Run on desktop

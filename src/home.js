@@ -1,5 +1,8 @@
 import { scrollLineAnimation } from './line.js';
 
+// register gsap plugin
+gsap.registerPlugin(ScrollTrigger);
+
 // constants
 const ACTIVE_CLASS = 'is-active';
 

@@ -1,5 +1,9 @@
 import { scrollLineAnimation } from './line.js';
 
+// register gsap plugin
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Flip);
+
 // Table scroll animation
 const scrollTableAnimation = function (mobile = false) {
   HIGHLIGHT_COLOR = '#f9f9d7';

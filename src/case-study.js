@@ -1,5 +1,8 @@
 import { scrollLineAnimation } from './line.js';
 
+// register gsap plugin
+gsap.registerPlugin(ScrollTrigger);
+
 window.Webflow ||= [];
 window.Webflow.push(() => {
   //When Webflow is Loaded

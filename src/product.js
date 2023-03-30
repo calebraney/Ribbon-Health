@@ -63,6 +63,10 @@ window.Webflow.push(() => {
     };
     const squarePaths = createSquares(w, h, NUM_COLS);
     if (reduceMotion) return;
+    let start = 'top 6rem';
+    if (isMobile) {
+      start = 'top 4rem';
+    }
 
     headerTL = gsap.timeline({
       scrollTrigger: {

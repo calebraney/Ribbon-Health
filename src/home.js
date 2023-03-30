@@ -85,7 +85,7 @@ window.Webflow.push(() => {
         homeSplitScroll();
       }
       if (isMobile) {
-        homeSplitScroll('top 50%', 'top top');
+        homeSplitScroll('top 30%', 'top top');
       }
     }
   );

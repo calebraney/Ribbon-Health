@@ -1,8 +1,12 @@
 import { scrollLineAnimation } from './line.js';
 
+// constants
+const ACTIVE_CLASS = 'is-active';
+
 window.Webflow ||= [];
 window.Webflow.push(() => {
   //When Webflow is Loaded
+
   // Home Header
   const homeHeader = function (startPoint = 'top 5rem', endPoint = 'bottom 10%') {
     const triggerEl = document.querySelector('.section_home-header');
@@ -26,23 +30,23 @@ window.Webflow.push(() => {
       });
     });
   };
+  // utility function to update active class
+  const updateClass = function (currentItem, currentIndex, allItems) {
+    currentImage = images[currentIndex];
+    //remove active class from every item
+    allItems.forEach((itemEl, index) => {
+      const imageEl = images[index];
+      itemEl.classList.remove(ACTIVE_CLASS);
+      imageEl.classList.remove(ACTIVE_CLASS);
+    });
+    currentItem.classList.add(ACTIVE_CLASS);
+    currentImage.classList.add(ACTIVE_CLASS);
+  };
   const homeSplitScroll = function (startPoint = 'top 60%', endPoint = 'bottom 60%') {
-    ACTIVE_CLASS = 'is-active';
     const triggerEl = document.querySelector('.split-hover_component');
     const items = document.querySelectorAll('.split-hover_item-text');
     const images = document.querySelectorAll('.split-hover_image');
     if (!triggerEl || items.length === 0 || images.length === 0) return;
-    const updateClass = function (currentItem, currentIndex) {
-      currentImage = images[currentIndex];
-      //remove active class from every item
-      items.forEach((itemEl, index) => {
-        const imageEl = images[index];
-        itemEl.classList.remove(ACTIVE_CLASS);
-        imageEl.classList.remove(ACTIVE_CLASS);
-      });
-      currentItem.classList.add(ACTIVE_CLASS);
-      currentImage.classList.add(ACTIVE_CLASS);
-    };
 
     const homeSplitTL = gsap.timeline({
       scrollTrigger: {
@@ -57,7 +61,15 @@ window.Webflow.push(() => {
       },
     });
     items.forEach((item, index) => {
-      homeSplitTL.call(updateClass, [item, index], '+=1');
+      homeSplitTL.call(updateClass, [item, index, items], '+=1');
+    });
+  };
+  const homeSplitMobile = function () {
+    const items = document.querySelectorAll('.split-hover_item-text');
+    items.forEach((item, index) => {
+      item.addEventListener('click', function () {
+        updateClass(item, index, items);
+      });
     });
   };
 
@@ -85,7 +97,8 @@ window.Webflow.push(() => {
         homeSplitScroll();
       }
       if (isMobile) {
-        homeSplitScroll('top 30%', 'top top');
+        homeSplitMobile();
+        // homeSplitScroll('top 30%', 'top top');
       }
     }
   );

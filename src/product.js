@@ -70,8 +70,25 @@ window.Webflow.push(() => {
     if (isMobile) {
       start = 'top 4rem';
     }
+    headerFadeTL = gsap.timeline({
+      defaults: {
+        duration: 0.2,
+        ease: 'power2.out',
+      },
+    });
+    headerFadeTL.fromTo(
+      squarePaths,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        stagger: { each: 0.005, from: 'random' },
+      },
+      0
+    );
 
-    headerTL = gsap.timeline({
+    headerScrollTL = gsap.timeline({
       scrollTrigger: {
         trigger: headerComponent,
         start: 'top 6rem',
@@ -83,7 +100,7 @@ window.Webflow.push(() => {
         ease: 'none',
       },
     });
-    headerTL.fromTo(
+    headerScrollTL.fromTo(
       squarePaths,
       {
         scaling: 1,
@@ -94,7 +111,7 @@ window.Webflow.push(() => {
       },
       0
     );
-    headerTL.progress(progress);
+    headerScrollTL.progress(progress);
   };
 
   const processAnimation = function () {

@@ -17,14 +17,10 @@ window.Webflow.push(() => {
     const images = document.querySelectorAll('.home-header_image.is-top');
 
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: triggerEl,
-        start: startPoint,
-        end: endPoint,
-        scrub: true,
-      },
+      repeat: -1,
+      yoyo: true,
       defaults: {
-        duration: 1,
+        duration: 0.8,
         ease: 'none',
       },
     });
@@ -37,7 +33,7 @@ window.Webflow.push(() => {
 
   const homeSplitScroll = function (startPoint = 'top 60%', endPoint = 'bottom 70%') {
     const triggerEl = document.querySelector('.split-hover_component');
-    const allItems = document.querySelectorAll('.split-hover_item-text');
+    const allItems = document.querySelectorAll('.split-hover_item');
     const allImages = document.querySelectorAll('.split-hover_image');
     if (!triggerEl || allItems.length === 0 || allImages.length === 0) return;
     // utility function to update active class
@@ -103,15 +99,18 @@ window.Webflow.push(() => {
           scrollLineAnimation(section, isMobile);
         });
       }
-      if (isDesktop) {
+      if (!reduceMotion && isDesktop) {
+        //Run if reduce motion is off and on desktop
         homeHeader();
+      }
+      if (isDesktop) {
         homeSplitScroll();
       }
       if (isMobile) {
         // mobile click interaction
-        $('.split-hover_item-text').on('click', function () {
+        $('.split-hover_item').on('click', function () {
           let itemIndex = $(this).index();
-          $('.split-hover_item-text').removeClass('is-active');
+          $('.split-hover_item').removeClass('is-active');
           $('.split-hover_image').removeClass('is-active');
           $(this).addClass('is-active');
           $('.split-hover_image').eq(itemIndex).addClass('is-active');

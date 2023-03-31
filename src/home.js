@@ -37,7 +37,7 @@ window.Webflow.push(() => {
 
   const homeSplitScroll = function (startPoint = 'top 60%', endPoint = 'bottom 70%') {
     const triggerEl = document.querySelector('.split-hover_component');
-    const allItems = document.querySelectorAll('.split-hover_item-text');
+    const allItems = document.querySelectorAll('.split-hover_item');
     const allImages = document.querySelectorAll('.split-hover_image');
     if (!triggerEl || allItems.length === 0 || allImages.length === 0) return;
     // utility function to update active class
@@ -109,9 +109,9 @@ window.Webflow.push(() => {
       }
       if (isMobile) {
         // mobile click interaction
-        $('.split-hover_item-text').on('click', function () {
+        $('.split-hover_item').on('click', function () {
           let itemIndex = $(this).index();
-          $('.split-hover_item-text').removeClass('is-active');
+          $('.split-hover_item').removeClass('is-active');
           $('.split-hover_image').removeClass('is-active');
           $(this).addClass('is-active');
           $('.split-hover_image').eq(itemIndex).addClass('is-active');

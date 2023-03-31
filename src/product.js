@@ -184,36 +184,53 @@ window.Webflow.push(() => {
         ease: 'power1.out',
       },
     });
-    iconItems.forEach((item) => {
+    iconItems.forEach((item, index) => {
       const itemIcon = item.querySelector('[cr-icon-highlight="icon"]');
       const itemText = item.querySelector('.product-icons_span');
-      iconTL.to(
-        itemIcon,
-        {
+      // unique tween for first item
+      if (index === 0) {
+        iconTL.set(
+          itemIcon,
+          {
+            opacity: 0,
+          },
+          '<'
+        );
+        iconTL.set(itemIcon, {
           opacity: 1,
-          // scale: 1.1,
-        },
-        '<'
-      );
-      iconTL.to(
+          delay: 1,
+        });
+      }
+      // first tween for other items
+      if (index !== 0) {
+        iconTL.set(itemIcon, {
+          opacity: 1,
+        });
+      }
+      iconTL.set(
         itemText,
         {
           fontWeight: 600,
         },
         '<'
       );
-      iconTL.to(itemIcon, {
+      iconTL.set(itemIcon, {
         opacity: 0,
-        scale: 1,
         delay: 1,
       });
-      iconTL.to(
+      iconTL.set(
         itemText,
         {
           fontWeight: 300,
         },
         '<'
       );
+      // unique last tween
+      if (index === iconItems.length - 1) {
+        iconTL.to(itemIcon, {
+          delay: 0.5,
+        });
+      }
     });
   };
   const productDataAnimation = function (start = 'top 1%', end = 'bottom 99%') {

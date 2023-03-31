@@ -103,13 +103,10 @@ window.Webflow.push(() => {
 
       if (!reduceMotion) {
         //Run if reduce motion is off
+        homeHeader();
         lineSections.forEach((section) => {
           scrollLineAnimation(section, isMobile);
         });
-      }
-      if (!reduceMotion && isDesktop) {
-        //Run if reduce motion is off and on desktop
-        homeHeader();
       }
       if (isDesktop) {
         homeSplitScroll();

@@ -38,11 +38,11 @@ window.Webflow.push(() => {
     // define start and end positions
     let scrollStart = 'top top';
     let scrollEnd = 'bottom bottom';
-    if (triggerEl.hasAttribute('scroll-start')) {
-      scrollStart = trigger.getAttribute('scroll-start');
+    if (triggerEl.hasAttribute('cr-home-split-start')) {
+      scrollStart = trigger.getAttribute('cr-home-split-start');
     }
-    if (triggerEl.hasAttribute('scroll-end')) {
-      scrollEnd = trigger.getAttribute('scroll-end');
+    if (triggerEl.hasAttribute('cr-home-split-end')) {
+      scrollEnd = trigger.getAttribute('cr-home-split-end');
     }
     // utility function to update active class
     const updateClass = function (currentItem, currentIndex, allItems) {

@@ -17,15 +17,10 @@ window.Webflow.push(() => {
     const images = document.querySelectorAll('.home-header_image.is-top');
 
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: triggerEl,
-        start: startPoint,
-        end: endPoint,
-        scrub: true,
-      },
+      repeat: -1,
       defaults: {
-        duration: 1,
-        ease: 'none',
+        duration: 0.6,
+        ease: 'power1.out',
       },
     });
     images.forEach((image, index) => {

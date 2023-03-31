@@ -12,10 +12,8 @@ window.Webflow.push(() => {
   //When Webflow is Loaded
 
   // Home Header
-  const homeHeader = function (startPoint = 'top 5rem', endPoint = 'bottom 10%') {
-    const triggerEl = document.querySelector('.section_home-header');
+  const homeHeader = function () {
     const images = document.querySelectorAll('.home-header_image.is-top');
-
     const tl = gsap.timeline({
       repeat: -1,
       yoyo: true,
@@ -66,8 +64,8 @@ window.Webflow.push(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: triggerEl,
-        start: startPoint,
-        end: endPoint,
+        start: scrollStart,
+        end: scrollEnd,
         scrub: true,
       },
       defaults: {

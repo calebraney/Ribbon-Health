@@ -2,6 +2,7 @@ import { scrollLineAnimation } from './line.js';
 
 // register gsap plugin
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(Flip);
 
 // constants
 const ACTIVE_CLASS = 'is-active';
@@ -34,6 +35,93 @@ window.Webflow.push(() => {
     });
   };
 
+  const homeSplitScroll = function (startPoint = 'top 60%', endPoint = 'bottom 70%') {
+    const triggerEl = document.querySelector('.split-hover_component');
+    const allItems = document.querySelectorAll('.split-hover_item-text');
+    const allImages = document.querySelectorAll('.split-hover_image');
+    if (!triggerEl || allItems.length === 0 || allImages.length === 0) return;
+    // utility function to update active class
+    const updateClass = function (currentItem, currentIndex, allItems) {
+      //remove active class from every item
+      allItems.forEach((item, index) => {
+        let state = Flip.getState(item);
+        //if it is the current item
+        if (item === currentItem) {
+          item.classList.add(ACTIVE_CLASS);
+        } else {
+          item.classList.remove(ACTIVE_CLASS);
+        }
+        // animate element
+        Flip.from(state, {
+          duration: 0.3,
+          ease: 'power1.out',
+        });
+      });
+    };
+    // create the timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerEl,
+        start: startPoint,
+        end: endPoint,
+        scrub: true,
+      },
+      defaults: {
+        duration: 0.5,
+        delay: 1,
+        ease: 'none',
+      },
+    });
+    allItems.forEach((currentItem, currentIndex) => {
+      // get current image
+      currentImage = allImages[currentIndex];
+      // animate current image
+      tl.to(currentImage, {
+        opacity: 1,
+      });
+      // animate current text
+      tl.call(updateClass, [currentItem, currentIndex, allItems], '<');
+    });
+  };
+
+  //define sections and run animations
+  const lineSections = document.querySelectorAll('[scroll-section]');
+  let mm = gsap.matchMedia();
+  mm.add(
+    {
+      //This is the conditions object
+      isMobile: '(max-width: 767px)',
+      isDesktop: '(min-width: 768px)',
+      reduceMotion: '(prefers-reduced-motion: reduce)',
+    },
+    (context) => {
+      let { isMobile, isDesktop, reduceMotion } = context.conditions;
+
+      if (!reduceMotion) {
+        //Run if reduce motion is off
+        lineSections.forEach((section) => {
+          scrollLineAnimation(section, isMobile);
+        });
+      }
+      if (isDesktop) {
+        homeHeader();
+        homeSplitScroll();
+      }
+      if (isMobile) {
+        // mobile click interaction
+        $('.split-hover_item-text').on('click', function () {
+          let itemIndex = $(this).index();
+          $('.split-hover_item-text').removeClass('is-active');
+          $('.split-hover_image').removeClass('is-active');
+          $(this).addClass('is-active');
+          $('.split-hover_image').eq(itemIndex).addClass('is-active');
+        });
+      }
+    }
+  );
+});
+
+/*
   const homeSplitScroll = function (startPoint = 'top 60%', endPoint = 'bottom 60%') {
     const triggerEl = document.querySelector('.split-hover_component');
     const items = document.querySelectorAll('.split-hover_item-text');
@@ -68,51 +156,4 @@ window.Webflow.push(() => {
       homeSplitTL.call(updateClass, [item, index], '+=1');
     });
   };
-  const homeSplitMobile = function () {
-    const items = document.querySelectorAll('.split-hover_item-text');
-    const images = document.querySelectorAll('.split-hover_image');
-    items.forEach((item, index) => {
-      item.addEventListener('click', function (items, images) {
-        updateClass(item, index, items, images);
-      });
-    });
-  };
-
-  //define sections and run animations
-  const lineSections = document.querySelectorAll('[scroll-section]');
-  let mm = gsap.matchMedia();
-  mm.add(
-    {
-      //This is the conditions object
-      isMobile: '(max-width: 767px)',
-      isDesktop: '(min-width: 768px)',
-      reduceMotion: '(prefers-reduced-motion: reduce)',
-    },
-    (context) => {
-      let { isMobile, isDesktop, reduceMotion } = context.conditions;
-
-      if (!reduceMotion) {
-        //Run if reduce motion is off
-        lineSections.forEach((section) => {
-          scrollLineAnimation(section, isMobile);
-        });
-      }
-      if (isDesktop) {
-        homeHeader();
-        homeSplitScroll();
-        // homeSplitMobile();
-      }
-      if (isMobile) {
-        // mobile click interaction
-        $('.split-hover_item-text').on('click', function () {
-          let itemIndex = $(this).index();
-          $('.split-hover_item-text').removeClass('is-active');
-          $('.split-hover_image').removeClass('is-active');
-          $(this).addClass('is-active');
-          $('.split-hover_image').eq(itemIndex).addClass('is-active');
-        });
-        // homeSplitScroll('top 30%', 'top top');
-      }
-    }
-  );
-});
+*/

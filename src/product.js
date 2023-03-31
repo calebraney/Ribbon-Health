@@ -1,6 +1,9 @@
 import { scrollLineAnimation } from './line.js';
 import paperCore from 'paper';
 
+// register gsap plugin
+gsap.registerPlugin(ScrollTrigger);
+
 // global variables for header animation tracking
 let headerTL;
 let progress = 0;

@@ -31,7 +31,16 @@ window.Webflow.push(() => {
     });
   };
 
-  const homeSplitScroll = function (startPoint = 'top 60%', endPoint = 'bottom 70%') {
+  const homeSplitScroll = function () {
+  let scrollStart = 'top top';
+  let scrollEnd = 'bottom bottom';
+  if (trigger.hasAttribute('scroll-start')) {
+    scrollStart = trigger.getAttribute('scroll-start');
+  }
+  if (trigger.hasAttribute('scroll-end')) {
+    scrollEnd = trigger.getAttribute('scroll-end');
+  }
+  const l
     const triggerEl = document.querySelector('.split-hover_component');
     const allItems = document.querySelectorAll('.split-hover_item');
     const allImages = document.querySelectorAll('.split-hover_image');

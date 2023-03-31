@@ -30,18 +30,20 @@ window.Webflow.push(() => {
   };
 
   const homeSplitScroll = function () {
+    // select  elements
+    const triggerEl = document.querySelector('[cr-home-split="component"]');
+    const allItems = document.querySelectorAll('[cr-home-split="item"]');
+    const allImages = document.querySelectorAll('[cr-home-split="image"]');
+    if (!triggerEl || allItems.length === 0 || allImages.length === 0) return;
+    // define start and end positions
     let scrollStart = 'top top';
     let scrollEnd = 'bottom bottom';
-    if (trigger.hasAttribute('scroll-start')) {
-      scrollStart = trigger.getAttribute('scroll-start');
+    if (triggerEl.hasAttribute('cr-home-split-start')) {
+      scrollStart = trigger.getAttribute('cr-home-split-start');
     }
-    if (trigger.hasAttribute('scroll-end')) {
-      scrollEnd = trigger.getAttribute('scroll-end');
+    if (triggerEl.hasAttribute('cr-home-split-end')) {
+      scrollEnd = trigger.getAttribute('cr-home-split-end');
     }
-    const triggerEl = document.querySelector('.split-hover_component');
-    const allItems = document.querySelectorAll('.split-hover_item');
-    const allImages = document.querySelectorAll('.split-hover_image');
-    if (!triggerEl || allItems.length === 0 || allImages.length === 0) return;
     // utility function to update active class
     const updateClass = function (currentItem, currentIndex, allItems) {
       //remove active class from every item

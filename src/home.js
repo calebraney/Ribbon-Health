@@ -18,9 +18,10 @@ window.Webflow.push(() => {
 
     const tl = gsap.timeline({
       repeat: -1,
+      yoyo: true,
       defaults: {
-        duration: 0.6,
-        ease: 'power1.out',
+        duration: 0.8,
+        ease: 'none',
       },
     });
     images.forEach((image, index) => {
@@ -98,8 +99,11 @@ window.Webflow.push(() => {
           scrollLineAnimation(section, isMobile);
         });
       }
-      if (isDesktop) {
+      if (!reduceMotion && isDesktop) {
+        //Run if reduce motion is off and on desktop
         homeHeader();
+      }
+      if (isDesktop) {
         homeSplitScroll();
       }
       if (isMobile) {

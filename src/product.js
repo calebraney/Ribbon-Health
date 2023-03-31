@@ -72,7 +72,7 @@ window.Webflow.push(() => {
     }
     headerFadeTL = gsap.timeline({
       defaults: {
-        duration: 0.3,
+        duration: 0.2,
         ease: 'power2.out',
       },
     });
@@ -83,7 +83,7 @@ window.Webflow.push(() => {
       },
       {
         opacity: 1,
-        stagger: { each: 0.01, from: 'random' },
+        stagger: { each: 0.005, from: 'random' },
       },
       0
     );

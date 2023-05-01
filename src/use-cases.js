@@ -16,21 +16,31 @@ const scrollTableAnimation = function (mobile = false) {
     }
     const icon = row.querySelector('.case-table_icon');
     const cells = row.querySelectorAll('.case-table_cell');
-    const updateIcon = function (isActive = false) {
+    const setIconToActive = function (setToActive = true) {
       // don't animate if you can't find the icon or on mobile
       if (!icon || mobile) return;
       let state = Flip.getState(icon);
       //move background
-      if (isActive) {
-        icon.classList.remove(ACTIVE_CLASS);
-      } else {
+      if (setToActive) {
         icon.classList.add(ACTIVE_CLASS);
+      } else {
+        icon.classList.remove(ACTIVE_CLASS);
       }
       // animate element
       Flip.from(state, {
         duration: 0.3,
         ease: 'power2.out',
       });
+    };
+    const setRowToActive = function (setToActive = true) {
+      // add or remove the class
+      if (setToActive) {
+        row.classList.add(ACTIVE_CLASS);
+        console.log('added is active');
+      } else {
+        row.classList.remove(ACTIVE_CLASS);
+        console.log('removed is active');
+      }
     };
 
     const rowTL = gsap.timeline({
@@ -40,63 +50,22 @@ const scrollTableAnimation = function (mobile = false) {
         end: 'bottom center',
         toggleActions: 'restart reverse restart reverse',
         onEnter: () => {
-          updateIcon(false);
+          setIconToActive();
+          setRowToActive();
         },
         onLeave: () => {
-          updateIcon(true);
+          setIconToActive(false);
+          setRowToActive(false);
         },
         onEnterBack: () => {
-          updateIcon(false);
+          setIconToActive();
+          setRowToActive();
         },
         onLeaveBack: () => {
-          updateIcon(true);
+          setIconToActive(false);
+          setRowToActive(false);
         },
       },
-      defaults: {
-        duration: 0.5,
-        ease: 'power2.Out',
-      },
-    });
-    // add tween
-    rowTL.set(cells, {
-      backgroundColor: HIGHLIGHT_COLOR,
-    });
-  });
-};
-const useCaseHeaderAnimation = function (mobile = false) {
-  const headerItems = document.querySelectorAll('[cr-use-case-header="item"]');
-  const dividers = document.querySelectorAll('.use-case-header_component .line-divider');
-
-  const ACTIVE_CLASS = 'is-active';
-
-  headerItems.forEach((item) => {
-    // add an event listener to each item
-    item.addEventListener('click', function (e) {
-      const targetItem = this;
-      const icon = document.querySelectorAll('.use-case-header_icon');
-      const h3 = document.querySelectorAll('.use-case-header_h3');
-      const paragraph = document.querySelectorAll('.use-case-header_paragraph');
-      // guard clause
-      if (Flip.isFlipping(item)) return;
-      // get state
-      let state = Flip.getState(headerItems, icon, h3, paragraph, dividers, {
-        props: 'fontSize,color,maxWidth,flexBasis,flexGrow,flexShrink',
-      });
-      //adjust active class
-      headerItems.forEach((item) => {
-        //adjust active class
-        if (item === targetItem) {
-          item.classList.add(ACTIVE_CLASS);
-        } else {
-          item.classList.remove(ACTIVE_CLASS);
-        }
-      });
-      // animate with flip
-      Flip.from(state, {
-        duration: 1.2,
-        delay: 0.1,
-        ease: 'power2.out',
-      });
     });
   });
 };
@@ -104,14 +73,6 @@ const useCaseHeaderAnimation = function (mobile = false) {
 window.Webflow ||= [];
 window.Webflow.push(() => {
   //When Webflow is Loaded
-  // Split Tab Interaction
-  $('.split-tab_item').on('click', function () {
-    let itemIndex = $(this).index();
-    $('.split-tab_item').removeClass('is-active');
-    $('.split-tab_image').removeClass('is-active');
-    $(this).addClass('is-active');
-    $('.split-tab_image').eq(itemIndex).addClass('is-active');
-  });
 
   //define sections and run animations
   const lineSections = document.querySelectorAll('[scroll-section]');
@@ -125,7 +86,6 @@ window.Webflow.push(() => {
     },
     (context) => {
       let { isMobile, isDesktop, reduceMotion } = context.conditions;
-      useCaseHeaderAnimation();
       if (!reduceMotion) {
         //Run if reduce motion is off
         lineSections.forEach((section) => {

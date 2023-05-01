@@ -36,10 +36,8 @@ const scrollTableAnimation = function (mobile = false) {
       // add or remove the class
       if (setToActive) {
         row.classList.add(ACTIVE_CLASS);
-        console.log('added is active');
       } else {
         row.classList.remove(ACTIVE_CLASS);
-        console.log('removed is active');
       }
     };
 

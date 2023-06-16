@@ -13,7 +13,7 @@ window.Webflow.push(() => {
 
   // Home Header
   const homeHeader = function () {
-    const images = document.querySelectorAll('.home-header_image.is-top');
+    const images = document.querySelectorAll('[header-main-image]');
     const tl = gsap.timeline({
       repeat: -1,
       yoyo: true,

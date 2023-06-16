@@ -168,6 +168,7 @@ window.Webflow.push(() => {
       );
     });
   };
+  // animation for icon section
   const iconHighlightAnimation = function (start = 'top 1%', end = 'bottom 99%') {
     const iconSection = document.querySelector('[cr-icon-highlight="section"]');
     const iconItems = document.querySelectorAll('[cr-icon-highlight="item"]');
@@ -186,7 +187,10 @@ window.Webflow.push(() => {
     });
     iconItems.forEach((item, index) => {
       const itemIcon = item.querySelector('[cr-icon-highlight="icon"]');
-      const itemText = item.querySelector('.product-icons_span');
+      const itemText = item.querySelector('[cr-icon-highlight="span"]');
+      if (!itemIcon) {
+        return;
+      }
       // unique tween for first item
       if (index === 0) {
         iconTL.set(
@@ -207,24 +211,29 @@ window.Webflow.push(() => {
           opacity: 1,
         });
       }
-      iconTL.set(
-        itemText,
-        {
-          fontWeight: 600,
-        },
-        '<'
-      );
+      if (itemText) {
+        iconTL.set(
+          itemText,
+          {
+            fontWeight: 600,
+          },
+          '<'
+        );
+      }
+
       iconTL.set(itemIcon, {
         opacity: 0,
         delay: 1,
       });
-      iconTL.set(
-        itemText,
-        {
-          fontWeight: 300,
-        },
-        '<'
-      );
+      if (itemText) {
+        iconTL.set(
+          itemText,
+          {
+            fontWeight: 300,
+          },
+          '<'
+        );
+      }
       // unique last tween
       if (index === iconItems.length - 1) {
         iconTL.to(itemIcon, {
@@ -233,12 +242,13 @@ window.Webflow.push(() => {
       }
     });
   };
+  // animation for data section with long image on the left
   const productDataAnimation = function (start = 'top 1%', end = 'bottom 99%') {
     const items = document.querySelectorAll('[cr-produducts-data-item]');
     if (!items) return;
 
     items.forEach((item) => {
-      const itemSquare = item.querySelector('.products-data_square');
+      const itemSquare = item.querySelector('[cr-produducts-data-square]');
       const itemContents = item.querySelectorAll('h2, h3, p, .button');
 
       // add a seperate timeline to fade in each item

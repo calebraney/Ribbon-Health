@@ -119,6 +119,8 @@ window.Webflow.push(() => {
     const processImages = document.querySelectorAll('[cr-process="image"]');
     ACTIVE_CLASS = 'is-active';
     processItems.forEach((item, index) => {
+      //guard clause
+      if (!item) return;
       const image = processImages[index];
       const imageTL = gsap.timeline({
         scrollTrigger: {
@@ -146,7 +148,7 @@ window.Webflow.push(() => {
           },
         },
       });
-      const itemSquare = item.querySelector('.product-process_square');
+      const itemSquare = item.querySelector('[cr-process="square"]');
       const itemContents = item.querySelectorAll('h2, h3, p, .button');
       const fadeTL = gsap.timeline({
         scrollTrigger: {

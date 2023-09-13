@@ -1,5 +1,4 @@
-import { scrollLineAnimation } from '../utilities/line.js';
-import { ACTIVE_CLASS } from '../config.js';
+import { ACTIVE_CLASS } from '../index';
 
 // Home Header
 export const homeHeader = function () {

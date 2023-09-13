@@ -97,10 +97,11 @@ export const productHeader = function (reduceMotion = false, isMobile = false) {
 };
 
 export const process = function () {
+  console.log('process');
   const processItems = document.querySelectorAll('[cr-process="item"]');
   const processImages = document.querySelectorAll('[cr-process="image"]');
-  ACTIVE_CLASS = 'is-active';
   processItems.forEach((item, index) => {
+    console.log(processImages, processItems);
     //guard clause
     if (!item) return;
     const image = processImages[index];

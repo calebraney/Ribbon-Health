@@ -1,14 +1,11 @@
-// Line Types
+import { attr } from './attributes.js';
 
-export const scrollLineAnimation = function (trigger, mobile = false) {
-  let scrollStart = 'top 90%';
-  let scrollEnd = 'bottom 90%';
-  if (trigger.hasAttribute('scroll-start')) {
-    scrollStart = trigger.getAttribute('scroll-start');
-  }
-  if (trigger.hasAttribute('scroll-end')) {
-    scrollEnd = trigger.getAttribute('scroll-end');
-  }
+// Line Types
+export const scrollLines = function (trigger, mobile = false) {
+  // get options
+  let scrollStart = attr('top 90%', trigger.getAttribute('scroll-start'));
+  let scrollEnd = attr('bottom 90%', trigger.getAttribute('scroll-end'));
+
   const lineTL = gsap.timeline({
     scrollTrigger: {
       trigger: trigger,

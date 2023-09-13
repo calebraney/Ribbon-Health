@@ -2,9 +2,9 @@ import * as esbuild from 'esbuild';
 
 await esbuild
   .build({
-    entryPoints: ['src/home.js', 'src/product.js', 'src/case-study.js', 'src/use-cases.js'],
+    entryPoints: ['src/index.js'],
     bundle: true,
-    minify: true,
+    minify: false,
     watch: true,
     sourcemap: false,
     outdir: 'dist/',

@@ -3,8 +3,8 @@ import { attr } from './attributes.js';
 // Line Types
 export const scrollLines = function (trigger, mobile = false) {
   // get options
-  let scrollStart = attr('top 90%', list.getAttribute(OPTION_FIRST_OPEN));
-  let scrollEnd = attr('bottom 90%', list.getAttribute(OPTION_FIRST_OPEN));
+  let scrollStart = attr('top 90%', trigger.getAttribute('scroll-start'));
+  let scrollEnd = attr('bottom 90%', trigger.getAttribute('scroll-end'));
 
   const lineTL = gsap.timeline({
     scrollTrigger: {

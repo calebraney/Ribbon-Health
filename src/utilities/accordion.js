@@ -13,7 +13,7 @@ export const accordionAnimation = function () {
   const OPTION_KEEP_ONE_OPEN = 'cr-accordion-keep-one-open';
   const ACTIVE_CLASS = 'is-active';
 
-  if (accordionLists.length === 0) return;
+  if (accordionLists.length === 0 || accordionLists === undefined) return;
   accordionLists.forEach((list) => {
     // set up conditions for
     let firstOpen = attr(false, list.getAttribute(OPTION_FIRST_OPEN));

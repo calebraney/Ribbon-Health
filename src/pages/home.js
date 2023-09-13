@@ -78,12 +78,18 @@ export const homeSplitScroll = function () {
 };
 
 export const homeSplitScrollMobile = function () {
-  $('.split-hover_item').on('click', function () {
-    let itemIndex = $(this).index();
-    $('.split-hover_item').removeClass('is-active');
-    $('.split-hover_image').removeClass('is-active');
-    $(this).addClass('is-active');
-    $('.split-hover_image').eq(itemIndex).addClass('is-active');
+  const splitItems = document.querySelectorAll('.split-hover_item');
+  const splitImages = document.querySelectorAll('.split-hover_image');
+
+  splitItems.forEach((item, itemIndex) => {
+    item.addEventListener('click', () => {
+      if (!item) return;
+      splitItems.forEach((item) => item.classList.remove(ACTIVE_CLASS));
+      splitImages.forEach((image) => image.classList.remove(ACTIVE_CLASS));
+
+      item.classList.add(ACTIVE_CLASS);
+      splitImages[itemIndex].classList.add(ACTIVE_CLASS);
+    });
   });
 };
 

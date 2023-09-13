@@ -1,9 +1,11 @@
 import paperCore from 'paper';
+import { ACTIVE_CLASS } from '../index';
 
 // Header Animation
 export const productHeader = function (reduceMotion = false, isMobile = false) {
-  // global variables for header animation tracking
-
+  // global variables
+  let headerTL;
+  let progress = 0;
   // get core variables
   const { Path, Point, Group, Color } = paperCore;
   const canvas = document.querySelector('#paper-canvas');
@@ -69,7 +71,6 @@ export const productHeader = function (reduceMotion = false, isMobile = false) {
     },
     0
   );
-
   headerScrollTL = gsap.timeline({
     scrollTrigger: {
       trigger: headerComponent,
@@ -97,11 +98,9 @@ export const productHeader = function (reduceMotion = false, isMobile = false) {
 };
 
 export const process = function () {
-  console.log('process');
   const processItems = document.querySelectorAll('[cr-process="item"]');
   const processImages = document.querySelectorAll('[cr-process="image"]');
   processItems.forEach((item, index) => {
-    console.log(processImages, processItems);
     //guard clause
     if (!item) return;
     const image = processImages[index];
@@ -137,13 +136,19 @@ export const process = function () {
       scrollTrigger: {
         trigger: item,
         start: 'top 80%',
-        end: 'top top',
+        end: 'top 10%',
         scrub: 0.5,
       },
     });
-    fadeTL.from(itemContents, {
-      opacity: 0,
-    });
+    fadeTL.fromTo(
+      itemContents,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+      }
+    );
     fadeTL.from(
       itemSquare,
       {

@@ -3,7 +3,6 @@ import { accordionAnimation } from './utilities/accordion.js';
 import { homeHeader, homeSplitScroll, homeSplitScrollMobile } from './pages/home.js';
 import { productHeader, process, iconHighlight, productData } from './pages/product.js';
 import { scrollTable } from './pages/use-cases.js';
-import paperCore from 'paper';
 
 //constants
 export const ACTIVE_CLASS = 'is-active';

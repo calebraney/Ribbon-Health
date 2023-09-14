@@ -15193,7 +15193,6 @@
   };
 
   // src/index.js
-  var import_paper2 = __toESM(require_paper_full(), 1);
   var ACTIVE_CLASS2 = "is-active";
   document.addEventListener("DOMContentLoaded", function(e) {
     gsap.registerPlugin(ScrollTrigger);

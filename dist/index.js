@@ -15324,7 +15324,6 @@
     gsap.registerPlugin(Flip);
     let mm = gsap.matchMedia();
     const lineSections = document.querySelectorAll("[scroll-section]");
-    console.log("dev");
     const gsapInit = function() {
       mm.add(
         {

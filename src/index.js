@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
   let mm = gsap.matchMedia();
   //Select Elements
   const lineSections = document.querySelectorAll('[scroll-section]');
-  console.log('dev');
   //activate animations
   const gsapInit = function () {
     mm.add(

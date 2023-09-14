@@ -11,7 +11,7 @@ export const accordionAnimation = function () {
   const OPTION_FIRST_OPEN = 'cr-accordion-first-open';
   const OPTION_ONE_ACTIVE = 'cr-accordion-one-active';
   const OPTION_KEEP_ONE_OPEN = 'cr-accordion-keep-one-open';
-  const OPTION_HOVER = 'cr-accordion-hover';
+  const OPTION_HOVER_OPEN = 'cr-accordion-hover';
   const ACTIVE_CLASS = 'is-active';
 
   if (accordionLists.length === 0 || accordionLists === undefined) return;
@@ -20,7 +20,7 @@ export const accordionAnimation = function () {
     let firstOpen = attr(false, list.getAttribute(OPTION_FIRST_OPEN));
     let oneActive = attr(false, list.getAttribute(OPTION_ONE_ACTIVE));
     let keepOneOpen = attr(false, list.getAttribute(OPTION_KEEP_ONE_OPEN));
-    let hoverOnly = attr(false, list.getAttribute(OPTION_HOVER));
+    let hoverOnly = attr(false, list.getAttribute(OPTION_HOVER_OPEN));
     //open the first accordion
     const firstItem = list.firstElementChild;
     if (firstOpen) {

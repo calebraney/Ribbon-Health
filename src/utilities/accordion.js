@@ -11,6 +11,7 @@ export const accordionAnimation = function () {
   const OPTION_FIRST_OPEN = 'cr-accordion-first-open';
   const OPTION_ONE_ACTIVE = 'cr-accordion-one-active';
   const OPTION_KEEP_ONE_OPEN = 'cr-accordion-keep-one-open';
+  const OPTION_HOVER = 'cr-accordion-hover';
   const ACTIVE_CLASS = 'is-active';
 
   if (accordionLists.length === 0 || accordionLists === undefined) return;

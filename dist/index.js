@@ -1,14 +1,15245 @@
-(()=>{var sr=Object.create;var nn=Object.defineProperty;var ar=Object.getOwnPropertyDescriptor;var ur=Object.getOwnPropertyNames;var or=Object.getPrototypeOf,hr=Object.prototype.hasOwnProperty;var Ci=(Q=>typeof require<"u"?require:typeof Proxy<"u"?new Proxy(Q,{get:(q,J)=>(typeof require<"u"?require:q)[J]}):Q)(function(Q){if(typeof require<"u")return require.apply(this,arguments);throw new Error('Dynamic require of "'+Q+'" is not supported')});var Ii=(Q,q)=>()=>(q||Q((q={exports:{}}).exports,q),q.exports);var lr=(Q,q,J,Y)=>{if(q&&typeof q=="object"||typeof q=="function")for(let T of ur(q))!hr.call(Q,T)&&T!==J&&nn(Q,T,{get:()=>q[T],enumerable:!(Y=ar(q,T))||Y.enumerable});return Q};var rn=(Q,q,J)=>(J=Q!=null?sr(or(Q)):{},lr(q||!Q||!Q.__esModule?nn(J,"default",{value:Q,enumerable:!0}):J,Q));var ln=Ii(()=>{});var fn=Ii(()=>{});var Ti=Ii((cn,Ne)=>{var xr=function(Q,q){Q=Q||ln();var J=Q.window,Y=Q.document,T=new function(){var t=/^(statics|enumerable|beans|preserve)$/,e=[],i=e.slice,n=Object.create,r=Object.getOwnPropertyDescriptor,s=Object.defineProperty,u=e.forEach||function(c,f){for(var b=0,v=this.length;b<v;b++)c.call(f,this[b],b,this)},a=function(c,f){for(var b in this)this.hasOwnProperty(b)&&c.call(f,this[b],b,this)},o=Object.assign||function(c){for(var f=1,b=arguments.length;f<b;f++){var v=arguments[f];for(var S in v)v.hasOwnProperty(S)&&(c[S]=v[S])}return c},h=function(c,f,b){if(c){var v=r(c,"length");(v&&typeof v.value=="number"?u:a).call(c,f,b=b||c)}return b};function d(c,f,b,v,S){var _={};function m(w,C){C=C||(C=r(f,w))&&(C.get?C:C.value),typeof C=="string"&&C[0]==="#"&&(C=c[C.substring(1)]||C);var I=typeof C=="function",P=C,L=S||I&&!C.base?C&&C.get?w in c:c[w]:null,k;(!S||!L)&&(I&&L&&(C.base=L),I&&v!==!1&&(k=w.match(/^([gs]et|is)(([A-Z])(.*))$/))&&(_[k[3].toLowerCase()+k[4]]=k[2]),(!P||I||!P.get||typeof P.get!="function"||!g.isPlainObject(P))&&(P={value:P,writable:!0}),(r(c,w)||{configurable:!0}).configurable&&(P.configurable=!0,P.enumerable=b??!k),s(c,w,P))}if(f){for(var l in f)f.hasOwnProperty(l)&&!t.test(l)&&m(l);for(var l in _){var p=_[l],y=c["set"+p],x=c["get"+p]||y&&c["is"+p];x&&(v===!0||x.length===0)&&m(l,{get:x,set:y})}}return c}function g(){for(var c=0,f=arguments.length;c<f;c++){var b=arguments[c];b&&o(this,b)}return this}return d(g,{inject:function(c){if(c){var f=c.statics===!0?c:c.statics,b=c.beans,v=c.preserve;f!==c&&d(this.prototype,c,c.enumerable,b,v),d(this,f,null,b,v)}for(var S=1,_=arguments.length;S<_;S++)this.inject(arguments[S]);return this},extend:function(){for(var c=this,f,b,v=0,S,_=arguments.length;v<_&&!(f&&b);v++)S=arguments[v],f=f||S.initialize,b=b||S.prototype;return f=f||function(){c.apply(this,arguments)},b=f.prototype=b||n(this.prototype),s(b,"constructor",{value:f,writable:!0,configurable:!0}),d(f,this),arguments.length&&this.inject.apply(f,arguments),f.base=c,f}}).inject({enumerable:!1,initialize:g,set:g,inject:function(){for(var c=0,f=arguments.length;c<f;c++){var b=arguments[c];b&&d(this,b,b.enumerable,b.beans,b.preserve)}return this},extend:function(){var c=n(this);return c.inject.apply(c,arguments)},each:function(c,f){return h(this,c,f)},clone:function(){return new this.constructor(this)},statics:{set:o,each:h,create:n,define:s,describe:r,clone:function(c){return o(new c.constructor,c)},isPlainObject:function(c){var f=c!=null&&c.constructor;return f&&(f===Object||f===g||f.name==="Object")},pick:function(c,f){return c!==q?c:f},slice:function(c,f,b){return i.call(c,f,b)}}})};typeof Ne<"u"&&(Ne.exports=T),T.inject({enumerable:!1,toString:function(){return this._id!=null?(this._class||"Object")+(this._name?" '"+this._name+"'":" @"+this._id):"{ "+T.each(this,function(t,e){if(!/^_/.test(e)){var i=typeof t;this.push(e+": "+(i==="number"?St.instance.number(t):i==="string"?"'"+t+"'":t))}},[]).join(", ")+" }"},getClassName:function(){return this._class||""},importJSON:function(t){return T.importJSON(t,this)},exportJSON:function(t){return T.exportJSON(this,t)},toJSON:function(){return T.serialize(this)},set:function(t,e){return t&&T.filter(this,t,e,this._prioritize),this}},{beans:!1,statics:{exports:{},extend:function t(){var e=t.base.apply(this,arguments),i=e.prototype._class;return i&&!T.exports[i]&&(T.exports[i]=e),e},equals:function(t,e){if(t===e)return!0;if(t&&t.equals)return t.equals(e);if(e&&e.equals)return e.equals(t);if(t&&e&&typeof t=="object"&&typeof e=="object"){if(Array.isArray(t)&&Array.isArray(e)){var i=t.length;if(i!==e.length)return!1;for(;i--;)if(!T.equals(t[i],e[i]))return!1}else{var n=Object.keys(t),i=n.length;if(i!==Object.keys(e).length)return!1;for(;i--;){var r=n[i];if(!(e.hasOwnProperty(r)&&T.equals(t[r],e[r])))return!1}}return!0}return!1},read:function(t,e,i,n){if(this===T){var r=this.peek(t,e);return t.__index++,r}var s=this.prototype,u=s._readIndex,a=e||u&&t.__index||0,o=t.length,h=t[a];if(n=n||o-a,h instanceof this||i&&i.readNull&&h==null&&n<=1)return u&&(t.__index=a+1),h&&i&&i.clone?h.clone():h;if(h=T.create(s),u&&(h.__read=!0),h=h.initialize.apply(h,a>0||a+n<o?T.slice(t,a,a+n):t)||h,u){t.__index=a+h.__read;var d=h.__filtered;d&&(t.__filtered=d,h.__filtered=q),h.__read=q}return h},peek:function(t,e){return t[t.__index=e||t.__index||0]},remain:function(t){return t.length-(t.__index||0)},readList:function(t,e,i,n){for(var r=[],s,u=e||0,a=n?u+n:t.length,o=u;o<a;o++)r.push(Array.isArray(s=t[o])?this.read(s,0,i):this.read(t,o,i,1));return r},readNamed:function(t,e,i,n,r){var s=this.getNamed(t,e),u=s!==q;if(u){var a=t.__filtered;if(!a){var o=this.getSource(t);a=t.__filtered=T.create(o),a.__unfiltered=o}a[e]=q}return this.read(u?[s]:t,i,n,r)},readSupported:function(t,e){var i=this.getSource(t),n=this,r=!1;return i&&Object.keys(i).forEach(function(s){if(s in e){var u=n.readNamed(t,s);u!==q&&(e[s]=u),r=!0}}),r},getSource:function(t){var e=t.__source;if(e===q){var i=t.length===1&&t[0];e=t.__source=i&&T.isPlainObject(i)?i:null}return e},getNamed:function(t,e){var i=this.getSource(t);if(i)return e?i[e]:t.__filtered||i},hasNamed:function(t,e){return!!this.getNamed(t,e)},filter:function(t,e,i,n){var r;function s(d){if(!(i&&d in i)&&!(r&&d in r)){var g=e[d];g!==q&&(t[d]=g)}}if(n){for(var u={},a=0,o,h=n.length;a<h;a++)(o=n[a])in e&&(s(o),u[o]=!0);r=u}return Object.keys(e.__unfiltered||e).forEach(s),t},isPlainValue:function(t,e){return T.isPlainObject(t)||Array.isArray(t)||e&&typeof t=="string"},serialize:function(t,e,i,n){e=e||{};var r=!n,s;if(r&&(e.formatter=new St(e.precision),n={length:0,definitions:{},references:{},add:function(g,c){var f="#"+g._id,b=this.references[f];if(!b){this.length++;var v=c.call(g),S=g._class;S&&v[0]!==S&&v.unshift(S),this.definitions[f]=v,b=this.references[f]=[f]}return b}}),t&&t._serialize){s=t._serialize(e,n);var u=t._class;u&&!t._compactSerialize&&(r||!i)&&s[0]!==u&&s.unshift(u)}else if(Array.isArray(t)){s=[];for(var a=0,o=t.length;a<o;a++)s[a]=T.serialize(t[a],e,i,n)}else if(T.isPlainObject(t)){s={};for(var h=Object.keys(t),a=0,o=h.length;a<o;a++){var d=h[a];s[d]=T.serialize(t[d],e,i,n)}}else typeof t=="number"?s=e.formatter.number(t,e.precision):s=t;return r&&n.length>0?[["dictionary",n.definitions],s]:s},deserialize:function(t,e,i,n,r){var s=t,u=!i,a=u&&t&&t.length&&t[0][0]==="dictionary";if(i=i||{},Array.isArray(t)){var o=t[0],h=o==="dictionary";if(t.length==1&&/^#/.test(o))return i.dictionary[o];o=T.exports[o],s=[];for(var d=o?1:0,g=t.length;d<g;d++)s.push(T.deserialize(t[d],e,i,h,a));if(o){var c=s;e?s=e(o,c,u||r):s=new o(c)}}else if(T.isPlainObject(t)){s={},n&&(i.dictionary=s);for(var f in t)s[f]=T.deserialize(t[f],e,i)}return a?s[1]:s},exportJSON:function(t,e){var i=T.serialize(t,e);return e&&e.asString==!1?i:JSON.stringify(i)},importJSON:function(t,e){return T.deserialize(typeof t=="string"?JSON.parse(t):t,function(i,n,r){var s=r&&e&&e.constructor===i,u=s?e:T.create(i.prototype);if(n.length===1&&u instanceof lt&&(s||!(u instanceof de))){var a=n[0];T.isPlainObject(a)&&(a.insert=!1,s&&(n=n.concat([lt.INSERT])))}return(s?u.set:i).apply(u,n),s&&(e=null),u})},push:function(t,e){var i=e.length;if(i<4096)t.push.apply(t,e);else{var n=t.length;t.length+=i;for(var r=0;r<i;r++)t[n+r]=e[r]}return t},splice:function(t,e,i,n){var r=e&&e.length,s=i===q;i=s?t.length:i,i>t.length&&(i=t.length);for(var u=0;u<r;u++)e[u]._index=i+u;if(s)return T.push(t,e),[];var a=[i,n];e&&T.push(a,e);for(var o=t.splice.apply(t,a),u=0,h=o.length;u<h;u++)o[u]._index=q;for(var u=i+r,h=t.length;u<h;u++)t[u]._index=u;return o},capitalize:function(t){return t.replace(/\b[a-z]/g,function(e){return e.toUpperCase()})},camelize:function(t){return t.replace(/-(.)/g,function(e,i){return i.toUpperCase()})},hyphenate:function(t){return t.replace(/([a-z])([A-Z])/g,"$1-$2").toLowerCase()}}});var Ct={on:function(t,e){if(typeof t!="string")T.each(t,function(s,u){this.on(u,s)},this);else{var i=this._eventTypes,n=i&&i[t],r=this._callbacks=this._callbacks||{};r=r[t]=r[t]||[],r.indexOf(e)===-1&&(r.push(e),n&&n.install&&r.length===1&&n.install.call(this,t))}return this},off:function(t,e){if(typeof t!="string"){T.each(t,function(u,a){this.off(a,u)},this);return}var i=this._eventTypes,n=i&&i[t],r=this._callbacks&&this._callbacks[t],s;return r&&(!e||(s=r.indexOf(e))!==-1&&r.length===1?(n&&n.uninstall&&n.uninstall.call(this,t),delete this._callbacks[t]):s!==-1&&r.splice(s,1)),this},once:function(t,e){return this.on(t,function i(){e.apply(this,arguments),this.off(t,i)})},emit:function(t,e){var i=this._callbacks&&this._callbacks[t];if(!i)return!1;var n=T.slice(arguments,1),r=e&&e.target&&!e.currentTarget;i=i.slice(),r&&(e.currentTarget=this);for(var s=0,u=i.length;s<u;s++)if(i[s].apply(this,n)==!1){e&&e.stop&&e.stop();break}return r&&delete e.currentTarget,!0},responds:function(t){return!!(this._callbacks&&this._callbacks[t])},attach:"#on",detach:"#off",fire:"#emit",_installEvents:function(t){var e=this._eventTypes,i=this._callbacks,n=t?"install":"uninstall";if(e){for(var r in i)if(i[r].length>0){var s=e[r],u=s&&s[n];u&&u.call(this,r)}}},statics:{inject:function t(e){var i=e._events;if(i){var n={};T.each(i,function(r,s){var u=typeof r=="string",a=u?r:s,o=T.capitalize(a),h=a.substring(2).toLowerCase();n[h]=u?{}:r,a="_"+a,e["get"+o]=function(){return this[a]},e["set"+o]=function(d){var g=this[a];g&&this.off(h,g),d&&this.on(h,d),this[a]=d}}),e._eventTypes=n}return t.base.apply(this,arguments)}}},pt=T.extend({_class:"PaperScope",initialize:function t(){gt=this,this.settings=new T({applyMatrix:!0,insertItems:!0,handleSize:4,hitTolerance:0}),this.project=null,this.projects=[],this.tools=[],this._id=t._id++,t._scopes[this._id]=this;var e=t.prototype;if(!this.support){var i=Nt.getContext(1,1)||{};e.support={nativeDash:"setLineDash"in i||"mozDash"in i,nativeBlendModes:ai.nativeModes},Nt.release(i)}if(!this.agent){var n=Q.navigator.userAgent.toLowerCase(),r=(/(darwin|win|mac|linux|freebsd|sunos)/.exec(n)||[])[0],s=r==="darwin"?"mac":r,u=e.agent=e.browser={platform:s};s&&(u[s]=!0),n.replace(/(opera|chrome|safari|webkit|firefox|msie|trident|atom|node|jsdom)\/?\s*([.\d]+)(?:.*version\/([.\d]+))?(?:.*rv\:v?([.\d]+))?/g,function(a,o,h,d,g){if(!u.chrome){var c=o==="opera"?d:/^(node|trident)$/.test(o)?g:h;u.version=c,u.versionNumber=parseFloat(c),o={trident:"msie",jsdom:"node"}[o]||o,u.name=o,u[o]=!0}}),u.chrome&&delete u.webkit,u.atom&&delete u.chrome}},version:"0.12.17",getView:function(){var t=this.project;return t&&t._view},getPaper:function(){return this},execute:function(t,e){var i=gt.PaperScript.execute(t,this,e);return Pt.updateFocus(),i},install:function(t){var e=this;T.each(["project","view","tool"],function(n){T.define(t,n,{configurable:!0,get:function(){return e[n]}})});for(var i in this)!/^_/.test(i)&&this[i]&&(t[i]=this[i])},setup:function(t){return gt=this,this.project=new Jt(t),this},createCanvas:function(t,e){return Nt.getCanvas(t,e)},activate:function(){gt=this},clear:function(){for(var t=this.projects,e=this.tools,i=t.length-1;i>=0;i--)t[i].remove();for(var i=e.length-1;i>=0;i--)e[i].remove()},remove:function(){this.clear(),delete pt._scopes[this._id]},statics:new function(){function t(e){return e+="Attribute",function(i,n){return i[e](n)||i[e]("data-paper-"+n)}}return{_scopes:{},_id:0,get:function(e){return this._scopes[e]||null},getAttribute:t("get"),hasAttribute:t("has")}}}),yt=T.extend(Ct,{initialize:function(t){this._scope=gt,this._index=this._scope[this._list].push(this)-1,(t||!this._scope[this._reference])&&this.activate()},activate:function(){if(!this._scope)return!1;var t=this._scope[this._reference];return t&&t!==this&&t.emit("deactivate"),this._scope[this._reference]=this,this.emit("activate",t),!0},isActive:function(){return this._scope[this._reference]===this},remove:function(){return this._index==null?!1:(T.splice(this._scope[this._list],null,this._index,1),this._scope[this._reference]==this&&(this._scope[this._reference]=null),this._scope=null,!0)},getView:function(){return this._scope.getView()}}),ft={findItemBoundsCollisions:function(t,e,i){function n(u){for(var a=new Array(u.length),o=0;o<u.length;o++){var h=u[o].getBounds();a[o]=[h.left,h.top,h.right,h.bottom]}return a}var r=n(t),s=!e||e===t?r:n(e);return this.findBoundsCollisions(r,s,i||0)},findCurveBoundsCollisions:function(t,e,i,n){function r(c){for(var f=Math.min,b=Math.max,v=new Array(c.length),S=0;S<c.length;S++){var _=c[S];v[S]=[f(_[0],_[2],_[4],_[6]),f(_[1],_[3],_[5],_[7]),b(_[0],_[2],_[4],_[6]),b(_[1],_[3],_[5],_[7])]}return v}var s=r(t),u=!e||e===t?s:r(e);if(n){for(var a=this.findBoundsCollisions(s,u,i||0,!1,!0),o=this.findBoundsCollisions(s,u,i||0,!0,!0),h=[],d=0,g=a.length;d<g;d++)h[d]={hor:a[d],ver:o[d]};return h}return this.findBoundsCollisions(s,u,i||0)},findBoundsCollisions:function(t,e,i,n,r){var s=!e||t===e,u=s?t:t.concat(e),a=t.length,o=u.length;function h(Z,$,j){for(var D=0,U=Z.length;D<U;){var W=U+D>>>1;u[Z[W]][$]<j?D=W+1:U=W}return D-1}for(var d=n?1:0,g=d+2,c=n?0:1,f=c+2,b=new Array(o),v=0;v<o;v++)b[v]=v;b.sort(function(Z,$){return u[Z][d]-u[$][d]});for(var S=[],_=new Array(a),v=0;v<o;v++){var m=b[v],l=u[m],p=s?m:m-a,y=m<a,x=s||!y,w=y?[]:null;if(S.length){var C=h(S,g,l[d]-i)+1;if(S.splice(0,C),s&&r){w=w.concat(S);for(var I=0;I<S.length;I++){var P=S[I];_[P].push(p)}}else for(var L=l[f],k=l[c],I=0;I<S.length;I++){var P=S[I],M=u[P],O=P<a,z=s||P>=a;(r||(y&&z||x&&O)&&L>=M[c]-i&&k<=M[f]+i)&&(y&&z&&w.push(s?P:P-a),x&&O&&_[P].push(p))}}if(y&&(t===e&&w.push(m),_[m]=w),S.length){var F=l[g],B=h(S,g,F);S.splice(B+1,0,m)}else S.push(m)}for(var v=0;v<_.length;v++){var V=_[v];V&&V.sort(function($,j){return $-j})}return _}},St=T.extend({initialize:function(t){this.precision=T.pick(t,5),this.multiplier=Math.pow(10,this.precision)},number:function(t){return this.precision<16?Math.round(t*this.multiplier)/this.multiplier:t},pair:function(t,e,i){return this.number(t)+(i||",")+this.number(e)},point:function(t,e){return this.number(t.x)+(e||",")+this.number(t.y)},size:function(t,e){return this.number(t.width)+(e||",")+this.number(t.height)},rectangle:function(t,e){return this.point(t,e)+(e||",")+this.size(t,e)}});St.instance=new St;var ct=new function(){var t=[[.5773502691896257],[0,.7745966692414834],[.33998104358485626,.8611363115940526],[0,.5384693101056831,.906179845938664],[.2386191860831969,.6612093864662645,.932469514203152],[0,.4058451513773972,.7415311855993945,.9491079123427585],[.1834346424956498,.525532409916329,.7966664774136267,.9602898564975363],[0,.3242534234038089,.6133714327005904,.8360311073266358,.9681602395076261],[.14887433898163122,.4333953941292472,.6794095682990244,.8650633666889845,.9739065285171717],[0,.26954315595234496,.5190961292068118,.7301520055740494,.8870625997680953,.978228658146057],[.1252334085114689,.3678314989981802,.5873179542866175,.7699026741943047,.9041172563704749,.9815606342467192],[0,.2304583159551348,.44849275103644687,.6423493394403402,.8015780907333099,.9175983992229779,.9841830547185881],[.10805494870734367,.31911236892788974,.5152486363581541,.6872929048116855,.827201315069765,.9284348836635735,.9862838086968123],[0,.20119409399743451,.3941513470775634,.5709721726085388,.7244177313601701,.8482065834104272,.937273392400706,.9879925180204854],[.09501250983763744,.2816035507792589,.45801677765722737,.6178762444026438,.755404408355003,.8656312023878318,.9445750230732326,.9894009349916499]],e=[[1],[.8888888888888888,.5555555555555556],[.6521451548625461,.34785484513745385],[.5688888888888889,.47862867049936647,.23692688505618908],[.46791393457269104,.3607615730481386,.17132449237917036],[.4179591836734694,.3818300505051189,.27970539148927664,.1294849661688697],[.362683783378362,.31370664587788727,.22238103445337448,.10122853629037626],[.3302393550012598,.31234707704000286,.26061069640293544,.1806481606948574,.08127438836157441],[.29552422471475287,.26926671930999635,.21908636251598204,.1494513491505806,.06667134430868814],[.2729250867779006,.26280454451024665,.23319376459199048,.18629021092773426,.1255803694649046,.05566856711617366],[.24914704581340277,.2334925365383548,.20316742672306592,.16007832854334622,.10693932599531843,.04717533638651183],[.2325515532308739,.22628318026289723,.2078160475368885,.17814598076194574,.13887351021978725,.09212149983772845,.04048400476531588],[.2152638534631578,.2051984637212956,.18553839747793782,.15720316715819355,.12151857068790319,.08015808715976021,.03511946033175186],[.2025782419255613,.19843148532711158,.1861610000155622,.16626920581699392,.13957067792615432,.10715922046717194,.07036604748810812,.03075324199611727],[.1894506104550685,.18260341504492358,.16915651939500254,.14959598881657674,.12462897125553388,.09515851168249279,.062253523938647894,.027152459411754096]],i=Math.abs,n=Math.sqrt,r=Math.pow,s=Math.log2||function(g){return Math.log(g)*Math.LOG2E},u=1e-12,a=112e-18;function o(g,c,f){return g<c?c:g>f?f:g}function h(g,c,f){function b(C){var I=C*134217729,P=C-I,L=P+I,k=C-L;return[L,k]}var v=c*c-g*f,S=c*c+g*f;if(i(v)*3<S){var _=b(g),m=b(c),l=b(f),p=c*c,y=m[0]*m[0]-p+2*m[0]*m[1]+m[1]*m[1],x=g*f,w=_[0]*l[0]-x+_[0]*l[1]+_[1]*l[0]+_[1]*l[1];v=p-x+(y-w)}return v}function d(){var g=Math.max.apply(Math,arguments);return g&&(g<1e-8||g>1e8)?r(2,-Math.round(s(g))):0}return{EPSILON:u,MACHINE_EPSILON:a,CURVETIME_EPSILON:1e-8,GEOMETRIC_EPSILON:1e-7,TRIGONOMETRIC_EPSILON:1e-8,ANGULAR_EPSILON:1e-5,KAPPA:4*(n(2)-1)/3,isZero:function(g){return g>=-u&&g<=u},isMachineZero:function(g){return g>=-a&&g<=a},clamp:o,integrate:function(g,c,f,b){for(var v=t[b-2],S=e[b-2],_=(f-c)*.5,m=_+c,l=0,p=b+1>>1,y=b&1?S[l++]*g(m):0;l<p;){var x=_*v[l];y+=S[l++]*(g(m+x)+g(m-x))}return _*y},findRoot:function(g,c,f,b,v,S,_){for(var m=0;m<S;m++){var l=g(f),p=l/c(f),y=f-p;if(i(p)<_){f=y;break}l>0?(v=f,f=y<=b?(b+v)*.5:y):(b=f,f=y>=v?(b+v)*.5:y)}return o(f,b,v)},solveQuadratic:function(g,c,f,b,v,S){var _,m=1/0;if(i(g)<u){if(i(c)<u)return i(f)<u?-1:0;_=-f/c}else{c*=-.5;var l=h(g,c,f);if(l&&i(l)<a){var p=d(i(g),i(c),i(f));p&&(g*=p,c*=p,f*=p,l=h(g,c,f))}if(l>=-a){var y=l<0?0:n(l),x=c+(c<0?-y:y);x===0?(_=f/g,m=-_):(_=x/g,m=f/x)}}var w=0,C=v==null,I=v-u,P=S+u;return isFinite(_)&&(C||_>I&&_<P)&&(b[w++]=C?_:o(_,v,S)),m!==_&&isFinite(m)&&(C||m>I&&m<P)&&(b[w++]=C?m:o(m,v,S)),w},solveCubic:function(g,c,f,b,v,S,_){var m=d(i(g),i(c),i(f),i(b)),l,p,y,x,w;m&&(g*=m,c*=m,f*=m,b*=m);function C(B){l=B;var V=g*l;p=V+c,y=p*l+f,x=(V+p)*l+y,w=y*l+b}if(i(g)<u)g=c,p=f,y=b,l=1/0;else if(i(b)<u)p=c,y=f,l=0;else{C(-(c/g)/3);var I=w/g,P=r(i(I),1/3),L=I<0?-1:1,k=-x/g,M=k>0?1.324717957244746*Math.max(P,n(k)):P,O=l-L*M;if(O!==l){do C(O),O=x===0?l:l-w/x/(1+a);while(L*O>L*l);i(g)*l*l>i(b/l)&&(y=-b/l,p=(y-f)/l)}}var z=ct.solveQuadratic(g,p,y,v,S,_),F=S==null;return isFinite(l)&&(z===0||z>0&&l!==v[0]&&l!==v[1])&&(F||l>S-u&&l<_+u)&&(v[z++]=F?l:o(l,S,_)),z}}},ae={_id:1,_pools:{},get:function(t){if(t){var e=this._pools[t];return e||(e=this._pools[t]={_id:1}),e._id++}else return this._id++}},N=T.extend({_class:"Point",_readIndex:!0,initialize:function(e,i){var n=typeof e,r=this.__read,s=0;if(n==="number"){var u=typeof i=="number";this._set(e,u?i:e),r&&(s=u?2:1)}else if(n==="undefined"||e===null)this._set(0,0),r&&(s=e===null?1:0);else{var a=n==="string"?e.split(/[\s,]+/)||[]:e;s=1,Array.isArray(a)?this._set(+a[0],+(a.length>1?a[1]:a[0])):"x"in a?this._set(a.x||0,a.y||0):"width"in a?this._set(a.width||0,a.height||0):"angle"in a?(this._set(a.length||0,0),this.setAngle(a.angle||0)):(this._set(0,0),s=0)}return r&&(this.__read=s),this},set:"#initialize",_set:function(t,e){return this.x=t,this.y=e,this},equals:function(t){return this===t||t&&(this.x===t.x&&this.y===t.y||Array.isArray(t)&&this.x===t[0]&&this.y===t[1])||!1},clone:function(){return new N(this.x,this.y)},toString:function(){var t=St.instance;return"{ x: "+t.number(this.x)+", y: "+t.number(this.y)+" }"},_serialize:function(t){var e=t.formatter;return[e.number(this.x),e.number(this.y)]},getLength:function(){return Math.sqrt(this.x*this.x+this.y*this.y)},setLength:function(t){if(this.isZero()){var e=this._angle||0;this._set(Math.cos(e)*t,Math.sin(e)*t)}else{var i=t/this.getLength();ct.isZero(i)&&this.getAngle(),this._set(this.x*i,this.y*i)}},getAngle:function(){return this.getAngleInRadians.apply(this,arguments)*180/Math.PI},setAngle:function(t){this.setAngleInRadians.call(this,t*Math.PI/180)},getAngleInDegrees:"#getAngle",setAngleInDegrees:"#setAngle",getAngleInRadians:function(){if(arguments.length){var t=N.read(arguments),e=this.getLength()*t.getLength();if(ct.isZero(e))return NaN;var i=this.dot(t)/e;return Math.acos(i<-1?-1:i>1?1:i)}else return this.isZero()?this._angle||0:this._angle=Math.atan2(this.y,this.x)},setAngleInRadians:function(t){if(this._angle=t,!this.isZero()){var e=this.getLength();this._set(Math.cos(t)*e,Math.sin(t)*e)}},getQuadrant:function(){return this.x>=0?this.y>=0?1:4:this.y>=0?2:3}},{beans:!1,getDirectedAngle:function(){var t=N.read(arguments);return Math.atan2(this.cross(t),this.dot(t))*180/Math.PI},getDistance:function(){var t=arguments,e=N.read(t),i=e.x-this.x,n=e.y-this.y,r=i*i+n*n,s=T.read(t);return s?r:Math.sqrt(r)},normalize:function(t){t===q&&(t=1);var e=this.getLength(),i=e!==0?t/e:0,n=new N(this.x*i,this.y*i);return i>=0&&(n._angle=this._angle),n},rotate:function(t,e){if(t===0)return this.clone();t=t*Math.PI/180;var i=e?this.subtract(e):this,n=Math.sin(t),r=Math.cos(t);return i=new N(i.x*r-i.y*n,i.x*n+i.y*r),e?i.add(e):i},transform:function(t){return t?t._transformPoint(this):this},add:function(){var t=N.read(arguments);return new N(this.x+t.x,this.y+t.y)},subtract:function(){var t=N.read(arguments);return new N(this.x-t.x,this.y-t.y)},multiply:function(){var t=N.read(arguments);return new N(this.x*t.x,this.y*t.y)},divide:function(){var t=N.read(arguments);return new N(this.x/t.x,this.y/t.y)},modulo:function(){var t=N.read(arguments);return new N(this.x%t.x,this.y%t.y)},negate:function(){return new N(-this.x,-this.y)},isInside:function(){return et.read(arguments).contains(this)},isClose:function(){var t=arguments,e=N.read(t),i=T.read(t);return this.getDistance(e)<=i},isCollinear:function(){var t=N.read(arguments);return N.isCollinear(this.x,this.y,t.x,t.y)},isColinear:"#isCollinear",isOrthogonal:function(){var t=N.read(arguments);return N.isOrthogonal(this.x,this.y,t.x,t.y)},isZero:function(){var t=ct.isZero;return t(this.x)&&t(this.y)},isNaN:function(){return isNaN(this.x)||isNaN(this.y)},isInQuadrant:function(t){return this.x*(t>1&&t<4?-1:1)>=0&&this.y*(t>2?-1:1)>=0},dot:function(){var t=N.read(arguments);return this.x*t.x+this.y*t.y},cross:function(){var t=N.read(arguments);return this.x*t.y-this.y*t.x},project:function(){var t=N.read(arguments),e=t.isZero()?0:this.dot(t)/t.dot(t);return new N(t.x*e,t.y*e)},statics:{min:function(){var t=arguments,e=N.read(t),i=N.read(t);return new N(Math.min(e.x,i.x),Math.min(e.y,i.y))},max:function(){var t=arguments,e=N.read(t),i=N.read(t);return new N(Math.max(e.x,i.x),Math.max(e.y,i.y))},random:function(){return new N(Math.random(),Math.random())},isCollinear:function(t,e,i,n){return Math.abs(t*n-e*i)<=Math.sqrt((t*t+e*e)*(i*i+n*n))*1e-8},isOrthogonal:function(t,e,i,n){return Math.abs(t*i+e*n)<=Math.sqrt((t*t+e*e)*(i*i+n*n))*1e-8}}},T.each(["round","ceil","floor","abs"],function(t){var e=Math[t];this[t]=function(){return new N(e(this.x),e(this.y))}},{})),jt=N.extend({initialize:function(e,i,n,r){this._x=e,this._y=i,this._owner=n,this._setter=r},_set:function(t,e,i){return this._x=t,this._y=e,i||this._owner[this._setter](this),this},getX:function(){return this._x},setX:function(t){this._x=t,this._owner[this._setter](this)},getY:function(){return this._y},setY:function(t){this._y=t,this._owner[this._setter](this)},isSelected:function(){return!!(this._owner._selection&this._getSelection())},setSelected:function(t){this._owner._changeSelection(this._getSelection(),t)},_getSelection:function(){return this._setter==="setPosition"?4:0}}),tt=T.extend({_class:"Size",_readIndex:!0,initialize:function(e,i){var n=typeof e,r=this.__read,s=0;if(n==="number"){var u=typeof i=="number";this._set(e,u?i:e),r&&(s=u?2:1)}else if(n==="undefined"||e===null)this._set(0,0),r&&(s=e===null?1:0);else{var a=n==="string"?e.split(/[\s,]+/)||[]:e;s=1,Array.isArray(a)?this._set(+a[0],+(a.length>1?a[1]:a[0])):"width"in a?this._set(a.width||0,a.height||0):"x"in a?this._set(a.x||0,a.y||0):(this._set(0,0),s=0)}return r&&(this.__read=s),this},set:"#initialize",_set:function(t,e){return this.width=t,this.height=e,this},equals:function(t){return t===this||t&&(this.width===t.width&&this.height===t.height||Array.isArray(t)&&this.width===t[0]&&this.height===t[1])||!1},clone:function(){return new tt(this.width,this.height)},toString:function(){var t=St.instance;return"{ width: "+t.number(this.width)+", height: "+t.number(this.height)+" }"},_serialize:function(t){var e=t.formatter;return[e.number(this.width),e.number(this.height)]},add:function(){var t=tt.read(arguments);return new tt(this.width+t.width,this.height+t.height)},subtract:function(){var t=tt.read(arguments);return new tt(this.width-t.width,this.height-t.height)},multiply:function(){var t=tt.read(arguments);return new tt(this.width*t.width,this.height*t.height)},divide:function(){var t=tt.read(arguments);return new tt(this.width/t.width,this.height/t.height)},modulo:function(){var t=tt.read(arguments);return new tt(this.width%t.width,this.height%t.height)},negate:function(){return new tt(-this.width,-this.height)},isZero:function(){var t=ct.isZero;return t(this.width)&&t(this.height)},isNaN:function(){return isNaN(this.width)||isNaN(this.height)},statics:{min:function(t,e){return new tt(Math.min(t.width,e.width),Math.min(t.height,e.height))},max:function(t,e){return new tt(Math.max(t.width,e.width),Math.max(t.height,e.height))},random:function(){return new tt(Math.random(),Math.random())}}},T.each(["round","ceil","floor","abs"],function(t){var e=Math[t];this[t]=function(){return new tt(e(this.width),e(this.height))}},{})),ce=tt.extend({initialize:function(e,i,n,r){this._width=e,this._height=i,this._owner=n,this._setter=r},_set:function(t,e,i){return this._width=t,this._height=e,i||this._owner[this._setter](this),this},getWidth:function(){return this._width},setWidth:function(t){this._width=t,this._owner[this._setter](this)},getHeight:function(){return this._height},setHeight:function(t){this._height=t,this._owner[this._setter](this)}}),et=T.extend({_class:"Rectangle",_readIndex:!0,beans:!0,initialize:function(e,i,n,r){var s=arguments,u=typeof e,a;if(u==="number"?(this._set(e,i,n,r),a=4):u==="undefined"||e===null?(this._set(0,0,0,0),a=e===null?1:0):s.length===1&&(Array.isArray(e)?(this._set.apply(this,e),a=1):e.x!==q||e.width!==q?(this._set(e.x||0,e.y||0,e.width||0,e.height||0),a=1):e.from===q&&e.to===q&&(this._set(0,0,0,0),T.readSupported(s,this)&&(a=1))),a===q){var o=N.readNamed(s,"from"),h=T.peek(s),d=o.x,g=o.y,c,f;if(h&&h.x!==q||T.hasNamed(s,"to")){var b=N.readNamed(s,"to");c=b.x-d,f=b.y-g,c<0&&(d=b.x,c=-c),f<0&&(g=b.y,f=-f)}else{var v=tt.read(s);c=v.width,f=v.height}this._set(d,g,c,f),a=s.__index}var S=s.__filtered;return S&&(this.__filtered=S),this.__read&&(this.__read=a),this},set:"#initialize",_set:function(t,e,i,n){return this.x=t,this.y=e,this.width=i,this.height=n,this},clone:function(){return new et(this.x,this.y,this.width,this.height)},equals:function(t){var e=T.isPlainValue(t)?et.read(arguments):t;return e===this||e&&this.x===e.x&&this.y===e.y&&this.width===e.width&&this.height===e.height||!1},toString:function(){var t=St.instance;return"{ x: "+t.number(this.x)+", y: "+t.number(this.y)+", width: "+t.number(this.width)+", height: "+t.number(this.height)+" }"},_serialize:function(t){var e=t.formatter;return[e.number(this.x),e.number(this.y),e.number(this.width),e.number(this.height)]},getPoint:function(t){var e=t?N:jt;return new e(this.x,this.y,this,"setPoint")},setPoint:function(){var t=N.read(arguments);this.x=t.x,this.y=t.y},getSize:function(t){var e=t?tt:ce;return new e(this.width,this.height,this,"setSize")},_fw:1,_fh:1,setSize:function(){var t=tt.read(arguments),e=this._sx,i=this._sy,n=t.width,r=t.height;e&&(this.x+=(this.width-n)*e),i&&(this.y+=(this.height-r)*i),this.width=n,this.height=r,this._fw=this._fh=1},getLeft:function(){return this.x},setLeft:function(t){if(!this._fw){var e=t-this.x;this.width-=this._sx===.5?e*2:e}this.x=t,this._sx=this._fw=0},getTop:function(){return this.y},setTop:function(t){if(!this._fh){var e=t-this.y;this.height-=this._sy===.5?e*2:e}this.y=t,this._sy=this._fh=0},getRight:function(){return this.x+this.width},setRight:function(t){if(!this._fw){var e=t-this.x;this.width=this._sx===.5?e*2:e}this.x=t-this.width,this._sx=1,this._fw=0},getBottom:function(){return this.y+this.height},setBottom:function(t){if(!this._fh){var e=t-this.y;this.height=this._sy===.5?e*2:e}this.y=t-this.height,this._sy=1,this._fh=0},getCenterX:function(){return this.x+this.width/2},setCenterX:function(t){this._fw||this._sx===.5?this.x=t-this.width/2:(this._sx&&(this.x+=(t-this.x)*2*this._sx),this.width=(t-this.x)*2),this._sx=.5,this._fw=0},getCenterY:function(){return this.y+this.height/2},setCenterY:function(t){this._fh||this._sy===.5?this.y=t-this.height/2:(this._sy&&(this.y+=(t-this.y)*2*this._sy),this.height=(t-this.y)*2),this._sy=.5,this._fh=0},getCenter:function(t){var e=t?N:jt;return new e(this.getCenterX(),this.getCenterY(),this,"setCenter")},setCenter:function(){var t=N.read(arguments);return this.setCenterX(t.x),this.setCenterY(t.y),this},getArea:function(){return this.width*this.height},isEmpty:function(){return this.width===0||this.height===0},contains:function(t){return t&&t.width!==q||(Array.isArray(t)?t:arguments).length===4?this._containsRectangle(et.read(arguments)):this._containsPoint(N.read(arguments))},_containsPoint:function(t){var e=t.x,i=t.y;return e>=this.x&&i>=this.y&&e<=this.x+this.width&&i<=this.y+this.height},_containsRectangle:function(t){var e=t.x,i=t.y;return e>=this.x&&i>=this.y&&e+t.width<=this.x+this.width&&i+t.height<=this.y+this.height},intersects:function(){var t=et.read(arguments),e=T.read(arguments)||0;return t.x+t.width>this.x-e&&t.y+t.height>this.y-e&&t.x<this.x+this.width+e&&t.y<this.y+this.height+e},intersect:function(){var t=et.read(arguments),e=Math.max(this.x,t.x),i=Math.max(this.y,t.y),n=Math.min(this.x+this.width,t.x+t.width),r=Math.min(this.y+this.height,t.y+t.height);return new et(e,i,n-e,r-i)},unite:function(){var t=et.read(arguments),e=Math.min(this.x,t.x),i=Math.min(this.y,t.y),n=Math.max(this.x+this.width,t.x+t.width),r=Math.max(this.y+this.height,t.y+t.height);return new et(e,i,n-e,r-i)},include:function(){var t=N.read(arguments),e=Math.min(this.x,t.x),i=Math.min(this.y,t.y),n=Math.max(this.x+this.width,t.x),r=Math.max(this.y+this.height,t.y);return new et(e,i,n-e,r-i)},expand:function(){var t=tt.read(arguments),e=t.width,i=t.height;return new et(this.x-e/2,this.y-i/2,this.width+e,this.height+i)},scale:function(t,e){return this.expand(this.width*t-this.width,this.height*(e===q?t:e)-this.height)}},T.each([["Top","Left"],["Top","Right"],["Bottom","Left"],["Bottom","Right"],["Left","Center"],["Top","Center"],["Right","Center"],["Bottom","Center"]],function(t,e){var i=t.join(""),n=/^[RL]/.test(i);e>=4&&(t[1]+=n?"Y":"X");var r=t[n?0:1],s=t[n?1:0],u="get"+r,a="get"+s,o="set"+r,h="set"+s,d="get"+i,g="set"+i;this[d]=function(c){var f=c?N:jt;return new f(this[u](),this[a](),this,g)},this[g]=function(){var c=N.read(arguments);this[o](c.x),this[h](c.y)}},{beans:!0})),ue=et.extend({initialize:function(e,i,n,r,s,u){this._set(e,i,n,r,!0),this._owner=s,this._setter=u},_set:function(t,e,i,n,r){return this._x=t,this._y=e,this._width=i,this._height=n,r||this._owner[this._setter](this),this}},new function(){var t=et.prototype;return T.each(["x","y","width","height"],function(e){var i=T.capitalize(e),n="_"+e;this["get"+i]=function(){return this[n]},this["set"+i]=function(r){this[n]=r,this._dontNotify||this._owner[this._setter](this)}},T.each(["Point","Size","Center","Left","Top","Right","Bottom","CenterX","CenterY","TopLeft","TopRight","BottomLeft","BottomRight","LeftCenter","TopCenter","RightCenter","BottomCenter"],function(e){var i="set"+e;this[i]=function(){this._dontNotify=!0,t[i].apply(this,arguments),this._dontNotify=!1,this._owner[this._setter](this)}},{isSelected:function(){return!!(this._owner._selection&2)},setSelected:function(e){var i=this._owner;i._changeSelection&&i._changeSelection(2,e)}}))}),vt=T.extend({_class:"Matrix",initialize:function t(e,i){var n=arguments,r=n.length,s=!0;if(r>=6?this._set.apply(this,n):r===1||r===2?e instanceof t?this._set(e._a,e._b,e._c,e._d,e._tx,e._ty,i):Array.isArray(e)?this._set.apply(this,i?e.concat([i]):e):s=!1:r?s=!1:this.reset(),!s)throw new Error("Unsupported matrix parameters");return this},set:"#initialize",_set:function(t,e,i,n,r,s,u){return this._a=t,this._b=e,this._c=i,this._d=n,this._tx=r,this._ty=s,u||this._changed(),this},_serialize:function(t,e){return T.serialize(this.getValues(),t,!0,e)},_changed:function(){var t=this._owner;t&&(t._applyMatrix?t.transform(null,!0):t._changed(25))},clone:function(){return new vt(this._a,this._b,this._c,this._d,this._tx,this._ty)},equals:function(t){return t===this||t&&this._a===t._a&&this._b===t._b&&this._c===t._c&&this._d===t._d&&this._tx===t._tx&&this._ty===t._ty},toString:function(){var t=St.instance;return"[["+[t.number(this._a),t.number(this._c),t.number(this._tx)].join(", ")+"], ["+[t.number(this._b),t.number(this._d),t.number(this._ty)].join(", ")+"]]"},reset:function(t){return this._a=this._d=1,this._b=this._c=this._tx=this._ty=0,t||this._changed(),this},apply:function(t,e){var i=this._owner;return i?(i.transform(null,T.pick(t,!0),e),this.isIdentity()):!1},translate:function(){var t=N.read(arguments),e=t.x,i=t.y;return this._tx+=e*this._a+i*this._c,this._ty+=e*this._b+i*this._d,this._changed(),this},scale:function(){var t=arguments,e=N.read(t),i=N.read(t,0,{readNull:!0});return i&&this.translate(i),this._a*=e.x,this._b*=e.x,this._c*=e.y,this._d*=e.y,i&&this.translate(i.negate()),this._changed(),this},rotate:function(t){t*=Math.PI/180;var e=N.read(arguments,1),i=e.x,n=e.y,r=Math.cos(t),s=Math.sin(t),u=i-i*r+n*s,a=n-i*s-n*r,o=this._a,h=this._b,d=this._c,g=this._d;return this._a=r*o+s*d,this._b=r*h+s*g,this._c=-s*o+r*d,this._d=-s*h+r*g,this._tx+=u*o+a*d,this._ty+=u*h+a*g,this._changed(),this},shear:function(){var t=arguments,e=N.read(t),i=N.read(t,0,{readNull:!0});i&&this.translate(i);var n=this._a,r=this._b;return this._a+=e.y*this._c,this._b+=e.y*this._d,this._c+=e.x*n,this._d+=e.x*r,i&&this.translate(i.negate()),this._changed(),this},skew:function(){var t=arguments,e=N.read(t),i=N.read(t,0,{readNull:!0}),n=Math.PI/180,r=new N(Math.tan(e.x*n),Math.tan(e.y*n));return this.shear(r,i)},append:function(t,e){if(t){var i=this._a,n=this._b,r=this._c,s=this._d,u=t._a,a=t._c,o=t._b,h=t._d,d=t._tx,g=t._ty;this._a=u*i+o*r,this._c=a*i+h*r,this._b=u*n+o*s,this._d=a*n+h*s,this._tx+=d*i+g*r,this._ty+=d*n+g*s,e||this._changed()}return this},prepend:function(t,e){if(t){var i=this._a,n=this._b,r=this._c,s=this._d,u=this._tx,a=this._ty,o=t._a,h=t._c,d=t._b,g=t._d,c=t._tx,f=t._ty;this._a=o*i+h*n,this._c=o*r+h*s,this._b=d*i+g*n,this._d=d*r+g*s,this._tx=o*u+h*a+c,this._ty=d*u+g*a+f,e||this._changed()}return this},appended:function(t){return this.clone().append(t)},prepended:function(t){return this.clone().prepend(t)},invert:function(){var t=this._a,e=this._b,i=this._c,n=this._d,r=this._tx,s=this._ty,u=t*n-e*i,a=null;return u&&!isNaN(u)&&isFinite(r)&&isFinite(s)&&(this._a=n/u,this._b=-e/u,this._c=-i/u,this._d=t/u,this._tx=(i*s-n*r)/u,this._ty=(e*r-t*s)/u,a=this),a},inverted:function(){return this.clone().invert()},concatenate:"#append",preConcatenate:"#prepend",chain:"#appended",_shiftless:function(){return new vt(this._a,this._b,this._c,this._d,0,0)},_orNullIfIdentity:function(){return this.isIdentity()?null:this},isIdentity:function(){return this._a===1&&this._b===0&&this._c===0&&this._d===1&&this._tx===0&&this._ty===0},isInvertible:function(){var t=this._a*this._d-this._c*this._b;return t&&!isNaN(t)&&isFinite(this._tx)&&isFinite(this._ty)},isSingular:function(){return!this.isInvertible()},transform:function(t,e,i){return arguments.length<3?this._transformPoint(N.read(arguments)):this._transformCoordinates(t,e,i)},_transformPoint:function(t,e,i){var n=t.x,r=t.y;return e||(e=new N),e._set(n*this._a+r*this._c+this._tx,n*this._b+r*this._d+this._ty,i)},_transformCoordinates:function(t,e,i){for(var n=0,r=2*i;n<r;n+=2){var s=t[n],u=t[n+1];e[n]=s*this._a+u*this._c+this._tx,e[n+1]=s*this._b+u*this._d+this._ty}return e},_transformCorners:function(t){var e=t.x,i=t.y,n=e+t.width,r=i+t.height,s=[e,i,n,i,n,r,e,r];return this._transformCoordinates(s,s,4)},_transformBounds:function(t,e,i){for(var n=this._transformCorners(t),r=n.slice(0,2),s=r.slice(),u=2;u<8;u++){var a=n[u],o=u&1;a<r[o]?r[o]=a:a>s[o]&&(s[o]=a)}return e||(e=new et),e._set(r[0],r[1],s[0]-r[0],s[1]-r[1],i)},inverseTransform:function(){return this._inverseTransform(N.read(arguments))},_inverseTransform:function(t,e,i){var n=this._a,r=this._b,s=this._c,u=this._d,a=this._tx,o=this._ty,h=n*u-r*s,d=null;if(h&&!isNaN(h)&&isFinite(a)&&isFinite(o)){var g=t.x-this._tx,c=t.y-this._ty;e||(e=new N),d=e._set((g*u-c*s)/h,(c*n-g*r)/h,i)}return d},decompose:function(){var t=this._a,e=this._b,i=this._c,n=this._d,r=t*n-e*i,s=Math.sqrt,u=Math.atan2,a=180/Math.PI,o,h,d;if(t!==0||e!==0){var g=s(t*t+e*e);o=Math.acos(t/g)*(e>0?1:-1),h=[g,r/g],d=[u(t*i+e*n,g*g),0]}else if(i!==0||n!==0){var c=s(i*i+n*n);o=Math.asin(i/c)*(n>0?1:-1),h=[r/c,c],d=[0,u(t*i+e*n,c*c)]}else o=0,d=h=[0,0];return{translation:this.getTranslation(),rotation:o*a,scaling:new N(h),skewing:new N(d[0]*a,d[1]*a)}},getValues:function(){return[this._a,this._b,this._c,this._d,this._tx,this._ty]},getTranslation:function(){return new N(this._tx,this._ty)},getScaling:function(){return this.decompose().scaling},getRotation:function(){return this.decompose().rotation},applyToContext:function(t){this.isIdentity()||t.transform(this._a,this._b,this._c,this._d,this._tx,this._ty)}},T.each(["a","b","c","d","tx","ty"],function(t){var e=T.capitalize(t),i="_"+t;this["get"+e]=function(){return this[i]},this["set"+e]=function(n){this[i]=n,this._changed()}},{})),It=T.extend({_class:"Line",initialize:function(e,i,n,r,s){var u=!1;arguments.length>=4?(this._px=e,this._py=i,this._vx=n,this._vy=r,u=s):(this._px=e.x,this._py=e.y,this._vx=i.x,this._vy=i.y,u=n),u||(this._vx-=this._px,this._vy-=this._py)},getPoint:function(){return new N(this._px,this._py)},getVector:function(){return new N(this._vx,this._vy)},getLength:function(){return this.getVector().getLength()},intersect:function(t,e){return It.intersect(this._px,this._py,this._vx,this._vy,t._px,t._py,t._vx,t._vy,!0,e)},getSide:function(t,e){return It.getSide(this._px,this._py,this._vx,this._vy,t.x,t.y,!0,e)},getDistance:function(t){return Math.abs(this.getSignedDistance(t))},getSignedDistance:function(t){return It.getSignedDistance(this._px,this._py,this._vx,this._vy,t.x,t.y,!0)},isCollinear:function(t){return N.isCollinear(this._vx,this._vy,t._vx,t._vy)},isOrthogonal:function(t){return N.isOrthogonal(this._vx,this._vy,t._vx,t._vy)},statics:{intersect:function(t,e,i,n,r,s,u,a,o,h){o||(i-=t,n-=e,u-=r,a-=s);var d=i*a-n*u;if(!ct.isMachineZero(d)){var g=t-r,c=e-s,f=(u*c-a*g)/d,b=(i*c-n*g)/d,v=1e-12,S=-v,_=1+v;if(h||S<f&&f<_&&S<b&&b<_)return h||(f=f<=0?0:f>=1?1:f),new N(t+f*i,e+f*n)}},getSide:function(t,e,i,n,r,s,u,a){u||(i-=t,n-=e);var o=r-t,h=s-e,d=o*n-h*i;return!a&&ct.isMachineZero(d)&&(d=(o*i+o*i)/(i*i+n*n),d>=0&&d<=1&&(d=0)),d<0?-1:d>0?1:0},getSignedDistance:function(t,e,i,n,r,s,u){return u||(i-=t,n-=e),i===0?n>0?r-t:t-r:n===0?i<0?s-e:e-s:((r-t)*n-(s-e)*i)/(n>i?n*Math.sqrt(1+i*i/(n*n)):i*Math.sqrt(1+n*n/(i*i)))},getDistance:function(t,e,i,n,r,s,u){return Math.abs(It.getSignedDistance(t,e,i,n,r,s,u))}}}),Jt=yt.extend({_class:"Project",_list:"projects",_reference:"project",_compactSerialize:!0,initialize:function(e){yt.call(this,!0),this._children=[],this._namedChildren={},this._activeLayer=null,this._currentStyle=new si(null,null,this),this._view=Pt.create(this,e||Nt.getCanvas(1,1)),this._selectionItems={},this._selectionCount=0,this._updateVersion=0},_serialize:function(t,e){return T.serialize(this._children,t,!0,e)},_changed:function(t,e){if(t&1){var i=this._view;i&&(i._needsUpdate=!0,!i._requested&&i._autoUpdate&&i.requestUpdate())}var n=this._changes;if(n&&e){var r=this._changesById,s=e._id,u=r[s];u?u.flags|=t:n.push(r[s]={item:e,flags:t})}},clear:function(){for(var t=this._children,e=t.length-1;e>=0;e--)t[e].remove()},isEmpty:function(){return!this._children.length},remove:function t(){return t.base.call(this)?(this._view&&this._view.remove(),!0):!1},getView:function(){return this._view},getCurrentStyle:function(){return this._currentStyle},setCurrentStyle:function(t){this._currentStyle.set(t)},getIndex:function(){return this._index},getOptions:function(){return this._scope.settings},getLayers:function(){return this._children},getActiveLayer:function(){return this._activeLayer||new de({project:this,insert:!0})},getSymbolDefinitions:function(){var t=[],e={};return this.getItems({class:Fe,match:function(i){var n=i._definition,r=n._id;return e[r]||(e[r]=!0,t.push(n)),!1}}),t},getSymbols:"getSymbolDefinitions",getSelectedItems:function(){var t=this._selectionItems,e=[];for(var i in t){var n=t[i],r=n._selection;r&1&&n.isInserted()?e.push(n):r||this._updateSelection(n)}return e},_updateSelection:function(t){var e=t._id,i=this._selectionItems;t._selection?i[e]!==t&&(this._selectionCount++,i[e]=t):i[e]===t&&(this._selectionCount--,delete i[e])},selectAll:function(){for(var t=this._children,e=0,i=t.length;e<i;e++)t[e].setFullySelected(!0)},deselectAll:function(){var t=this._selectionItems;for(var e in t)t[e].setFullySelected(!1)},addLayer:function(t){return this.insertLayer(q,t)},insertLayer:function(t,e){if(e instanceof de){e._remove(!1,!0),T.splice(this._children,[e],t,0),e._setProject(this,!0);var i=e._name;i&&e.setName(i),this._changes&&e._changed(5),this._activeLayer||(this._activeLayer=e)}else e=null;return e},_insertItem:function(t,e,i){return e=this.insertLayer(t,e)||(this._activeLayer||this._insertItem(q,new de(lt.NO_INSERT),!0)).insertChild(t,e),i&&e.activate&&e.activate(),e},getItems:function(t){return lt._getItems(this,t)},getItem:function(t){return lt._getItems(this,t,null,null,!0)[0]||null},importJSON:function(t){this.activate();var e=this._activeLayer;return T.importJSON(t,e&&e.isEmpty()&&e)},removeOn:function(t){var e=this._removeSets;if(e){t==="mouseup"&&(e.mousedrag=null);var i=e[t];if(i){for(var n in i){var r=i[n];for(var s in e){var u=e[s];u&&u!=i&&delete u[r._id]}r.remove()}e[t]=null}}},draw:function(t,e,i){this._updateVersion++,t.save(),e.applyToContext(t);for(var n=this._children,r=new T({offset:new N(0,0),pixelRatio:i,viewMatrix:e.isIdentity()?null:e,matrices:[new vt],updateMatrix:!0}),s=0,u=n.length;s<u;s++)n[s].draw(t,r);if(t.restore(),this._selectionCount>0){t.save(),t.strokeWidth=1;var a=this._selectionItems,o=this._scope.settings.handleSize,h=this._updateVersion;for(var d in a)a[d]._drawSelection(t,e,o,a,h);t.restore()}}}),lt=T.extend(Ct,{statics:{extend:function t(e){return e._serializeFields&&(e._serializeFields=T.set({},this.prototype._serializeFields,e._serializeFields)),t.base.apply(this,arguments)},INSERT:{insert:!0},NO_INSERT:{insert:!1}},_class:"Item",_name:null,_applyMatrix:!0,_canApplyMatrix:!0,_canScaleStroke:!1,_pivot:null,_visible:!0,_blendMode:"normal",_opacity:1,_locked:!1,_guide:!1,_clipMask:!1,_selection:0,_selectBounds:!0,_selectChildren:!1,_serializeFields:{name:null,applyMatrix:null,matrix:new vt,pivot:null,visible:!0,blendMode:"normal",opacity:1,locked:!1,guide:!1,clipMask:!1,selected:!1,data:{}},_prioritize:["applyMatrix"]},new function(){var t=["onMouseDown","onMouseUp","onMouseDrag","onClick","onDoubleClick","onMouseMove","onMouseEnter","onMouseLeave"];return T.each(t,function(e){this._events[e]={install:function(i){this.getView()._countItemEvent(i,1)},uninstall:function(i){this.getView()._countItemEvent(i,-1)}}},{_events:{onFrame:{install:function(){this.getView()._animateItem(this,!0)},uninstall:function(){this.getView()._animateItem(this,!1)}},onLoad:{},onError:{}},statics:{_itemHandlers:t}})},{initialize:function(){},_initialize:function(t,e){var i=t&&T.isPlainObject(t),n=i&&t.internal===!0,r=this._matrix=new vt,s=i&&t.project||gt.project,u=gt.settings;return this._id=n?null:ae.get(),this._parent=this._index=null,this._applyMatrix=this._canApplyMatrix&&u.applyMatrix,e&&r.translate(e),r._owner=this,this._style=new si(s._currentStyle,this,s),n||i&&t.insert==!1||!u.insertItems&&!(i&&t.insert==!0)?this._setProject(s):(i&&t.parent||s)._insertItem(q,this,!0),i&&t!==lt.NO_INSERT&&t!==lt.INSERT&&this.set(t,{internal:!0,insert:!0,project:!0,parent:!0}),i},_serialize:function(t,e){var i={},n=this;function r(s){for(var u in s){var a=n[u];T.equals(a,u==="leading"?s.fontSize*1.2:s[u])||(i[u]=T.serialize(a,t,u!=="data",e))}}return r(this._serializeFields),this instanceof Wt||r(this._style._defaults),[this._class,i]},_changed:function(t){var e=this._symbol,i=this._parent||e,n=this._project;t&8&&(this._bounds=this._position=this._decomposed=q),t&16&&(this._globalMatrix=q),i&&t&72&&lt._clearBoundsCache(i),t&2&&lt._clearBoundsCache(this),n&&n._changed(t,this),e&&e._changed(t)},getId:function(){return this._id},getName:function(){return this._name},setName:function(t){if(this._name&&this._removeNamed(),t===+t+"")throw new Error("Names consisting only of numbers are not supported.");var e=this._getOwner();if(t&&e){var i=e._children,n=e._namedChildren;(n[t]=n[t]||[]).push(this),t in i||(i[t]=this)}this._name=t||q,this._changed(256)},getStyle:function(){return this._style},setStyle:function(t){this.getStyle().set(t)}},T.each(["locked","visible","blendMode","opacity","guide"],function(t){var e=T.capitalize(t),i="_"+t,n={locked:256,visible:265};this["get"+e]=function(){return this[i]},this["set"+e]=function(r){r!=this[i]&&(this[i]=r,this._changed(n[t]||257))}},{}),{beans:!0,getSelection:function(){return this._selection},setSelection:function(t){if(t!==this._selection){this._selection=t;var e=this._project;e&&(e._updateSelection(this),this._changed(257))}},_changeSelection:function(t,e){var i=this._selection;this.setSelection(e?i|t:i&~t)},isSelected:function(){if(this._selectChildren){for(var t=this._children,e=0,i=t.length;e<i;e++)if(t[e].isSelected())return!0}return!!(this._selection&1)},setSelected:function(t){if(this._selectChildren)for(var e=this._children,i=0,n=e.length;i<n;i++)e[i].setSelected(t);this._changeSelection(1,t)},isFullySelected:function(){var t=this._children,e=!!(this._selection&1);if(t&&e){for(var i=0,n=t.length;i<n;i++)if(!t[i].isFullySelected())return!1;return!0}return e},setFullySelected:function(t){var e=this._children;if(e)for(var i=0,n=e.length;i<n;i++)e[i].setFullySelected(t);this._changeSelection(1,t)},isClipMask:function(){return this._clipMask},setClipMask:function(t){this._clipMask!=(t=!!t)&&(this._clipMask=t,t&&(this.setFillColor(null),this.setStrokeColor(null)),this._changed(257),this._parent&&this._parent._changed(2048))},getData:function(){return this._data||(this._data={}),this._data},setData:function(t){this._data=t},getPosition:function(t){var e=t?N:jt,i=this._position||(this._position=this._getPositionFromBounds());return new e(i.x,i.y,this,"setPosition")},setPosition:function(){this.translate(N.read(arguments).subtract(this.getPosition(!0)))},_getPositionFromBounds:function(t){return this._pivot?this._matrix._transformPoint(this._pivot):(t||this.getBounds()).getCenter(!0)},getPivot:function(){var t=this._pivot;return t?new jt(t.x,t.y,this,"setPivot"):null},setPivot:function(){this._pivot=N.read(arguments,0,{clone:!0,readNull:!0}),this._position=q}},T.each({getStrokeBounds:{stroke:!0},getHandleBounds:{handle:!0},getInternalBounds:{internal:!0}},function(t,e){this[e]=function(i){return this.getBounds(i,t)}},{beans:!0,getBounds:function(t,e){var i=e||t instanceof vt,n=T.set({},i?e:t,this._boundsOptions);(!n.stroke||this.getStrokeScaling())&&(n.cacheItem=this);var r=this._getCachedBounds(i&&t,n).rect;return arguments.length?r:new ue(r.x,r.y,r.width,r.height,this,"setBounds")},setBounds:function(){var t=et.read(arguments),e=this.getBounds(),i=this._matrix,n=new vt,r=t.getCenter();n.translate(r),(t.width!=e.width||t.height!=e.height)&&(i.isInvertible()||(i.set(i._backup||new vt().translate(i.getTranslation())),e=this.getBounds()),n.scale(e.width!==0?t.width/e.width:0,e.height!==0?t.height/e.height:0)),r=e.getCenter(),n.translate(-r.x,-r.y),this.transform(n)},_getBounds:function(t,e){var i=this._children;return!i||!i.length?new et:(lt._updateBoundsCache(this,e.cacheItem),lt._getBounds(i,t,e))},_getBoundsCacheKey:function(t,e){return[t.stroke?1:0,t.handle?1:0,e?1:0].join("")},_getCachedBounds:function(t,e,i){t=t&&t._orNullIfIdentity();var n=e.internal&&!i,r=e.cacheItem,s=n?null:this._matrix._orNullIfIdentity(),u=r&&(!t||t.equals(s))&&this._getBoundsCacheKey(e,n),a=this._bounds;if(lt._updateBoundsCache(this._parent||this._symbol,r),u&&a&&u in a){var o=a[u];return{rect:o.rect.clone(),nonscaling:o.nonscaling}}var h=this._getBounds(t||s,e),d=h.rect||h,g=this._style,c=h.nonscaling||g.hasStroke()&&!g.getStrokeScaling();if(u){a||(this._bounds=a={});var o=a[u]={rect:d.clone(),nonscaling:c,internal:n}}return{rect:d,nonscaling:c}},_getStrokeMatrix:function(t,e){var i=this.getStrokeScaling()?null:e&&e.internal?this:this._parent||this._symbol&&this._symbol._item,n=i?i.getViewMatrix().invert():t;return n&&n._shiftless()},statics:{_updateBoundsCache:function(t,e){if(t&&e){var i=e._id,n=t._boundsCache=t._boundsCache||{ids:{},list:[]};n.ids[i]||(n.list.push(e),n.ids[i]=e)}},_clearBoundsCache:function(t){var e=t._boundsCache;if(e){t._bounds=t._position=t._boundsCache=q;for(var i=0,n=e.list,r=n.length;i<r;i++){var s=n[i];s!==t&&(s._bounds=s._position=q,s._boundsCache&&lt._clearBoundsCache(s))}}},_getBounds:function(t,e,i){var n=1/0,r=-n,s=n,u=r,a=!1;i=i||{};for(var o=0,h=t.length;o<h;o++){var d=t[o];if(d._visible&&!d.isEmpty(!0)){var g=d._getCachedBounds(e&&e.appended(d._matrix),i,!0),c=g.rect;n=Math.min(c.x,n),s=Math.min(c.y,s),r=Math.max(c.x+c.width,r),u=Math.max(c.y+c.height,u),g.nonscaling&&(a=!0)}}return{rect:isFinite(n)?new et(n,s,r-n,u-s):new et,nonscaling:a}}}}),{beans:!0,_decompose:function(){return this._applyMatrix?null:this._decomposed||(this._decomposed=this._matrix.decompose())},getRotation:function(){var t=this._decompose();return t?t.rotation:0},setRotation:function(t){var e=this.getRotation();if(e!=null&&t!=null){var i=this._decomposed;this.rotate(t-e),i&&(i.rotation=t,this._decomposed=i)}},getScaling:function(){var t=this._decompose(),e=t&&t.scaling;return new jt(e?e.x:1,e?e.y:1,this,"setScaling")},setScaling:function(){var t=this.getScaling(),e=N.read(arguments,0,{clone:!0,readNull:!0});if(t&&e&&!t.equals(e)){var i=this.getRotation(),n=this._decomposed,r=new vt,s=ct.isZero;if(s(t.x)||s(t.y))r.translate(n.translation),i&&r.rotate(i),r.scale(e.x,e.y),this._matrix.set(r);else{var u=this.getPosition(!0);r.translate(u),i&&r.rotate(i),r.scale(e.x/t.x,e.y/t.y),i&&r.rotate(-i),r.translate(u.negate()),this.transform(r)}n&&(n.scaling=e,this._decomposed=n)}},getMatrix:function(){return this._matrix},setMatrix:function(){var t=this._matrix;t.set.apply(t,arguments)},getGlobalMatrix:function(t){var e=this._globalMatrix;if(e)for(var i=this._parent,n=[];i;){if(!i._globalMatrix){e=null;for(var r=0,s=n.length;r<s;r++)n[r]._globalMatrix=null;break}n.push(i),i=i._parent}if(!e){e=this._globalMatrix=this._matrix.clone();var i=this._parent;i&&e.prepend(i.getGlobalMatrix(!0))}return t?e:e.clone()},getViewMatrix:function(){return this.getGlobalMatrix().prepend(this.getView()._matrix)},getApplyMatrix:function(){return this._applyMatrix},setApplyMatrix:function(t){(this._applyMatrix=this._canApplyMatrix&&!!t)&&this.transform(null,!0)},getTransformContent:"#getApplyMatrix",setTransformContent:"#setApplyMatrix"},{getProject:function(){return this._project},_setProject:function(t,e){if(this._project!==t){this._project&&this._installEvents(!1),this._project=t;for(var i=this._children,n=0,r=i&&i.length;n<r;n++)i[n]._setProject(t);e=!0}e&&this._installEvents(!0)},getView:function(){return this._project._view},_installEvents:function t(e){t.base.call(this,e);for(var i=this._children,n=0,r=i&&i.length;n<r;n++)i[n]._installEvents(e)},getLayer:function(){for(var t=this;t=t._parent;)if(t instanceof de)return t;return null},getParent:function(){return this._parent},setParent:function(t){return t.addChild(this)},_getOwner:"#getParent",getChildren:function(){return this._children},setChildren:function(t){this.removeChildren(),this.addChildren(t)},getFirstChild:function(){return this._children&&this._children[0]||null},getLastChild:function(){return this._children&&this._children[this._children.length-1]||null},getNextSibling:function(){var t=this._getOwner();return t&&t._children[this._index+1]||null},getPreviousSibling:function(){var t=this._getOwner();return t&&t._children[this._index-1]||null},getIndex:function(){return this._index},equals:function(t){return t===this||t&&this._class===t._class&&this._style.equals(t._style)&&this._matrix.equals(t._matrix)&&this._locked===t._locked&&this._visible===t._visible&&this._blendMode===t._blendMode&&this._opacity===t._opacity&&this._clipMask===t._clipMask&&this._guide===t._guide&&this._equals(t)||!1},_equals:function(t){return T.equals(this._children,t._children)},clone:function(t){var e=new this.constructor(lt.NO_INSERT),i=this._children,n=T.pick(t?t.insert:q,t===q||t===!0),r=T.pick(t?t.deep:q,!0);i&&e.copyAttributes(this),(!i||r)&&e.copyContent(this),i||e.copyAttributes(this),n&&e.insertAbove(this);var s=this._name,u=this._parent;if(s&&u){for(var i=u._children,a=s,o=1;i[s];)s=a+" "+o++;s!==a&&e.setName(s)}return e},copyContent:function(t){for(var e=t._children,i=0,n=e&&e.length;i<n;i++)this.addChild(e[i].clone(!1),!0)},copyAttributes:function(t,e){this.setStyle(t._style);for(var i=["_locked","_visible","_blendMode","_opacity","_clipMask","_guide"],n=0,r=i.length;n<r;n++){var s=i[n];t.hasOwnProperty(s)&&(this[s]=t[s])}e||this._matrix.set(t._matrix,!0),this.setApplyMatrix(t._applyMatrix),this.setPivot(t._pivot),this.setSelection(t._selection);var u=t._data,a=t._name;this._data=u?T.clone(u):null,a&&this.setName(a)},rasterize:function(t,e){var i,n,r;T.isPlainObject(t)?(i=t.resolution,n=t.insert,r=t.raster):(i=t,n=e),r||(r=new Ae(lt.NO_INSERT));var s=this.getStrokeBounds(),u=(i||this.getView().getResolution())/72,a=s.getTopLeft().floor(),o=s.getBottomRight().ceil(),h=new tt(o.subtract(a)),d=h.multiply(u);if(r.setSize(d,!0),!d.isZero()){var g=r.getContext(!0),c=new vt().scale(u).translate(a.negate());g.save(),c.applyToContext(g),this.draw(g,new T({matrices:[c]})),g.restore()}return r._matrix.set(new vt().translate(a.add(h.divide(2))).scale(1/u)),(n===q||n)&&r.insertAbove(this),r},contains:function(){var t=this._matrix;return t.isInvertible()&&!!this._contains(t._inverseTransform(N.read(arguments)))},_contains:function(t){var e=this._children;if(e){for(var i=e.length-1;i>=0;i--)if(e[i].contains(t))return!0;return!1}return t.isInside(this.getInternalBounds())},isInside:function(){return et.read(arguments).contains(this.getBounds())},_asPathItem:function(){return new wt.Rectangle({rectangle:this.getInternalBounds(),matrix:this._matrix,insert:!1})},intersects:function(t,e){return t instanceof lt?this._asPathItem().getIntersections(t._asPathItem(),null,e,!0).length>0:!1}},new function(){function t(){var n=arguments;return this._hitTest(N.read(n),_e.getOptions(n))}function e(){var n=arguments,r=N.read(n),s=_e.getOptions(n),u=[];return this._hitTest(r,new T({all:u},s)),u}function i(n,r,s,u){var a=this._children;if(a)for(var o=a.length-1;o>=0;o--){var h=a[o],d=h!==u&&h._hitTest(n,r,s);if(d&&!r.all)return d}return null}return Jt.inject({hitTest:t,hitTestAll:e,_hitTest:i}),{hitTest:t,hitTestAll:e,_hitTestChildren:i}},{_hitTest:function(t,e,i){if(this._locked||!this._visible||this._guide&&!e.guides||this.isEmpty())return null;var n=this._matrix,r=i?i.appended(n):this.getGlobalMatrix().prepend(this.getView()._matrix),s=Math.max(e.tolerance,1e-12),u=e._tolerancePadding=new tt(wt._getStrokePadding(s,n._shiftless().invert()));if(t=n._inverseTransform(t),!t||!this._children&&!this.getBounds({internal:!0,stroke:!0,handle:!0}).expand(u.multiply(2))._containsPoint(t))return null;var a=!(e.guides&&!this._guide||e.selected&&!this.isSelected()||e.type&&e.type!==T.hyphenate(this._class)||e.class&&!(this instanceof e.class)),o=e.match,h=this,d,g;function c(l){return l&&o&&!o(l)&&(l=null),l&&e.all&&e.all.push(l),l}function f(l,p){var y=p?d["get"+p]():h.getPosition();if(t.subtract(y).divide(u).length<=1)return new _e(l,h,{name:p?T.hyphenate(p):l,point:y})}var b=e.position,v=e.center,S=e.bounds;if(a&&this._parent&&(b||v||S)){if((v||S)&&(d=this.getInternalBounds()),g=b&&f("position")||v&&f("center","Center"),!g&&S)for(var _=["TopLeft","TopRight","BottomLeft","BottomRight","LeftCenter","TopCenter","RightCenter","BottomCenter"],m=0;m<8&&!g;m++)g=f("bounds",_[m]);g=c(g)}return g||(g=this._hitTestChildren(t,e,r)||a&&c(this._hitTestSelf(t,e,r,this.getStrokeScaling()?null:r._shiftless().invert()))||null),g&&g.point&&(g.point=n.transform(g.point)),g},_hitTestSelf:function(t,e){if(e.fill&&this.hasFill()&&this._contains(t))return new _e("fill",this)},matches:function(t,e){function i(u,a){for(var o in u)if(u.hasOwnProperty(o)){var h=u[o],d=a[o];if(T.isPlainObject(h)&&T.isPlainObject(d)){if(!i(h,d))return!1}else if(!T.equals(h,d))return!1}return!0}var n=typeof t;if(n==="object"){for(var r in t)if(t.hasOwnProperty(r)&&!this.matches(r,t[r]))return!1;return!0}else{if(n==="function")return t(this);if(t==="match")return e(this);var s=/^(empty|editable)$/.test(t)?this["is"+T.capitalize(t)]():t==="type"?T.hyphenate(this._class):this[t];if(t==="class"){if(typeof e=="function")return this instanceof e;s=this._class}if(typeof e=="function")return!!e(s);if(e){if(e.test)return e.test(s);if(T.isPlainObject(e))return i(e,s)}return T.equals(s,e)}},getItems:function(t){return lt._getItems(this,t,this._matrix)},getItem:function(t){return lt._getItems(this,t,this._matrix,null,!0)[0]||null},statics:{_getItems:function t(e,i,n,r,s){if(!r){var u=typeof i=="object"&&i,a=u&&u.overlapping,o=u&&u.inside,h=a||o,c=h&&et.read([h]);r={items:[],recursive:u&&u.recursive!==!1,inside:!!o,overlapping:!!a,rect:c,path:a&&new wt.Rectangle({rectangle:c,insert:!1})},u&&(i=T.filter({},i,{recursive:!0,inside:!0,overlapping:!0}))}var d=e._children,g=r.items,c=r.rect;n=c&&(n||new vt);for(var f=0,b=d&&d.length;f<b;f++){var v=d[f],S=n&&n.appended(v._matrix),_=!0;if(c){var h=v.getBounds(S);if(!c.intersects(h))continue;c.contains(h)||r.overlapping&&(h.contains(c)||r.path.intersects(v,S))||(_=!1)}if(_&&v.matches(i)&&(g.push(v),s)||(r.recursive!==!1&&t(v,i,S,r,s),s&&g.length>0))break}return g}}},{importJSON:function(t){var e=T.importJSON(t,this);return e!==this?this.addChild(e):e},addChild:function(t){return this.insertChild(q,t)},insertChild:function(t,e){var i=e?this.insertChildren(t,[e]):null;return i&&i[0]},addChildren:function(t){return this.insertChildren(this._children.length,t)},insertChildren:function(t,e){var i=this._children;if(i&&e&&e.length>0){e=T.slice(e);for(var n={},r=e.length-1;r>=0;r--){var s=e[r],u=s&&s._id;!s||n[u]?e.splice(r,1):(s._remove(!1,!0),n[u]=!0)}T.splice(i,e,t,0);for(var a=this._project,o=a._changes,r=0,h=e.length;r<h;r++){var s=e[r],d=s._name;s._parent=this,s._setProject(a,!0),d&&s.setName(d),o&&s._changed(5)}this._changed(11)}else e=null;return e},_insertItem:"#insertChild",_insertAt:function(t,e){var i=t&&t._getOwner(),n=t!==this&&i?this:null;return n&&(n._remove(!1,!0),i._insertItem(t._index+e,n)),n},insertAbove:function(t){return this._insertAt(t,1)},insertBelow:function(t){return this._insertAt(t,0)},sendToBack:function(){var t=this._getOwner();return t?t._insertItem(0,this):null},bringToFront:function(){var t=this._getOwner();return t?t._insertItem(q,this):null},appendTop:"#addChild",appendBottom:function(t){return this.insertChild(0,t)},moveAbove:"#insertAbove",moveBelow:"#insertBelow",addTo:function(t){return t._insertItem(q,this)},copyTo:function(t){return this.clone(!1).addTo(t)},reduce:function(t){var e=this._children;if(e&&e.length===1){var i=e[0].reduce(t);return this._parent?(i.insertAbove(this),this.remove()):i.remove(),i}return this},_removeNamed:function(){var t=this._getOwner();if(t){var e=t._children,i=t._namedChildren,n=this._name,r=i[n],s=r?r.indexOf(this):-1;s!==-1&&(e[n]==this&&delete e[n],r.splice(s,1),r.length?e[n]=r[0]:delete i[n])}},_remove:function(t,e){var i=this._getOwner(),n=this._project,r=this._index;return this._style&&this._style._dispose(),i?(this._name&&this._removeNamed(),r!=null&&(n._activeLayer===this&&(n._activeLayer=this.getNextSibling()||this.getPreviousSibling()),T.splice(i._children,null,r,1)),this._installEvents(!1),t&&n._changes&&this._changed(5),e&&i._changed(11,this),this._parent=null,!0):!1},remove:function(){return this._remove(!0,!0)},replaceWith:function(t){var e=t&&t.insertBelow(this);return e&&this.remove(),e},removeChildren:function(t,e){if(!this._children)return null;t=t||0,e=T.pick(e,this._children.length);for(var i=T.splice(this._children,null,t,e-t),n=i.length-1;n>=0;n--)i[n]._remove(!0,!1);return i.length>0&&this._changed(11),i},clear:"#removeChildren",reverseChildren:function(){if(this._children){this._children.reverse();for(var t=0,e=this._children.length;t<e;t++)this._children[t]._index=t;this._changed(11)}},isEmpty:function(t){var e=this._children,i=e?e.length:0;if(t){for(var n=0;n<i;n++)if(!e[n].isEmpty(t))return!1;return!0}return!i},isEditable:function(){for(var t=this;t;){if(!t._visible||t._locked)return!1;t=t._parent}return!0},hasFill:function(){return this.getStyle().hasFill()},hasStroke:function(){return this.getStyle().hasStroke()},hasShadow:function(){return this.getStyle().hasShadow()},_getOrder:function(t){function e(u){var a=[];do a.unshift(u);while(u=u._parent);return a}for(var i=e(this),n=e(t),r=0,s=Math.min(i.length,n.length);r<s;r++)if(i[r]!=n[r])return i[r]._index<n[r]._index?1:-1;return 0},hasChildren:function(){return this._children&&this._children.length>0},isInserted:function(){return this._parent?this._parent.isInserted():!1},isAbove:function(t){return this._getOrder(t)===-1},isBelow:function(t){return this._getOrder(t)===1},isParent:function(t){return this._parent===t},isChild:function(t){return t&&t._parent===this},isDescendant:function(t){for(var e=this;e=e._parent;)if(e===t)return!0;return!1},isAncestor:function(t){return t?t.isDescendant(this):!1},isSibling:function(t){return this._parent===t._parent},isGroupedWith:function(t){for(var e=this._parent;e;){if(e._parent&&/^(Group|Layer|CompoundPath)$/.test(e._class)&&t.isDescendant(e))return!0;e=e._parent}return!1}},T.each(["rotate","scale","shear","skew"],function(t){var e=t==="rotate";this[t]=function(){var i=arguments,n=(e?T:N).read(i),r=N.read(i,0,{readNull:!0});return this.transform(new vt()[t](n,r||this.getPosition(!0)))}},{translate:function(){var t=new vt;return this.transform(t.translate.apply(t,arguments))},transform:function(t,e,i){var n=this._matrix,r=t&&!t.isIdentity(),s=i&&this._canApplyMatrix||this._applyMatrix&&(r||!n.isIdentity()||e&&this._children);if(!r&&!s)return this;if(r){!t.isInvertible()&&n.isInvertible()&&(n._backup=n.getValues()),n.prepend(t,!0);var u=this._style,a=u.getFillColor(!0),o=u.getStrokeColor(!0);a&&a.transform(t),o&&o.transform(t)}if(s&&(s=this._transformContent(n,e,i))){var h=this._pivot;h&&n._transformPoint(h,h,!0),n.reset(!0),i&&this._canApplyMatrix&&(this._applyMatrix=!0)}var d=this._bounds,g=this._position;(r||s)&&this._changed(25);var c=r&&d&&t.decompose();if(c&&c.skewing.isZero()&&c.rotation%90===0){for(var f in d){var b=d[f];if(b.nonscaling)delete d[f];else if(s||!b.internal){var v=b.rect;t._transformBounds(v,v)}}this._bounds=d;var S=d[this._getBoundsCacheKey(this._boundsOptions||{})];S&&(this._position=this._getPositionFromBounds(S.rect))}else r&&g&&this._pivot&&(this._position=t._transformPoint(g,g));return this},_transformContent:function(t,e,i){var n=this._children;if(n){for(var r=0,s=n.length;r<s;r++)n[r].transform(t,e,i);return!0}},globalToLocal:function(){return this.getGlobalMatrix(!0)._inverseTransform(N.read(arguments))},localToGlobal:function(){return this.getGlobalMatrix(!0)._transformPoint(N.read(arguments))},parentToLocal:function(){return this._matrix._inverseTransform(N.read(arguments))},localToParent:function(){return this._matrix._transformPoint(N.read(arguments))},fitBounds:function(t,e){t=et.read(arguments);var i=this.getBounds(),n=i.height/i.width,r=t.height/t.width,s=(e?n>r:n<r)?t.width/i.width:t.height/i.height,u=new et(new N,new tt(i.width*s,i.height*s));u.setCenter(t.getCenter()),this.setBounds(u)}}),{_setStyles:function(t,e,i){var n=this._style,r=this._matrix;if(n.hasFill()&&(t.fillStyle=n.getFillColor().toCanvasStyle(t,r)),n.hasStroke()){t.strokeStyle=n.getStrokeColor().toCanvasStyle(t,r),t.lineWidth=n.getStrokeWidth();var s=n.getStrokeJoin(),u=n.getStrokeCap(),a=n.getMiterLimit();if(s&&(t.lineJoin=s),u&&(t.lineCap=u),a&&(t.miterLimit=a),gt.support.nativeDash){var o=n.getDashArray(),h=n.getDashOffset();o&&o.length&&("setLineDash"in t?(t.setLineDash(o),t.lineDashOffset=h):(t.mozDash=o,t.mozDashOffset=h))}}if(n.hasShadow()){var d=e.pixelRatio||1,g=i._shiftless().prepend(new vt().scale(d,d)),c=g.transform(new N(n.getShadowBlur(),0)),f=g.transform(this.getShadowOffset());t.shadowColor=n.getShadowColor().toCanvasStyle(t),t.shadowBlur=c.getLength(),t.shadowOffsetX=f.x,t.shadowOffsetY=f.y}},draw:function(t,e,i){var n=this._updateVersion=this._project._updateVersion;if(!(!this._visible||this._opacity===0)){var r=e.matrices,s=e.viewMatrix,u=this._matrix,a=r[r.length-1].appended(u);if(!!a.isInvertible()){s=s?s.appended(a):a,r.push(a),e.updateMatrix&&(this._globalMatrix=a);var o=this._blendMode,h=ct.clamp(this._opacity,0,1),d=o==="normal",g=ai.nativeModes[o],c=d&&h===1||e.dontStart||e.clip||(g||d&&h<1)&&this._canComposite(),f=e.pixelRatio||1,b,v,S;if(!c){var _=this.getStrokeBounds(s);if(!_.width||!_.height){r.pop();return}S=e.offset,v=e.offset=_.getTopLeft().floor(),b=t,t=Nt.getContext(_.getSize().ceil().add(1).multiply(f)),f!==1&&t.scale(f,f)}t.save();var m=i?i.appended(u):this._canScaleStroke&&!this.getStrokeScaling(!0)&&s,l=!c&&e.clipItem,p=!m||l;if(c?(t.globalAlpha=h,g&&(t.globalCompositeOperation=o)):p&&t.translate(-v.x,-v.y),p&&(c?u:s).applyToContext(t),l&&e.clipItem.draw(t,e.extend({clip:!0})),m){t.setTransform(f,0,0,f,0,0);var y=e.offset;y&&t.translate(-y.x,-y.y)}this._draw(t,e,s,m),t.restore(),r.pop(),e.clip&&!e.dontFinish&&t.clip(this.getFillRule()),c||(ai.process(o,t,b,h,v.subtract(S).multiply(f)),Nt.release(t),e.offset=S)}}},_isUpdated:function(t){var e=this._parent;if(e instanceof he)return e._isUpdated(t);var i=this._updateVersion===t;return!i&&e&&e._visible&&e._isUpdated(t)&&(this._updateVersion=t,i=!0),i},_drawSelection:function(t,e,i,n,r){var s=this._selection,u=s&1,a=s&2||u&&this._selectBounds,o=s&4;if(this._drawSelected||(u=!1),(u||a||o)&&this._isUpdated(r)){var h,d=this.getSelectedColor(!0)||(h=this.getLayer())&&h.getSelectedColor(!0),g=e.appended(this.getGlobalMatrix(!0)),c=i/2;if(t.strokeStyle=t.fillStyle=d?d.toCanvasStyle(t):"#009dec",u&&this._drawSelected(t,g,n),o){var f=this.getPosition(!0),b=this._parent,v=b?b.localToGlobal(f):f,S=v.x,_=v.y;t.beginPath(),t.arc(S,_,c,0,Math.PI*2,!0),t.stroke();for(var m=[[0,-1],[1,0],[0,1],[-1,0]],l=c,p=i+1,y=0;y<4;y++){var x=m[y],w=x[0],C=x[1];t.moveTo(S+w*l,_+C*l),t.lineTo(S+w*p,_+C*p),t.stroke()}}if(a){var I=g._transformCorners(this.getInternalBounds());t.beginPath();for(var y=0;y<8;y++)t[y?"lineTo":"moveTo"](I[y],I[++y]);t.closePath(),t.stroke();for(var y=0;y<8;y++)t.fillRect(I[y]-c,I[++y]-c,i,i)}}},_canComposite:function(){return!1}},T.each(["down","drag","up","move"],function(t){this["removeOn"+T.capitalize(t)]=function(){var e={};return e[t]=!0,this.removeOn(e)}},{removeOn:function(t){for(var e in t)if(t[e]){var i="mouse"+e,n=this._project,r=n._removeSets=n._removeSets||{};r[i]=r[i]||{},r[i][this._id]=this}return this}}),{tween:function(t,e,i){i||(i=e,e=t,t=null,i||(i=e,e=null));var n=i&&i.easing,r=i&&i.start,s=i!=null&&(typeof i=="number"?i:i.duration),u=new xn(this,t,e,s,n,r);function a(o){u._handleFrame(o.time*1e3),u.running||this.off("frame",a)}return s&&this.on("frame",a),u},tweenTo:function(t,e){return this.tween(null,t,e)},tweenFrom:function(t,e){return this.tween(t,null,e)}}),Wt=lt.extend({_class:"Group",_selectBounds:!1,_selectChildren:!0,_serializeFields:{children:[]},initialize:function(e){this._children=[],this._namedChildren={},this._initialize(e)||this.addChildren(Array.isArray(e)?e:arguments)},_changed:function t(e){t.base.call(this,e),e&2050&&(this._clipItem=q)},_getClipItem:function(){var t=this._clipItem;if(t===q){t=null;for(var e=this._children,i=0,n=e.length;i<n;i++)if(e[i]._clipMask){t=e[i];break}this._clipItem=t}return t},isClipped:function(){return!!this._getClipItem()},setClipped:function(t){var e=this.getFirstChild();e&&e.setClipMask(t)},_getBounds:function t(e,i){var n=this._getClipItem();return n?n._getCachedBounds(n._matrix.prepended(e),T.set({},i,{stroke:!1})):t.base.call(this,e,i)},_hitTestChildren:function t(e,i,n){var r=this._getClipItem();return(!r||r.contains(e))&&t.base.call(this,e,i,n,r)},_draw:function(t,e){var i=e.clip,n=!i&&this._getClipItem();e=e.extend({clipItem:n,clip:!1}),i?(t.beginPath(),e.dontStart=e.dontFinish=!0):n&&n.draw(t,e.extend({clip:!0}));for(var r=this._children,s=0,u=r.length;s<u;s++){var a=r[s];a!==n&&a.draw(t,e)}}}),de=Wt.extend({_class:"Layer",initialize:function(){Wt.apply(this,arguments)},_getOwner:function(){return this._parent||this._index!=null&&this._project},isInserted:function t(){return this._parent?t.base.call(this):this._index!=null},activate:function(){this._project._activeLayer=this},_hitTestSelf:function(){}}),Vt=lt.extend({_class:"Shape",_applyMatrix:!1,_canApplyMatrix:!1,_canScaleStroke:!0,_serializeFields:{type:null,size:null,radius:null},initialize:function(e,i){this._initialize(e,i)},_equals:function(t){return this._type===t._type&&this._size.equals(t._size)&&T.equals(this._radius,t._radius)},copyContent:function(t){this.setType(t._type),this.setSize(t._size),this.setRadius(t._radius)},getType:function(){return this._type},setType:function(t){this._type=t},getShape:"#getType",setShape:"#setType",getSize:function(){var t=this._size;return new ce(t.width,t.height,this,"setSize")},setSize:function(){var t=tt.read(arguments);if(!this._size)this._size=t.clone();else if(!this._size.equals(t)){var e=this._type,i=t.width,n=t.height;e==="rectangle"?this._radius.set(tt.min(this._radius,t.divide(2).abs())):e==="circle"?(i=n=(i+n)/2,this._radius=i/2):e==="ellipse"&&this._radius._set(i/2,n/2),this._size._set(i,n),this._changed(9)}},getRadius:function(){var t=this._radius;return this._type==="circle"?t:new ce(t.width,t.height,this,"setRadius")},setRadius:function(t){var e=this._type;if(e==="circle"){if(t===this._radius)return;var i=t*2;this._radius=t,this._size._set(i,i)}else if(t=tt.read(arguments),!this._radius)this._radius=t.clone();else{if(this._radius.equals(t))return;if(this._radius.set(t),e==="rectangle"){var i=tt.max(this._size,t.multiply(2));this._size.set(i)}else e==="ellipse"&&this._size._set(t.width*2,t.height*2)}this._changed(9)},isEmpty:function(){return!1},toPath:function(t){var e=new wt[T.capitalize(this._type)]({center:new N,size:this._size,radius:this._radius,insert:!1});return e.copyAttributes(this),gt.settings.applyMatrix&&e.setApplyMatrix(!0),(t===q||t)&&e.insertAbove(this),e},toShape:"#clone",_asPathItem:function(){return this.toPath(!1)},_draw:function(t,e,i,n){var r=this._style,s=r.hasFill(),u=r.hasStroke(),a=e.dontFinish||e.clip,o=!n;if(s||u||a){var h=this._type,d=this._radius,g=h==="circle";if(e.dontStart||t.beginPath(),o&&g)t.arc(0,0,d,0,Math.PI*2,!0);else{var c=g?d:d.width,f=g?d:d.height,b=this._size,v=b.width,S=b.height;if(o&&h==="rectangle"&&c===0&&f===0)t.rect(-v/2,-S/2,v,S);else{var _=v/2,m=S/2,l=1-.5522847498307936,p=c*l,y=f*l,x=[-_,-m+f,-_,-m+y,-_+p,-m,-_+c,-m,_-c,-m,_-p,-m,_,-m+y,_,-m+f,_,m-f,_,m-y,_-p,m,_-c,m,-_+c,m,-_+p,m,-_,m-y,-_,m-f];n&&n.transform(x,x,32),t.moveTo(x[0],x[1]),t.bezierCurveTo(x[2],x[3],x[4],x[5],x[6],x[7]),_!==c&&t.lineTo(x[8],x[9]),t.bezierCurveTo(x[10],x[11],x[12],x[13],x[14],x[15]),m!==f&&t.lineTo(x[16],x[17]),t.bezierCurveTo(x[18],x[19],x[20],x[21],x[22],x[23]),_!==c&&t.lineTo(x[24],x[25]),t.bezierCurveTo(x[26],x[27],x[28],x[29],x[30],x[31])}}t.closePath()}!a&&(s||u)&&(this._setStyles(t,e,i),s&&(t.fill(r.getFillRule()),t.shadowColor="rgba(0,0,0,0)"),u&&t.stroke())},_canComposite:function(){return!(this.hasFill()&&this.hasStroke())},_getBounds:function(t,e){var i=new et(this._size).setCenter(0,0),n=this._style,r=e.stroke&&n.hasStroke()&&n.getStrokeWidth();return t&&(i=t._transformBounds(i)),r?i.expand(wt._getStrokePadding(r,this._getStrokeMatrix(t,e))):i}},new function(){function t(i,n,r){var s=i._radius;if(!s.isZero())for(var u=i._size.divide(2),a=1;a<=4;a++){var o=new N(a>1&&a<4?-1:1,a>2?-1:1),h=o.multiply(u),d=h.subtract(o.multiply(s)),g=new et(r?h.add(o.multiply(r)):h,d);if(g.contains(n))return{point:d,quadrant:a}}}function e(i,n,r,s){var u=i.divide(n);return(!s||u.isInQuadrant(s))&&u.subtract(u.normalize()).multiply(n).divide(r).length<=1}return{_contains:function i(n){if(this._type==="rectangle"){var r=t(this,n);return r?n.subtract(r.point).divide(this._radius).getLength()<=1:i.base.call(this,n)}else return n.divide(this.size).getLength()<=.5},_hitTestSelf:function i(n,r,s,u){var a=!1,o=this._style,h=r.stroke&&o.hasStroke(),d=r.fill&&o.hasFill();if(h||d){var g=this._type,c=this._radius,f=h?o.getStrokeWidth()/2:0,b=r._tolerancePadding.add(wt._getStrokePadding(f,!o.getStrokeScaling()&&u));if(g==="rectangle"){var v=b.multiply(2),S=t(this,n,v);if(S)a=e(n.subtract(S.point),c,b,S.quadrant);else{var _=new et(this._size).setCenter(0,0),m=_.expand(v),l=_.expand(v.negate());a=m._containsPoint(n)&&!l._containsPoint(n)}}else a=e(n,c,b)}return a?new _e(h?"stroke":"fill",this):i.base.apply(this,arguments)}}},{statics:new function(){function t(e,i,n,r,s){var u=T.create(Vt.prototype);return u._type=e,u._size=n,u._radius=r,u._initialize(T.getNamed(s),i),u}return{Circle:function(){var e=arguments,i=N.readNamed(e,"center"),n=T.readNamed(e,"radius");return t("circle",i,new tt(n*2),n,e)},Rectangle:function(){var e=arguments,i=et.readNamed(e,"rectangle"),n=tt.min(tt.readNamed(e,"radius"),i.getSize(!0).divide(2));return t("rectangle",i.getCenter(!0),i.getSize(!0),n,e)},Ellipse:function(){var e=arguments,i=Vt._readEllipse(e),n=i.radius;return t("ellipse",i.center,n.multiply(2),n,e)},_readEllipse:function(e){var i,n;if(T.hasNamed(e,"radius"))i=N.readNamed(e,"center"),n=tt.readNamed(e,"radius");else{var r=et.readNamed(e,"rectangle");i=r.getCenter(!0),n=r.getSize(!0).divide(2)}return{center:i,radius:n}}}}}),Ae=lt.extend({_class:"Raster",_applyMatrix:!1,_canApplyMatrix:!1,_boundsOptions:{stroke:!1,handle:!1},_serializeFields:{crossOrigin:null,source:null},_prioritize:["crossOrigin"],_smoothing:"low",beans:!0,initialize:function(e,i){if(!this._initialize(e,i!==q&&N.read(arguments))){var n,r=typeof e,s=r==="string"?Y.getElementById(e):r==="object"?e:null;if(s&&s!==lt.NO_INSERT){if(s.getContext||s.naturalHeight!=null)n=s;else if(s){var u=tt.read(arguments);u.isZero()||(n=Nt.getCanvas(u))}}n?this.setImage(n):this.setSource(e)}this._size||(this._size=new tt,this._loaded=!1)},_equals:function(t){return this.getSource()===t.getSource()},copyContent:function(t){var e=t._image,i=t._canvas;if(e)this._setImage(e);else if(i){var n=Nt.getCanvas(t._size);n.getContext("2d").drawImage(i,0,0),this._setImage(n)}this._crossOrigin=t._crossOrigin},getSize:function(){var t=this._size;return new ce(t?t.width:0,t?t.height:0,this,"setSize")},setSize:function(t,e){var i=tt.read(arguments);if(i.equals(this._size))e&&this.clear();else if(i.width>0&&i.height>0){var n=!e&&this.getElement();this._setImage(Nt.getCanvas(i)),n&&this.getContext(!0).drawImage(n,0,0,i.width,i.height)}else this._canvas&&Nt.release(this._canvas),this._size=i.clone()},getWidth:function(){return this._size?this._size.width:0},setWidth:function(t){this.setSize(t,this.getHeight())},getHeight:function(){return this._size?this._size.height:0},setHeight:function(t){this.setSize(this.getWidth(),t)},getLoaded:function(){return this._loaded},isEmpty:function(){var t=this._size;return!t||t.width===0&&t.height===0},getResolution:function(){var t=this._matrix,e=new N(0,0).transform(t),i=new N(1,0).transform(t).subtract(e),n=new N(0,1).transform(t).subtract(e);return new tt(72/i.getLength(),72/n.getLength())},getPpi:"#getResolution",getImage:function(){return this._image},setImage:function(t){var e=this;function i(n){var r=e.getView(),s=n&&n.type||"load";r&&e.responds(s)&&(gt=r._scope,e.emit(s,new Ze(n)))}this._setImage(t),this._loaded?setTimeout(i,0):t&&zt.add(t,{load:function(n){e._setImage(t),i(n)},error:i})},_setImage:function(t){this._canvas&&Nt.release(this._canvas),t&&t.getContext?(this._image=null,this._canvas=t,this._loaded=!0):(this._image=t,this._canvas=null,this._loaded=!!(t&&t.src&&t.complete)),this._size=new tt(t?t.naturalWidth||t.width:0,t?t.naturalHeight||t.height:0),this._context=null,this._changed(1033)},getCanvas:function(){if(!this._canvas){var t=Nt.getContext(this._size);try{this._image&&t.drawImage(this._image,0,0),this._canvas=t.canvas}catch{Nt.release(t)}}return this._canvas},setCanvas:"#setImage",getContext:function(t){return this._context||(this._context=this.getCanvas().getContext("2d")),t&&(this._image=null,this._changed(1025)),this._context},setContext:function(t){this._context=t},getSource:function(){var t=this._image;return t&&t.src||this.toDataURL()},setSource:function(t){var e=new Q.Image,i=this._crossOrigin;i&&(e.crossOrigin=i),t&&(e.src=t),this.setImage(e)},getCrossOrigin:function(){var t=this._image;return t&&t.crossOrigin||this._crossOrigin||""},setCrossOrigin:function(t){this._crossOrigin=t;var e=this._image;e&&(e.crossOrigin=t)},getSmoothing:function(){return this._smoothing},setSmoothing:function(t){this._smoothing=typeof t=="string"?t:t?"low":"off",this._changed(257)},getElement:function(){return this._canvas||this._loaded&&this._image}},{beans:!1,getSubCanvas:function(){var t=et.read(arguments),e=Nt.getContext(t.getSize());return e.drawImage(this.getCanvas(),t.x,t.y,t.width,t.height,0,0,t.width,t.height),e.canvas},getSubRaster:function(){var t=et.read(arguments),e=new Ae(lt.NO_INSERT);return e._setImage(this.getSubCanvas(t)),e.translate(t.getCenter().subtract(this.getSize().divide(2))),e._matrix.prepend(this._matrix),e.insertAbove(this),e},toDataURL:function(){var t=this._image,e=t&&t.src;if(/^data:/.test(e))return e;var i=this.getCanvas();return i?i.toDataURL.apply(i,arguments):null},drawImage:function(t){var e=N.read(arguments,1);this.getContext(!0).drawImage(t,e.x,e.y)},getAverageColor:function(t){var e,i;if(t?t instanceof ke?(i=t,e=t.getBounds()):typeof t=="object"&&("width"in t?e=new et(t):"x"in t&&(e=new et(t.x-.5,t.y-.5,1,1))):e=this.getBounds(),!e)return null;var n=32,r=Math.min(e.width,n),s=Math.min(e.height,n),u=Ae._sampleContext;u?u.clearRect(0,0,n+1,n+1):u=Ae._sampleContext=Nt.getContext(new tt(n)),u.save();var a=new vt().scale(r/e.width,s/e.height).translate(-e.x,-e.y);a.applyToContext(u),i&&i.draw(u,new T({clip:!0,matrices:[a]})),this._matrix.applyToContext(u);var o=this.getElement(),h=this._size;o&&u.drawImage(o,-h.width/2,-h.height/2),u.restore();for(var d=u.getImageData(.5,.5,Math.ceil(r),Math.ceil(s)).data,g=[0,0,0],c=0,f=0,b=d.length;f<b;f+=4){var v=d[f+3];c+=v,v/=255,g[0]+=d[f]*v,g[1]+=d[f+1]*v,g[2]+=d[f+2]*v}for(var f=0;f<3;f++)g[f]/=c;return c?Et.read(g):null},getPixel:function(){var t=N.read(arguments),e=this.getContext().getImageData(t.x,t.y,1,1).data;return new Et("rgb",[e[0]/255,e[1]/255,e[2]/255],e[3]/255)},setPixel:function(){var t=arguments,e=N.read(t),i=Et.read(t),n=i._convert("rgb"),r=i._alpha,s=this.getContext(!0),u=s.createImageData(1,1),a=u.data;a[0]=n[0]*255,a[1]=n[1]*255,a[2]=n[2]*255,a[3]=r!=null?r*255:255,s.putImageData(u,e.x,e.y)},clear:function(){var t=this._size;this.getContext(!0).clearRect(0,0,t.width+1,t.height+1)},createImageData:function(){var t=tt.read(arguments);return this.getContext().createImageData(t.width,t.height)},getImageData:function(){var t=et.read(arguments);return t.isEmpty()&&(t=new et(this._size)),this.getContext().getImageData(t.x,t.y,t.width,t.height)},putImageData:function(t){var e=N.read(arguments,1);this.getContext(!0).putImageData(t,e.x,e.y)},setImageData:function(t){this.setSize(t),this.getContext(!0).putImageData(t,0,0)},_getBounds:function(t,e){var i=new et(this._size).setCenter(0,0);return t?t._transformBounds(i):i},_hitTestSelf:function(t){if(this._contains(t)){var e=this;return new _e("pixel",e,{offset:t.add(e._size.divide(2)).round(),color:{get:function(){return e.getPixel(this.offset)}}})}},_draw:function(t,e,i){var n=this.getElement();if(n&&n.width>0&&n.height>0){t.globalAlpha=ct.clamp(this._opacity,0,1),this._setStyles(t,e,i);var r=this._smoothing,s=r==="off";At.setPrefixed(t,s?"imageSmoothingEnabled":"imageSmoothingQuality",s?!1:r),t.drawImage(n,-this._size.width/2,-this._size.height/2)}},_canComposite:function(){return!0}}),Fe=lt.extend({_class:"SymbolItem",_applyMatrix:!1,_canApplyMatrix:!1,_boundsOptions:{stroke:!0},_serializeFields:{symbol:null},initialize:function(e,i){this._initialize(e,i!==q&&N.read(arguments,1))||this.setDefinition(e instanceof Qt?e:new Qt(e))},_equals:function(t){return this._definition===t._definition},copyContent:function(t){this.setDefinition(t._definition)},getDefinition:function(){return this._definition},setDefinition:function(t){this._definition=t,this._changed(9)},getSymbol:"#getDefinition",setSymbol:"#setDefinition",isEmpty:function(){return this._definition._item.isEmpty()},_getBounds:function(t,e){var i=this._definition._item;return i._getCachedBounds(i._matrix.prepended(t),e)},_hitTestSelf:function(t,e,i){var n=e.extend({all:!1}),r=this._definition._item._hitTest(t,n,i);return r&&(r.item=this),r},_draw:function(t,e){this._definition._item.draw(t,e)}}),Qt=T.extend({_class:"SymbolDefinition",initialize:function(e,i){this._id=ae.get(),this.project=gt.project,e&&this.setItem(e,i)},_serialize:function(t,e){return e.add(this,function(){return T.serialize([this._class,this._item],t,!1,e)})},_changed:function(t){t&8&&lt._clearBoundsCache(this),t&1&&this.project._changed(t)},getItem:function(){return this._item},setItem:function(t,e){t._symbol&&(t=t.clone()),this._item&&(this._item._symbol=null),this._item=t,t.remove(),t.setSelected(!1),e||t.setPosition(new N),t._symbol=this,this._changed(9)},getDefinition:"#getItem",setDefinition:"#setItem",place:function(t){return new Fe(this,t)},clone:function(){return new Qt(this._item.clone(!1))},equals:function(t){return t===this||t&&this._item.equals(t._item)||!1}}),_e=T.extend({_class:"HitResult",initialize:function(e,i,n){this.type=e,this.item=i,n&&this.inject(n)},statics:{getOptions:function(t){var e=t&&T.read(t);return new T({type:null,tolerance:gt.settings.hitTolerance,fill:!e,stroke:!e,segments:!e,handles:!1,ends:!1,position:!1,center:!1,bounds:!1,guides:!1,selected:!1},e)}}}),rt=T.extend({_class:"Segment",beans:!0,_selection:0,initialize:function(e,i,n,r,s,u){var a=arguments.length,o,h,d,g;a>0&&(e==null||typeof e=="object"?a===1&&e&&"point"in e?(o=e.point,h=e.handleIn,d=e.handleOut,g=e.selection):(o=e,h=i,d=n,g=r):(o=[e,i],h=n!==q?[n,r]:null,d=s!==q?[s,u]:null)),new ni(o,this,"_point"),new ni(h,this,"_handleIn"),new ni(d,this,"_handleOut"),g&&this.setSelection(g)},_serialize:function(t,e){var i=this._point,n=this._selection,r=n||this.hasHandles()?[i,this._handleIn,this._handleOut]:i;return n&&r.push(n),T.serialize(r,t,!0,e)},_changed:function(t){var e=this._path;if(!!e){var i=e._curves,n=this._index,r;i&&((!t||t===this._point||t===this._handleIn)&&(r=n>0?i[n-1]:e._closed?i[i.length-1]:null)&&r._changed(),(!t||t===this._point||t===this._handleOut)&&(r=i[n])&&r._changed()),e._changed(41)}},getPoint:function(){return this._point},setPoint:function(){this._point.set(N.read(arguments))},getHandleIn:function(){return this._handleIn},setHandleIn:function(){this._handleIn.set(N.read(arguments))},getHandleOut:function(){return this._handleOut},setHandleOut:function(){this._handleOut.set(N.read(arguments))},hasHandles:function(){return!this._handleIn.isZero()||!this._handleOut.isZero()},isSmooth:function(){var t=this._handleIn,e=this._handleOut;return!t.isZero()&&!e.isZero()&&t.isCollinear(e)},clearHandles:function(){this._handleIn._set(0,0),this._handleOut._set(0,0)},getSelection:function(){return this._selection},setSelection:function(t){var e=this._selection,i=this._path;this._selection=t=t||0,i&&t!==e&&(i._updateSelection(this,e,t),i._changed(257))},_changeSelection:function(t,e){var i=this._selection;this.setSelection(e?i|t:i&~t)},isSelected:function(){return!!(this._selection&7)},setSelected:function(t){this._changeSelection(7,t)},getIndex:function(){return this._index!==q?this._index:null},getPath:function(){return this._path||null},getCurve:function(){var t=this._path,e=this._index;return t?(e>0&&!t._closed&&e===t._segments.length-1&&e--,t.getCurves()[e]||null):null},getLocation:function(){var t=this.getCurve();return t?new oe(t,this===t._segment1?0:1):null},getNext:function(){var t=this._path&&this._path._segments;return t&&(t[this._index+1]||this._path._closed&&t[0])||null},smooth:function(t,e,i){var n=t||{},r=n.type,s=n.factor,u=this.getPrevious(),a=this.getNext(),o=(u||this)._point,h=this._point,d=(a||this)._point,g=o.getDistance(h),c=h.getDistance(d);if(!r||r==="catmull-rom"){var f=s===q?.5:s,b=Math.pow(g,f),v=b*b,S=Math.pow(c,f),_=S*S;if(!e&&u){var m=2*_+3*S*b+v,l=3*S*(S+b);this.setHandleIn(l!==0?new N((_*o._x+m*h._x-v*d._x)/l-h._x,(_*o._y+m*h._y-v*d._y)/l-h._y):new N)}if(!i&&a){var m=2*v+3*b*S+_,l=3*b*(b+S);this.setHandleOut(l!==0?new N((v*d._x+m*h._x-_*o._x)/l-h._x,(v*d._y+m*h._y-_*o._y)/l-h._y):new N)}}else if(r==="geometric"){if(u&&a){var p=o.subtract(d),y=s===q?.4:s,x=y*g/(g+c);e||this.setHandleIn(p.multiply(x)),i||this.setHandleOut(p.multiply(x-y))}}else throw new Error("Smoothing method '"+r+"' not supported.")},getPrevious:function(){var t=this._path&&this._path._segments;return t&&(t[this._index-1]||this._path._closed&&t[t.length-1])||null},isFirst:function(){return!this._index},isLast:function(){var t=this._path;return t&&this._index===t._segments.length-1||!1},reverse:function(){var t=this._handleIn,e=this._handleOut,i=t.clone();t.set(e),e.set(i)},reversed:function(){return new rt(this._point,this._handleOut,this._handleIn)},remove:function(){return this._path?!!this._path.removeSegment(this._index):!1},clone:function(){return new rt(this._point,this._handleIn,this._handleOut)},equals:function(t){return t===this||t&&this._class===t._class&&this._point.equals(t._point)&&this._handleIn.equals(t._handleIn)&&this._handleOut.equals(t._handleOut)||!1},toString:function(){var t=["point: "+this._point];return this._handleIn.isZero()||t.push("handleIn: "+this._handleIn),this._handleOut.isZero()||t.push("handleOut: "+this._handleOut),"{ "+t.join(", ")+" }"},transform:function(t){this._transformCoordinates(t,new Array(6),!0),this._changed()},interpolate:function(t,e,i){var n=1-i,r=i,s=t._point,u=e._point,a=t._handleIn,o=e._handleIn,h=e._handleOut,d=t._handleOut;this._point._set(n*s._x+r*u._x,n*s._y+r*u._y,!0),this._handleIn._set(n*a._x+r*o._x,n*a._y+r*o._y,!0),this._handleOut._set(n*d._x+r*h._x,n*d._y+r*h._y,!0),this._changed()},_transformCoordinates:function(t,e,i){var n=this._point,r=!i||!this._handleIn.isZero()?this._handleIn:null,s=!i||!this._handleOut.isZero()?this._handleOut:null,u=n._x,a=n._y,o=2;return e[0]=u,e[1]=a,r&&(e[o++]=r._x+u,e[o++]=r._y+a),s&&(e[o++]=s._x+u,e[o++]=s._y+a),t&&(t._transformCoordinates(e,e,o/2),u=e[0],a=e[1],i?(n._x=u,n._y=a,o=2,r&&(r._x=e[o++]-u,r._y=e[o++]-a),s&&(s._x=e[o++]-u,s._y=e[o++]-a)):(r||(e[o++]=u,e[o++]=a),s||(e[o++]=u,e[o++]=a))),e}}),ni=N.extend({initialize:function(e,i,n){var r,s,u;if(!e)r=s=0;else if((r=e[0])!==q)s=e[1];else{var a=e;(r=a.x)===q&&(a=N.read(arguments),r=a.x),s=a.y,u=a.selected}this._x=r,this._y=s,this._owner=i,i[n]=this,u&&this.setSelected(!0)},_set:function(t,e){return this._x=t,this._y=e,this._owner._changed(this),this},getX:function(){return this._x},setX:function(t){this._x=t,this._owner._changed(this)},getY:function(){return this._y},setY:function(t){this._y=t,this._owner._changed(this)},isZero:function(){var t=ct.isZero;return t(this._x)&&t(this._y)},isSelected:function(){return!!(this._owner._selection&this._getSelection())},setSelected:function(t){this._owner._changeSelection(this._getSelection(),t)},_getSelection:function(){var t=this._owner;return this===t._point?1:this===t._handleIn?2:this===t._handleOut?4:0}}),G=T.extend({_class:"Curve",beans:!0,initialize:function(e,i,n,r,s,u,a,o){var h=arguments.length,d,g,c,f,b,v;h===3?(this._path=e,d=i,g=n):h?h===1?"segment1"in e?(d=new rt(e.segment1),g=new rt(e.segment2)):"point1"in e?(c=e.point1,b=e.handle1,v=e.handle2,f=e.point2):Array.isArray(e)&&(c=[e[0],e[1]],f=[e[6],e[7]],b=[e[2]-e[0],e[3]-e[1]],v=[e[4]-e[6],e[5]-e[7]]):h===2?(d=new rt(e),g=new rt(i)):h===4?(c=e,b=i,v=n,f=r):h===8&&(c=[e,i],f=[a,o],b=[n-e,r-i],v=[s-a,u-o]):(d=new rt,g=new rt),this._segment1=d||new rt(c,null,b),this._segment2=g||new rt(f,v,null)},_serialize:function(t,e){return T.serialize(this.hasHandles()?[this.getPoint1(),this.getHandle1(),this.getHandle2(),this.getPoint2()]:[this.getPoint1(),this.getPoint2()],t,!0,e)},_changed:function(){this._length=this._bounds=q},clone:function(){return new G(this._segment1,this._segment2)},toString:function(){var t=["point1: "+this._segment1._point];return this._segment1._handleOut.isZero()||t.push("handle1: "+this._segment1._handleOut),this._segment2._handleIn.isZero()||t.push("handle2: "+this._segment2._handleIn),t.push("point2: "+this._segment2._point),"{ "+t.join(", ")+" }"},classify:function(){return G.classify(this.getValues())},remove:function(){var t=!1;if(this._path){var e=this._segment2,i=e._handleOut;t=e.remove(),t&&this._segment1._handleOut.set(i)}return t},getPoint1:function(){return this._segment1._point},setPoint1:function(){this._segment1._point.set(N.read(arguments))},getPoint2:function(){return this._segment2._point},setPoint2:function(){this._segment2._point.set(N.read(arguments))},getHandle1:function(){return this._segment1._handleOut},setHandle1:function(){this._segment1._handleOut.set(N.read(arguments))},getHandle2:function(){return this._segment2._handleIn},setHandle2:function(){this._segment2._handleIn.set(N.read(arguments))},getSegment1:function(){return this._segment1},getSegment2:function(){return this._segment2},getPath:function(){return this._path},getIndex:function(){return this._segment1._index},getNext:function(){var t=this._path&&this._path._curves;return t&&(t[this._segment1._index+1]||this._path._closed&&t[0])||null},getPrevious:function(){var t=this._path&&this._path._curves;return t&&(t[this._segment1._index-1]||this._path._closed&&t[t.length-1])||null},isFirst:function(){return!this._segment1._index},isLast:function(){var t=this._path;return t&&this._segment1._index===t._curves.length-1||!1},isSelected:function(){return this.getPoint1().isSelected()&&this.getHandle1().isSelected()&&this.getHandle2().isSelected()&&this.getPoint2().isSelected()},setSelected:function(t){this.getPoint1().setSelected(t),this.getHandle1().setSelected(t),this.getHandle2().setSelected(t),this.getPoint2().setSelected(t)},getValues:function(t){return G.getValues(this._segment1,this._segment2,t)},getPoints:function(){for(var t=this.getValues(),e=[],i=0;i<8;i+=2)e.push(new N(t[i],t[i+1]));return e}},{getLength:function(){return this._length==null&&(this._length=G.getLength(this.getValues(),0,1)),this._length},getArea:function(){return G.getArea(this.getValues())},getLine:function(){return new It(this._segment1._point,this._segment2._point)},getPart:function(t,e){return new G(G.getPart(this.getValues(),t,e))},getPartLength:function(t,e){return G.getLength(this.getValues(),t,e)},divideAt:function(t){return this.divideAtTime(t&&t.curve===this?t.time:this.getTimeAt(t))},divideAtTime:function(t,e){var i=1e-8,n=1-i,r=null;if(t>=i&&t<=n){var s=G.subdivide(this.getValues(),t),u=s[0],a=s[1],o=e||this.hasHandles(),h=this._segment1,d=this._segment2,g=this._path;o&&(h._handleOut._set(u[2]-u[0],u[3]-u[1]),d._handleIn._set(a[4]-a[6],a[5]-a[7]));var c=u[6],f=u[7],b=new rt(new N(c,f),o&&new N(u[4]-c,u[5]-f),o&&new N(a[2]-c,a[3]-f));g?(g.insert(h._index+1,b),r=this.getNext()):(this._segment2=b,this._changed(),r=new G(b,d))}return r},splitAt:function(t){var e=this._path;return e?e.splitAt(t):null},splitAtTime:function(t){return this.splitAt(this.getLocationAtTime(t))},divide:function(t,e){return this.divideAtTime(t===q?.5:e?t:this.getTimeAt(t))},split:function(t,e){return this.splitAtTime(t===q?.5:e?t:this.getTimeAt(t))},reversed:function(){return new G(this._segment2.reversed(),this._segment1.reversed())},clearHandles:function(){this._segment1._handleOut._set(0,0),this._segment2._handleIn._set(0,0)},statics:{getValues:function(t,e,i,n){var r=t._point,s=t._handleOut,u=e._handleIn,a=e._point,o=r.x,h=r.y,d=a.x,g=a.y,c=n?[o,h,o,h,d,g,d,g]:[o,h,o+s._x,h+s._y,d+u._x,g+u._y,d,g];return i&&i._transformCoordinates(c,c,4),c},subdivide:function(t,e){var i=t[0],n=t[1],r=t[2],s=t[3],u=t[4],a=t[5],o=t[6],h=t[7];e===q&&(e=.5);var d=1-e,g=d*i+e*r,c=d*n+e*s,f=d*r+e*u,b=d*s+e*a,v=d*u+e*o,S=d*a+e*h,_=d*g+e*f,m=d*c+e*b,l=d*f+e*v,p=d*b+e*S,y=d*_+e*l,x=d*m+e*p;return[[i,n,g,c,_,m,y,x],[y,x,l,p,v,S,o,h]]},getMonoCurves:function(t,e){var i=[],n=e?0:1,r=t[n+0],s=t[n+2],u=t[n+4],a=t[n+6];if(r>=s==s>=u&&s>=u==u>=a||G.isStraight(t))i.push(t);else{var o=3*(s-u)-r+a,h=2*(r+u)-4*s,d=s-r,g=1e-8,c=1-g,f=[],b=ct.solveQuadratic(o,h,d,f,g,c);if(!b)i.push(t);else{f.sort();var v=f[0],S=G.subdivide(t,v);i.push(S[0]),b>1&&(v=(f[1]-v)/(1-v),S=G.subdivide(S[1],v),i.push(S[0])),i.push(S[1])}}return i},solveCubic:function(t,e,i,n,r,s){var u=t[e],a=t[e+2],o=t[e+4],h=t[e+6],d=0;if(!(u<i&&h<i&&a<i&&o<i||u>i&&h>i&&a>i&&o>i)){var g=3*(a-u),c=3*(o-a)-g,f=h-u-g-c;d=ct.solveCubic(f,c,g,u-i,n,r,s)}return d},getTimeOf:function(t,e){var i=new N(t[0],t[1]),n=new N(t[6],t[7]),r=1e-12,s=1e-7,u=e.isClose(i,r)?0:e.isClose(n,r)?1:null;if(u===null)for(var a=[e.x,e.y],o=[],h=0;h<2;h++)for(var d=G.solveCubic(t,h,a[h],o,0,1),g=0;g<d;g++){var c=o[g];if(e.isClose(G.getPoint(t,c),s))return c}return e.isClose(i,s)?0:e.isClose(n,s)?1:null},getNearestTime:function(t,e){if(G.isStraight(t)){var i=t[0],n=t[1],r=t[6],s=t[7],u=r-i,a=s-n,o=u*u+a*a;if(o===0)return 0;var h=((e.x-i)*u+(e.y-n)*a)/o;return h<1e-12?0:h>.999999999999?1:G.getTimeOf(t,new N(i+h*u,n+h*a))}var d=100,g=1/0,c=0;function f(S){if(S>=0&&S<=1){var _=e.getDistance(G.getPoint(t,S),!0);if(_<g)return g=_,c=S,!0}}for(var b=0;b<=d;b++)f(b/d);for(var v=1/(d*2);v>1e-8;)!f(c-v)&&!f(c+v)&&(v/=2);return c},getPart:function(t,e,i){var n=e>i;if(n){var r=e;e=i,i=r}return e>0&&(t=G.subdivide(t,e)[1]),i<1&&(t=G.subdivide(t,(i-e)/(1-e))[0]),n?[t[6],t[7],t[4],t[5],t[2],t[3],t[0],t[1]]:t},isFlatEnough:function(t,e){var i=t[0],n=t[1],r=t[2],s=t[3],u=t[4],a=t[5],o=t[6],h=t[7],d=3*r-2*i-o,g=3*s-2*n-h,c=3*u-2*o-i,f=3*a-2*h-n;return Math.max(d*d,c*c)+Math.max(g*g,f*f)<=16*e*e},getArea:function(t){var e=t[0],i=t[1],n=t[2],r=t[3],s=t[4],u=t[5],a=t[6],o=t[7];return 3*((o-i)*(n+s)-(a-e)*(r+u)+r*(e-s)-n*(i-u)+o*(s+e/3)-a*(u+i/3))/20},getBounds:function(t){for(var e=t.slice(0,2),i=e.slice(),n=[0,0],r=0;r<2;r++)G._addBounds(t[r],t[r+2],t[r+4],t[r+6],r,0,e,i,n);return new et(e[0],e[1],i[0]-e[0],i[1]-e[1])},_addBounds:function(t,e,i,n,r,s,u,a,o){function h(y,x){var w=y-x,C=y+x;w<u[r]&&(u[r]=w),C>a[r]&&(a[r]=C)}s/=2;var d=u[r]+s,g=a[r]-s;if(t<d||e<d||i<d||n<d||t>g||e>g||i>g||n>g)if(e<t!=e<n&&i<t!=i<n)h(t,0),h(n,0);else{var c=3*(e-i)-t+n,f=2*(t+i)-4*e,b=e-t,v=ct.solveQuadratic(c,f,b,o),S=1e-8,_=1-S;h(n,0);for(var m=0;m<v;m++){var l=o[m],p=1-l;S<=l&&l<=_&&h(p*p*p*t+3*p*p*l*e+3*p*l*l*i+l*l*l*n,s)}}}}},T.each(["getBounds","getStrokeBounds","getHandleBounds"],function(t){this[t]=function(){this._bounds||(this._bounds={});var e=this._bounds[t];return e||(e=this._bounds[t]=wt[t]([this._segment1,this._segment2],!1,this._path)),e.clone()}},{}),T.each({isStraight:function(t,e,i,n){if(e.isZero()&&i.isZero())return!0;var r=n.subtract(t);if(r.isZero())return!1;if(r.isCollinear(e)&&r.isCollinear(i)){var s=new It(t,n),u=1e-7;if(s.getDistance(t.add(e))<u&&s.getDistance(n.add(i))<u){var a=r.dot(r),o=r.dot(e)/a,h=r.dot(i)/a;return o>=0&&o<=1&&h<=0&&h>=-1}}return!1},isLinear:function(t,e,i,n){var r=n.subtract(t).divide(3);return e.equals(r)&&i.negate().equals(r)}},function(t,e){this[e]=function(i){var n=this._segment1,r=this._segment2;return t(n._point,n._handleOut,r._handleIn,r._point,i)},this.statics[e]=function(i,n){var r=i[0],s=i[1],u=i[6],a=i[7];return t(new N(r,s),new N(i[2]-r,i[3]-s),new N(i[4]-u,i[5]-a),new N(u,a),n)}},{statics:{},hasHandles:function(){return!this._segment1._handleOut.isZero()||!this._segment2._handleIn.isZero()},hasLength:function(t){return(!this.getPoint1().equals(this.getPoint2())||this.hasHandles())&&this.getLength()>(t||0)},isCollinear:function(t){return t&&this.isStraight()&&t.isStraight()&&this.getLine().isCollinear(t.getLine())},isHorizontal:function(){return this.isStraight()&&Math.abs(this.getTangentAtTime(.5).y)<1e-8},isVertical:function(){return this.isStraight()&&Math.abs(this.getTangentAtTime(.5).x)<1e-8}}),{beans:!1,getLocationAt:function(t,e){return this.getLocationAtTime(e?t:this.getTimeAt(t))},getLocationAtTime:function(t){return t!=null&&t>=0&&t<=1?new oe(this,t):null},getTimeAt:function(t,e){return G.getTimeAt(this.getValues(),t,e)},getParameterAt:"#getTimeAt",getTimesWithTangent:function(){var t=N.read(arguments);return t.isZero()?[]:G.getTimesWithTangent(this.getValues(),t)},getOffsetAtTime:function(t){return this.getPartLength(0,t)},getLocationOf:function(){return this.getLocationAtTime(this.getTimeOf(N.read(arguments)))},getOffsetOf:function(){var t=this.getLocationOf.apply(this,arguments);return t?t.getOffset():null},getTimeOf:function(){return G.getTimeOf(this.getValues(),N.read(arguments))},getParameterOf:"#getTimeOf",getNearestLocation:function(){var t=N.read(arguments),e=this.getValues(),i=G.getNearestTime(e,t),n=G.getPoint(e,i);return new oe(this,i,n,null,t.getDistance(n))},getNearestPoint:function(){var t=this.getNearestLocation.apply(this,arguments);return t&&t.getPoint()}},new function(){var t=["getPoint","getTangent","getNormal","getWeightedTangent","getWeightedNormal","getCurvature"];return T.each(t,function(e){this[e+"At"]=function(i,n){var r=this.getValues();return G[e](r,n?i:G.getTimeAt(r,i))},this[e+"AtTime"]=function(i){return G[e](this.getValues(),i)}},{statics:{_evaluateMethods:t}})},new function(){function t(n){var r=n[0],s=n[1],u=n[2],a=n[3],o=n[4],h=n[5],d=n[6],g=n[7],c=9*(u-o)+3*(d-r),f=6*(r+o)-12*u,b=3*(u-r),v=9*(a-h)+3*(g-s),S=6*(s+h)-12*a,_=3*(a-s);return function(m){var l=(c*m+f)*m+b,p=(v*m+S)*m+_;return Math.sqrt(l*l+p*p)}}function e(n,r){return Math.max(2,Math.min(16,Math.ceil(Math.abs(r-n)*32)))}function i(n,r,s,u){if(r==null||r<0||r>1)return null;var a=n[0],o=n[1],h=n[2],d=n[3],g=n[4],c=n[5],f=n[6],b=n[7],v=ct.isZero;v(h-a)&&v(d-o)&&(h=a,d=o),v(g-f)&&v(c-b)&&(g=f,c=b);var S=3*(h-a),_=3*(g-h)-S,m=f-a-S-_,l=3*(d-o),p=3*(c-d)-l,y=b-o-l-p,x,w;if(s===0)x=r===0?a:r===1?f:((m*r+_)*r+S)*r+a,w=r===0?o:r===1?b:((y*r+p)*r+l)*r+o;else{var C=1e-8,I=1-C;if(r<C?(x=S,w=l):r>I?(x=3*(f-g),w=3*(b-c)):(x=(3*m*r+2*_)*r+S,w=(3*y*r+2*p)*r+l),u){x===0&&w===0&&(r<C||r>I)&&(x=g-h,w=c-d);var P=Math.sqrt(x*x+w*w);P&&(x/=P,w/=P)}if(s===3){var g=6*m*r+2*_,c=6*y*r+2*p,L=Math.pow(x*x+w*w,3/2);x=L!==0?(x*c-w*g)/L:0,w=0}}return s===2?new N(w,-x):new N(x,w)}return{statics:{classify:function(n){var r=n[0],s=n[1],u=n[2],a=n[3],o=n[4],h=n[5],d=n[6],g=n[7],c=r*(g-h)+s*(o-d)+d*h-g*o,f=u*(s-g)+a*(d-r)+r*g-s*d,b=o*(a-s)+h*(r-u)+u*s-a*r,v=3*b,S=v-f,_=S-f+c,m=Math.sqrt(_*_+S*S+v*v),l=m!==0?1/m:0,p=ct.isZero,y="serpentine";_*=l,S*=l,v*=l;function x(P,L,k){var M=L!==q,O=M&&L>0&&L<1,z=M&&k>0&&k<1;return M&&(!(O||z)||P==="loop"&&!(O&&z))&&(P="arch",O=z=!1),{type:P,roots:O||z?O&&z?L<k?[L,k]:[k,L]:[O?L:k]:null}}if(p(_))return p(S)?x(p(v)?"line":"quadratic"):x(y,v/(3*S));var w=3*S*S-4*_*v;if(p(w))return x("cusp",S/(2*_));var C=w>0?Math.sqrt(w/3):Math.sqrt(-w),I=2*_;return x(w>0?y:"loop",(S+C)/I,(S-C)/I)},getLength:function(n,r,s,u){if(r===q&&(r=0),s===q&&(s=1),G.isStraight(n)){var a=n;s<1&&(a=G.subdivide(a,s)[0],r/=s),r>0&&(a=G.subdivide(a,r)[1]);var o=a[6]-a[0],h=a[7]-a[1];return Math.sqrt(o*o+h*h)}return ct.integrate(u||t(n),r,s,e(r,s))},getTimeAt:function(n,r,s){if(s===q&&(s=r<0?1:0),r===0)return s;var u=Math.abs,a=1e-12,o=r>0,h=o?s:0,d=o?1:s,g=t(n),c=G.getLength(n,h,d,g),f=u(r)-c;if(u(f)<a)return o?d:h;if(f>a)return null;var b=r/c,v=0;function S(_){return v+=ct.integrate(g,s,_,e(s,_)),s=_,v-r}return ct.findRoot(S,g,s+b,h,d,32,1e-12)},getPoint:function(n,r){return i(n,r,0,!1)},getTangent:function(n,r){return i(n,r,1,!0)},getWeightedTangent:function(n,r){return i(n,r,1,!1)},getNormal:function(n,r){return i(n,r,2,!0)},getWeightedNormal:function(n,r){return i(n,r,2,!1)},getCurvature:function(n,r){return i(n,r,3,!1).x},getPeaks:function(n){var r=n[0],s=n[1],u=n[2],a=n[3],o=n[4],h=n[5],d=n[6],g=n[7],c=-r+3*u-3*o+d,f=3*r-6*u+3*o,b=-3*r+3*u,v=-s+3*a-3*h+g,S=3*s-6*a+3*h,_=-3*s+3*a,m=1e-8,l=1-m,p=[];return ct.solveCubic(9*(c*c+v*v),9*(c*f+S*v),2*(f*f+S*S)+3*(b*c+_*v),b*f+S*_,p,m,l),p.sort()}}}},new function(){function t(f,b,v,S,_,m,l){var p=!l&&v.getPrevious()===_,y=!l&&v!==_&&v.getNext()===_,x=1e-8,w=1-x;if(S!==null&&S>=(p?x:0)&&S<=(y?w:1)&&m!==null&&m>=(y?x:0)&&m<=(p?w:1)){var C=new oe(v,S,null,l),I=new oe(_,m,null,l);C._intersection=I,I._intersection=C,(!b||b(C))&&oe.insert(f,C,!0)}}function e(f,b,v,S,_,m,l,p,y,x,w,C,I){if(++y>=4096||++p>=40)return y;var P=1e-9,L=b[0],k=b[1],M=b[6],O=b[7],z=It.getSignedDistance,F=z(L,k,M,O,b[2],b[3]),B=z(L,k,M,O,b[4],b[5]),V=F*B>0?3/4:4/9,Z=V*Math.min(0,F,B),$=V*Math.max(0,F,B),j=z(L,k,M,O,f[0],f[1]),D=z(L,k,M,O,f[2],f[3]),U=z(L,k,M,O,f[4],f[5]),W=z(L,k,M,O,f[6],f[7]),K=i(j,D,U,W),X=K[0],nt=K[1],it,ot;if(F===0&&B===0&&j===0&&D===0&&U===0&&W===0||(it=n(X,nt,Z,$))==null||(ot=n(X.reverse(),nt.reverse(),Z,$))==null)return y;var dt=x+(w-x)*it,ut=x+(w-x)*ot;if(Math.max(I-C,ut-dt)<P){var Ft=(dt+ut)/2,Bt=(C+I)/2;t(_,m,l?S:v,l?Bt:Ft,l?v:S,l?Ft:Bt)}else{f=G.getPart(f,it,ot);var Ht=I-C;if(ot-it>.8)if(ut-dt>Ht){var Ot=G.subdivide(f,.5),Ft=(dt+ut)/2;y=e(b,Ot[0],S,v,_,m,!l,p,y,C,I,dt,Ft),y=e(b,Ot[1],S,v,_,m,!l,p,y,C,I,Ft,ut)}else{var Ot=G.subdivide(b,.5),Bt=(C+I)/2;y=e(Ot[0],f,S,v,_,m,!l,p,y,C,Bt,dt,ut),y=e(Ot[1],f,S,v,_,m,!l,p,y,Bt,I,dt,ut)}else Ht===0||Ht>=P?y=e(b,f,S,v,_,m,!l,p,y,C,I,dt,ut):y=e(f,b,v,S,_,m,l,p,y,dt,ut,C,I)}return y}function i(f,b,v,S){var _=[0,f],m=[1/3,b],l=[2/3,v],p=[1,S],y=b-(2*f+S)/3,x=v-(f+2*S)/3,w;if(y*x<0)w=[[_,m,p],[_,l,p]];else{var C=y/x;w=[C>=2?[_,m,p]:C<=.5?[_,l,p]:[_,m,l,p],[_,p]]}return(y||x)<0?w.reverse():w}function n(f,b,v,S){return f[0][1]<v?r(f,!0,v):b[0][1]>S?r(b,!1,S):f[0][0]}function r(f,b,v){for(var S=f[0][0],_=f[0][1],m=1,l=f.length;m<l;m++){var p=f[m][0],y=f[m][1];if(b?y>=v:y<=v)return y===v?p:S+(v-_)*(p-S)/(y-_);S=p,_=y}return null}function s(f,b,v,S,_){var m=ct.isZero;if(m(S)&&m(_)){var l=G.getTimeOf(f,new N(b,v));return l===null?[]:[l]}for(var p=Math.atan2(-_,S),y=Math.sin(p),x=Math.cos(p),w=[],C=[],I=0;I<8;I+=2){var P=f[I]-b,L=f[I+1]-v;w.push(P*x-L*y,P*y+L*x)}return G.solveCubic(w,1,0,C,0,1),C}function u(f,b,v,S,_,m,l){for(var p=b[0],y=b[1],x=b[6],w=b[7],C=s(f,p,y,x-p,w-y),I=0,P=C.length;I<P;I++){var L=C[I],k=G.getPoint(f,L),M=G.getTimeOf(b,k);M!==null&&t(_,m,l?S:v,l?M:L,l?v:S,l?L:M)}}function a(f,b,v,S,_,m){var l=It.intersect(f[0],f[1],f[6],f[7],b[0],b[1],b[6],b[7]);l&&t(_,m,v,G.getTimeOf(f,l),S,G.getTimeOf(b,l))}function o(f,b,v,S,_,m){var l=1e-12,p=Math.min,y=Math.max;if(y(f[0],f[2],f[4],f[6])+l>p(b[0],b[2],b[4],b[6])&&p(f[0],f[2],f[4],f[6])-l<y(b[0],b[2],b[4],b[6])&&y(f[1],f[3],f[5],f[7])+l>p(b[1],b[3],b[5],b[7])&&p(f[1],f[3],f[5],f[7])-l<y(b[1],b[3],b[5],b[7])){var x=g(f,b);if(x)for(var w=0;w<2;w++){var C=x[w];t(_,m,v,C[0],S,C[1],!0)}else{var I=G.isStraight(f),P=G.isStraight(b),L=I&&P,k=I&&!P,M=_.length;if((L?a:I||P?u:e)(k?b:f,k?f:b,k?S:v,k?v:S,_,m,k,0,0,0,1,0,1),!L||_.length===M)for(var w=0;w<4;w++){var O=w>>1,z=w&1,F=O*6,B=z*6,V=new N(f[F],f[F+1]),Z=new N(b[B],b[B+1]);V.isClose(Z,l)&&t(_,m,v,O,S,z)}}}return _}function h(f,b,v,S){var _=G.classify(f);if(_.type==="loop"){var m=_.roots;t(v,S,b,m[0],b,m[1])}return v}function d(f,b,v,S,_,m){var l=1e-7,p=!b;p&&(b=f);for(var y=f.length,x=b.length,w=new Array(y),C=p?w:new Array(x),I=[],P=0;P<y;P++)w[P]=f[P].getValues(S);if(!p)for(var P=0;P<x;P++)C[P]=b[P].getValues(_);for(var L=ft.findCurveBoundsCollisions(w,C,l),k=0;k<y;k++){var M=f[k],O=w[k];p&&h(O,M,I,v);var z=L[k];if(z)for(var F=0;F<z.length;F++){if(m&&I.length)return I;var B=z[F];if(!p||B>k){var V=b[B],Z=C[B];o(O,Z,M,V,I,v)}}}return I}function g(f,b){function v(W){var K=W[6]-W[0],X=W[7]-W[1];return K*K+X*X}var S=Math.abs,_=It.getDistance,m=1e-8,l=1e-7,p=G.isStraight(f),y=G.isStraight(b),x=p&&y,w=v(f)<v(b),C=w?b:f,I=w?f:b,P=C[0],L=C[1],k=C[6]-P,M=C[7]-L;if(_(P,L,k,M,I[0],I[1],!0)<l&&_(P,L,k,M,I[6],I[7],!0)<l)!x&&_(P,L,k,M,C[2],C[3],!0)<l&&_(P,L,k,M,C[4],C[5],!0)<l&&_(P,L,k,M,I[2],I[3],!0)<l&&_(P,L,k,M,I[4],I[5],!0)<l&&(p=y=x=!0);else if(x)return null;if(p^y)return null;for(var O=[f,b],z=[],F=0;F<4&&z.length<2;F++){var B=F&1,V=B^1,Z=F>>1,$=G.getTimeOf(O[B],new N(O[V][Z?6:0],O[V][Z?7:1]));if($!=null){var j=B?[Z,$]:[$,Z];(!z.length||S(j[0]-z[0][0])>m&&S(j[1]-z[0][1])>m)&&z.push(j)}if(F>2&&!z.length)break}if(z.length!==2)z=null;else if(!x){var D=G.getPart(f,z[0][0],z[1][0]),U=G.getPart(b,z[0][1],z[1][1]);(S(U[2]-D[2])>l||S(U[3]-D[3])>l||S(U[4]-D[4])>l||S(U[5]-D[5])>l)&&(z=null)}return z}function c(f,b){var v=f[0],S=f[1],_=f[2],m=f[3],l=f[4],p=f[5],y=f[6],x=f[7],w=b.normalize(),C=w.x,I=w.y,P=3*y-9*l+9*_-3*v,L=3*x-9*p+9*m-3*S,k=6*l-12*_+6*v,M=6*p-12*m+6*S,O=3*_-3*v,z=3*m-3*S,F=2*P*I-2*L*C,B=[];if(Math.abs(F)<ct.CURVETIME_EPSILON){var V=P*z-L*O,F=P*M-L*k;if(F!=0){var Z=-V/F;Z>=0&&Z<=1&&B.push(Z)}}else{var $=(k*k-4*P*O)*I*I+(-2*k*M+4*L*O+4*P*z)*C*I+(M*M-4*L*z)*C*C,j=k*I-M*C;if($>=0&&F!=0){var D=Math.sqrt($),U=-(j+D)/F,W=(-j+D)/F;U>=0&&U<=1&&B.push(U),W>=0&&W<=1&&B.push(W)}}return B}return{getIntersections:function(f){var b=this.getValues(),v=f&&f!==this&&f.getValues();return v?o(b,v,this,f,[]):h(b,this,[])},statics:{getOverlaps:g,getIntersections:d,getCurveLineIntersections:s,getTimesWithTangent:c}}}),oe=T.extend({_class:"CurveLocation",initialize:function(e,i,n,r,s){if(i>=.99999999){var u=e.getNext();u&&(i=0,e=u)}this._setCurve(e),this._time=i,this._point=n||e.getPointAtTime(i),this._overlap=r,this._distance=s,this._intersection=this._next=this._previous=null},_setPath:function(t){this._path=t,this._version=t?t._version:0},_setCurve:function(t){this._setPath(t._path),this._curve=t,this._segment=null,this._segment1=t._segment1,this._segment2=t._segment2},_setSegment:function(t){var e=t.getCurve();e?this._setCurve(e):(this._setPath(t._path),this._segment1=t,this._segment2=null),this._segment=t,this._time=t===this._segment1?0:1,this._point=t._point.clone()},getSegment:function(){var t=this._segment;if(!t){var e=this.getCurve(),i=this.getTime();i===0?t=e._segment1:i===1?t=e._segment2:i!=null&&(t=e.getPartLength(0,i)<e.getPartLength(i,1)?e._segment1:e._segment2),this._segment=t}return t},getCurve:function(){var t=this._path,e=this;t&&t._version!==this._version&&(this._time=this._offset=this._curveOffset=this._curve=null);function i(n){var r=n&&n.getCurve();if(r&&(e._time=r.getTimeOf(e._point))!=null)return e._setCurve(r),r}return this._curve||i(this._segment)||i(this._segment1)||i(this._segment2.getPrevious())},getPath:function(){var t=this.getCurve();return t&&t._path},getIndex:function(){var t=this.getCurve();return t&&t.getIndex()},getTime:function(){var t=this.getCurve(),e=this._time;return t&&e==null?this._time=t.getTimeOf(this._point):e},getParameter:"#getTime",getPoint:function(){return this._point},getOffset:function(){var t=this._offset;if(t==null){t=0;var e=this.getPath(),i=this.getIndex();if(e&&i!=null)for(var n=e.getCurves(),r=0;r<i;r++)t+=n[r].getLength();this._offset=t+=this.getCurveOffset()}return t},getCurveOffset:function(){var t=this._curveOffset;if(t==null){var e=this.getCurve(),i=this.getTime();this._curveOffset=t=i!=null&&e&&e.getPartLength(0,i)}return t},getIntersection:function(){return this._intersection},getDistance:function(){return this._distance},divide:function(){var t=this.getCurve(),e=t&&t.divideAtTime(this.getTime());return e&&this._setSegment(e._segment1),e},split:function(){var t=this.getCurve(),e=t._path,i=t&&t.splitAtTime(this.getTime());return i&&this._setSegment(e.getLastSegment()),i},equals:function(t,e){var i=this===t;if(!i&&t instanceof oe){var n=this.getCurve(),r=t.getCurve(),s=n._path,u=r._path;if(s===u){var a=Math.abs,o=1e-7,h=a(this.getOffset()-t.getOffset()),d=!e&&this._intersection,g=!e&&t._intersection;i=(h<o||s&&a(s.getLength()-h)<o)&&(!d&&!g||d&&g&&d.equals(g,!0))}}return i},toString:function(){var t=[],e=this.getPoint(),i=St.instance;e&&t.push("point: "+e);var n=this.getIndex();n!=null&&t.push("index: "+n);var r=this.getTime();return r!=null&&t.push("time: "+i.number(r)),this._distance!=null&&t.push("distance: "+i.number(this._distance)),"{ "+t.join(", ")+" }"},isTouching:function(){var t=this._intersection;if(t&&this.getTangent().isCollinear(t.getTangent())){var e=this.getCurve(),i=t.getCurve();return!(e.isStraight()&&i.isStraight()&&e.getLine().intersect(i.getLine()))}return!1},isCrossing:function(){var t=this._intersection;if(!t)return!1;var e=this.getTime(),i=t.getTime(),n=1e-8,r=1-n,s=e>=n&&e<=r,u=i>=n&&i<=r;if(s&&u)return!this.isTouching();var a=this.getCurve(),o=a&&e<n?a.getPrevious():a,h=t.getCurve(),d=h&&i<n?h.getPrevious():h;if(e>r&&(a=a.getNext()),i>r&&(h=h.getNext()),!o||!a||!d||!h)return!1;var g=[];function c(C,I){var P=C.getValues(),L=G.classify(P).roots||G.getPeaks(P),k=L.length,M=G.getLength(P,I&&k?L[k-1]:0,!I&&k?L[0]:1);g.push(k?M:M/32)}function f(C,I,P){return I<P?C>I&&C<P:C>I||C<P}s||(c(o,!0),c(a,!1)),u||(c(d,!0),c(h,!1));var b=this.getPoint(),v=Math.min.apply(Math,g),S=s?a.getTangentAtTime(e):a.getPointAt(v).subtract(b),_=s?S.negate():o.getPointAt(-v).subtract(b),m=u?h.getTangentAtTime(i):h.getPointAt(v).subtract(b),l=u?m.negate():d.getPointAt(-v).subtract(b),p=_.getAngle(),y=S.getAngle(),x=l.getAngle(),w=m.getAngle();return!!(s?f(p,x,w)^f(y,x,w)&&f(p,w,x)^f(y,w,x):f(x,p,y)^f(w,p,y)&&f(x,y,p)^f(w,y,p))},hasOverlap:function(){return!!this._overlap}},T.each(G._evaluateMethods,function(t){var e=t+"At";this[t]=function(){var i=this.getCurve(),n=this.getTime();return n!=null&&i&&i[e](n,!0)}},{preserve:!0}),new function(){function t(e,i,n){var r=e.length,s=0,u=r-1;function a(b,v){for(var S=b+v;S>=-1&&S<=r;S+=v){var _=e[(S%r+r)%r];if(!i.getPoint().isClose(_.getPoint(),1e-7))break;if(i.equals(_))return _}return null}for(;s<=u;){var o=s+u>>>1,h=e[o],d;if(n&&(d=i.equals(h)?h:a(o,-1)||a(o,1)))return i._overlap&&(d._overlap=d._intersection._overlap=!0),d;var g=i.getPath(),c=h.getPath(),f=g!==c?g._id-c._id:i.getIndex()+i.getTime()-(h.getIndex()+h.getTime());f<0?u=o-1:s=o+1}return e.splice(s,0,i),i}return{statics:{insert:t,expand:function(e){for(var i=e.slice(),n=e.length-1;n>=0;n--)t(i,e[n]._intersection,!1);return i}}}}),ke=lt.extend({_class:"PathItem",_selectBounds:!1,_canScaleStroke:!0,beans:!0,initialize:function(){},statics:{create:function(t){var e,i,n;if(T.isPlainObject(t)?(i=t.segments,e=t.pathData):Array.isArray(t)?i=t:typeof t=="string"&&(e=t),i){var r=i[0];n=r&&Array.isArray(r[0])}else e&&(n=(e.match(/m/gi)||[]).length>1||/z\s*\S+/i.test(e));var s=n?he:wt;return new s(t)}},_asPathItem:function(){return this},isClockwise:function(){return this.getArea()>=0},setClockwise:function(t){this.isClockwise()!=(t=!!t)&&this.reverse()},setPathData:function(t){var e=t&&t.match(/[mlhvcsqtaz][^mlhvcsqtaz]*/ig),i,n=!1,r,s,u=new N,a=new N;function o(l,p){var y=+i[l];return n&&(y+=u[p]),y}function h(l){return new N(o(l,"x"),o(l+1,"y"))}this.clear();for(var d=0,g=e&&e.length;d<g;d++){var c=e[d],f=c[0],b=f.toLowerCase();i=c.match(/[+-]?(?:\d*\.\d+|\d+\.?)(?:[eE][+-]?\d+)?/g);var v=i&&i.length;switch(n=f===b,r==="z"&&!/[mz]/.test(b)&&this.moveTo(u),b){case"m":case"l":for(var S=b==="m",_=0;_<v;_+=2)this[S?"moveTo":"lineTo"](u=h(_)),S&&(a=u,S=!1);s=u;break;case"h":case"v":var m=b==="h"?"x":"y";u=u.clone();for(var _=0;_<v;_++)u[m]=o(_,m),this.lineTo(u);s=u;break;case"c":for(var _=0;_<v;_+=6)this.cubicCurveTo(h(_),s=h(_+2),u=h(_+4));break;case"s":for(var _=0;_<v;_+=4)this.cubicCurveTo(/[cs]/.test(r)?u.multiply(2).subtract(s):u,s=h(_),u=h(_+2)),r=b;break;case"q":for(var _=0;_<v;_+=4)this.quadraticCurveTo(s=h(_),u=h(_+2));break;case"t":for(var _=0;_<v;_+=2)this.quadraticCurveTo(s=/[qt]/.test(r)?u.multiply(2).subtract(s):u,u=h(_)),r=b;break;case"a":for(var _=0;_<v;_+=7)this.arcTo(u=h(_+5),new tt(+i[_],+i[_+1]),+i[_+2],+i[_+4],+i[_+3]);break;case"z":this.closePath(1e-12),u=a;break}r=b}},_canComposite:function(){return!(this.hasFill()&&this.hasStroke())},_contains:function(t){var e=t.isInside(this.getBounds({internal:!0,handle:!0}))?this._getWinding(t):{};return e.onPath||!!(this.getFillRule()==="evenodd"?e.windingL&1||e.windingR&1:e.winding)},getIntersections:function(t,e,i,n){var r=this===t||!t,s=this._matrix._orNullIfIdentity(),u=r?s:(i||t._matrix)._orNullIfIdentity();return r||this.getBounds(s).intersects(t.getBounds(u),1e-12)?G.getIntersections(this.getCurves(),!r&&t.getCurves(),e,s,u,n):[]},getCrossings:function(t){return this.getIntersections(t,function(e){return e.isCrossing()})},getNearestLocation:function(){for(var t=N.read(arguments),e=this.getCurves(),i=1/0,n=null,r=0,s=e.length;r<s;r++){var u=e[r].getNearestLocation(t);u._distance<i&&(i=u._distance,n=u)}return n},getNearestPoint:function(){var t=this.getNearestLocation.apply(this,arguments);return t&&t.getPoint()},interpolate:function(t,e,i){var n=!this._children,r=n?"_segments":"_children",s=t[r],u=e[r],a=this[r];if(!s||!u||s.length!==u.length)throw new Error("Invalid operands in interpolate() call: "+t+", "+e);var o=a.length,h=u.length;if(o<h)for(var d=n?rt:wt,g=o;g<h;g++)this.add(new d);else o>h&&this[n?"removeSegments":"removeChildren"](h,o);for(var g=0;g<h;g++)a[g].interpolate(s[g],u[g],i);n&&(this.setClosed(t._closed),this._changed(9))},compare:function(t){var e=!1;if(t){var i=this._children||[this],n=t._children?t._children.slice():[t],r=i.length,s=n.length,u=[],a=0;e=!0;for(var o=ft.findItemBoundsCollisions(i,n,ct.GEOMETRIC_EPSILON),h=r-1;h>=0&&e;h--){var d=i[h];e=!1;var g=o[h];if(g)for(var c=g.length-1;c>=0&&!e;c--)d.compare(n[g[c]])&&(u[g[c]]||(u[g[c]]=!0,a++),e=!0)}e=e&&a===s}return e}}),wt=ke.extend({_class:"Path",_serializeFields:{segments:[],closed:!1},initialize:function(e){this._closed=!1,this._segments=[],this._version=0;var i=arguments,n=Array.isArray(e)?typeof e[0]=="object"?e:i:e&&e.size===q&&(e.x!==q||e.point!==q)?i:null;n&&n.length>0?this.setSegments(n):(this._curves=q,this._segmentSelection=0,!n&&typeof e=="string"&&(this.setPathData(e),e=null)),this._initialize(!n&&e)},_equals:function(t){return this._closed===t._closed&&T.equals(this._segments,t._segments)},copyContent:function(t){this.setSegments(t._segments),this._closed=t._closed},_changed:function t(e){if(t.base.call(this,e),e&8){if(this._length=this._area=q,e&32)this._version++;else if(this._curves)for(var i=0,n=this._curves.length;i<n;i++)this._curves[i]._changed()}else e&64&&(this._bounds=q)},getStyle:function(){var t=this._parent;return(t instanceof he?t:this)._style},getSegments:function(){return this._segments},setSegments:function(t){var e=this.isFullySelected(),i=t&&t.length;if(this._segments.length=0,this._segmentSelection=0,this._curves=q,i){var n=t[i-1];typeof n=="boolean"&&(this.setClosed(n),i--),this._add(rt.readList(t,0,{},i))}e&&this.setFullySelected(!0)},getFirstSegment:function(){return this._segments[0]},getLastSegment:function(){return this._segments[this._segments.length-1]},getCurves:function(){var t=this._curves,e=this._segments;if(!t){var i=this._countCurves();t=this._curves=new Array(i);for(var n=0;n<i;n++)t[n]=new G(this,e[n],e[n+1]||e[0])}return t},getFirstCurve:function(){return this.getCurves()[0]},getLastCurve:function(){var t=this.getCurves();return t[t.length-1]},isClosed:function(){return this._closed},setClosed:function(t){if(this._closed!=(t=!!t)){if(this._closed=t,this._curves){var e=this._curves.length=this._countCurves();t&&(this._curves[e-1]=new G(this,this._segments[e-1],this._segments[0]))}this._changed(41)}}},{beans:!0,getPathData:function(t,e){var i=this._segments,n=i.length,r=new St(e),s=new Array(6),u=!0,a,o,h,d,g,c,f,b,v=[];function S(m,l){if(m._transformCoordinates(t,s),a=s[0],o=s[1],u)v.push("M"+r.pair(a,o)),u=!1;else if(g=s[2],c=s[3],g===a&&c===o&&f===h&&b===d){if(!l){var p=a-h,y=o-d;v.push(p===0?"v"+r.number(y):y===0?"h"+r.number(p):"l"+r.pair(p,y))}}else v.push("c"+r.pair(f-h,b-d)+" "+r.pair(g-h,c-d)+" "+r.pair(a-h,o-d));h=a,d=o,f=s[4],b=s[5]}if(!n)return"";for(var _=0;_<n;_++)S(i[_]);return this._closed&&n>0&&(S(i[0],!0),v.push("z")),v.join("")},isEmpty:function(){return!this._segments.length},_transformContent:function(t){for(var e=this._segments,i=new Array(6),n=0,r=e.length;n<r;n++)e[n]._transformCoordinates(t,i,!0);return!0},_add:function(t,u){for(var i=this._segments,n=this._curves,r=t.length,s=u==null,u=s?i.length:u,a=0;a<r;a++){var o=t[a];o._path&&(o=t[a]=o.clone()),o._path=this,o._index=u+a,o._selection&&this._updateSelection(o,0,o._selection)}if(s)T.push(i,t);else{i.splice.apply(i,[u,0].concat(t));for(var a=u+r,h=i.length;a<h;a++)i[a]._index=a}if(n){var d=this._countCurves(),g=u>0&&u+r-1===d?u-1:u,c=g,f=Math.min(g+r,d);t._curves&&(n.splice.apply(n,[g,0].concat(t._curves)),c+=t._curves.length);for(var a=c;a<f;a++)n.splice(a,0,new G(this,null,null));this._adjustCurves(g,f)}return this._changed(41),t},_adjustCurves:function(t,e){for(var i=this._segments,n=this._curves,r,s=t;s<e;s++)r=n[s],r._path=this,r._segment1=i[s],r._segment2=i[s+1]||i[0],r._changed();(r=n[this._closed&&!t?i.length-1:t-1])&&(r._segment2=i[t]||i[0],r._changed()),(r=n[e])&&(r._segment1=i[e],r._changed())},_countCurves:function(){var t=this._segments.length;return!this._closed&&t>0?t-1:t},add:function(t){var e=arguments;return e.length>1&&typeof t!="number"?this._add(rt.readList(e)):this._add([rt.read(e)])[0]},insert:function(t,e){var i=arguments;return i.length>2&&typeof e!="number"?this._add(rt.readList(i,1),t):this._add([rt.read(i,1)],t)[0]},addSegment:function(){return this._add([rt.read(arguments)])[0]},insertSegment:function(t){return this._add([rt.read(arguments,1)],t)[0]},addSegments:function(t){return this._add(rt.readList(t))},insertSegments:function(t,e){return this._add(rt.readList(e),t)},removeSegment:function(t){return this.removeSegments(t,t+1)[0]||null},removeSegments:function(t,e,i){t=t||0,e=T.pick(e,this._segments.length);var n=this._segments,r=this._curves,s=n.length,u=n.splice(t,e-t),a=u.length;if(!a)return u;for(var o=0;o<a;o++){var h=u[o];h._selection&&this._updateSelection(h,h._selection,0),h._index=h._path=null}for(var o=t,d=n.length;o<d;o++)n[o]._index=o;if(r){for(var g=t>0&&e===s+(this._closed?1:0)?t-1:t,r=r.splice(g,a),o=r.length-1;o>=0;o--)r[o]._path=null;i&&(u._curves=r.slice(1)),this._adjustCurves(g,g)}return this._changed(41),u},clear:"#removeSegments",hasHandles:function(){for(var t=this._segments,e=0,i=t.length;e<i;e++)if(t[e].hasHandles())return!0;return!1},clearHandles:function(){for(var t=this._segments,e=0,i=t.length;e<i;e++)t[e].clearHandles()},getLength:function(){if(this._length==null){for(var t=this.getCurves(),e=0,i=0,n=t.length;i<n;i++)e+=t[i].getLength();this._length=e}return this._length},getArea:function(){var t=this._area;if(t==null){var e=this._segments,i=this._closed;t=0;for(var n=0,r=e.length;n<r;n++){var s=n+1===r;t+=G.getArea(G.getValues(e[n],e[s?0:n+1],null,s&&!i))}this._area=t}return t},isFullySelected:function(){var t=this._segments.length;return this.isSelected()&&t>0&&this._segmentSelection===t*7},setFullySelected:function(t){t&&this._selectSegments(!0),this.setSelected(t)},setSelection:function t(e){e&1||this._selectSegments(!1),t.base.call(this,e)},_selectSegments:function(t){var e=this._segments,i=e.length,n=t?7:0;this._segmentSelection=n*i;for(var r=0;r<i;r++)e[r]._selection=n},_updateSelection:function(t,e,i){t._selection=i;var n=this._segmentSelection+=i-e;n>0&&this.setSelected(!0)},divideAt:function(t){var e=this.getLocationAt(t),i;return e&&(i=e.getCurve().divideAt(e.getCurveOffset()))?i._segment1:null},splitAt:function(t){var e=this.getLocationAt(t),i=e&&e.index,n=e&&e.time,r=1e-8,s=1-r;n>s&&(i++,n=0);var u=this.getCurves();if(i>=0&&i<u.length){n>=r&&u[i++].divideAtTime(n);var a=this.removeSegments(i,this._segments.length,!0),o;return this._closed?(this.setClosed(!1),o=this):(o=new wt(lt.NO_INSERT),o.insertAbove(this),o.copyAttributes(this)),o._add(a,0),this.addSegment(a[0]),o}return null},split:function(t,e){var i,n=e===q?t:(i=this.getCurves()[t])&&i.getLocationAtTime(e);return n!=null?this.splitAt(n):null},join:function(t,e){var i=e||0;if(t&&t!==this){var n=t._segments,r=this.getLastSegment(),s=t.getLastSegment();if(!s)return this;r&&r._point.isClose(s._point,i)&&t.reverse();var u=t.getFirstSegment();if(r&&r._point.isClose(u._point,i))r.setHandleOut(u._handleOut),this._add(n.slice(1));else{var a=this.getFirstSegment();a&&a._point.isClose(u._point,i)&&t.reverse(),s=t.getLastSegment(),a&&a._point.isClose(s._point,i)?(a.setHandleIn(s._handleIn),this._add(n.slice(0,n.length-1),0)):this._add(n.slice())}t._closed&&this._add([n[0]]),t.remove()}var o=this.getFirstSegment(),h=this.getLastSegment();return o!==h&&o._point.isClose(h._point,i)&&(o.setHandleIn(h._handleIn),h.remove(),this.setClosed(!0)),this},reduce:function(t){for(var e=this.getCurves(),i=t&&t.simplify,n=i?1e-7:0,r=e.length-1;r>=0;r--){var s=e[r];!s.hasHandles()&&(!s.hasLength(n)||i&&s.isCollinear(s.getNext()))&&s.remove()}return this},reverse:function(){this._segments.reverse();for(var t=0,e=this._segments.length;t<e;t++){var i=this._segments[t],n=i._handleIn;i._handleIn=i._handleOut,i._handleOut=n,i._index=t}this._curves=null,this._changed(9)},flatten:function(t){for(var e=new ki(this,t||.25,256,!0),i=e.parts,n=i.length,r=[],s=0;s<n;s++)r.push(new rt(i[s].curve.slice(0,2)));!this._closed&&n>0&&r.push(new rt(i[n-1].curve.slice(6))),this.setSegments(r)},simplify:function(t){var e=new vn(this).fit(t||2.5);return e&&this.setSegments(e),!!e},smooth:function(t){var e=this,i=t||{},n=i.type||"asymmetric",r=this._segments,s=r.length,u=this._closed;function a(X,nt){var it=X&&X.index;if(it!=null){var ot=X.path;if(ot&&ot!==e)throw new Error(X._class+" "+it+" of "+ot+" is not part of "+e);nt&&X instanceof G&&it++}else it=typeof X=="number"?X:nt;return Math.min(it<0&&u?it%s:it<0?it+s:it,s-1)}var o=u&&i.from===q&&i.to===q,h=a(i.from,0),d=a(i.to,s-1);if(h>d)if(u)h-=s;else{var g=h;h=d,d=g}if(/^(?:asymmetric|continuous)$/.test(n)){var c=n==="asymmetric",f=Math.min,b=d-h+1,v=b-1,S=o?f(b,4):1,_=S,m=S,l=[];if(u||(_=f(1,h),m=f(1,s-d-1)),v+=_+m,v<=1)return;for(var p=0,y=h-_;p<=v;p++,y++)l[p]=r[(y<0?y+s:y)%s]._point;for(var x=l[0]._x+2*l[1]._x,w=l[0]._y+2*l[1]._y,C=2,I=v-1,P=[x],L=[w],k=[C],M=[],O=[],p=1;p<v;p++){var z=p<I,F=z||c?1:2,B=z?4:c?2:7,V=z?4:c?3:8,Z=z?2:c?0:1,$=F/C;C=k[p]=B-$,x=P[p]=V*l[p]._x+Z*l[p+1]._x-$*x,w=L[p]=V*l[p]._y+Z*l[p+1]._y-$*w}M[I]=P[I]/k[I],O[I]=L[I]/k[I];for(var p=v-2;p>=0;p--)M[p]=(P[p]-M[p+1])/k[p],O[p]=(L[p]-O[p+1])/k[p];M[v]=(3*l[v]._x-M[I])/2,O[v]=(3*l[v]._y-O[I])/2;for(var p=_,j=v-m,y=h;p<=j;p++,y++){var D=r[y<0?y+s:y],U=D._point,W=M[p]-U._x,K=O[p]-U._y;(o||p<j)&&D.setHandleOut(W,K),(o||p>_)&&D.setHandleIn(-W,-K)}}else for(var p=h;p<=d;p++)r[p<0?p+s:p].smooth(i,!o&&p===h,!o&&p===d)},toShape:function(t){if(!this._closed)return null;var e=this._segments,i,n,r,s;function u(c,f){var b=e[c],v=b.getNext(),S=e[f],_=S.getNext();return b._handleOut.isZero()&&v._handleIn.isZero()&&S._handleOut.isZero()&&_._handleIn.isZero()&&v._point.subtract(b._point).isCollinear(_._point.subtract(S._point))}function a(c){var f=e[c],b=f.getPrevious(),v=f.getNext();return b._handleOut.isZero()&&f._handleIn.isZero()&&f._handleOut.isZero()&&v._handleIn.isZero()&&f._point.subtract(b._point).isOrthogonal(v._point.subtract(f._point))}function o(c){var f=e[c],b=f.getNext(),v=f._handleOut,S=b._handleIn,_=.5522847498307936;if(v.isOrthogonal(S)){var m=f._point,l=b._point,p=new It(m,v,!0).intersect(new It(l,S,!0),!0);return p&&ct.isZero(v.getLength()/p.subtract(m).getLength()-_)&&ct.isZero(S.getLength()/p.subtract(l).getLength()-_)}return!1}function h(c,f){return e[c]._point.getDistance(e[f]._point)}if(!this.hasHandles()&&e.length===4&&u(0,2)&&u(1,3)&&a(1)?(i=Vt.Rectangle,n=new tt(h(0,3),h(0,1)),s=e[1]._point.add(e[2]._point).divide(2)):e.length===8&&o(0)&&o(2)&&o(4)&&o(6)&&u(1,5)&&u(3,7)?(i=Vt.Rectangle,n=new tt(h(1,6),h(0,3)),r=n.subtract(new tt(h(0,7),h(1,2))).divide(2),s=e[3]._point.add(e[4]._point).divide(2)):e.length===4&&o(0)&&o(1)&&o(2)&&o(3)&&(ct.isZero(h(0,2)-h(1,3))?(i=Vt.Circle,r=h(0,2)/2):(i=Vt.Ellipse,r=new tt(h(2,0)/2,h(3,1)/2)),s=e[1]._point),i){var d=this.getPosition(!0),g=new i({center:d,size:n,radius:r,insert:!1});return g.copyAttributes(this,!0),g._matrix.prepend(this._matrix),g.rotate(s.subtract(d).getAngle()+90),(t===q||t)&&g.insertAbove(this),g}return null},toPath:"#clone",compare:function t(e){if(!e||e instanceof he)return t.base.call(this,e);var i=this.getCurves(),n=e.getCurves(),r=i.length,s=n.length;if(!r||!s)return r==s;for(var u=i[0].getValues(),a=[],o=0,h,d=0,g,c=0;c<s;c++){var S=n[c].getValues();a.push(S);var f=G.getOverlaps(u,S);if(f){h=!c&&f[0][0]>0?s-1:c,g=f[0][1];break}}for(var b=Math.abs,v=1e-8,S=a[h],_;u&&S;){var f=G.getOverlaps(u,S);if(f){var m=f[0][0];if(b(m-d)<v){d=f[1][0],d===1&&(u=++o<r?i[o].getValues():null,d=0);var l=f[0][1];if(b(l-g)<v){if(_||(_=[h,l]),g=f[1][1],g===1&&(++h>=s&&(h=0),S=a[h]||n[h].getValues(),g=0),!u)return _[0]===h&&_[1]===g;continue}}}break}return!1},_hitTestSelf:function(t,e,i,n){var r=this,s=this.getStyle(),u=this._segments,a=u.length,o=this._closed,h=e._tolerancePadding,d=h,g,c,f,b,v,S,_=e.stroke&&s.hasStroke(),m=e.fill&&s.hasFill(),l=e.curves,p=_?s.getStrokeWidth()/2:m&&e.tolerance>0||l?0:null;p!==null&&(p>0?(g=s.getStrokeJoin(),c=s.getStrokeCap(),f=s.getMiterLimit(),d=d.add(wt._getStrokePadding(p,n))):g=c="round");function y(M,O){return t.subtract(M).divide(O).length<=1}function x(M,O,z){if(!e.selected||O.isSelected()){var F=M._point;if(O!==F&&(O=O.add(F)),y(O,d))return new _e(z,r,{segment:M,point:O})}}function w(M,O){return(O||e.segments)&&x(M,M._point,"segment")||!O&&e.handles&&(x(M,M._handleIn,"handle-in")||x(M,M._handleOut,"handle-out"))}function C(M){b.add(M)}function I(M){var O=o||M._index>0&&M._index<a-1;if((O?g:c)==="round")return y(M._point,d);if(b=new wt({internal:!0,closed:!0}),O?M.isSmooth()||wt._addBevelJoin(M,g,p,f,null,n,C,!0):c==="square"&&wt._addSquareCap(M,c,p,null,n,C,!0),!b.isEmpty()){var z;return b.contains(t)||(z=b.getNearestLocation(t))&&y(z.getPoint(),h)}}if(e.ends&&!e.segments&&!o){if(S=w(u[0],!0)||w(u[a-1],!0))return S}else if(e.segments||e.handles){for(var P=0;P<a;P++)if(S=w(u[P]))return S}if(p!==null){if(v=this.getNearestLocation(t),v){var L=v.getTime();L===0||L===1&&a>1?I(v.getSegment())||(v=null):y(v.getPoint(),d)||(v=null)}if(!v&&g==="miter"&&a>1)for(var P=0;P<a;P++){var k=u[P];if(t.getDistance(k._point)<=f*p&&I(k)){v=k.getLocation();break}}}return!v&&m&&this._contains(t)||v&&!_&&!l?new _e("fill",this):v?new _e(_?"stroke":"curve",this,{location:v,point:v.getPoint()}):null}},T.each(G._evaluateMethods,function(t){this[t+"At"]=function(e){var i=this.getLocationAt(e);return i&&i[t]()}},{beans:!1,getLocationOf:function(){for(var t=N.read(arguments),e=this.getCurves(),i=0,n=e.length;i<n;i++){var r=e[i].getLocationOf(t);if(r)return r}return null},getOffsetOf:function(){var t=this.getLocationOf.apply(this,arguments);return t?t.getOffset():null},getLocationAt:function(t){if(typeof t=="number"){for(var e=this.getCurves(),i=0,n=0,r=e.length;n<r;n++){var s=i,u=e[n];if(i+=u.getLength(),i>t)return u.getLocationAt(t-s)}if(e.length>0&&t<=this.getLength())return new oe(e[e.length-1],1)}else if(t&&t.getPath&&t.getPath()===this)return t;return null},getOffsetsWithTangent:function(){var t=N.read(arguments);if(t.isZero())return[];for(var e=[],i=0,n=this.getCurves(),r=0,s=n.length;r<s;r++){for(var u=n[r],a=u.getTimesWithTangent(t),o=0,h=a.length;o<h;o++){var d=i+u.getOffsetAtTime(a[o]);e.indexOf(d)<0&&e.push(d)}i+=u.length}return e}}),new function(){function t(i,n,r,s){if(s<=0)return;var u=s/2,a=s-2,o=u-1,h=new Array(6),d,g;function c(m){var l=h[m],p=h[m+1];(d!=l||g!=p)&&(i.beginPath(),i.moveTo(d,g),i.lineTo(l,p),i.stroke(),i.beginPath(),i.arc(l,p,u,0,Math.PI*2,!0),i.fill())}for(var f=0,b=n.length;f<b;f++){var v=n[f],S=v._selection;if(v._transformCoordinates(r,h),d=h[0],g=h[1],S&2&&c(2),S&4&&c(4),i.fillRect(d-u,g-u,s,s),a>0&&!(S&1)){var _=i.fillStyle;i.fillStyle="#ffffff",i.fillRect(d-o,g-o,a,a),i.fillStyle=_}}}function e(i,n,r){var s=n._segments,u=s.length,a=new Array(6),o=!0,h,d,g,c,f,b,v,S;function _(l){if(r)l._transformCoordinates(r,a),h=a[0],d=a[1];else{var p=l._point;h=p._x,d=p._y}if(o)i.moveTo(h,d),o=!1;else{if(r)f=a[2],b=a[3];else{var y=l._handleIn;f=h+y._x,b=d+y._y}f===h&&b===d&&v===g&&S===c?i.lineTo(h,d):i.bezierCurveTo(v,S,f,b,h,d)}if(g=h,c=d,r)v=a[4],S=a[5];else{var y=l._handleOut;v=g+y._x,S=c+y._y}}for(var m=0;m<u;m++)_(s[m]);n._closed&&u>0&&_(s[0])}return{_draw:function(i,n,r,s){var u=n.dontStart,a=n.dontFinish||n.clip,o=this.getStyle(),h=o.hasFill(),d=o.hasStroke(),g=o.getDashArray(),c=!gt.support.nativeDash&&d&&g&&g.length;u||i.beginPath(),(h||d&&!c||a)&&(e(i,this,s),this._closed&&i.closePath());function f(l){return g[(l%c+c)%c]}if(!a&&(h||d)&&(this._setStyles(i,n,r),h&&(i.fill(o.getFillRule()),i.shadowColor="rgba(0,0,0,0)"),d)){if(c){u||i.beginPath();for(var b=new ki(this,.25,32,!1,s),v=b.length,S=-o.getDashOffset(),_,m=0;S>0;)S-=f(m--)+f(m--);for(;S<v;)_=S+f(m++),(S>0||_>0)&&b.drawPart(i,Math.max(S,0),Math.max(_,0)),S=_+f(m++)}i.stroke()}},_drawSelected:function(i,n){i.beginPath(),e(i,this,n),i.stroke(),t(i,this._segments,n,gt.settings.handleSize)}}},new function(){function t(e){var i=e._segments;if(!i.length)throw new Error("Use a moveTo() command first");return i[i.length-1]}return{moveTo:function(){var e=this._segments;e.length===1&&this.removeSegment(0),e.length||this._add([new rt(N.read(arguments))])},moveBy:function(){throw new Error("moveBy() is unsupported on Path items.")},lineTo:function(){this._add([new rt(N.read(arguments))])},cubicCurveTo:function(){var e=arguments,i=N.read(e),n=N.read(e),r=N.read(e),s=t(this);s.setHandleOut(i.subtract(s._point)),this._add([new rt(r,n.subtract(r))])},quadraticCurveTo:function(){var e=arguments,i=N.read(e),n=N.read(e),r=t(this)._point;this.cubicCurveTo(i.add(r.subtract(i).multiply(1/3)),i.add(n.subtract(i).multiply(1/3)),n)},curveTo:function(){var e=arguments,i=N.read(e),n=N.read(e),r=T.pick(T.read(e),.5),s=1-r,u=t(this)._point,a=i.subtract(u.multiply(s*s)).subtract(n.multiply(r*r)).divide(2*r*s);if(a.isNaN())throw new Error("Cannot put a curve through points with parameter = "+r);this.quadraticCurveTo(a,n)},arcTo:function(){var e=arguments,i=Math.abs,n=Math.sqrt,r=t(this),s=r._point,u=N.read(e),a,o=T.peek(e),h=T.pick(o,!0),d,g,c,f;if(typeof h=="boolean")var b=s.add(u).divide(2),a=b.add(b.subtract(s).rotate(h?-90:90));else if(T.remain(e)<=2)a=u,u=N.read(e);else if(!s.equals(u)){var v=tt.read(e),S=ct.isZero;if(S(v.width)||S(v.height))return this.lineTo(u);var _=T.read(e),h=!!T.read(e),m=!!T.read(e),b=s.add(u).divide(2),l=s.subtract(b).rotate(-_),p=l.x,y=l.y,x=i(v.width),w=i(v.height),C=x*x,I=w*w,P=p*p,L=y*y,k=n(P/C+L/I);if(k>1&&(x*=k,w*=k,C=x*x,I=w*w),k=(C*I-C*L-I*P)/(C*L+I*P),i(k)<1e-12&&(k=0),k<0)throw new Error("Cannot create an arc with the given arguments");d=new N(x*y/w,-w*p/x).multiply((m===h?-1:1)*n(k)).rotate(_).add(b),f=new vt().translate(d).rotate(_).scale(x,w),c=f._inverseTransform(s),g=c.getDirectedAngle(f._inverseTransform(u)),!h&&g>0?g-=360:h&&g<0&&(g+=360)}if(a){var M=new It(s.add(a).divide(2),a.subtract(s).rotate(90),!0),O=new It(a.add(u).divide(2),u.subtract(a).rotate(90),!0),z=new It(s,u),F=z.getSide(a);if(d=M.intersect(O,!0),!d){if(!F)return this.lineTo(u);throw new Error("Cannot create an arc with the given arguments")}c=s.subtract(d),g=c.getDirectedAngle(u.subtract(d));var B=z.getSide(d,!0);B===0?g=F*i(g):F===B&&(g+=g<0?360:-360)}if(g){for(var V=1e-5,Z=i(g),$=Z>=360?4:Math.ceil((Z-V)/90),j=g/$,D=j*Math.PI/360,U=4/3*Math.sin(D)/(1+Math.cos(D)),W=[],K=0;K<=$;K++){var l=u,X=null;if(K<$&&(X=c.rotate(90).multiply(U),f?(l=f._transformPoint(c),X=f._transformPoint(c.add(X)).subtract(l)):l=d.add(c)),!K)r.setHandleOut(X);else{var nt=c.rotate(-90).multiply(U);f&&(nt=f._transformPoint(c.add(nt)).subtract(l)),W.push(new rt(l,nt,X))}c=c.rotate(j)}this._add(W)}},lineBy:function(){var e=N.read(arguments),i=t(this)._point;this.lineTo(i.add(e))},curveBy:function(){var e=arguments,i=N.read(e),n=N.read(e),r=T.read(e),s=t(this)._point;this.curveTo(s.add(i),s.add(n),r)},cubicCurveBy:function(){var e=arguments,i=N.read(e),n=N.read(e),r=N.read(e),s=t(this)._point;this.cubicCurveTo(s.add(i),s.add(n),s.add(r))},quadraticCurveBy:function(){var e=arguments,i=N.read(e),n=N.read(e),r=t(this)._point;this.quadraticCurveTo(r.add(i),r.add(n))},arcBy:function(){var e=arguments,i=t(this)._point,n=i.add(N.read(e)),r=T.pick(T.peek(e),!0);typeof r=="boolean"?this.arcTo(n,r):this.arcTo(n,i.add(N.read(e)))},closePath:function(e){this.setClosed(!0),this.join(this,e)}}},{_getBounds:function(t,e){var i=e.handle?"getHandleBounds":e.stroke?"getStrokeBounds":"getBounds";return wt[i](this._segments,this._closed,this,t,e)},statics:{getBounds:function(t,e,i,n,r,s){var u=t[0];if(!u)return new et;var a=new Array(6),o=u._transformCoordinates(n,new Array(6)),h=o.slice(0,2),d=h.slice(),g=new Array(2);function c(v){v._transformCoordinates(n,a);for(var S=0;S<2;S++)G._addBounds(o[S],o[S+4],a[S+2],a[S],S,s?s[S]:0,h,d,g);var _=o;o=a,a=_}for(var f=1,b=t.length;f<b;f++)c(t[f]);return e&&c(u),new et(h[0],h[1],d[0]-h[0],d[1]-h[1])},getStrokeBounds:function(t,e,i,n,r){var s=i.getStyle(),u=s.hasStroke(),a=s.getStrokeWidth(),o=u&&i._getStrokeMatrix(n,r),h=u&&wt._getStrokePadding(a,o),d=wt.getBounds(t,e,i,n,r,h);if(!u)return d;var g=a/2,c=s.getStrokeJoin(),f=s.getStrokeCap(),b=s.getMiterLimit(),v=new et(new tt(h));function S(x){d=d.include(x)}function _(x){d=d.unite(v.setCenter(x._point.transform(n)))}function m(x,w){w==="round"||x.isSmooth()?_(x):wt._addBevelJoin(x,w,g,b,n,o,S)}function l(x,w){w==="round"?_(x):wt._addSquareCap(x,w,g,n,o,S)}var p=t.length-(e?0:1);if(p>0){for(var y=1;y<p;y++)m(t[y],c);e?m(t[0],c):(l(t[0],f),l(t[t.length-1],f))}return d},_getStrokePadding:function(t,e){if(!e)return[t,t];var i=new N(t,0).transform(e),n=new N(0,t).transform(e),r=i.getAngleInRadians(),s=i.getLength(),u=n.getLength(),a=Math.sin(r),o=Math.cos(r),h=Math.tan(r),d=Math.atan2(u*h,s),g=Math.atan2(u,h*s);return[Math.abs(s*Math.cos(d)*o+u*Math.sin(d)*a),Math.abs(u*Math.sin(g)*o+s*Math.cos(g)*a)]},_addBevelJoin:function(t,e,i,n,r,s,u,a){var o=t.getCurve(),h=o.getPrevious(),d=o.getPoint1().transform(r),g=h.getNormalAtTime(1).multiply(i).transform(s),c=o.getNormalAtTime(0).multiply(i).transform(s),f=g.getDirectedAngle(c);if((f<0||f>=180)&&(g=g.negate(),c=c.negate()),a&&u(d),u(d.add(g)),e==="miter"){var b=new It(d.add(g),new N(-g.y,g.x),!0).intersect(new It(d.add(c),new N(-c.y,c.x),!0),!0);b&&d.getDistance(b)<=n*i&&u(b)}u(d.add(c))},_addSquareCap:function(t,e,i,n,r,s,u){var a=t._point.transform(n),o=t.getLocation(),h=o.getNormal().multiply(o.getTime()===0?i:-i).transform(r);e==="square"&&(u&&(s(a.subtract(h)),s(a.add(h))),a=a.add(h.rotate(-90))),s(a.add(h)),s(a.subtract(h))},getHandleBounds:function(t,e,i,n,r){var s=i.getStyle(),u=r.stroke&&s.hasStroke(),a,o;if(u){var h=i._getStrokeMatrix(n,r),d=s.getStrokeWidth()/2,g=d;s.getStrokeJoin()==="miter"&&(g=d*s.getMiterLimit()),s.getStrokeCap()==="square"&&(g=Math.max(g,d*Math.SQRT2)),a=wt._getStrokePadding(d,h),o=wt._getStrokePadding(g,h)}for(var c=new Array(6),f=1/0,b=-f,v=f,S=b,_=0,m=t.length;_<m;_++){var l=t[_];l._transformCoordinates(n,c);for(var p=0;p<6;p+=2){var y=p?a:o,x=y?y[0]:0,w=y?y[1]:0,C=c[p],I=c[p+1],P=C-x,L=C+x,k=I-w,M=I+w;P<f&&(f=P),L>b&&(b=L),k<v&&(v=k),M>S&&(S=M)}}return new et(f,v,b-f,S-v)}}});wt.inject({statics:new function(){var t=.5522847498307936,e=[new rt([-1,0],[0,t],[0,-t]),new rt([0,-1],[-t,0],[t,0]),new rt([1,0],[0,-t],[0,t]),new rt([0,1],[t,0],[-t,0])];function i(r,s,u){var a=T.getNamed(u),o=new wt(a&&(a.insert==!0?lt.INSERT:a.insert==!1?lt.NO_INSERT:null));return o._add(r),o._closed=s,o.set(a,lt.INSERT)}function n(r,s,u){for(var a=new Array(4),o=0;o<4;o++){var h=e[o];a[o]=new rt(h._point.multiply(s).add(r),h._handleIn.multiply(s),h._handleOut.multiply(s))}return i(a,!0,u)}return{Line:function(){var r=arguments;return i([new rt(N.readNamed(r,"from")),new rt(N.readNamed(r,"to"))],!1,r)},Circle:function(){var r=arguments,s=N.readNamed(r,"center"),u=T.readNamed(r,"radius");return n(s,new tt(u),r)},Rectangle:function(){var r=arguments,s=et.readNamed(r,"rectangle"),u=tt.readNamed(r,"radius",0,{readNull:!0}),a=s.getBottomLeft(!0),o=s.getTopLeft(!0),h=s.getTopRight(!0),d=s.getBottomRight(!0),g;if(!u||u.isZero())g=[new rt(a),new rt(o),new rt(h),new rt(d)];else{u=tt.min(u,s.getSize(!0).divide(2));var c=u.width,f=u.height,b=c*t,v=f*t;g=[new rt(a.add(c,0),null,[-b,0]),new rt(a.subtract(0,f),[0,v]),new rt(o.add(0,f),null,[0,-v]),new rt(o.add(c,0),[-b,0],null),new rt(h.subtract(c,0),null,[b,0]),new rt(h.add(0,f),[0,-v],null),new rt(d.subtract(0,f),null,[0,v]),new rt(d.subtract(c,0),[b,0])]}return i(g,!0,r)},RoundRectangle:"#Rectangle",Ellipse:function(){var r=arguments,s=Vt._readEllipse(r);return n(s.center,s.radius,r)},Oval:"#Ellipse",Arc:function(){var r=arguments,s=N.readNamed(r,"from"),u=N.readNamed(r,"through"),a=N.readNamed(r,"to"),o=T.getNamed(r),h=new wt(o&&o.insert==!1&&lt.NO_INSERT);return h.moveTo(s),h.arcTo(u,a),h.set(o)},RegularPolygon:function(){for(var r=arguments,s=N.readNamed(r,"center"),u=T.readNamed(r,"sides"),a=T.readNamed(r,"radius"),o=360/u,h=u%3===0,d=new N(0,h?-a:a),g=h?-1:.5,c=new Array(u),f=0;f<u;f++)c[f]=new rt(s.add(d.rotate((f+g)*o)));return i(c,!0,r)},Star:function(){for(var r=arguments,s=N.readNamed(r,"center"),u=T.readNamed(r,"points")*2,a=T.readNamed(r,"radius1"),o=T.readNamed(r,"radius2"),h=360/u,d=new N(0,-1),g=new Array(u),c=0;c<u;c++)g[c]=new rt(s.add(d.rotate(h*c).multiply(c%2?o:a)));return i(g,!0,r)}}}});var he=ke.extend({_class:"CompoundPath",_serializeFields:{children:[]},beans:!0,initialize:function(e){this._children=[],this._namedChildren={},this._initialize(e)||(typeof e=="string"?this.setPathData(e):this.addChildren(Array.isArray(e)?e:arguments))},insertChildren:function t(e,i){var n=i,r=n[0];r&&typeof r[0]=="number"&&(n=[n]);for(var s=i.length-1;s>=0;s--){var u=n[s];n===i&&!(u instanceof wt)&&(n=T.slice(n)),Array.isArray(u)?n[s]=new wt({segments:u,insert:!1}):u instanceof he&&(n.splice.apply(n,[s,1].concat(u.removeChildren())),u.remove())}return t.base.call(this,e,n)},reduce:function t(e){for(var i=this._children,n=i.length-1;n>=0;n--){var r=i[n].reduce(e);r.isEmpty()&&r.remove()}if(!i.length){var r=new wt(lt.NO_INSERT);return r.copyAttributes(this),r.insertAbove(this),this.remove(),r}return t.base.call(this)},isClosed:function(){for(var t=this._children,e=0,i=t.length;e<i;e++)if(!t[e]._closed)return!1;return!0},setClosed:function(t){for(var e=this._children,i=0,n=e.length;i<n;i++)e[i].setClosed(t)},getFirstSegment:function(){var t=this.getFirstChild();return t&&t.getFirstSegment()},getLastSegment:function(){var t=this.getLastChild();return t&&t.getLastSegment()},getCurves:function(){for(var t=this._children,e=[],i=0,n=t.length;i<n;i++)T.push(e,t[i].getCurves());return e},getFirstCurve:function(){var t=this.getFirstChild();return t&&t.getFirstCurve()},getLastCurve:function(){var t=this.getLastChild();return t&&t.getLastCurve()},getArea:function(){for(var t=this._children,e=0,i=0,n=t.length;i<n;i++)e+=t[i].getArea();return e},getLength:function(){for(var t=this._children,e=0,i=0,n=t.length;i<n;i++)e+=t[i].getLength();return e},getPathData:function(t,e){for(var i=this._children,n=[],r=0,s=i.length;r<s;r++){var u=i[r],a=u._matrix;n.push(u.getPathData(t&&!a.isIdentity()?t.appended(a):t,e))}return n.join("")},_hitTestChildren:function t(e,i,n){return t.base.call(this,e,i.class===wt||i.type==="path"?i:T.set({},i,{fill:!1}),n)},_draw:function(t,e,i,n){var r=this._children;if(!!r.length){e=e.extend({dontStart:!0,dontFinish:!0}),t.beginPath();for(var s=0,u=r.length;s<u;s++)r[s].draw(t,e,n);if(!e.clip){this._setStyles(t,e,i);var a=this._style;a.hasFill()&&(t.fill(a.getFillRule()),t.shadowColor="rgba(0,0,0,0)"),a.hasStroke()&&t.stroke()}}},_drawSelected:function(t,e,i){for(var n=this._children,r=0,s=n.length;r<s;r++){var u=n[r],a=u._matrix;i[u._id]||u._drawSelected(t,a.isIdentity()?e:e.appended(a))}}},new function(){function t(e,i){var n=e._children;if(i&&!n.length)throw new Error("Use a moveTo() command first");return n[n.length-1]}return T.each(["lineTo","cubicCurveTo","quadraticCurveTo","curveTo","arcTo","lineBy","cubicCurveBy","quadraticCurveBy","curveBy","arcBy"],function(e){this[e]=function(){var i=t(this,!0);i[e].apply(i,arguments)}},{moveTo:function(){var e=t(this),i=e&&e.isEmpty()?e:new wt(lt.NO_INSERT);i!==e&&this.addChild(i),i.moveTo.apply(i,arguments)},moveBy:function(){var e=t(this,!0),i=e&&e.getLastSegment(),n=N.read(arguments);this.moveTo(i?n.add(i._point):n)},closePath:function(e){t(this,!0).closePath(e)}})},T.each(["reverse","flatten","simplify","smooth"],function(t){this[t]=function(e){for(var i=this._children,n,r=0,s=i.length;r<s;r++)n=i[r][t](e)||n;return n}},{}));ke.inject(new function(){var t=Math.min,e=Math.max,i=Math.abs,n={unite:{1:!0,2:!0},intersect:{2:!0},subtract:{1:!0},exclude:{1:!0,"-1":!0}};function r(_){return _._children||[_]}function s(_,m){var l=_.clone(!1).reduce({simplify:!0}).transform(null,!0,!0);if(m){for(var p=r(l),y=0,x=p.length;y<x;y++){var _=p[y];!_._closed&&!_.isEmpty()&&(_.closePath(1e-12),_.getFirstSegment().setHandleIn(0,0),_.getLastSegment().setHandleOut(0,0))}l=l.resolveCrossings().reorient(l.getFillRule()==="nonzero",!0)}return l}function u(_,m,l,p,y){var x=new he(lt.NO_INSERT);return x.addChildren(_,!0),x=x.reduce({simplify:m}),y&&y.insert==!1||x.insertAbove(p&&l.isSibling(p)&&l.getIndex()<p.getIndex()?p:l),x.copyAttributes(l,!0),x}function a(_){return _.hasOverlap()||_.isCrossing()}function o(_,m,l,p){if(p&&(p.trace==!1||p.stroke)&&/^(subtract|intersect)$/.test(l))return h(_,m,l);var y=s(_,!0),x=m&&_!==m&&s(m,!0),w=n[l];w[l]=!0,x&&(w.subtract||w.exclude)^(x.isClockwise()^y.isClockwise())&&x.reverse();var C=f(oe.expand(y.getIntersections(x,a))),I=r(y),P=x&&r(x),L=[],k=[],M;function O(X){for(var nt=0,it=X.length;nt<it;nt++){var ot=X[nt];T.push(L,ot._segments),T.push(k,ot.getCurves()),ot._overlapsOnly=!0}}function z(X){for(var nt=[],it=0,ot=X&&X.length;it<ot;it++)nt.push(k[X[it]]);return nt}if(C.length){O(I),P&&O(P);for(var F=new Array(k.length),B=0,V=k.length;B<V;B++)F[B]=k[B].getValues();for(var Z=ft.findCurveBoundsCollisions(F,F,0,!0),$={},B=0;B<k.length;B++){var j=k[B],D=j._path._id,U=$[D]=$[D]||{};U[j.getIndex()]={hor:z(Z[B].hor),ver:z(Z[B].ver)}}for(var B=0,V=C.length;B<V;B++)v(C[B]._segment,y,x,$,w);for(var B=0,V=L.length;B<V;B++){var W=L[B],K=W._intersection;W._winding||v(W,y,x,$,w),K&&K._overlap||(W._path._overlapsOnly=!1)}M=S(L,w)}else M=c(P?I.concat(P):I.slice(),function(X){return!!w[X]});return u(M,!0,_,m,p)}function h(_,m,l){var p=s(_),y=s(m),x=p.getIntersections(y,a),w=l==="subtract",C=l==="divide",I={},P=[];function L(O){if(!I[O._id]&&(C||y.contains(O.getPointAt(O.getLength()/2))^w))return P.unshift(O),I[O._id]=!0}for(var k=x.length-1;k>=0;k--){var M=x[k].split();M&&(L(M)&&M.getFirstSegment().setHandleIn(0,0),p.getLastSegment().setHandleOut(0,0))}return L(p),u(P,!1,_,m)}function d(_,m){for(var l=_;l;){if(l===m)return;l=l._previous}for(;_._next&&_._next!==m;)_=_._next;if(!_._next){for(;m._previous;)m=m._previous;_._next=m,m._previous=_}}function g(_){for(var m=_.length-1;m>=0;m--)_[m].clearHandles()}function c(_,m,l){var p=_&&_.length;if(p){var y=T.each(_,function(Z,$){this[Z._id]={container:null,winding:Z.isClockwise()?1:-1,index:$}},{}),x=_.slice().sort(function(Z,$){return i($.getArea())-i(Z.getArea())}),w=x[0],C=ft.findItemBoundsCollisions(x,null,ct.GEOMETRIC_EPSILON);l==null&&(l=w.isClockwise());for(var I=0;I<p;I++){var P=x[I],L=y[P._id],k=0,M=C[I];if(M){for(var O=null,z=M.length-1;z>=0;z--)if(M[z]<I){O=O||P.getInteriorPoint();var F=x[M[z]];if(F.contains(O)){var B=y[F._id];k=B.winding,L.winding+=k,L.container=B.exclude?B.container:F;break}}}if(m(L.winding)===m(k))L.exclude=!0,_[L.index]=null;else{var V=L.container;P.setClockwise(V?!V.isClockwise():l)}}}return _}function f(_,m,l){var p=m&&[],y=1e-8,x=1-y,w=!1,C=l||[],I=l&&{},P,L,k;function M(nt){return nt._path._id+"."+nt._segment1._index}for(var O=(l&&l.length)-1;O>=0;O--){var z=l[O];z._path&&(I[M(z)]=!0)}for(var O=_.length-1;O>=0;O--){var F=_[O],B=F._time,V=B,Z=m&&!m(F),z=F._curve,$;if(z&&(z!==L?(w=!z.hasHandles()||I&&I[M(z)],P=[],k=null,L=z):k>=y&&(B/=k)),Z){P&&P.push(F);continue}else m&&p.unshift(F);if(k=V,B<y)$=z._segment1;else if(B>x)$=z._segment2;else{var j=z.divideAtTime(B,!0);w&&C.push(z,j),$=j._segment1;for(var D=P.length-1;D>=0;D--){var U=P[D];U._time=(U._time-B)/(1-B)}}F._setSegment($);var W=$._intersection,K=F._intersection;if(W){d(W,K);for(var X=W;X;)d(X._intersection,W),X=X._next}else $._intersection=K}return l||g(C),p||_}function b(_,m,l,p,y){var x=Array.isArray(m)?m:m[l?"hor":"ver"],w=l?1:0,C=w^1,I=[_.x,_.y],P=I[w],L=I[C],k=1e-9,M=1e-6,O=P-k,z=P+k,F=0,B=0,V=0,Z=0,$=!1,j=!1,D=1,U=[],W,K;function X(xt){var Lt=xt[C+0],Gt=xt[C+6];if(!(L<t(Lt,Gt)||L>e(Lt,Gt))){var Rt=xt[w+0],Kt=xt[w+2],pe=xt[w+4],te=xt[w+6];if(Lt===Gt){(Rt<z&&te>O||te<z&&Rt>O)&&($=!0);return}var ee=L===Lt?0:L===Gt||O>e(Rt,Kt,pe,te)||z<t(Rt,Kt,pe,te)?1:G.solveCubic(xt,C,L,U,0,1)>0?U[0]:1,$t=ee===0?Rt:ee===1?te:G.getPoint(xt,ee)[l?"y":"x"],Xt=Lt>Gt?1:-1,me=W[C]>W[C+6]?1:-1,ie=W[w+6];return L!==Lt?($t<O?V+=Xt:$t>z?Z+=Xt:$=!0,$t>P-M&&$t<P+M&&(D/=2)):(Xt!==me?Rt<O?V+=Xt:Rt>z&&(Z+=Xt):Rt!=ie&&(ie<z&&$t>z?(Z+=Xt,$=!0):ie>O&&$t<O&&(V+=Xt,$=!0)),D/=4),W=xt,!y&&$t>O&&$t<z&&G.getTangent(xt,ee)[l?"x":"y"]===0&&b(_,m,!l,p,!0)}}function nt(xt){var Lt=xt[C+0],Gt=xt[C+2],Rt=xt[C+4],Kt=xt[C+6];if(L<=e(Lt,Gt,Rt,Kt)&&L>=t(Lt,Gt,Rt,Kt)){for(var pe=xt[w+0],te=xt[w+2],ee=xt[w+4],$t=xt[w+6],Xt=O>e(pe,te,ee,$t)||z<t(pe,te,ee,$t)?[xt]:G.getMonoCurves(xt,l),me,ie=0,We=Xt.length;ie<We;ie++)if(me=X(Xt[ie]))return me}}for(var it=0,ot=x.length;it<ot;it++){var dt=x[it],ut=dt._path,Ft=dt.getValues(),Bt;if((!it||x[it-1]._path!==ut)&&(W=null,ut._closed||(K=G.getValues(ut.getLastCurve().getSegment2(),dt.getSegment1(),null,!p),K[C]!==K[C+6]&&(W=K)),!W)){W=Ft;for(var Ht=ut.getLastCurve();Ht&&Ht!==dt;){var Ot=Ht.getValues();if(Ot[C]!==Ot[C+6]){W=Ot;break}Ht=Ht.getPrevious()}}if(Bt=nt(Ft))return Bt;if(it+1===ot||x[it+1]._path!==ut){if(K&&(Bt=nt(K)))return Bt;$&&!V&&!Z&&(V=Z=ut.isClockwise(p)^l?1:-1),F+=V,B+=Z,V=Z=0,$&&(j=!0,$=!1),K=null}}return F=i(F),B=i(B),{winding:e(F,B),windingL:F,windingR:B,quality:D,onPath:j}}function v(_,m,l,p,y){var x=[],w=_,C=0,k;do{var I=_.getCurve();if(I){var P=I.getLength();x.push({segment:_,curve:I,length:P}),C+=P}_=_.getNext()}while(_&&!_._intersection&&_!==w);for(var L=[.5,.25,.75],k={winding:0,quality:-1},M=.001,O=1-M,z=0;z<L.length&&k.quality<.5;z++)for(var P=C*L[z],F=0,B=x.length;F<B;F++){var V=x[F],Z=V.length;if(P<=Z){var I=V.curve,$=I._path,j=$._parent,D=j instanceof he?j:$,U=ct.clamp(I.getTimeAt(P),M,O),W=I.getPointAtTime(U),K=i(I.getTangentAtTime(U).y)<Math.SQRT1_2,X=null;if(y.subtract&&l){var nt=D===m?l:m,it=nt._getWinding(W,K,!0);if(D===m&&it.winding||D===l&&!it.winding){if(it.quality<1)continue;X={winding:0,quality:1}}}X=X||b(W,p[$._id][I.getIndex()],K,!0),X.quality>k.quality&&(k=X);break}P-=Z}for(var F=x.length-1;F>=0;F--)x[F].segment._winding=k}function S(_,m){var l=[],p;function y(ot){var dt;return!!(ot&&!ot._visited&&(!m||m[(dt=ot._winding||{}).winding]&&!(m.unite&&dt.winding===2&&dt.windingL&&dt.windingR)))}function x(ot){if(ot){for(var dt=0,ut=p.length;dt<ut;dt++)if(ot===p[dt])return!0}return!1}function w(ot){for(var dt=ot._segments,ut=0,Ft=dt.length;ut<Ft;ut++)dt[ut]._visited=!0}function C(ot,dt){var ut=ot._intersection,Ft=ut,Bt=[];dt&&(p=[ot]);function Ht(Ot,xt){for(;Ot&&Ot!==xt;){var Lt=Ot._segment,Gt=Lt&&Lt._path;if(Gt){var Rt=Lt.getNext()||Gt.getFirstSegment(),Kt=Rt._intersection;Lt!==ot&&(x(Lt)||x(Rt)||Rt&&y(Lt)&&(y(Rt)||Kt&&y(Kt._segment)))&&Bt.push(Lt),dt&&p.push(Lt)}Ot=Ot._next}}if(ut){for(Ht(ut);ut&&ut._previous;)ut=ut._previous;Ht(ut,Ft)}return Bt}_.sort(function(ot,dt){var ut=ot._intersection,Ft=dt._intersection,Bt=!!(ut&&ut._overlap),Ht=!!(Ft&&Ft._overlap),Ot=ot._path,xt=dt._path;return Bt^Ht?Bt?1:-1:!ut^!Ft?ut?1:-1:Ot!==xt?Ot._id-xt._id:ot._index-dt._index});for(var I=0,P=_.length;I<P;I++){var L=_[I],k=y(L),M=null,O=!1,z=!0,F=[],B,V,Z;if(k&&L._path._overlapsOnly){var $=L._path,j=L._intersection._segment._path;$.compare(j)&&($.getArea()&&l.push($.clone(!1)),w($),w(j),k=!1)}for(;k;){var D=!M,U=C(L,D),W=U.shift(),O=!D&&(x(L)||x(W)),K=!O&&W;if(D&&(M=new wt(lt.NO_INSERT),B=null),O){(L.isFirst()||L.isLast())&&(z=L._path._closed),L._visited=!0;break}if(K&&B&&(F.push(B),B=null),B||(K&&U.push(L),B={start:M._segments.length,crossings:U,visited:V=[],handleIn:Z}),K&&(L=W),!y(L)){M.removeSegments(B.start);for(var X=0,nt=V.length;X<nt;X++)V[X]._visited=!1;V.length=0;do L=B&&B.crossings.shift(),(!L||!L._path)&&(L=null,B=F.pop(),B&&(V=B.visited,Z=B.handleIn));while(B&&!y(L));if(!L)break}var it=L.getNext();M.add(new rt(L._point,Z,it&&L._handleOut)),L._visited=!0,V.push(L),L=it||L._path.getFirstSegment(),Z=it&&it._handleIn}O&&(z&&(M.getFirstSegment().setHandleIn(Z),M.setClosed(z)),M.getArea()!==0&&l.push(M))}return l}return{_getWinding:function(_,m,l){return b(_,this.getCurves(),m,l)},unite:function(_,m){return o(this,_,"unite",m)},intersect:function(_,m){return o(this,_,"intersect",m)},subtract:function(_,m){return o(this,_,"subtract",m)},exclude:function(_,m){return o(this,_,"exclude",m)},divide:function(_,m){return m&&(m.trace==!1||m.stroke)?h(this,_,"divide"):u([this.subtract(_,m),this.intersect(_,m)],!0,this,_,m)},resolveCrossings:function(){var _=this._children,m=_||[this];function l(B,V){var Z=B&&B._intersection;return Z&&Z._overlap&&Z._path===V}var p=!1,y=!1,x=this.getIntersections(null,function(B){return B.hasOverlap()&&(p=!0)||B.isCrossing()&&(y=!0)}),w=p&&y&&[];if(x=oe.expand(x),p)for(var C=f(x,function(B){return B.hasOverlap()},w),I=C.length-1;I>=0;I--){var P=C[I],L=P._path,k=P._segment,M=k.getPrevious(),O=k.getNext();l(M,L)&&l(O,L)&&(k.remove(),M._handleOut._set(0,0),O._handleIn._set(0,0),M!==k&&!M.getCurve().hasLength()&&(O._handleIn.set(M._handleIn),M.remove()))}y&&(f(x,p&&function(B){var V=B.getCurve(),Z=B.getSegment(),$=B._intersection,j=$._curve,D=$._segment;if(V&&j&&V._path&&j._path)return!0;Z&&(Z._intersection=null),D&&(D._intersection=null)},w),w&&g(w),m=S(T.each(m,function(B){T.push(this,B._segments)},[])));var z=m.length,F;return z>1&&_?(m!==_&&this.setChildren(m),F=this):z===1&&!_&&(m[0]!==this&&this.setSegments(m[0].removeSegments()),F=this),F||(F=new he(lt.NO_INSERT),F.addChildren(m),F=F.reduce(),F.copyAttributes(this),this.replaceWith(F)),F},reorient:function(_,m){var l=this._children;return l&&l.length?this.setChildren(c(this.removeChildren(),function(p){return!!(_?p:p&1)},m)):m!==q&&this.setClockwise(m),this},getInteriorPoint:function(){var _=this.getBounds(),m=_.getCenter(!0);if(!this.contains(m)){for(var l=this.getCurves(),p=m.y,y=[],x=[],w=0,C=l.length;w<C;w++){var I=l[w].getValues(),P=I[1],L=I[3],k=I[5],M=I[7];if(p>=t(P,L,k,M)&&p<=e(P,L,k,M))for(var O=G.getMonoCurves(I),z=0,F=O.length;z<F;z++){var B=O[z],V=B[1],Z=B[7];if(V!==Z&&(p>=V&&p<=Z||p>=Z&&p<=V)){var $=p===V?B[0]:p===Z?B[6]:G.solveCubic(B,1,p,x,0,1)===1?G.getPoint(B,x[0]).x:(B[0]+B[6])/2;y.push($)}}}y.length>1&&(y.sort(function(j,D){return j-D}),m.x=(y[0]+y[1])/2)}return m}}});var ki=T.extend({_class:"PathFlattener",initialize:function(t,e,i,n,r){var s=[],u=[],a=0,o=1/(i||32),h=t._segments,d=h[0],g;function c(S,_){var m=G.getValues(S,_,r);s.push(m),f(m,S._index,0,1)}function f(S,_,m,l){if(l-m>o&&!(n&&G.isStraight(S))&&!G.isFlatEnough(S,e||.25)){var p=G.subdivide(S,.5),y=(m+l)/2;f(p[0],_,m,y),f(p[1],_,y,l)}else{var x=S[6]-S[0],w=S[7]-S[1],C=Math.sqrt(x*x+w*w);C>0&&(a+=C,u.push({offset:a,curve:S,index:_,time:l}))}}for(var b=1,v=h.length;b<v;b++)g=h[b],c(d,g),d=g;t._closed&&c(g||d,h[0]),this.curves=s,this.parts=u,this.length=a,this.index=0},_get:function(t){for(var e=this.parts,i=e.length,n,r,s=this.index;r=s,!(!s||e[--s].offset<t););for(;r<i;r++){var u=e[r];if(u.offset>=t){this.index=r;var a=e[r-1],o=a&&a.index===u.index?a.time:0,h=a?a.offset:0;return{index:u.index,time:o+(u.time-o)*(t-h)/(u.offset-h)}}}return{index:e[i-1].index,time:1}},drawPart:function(t,e,i){for(var n=this._get(e),r=this._get(i),s=n.index,u=r.index;s<=u;s++){var a=G.getPart(this.curves[s],s===n.index?n.time:0,s===r.index?r.time:1);s===n.index&&t.moveTo(a[0],a[1]),t.bezierCurveTo.apply(t,a.slice(2))}}},T.each(G._evaluateMethods,function(t){this[t+"At"]=function(e){var i=this._get(e);return G[t](this.curves[i.index],i.time)}},{})),vn=T.extend({initialize:function(t){for(var e=this.points=[],i=t._segments,n=t._closed,r=0,s,u=i.length;r<u;r++){var a=i[r].point;(!s||!s.equals(a))&&e.push(s=a.clone())}n&&(e.unshift(e[e.length-1]),e.push(e[1])),this.closed=n},fit:function(t){var e=this.points,i=e.length,n=null;return i>0&&(n=[new rt(e[0])],i>1&&(this.fitCubic(n,t,0,i-1,e[1].subtract(e[0]),e[i-2].subtract(e[i-1])),this.closed&&(n.shift(),n.pop()))),n},fitCubic:function(t,e,i,n,r,s){var u=this.points;if(n-i===1){var a=u[i],o=u[n],h=a.getDistance(o)/3;this.addCurve(t,[a,a.add(r.normalize(h)),o.add(s.normalize(h)),o]);return}for(var d=this.chordLengthParameterize(i,n),g=Math.max(e,e*e),c,f=!0,b=0;b<=4;b++){var v=this.generateBezier(i,n,d,r,s),S=this.findMaxError(i,n,v,d);if(S.error<e&&f){this.addCurve(t,v);return}if(c=S.index,S.error>=g)break;f=this.reparameterize(i,n,d,v),g=S.error}var _=u[c-1].subtract(u[c+1]);this.fitCubic(t,e,i,c,r,_),this.fitCubic(t,e,c,n,_.negate(),s)},addCurve:function(t,e){var i=t[t.length-1];i.setHandleOut(e[1].subtract(e[0])),t.push(new rt(e[3],e[2].subtract(e[3])))},generateBezier:function(t,e,i,n,r){for(var s=1e-12,u=Math.abs,a=this.points,o=a[t],h=a[e],d=[[0,0],[0,0]],g=[0,0],c=0,f=e-t+1;c<f;c++){var b=i[c],v=1-b,S=3*b*v,_=v*v*v,m=S*v,l=S*b,p=b*b*b,y=n.normalize(m),x=r.normalize(l),w=a[t+c].subtract(o.multiply(_+m)).subtract(h.multiply(l+p));d[0][0]+=y.dot(y),d[0][1]+=y.dot(x),d[1][0]=d[0][1],d[1][1]+=x.dot(x),g[0]+=y.dot(w),g[1]+=x.dot(w)}var C=d[0][0]*d[1][1]-d[1][0]*d[0][1],I,P;if(u(C)>s){var L=d[0][0]*g[1]-d[1][0]*g[0],k=g[0]*d[1][1]-g[1]*d[0][1];I=k/C,P=L/C}else{var M=d[0][0]+d[0][1],O=d[1][0]+d[1][1];I=P=u(M)>s?g[0]/M:u(O)>s?g[1]/O:0}var z=h.getDistance(o),F=s*z,B,V;if(I<F||P<F)I=P=z/3;else{var Z=h.subtract(o);B=n.normalize(I),V=r.normalize(P),B.dot(Z)-V.dot(Z)>z*z&&(I=P=z/3,B=V=null)}return[o,o.add(B||n.normalize(I)),h.add(V||r.normalize(P)),h]},reparameterize:function(t,e,i,n){for(var r=t;r<=e;r++)i[r-t]=this.findRoot(n,this.points[r],i[r-t]);for(var r=1,s=i.length;r<s;r++)if(i[r]<=i[r-1])return!1;return!0},findRoot:function(t,e,i){for(var n=[],r=[],s=0;s<=2;s++)n[s]=t[s+1].subtract(t[s]).multiply(3);for(var s=0;s<=1;s++)r[s]=n[s+1].subtract(n[s]).multiply(2);var u=this.evaluate(3,t,i),a=this.evaluate(2,n,i),o=this.evaluate(1,r,i),h=u.subtract(e),d=a.dot(a)+h.dot(o);return ct.isMachineZero(d)?i:i-h.dot(a)/d},evaluate:function(t,e,i){for(var n=e.slice(),r=1;r<=t;r++)for(var s=0;s<=t-r;s++)n[s]=n[s].multiply(1-i).add(n[s+1].multiply(i));return n[0]},chordLengthParameterize:function(t,e){for(var i=[0],n=t+1;n<=e;n++)i[n-t]=i[n-t-1]+this.points[n].getDistance(this.points[n-1]);for(var n=1,r=e-t;n<=r;n++)i[n]/=i[r];return i},findMaxError:function(t,e,i,n){for(var r=Math.floor((e-t+1)/2),s=0,u=t+1;u<e;u++){var a=this.evaluate(3,i,n[u-t]),o=a.subtract(this.points[u]),h=o.x*o.x+o.y*o.y;h>=s&&(s=h,r=u)}return{error:s,index:r}}}),He=lt.extend({_class:"TextItem",_applyMatrix:!1,_canApplyMatrix:!1,_serializeFields:{content:null},_boundsOptions:{stroke:!1,handle:!1},initialize:function(e){this._content="",this._lines=[];var i=e&&T.isPlainObject(e)&&e.x===q&&e.y===q;this._initialize(i&&e,!i&&N.read(arguments))},_equals:function(t){return this._content===t._content},copyContent:function(t){this.setContent(t._content)},getContent:function(){return this._content},setContent:function(t){this._content=""+t,this._lines=this._content.split(/\r\n|\n|\r/mg),this._changed(521)},isEmpty:function(){return!this._content},getCharacterStyle:"#getStyle",setCharacterStyle:"#setStyle",getParagraphStyle:"#getStyle",setParagraphStyle:"#setStyle"}),pn=He.extend({_class:"PointText",initialize:function(){He.apply(this,arguments)},getPoint:function(){var t=this._matrix.getTranslation();return new jt(t.x,t.y,this,"setPoint")},setPoint:function(){var t=N.read(arguments);this.translate(t.subtract(this._matrix.getTranslation()))},_draw:function(t,e,i){if(!!this._content){this._setStyles(t,e,i);var n=this._lines,r=this._style,s=r.hasFill(),u=r.hasStroke(),a=r.getLeading(),o=t.shadowColor;t.font=r.getFontStyle(),t.textAlign=r.getJustification();for(var h=0,d=n.length;h<d;h++){t.shadowColor=o;var g=n[h];s&&(t.fillText(g,0,0),t.shadowColor="rgba(0,0,0,0)"),u&&t.strokeText(g,0,0),t.translate(0,a)}}},_getBounds:function(t,e){var i=this._style,n=this._lines,r=n.length,s=i.getJustification(),u=i.getLeading(),a=this.getView().getTextWidth(i.getFontStyle(),n),o=0;s!=="left"&&(o-=a/(s==="center"?2:1));var h=new et(o,r?-.75*u:0,a,r*u);return t?t._transformBounds(h,h):h}}),Et=T.extend(new function(){var t={gray:["gray"],rgb:["red","green","blue"],hsb:["hue","saturation","brightness"],hsl:["hue","saturation","lightness"],gradient:["gradient","origin","destination","highlight"]},e={},i={transparent:[0,0,0,0]},n;function r(a){var o=a.match(/^#([\da-f]{2})([\da-f]{2})([\da-f]{2})([\da-f]{2})?$/i)||a.match(/^#([\da-f])([\da-f])([\da-f])([\da-f])?$/i),h="rgb",d;if(o){var g=o[4]?4:3;d=new Array(g);for(var c=0;c<g;c++){var f=o[c+1];d[c]=parseInt(f.length==1?f+f:f,16)/255}}else if(o=a.match(/^(rgb|hsl)a?\((.*)\)$/)){h=o[1],d=o[2].trim().split(/[,\s]+/g);for(var b=h==="hsl",c=0,v=Math.min(d.length,4);c<v;c++){var S=d[c],f=parseFloat(S);if(b)if(c===0){var _=S.match(/([a-z]*)$/)[1];f*={turn:360,rad:180/Math.PI,grad:.9}[_]||1}else c<3&&(f/=100);else c<3&&(f/=/%$/.test(S)?100:255);d[c]=f}}else{var m=i[a];if(!m)if(J){n||(n=Nt.getContext(1,1,{willReadFrequently:!0}),n.globalCompositeOperation="copy"),n.fillStyle="rgba(0,0,0,0)",n.fillStyle=a,n.fillRect(0,0,1,1);var l=n.getImageData(0,0,1,1).data;m=i[a]=[l[0]/255,l[1]/255,l[2]/255]}else m=[0,0,0];d=m.slice()}return[h,d]}var s=[[0,3,1],[2,0,1],[1,0,3],[1,2,0],[3,1,0],[0,1,2]],u={"rgb-hsb":function(a,o,h){var d=Math.max(a,o,h),g=Math.min(a,o,h),c=d-g,f=c===0?0:(d==a?(o-h)/c+(o<h?6:0):d==o?(h-a)/c+2:(a-o)/c+4)*60;return[f,d===0?0:c/d,d]},"hsb-rgb":function(a,o,h){a=(a/60%6+6)%6;var g=Math.floor(a),d=a-g,g=s[g],c=[h,h*(1-o),h*(1-o*d),h*(1-o*(1-d))];return[c[g[0]],c[g[1]],c[g[2]]]},"rgb-hsl":function(a,o,h){var d=Math.max(a,o,h),g=Math.min(a,o,h),c=d-g,f=c===0,b=f?0:(d==a?(o-h)/c+(o<h?6:0):d==o?(h-a)/c+2:(a-o)/c+4)*60,v=(d+g)/2,S=f?0:v<.5?c/(d+g):c/(2-d-g);return[b,S,v]},"hsl-rgb":function(a,o,h){if(a=(a/360%1+1)%1,o===0)return[h,h,h];for(var d=[a+1/3,a,a-1/3],g=h<.5?h*(1+o):h+o-h*o,c=2*h-g,f=[],b=0;b<3;b++){var v=d[b];v<0&&(v+=1),v>1&&(v-=1),f[b]=6*v<1?c+(g-c)*6*v:2*v<1?g:3*v<2?c+(g-c)*(2/3-v)*6:c}return f},"rgb-gray":function(a,o,h){return[a*.2989+o*.587+h*.114]},"gray-rgb":function(a){return[a,a,a]},"gray-hsb":function(a){return[0,0,a]},"gray-hsl":function(a){return[0,0,a]},"gradient-rgb":function(){return[]},"rgb-gradient":function(){return[]}};return T.each(t,function(a,o){e[o]=[],T.each(a,function(h,d){var g=T.capitalize(h),c=/^(hue|saturation)$/.test(h),f=e[o][d]=o==="gradient"?h==="gradient"?function(b){var v=this._components[0];return b=Ue.read(Array.isArray(b)?b:arguments,0,{readNull:!0}),v!==b&&(v&&v._removeOwner(this),b&&b._addOwner(this)),b}:function(){return N.read(arguments,0,{readNull:h==="highlight",clone:!0})}:function(b){return b==null||isNaN(b)?0:+b};this["get"+g]=function(){return this._type===o||c&&/^hs[bl]$/.test(this._type)?this._components[d]:this._convert(o)[d]},this["set"+g]=function(b){this._type!==o&&!(c&&/^hs[bl]$/.test(this._type))&&(this._components=this._convert(o),this._properties=t[o],this._type=o),this._components[d]=f.call(this,b),this._changed()}},this)},{_class:"Color",_readIndex:!0,initialize:function a(o){var h=arguments,d=this.__read,g=0,c,f,b,v;Array.isArray(o)&&(h=o,o=h[0]);var S=o!=null&&typeof o;if(S==="string"&&o in t&&(c=o,o=h[1],Array.isArray(o)?(f=o,b=h[2]):(d&&(g=1),h=T.slice(h,1),S=typeof o)),!f){if(v=S==="number"?h:S==="object"&&o.length!=null?o:null,v){c||(c=v.length>=3?"rgb":"gray");var _=t[c].length;b=v[_],d&&(g+=v===arguments?_+(b!=null?1:0):1),v.length>_&&(v=T.slice(v,0,_))}else if(S==="string"){var m=r(o);c=m[0],f=m[1],f.length===4&&(b=f[3],f.length--)}else if(S==="object")if(o.constructor===a){if(c=o._type,f=o._components.slice(),b=o._alpha,c==="gradient")for(var l=1,p=f.length;l<p;l++){var y=f[l];y&&(f[l]=y.clone())}}else if(o.constructor===Ue)c="gradient",v=h;else{c="hue"in o?"lightness"in o?"hsl":"hsb":"gradient"in o||"stops"in o||"radial"in o?"gradient":"gray"in o?"gray":"rgb";var x=t[c],w=e[c];this._components=f=[];for(var l=0,p=x.length;l<p;l++){var C=o[x[l]];C==null&&!l&&c==="gradient"&&"stops"in o&&(C={stops:o.stops,radial:o.radial}),C=w[l].call(this,C),C!=null&&(f[l]=C)}b=o.alpha}d&&c&&(g=1)}if(this._type=c||"rgb",!f){this._components=f=[];for(var w=e[this._type],l=0,p=w.length;l<p;l++){var C=w[l].call(this,v&&v[l]);C!=null&&(f[l]=C)}}return this._components=f,this._properties=t[this._type],this._alpha=b,d&&(this.__read=g),this},set:"#initialize",_serialize:function(a,o){var h=this.getComponents();return T.serialize(/^(gray|rgb)$/.test(this._type)?h:[this._type].concat(h),a,!0,o)},_changed:function(){this._canvasStyle=null,this._owner&&(this._setter?this._owner[this._setter](this):this._owner._changed(129))},_convert:function(a){var o;return this._type===a?this._components.slice():(o=u[this._type+"-"+a])?o.apply(this,this._components):u["rgb-"+a].apply(this,u[this._type+"-rgb"].apply(this,this._components))},convert:function(a){return new Et(a,this._convert(a),this._alpha)},getType:function(){return this._type},setType:function(a){this._components=this._convert(a),this._properties=t[a],this._type=a},getComponents:function(){var a=this._components.slice();return this._alpha!=null&&a.push(this._alpha),a},getAlpha:function(){return this._alpha!=null?this._alpha:1},setAlpha:function(a){this._alpha=a==null?null:Math.min(Math.max(a,0),1),this._changed()},hasAlpha:function(){return this._alpha!=null},equals:function(a){var o=T.isPlainValue(a,!0)?Et.read(arguments):a;return o===this||o&&this._class===o._class&&this._type===o._type&&this.getAlpha()===o.getAlpha()&&T.equals(this._components,o._components)||!1},toString:function(){for(var a=this._properties,o=[],h=this._type==="gradient",d=St.instance,g=0,c=a.length;g<c;g++){var f=this._components[g];f!=null&&o.push(a[g]+": "+(h?f:d.number(f)))}return this._alpha!=null&&o.push("alpha: "+d.number(this._alpha)),"{ "+o.join(", ")+" }"},toCSS:function(a){var o=this._convert("rgb"),h=a||this._alpha==null?1:this._alpha;function d(g){return Math.round((g<0?0:g>1?1:g)*255)}return o=[d(o[0]),d(o[1]),d(o[2])],h<1&&o.push(h<0?0:h),a?"#"+((1<<24)+(o[0]<<16)+(o[1]<<8)+o[2]).toString(16).slice(1):(o.length==4?"rgba(":"rgb(")+o.join(",")+")"},toCanvasStyle:function(a,o){if(this._canvasStyle)return this._canvasStyle;if(this._type!=="gradient")return this._canvasStyle=this.toCSS();var h=this._components,d=h[0],g=d._stops,c=h[1],f=h[2],b=h[3],v=o&&o.inverted(),S;if(v&&(c=v._transformPoint(c),f=v._transformPoint(f),b&&(b=v._transformPoint(b))),d._radial){var _=f.getDistance(c);if(b){var m=b.subtract(c);m.getLength()>_&&(b=c.add(m.normalize(_-.1)))}var l=b||c;S=a.createRadialGradient(l.x,l.y,0,c.x,c.y,_)}else S=a.createLinearGradient(c.x,c.y,f.x,f.y);for(var p=0,y=g.length;p<y;p++){var x=g[p],w=x._offset;S.addColorStop(w??p/(y-1),x._color.toCanvasStyle())}return this._canvasStyle=S},transform:function(a){if(this._type==="gradient"){for(var o=this._components,h=1,d=o.length;h<d;h++){var g=o[h];a._transformPoint(g,g,!0)}this._changed()}},statics:{_types:t,random:function(){var a=Math.random;return new Et(a(),a(),a())},_setOwner:function(a,o,h){return a&&(a._owner&&o&&a._owner!==o&&(a=a.clone()),!a._owner^!o&&(a._owner=o||null,a._setter=h||null)),a}}})},new function(){var t={add:function(e,i){return e+i},subtract:function(e,i){return e-i},multiply:function(e,i){return e*i},divide:function(e,i){return e/i}};return T.each(t,function(e,i){this[i]=function(n){n=Et.read(arguments);for(var r=this._type,s=this._components,u=n._convert(r),a=0,o=s.length;a<o;a++)u[a]=e(s[a],u[a]);return new Et(r,u,this._alpha!=null?e(this._alpha,n.getAlpha()):null)}},{})}),Ue=T.extend({_class:"Gradient",initialize:function(e,i){this._id=ae.get(),e&&T.isPlainObject(e)&&(this.set(e),e=i=null),this._stops==null&&this.setStops(e||["white","black"]),this._radial==null&&this.setRadial(typeof i=="string"&&i==="radial"||i||!1)},_serialize:function(t,e){return e.add(this,function(){return T.serialize([this._stops,this._radial],t,!0,e)})},_changed:function(){for(var t=0,e=this._owners&&this._owners.length;t<e;t++)this._owners[t]._changed()},_addOwner:function(t){this._owners||(this._owners=[]),this._owners.push(t)},_removeOwner:function(t){var e=this._owners?this._owners.indexOf(t):-1;e!=-1&&(this._owners.splice(e,1),this._owners.length||(this._owners=q))},clone:function(){for(var t=[],e=0,i=this._stops.length;e<i;e++)t[e]=this._stops[e].clone();return new Ue(t,this._radial)},getStops:function(){return this._stops},setStops:function(t){if(t.length<2)throw new Error("Gradient stop list needs to contain at least two stops.");var e=this._stops;if(e)for(var i=0,n=e.length;i<n;i++)e[i]._owner=q;e=this._stops=ri.readList(t,0,{clone:!0});for(var i=0,n=e.length;i<n;i++)e[i]._owner=this;this._changed()},getRadial:function(){return this._radial},setRadial:function(t){this._radial=t,this._changed()},equals:function(t){if(t===this)return!0;if(t&&this._class===t._class){var e=this._stops,i=t._stops,n=e.length;if(n===i.length){for(var r=0;r<n;r++)if(!e[r].equals(i[r]))return!1;return!0}}return!1}}),ri=T.extend({_class:"GradientStop",initialize:function(e,i){var n=e,r=i;typeof e=="object"&&i===q&&(Array.isArray(e)&&typeof e[0]!="number"?(n=e[0],r=e[1]):("color"in e||"offset"in e||"rampPoint"in e)&&(n=e.color,r=e.offset||e.rampPoint||0)),this.setColor(n),this.setOffset(r)},clone:function(){return new ri(this._color.clone(),this._offset)},_serialize:function(t,e){var i=this._color,n=this._offset;return T.serialize(n==null?[i]:[i,n],t,!0,e)},_changed:function(){this._owner&&this._owner._changed(129)},getOffset:function(){return this._offset},setOffset:function(t){this._offset=t,this._changed()},getRampPoint:"#getOffset",setRampPoint:"#setOffset",getColor:function(){return this._color},setColor:function(){Et._setOwner(this._color,null),this._color=Et._setOwner(Et.read(arguments,0),this,"setColor"),this._changed()},equals:function(t){return t===this||t&&this._class===t._class&&this._color.equals(t._color)&&this._offset==t._offset||!1}}),si=T.extend(new function(){var t={fillColor:null,fillRule:"nonzero",strokeColor:null,strokeWidth:1,strokeCap:"butt",strokeJoin:"miter",strokeScaling:!0,miterLimit:10,dashOffset:0,dashArray:[],shadowColor:null,shadowBlur:0,shadowOffset:new N,selectedColor:null},e=T.set({},t,{fontFamily:"sans-serif",fontWeight:"normal",fontSize:12,leading:null,justification:"left"}),i=T.set({},e,{fillColor:new Et}),n={strokeWidth:193,strokeCap:193,strokeJoin:193,strokeScaling:201,miterLimit:193,fontFamily:9,fontWeight:9,fontSize:9,font:9,leading:9,justification:9},r={beans:!0},s={_class:"Style",beans:!0,initialize:function(a,o,h){this._values={},this._owner=o,this._project=o&&o._project||h||gt.project,this._defaults=!o||o instanceof Wt?e:o instanceof He?i:t,a&&this.set(a)}};return T.each(e,function(u,a){var o=/Color$/.test(a),h=a==="shadowOffset",d=T.capitalize(a),g=n[a],c="set"+d,f="get"+d;s[c]=function(b){var v=this._owner,S=v&&v._children,_=S&&S.length>0&&!(v instanceof he);if(_)for(var m=0,l=S.length;m<l;m++)S[m]._style[c](b);if((a==="selectedColor"||!_)&&a in this._defaults){var p=this._values[a];p!==b&&(o&&(p&&(Et._setOwner(p,null),p._canvasStyle=null),b&&b.constructor===Et&&(b=Et._setOwner(b,v,_&&c))),this._values[a]=b,v&&v._changed(g||129))}},s[f]=function(b){var v=this._owner,S=v&&v._children,_=S&&S.length>0&&!(v instanceof he),m;if(_&&!b)for(var l=0,p=S.length;l<p;l++){var y=S[l]._style[f]();if(!l)m=y;else if(!T.equals(m,y))return q}else if(a in this._defaults){var m=this._values[a];if(m===q)m=this._defaults[a],m&&m.clone&&(m=m.clone());else{var x=o?Et:h?N:null;x&&!(m&&m.constructor===x)&&(this._values[a]=m=x.read([m],0,{readNull:!0,clone:!0}))}}return m&&o&&(m=Et._setOwner(m,v,_&&c)),m},r[f]=function(b){return this._style[f](b)},r[c]=function(b){this._style[c](b)}}),T.each({Font:"FontFamily",WindingRule:"FillRule"},function(u,a){var o="get"+a,h="set"+a;s[o]=r[o]="#get"+u,s[h]=r[h]="#set"+u}),lt.inject(r),s},{set:function(t){var e=t instanceof si,i=e?t._values:t;if(i){for(var n in i)if(n in this._defaults){var r=i[n];this[n]=r&&e&&r.clone?r.clone():r}}},equals:function(t){function e(i,n,r){var s=i._values,u=n._values,a=n._defaults;for(var o in s){var h=s[o],d=u[o];if(!(r&&o in u)&&!T.equals(h,d===q?a[o]:d))return!1}return!0}return t===this||t&&this._class===t._class&&e(this,t)&&e(t,this,!0)||!1},_dispose:function(){var t;t=this.getFillColor(),t&&(t._canvasStyle=null),t=this.getStrokeColor(),t&&(t._canvasStyle=null),t=this.getShadowColor(),t&&(t._canvasStyle=null)},hasFill:function(){var t=this.getFillColor();return!!t&&t.alpha>0},hasStroke:function(){var t=this.getStrokeColor();return!!t&&t.alpha>0&&this.getStrokeWidth()>0},hasShadow:function(){var t=this.getShadowColor();return!!t&&t.alpha>0&&(this.getShadowBlur()>0||!this.getShadowOffset().isZero())},getView:function(){return this._project._view},getFontStyle:function(){var t=this.getFontSize();return this.getFontWeight()+" "+t+(/[a-z]/i.test(t+"")?" ":"px ")+this.getFontFamily()},getFont:"#getFontFamily",setFont:"#setFontFamily",getLeading:function t(){var e=t.base.call(this),i=this.getFontSize();return/pt|em|%|px/.test(i)&&(i=this.getView().getPixelSize(i)),e??i*1.2}}),At=new function(){function t(e,i,n,r){for(var s=["","webkit","moz","Moz","ms","o"],u=i[0].toUpperCase()+i.substring(1),a=0;a<6;a++){var o=s[a],h=o?o+u:i;if(h in e){if(n)e[h]=r;else return e[h];break}}}return{getStyles:function(e){var i=e&&e.nodeType!==9?e.ownerDocument:e,n=i&&i.defaultView;return n&&n.getComputedStyle(e,"")},getBounds:function(e,i){var n=e.ownerDocument,r=n.body,s=n.documentElement,u;try{u=e.getBoundingClientRect()}catch{u={left:0,top:0,width:0,height:0}}var a=u.left-(s.clientLeft||r.clientLeft||0),o=u.top-(s.clientTop||r.clientTop||0);if(!i){var h=n.defaultView;a+=h.pageXOffset||s.scrollLeft||r.scrollLeft,o+=h.pageYOffset||s.scrollTop||r.scrollTop}return new et(a,o,u.width,u.height)},getViewportBounds:function(e){var i=e.ownerDocument,n=i.defaultView,r=i.documentElement;return new et(0,0,n.innerWidth||r.clientWidth,n.innerHeight||r.clientHeight)},getOffset:function(e,i){return At.getBounds(e,i).getPoint()},getSize:function(e){return At.getBounds(e,!0).getSize()},isInvisible:function(e){return At.getSize(e).equals(new tt(0,0))},isInView:function(e){return!At.isInvisible(e)&&At.getViewportBounds(e).intersects(At.getBounds(e,!0))},isInserted:function(e){return Y.body.contains(e)},getPrefixed:function(e,i){return e&&t(e,i)},setPrefixed:function(e,i,n){if(typeof i=="object")for(var r in i)t(e,r,!0,i[r]);else t(e,i,!0,n)}}},zt={add:function(t,e){if(t)for(var i in e)for(var n=e[i],r=i.split(/[\s,]+/g),s=0,u=r.length;s<u;s++){var a=r[s],o=t===Y&&(a==="touchstart"||a==="touchmove")?{passive:!1}:!1;t.addEventListener(a,n,o)}},remove:function(t,e){if(t)for(var i in e)for(var n=e[i],r=i.split(/[\s,]+/g),s=0,u=r.length;s<u;s++)t.removeEventListener(r[s],n,!1)},getPoint:function(t){var e=t.targetTouches?t.targetTouches.length?t.targetTouches[0]:t.changedTouches[0]:t;return new N(e.pageX||e.clientX+Y.documentElement.scrollLeft,e.pageY||e.clientY+Y.documentElement.scrollTop)},getTarget:function(t){return t.target||t.srcElement},getRelatedTarget:function(t){return t.relatedTarget||t.toElement},getOffset:function(t,e){return zt.getPoint(t).subtract(At.getOffset(e||zt.getTarget(t)))}};zt.requestAnimationFrame=new function(){var t=At.getPrefixed(J,"requestAnimationFrame"),e=!1,i=[],n;function r(){var s=i;i=[];for(var u=0,a=s.length;u<a;u++)s[u]();e=t&&i.length,e&&t(r)}return function(s){i.push(s),t?e||(t(r),e=!0):n||(n=setInterval(r,16.666666666666668))}};var Pt=T.extend(Ct,{_class:"View",initialize:function t(e,i){function n(g){return i[g]||parseInt(i.getAttribute(g),10)}function r(){var g=At.getSize(i);return g.isNaN()||g.isZero()?new tt(n("width"),n("height")):g}var s;if(J&&i){this._id=i.getAttribute("id"),this._id==null&&i.setAttribute("id",this._id="paper-view-"+t._id++),zt.add(i,this._viewEvents);var u="none";if(At.setPrefixed(i.style,{userDrag:u,userSelect:u,touchCallout:u,contentZooming:u,tapHighlightColor:"rgba(0,0,0,0)"}),pt.hasAttribute(i,"resize")){var a=this;zt.add(J,this._windowEvents={resize:function(){a.setViewSize(r())}})}if(s=r(),pt.hasAttribute(i,"stats")&&typeof Stats<"u"){this._stats=new Stats;var o=this._stats.domElement,h=o.style,d=At.getOffset(i);h.position="absolute",h.left=d.x+"px",h.top=d.y+"px",Y.body.appendChild(o)}}else s=new tt(i),i=null;this._project=e,this._scope=e._scope,this._element=i,this._pixelRatio||(this._pixelRatio=J&&J.devicePixelRatio||1),this._setElementSize(s.width,s.height),this._viewSize=s,t._views.push(this),t._viewsById[this._id]=this,(this._matrix=new vt)._owner=this,t._focused||(t._focused=this),this._frameItems={},this._frameItemCount=0,this._itemEvents={native:{},virtual:{}},this._autoUpdate=!gt.agent.node,this._needsUpdate=!1},remove:function(){if(!this._project)return!1;Pt._focused===this&&(Pt._focused=null),Pt._views.splice(Pt._views.indexOf(this),1),delete Pt._viewsById[this._id];var t=this._project;return t._view===this&&(t._view=null),zt.remove(this._element,this._viewEvents),zt.remove(J,this._windowEvents),this._element=this._project=null,this.off("frame"),this._animate=!1,this._frameItems={},!0},_events:T.each(lt._itemHandlers.concat(["onResize","onKeyDown","onKeyUp"]),function(t){this[t]={}},{onFrame:{install:function(){this.play()},uninstall:function(){this.pause()}}}),_animate:!1,_time:0,_count:0,getAutoUpdate:function(){return this._autoUpdate},setAutoUpdate:function(t){this._autoUpdate=t,t&&this.requestUpdate()},update:function(){},draw:function(){this.update()},requestUpdate:function(){if(!this._requested){var t=this;zt.requestAnimationFrame(function(){if(t._requested=!1,t._animate){t.requestUpdate();var e=t._element;(!At.getPrefixed(Y,"hidden")||pt.getAttribute(e,"keepalive")==="true")&&At.isInView(e)&&t._handleFrame()}t._autoUpdate&&t.update()}),this._requested=!0}},play:function(){this._animate=!0,this.requestUpdate()},pause:function(){this._animate=!1},_handleFrame:function(){gt=this._scope;var t=Date.now()/1e3,e=this._last?t-this._last:0;this._last=t,this.emit("frame",new T({delta:e,time:this._time+=e,count:this._count++})),this._stats&&this._stats.update()},_animateItem:function(t,e){var i=this._frameItems;e?(i[t._id]={item:t,time:0,count:0},++this._frameItemCount===1&&this.on("frame",this._handleFrameItems)):(delete i[t._id],--this._frameItemCount===0&&this.off("frame",this._handleFrameItems))},_handleFrameItems:function(t){for(var e in this._frameItems){var i=this._frameItems[e];i.item.emit("frame",new T(t,{time:i.time+=t.delta,count:i.count++}))}},_changed:function(){this._project._changed(4097),this._bounds=this._decomposed=q},getElement:function(){return this._element},getPixelRatio:function(){return this._pixelRatio},getResolution:function(){return this._pixelRatio*72},getViewSize:function(){var t=this._viewSize;return new ce(t.width,t.height,this,"setViewSize")},setViewSize:function(){var t=tt.read(arguments),e=t.subtract(this._viewSize);e.isZero()||(this._setElementSize(t.width,t.height),this._viewSize.set(t),this._changed(),this.emit("resize",{size:t,delta:e}),this._autoUpdate&&this.update())},_setElementSize:function(t,e){var i=this._element;i&&(i.width!==t&&(i.width=t),i.height!==e&&(i.height=e))},getBounds:function(){return this._bounds||(this._bounds=this._matrix.inverted()._transformBounds(new et(new N,this._viewSize))),this._bounds},getSize:function(){return this.getBounds().getSize()},isVisible:function(){return At.isInView(this._element)},isInserted:function(){return At.isInserted(this._element)},getPixelSize:function(t){var e=this._element,i;if(e){var n=e.parentNode,r=Y.createElement("div");r.style.fontSize=t,n.appendChild(r),i=parseFloat(At.getStyles(r).fontSize),n.removeChild(r)}else i=parseFloat(i);return i},getTextWidth:function(t,e){return 0}},T.each(["rotate","scale","shear","skew"],function(t){var e=t==="rotate";this[t]=function(){var i=arguments,n=(e?T:N).read(i),r=N.read(i,0,{readNull:!0});return this.transform(new vt()[t](n,r||this.getCenter(!0)))}},{_decompose:function(){return this._decomposed||(this._decomposed=this._matrix.decompose())},translate:function(){var t=new vt;return this.transform(t.translate.apply(t,arguments))},getCenter:function(){return this.getBounds().getCenter()},setCenter:function(){var t=N.read(arguments);this.translate(this.getCenter().subtract(t))},getZoom:function(){var t=this._decompose().scaling;return(t.x+t.y)/2},setZoom:function(t){this.transform(new vt().scale(t/this.getZoom(),this.getCenter()))},getRotation:function(){return this._decompose().rotation},setRotation:function(t){var e=this.getRotation();e!=null&&t!=null&&this.rotate(t-e)},getScaling:function(){var t=this._decompose().scaling;return new jt(t.x,t.y,this,"setScaling")},setScaling:function(){var t=this.getScaling(),e=N.read(arguments,0,{clone:!0,readNull:!0});t&&e&&this.scale(e.x/t.x,e.y/t.y)},getMatrix:function(){return this._matrix},setMatrix:function(){var t=this._matrix;t.set.apply(t,arguments)},transform:function(t){this._matrix.append(t)},scrollBy:function(){this.translate(N.read(arguments).negate())}}),{projectToView:function(){return this._matrix._transformPoint(N.read(arguments))},viewToProject:function(){return this._matrix._inverseTransform(N.read(arguments))},getEventPoint:function(t){return this.viewToProject(zt.getOffset(t,this._element))}},{statics:{_views:[],_viewsById:{},_id:0,create:function(t,e){Y&&typeof e=="string"&&(e=Y.getElementById(e));var i=J?mn:Pt;return new i(t,e)}}},new function(){if(!J)return;var t,e,i=!1,n=!1;function r(M){var O=zt.getTarget(M);return O.getAttribute&&Pt._viewsById[O.getAttribute("id")]}function s(){var M=Pt._focused;if(!M||!M.isVisible()){for(var O=0,z=Pt._views.length;O<z;O++)if((M=Pt._views[O]).isVisible()){Pt._focused=e=M;break}}}function u(M,O,z){M._handleMouseEvent("mousemove",O,z)}var a=J.navigator,o,h,d;a.pointerEnabled||a.msPointerEnabled?(o="pointerdown MSPointerDown",h="pointermove MSPointerMove",d="pointerup pointercancel MSPointerUp MSPointerCancel"):(o="touchstart",h="touchmove",d="touchend touchcancel","ontouchstart"in J&&a.userAgent.match(/mobile|tablet|ip(ad|hone|od)|android|silk/i)||(o+=" mousedown",h+=" mousemove",d+=" mouseup"));var g={},c={mouseout:function(M){var O=Pt._focused,z=zt.getRelatedTarget(M);if(O&&(!z||z.nodeName==="HTML")){var F=zt.getOffset(M,O._element),B=F.x,V=Math.abs,Z=V(B),$=1<<25,j=Z-$;F.x=V(j)<Z?j*(B<0?-1:1):B,u(O,M,O.viewToProject(F))}},scroll:s};g[o]=function(M){var O=Pt._focused=r(M);i||(i=!0,O._handleMouseEvent("mousedown",M))},c[h]=function(M){var O=Pt._focused;if(!n){var z=r(M);z?O!==z&&(O&&u(O,M),t||(t=O),O=Pt._focused=e=z):e&&e===O&&(t&&!t.isInserted()&&(t=null),O=Pt._focused=t,t=null,s())}O&&u(O,M)},c[o]=function(){n=!0},c[d]=function(M){var O=Pt._focused;O&&i&&O._handleMouseEvent("mouseup",M),n=i=!1},zt.add(Y,c),zt.add(J,{load:s});var f=!1,b=!1,v={doubleclick:"click",mousedrag:"mousemove"},S=!1,_,m,l,p,y,x,w,C,I;function P(M,O,z,F,B,V,Z){var $=!1,j;function D(U,W){if(U.responds(W)){if(j||(j=new yn(W,F,B,O||U,V?B.subtract(V):null)),U.emit(W,j)&&(f=!0,j.prevented&&(b=!0),j.stopped))return $=!0}else{var K=v[W];if(K)return D(U,K)}}for(;M&&M!==Z&&!D(M,z);)M=M._parent;return $}function L(M,O,z,F,B,V){return M._project.removeOn(z),b=f=!1,x&&P(x,null,z,F,B,V)||O&&O!==x&&!O.isDescendant(x)&&P(O,null,z==="mousedrag"?"mousemove":z,F,B,V,x)||P(M,x||O||M,z,F,B,V)}var k={mousedown:{mousedown:1,mousedrag:1,click:1,doubleclick:1},mouseup:{mouseup:1,mousedrag:1,click:1,doubleclick:1},mousemove:{mousedrag:1,mousemove:1,mouseenter:1,mouseleave:1}};return{_viewEvents:g,_handleMouseEvent:function(M,O,z){var F=this._itemEvents,B=F.native[M],V=M==="mousemove",Z=this._scope.tool,$=this;function j(it){return F.virtual[it]||$.responds(it)||Z&&Z.responds(it)}V&&i&&j("mousedrag")&&(M="mousedrag"),z||(z=this.getEventPoint(O));var D=this.getBounds().contains(z),U=B&&D&&$._project.hitTest(z,{tolerance:0,fill:!0,stroke:!0}),W=U&&U.item||null,K=!1,X={};if(X[M.substr(5)]=!0,B&&W!==y&&(y&&P(y,null,"mouseleave",O,z),W&&P(W,null,"mouseenter",O,z),y=W),S^D&&(P(this,null,D?"mouseenter":"mouseleave",O,z),_=D?this:null,K=!0),(D||X.drag)&&!z.equals(l)&&(L(this,W,V?M:"mousemove",O,z,l),K=!0),S=D,X.down&&D||X.up&&m){if(L(this,W,M,O,z,m),X.down){if(I=W===w&&Date.now()-C<300,p=w=W,!b&&W){for(var nt=W;nt&&!nt.responds("mousedrag");)nt=nt._parent;nt&&(x=W)}m=z}else X.up&&(!b&&W===p&&(C=Date.now(),L(this,W,I?"doubleclick":"click",O,z,m),I=!1),p=x=null);S=!1,K=!0}l=z,K&&Z&&(f=Z._handleMouseEvent(M,O,z,X)||f),O.cancelable!==!1&&(f&&!X.move||X.down&&j("mouseup"))&&O.preventDefault()},_handleKeyEvent:function(M,O,z,F){var B=this._scope,V=B.tool,Z;function $(j){j.responds(M)&&(gt=B,j.emit(M,Z=Z||new wn(M,O,z,F)))}this.isVisible()&&($(this),V&&V.responds(M)&&$(V))},_countItemEvent:function(M,O){var z=this._itemEvents,F=z.native,B=z.virtual;for(var V in k)F[V]=(F[V]||0)+(k[V][M]||0)*O;B[M]=(B[M]||0)+O},statics:{updateFocus:s,_resetState:function(){i=n=f=S=!1,t=e=_=m=l=p=y=x=w=C=I=null}}}}),mn=Pt.extend({_class:"CanvasView",initialize:function(e,i){if(!(i instanceof J.HTMLCanvasElement)){var n=tt.read(arguments,1);if(n.isZero())throw new Error("Cannot create CanvasView with the provided argument: "+T.slice(arguments,1));i=Nt.getCanvas(n)}var r=this._context=i.getContext("2d");if(r.save(),this._pixelRatio=1,!/^off|false$/.test(pt.getAttribute(i,"hidpi"))){var s=J.devicePixelRatio||1,u=At.getPrefixed(r,"backingStorePixelRatio")||1;this._pixelRatio=s/u}Pt.call(this,e,i),this._needsUpdate=!0},remove:function t(){return this._context.restore(),t.base.call(this)},_setElementSize:function t(e,i){var n=this._pixelRatio;if(t.base.call(this,e*n,i*n),n!==1){var r=this._element,s=this._context;if(!pt.hasAttribute(r,"resize")){var u=r.style;u.width=e+"px",u.height=i+"px"}s.restore(),s.save(),s.scale(n,n)}},getContext:function(){return this._context},getPixelSize:function t(e){var i=gt.agent,n;if(i&&i.firefox)n=t.base.call(this,e);else{var r=this._context,s=r.font;r.font=e+" serif",n=parseFloat(r.font),r.font=s}return n},getTextWidth:function(t,e){var i=this._context,n=i.font,r=0;i.font=t;for(var s=0,u=e.length;s<u;s++)r=Math.max(r,i.measureText(e[s]).width);return i.font=n,r},update:function(){if(!this._needsUpdate)return!1;var t=this._project,e=this._context,i=this._viewSize;return e.clearRect(0,0,i.width+1,i.height+1),t&&t.draw(e,this._matrix,this._pixelRatio),this._needsUpdate=!1,!0}}),Ze=T.extend({_class:"Event",initialize:function(e){this.event=e,this.type=e&&e.type},prevented:!1,stopped:!1,preventDefault:function(){this.prevented=!0,this.event.preventDefault()},stopPropagation:function(){this.stopped=!0,this.event.stopPropagation()},stop:function(){this.stopPropagation(),this.preventDefault()},getTimeStamp:function(){return this.event.timeStamp},getModifiers:function(){return Oi.modifiers}}),wn=Ze.extend({_class:"KeyEvent",initialize:function(e,i,n,r){this.type=e,this.event=i,this.key=n,this.character=r},toString:function(){return"{ type: '"+this.type+"', key: '"+this.key+"', character: '"+this.character+"', modifiers: "+this.getModifiers()+" }"}}),Oi=new function(){var t={"	":"tab"," ":"space","\b":"backspace","\x7F":"delete",Spacebar:"space",Del:"delete",Win:"meta",Esc:"escape"},e={tab:"	",space:" ",enter:"\r"},i={},n={},r,s,u=new T({shift:!1,control:!1,alt:!1,meta:!1,capsLock:!1,space:!1}).inject({option:{get:function(){return this.alt}},command:{get:function(){var h=gt&&gt.agent;return h&&h.mac?this.meta:this.control}}});function a(h){var d=h.key||h.keyIdentifier;return d=/^U\+/.test(d)?String.fromCharCode(parseInt(d.substr(2),16)):/^Arrow[A-Z]/.test(d)?d.substr(5):d==="Unidentified"||d===q?String.fromCharCode(h.keyCode):d,t[d]||(d.length>1?T.hyphenate(d):d.toLowerCase())}function o(h,d,g,c){var f=h?"keydown":"keyup",b=Pt._focused,v;if(i[d]=h,h?n[d]=g:delete n[d],d.length>1&&(v=T.camelize(d))in u){u[v]=h;var S=gt&&gt.agent;if(v==="meta"&&S&&S.mac)if(h)r={};else{for(var _ in r)_ in n&&o(!1,_,r[_],c);r=null}}else h&&r&&(r[d]=g);b&&b._handleKeyEvent(h?"keydown":"keyup",c,d,g)}return zt.add(Y,{keydown:function(h){var d=a(h),g=gt&&gt.agent;d.length>1||g&&g.chrome&&(h.altKey||g.mac&&h.metaKey||!g.mac&&h.ctrlKey)?o(!0,d,e[d]||(d.length>1?"":d),h):s=d},keypress:function(h){if(s){var d=a(h),g=h.charCode,c=g>=32?String.fromCharCode(g):d.length>1?"":d;d!==s&&(d=c.toLowerCase()),o(!0,d,c,h),s=null}},keyup:function(h){var d=a(h);d in n&&o(!1,d,n[d],h)}}),zt.add(J,{blur:function(h){for(var d in n)o(!1,d,n[d],h)}}),{modifiers:u,isDown:function(h){return!!i[h]}}},yn=Ze.extend({_class:"MouseEvent",initialize:function(e,i,n,r,s){this.type=e,this.event=i,this.point=n,this.target=r,this.delta=s},toString:function(){return"{ type: '"+this.type+"', point: "+this.point+", target: "+this.target+(this.delta?", delta: "+this.delta:"")+", modifiers: "+this.getModifiers()+" }"}}),bn=Ze.extend({_class:"ToolEvent",_item:null,initialize:function(e,i,n){this.tool=e,this.type=i,this.event=n},_choosePoint:function(t,e){return t||(e?e.clone():null)},getPoint:function(){return this._choosePoint(this._point,this.tool._point)},setPoint:function(t){this._point=t},getLastPoint:function(){return this._choosePoint(this._lastPoint,this.tool._lastPoint)},setLastPoint:function(t){this._lastPoint=t},getDownPoint:function(){return this._choosePoint(this._downPoint,this.tool._downPoint)},setDownPoint:function(t){this._downPoint=t},getMiddlePoint:function(){return!this._middlePoint&&this.tool._lastPoint?this.tool._point.add(this.tool._lastPoint).divide(2):this._middlePoint},setMiddlePoint:function(t){this._middlePoint=t},getDelta:function(){return!this._delta&&this.tool._lastPoint?this.tool._point.subtract(this.tool._lastPoint):this._delta},setDelta:function(t){this._delta=t},getCount:function(){return this.tool[/^mouse(down|up)$/.test(this.type)?"_downCount":"_moveCount"]},setCount:function(t){this.tool[/^mouse(down|up)$/.test(this.type)?"downCount":"count"]=t},getItem:function(){if(!this._item){var t=this.tool._scope.project.hitTest(this.getPoint());if(t){for(var e=t.item,i=e._parent;/^(Group|CompoundPath)$/.test(i._class);)e=i,i=i._parent;this._item=e}}return this._item},setItem:function(t){this._item=t},toString:function(){return"{ type: "+this.type+", point: "+this.getPoint()+", count: "+this.getCount()+", modifiers: "+this.getModifiers()+" }"}}),Sn=yt.extend({_class:"Tool",_list:"tools",_reference:"tool",_events:["onMouseDown","onMouseUp","onMouseDrag","onMouseMove","onActivate","onDeactivate","onEditOptions","onKeyDown","onKeyUp"],initialize:function(e){yt.call(this),this._moveCount=-1,this._downCount=-1,this.set(e)},getMinDistance:function(){return this._minDistance},setMinDistance:function(t){this._minDistance=t,t!=null&&this._maxDistance!=null&&t>this._maxDistance&&(this._maxDistance=t)},getMaxDistance:function(){return this._maxDistance},setMaxDistance:function(t){this._maxDistance=t,this._minDistance!=null&&t!=null&&t<this._minDistance&&(this._minDistance=t)},getFixedDistance:function(){return this._minDistance==this._maxDistance?this._minDistance:null},setFixedDistance:function(t){this._minDistance=this._maxDistance=t},_handleMouseEvent:function(t,e,i,n){gt=this._scope,n.drag&&!this.responds(t)&&(t="mousemove");var r=n.move||n.drag,s=this.responds(t),u=this.minDistance,a=this.maxDistance,o=!1,h=this;function d(c,f){var b=i,v=r?h._point:h._downPoint||b;if(r){if(h._moveCount>=0&&b.equals(v))return!1;if(v&&(c!=null||f!=null)){var S=b.subtract(v),_=S.getLength();if(_<(c||0))return!1;f&&(b=v.add(S.normalize(Math.min(_,f))))}h._moveCount++}return h._point=b,h._lastPoint=v||b,n.down&&(h._moveCount=-1,h._downPoint=b,h._downCount++),!0}function g(){s&&(o=h.emit(t,new bn(h,t,e))||o)}if(n.down)d(),g();else if(n.up)d(null,a),g();else if(s)for(;d(u,a);)g();return o}}),xn=T.extend(Ct,{_class:"Tween",statics:{easings:new T({linear:function(t){return t},easeInQuad:function(t){return t*t},easeOutQuad:function(t){return t*(2-t)},easeInOutQuad:function(t){return t<.5?2*t*t:-1+2*(2-t)*t},easeInCubic:function(t){return t*t*t},easeOutCubic:function(t){return--t*t*t+1},easeInOutCubic:function(t){return t<.5?4*t*t*t:(t-1)*(2*t-2)*(2*t-2)+1},easeInQuart:function(t){return t*t*t*t},easeOutQuart:function(t){return 1- --t*t*t*t},easeInOutQuart:function(t){return t<.5?8*t*t*t*t:1-8*--t*t*t*t},easeInQuint:function(t){return t*t*t*t*t},easeOutQuint:function(t){return 1+--t*t*t*t*t},easeInOutQuint:function(t){return t<.5?16*t*t*t*t*t:1+16*--t*t*t*t*t}})},initialize:function t(e,i,n,r,s,u){this.object=e;var a=typeof s,o=a==="function";this.type=o?a:a==="string"?s:"linear",this.easing=o?s:t.easings[this.type],this.duration=r,this.running=!1,this._then=null,this._startTime=null;var h=i||n;this._keys=h?Object.keys(h):[],this._parsedKeys=this._parseKeys(this._keys),this._from=h&&this._getState(i),this._to=h&&this._getState(n),u!==!1&&this.start()},then:function(t){return this._then=t,this},start:function(){return this._startTime=null,this.running=!0,this},stop:function(){return this.running=!1,this},update:function(t){if(this.running){t>=1&&(t=1,this.running=!1);for(var e=this.easing(t),i=this._keys,n=function(d){return typeof d=="function"?d(e,t):d},r=0,s=i&&i.length;r<s;r++){var u=i[r],a=n(this._from[u]),o=n(this._to[u]),h=a&&o&&a.__add&&o.__add?o.__subtract(a).__multiply(e).__add(a):(o-a)*e+a;this._setProperty(this._parsedKeys[u],h)}this.responds("update")&&this.emit("update",new T({progress:t,factor:e})),!this.running&&this._then&&this._then(this.object)}return this},_events:{onUpdate:{}},_handleFrame:function(t){var e=this._startTime,i=e?(t-e)/this.duration:0;e||(this._startTime=t),this.update(i)},_getState:function(t){for(var e=this._keys,i={},n=0,r=e.length;n<r;n++){var s=e[n],u=this._parsedKeys[s],a=this._getProperty(u),o;if(t){var h=this._resolveValue(a,t[s]);this._setProperty(u,h),o=this._getProperty(u),o=o&&o.clone?o.clone():o,this._setProperty(u,a)}else o=a&&a.clone?a.clone():a;i[s]=o}return i},_resolveValue:function(t,e){if(e){if(Array.isArray(e)&&e.length===2){var i=e[0];return i&&i.match&&i.match(/^[+\-\*\/]=/)?this._calculate(t,i[0],e[1]):e}else if(typeof e=="string"){var n=e.match(/^[+\-*/]=(.*)/);if(n){var r=JSON.parse(n[1].replace(/(['"])?([a-zA-Z0-9_]+)(['"])?:/g,'"$2": '));return this._calculate(t,e[0],r)}}}return e},_calculate:function(t,e,i){return gt.PaperScript.calculateBinary(t,e,i)},_parseKeys:function(t){for(var e={},i=0,n=t.length;i<n;i++){var r=t[i],s=r.replace(/\.([^.]*)/g,"/$1").replace(/\[['"]?([^'"\]]*)['"]?\]/g,"/$1");e[r]=s.split("/")}return e},_getProperty:function(t,e){for(var i=this.object,n=0,r=t.length-(e||0);n<r&&i;n++)i=i[t[n]];return i},_setProperty:function(t,e){var i=this._getProperty(t,1);i&&(i[t[t.length-1]]=e)}}),Li={request:function(t){var e=new Q.XMLHttpRequest;return e.open((t.method||"get").toUpperCase(),t.url,T.pick(t.async,!0)),t.mimeType&&e.overrideMimeType(t.mimeType),e.onload=function(){var i=e.status;i===0||i===200?t.onLoad&&t.onLoad.call(e,e.responseText):e.onerror()},e.onerror=function(){var i=e.status,n='Could not load "'+t.url+'" (Status: '+i+")";if(t.onError)t.onError(n,i);else throw new Error(n)},e.send(null)}},Nt=T.exports.CanvasProvider={canvases:[],getCanvas:function(t,e,i){if(!J)return null;var n,r=!0;typeof t=="object"&&(e=t.height,t=t.width),this.canvases.length?n=this.canvases.pop():(n=Y.createElement("canvas"),r=!1);var s=n.getContext("2d",i||{});if(!s)throw new Error("Canvas "+n+" is unable to provide a 2D context.");return n.width===t&&n.height===e?r&&s.clearRect(0,0,t+1,e+1):(n.width=t,n.height=e),s.save(),n},getContext:function(t,e,i){var n=this.getCanvas(t,e,i);return n?n.getContext("2d",i||{}):null},release:function(t){var e=t&&t.canvas?t.canvas:t;e&&e.getContext&&(e.getContext("2d").restore(),this.canvases.push(e))}},ai=new function(){var t=Math.min,e=Math.max,i=Math.abs,n,r,s,u,a,o,h,d,g,c,f;function b(y,x,w){return .2989*y+.587*x+.114*w}function v(y,x,w,P){var I=P-b(y,x,w);g=y+I,c=x+I,f=w+I;var P=b(g,c,f),L=t(g,c,f),k=e(g,c,f);if(L<0){var M=P-L;g=P+(g-P)*P/M,c=P+(c-P)*P/M,f=P+(f-P)*P/M}if(k>255){var O=255-P,z=k-P;g=P+(g-P)*O/z,c=P+(c-P)*O/z,f=P+(f-P)*O/z}}function S(y,x,w){return e(y,x,w)-t(y,x,w)}function _(y,x,w,C){var I=[y,x,w],P=e(y,x,w),L=t(y,x,w),k;L=L===y?0:L===x?1:2,P=P===y?0:P===x?1:2,k=t(L,P)===0?e(L,P)===1?2:1:0,I[P]>I[L]?(I[k]=(I[k]-I[L])*C/(I[P]-I[L]),I[P]=C):I[k]=I[P]=0,I[L]=0,g=I[0],c=I[1],f=I[2]}var m={multiply:function(){g=a*n/255,c=o*r/255,f=h*s/255},screen:function(){g=a+n-a*n/255,c=o+r-o*r/255,f=h+s-h*s/255},overlay:function(){g=a<128?2*a*n/255:255-2*(255-a)*(255-n)/255,c=o<128?2*o*r/255:255-2*(255-o)*(255-r)/255,f=h<128?2*h*s/255:255-2*(255-h)*(255-s)/255},"soft-light":function(){var y=n*a/255;g=y+a*(255-(255-a)*(255-n)/255-y)/255,y=r*o/255,c=y+o*(255-(255-o)*(255-r)/255-y)/255,y=s*h/255,f=y+h*(255-(255-h)*(255-s)/255-y)/255},"hard-light":function(){g=n<128?2*n*a/255:255-2*(255-n)*(255-a)/255,c=r<128?2*r*o/255:255-2*(255-r)*(255-o)/255,f=s<128?2*s*h/255:255-2*(255-s)*(255-h)/255},"color-dodge":function(){g=a===0?0:n===255?255:t(255,255*a/(255-n)),c=o===0?0:r===255?255:t(255,255*o/(255-r)),f=h===0?0:s===255?255:t(255,255*h/(255-s))},"color-burn":function(){g=a===255?255:n===0?0:e(0,255-(255-a)*255/n),c=o===255?255:r===0?0:e(0,255-(255-o)*255/r),f=h===255?255:s===0?0:e(0,255-(255-h)*255/s)},darken:function(){g=a<n?a:n,c=o<r?o:r,f=h<s?h:s},lighten:function(){g=a>n?a:n,c=o>r?o:r,f=h>s?h:s},difference:function(){g=a-n,g<0&&(g=-g),c=o-r,c<0&&(c=-c),f=h-s,f<0&&(f=-f)},exclusion:function(){g=a+n*(255-a-a)/255,c=o+r*(255-o-o)/255,f=h+s*(255-h-h)/255},hue:function(){_(n,r,s,S(a,o,h)),v(g,c,f,b(a,o,h))},saturation:function(){_(a,o,h,S(n,r,s)),v(g,c,f,b(a,o,h))},luminosity:function(){v(a,o,h,b(n,r,s))},color:function(){v(n,r,s,b(a,o,h))},add:function(){g=t(a+n,255),c=t(o+r,255),f=t(h+s,255)},subtract:function(){g=e(a-n,0),c=e(o-r,0),f=e(h-s,0)},average:function(){g=(a+n)/2,c=(o+r)/2,f=(h+s)/2},negation:function(){g=255-i(255-n-a),c=255-i(255-r-o),f=255-i(255-s-h)}},l=this.nativeModes=T.each(["source-over","source-in","source-out","source-atop","destination-over","destination-in","destination-out","destination-atop","lighter","darker","copy","xor"],function(y){this[y]=!0},{}),p=Nt.getContext(1,1,{willReadFrequently:!0});p&&(T.each(m,function(y,x){var w=x==="darken",C=!1;p.save();try{p.fillStyle=w?"#300":"#a00",p.fillRect(0,0,1,1),p.globalCompositeOperation=x,p.globalCompositeOperation===x&&(p.fillStyle=w?"#a00":"#300",p.fillRect(0,0,1,1),C=p.getImageData(0,0,1,1).data[0]!==w?170:51)}catch{}p.restore(),l[x]=C}),Nt.release(p)),this.process=function(y,x,w,C,I){var P=x.canvas,L=y==="normal";if(L||l[y])w.save(),w.setTransform(1,0,0,1,0,0),w.globalAlpha=C,L||(w.globalCompositeOperation=y),w.drawImage(P,I.x,I.y),w.restore();else{var k=m[y];if(!k)return;for(var M=w.getImageData(I.x,I.y,P.width,P.height),O=M.data,z=x.getImageData(0,0,P.width,P.height).data,F=0,B=O.length;F<B;F+=4){n=z[F],a=O[F],r=z[F+1],o=O[F+1],s=z[F+2],h=O[F+2],u=z[F+3],d=O[F+3],k();var V=u*C/255,Z=1-V;O[F]=V*g+Z*a,O[F+1]=V*c+Z*o,O[F+2]=V*f+Z*h,O[F+3]=u*C+Z*d}w.putImageData(M,I.x,I.y)}}},kt=new function(){var t="http://www.w3.org/2000/svg",e="http://www.w3.org/2000/xmlns",i="http://www.w3.org/1999/xlink",n={href:i,xlink:e,xmlns:e+"/","xmlns:xlink":e+"/"};function r(a,o,h){return u(Y.createElementNS(t,a),o,h)}function s(a,o){var h=n[o],d=h?a.getAttributeNS(h,o):a.getAttribute(o);return d==="null"?null:d}function u(a,o,h){for(var d in o){var g=o[d],c=n[d];typeof g=="number"&&h&&(g=h.number(g)),c?a.setAttributeNS(c,d,g):a.setAttribute(d,g)}return a}return{svg:t,xmlns:e,xlink:i,create:r,get:s,set:u}},Mi=T.each({fillColor:["fill","color"],fillRule:["fill-rule","string"],strokeColor:["stroke","color"],strokeWidth:["stroke-width","number"],strokeCap:["stroke-linecap","string"],strokeJoin:["stroke-linejoin","string"],strokeScaling:["vector-effect","lookup",{true:"none",false:"non-scaling-stroke"},function(t,e){return!e&&(t instanceof ke||t instanceof Vt||t instanceof He)}],miterLimit:["stroke-miterlimit","number"],dashArray:["stroke-dasharray","array"],dashOffset:["stroke-dashoffset","number"],fontFamily:["font-family","string"],fontWeight:["font-weight","string"],fontSize:["font-size","number"],justification:["text-anchor","lookup",{left:"start",center:"middle",right:"end"}],opacity:["opacity","number"],blendMode:["mix-blend-mode","style"]},function(t,e){var i=T.capitalize(e),n=t[2];this[e]={type:t[1],property:e,attribute:t[0],toSVG:n,fromSVG:n&&T.each(n,function(r,s){this[r]=s},{}),exportFilter:t[3],get:"get"+i,set:"set"+i}},{});new function(){var t;function e(m,l,p){var y=new T,x=m.getTranslation();if(l){var w;m.isInvertible()?(m=m._shiftless(),w=m._inverseTransform(x),x=null):w=new N,y[p?"cx":"x"]=w.x,y[p?"cy":"y"]=w.y}if(!m.isIdentity()){var C=m.decompose();if(C){var I=[],P=C.rotation,L=C.scaling,k=C.skewing;x&&!x.isZero()&&I.push("translate("+t.point(x)+")"),P&&I.push("rotate("+t.number(P)+")"),(!ct.isZero(L.x-1)||!ct.isZero(L.y-1))&&I.push("scale("+t.point(L)+")"),k.x&&I.push("skewX("+t.number(k.x)+")"),k.y&&I.push("skewY("+t.number(k.y)+")"),y.transform=I.join(" ")}else y.transform="matrix("+m.getValues().join(",")+")"}return y}function i(m,l){for(var p=e(m._matrix),y=m._children,x=kt.create("g",p,t),w=0,C=y.length;w<C;w++){var I=y[w],P=S(I,l);if(P)if(I.isClipMask()){var L=kt.create("clipPath");L.appendChild(P),b(I,L,"clip"),kt.set(x,{"clip-path":"url(#"+L.id+")"})}else x.appendChild(P)}return x}function n(m,l){var p=e(m._matrix,!0),y=m.getSize(),x=m.getImage();return p.x-=y.width/2,p.y-=y.height/2,p.width=y.width,p.height=y.height,p.href=l.embedImages==!1&&x&&x.src||m.toDataURL(),kt.create("image",p,t)}function r(m,l){var p=l.matchShapes;if(p){var y=m.toShape(!1);if(y)return s(y,l)}var x=m._segments,w=x.length,C,I=e(m._matrix);if(p&&w>=2&&!m.hasHandles())if(w>2){C=m._closed?"polygon":"polyline";for(var P=[],L=0;L<w;L++)P.push(t.point(x[L]._point));I.points=P.join(" ")}else{C="line";var k=x[0]._point,M=x[1]._point;I.set({x1:k.x,y1:k.y,x2:M.x,y2:M.y})}else C="path",I.d=m.getPathData(null,l.precision);return kt.create(C,I,t)}function s(m){var l=m._type,p=m._radius,y=e(m._matrix,!0,l!=="rectangle");if(l==="rectangle"){l="rect";var x=m._size,w=x.width,C=x.height;y.x-=w/2,y.y-=C/2,y.width=w,y.height=C,p.isZero()&&(p=null)}return p&&(l==="circle"?y.r=p:(y.rx=p.width,y.ry=p.height)),kt.create(l,y,t)}function u(m,l){var p=e(m._matrix),y=m.getPathData(null,l.precision);return y&&(p.d=y),kt.create("path",p,t)}function a(m,l){var p=e(m._matrix,!0),y=m._definition,x=f(y,"symbol"),w=y._item,C=w.getStrokeBounds();return x||(x=kt.create("symbol",{viewBox:t.rectangle(C)}),x.appendChild(S(w,l)),b(y,x,"symbol")),p.href="#"+x.id,p.x+=C.x,p.y+=C.y,p.width=C.width,p.height=C.height,p.overflow="visible",kt.create("use",p,t)}function o(m){var l=f(m,"color");if(!l){var p=m.getGradient(),y=p._radial,x=m.getOrigin(),w=m.getDestination(),C;if(y){C={cx:x.x,cy:x.y,r:x.getDistance(w)};var I=m.getHighlight();I&&(C.fx=I.x,C.fy=I.y)}else C={x1:x.x,y1:x.y,x2:w.x,y2:w.y};C.gradientUnits="userSpaceOnUse",l=kt.create((y?"radial":"linear")+"Gradient",C,t);for(var P=p._stops,L=0,k=P.length;L<k;L++){var M=P[L],O=M._color,z=O.getAlpha(),F=M._offset;C={offset:F??L/(k-1)},O&&(C["stop-color"]=O.toCSS(!0)),z<1&&(C["stop-opacity"]=z),l.appendChild(kt.create("stop",C,t))}b(m,l,"color")}return"url(#"+l.id+")"}function h(m){var l=kt.create("text",e(m._matrix,!0),t);return l.textContent=m._content,l}var d={Group:i,Layer:i,Raster:n,Path:r,Shape:s,CompoundPath:u,SymbolItem:a,PointText:h};function g(m,l,p){var y={},x=!p&&m.getParent(),w=[];return m._name!=null&&(y.id=m._name),T.each(Mi,function(C){var I=C.get,P=C.type,L=m[I]();if(C.exportFilter?C.exportFilter(m,L):!x||!T.equals(x[I](),L)){if(P==="color"&&L!=null){var k=L.getAlpha();k<1&&(y[C.attribute+"-opacity"]=k)}P==="style"?w.push(C.attribute+": "+L):y[C.attribute]=L==null?"none":P==="color"?L.gradient?o(L,m):L.toCSS(!0):P==="array"?L.join(","):P==="lookup"?C.toSVG[L]:L}}),w.length&&(y.style=w.join(";")),y.opacity===1&&delete y.opacity,m._visible||(y.visibility="hidden"),kt.set(l,y,t)}var c;function f(m,l){return c||(c={ids:{},svgs:{}}),m&&c.svgs[l+"-"+(m._id||m.__id||(m.__id=ae.get("svg")))]}function b(m,l,p){c||f();var y=c.ids[p]=(c.ids[p]||0)+1;l.id=p+"-"+y,c.svgs[p+"-"+(m._id||m.__id)]=l}function v(m,l){var p=m,y=null;if(c){p=m.nodeName.toLowerCase()==="svg"&&m;for(var x in c.svgs)y||(p||(p=kt.create("svg"),p.appendChild(m)),y=p.insertBefore(kt.create("defs"),p.firstChild)),y.appendChild(c.svgs[x]);c=null}return l.asString?new Q.XMLSerializer().serializeToString(p):p}function S(m,l,p){var y=d[m._class],x=y&&y(m,l);if(x){var w=l.onExport;w&&(x=w(m,x,l)||x);var C=JSON.stringify(m._data);C&&C!=="{}"&&C!=="null"&&x.setAttribute("data-paper-data",C)}return x&&g(m,x,p)}function _(m){return m||(m={}),t=new St(m.precision),m}lt.inject({exportSVG:function(m){return m=_(m),v(S(this,m,!0),m)}}),Jt.inject({exportSVG:function(m){m=_(m);var l=this._children,p=this.getView(),y=T.pick(m.bounds,"view"),x=m.matrix||y==="view"&&p._matrix,w=x&&vt.read([x]),C=y==="view"?new et([0,0],p.getViewSize()):y==="content"?lt._getBounds(l,w,{stroke:!0}).rect:et.read([y],0,{readNull:!0}),I={version:"1.1",xmlns:kt.svg,"xmlns:xlink":kt.xlink};C&&(I.width=C.width,I.height=C.height,(C.x||C.x===0||C.y||C.y===0)&&(I.viewBox=t.rectangle(C)));var P=kt.create("svg",I,t),L=P;w&&!w.isIdentity()&&(L=P.appendChild(kt.create("g",e(w),t)));for(var k=0,M=l.length;k<M;k++)L.appendChild(S(l[k],m,!0));return v(P,m)}})},new function(){var t={},e;function i(l,p,y,x,w,C){var I=kt.get(l,p)||C,P=I==null?x?null:y?"":0:y?I:parseFloat(I);return/%\s*$/.test(I)?P/100*(w?1:e[/x|^width/.test(p)?"width":"height"]):P}function n(l,p,y,x,w,C,I){return p=i(l,p||"x",!1,x,w,C),y=i(l,y||"y",!1,x,w,I),x&&(p==null||y==null)?null:new N(p,y)}function r(l,p,y,x,w){return p=i(l,p||"width",!1,x,w),y=i(l,y||"height",!1,x,w),x&&(p==null||y==null)?null:new tt(p,y)}function s(l,p,y){return l==="none"?null:p==="number"?parseFloat(l):p==="array"?l?l.split(/[\s,]+/g).map(parseFloat):[]:p==="color"?S(l)||l:p==="lookup"?y[l]:l}function u(l,p,y,x){var w=l.childNodes,C=p==="clippath",I=p==="defs",P=new Wt,L=P._project,k=L._currentStyle,M=[];if(!C&&!I&&(P=v(P,l,x),L._currentStyle=P._style.clone()),x)for(var O=l.querySelectorAll("defs"),z=0,F=O.length;z<F;z++)_(O[z],y,!1);for(var z=0,F=w.length;z<F;z++){var B=w[z],V;B.nodeType===1&&!/^defs$/i.test(B.nodeName)&&(V=_(B,y,!1))&&!(V instanceof Qt)&&M.push(V)}return P.addChildren(M),C&&(P=v(P.reduce(),l,x)),L._currentStyle=k,(C||I)&&(P.remove(),P=null),P}function a(l,p){for(var y=l.getAttribute("points").match(/[+-]?(?:\d*\.\d+|\d+\.?)(?:[eE][+-]?\d+)?/g),x=[],w=0,C=y.length;w<C;w+=2)x.push(new N(parseFloat(y[w]),parseFloat(y[w+1])));var I=new wt(x);return p==="polygon"&&I.closePath(),I}function o(l){return ke.create(l.getAttribute("d"))}function h(l,p){var y=(i(l,"href",!0)||"").substring(1),x=p==="radialgradient",w;if(y)w=t[y].getGradient(),w._radial^x&&(w=w.clone(),w._radial=x);else{for(var C=l.childNodes,I=[],P=0,L=C.length;P<L;P++){var k=C[P];k.nodeType===1&&I.push(v(new ri,k))}w=new Ue(I,x)}var M,O,z,F=i(l,"gradientUnits",!0)!=="userSpaceOnUse";x?(M=n(l,"cx","cy",!1,F,"50%","50%"),O=M.add(i(l,"r",!1,!1,F,"50%"),0),z=n(l,"fx","fy",!0,F)):(M=n(l,"x1","y1",!1,F,"0%","0%"),O=n(l,"x2","y2",!1,F,"100%","0%"));var B=v(new Et(w,M,O,z),l);return B._scaleToBounds=F,null}var d={"#document":function(l,p,y,x){for(var w=l.childNodes,C=0,I=w.length;C<I;C++){var P=w[C];if(P.nodeType===1)return _(P,y,x)}},g:u,svg:u,clippath:u,polygon:a,polyline:a,path:o,lineargradient:h,radialgradient:h,image:function(l){var p=new Ae(i(l,"href",!0));return p.on("load",function(){var y=r(l);this.setSize(y);var x=n(l).add(y.divide(2));this._matrix.append(new vt().translate(x))}),p},symbol:function(l,p,y,x){return new Qt(u(l,p,y,x),!0)},defs:u,use:function(l){var p=(i(l,"href",!0)||"").substring(1),y=t[p],x=n(l);return y?y instanceof Qt?y.place(x):y.clone().translate(x):null},circle:function(l){return new Vt.Circle(n(l,"cx","cy"),i(l,"r"))},ellipse:function(l){return new Vt.Ellipse({center:n(l,"cx","cy"),radius:r(l,"rx","ry")})},rect:function(l){return new Vt.Rectangle(new et(n(l),r(l)),r(l,"rx","ry"))},line:function(l){return new wt.Line(n(l,"x1","y1"),n(l,"x2","y2"))},text:function(l){var p=new pn(n(l).add(n(l,"dx","dy")));return p.setContent(l.textContent.trim()||""),p},switch:u};function g(l,p,y,x){if(l.transform){for(var w=(x.getAttribute(y)||"").split(/\)\s*/g),C=new vt,I=0,P=w.length;I<P;I++){var L=w[I];if(!L)break;for(var k=L.split(/\(\s*/),M=k[0],O=k[1].split(/[\s,]+/g),z=0,F=O.length;z<F;z++)O[z]=parseFloat(O[z]);switch(M){case"matrix":C.append(new vt(O[0],O[1],O[2],O[3],O[4],O[5]));break;case"rotate":C.rotate(O[0],O[1]||0,O[2]||0);break;case"translate":C.translate(O[0],O[1]||0);break;case"scale":C.scale(O);break;case"skewX":C.skew(O[0],0);break;case"skewY":C.skew(0,O[0]);break}}l.transform(C)}}function c(l,p,y){var x=y==="fill-opacity"?"getFillColor":"getStrokeColor",w=l[x]&&l[x]();w&&w.setAlpha(parseFloat(p))}var f=T.set(T.each(Mi,function(l){this[l.attribute]=function(p,y){if(p[l.set]&&(p[l.set](s(y,l.type,l.fromSVG)),l.type==="color")){var x=p[l.get]();if(x&&x._scaleToBounds){var w=p.getBounds();x.transform(new vt().translate(w.getPoint()).scale(w.getSize()))}}}},{}),{id:function(l,p){t[p]=l,l.setName&&l.setName(p)},"clip-path":function(l,p){var y=S(p);if(y)if(y=y.clone(),y.setClipMask(!0),l instanceof Wt)l.insertChild(0,y);else return new Wt(y,l)},gradientTransform:g,transform:g,"fill-opacity":c,"stroke-opacity":c,visibility:function(l,p){l.setVisible&&l.setVisible(p==="visible")},display:function(l,p){l.setVisible&&l.setVisible(p!==null)},"stop-color":function(l,p){l.setColor&&l.setColor(p)},"stop-opacity":function(l,p){l._color&&l._color.setAlpha(parseFloat(p))},offset:function(l,p){if(l.setOffset){var y=p.match(/(.*)%$/);l.setOffset(y?y[1]/100:parseFloat(p))}},viewBox:function(l,p,y,x,w){var C=new et(s(p,"array")),I=r(x,null,null,!0),P,L;if(l instanceof Wt){var k=I?I.divide(C.getSize()):1,L=new vt().scale(k).translate(C.getPoint().negate());P=l}else l instanceof Qt&&(I&&C.setSize(I),P=l._item);if(P){if(b(x,"overflow",w)!=="visible"){var M=new Vt.Rectangle(C);M.setClipMask(!0),P.addChild(M)}L&&P.transform(L)}}});function b(l,p,y){var x=l.attributes[p],w=x&&x.value;if(!w&&l.style){var C=T.camelize(p);w=l.style[C],!w&&y.node[C]!==y.parent[C]&&(w=y.node[C])}return w?w==="none"?null:w:q}function v(l,p,y){var x=p.parentNode,w={node:At.getStyles(p)||{},parent:!y&&!/^defs$/i.test(x.tagName)&&At.getStyles(x)||{}};return T.each(f,function(C,I){var P=b(p,I,w);l=P!==q&&C(l,P,I,p,w)||l}),l}function S(l){var p=l&&l.match(/\((?:["'#]*)([^"')]+)/),y=p&&p[1],x=y&&t[J?y.replace(J.location.href.split("#")[0]+"#",""):y];return x&&x._scaleToBounds&&(x=x.clone(),x._scaleToBounds=!0),x}function _(l,p,y){var x=l.nodeName.toLowerCase(),w=x!=="#document",C=Y.body,I,P,L;y&&w&&(e=gt.getView().getSize(),e=r(l,null,null,!0)||e,I=kt.create("svg",{style:"stroke-width: 1px; stroke-miterlimit: 10"}),P=l.parentNode,L=l.nextSibling,I.appendChild(l),C.appendChild(I));var k=gt.settings,M=k.applyMatrix,O=k.insertItems;k.applyMatrix=!1,k.insertItems=!1;var z=d[x],F=z&&z(l,x,p,y)||null;if(k.insertItems=O,k.applyMatrix=M,F){w&&!(F instanceof Wt)&&(F=v(F,l,y));var B=p.onImport,V=w&&l.getAttribute("data-paper-data");B&&(F=B(l,F,p)||F),p.expandShapes&&F instanceof Vt&&(F.remove(),F=F.toPath()),V&&(F._data=JSON.parse(V))}return I&&(C.removeChild(I),P&&(L?P.insertBefore(l,L):P.appendChild(l))),y&&(t={},F&&T.pick(p.applyMatrix,M)&&F.matrix.apply(!0,!0)),F}function m(l,p,y){if(!l)return null;p=typeof p=="function"?{onLoad:p}:p||{};var x=gt,w=null;function C(k){try{var M=typeof k=="object"?k:new Q.DOMParser().parseFromString(k.trim(),"image/svg+xml");if(!M.nodeName)throw M=null,new Error("Unsupported SVG source: "+l);gt=x,w=_(M,p,!0),(!p||p.insert!==!1)&&y._insertItem(q,w);var O=p.onLoad;O&&O(w,k)}catch(z){I(z)}}function I(k,M){var O=p.onError;if(O)O(k,M);else throw new Error(k)}if(typeof l=="string"&&!/^[\s\S]*</.test(l)){var P=Y.getElementById(l);P?C(P):Li.request({url:l,async:!0,onLoad:C,onError:I})}else if(typeof File<"u"&&l instanceof File){var L=new FileReader;return L.onload=function(){C(L.result)},L.onerror=function(){I(L.error)},L.readAsText(l)}else C(l);return w}lt.inject({importSVG:function(l,p){return m(l,p,this)}}),Jt.inject({importSVG:function(l,p){return this.activate(),m(l,p,this)}})},T.exports.PaperScript=function(){var t=this,e=t.acorn;if(!e&&typeof Ci<"u")try{e=Ci("acorn")}catch{}if(!e){var i,n;e=i=n={},function(v,S){if(typeof i=="object"&&typeof n=="object")return S(i);if(typeof define=="function"&&define.amd)return define(["exports"],S);S(v.acorn||(v.acorn={}))}(this,function(v){"use strict";v.version="0.5.0";var S,_,m,l;v.parse=function(A,E){return _=String(A),m=_.length,y(E),Gi(),Kn(S.program)};var p=v.defaultOptions={ecmaVersion:5,strictSemicolons:!1,allowTrailingCommas:!0,forbidReserved:!1,allowReturnOutsideFunction:!1,locations:!1,onComment:null,ranges:!1,program:null,sourceFile:null,directSourceFile:null};function y(A){S=A||{};for(var E in p)Object.prototype.hasOwnProperty.call(S,E)||(S[E]=p[E]);l=S.sourceFile||null}var x=v.getLineInfo=function(A,E){for(var R=1,H=0;;){Me.lastIndex=H;var st=Me.exec(A);if(st&&st.index<E)++R,H=st.index+st[0].length;else break}return{line:R,column:E-H}};v.tokenize=function(A,E){_=String(A),m=_.length,y(E),Gi();var R={};function H(st){return V=I,Ie(st),R.start=C,R.end=I,R.startLoc=P,R.endLoc=L,R.type=k,R.value=M,R}return H.jumpTo=function(st,at){if(w=st,S.locations){z=1,F=Me.lastIndex=0;for(var ht;(ht=Me.exec(_))&&ht.index<st;)++z,F=ht.index+ht[0].length}O=at,Ee()},H};var w,C,I,P,L,k,M,O,z,F,B,V,Z,$,j,D;function U(A,E){var R=x(_,A);E+=" ("+R.line+":"+R.column+")";var H=new SyntaxError(E);throw H.pos=A,H.loc=R,H.raisedAt=w,H}var W=[],K={type:"num"},X={type:"regexp"},nt={type:"string"},it={type:"name"},ot={type:"eof"},dt={keyword:"break"},ut={keyword:"case",beforeExpr:!0},Ft={keyword:"catch"},Bt={keyword:"continue"},Ht={keyword:"debugger"},Ot={keyword:"default"},xt={keyword:"do",isLoop:!0},Lt={keyword:"else",beforeExpr:!0},Gt={keyword:"finally"},Rt={keyword:"for",isLoop:!0},Kt={keyword:"function"},pe={keyword:"if"},te={keyword:"return",beforeExpr:!0},ee={keyword:"switch"},$t={keyword:"throw",beforeExpr:!0},Xt={keyword:"try"},me={keyword:"var"},ie={keyword:"while",isLoop:!0},We={keyword:"with"},Ei={keyword:"new",beforeExpr:!0},zi={keyword:"this"},Ni={keyword:"null",atomValue:null},Fi={keyword:"true",atomValue:!0},Bi={keyword:"false",atomValue:!1},Ge={keyword:"in",binop:7,beforeExpr:!0},ui={break:dt,case:ut,catch:Ft,continue:Bt,debugger:Ht,default:Ot,do:xt,else:Lt,finally:Gt,for:Rt,function:Kt,if:pe,return:te,switch:ee,throw:$t,try:Xt,var:me,while:ie,with:We,null:Ni,true:Fi,false:Bi,new:Ei,in:Ge,instanceof:{keyword:"instanceof",binop:7,beforeExpr:!0},this:zi,typeof:{keyword:"typeof",prefix:!0,beforeExpr:!0},void:{keyword:"void",prefix:!0,beforeExpr:!0},delete:{keyword:"delete",prefix:!0,beforeExpr:!0}},$e={type:"[",beforeExpr:!0},je={type:"]"},Oe={type:"{",beforeExpr:!0},Se={type:"}"},le={type:"(",beforeExpr:!0},ne={type:")"},ge={type:",",beforeExpr:!0},fe={type:";",beforeExpr:!0},Le={type:":",beforeExpr:!0},oi={type:"."},hi={type:"?",beforeExpr:!0},li={binop:10,beforeExpr:!0},fi={isAssign:!0,beforeExpr:!0},xe={isAssign:!0,beforeExpr:!0},Cn={postfix:!0,prefix:!0,isUpdate:!0},Ri={prefix:!0,beforeExpr:!0},Di={binop:1,beforeExpr:!0},qi={binop:2,beforeExpr:!0},In={binop:3,beforeExpr:!0},Tn={binop:4,beforeExpr:!0},Pn={binop:5,beforeExpr:!0},An={binop:6,beforeExpr:!0},kn={binop:7,beforeExpr:!0},On={binop:8,beforeExpr:!0},Ln={binop:9,prefix:!0,beforeExpr:!0},Mn={binop:10,beforeExpr:!0};v.tokTypes={bracketL:$e,bracketR:je,braceL:Oe,braceR:Se,parenL:le,parenR:ne,comma:ge,semi:fe,colon:Le,dot:oi,question:hi,slash:li,eq:fi,name:it,eof:ot,num:K,regexp:X,string:nt};for(var Vi in ui)v.tokTypes["_"+Vi]=ui[Vi];function Be(A){A=A.split(" ");var E="",R=[];t:for(var H=0;H<A.length;++H){for(var st=0;st<R.length;++st)if(R[st][0].length==A[H].length){R[st].push(A[H]);continue t}R.push([A[H]])}function at(bt){if(bt.length==1)return E+="return str === "+JSON.stringify(bt[0])+";";E+="switch(str){";for(var se=0;se<bt.length;++se)E+="case "+JSON.stringify(bt[se])+":";E+="return true}return false;"}if(R.length>3){R.sort(function(bt,se){return se.length-bt.length}),E+="switch(str.length){";for(var H=0;H<R.length;++H){var ht=R[H];E+="case "+ht[0].length+":",at(ht)}E+="}"}else at(A);return new Function("str",E)}var En=Be("abstract boolean byte char class double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile"),zn=Be("class enum extends super const export import"),Hi=Be("implements interface let package private protected public static yield"),Xe=Be("eval arguments"),Nn=Be("break case catch continue debugger default do else finally for function if return switch throw try var while with null true false instanceof typeof void delete new in this"),Fn=/[\u1680\u180e\u2000-\u200a\u202f\u205f\u3000\ufeff]/,Ui="\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u0527\u0531-\u0556\u0559\u0561-\u0587\u05D0-\u05EA\u05F0-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u08A0\u08A2-\u08AC\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0977\u0979-\u097F\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C33\u0C35-\u0C39\u0C3D\u0C58\u0C59\u0C60\u0C61\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D05-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D60\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E87\u0E88\u0E8A\u0E8D\u0E94-\u0E97\u0E99-\u0E9F\u0EA1-\u0EA3\u0EA5\u0EA7\u0EAA\u0EAB\u0EAD-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F4\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16EE-\u16F0\u1700-\u170C\u170E-\u1711\u1720-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1877\u1880-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191C\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19C1-\u19C7\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4B\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1CE9-\u1CEC\u1CEE-\u1CF1\u1CF5\u1CF6\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2160-\u2188\u2C00-\u2C2E\u2C30-\u2C5E\u2C60-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005-\u3007\u3021-\u3029\u3031-\u3035\u3038-\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312D\u3131-\u318E\u31A0-\u31BA\u31F0-\u31FF\u3400-\u4DB5\u4E00-\u9FCC\uA000-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA697\uA6A0-\uA6EF\uA717-\uA71F\uA722-\uA788\uA78B-\uA78E\uA790-\uA793\uA7A0-\uA7AA\uA7F8-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA80-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uABC0-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC",Bn="\u0300-\u036F\u0483-\u0487\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7\u0610-\u061A\u0620-\u0649\u0672-\u06D3\u06E7-\u06E8\u06FB-\u06FC\u0730-\u074A\u0800-\u0814\u081B-\u0823\u0825-\u0827\u0829-\u082D\u0840-\u0857\u08E4-\u08FE\u0900-\u0903\u093A-\u093C\u093E-\u094F\u0951-\u0957\u0962-\u0963\u0966-\u096F\u0981-\u0983\u09BC\u09BE-\u09C4\u09C7\u09C8\u09D7\u09DF-\u09E0\u0A01-\u0A03\u0A3C\u0A3E-\u0A42\u0A47\u0A48\u0A4B-\u0A4D\u0A51\u0A66-\u0A71\u0A75\u0A81-\u0A83\u0ABC\u0ABE-\u0AC5\u0AC7-\u0AC9\u0ACB-\u0ACD\u0AE2-\u0AE3\u0AE6-\u0AEF\u0B01-\u0B03\u0B3C\u0B3E-\u0B44\u0B47\u0B48\u0B4B-\u0B4D\u0B56\u0B57\u0B5F-\u0B60\u0B66-\u0B6F\u0B82\u0BBE-\u0BC2\u0BC6-\u0BC8\u0BCA-\u0BCD\u0BD7\u0BE6-\u0BEF\u0C01-\u0C03\u0C46-\u0C48\u0C4A-\u0C4D\u0C55\u0C56\u0C62-\u0C63\u0C66-\u0C6F\u0C82\u0C83\u0CBC\u0CBE-\u0CC4\u0CC6-\u0CC8\u0CCA-\u0CCD\u0CD5\u0CD6\u0CE2-\u0CE3\u0CE6-\u0CEF\u0D02\u0D03\u0D46-\u0D48\u0D57\u0D62-\u0D63\u0D66-\u0D6F\u0D82\u0D83\u0DCA\u0DCF-\u0DD4\u0DD6\u0DD8-\u0DDF\u0DF2\u0DF3\u0E34-\u0E3A\u0E40-\u0E45\u0E50-\u0E59\u0EB4-\u0EB9\u0EC8-\u0ECD\u0ED0-\u0ED9\u0F18\u0F19\u0F20-\u0F29\u0F35\u0F37\u0F39\u0F41-\u0F47\u0F71-\u0F84\u0F86-\u0F87\u0F8D-\u0F97\u0F99-\u0FBC\u0FC6\u1000-\u1029\u1040-\u1049\u1067-\u106D\u1071-\u1074\u1082-\u108D\u108F-\u109D\u135D-\u135F\u170E-\u1710\u1720-\u1730\u1740-\u1750\u1772\u1773\u1780-\u17B2\u17DD\u17E0-\u17E9\u180B-\u180D\u1810-\u1819\u1920-\u192B\u1930-\u193B\u1951-\u196D\u19B0-\u19C0\u19C8-\u19C9\u19D0-\u19D9\u1A00-\u1A15\u1A20-\u1A53\u1A60-\u1A7C\u1A7F-\u1A89\u1A90-\u1A99\u1B46-\u1B4B\u1B50-\u1B59\u1B6B-\u1B73\u1BB0-\u1BB9\u1BE6-\u1BF3\u1C00-\u1C22\u1C40-\u1C49\u1C5B-\u1C7D\u1CD0-\u1CD2\u1D00-\u1DBE\u1E01-\u1F15\u200C\u200D\u203F\u2040\u2054\u20D0-\u20DC\u20E1\u20E5-\u20F0\u2D81-\u2D96\u2DE0-\u2DFF\u3021-\u3028\u3099\u309A\uA640-\uA66D\uA674-\uA67D\uA69F\uA6F0-\uA6F1\uA7F8-\uA800\uA806\uA80B\uA823-\uA827\uA880-\uA881\uA8B4-\uA8C4\uA8D0-\uA8D9\uA8F3-\uA8F7\uA900-\uA909\uA926-\uA92D\uA930-\uA945\uA980-\uA983\uA9B3-\uA9C0\uAA00-\uAA27\uAA40-\uAA41\uAA4C-\uAA4D\uAA50-\uAA59\uAA7B\uAAE0-\uAAE9\uAAF2-\uAAF3\uABC0-\uABE1\uABEC\uABED\uABF0-\uABF9\uFB20-\uFB28\uFE00-\uFE0F\uFE20-\uFE26\uFE33\uFE34\uFE4D-\uFE4F\uFF10-\uFF19\uFF3F",Zi=new RegExp("["+Ui+"]"),Rn=new RegExp("["+Ui+Bn+"]"),Je=/[\n\r\u2028\u2029]/,Me=/\r\n|[\n\r\u2028\u2029]/g,Ke=v.isIdentifierStart=function(A){return A<65?A===36:A<91?!0:A<97?A===95:A<123?!0:A>=170&&Zi.test(String.fromCharCode(A))},Wi=v.isIdentifierChar=function(A){return A<48?A===36:A<58?!0:A<65?!1:A<91?!0:A<97?A===95:A<123?!0:A>=170&&Rn.test(String.fromCharCode(A))};function Ce(){this.line=z,this.column=w-F}function Gi(){z=1,w=F=0,O=!0,Ee()}function Dt(A,E){I=w,S.locations&&(L=new Ce),k=A,Ee(),M=E,O=A.beforeExpr}function Dn(){var A=S.onComment&&S.locations&&new Ce,E=w,R=_.indexOf("*/",w+=2);if(R===-1&&U(w-2,"Unterminated comment"),w=R+2,S.locations){Me.lastIndex=E;for(var H;(H=Me.exec(_))&&H.index<w;)++z,F=H.index+H[0].length}S.onComment&&S.onComment(!0,_.slice(E+2,R),E,w,A,S.locations&&new Ce)}function ci(){for(var A=w,E=S.onComment&&S.locations&&new Ce,R=_.charCodeAt(w+=2);w<m&&R!==10&&R!==13&&R!==8232&&R!==8233;)++w,R=_.charCodeAt(w);S.onComment&&S.onComment(!1,_.slice(A+2,w),A,w,E,S.locations&&new Ce)}function Ee(){for(;w<m;){var A=_.charCodeAt(w);if(A===32)++w;else if(A===13){++w;var E=_.charCodeAt(w);E===10&&++w,S.locations&&(++z,F=w)}else if(A===10||A===8232||A===8233)++w,S.locations&&(++z,F=w);else if(A>8&&A<14)++w;else if(A===47){var E=_.charCodeAt(w+1);if(E===42)Dn();else if(E===47)ci();else break}else if(A===160)++w;else if(A>=5760&&Fn.test(String.fromCharCode(A)))++w;else break}}function qn(){var A=_.charCodeAt(w+1);return A>=48&&A<=57?ji(!0):(++w,Dt(oi))}function Vn(){var A=_.charCodeAt(w+1);return O?(++w,$i()):A===61?qt(xe,2):qt(li,1)}function Hn(){var A=_.charCodeAt(w+1);return A===61?qt(xe,2):qt(Mn,1)}function Un(A){var E=_.charCodeAt(w+1);return E===A?qt(A===124?Di:qi,2):E===61?qt(xe,2):qt(A===124?In:Pn,1)}function Zn(){var A=_.charCodeAt(w+1);return A===61?qt(xe,2):qt(Tn,1)}function Wn(A){var E=_.charCodeAt(w+1);return E===A?E==45&&_.charCodeAt(w+2)==62&&Je.test(_.slice(V,w))?(w+=3,ci(),Ee(),Ie()):qt(Cn,2):E===61?qt(xe,2):qt(Ln,1)}function Gn(A){var E=_.charCodeAt(w+1),R=1;return E===A?(R=A===62&&_.charCodeAt(w+2)===62?3:2,_.charCodeAt(w+R)===61?qt(xe,R+1):qt(On,R)):E==33&&A==60&&_.charCodeAt(w+2)==45&&_.charCodeAt(w+3)==45?(w+=4,ci(),Ee(),Ie()):(E===61&&(R=_.charCodeAt(w+2)===61?3:2),qt(kn,R))}function $n(A){var E=_.charCodeAt(w+1);return E===61?qt(An,_.charCodeAt(w+2)===61?3:2):qt(A===61?fi:Ri,1)}function jn(A){switch(A){case 46:return qn();case 40:return++w,Dt(le);case 41:return++w,Dt(ne);case 59:return++w,Dt(fe);case 44:return++w,Dt(ge);case 91:return++w,Dt($e);case 93:return++w,Dt(je);case 123:return++w,Dt(Oe);case 125:return++w,Dt(Se);case 58:return++w,Dt(Le);case 63:return++w,Dt(hi);case 48:var E=_.charCodeAt(w+1);if(E===120||E===88)return Xn();case 49:case 50:case 51:case 52:case 53:case 54:case 55:case 56:case 57:return ji(!1);case 34:case 39:return Jn(A);case 47:return Vn(A);case 37:case 42:return Hn();case 124:case 38:return Un(A);case 94:return Zn();case 43:case 45:return Wn(A);case 60:case 62:return Gn(A);case 61:case 33:return $n(A);case 126:return qt(Ri,1)}return!1}function Ie(A){if(A?w=C+1:C=w,S.locations&&(P=new Ce),A)return $i();if(w>=m)return Dt(ot);var E=_.charCodeAt(w);if(Ke(E)||E===92)return Ji();var R=jn(E);if(R===!1){var H=String.fromCharCode(E);if(H==="\\"||Zi.test(H))return Ji();U(w,"Unexpected character '"+H+"'")}return R}function qt(A,E){var R=_.slice(w,w+E);w+=E,Dt(A,R)}function $i(){for(var st="",A,E,R=w;;){w>=m&&U(R,"Unterminated regular expression");var H=_.charAt(w);if(Je.test(H)&&U(R,"Unterminated regular expression"),A)A=!1;else{if(H==="[")E=!0;else if(H==="]"&&E)E=!1;else if(H==="/"&&!E)break;A=H==="\\"}++w}var st=_.slice(R,w);++w;var at=Xi();at&&!/^[gmsiy]*$/.test(at)&&U(R,"Invalid regexp flag");try{var ht=new RegExp(st,at)}catch(bt){bt instanceof SyntaxError&&U(R,bt.message),U(bt)}return Dt(X,ht)}function Re(A,E){for(var R=w,H=0,st=0,at=E??1/0;st<at;++st){var ht=_.charCodeAt(w),bt;if(ht>=97?bt=ht-97+10:ht>=65?bt=ht-65+10:ht>=48&&ht<=57?bt=ht-48:bt=1/0,bt>=A)break;++w,H=H*A+bt}return w===R||E!=null&&w-R!==E?null:H}function Xn(){w+=2;var A=Re(16);return A==null&&U(C+2,"Expected hexadecimal number"),Ke(_.charCodeAt(w))&&U(w,"Identifier directly after number"),Dt(K,A)}function ji(A){var E=w,R=!1,H=_.charCodeAt(w)===48;!A&&Re(10)===null&&U(E,"Invalid number"),_.charCodeAt(w)===46&&(++w,Re(10),R=!0);var st=_.charCodeAt(w);(st===69||st===101)&&(st=_.charCodeAt(++w),(st===43||st===45)&&++w,Re(10)===null&&U(E,"Invalid number"),R=!0),Ke(_.charCodeAt(w))&&U(w,"Identifier directly after number");var at=_.slice(E,w),ht;return R?ht=parseFloat(at):!H||at.length===1?ht=parseInt(at,10):/[89]/.test(at)||D?U(E,"Invalid number"):ht=parseInt(at,8),Dt(K,ht)}function Jn(A){w++;for(var E="";;){w>=m&&U(C,"Unterminated string constant");var R=_.charCodeAt(w);if(R===A)return++w,Dt(nt,E);if(R===92){R=_.charCodeAt(++w);var H=/^[0-7]+/.exec(_.slice(w,w+3));for(H&&(H=H[0]);H&&parseInt(H,8)>255;)H=H.slice(0,-1);if(H==="0"&&(H=null),++w,H)D&&U(w-2,"Octal literal in strict mode"),E+=String.fromCharCode(parseInt(H,8)),w+=H.length-1;else switch(R){case 110:E+=`
-`;break;case 114:E+="\r";break;case 120:E+=String.fromCharCode(Ye(2));break;case 117:E+=String.fromCharCode(Ye(4));break;case 85:E+=String.fromCharCode(Ye(8));break;case 116:E+="	";break;case 98:E+="\b";break;case 118:E+="\v";break;case 102:E+="\f";break;case 48:E+="\0";break;case 13:_.charCodeAt(w)===10&&++w;case 10:S.locations&&(F=w,++z);break;default:E+=String.fromCharCode(R);break}}else(R===13||R===10||R===8232||R===8233)&&U(C,"Unterminated string constant"),E+=String.fromCharCode(R),++w}}function Ye(A){var E=Re(16,A);return E===null&&U(C,"Bad character escape sequence"),E}var ze;function Xi(){ze=!1;for(var A,E=!0,R=w;;){var H=_.charCodeAt(w);if(Wi(H))ze&&(A+=_.charAt(w)),++w;else if(H===92){ze||(A=_.slice(R,w)),ze=!0,_.charCodeAt(++w)!=117&&U(w,"Expecting Unicode escape sequence \\uXXXX"),++w;var st=Ye(4),at=String.fromCharCode(st);at||U(w-1,"Invalid Unicode escape"),(E?Ke(st):Wi(st))||U(w-4,"Invalid Unicode escape"),A+=at}else break;E=!1}return ze?A:_.slice(R,w)}function Ji(){var A=Xi(),E=it;return!ze&&Nn(A)&&(E=ui[A]),Dt(E,A)}function mt(){B=C,V=I,Z=L,Ie()}function di(A){if(D=A,w=C,S.locations)for(;w<F;)F=_.lastIndexOf(`
-`,F-2)+1,--z;Ee(),Ie()}function Ki(){this.type=null,this.start=C,this.end=null}function Yi(){this.start=P,this.end=null,l!==null&&(this.source=l)}function Ut(){var A=new Ki;return S.locations&&(A.loc=new Yi),S.directSourceFile&&(A.sourceFile=S.directSourceFile),S.ranges&&(A.range=[C,0]),A}function we(A){var E=new Ki;return E.start=A.start,S.locations&&(E.loc=new Yi,E.loc.start=A.loc.start),S.ranges&&(E.range=[A.range[0],0]),E}function _t(A,E){return A.type=E,A.end=V,S.locations&&(A.loc.end=Z),S.ranges&&(A.range[1]=V),A}function _i(A){return S.ecmaVersion>=5&&A.type==="ExpressionStatement"&&A.expression.type==="Literal"&&A.expression.value==="use strict"}function Tt(A){if(k===A)return mt(),!0}function Qe(){return!S.strictSemicolons&&(k===ot||k===Se||Je.test(_.slice(V,C)))}function Te(){!Tt(fe)&&!Qe()&&ve()}function Mt(A){k===A?mt():ve()}function ve(){U(C,"Unexpected token")}function ti(A){A.type!=="Identifier"&&A.type!=="MemberExpression"&&U(A.start,"Assigning to rvalue"),D&&A.type==="Identifier"&&Xe(A.name)&&U(A.start,"Assigning to "+A.name+" in strict mode")}function Kn(A){B=V=w,S.locations&&(Z=new Ce),$=D=null,j=[],Ie();var E=A||Ut(),R=!0;for(A||(E.body=[]);k!==ot;){var H=re();E.body.push(H),R&&_i(H)&&di(!0),R=!1}return _t(E,"Program")}var gi={kind:"loop"},Yn={kind:"switch"};function re(){(k===li||k===xe&&M=="/=")&&Ie(!0);var A=k,E=Ut();switch(A){case dt:case Bt:mt();var R=A===dt;Tt(fe)||Qe()?E.label=null:k!==it?ve():(E.label=ye(),Te());for(var H=0;H<j.length;++H){var st=j[H];if((E.label==null||st.name===E.label.name)&&(st.kind!=null&&(R||st.kind==="loop")||E.label&&R))break}return H===j.length&&U(E.start,"Unsyntactic "+A.keyword),_t(E,R?"BreakStatement":"ContinueStatement");case Ht:return mt(),Te(),_t(E,"DebuggerStatement");case xt:return mt(),j.push(gi),E.body=re(),j.pop(),Mt(ie),E.test=De(),Te(),_t(E,"DoWhileStatement");case Rt:if(mt(),j.push(gi),Mt(le),k===fe)return vi(E,null);if(k===me){var at=Ut();return mt(),tn(at,!0),_t(at,"VariableDeclaration"),at.declarations.length===1&&Tt(Ge)?Qi(E,at):vi(E,at)}var at=Zt(!1,!0);return Tt(Ge)?(ti(at),Qi(E,at)):vi(E,at);case Kt:return mt(),bi(E,!0);case pe:return mt(),E.test=De(),E.consequent=re(),E.alternate=Tt(Lt)?re():null,_t(E,"IfStatement");case te:return!$&&!S.allowReturnOutsideFunction&&U(C,"'return' outside of function"),mt(),Tt(fe)||Qe()?E.argument=null:(E.argument=Zt(),Te()),_t(E,"ReturnStatement");case ee:mt(),E.discriminant=De(),E.cases=[],Mt(Oe),j.push(Yn);for(var ht,bt;k!=Se;)if(k===ut||k===Ot){var se=k===ut;ht&&_t(ht,"SwitchCase"),E.cases.push(ht=Ut()),ht.consequent=[],mt(),se?ht.test=Zt():(bt&&U(B,"Multiple default clauses"),bt=!0,ht.test=null),Mt(Le)}else ht||ve(),ht.consequent.push(re());return ht&&_t(ht,"SwitchCase"),mt(),j.pop(),_t(E,"SwitchStatement");case $t:return mt(),Je.test(_.slice(V,C))&&U(V,"Illegal newline after throw"),E.argument=Zt(),Te(),_t(E,"ThrowStatement");case Xt:if(mt(),E.block=qe(),E.handler=null,k===Ft){var Pe=Ut();mt(),Mt(le),Pe.param=ye(),D&&Xe(Pe.param.name)&&U(Pe.param.start,"Binding "+Pe.param.name+" in strict mode"),Mt(ne),Pe.guard=null,Pe.body=qe(),E.handler=_t(Pe,"CatchClause")}return E.guardedHandlers=W,E.finalizer=Tt(Gt)?qe():null,!E.handler&&!E.finalizer&&U(E.start,"Missing catch or finally clause"),_t(E,"TryStatement");case me:return mt(),tn(E),Te(),_t(E,"VariableDeclaration");case ie:return mt(),E.test=De(),j.push(gi),E.body=re(),j.pop(),_t(E,"WhileStatement");case We:return D&&U(C,"'with' in strict mode"),mt(),E.object=De(),E.body=re(),_t(E,"WithStatement");case Oe:return qe();case fe:return mt(),_t(E,"EmptyStatement");default:var xi=M,ei=Zt();if(A===it&&ei.type==="Identifier"&&Tt(Le)){for(var H=0;H<j.length;++H)j[H].name===xi&&U(ei.start,"Label '"+xi+"' is already declared");var rr=k.isLoop?"loop":k===ee?"switch":null;return j.push({name:xi,kind:rr}),E.body=re(),j.pop(),E.label=ei,_t(E,"LabeledStatement")}else return E.expression=ei,Te(),_t(E,"ExpressionStatement")}}function De(){Mt(le);var A=Zt();return Mt(ne),A}function qe(A){var E=Ut(),R=!0,H=!1,st;for(E.body=[],Mt(Oe);!Tt(Se);){var at=re();E.body.push(at),R&&A&&_i(at)&&(st=H,di(H=!0)),R=!1}return H&&!st&&di(!1),_t(E,"BlockStatement")}function vi(A,E){return A.init=E,Mt(fe),A.test=k===fe?null:Zt(),Mt(fe),A.update=k===ne?null:Zt(),Mt(ne),A.body=re(),j.pop(),_t(A,"ForStatement")}function Qi(A,E){return A.left=E,A.right=Zt(),Mt(ne),A.body=re(),j.pop(),_t(A,"ForInStatement")}function tn(A,E){for(A.declarations=[],A.kind="var";;){var R=Ut();if(R.id=ye(),D&&Xe(R.id.name)&&U(R.id.start,"Binding "+R.id.name+" in strict mode"),R.init=Tt(fi)?Zt(!0,E):null,A.declarations.push(_t(R,"VariableDeclarator")),!Tt(ge))break}return A}function Zt(A,E){var R=pi(E);if(!A&&k===ge){var H=we(R);for(H.expressions=[R];Tt(ge);)H.expressions.push(pi(E));return _t(H,"SequenceExpression")}return R}function pi(A){var E=Qn(A);if(k.isAssign){var R=we(E);return R.operator=M,R.left=E,mt(),R.right=pi(A),ti(E),_t(R,"AssignmentExpression")}return E}function Qn(A){var E=tr(A);if(Tt(hi)){var R=we(E);return R.test=E,R.consequent=Zt(!0),Mt(Le),R.alternate=Zt(!0,A),_t(R,"ConditionalExpression")}return E}function tr(A){return mi(wi(),-1,A)}function mi(A,E,R){var H=k.binop;if(H!=null&&(!R||k!==Ge)&&H>E){var st=we(A);st.left=A,st.operator=M;var at=k;mt(),st.right=mi(wi(),H,R);var ht=_t(st,at===Di||at===qi?"LogicalExpression":"BinaryExpression");return mi(ht,E,R)}return A}function wi(){if(k.prefix){var A=Ut(),E=k.isUpdate;return A.operator=M,A.prefix=!0,O=!0,mt(),A.argument=wi(),E?ti(A.argument):D&&A.operator==="delete"&&A.argument.type==="Identifier"&&U(A.start,"Deleting local variable in strict mode"),_t(A,E?"UpdateExpression":"UnaryExpression")}for(var R=er();k.postfix&&!Qe();){var A=we(R);A.operator=M,A.prefix=!1,A.argument=R,ti(R),mt(),R=_t(A,"UpdateExpression")}return R}function er(){return Ve(yi())}function Ve(A,E){if(Tt(oi)){var R=we(A);return R.object=A,R.property=ye(!0),R.computed=!1,Ve(_t(R,"MemberExpression"),E)}else if(Tt($e)){var R=we(A);return R.object=A,R.property=Zt(),R.computed=!0,Mt(je),Ve(_t(R,"MemberExpression"),E)}else if(!E&&Tt(le)){var R=we(A);return R.callee=A,R.arguments=Si(ne,!1),Ve(_t(R,"CallExpression"),E)}else return A}function yi(){switch(k){case zi:var H=Ut();return mt(),_t(H,"ThisExpression");case it:return ye();case K:case nt:case X:var H=Ut();return H.value=M,H.raw=_.slice(C,I),mt(),_t(H,"Literal");case Ni:case Fi:case Bi:var H=Ut();return H.value=k.atomValue,H.raw=k.keyword,mt(),_t(H,"Literal");case le:var A=P,E=C;mt();var R=Zt();return R.start=E,R.end=I,S.locations&&(R.loc.start=A,R.loc.end=L),S.ranges&&(R.range=[E,I]),Mt(ne),R;case $e:var H=Ut();return mt(),H.elements=Si(je,!0,!0),_t(H,"ArrayExpression");case Oe:return nr();case Kt:var H=Ut();return mt(),bi(H,!1);case Ei:return ir();default:ve()}}function ir(){var A=Ut();return mt(),A.callee=Ve(yi(),!0),Tt(le)?A.arguments=Si(ne,!1):A.arguments=W,_t(A,"NewExpression")}function nr(){var A=Ut(),E=!0,R=!1;for(A.properties=[],mt();!Tt(Se);){if(E)E=!1;else if(Mt(ge),S.allowTrailingCommas&&Tt(Se))break;var H={key:en()},st=!1,at;if(Tt(Le)?(H.value=Zt(!0),at=H.kind="init"):S.ecmaVersion>=5&&H.key.type==="Identifier"&&(H.key.name==="get"||H.key.name==="set")?(st=R=!0,at=H.kind=H.key.name,H.key=en(),k!==le&&ve(),H.value=bi(Ut(),!1)):ve(),H.key.type==="Identifier"&&(D||R))for(var ht=0;ht<A.properties.length;++ht){var bt=A.properties[ht];if(bt.key.name===H.key.name){var se=at==bt.kind||st&&bt.kind==="init"||at==="init"&&(bt.kind==="get"||bt.kind==="set");se&&!D&&at==="init"&&bt.kind==="init"&&(se=!1),se&&U(H.key.start,"Redefinition of property")}}A.properties.push(H)}return _t(A,"ObjectExpression")}function en(){return k===K||k===nt?yi():ye(!0)}function bi(A,E){k===it?A.id=ye():E?ve():A.id=null,A.params=[];var R=!0;for(Mt(le);!Tt(ne);)R?R=!1:Mt(ge),A.params.push(ye());var H=$,st=j;if($=!0,j=[],A.body=qe(!0),$=H,j=st,D||A.body.body.length&&_i(A.body.body[0]))for(var at=A.id?-1:0;at<A.params.length;++at){var ht=at<0?A.id:A.params[at];if((Hi(ht.name)||Xe(ht.name))&&U(ht.start,"Defining '"+ht.name+"' in strict mode"),at>=0)for(var bt=0;bt<at;++bt)ht.name===A.params[bt].name&&U(ht.start,"Argument name clash in strict mode")}return _t(A,E?"FunctionDeclaration":"FunctionExpression")}function Si(A,E,R){for(var H=[],st=!0;!Tt(A);){if(st)st=!1;else if(Mt(ge),E&&S.allowTrailingCommas&&Tt(A))break;R&&k===ge?H.push(null):H.push(Zt(!0))}return H}function ye(A){var E=Ut();return A&&S.forbidReserved=="everywhere"&&(A=!1),k===it?(!A&&(S.forbidReserved&&(S.ecmaVersion===3?En:zn)(M)||D&&Hi(M))&&_.slice(C,I).indexOf("\\")==-1&&U(C,"The keyword '"+M+"' is reserved"),E.name=M):A&&k.keyword?E.name=k.keyword:ve(),O=!1,mt(),_t(E,"Identifier")}}),e.version||(e=null)}function r(v,S){return(t.acorn||e).parse(v,S)}var s={"+":"__add","-":"__subtract","*":"__multiply","/":"__divide","%":"__modulo","==":"__equals","!=":"__equals"},u={"-":"__negate","+":"__self"},a=T.each(["add","subtract","multiply","divide","modulo","equals","negate"],function(v){this["__"+v]="#"+v},{__self:function(){return this}});N.inject(a),tt.inject(a),Et.inject(a);function o(v,S,_){var m=s[S];if(v&&v[m]){var l=v[m](_);return S==="!="?!l:l}switch(S){case"+":return v+_;case"-":return v-_;case"*":return v*_;case"/":return v/_;case"%":return v%_;case"==":return v==_;case"!=":return v!=_}}function h(v,S){var _=u[v];if(S&&S[_])return S[_]();switch(v){case"+":return+S;case"-":return-S}}function d(v,S){if(!v)return"";S=S||{};var _=[];function m(D){for(var U=0,W=_.length;U<W;U++){var K=_[U];if(K[0]>=D)break;D+=K[1]}return D}function l(D){return v.substring(m(D.range[0]),m(D.range[1]))}function p(D,U){return v.substring(m(D.range[1]),m(U.range[0]))}function y(D,U){for(var W=m(D.range[0]),K=m(D.range[1]),X=0,nt=_.length-1;nt>=0;nt--)if(W>_[nt][0]){X=nt+1;break}_.splice(X,0,[W,U.length-K+W]),v=v.substring(0,W)+U+v.substring(K)}function x(D,U){switch(D.type){case"UnaryExpression":if(D.operator in u&&D.argument.type!=="Literal"){var W=l(D.argument);y(D,'$__("'+D.operator+'", '+W+")")}break;case"BinaryExpression":if(D.operator in s&&D.left.type!=="Literal"){var K=l(D.left),X=l(D.right),nt=p(D.left,D.right),it=D.operator;y(D,"__$__("+K+","+nt.replace(new RegExp("\\"+it),'"'+it+'"')+", "+X+")")}break;case"UpdateExpression":case"AssignmentExpression":var ot=U&&U.type;if(!(ot==="ForStatement"||ot==="BinaryExpression"&&/^[=!<>]/.test(U.operator)||ot==="MemberExpression"&&U.computed)){if(D.type==="UpdateExpression"){var W=l(D.argument),dt="__$__("+W+', "'+D.operator[0]+'", 1)',ut=W+" = "+dt;D.prefix?ut="("+ut+")":(ot==="AssignmentExpression"||ot==="VariableDeclarator"||ot==="BinaryExpression")&&(l(U.left||U.id)===W&&(ut=dt),ut=W+"; "+ut),y(D,ut)}else if(/^.=$/.test(D.operator)&&D.left.type!=="Literal"){var K=l(D.left),X=l(D.right),dt=K+" = __$__("+K+', "'+D.operator[0]+'", '+X+")";y(D,/^\(.*\)$/.test(l(D))?"("+dt+")":dt)}}break}}function w(D){switch(D.type){case"ExportDefaultDeclaration":y({range:[D.start,D.declaration.start]},"module.exports = ");break;case"ExportNamedDeclaration":var U=D.declaration,W=D.specifiers;if(U){var K=U.declarations;K&&(K.forEach(function(nt){y(nt,"module.exports."+l(nt))}),y({range:[D.start,U.start+U.kind.length]},""))}else if(W){var X=W.map(function(nt){var it=l(nt);return"module.exports."+it+" = "+it+"; "}).join("");X&&y(D,X)}break}}function C(D,U,W){if(D){for(var K in D)if(K!=="range"&&K!=="loc"){var X=D[K];if(Array.isArray(X))for(var nt=0,it=X.length;nt<it;nt++)C(X[nt],D,W);else X&&typeof X=="object"&&C(X,D,W)}W.operatorOverloading!==!1&&x(D,U),W.moduleExports!==!1&&w(D)}}function I(D){var U="",W="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";for(D=(Math.abs(D)<<1)+(D<0?1:0);D||!U;){var K=D&31;D>>=5,D&&(K|=32),U+=W[K]}return U}var P=S.url||"",L=S.sourceMaps,k=S.paperFeatures||{},M=S.source||v,O=S.offset||0,z=gt.agent,F=z.versionNumber,B=!1,V=/\r\n|\n|\r/mg,Z;if(L&&(z.chrome&&F>=30||z.webkit&&F>=537.76||z.firefox&&F>=23||z.node)){if(z.node)O-=2;else if(J&&P&&!J.location.href.indexOf(P)){var $=Y.getElementsByTagName("html")[0].innerHTML;O=$.substr(0,$.indexOf(v)+1).match(V).length+1}B=O>0&&!(z.chrome&&F>=36||z.safari&&F>=600||z.firefox&&F>=40||z.node);var j=["AA"+I(B?0:O)+"A"];j.length=(v.match(V)||[]).length+1+(B?O:0),Z={version:3,file:P,names:[],mappings:j.join(";AACA"),sourceRoot:"",sources:[P],sourcesContent:[M]}}return(k.operatorOverloading!==!1||k.moduleExports!==!1)&&C(r(v,{ranges:!0,preserveParens:!0,sourceType:"module"}),null,k),Z&&(B&&(v=new Array(O+1).join(`
-`)+v),/^(inline|both)$/.test(L)&&(v+=`
-//# sourceMappingURL=data:application/json;base64,`+Q.btoa(unescape(encodeURIComponent(JSON.stringify(Z))))),v+=`
-//# sourceURL=`+(P||"paperscript")),{url:P,source:M,code:v,map:Z}}function g(v,S,_){gt=S;var m=S.getView(),l=/\btool\.\w+|\s+on(?:Key|Mouse)(?:Up|Down|Move|Drag)\b/.test(v)&&!/\bnew\s+Tool\b/.test(v)?new Sn:null,p=l?l._events:[],y=["onFrame","onResize"].concat(p),x=[],w=[],C,I=typeof v=="object"?v:d(v,_);v=I.code;function P(F,B){for(var V in F)(B||!/^_/.test(V))&&new RegExp("([\\b\\s\\W]|^)"+V.replace(/\$/g,"\\$")+"\\b").test(v)&&(x.push(V),w.push(F[V]))}P({__$__:o,$__:h,paper:S,tool:l},!0),P(S),v="var module = { exports: {} }; "+v;var O=T.each(y,function(F){new RegExp("\\s+"+F+"\\b").test(v)&&(x.push(F),this.push("module.exports."+F+" = "+F+";"))},[]).join(`
-`);O&&(v+=`
-`+O),v+=`
-return module.exports;`;var L=gt.agent;if(Y&&(L.chrome||L.firefox&&L.versionNumber<40)){var k=Y.createElement("script"),M=Y.head||Y.getElementsByTagName("head")[0];L.firefox&&(v=`
-`+v),k.appendChild(Y.createTextNode("document.__paperscript__ = function("+x+") {"+v+`
-}`)),M.appendChild(k),C=Y.__paperscript__,delete Y.__paperscript__,M.removeChild(k)}else C=Function(x,v);var O=C&&C.apply(S,w),z=O||{};return T.each(p,function(F){var B=z[F];B&&(l[F]=B)}),m&&(z.onResize&&m.setOnResize(z.onResize),m.emit("resize",{size:m.size,delta:new N}),z.onFrame&&m.setOnFrame(z.onFrame),m.requestUpdate()),O}function c(v){if(/^text\/(?:x-|)paperscript$/.test(v.type)&&pt.getAttribute(v,"ignore")!=="true"){var S=pt.getAttribute(v,"canvas"),_=Y.getElementById(S),m=v.src||v.getAttribute("data-src"),l=pt.hasAttribute(v,"async"),p="data-paper-scope";if(!_)throw new Error('Unable to find canvas with id "'+S+'"');var y=pt.get(_.getAttribute(p))||new pt().setup(_);return _.setAttribute(p,y._id),m?Li.request({url:m,async:l,mimeType:"text/plain",onLoad:function(x){g(x,y,m)}}):g(v.innerHTML,y,v.baseURI),v.setAttribute("data-paper-ignore","true"),y}}function f(){T.each(Y&&Y.getElementsByTagName("script"),c)}function b(v){return v?c(v):f()}return J&&(Y.readyState==="complete"?setTimeout(f):zt.add(J,{load:f})),{compile:d,execute:g,load:b,parse:r,calculateBinary:o,calculateUnary:h}}.call(this);var gt=new(pt.inject(T.exports,{Base:T,Numerical:ct,Key:Oi,DomEvent:zt,DomElement:At,document:Y,window:J,Symbol:Qt,PlacedSymbol:Fe}));return gt.agent.node&&fn()(gt),typeof define=="function"&&define.amd?define("paper",gt):typeof Ne=="object"&&Ne&&(Ne.exports=gt),gt}.call(cn,typeof self=="object"?self:null)});var be=function(Q,q){let J=typeof Q;return typeof q!="string"||q.trim()===""?Q:q==="true"&&J==="boolean"?!0:q==="false"&&J==="boolean"?!1:isNaN(q)&&J==="string"?q:!isNaN(q)&&J==="number"?+q:Q};var sn=function(Q,q=!1){let J=be("top 90%",Q.getAttribute("scroll-start")),Y=be("bottom 90%",Q.getAttribute("scroll-end")),T=gsap.timeline({scrollTrigger:{trigger:Q,start:J,end:Y,scrub:.5},defaults:{duration:1,ease:"none"}});Q.querySelectorAll(".plus_component").forEach(yt=>{T.from(yt,{scale:0},0)}),Q.querySelectorAll(".line-fill").forEach(yt=>{if(yt.hasAttribute("scroll-false")||yt.offsetParent===null)return;let ft=!0;!q&&yt.hasAttribute("scroll-desktop-v")&&(ft=!1),q&&yt.hasAttribute("scroll-mobile-v")&&(ft=!1),T.from(yt,{width:ft?"0%":"100%",height:ft?"100%":"0%"},0)})};var an=function(){let Q=document.querySelectorAll('[cr-accordion="list"]'),q='[cr-accordion="item"]',J='[cr-accordion="top"]',Y='[cr-accordion="open"]',T='[cr-accordion="close"]',Ct="cr-accordion-first-open",pt="cr-accordion-one-active",yt="cr-accordion-keep-one-open",ft="is-active";Q.length===0||Q===void 0||Q.forEach(St=>{let ct=be(!1,St.getAttribute(Ct)),ae=be(!1,St.getAttribute(pt)),N=be(!1,St.getAttribute(yt)),jt=be(!1,St.getAttribute(OPTION_HOVER)),tt=St.firstElementChild;ct&&(tt.classList.add(ft),tt.querySelector(Y).click()),jt||St.addEventListener("click",function(ce){let et=ce.target.closest(J);if(!et)return;let ue=et.closest(q),vt=St.querySelectorAll(q),It=ue.classList.contains(ft);It||(ae&&vt.forEach(Jt=>{Jt===ue?(Jt.classList.add(ft),Jt.querySelector(Y).click()):(Jt.classList.remove(ft),Jt.querySelector(T).click())}),ae||(ue.classList.add(ft),ue.querySelector(Y).click())),It&&!N&&(ue.classList.remove(ft),ue.querySelector(T).click())}),jt&&St.querySelectorAll(q).forEach(et=>{et.addEventListener("mouseover",function(){this.classList.add(ft),et.querySelector(Y).click()}),et.addEventListener("mouseout",function(){this.classList.remove(ft),et.querySelector(T).click()})})})};var un=function(){let Q=document.querySelectorAll("[header-main-image]"),q=gsap.timeline({repeat:-1,yoyo:!0,defaults:{duration:.8,ease:"none"}});Q.forEach((J,Y)=>{q.to(J,{opacity:1})})},on=function(){let Q=document.querySelector('[cr-home-split="component"]'),q=document.querySelectorAll('[cr-home-split="item"]'),J=document.querySelectorAll('[cr-home-split="image"]');if(!Q||q.length===0||J.length===0)return;let Y="top top",T="bottom bottom";Q.hasAttribute("cr-home-split-start")&&(Y=trigger.getAttribute("cr-home-split-start")),Q.hasAttribute("cr-home-split-end")&&(T=trigger.getAttribute("cr-home-split-end"));let Ct=function(yt,ft,St){St.forEach((ct,ae)=>{let N=Flip.getState(ct);ct===yt?ct.classList.add(Yt):ct.classList.remove(Yt),Flip.from(N,{duration:.3,ease:"power1.out"})})},pt=gsap.timeline({scrollTrigger:{trigger:Q,start:Y,end:T,scrub:!0},defaults:{duration:.5,delay:1,ease:"none"}});q.forEach((yt,ft)=>{currentImage=J[ft],pt.to(currentImage,{opacity:1}),pt.call(Ct,[yt,ft,q],"<")})},hn=function(){let Q=document.querySelectorAll(".split-hover_item"),q=document.querySelectorAll(".split-hover_image");Q.forEach((J,Y)=>{J.addEventListener("click",()=>{!J||(Q.forEach(T=>T.classList.remove(Yt)),q.forEach(T=>T.classList.remove(Yt)),J.classList.add(Yt),q[Y].classList.add(Yt))})})};var ii=rn(Ti(),1);var Pi=function(Q=!1,q=!1){let J,Y=0,{Path:T,Point:Ct,Group:pt,Color:yt}=ii.default,ft=document.querySelector("#paper-canvas"),St=document.querySelector("#process-header");if(!ft||!St)return;ii.default.setup(ft),ii.default.project.clear();let ct=80;q&&(ct=40);let ae=ft.clientWidth,N=ft.clientHeight,jt=["#00585c","#008484","#91c9c5","#d3efed","#cde200","#e4ea7d","#f9f9d7"],tt=(vt,It)=>Math.floor(Math.random()*(It-vt)+1)+vt,et=function(vt,It,Jt){let lt=[],Wt=vt/Jt;for(let de=0;de<vt;de+=Wt)for(let Vt=0;Vt<It;Vt+=Wt)if(tt(0,20)<3){let Fe=jt[tt(0,7)-1],Qt=new T.Rectangle({point:new Ct(de,Vt),size:[Wt,Wt],applyMatrix:!1});Qt.fillColor=Fe,lt.push(Qt)}return lt}(ae,N,ct);if(Q)return;let ue="top 6rem";q&&(ue="top 4rem"),headerFadeTL=gsap.timeline({defaults:{duration:.2,ease:"power2.out"}}),headerFadeTL.fromTo(et,{opacity:0},{opacity:1,stagger:{each:.005,from:"random"}},0),headerScrollTL=gsap.timeline({scrollTrigger:{trigger:St,start:"top 6rem",end:"bottom 10rem",scrub:.5},defaults:{duration:1,ease:"none"}}),headerScrollTL.fromTo(et,{scaling:1},{scaling:.001,stagger:{each:.02,from:"random"}},0),headerScrollTL.progress(Y)},dn=function(){let Q=document.querySelectorAll('[cr-process="item"]'),q=document.querySelectorAll('[cr-process="image"]');Q.forEach((J,Y)=>{if(!J)return;let T=q[Y],Ct=gsap.timeline({scrollTrigger:{trigger:J,start:"top center",end:"bottom center",scrub:0,onEnter:()=>{T.classList.add(Yt)},onLeave:()=>{Y!==q.length-1&&T.classList.remove(Yt)},onEnterBack:()=>{T.classList.add(Yt)},onLeaveBack:()=>{Y!==0&&T.classList.remove(Yt)}}}),pt=J.querySelector('[cr-process="square"]'),yt=J.querySelectorAll("h2, h3, p, .button"),ft=gsap.timeline({scrollTrigger:{trigger:J,start:"top 80%",end:"top 10%",scrub:.5}});ft.fromTo(yt,{opacity:0},{opacity:1}),ft.from(pt,{backgroundColor:"#f9f9d7"},"<")})},Ai=function(Q="top 1%",q="bottom 99%"){let J=document.querySelector('[cr-icon-highlight="section"]'),Y=document.querySelectorAll('[cr-icon-highlight="item"]'),T=gsap.timeline({scrollTrigger:{trigger:J,start:Q,end:q,scrub:.5},defaults:{duration:.5,ease:"power1.out"}});Y.forEach((Ct,pt)=>{let yt=Ct.querySelector('[cr-icon-highlight="icon"]'),ft=Ct.querySelector('[cr-icon-highlight="span"]');!yt||(pt===0&&(T.set(yt,{opacity:0},"<"),T.set(yt,{opacity:1,delay:1})),pt!==0&&T.set(yt,{opacity:1}),ft&&T.set(ft,{fontWeight:600},"<"),T.set(yt,{opacity:0,delay:1}),ft&&T.set(ft,{fontWeight:300},"<"),pt===Y.length-1&&T.to(yt,{delay:.5}))})},_n=function(Q="top 1%",q="bottom 99%"){let J=document.querySelectorAll("[cr-produducts-data-item]");!J||J.forEach(Y=>{let T=Y.querySelector("[cr-produducts-data-square]"),Ct=Y.querySelectorAll("h2, h3, p, .button"),pt=gsap.timeline({scrollTrigger:{trigger:Y,start:"top bottom",end:"top center",scrub:.5},defaults:{ease:"none",duration:1}});pt.from(Ct,{opacity:.1}),pt.from(T,{backgroundColor:"#d3efed"},"<")})};var gn=function(Q=!1){HIGHLIGHT_COLOR="#f9f9d7",ACTIVE_CLASS="is-active",document.querySelectorAll(".case-table_row").forEach(J=>{if(J.hasAttribute("scroll-false"))return;let Y=J.querySelector(".case-table_icon"),T=J.querySelectorAll(".case-table_cell"),Ct=function(ft=!0){if(!Y||Q)return;let St=Flip.getState(Y);ft?Y.classList.add(ACTIVE_CLASS):Y.classList.remove(ACTIVE_CLASS),Flip.from(St,{duration:.3,ease:"power2.out"})},pt=function(ft=!0){ft?J.classList.add(ACTIVE_CLASS):J.classList.remove(ACTIVE_CLASS)},yt=gsap.timeline({scrollTrigger:{trigger:J,start:"top center",end:"bottom center",toggleActions:"restart reverse restart reverse",onEnter:()=>{Ct(),pt()},onLeave:()=>{Ct(!1),pt(!1)},onEnterBack:()=>{Ct(),pt()},onLeaveBack:()=>{Ct(!1),pt(!1)}}})})};var Er=rn(Ti(),1),Yt="is-active";document.addEventListener("DOMContentLoaded",function(Q){gsap.registerPlugin(ScrollTrigger),gsap.registerPlugin(Flip);let q=gsap.matchMedia(),J=document.querySelectorAll("[scroll-section]");(function(){q.add({isMobile:"(max-width: 767px)",isTablet:"(min-width: 768px)  and (max-width: 991px)",isDesktop:"(min-width: 992px)",reduceMotion:"(prefers-reduced-motion: reduce)"},T=>{let{isMobile:Ct,isTablet:pt,isDesktop:yt,reduceMotion:ft}=T.conditions;an(),Pi(ft,Ct),ft||(un(),J.forEach(St=>{sn(St,Ct)}),gn(Ct)),yt&&(on(),dn(),Ai(),_n(),window.addEventListener("resize",function(){progress=headerTL.progress,headerTL.kill(),Pi(ft,Ct)})),Ct&&(hn(),Ai("top 40%","bottom 40%"))})})()});})();
+(() => {
+  var __create = Object.create;
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getProtoOf = Object.getPrototypeOf;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
+    get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
+  }) : x)(function(x) {
+    if (typeof require !== "undefined")
+      return require.apply(this, arguments);
+    throw new Error('Dynamic require of "' + x + '" is not supported');
+  });
+  var __commonJS = (cb, mod) => function __require2() {
+    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+    isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+    mod
+  ));
+
+  // (disabled):node_modules/paper/dist/node/self.js
+  var require_self = __commonJS({
+    "(disabled):node_modules/paper/dist/node/self.js"() {
+    }
+  });
+
+  // (disabled):node_modules/paper/dist/node/extend.js
+  var require_extend = __commonJS({
+    "(disabled):node_modules/paper/dist/node/extend.js"() {
+    }
+  });
+
+  // node_modules/paper/dist/paper-full.js
+  var require_paper_full = __commonJS({
+    "node_modules/paper/dist/paper-full.js"(exports, module) {
+      var paper = function(self2, undefined2) {
+        self2 = self2 || require_self();
+        var window2 = self2.window, document2 = self2.document;
+        var Base = new function() {
+          var hidden = /^(statics|enumerable|beans|preserve)$/, array = [], slice = array.slice, create = Object.create, describe = Object.getOwnPropertyDescriptor, define2 = Object.defineProperty, forEach = array.forEach || function(iter, bind) {
+            for (var i = 0, l = this.length; i < l; i++) {
+              iter.call(bind, this[i], i, this);
+            }
+          }, forIn = function(iter, bind) {
+            for (var i in this) {
+              if (this.hasOwnProperty(i))
+                iter.call(bind, this[i], i, this);
+            }
+          }, set = Object.assign || function(dst) {
+            for (var i = 1, l = arguments.length; i < l; i++) {
+              var src = arguments[i];
+              for (var key in src) {
+                if (src.hasOwnProperty(key))
+                  dst[key] = src[key];
+              }
+            }
+            return dst;
+          }, each = function(obj, iter, bind) {
+            if (obj) {
+              var desc = describe(obj, "length");
+              (desc && typeof desc.value === "number" ? forEach : forIn).call(obj, iter, bind = bind || obj);
+            }
+            return bind;
+          };
+          function inject(dest, src, enumerable, beans, preserve) {
+            var beansNames = {};
+            function field(name2, val) {
+              val = val || (val = describe(src, name2)) && (val.get ? val : val.value);
+              if (typeof val === "string" && val[0] === "#")
+                val = dest[val.substring(1)] || val;
+              var isFunc = typeof val === "function", res = val, prev = preserve || isFunc && !val.base ? val && val.get ? name2 in dest : dest[name2] : null, bean;
+              if (!preserve || !prev) {
+                if (isFunc && prev)
+                  val.base = prev;
+                if (isFunc && beans !== false && (bean = name2.match(/^([gs]et|is)(([A-Z])(.*))$/)))
+                  beansNames[bean[3].toLowerCase() + bean[4]] = bean[2];
+                if (!res || isFunc || !res.get || typeof res.get !== "function" || !Base2.isPlainObject(res)) {
+                  res = { value: res, writable: true };
+                }
+                if ((describe(dest, name2) || { configurable: true }).configurable) {
+                  res.configurable = true;
+                  res.enumerable = enumerable != null ? enumerable : !bean;
+                }
+                define2(dest, name2, res);
+              }
+            }
+            if (src) {
+              for (var name in src) {
+                if (src.hasOwnProperty(name) && !hidden.test(name))
+                  field(name);
+              }
+              for (var name in beansNames) {
+                var part = beansNames[name], set2 = dest["set" + part], get = dest["get" + part] || set2 && dest["is" + part];
+                if (get && (beans === true || get.length === 0))
+                  field(name, { get, set: set2 });
+              }
+            }
+            return dest;
+          }
+          function Base2() {
+            for (var i = 0, l = arguments.length; i < l; i++) {
+              var src = arguments[i];
+              if (src)
+                set(this, src);
+            }
+            return this;
+          }
+          return inject(Base2, {
+            inject: function(src) {
+              if (src) {
+                var statics = src.statics === true ? src : src.statics, beans = src.beans, preserve = src.preserve;
+                if (statics !== src)
+                  inject(this.prototype, src, src.enumerable, beans, preserve);
+                inject(this, statics, null, beans, preserve);
+              }
+              for (var i = 1, l = arguments.length; i < l; i++)
+                this.inject(arguments[i]);
+              return this;
+            },
+            extend: function() {
+              var base = this, ctor, proto;
+              for (var i = 0, obj, l = arguments.length; i < l && !(ctor && proto); i++) {
+                obj = arguments[i];
+                ctor = ctor || obj.initialize;
+                proto = proto || obj.prototype;
+              }
+              ctor = ctor || function() {
+                base.apply(this, arguments);
+              };
+              proto = ctor.prototype = proto || create(this.prototype);
+              define2(
+                proto,
+                "constructor",
+                { value: ctor, writable: true, configurable: true }
+              );
+              inject(ctor, this);
+              if (arguments.length)
+                this.inject.apply(ctor, arguments);
+              ctor.base = base;
+              return ctor;
+            }
+          }).inject({
+            enumerable: false,
+            initialize: Base2,
+            set: Base2,
+            inject: function() {
+              for (var i = 0, l = arguments.length; i < l; i++) {
+                var src = arguments[i];
+                if (src) {
+                  inject(this, src, src.enumerable, src.beans, src.preserve);
+                }
+              }
+              return this;
+            },
+            extend: function() {
+              var res = create(this);
+              return res.inject.apply(res, arguments);
+            },
+            each: function(iter, bind) {
+              return each(this, iter, bind);
+            },
+            clone: function() {
+              return new this.constructor(this);
+            },
+            statics: {
+              set,
+              each,
+              create,
+              define: define2,
+              describe,
+              clone: function(obj) {
+                return set(new obj.constructor(), obj);
+              },
+              isPlainObject: function(obj) {
+                var ctor = obj != null && obj.constructor;
+                return ctor && (ctor === Object || ctor === Base2 || ctor.name === "Object");
+              },
+              pick: function(a, b) {
+                return a !== undefined2 ? a : b;
+              },
+              slice: function(list, begin, end) {
+                return slice.call(list, begin, end);
+              }
+            }
+          });
+        }();
+        if (typeof module !== "undefined")
+          module.exports = Base;
+        Base.inject({
+          enumerable: false,
+          toString: function() {
+            return this._id != null ? (this._class || "Object") + (this._name ? " '" + this._name + "'" : " @" + this._id) : "{ " + Base.each(this, function(value, key) {
+              if (!/^_/.test(key)) {
+                var type = typeof value;
+                this.push(key + ": " + (type === "number" ? Formatter.instance.number(value) : type === "string" ? "'" + value + "'" : value));
+              }
+            }, []).join(", ") + " }";
+          },
+          getClassName: function() {
+            return this._class || "";
+          },
+          importJSON: function(json) {
+            return Base.importJSON(json, this);
+          },
+          exportJSON: function(options) {
+            return Base.exportJSON(this, options);
+          },
+          toJSON: function() {
+            return Base.serialize(this);
+          },
+          set: function(props, exclude) {
+            if (props)
+              Base.filter(this, props, exclude, this._prioritize);
+            return this;
+          }
+        }, {
+          beans: false,
+          statics: {
+            exports: {},
+            extend: function extend() {
+              var res = extend.base.apply(this, arguments), name = res.prototype._class;
+              if (name && !Base.exports[name])
+                Base.exports[name] = res;
+              return res;
+            },
+            equals: function(obj1, obj2) {
+              if (obj1 === obj2)
+                return true;
+              if (obj1 && obj1.equals)
+                return obj1.equals(obj2);
+              if (obj2 && obj2.equals)
+                return obj2.equals(obj1);
+              if (obj1 && obj2 && typeof obj1 === "object" && typeof obj2 === "object") {
+                if (Array.isArray(obj1) && Array.isArray(obj2)) {
+                  var length = obj1.length;
+                  if (length !== obj2.length)
+                    return false;
+                  while (length--) {
+                    if (!Base.equals(obj1[length], obj2[length]))
+                      return false;
+                  }
+                } else {
+                  var keys = Object.keys(obj1), length = keys.length;
+                  if (length !== Object.keys(obj2).length)
+                    return false;
+                  while (length--) {
+                    var key = keys[length];
+                    if (!(obj2.hasOwnProperty(key) && Base.equals(obj1[key], obj2[key])))
+                      return false;
+                  }
+                }
+                return true;
+              }
+              return false;
+            },
+            read: function(list, start, options, amount) {
+              if (this === Base) {
+                var value = this.peek(list, start);
+                list.__index++;
+                return value;
+              }
+              var proto = this.prototype, readIndex = proto._readIndex, begin = start || readIndex && list.__index || 0, length = list.length, obj = list[begin];
+              amount = amount || length - begin;
+              if (obj instanceof this || options && options.readNull && obj == null && amount <= 1) {
+                if (readIndex)
+                  list.__index = begin + 1;
+                return obj && options && options.clone ? obj.clone() : obj;
+              }
+              obj = Base.create(proto);
+              if (readIndex)
+                obj.__read = true;
+              obj = obj.initialize.apply(obj, begin > 0 || begin + amount < length ? Base.slice(list, begin, begin + amount) : list) || obj;
+              if (readIndex) {
+                list.__index = begin + obj.__read;
+                var filtered = obj.__filtered;
+                if (filtered) {
+                  list.__filtered = filtered;
+                  obj.__filtered = undefined2;
+                }
+                obj.__read = undefined2;
+              }
+              return obj;
+            },
+            peek: function(list, start) {
+              return list[list.__index = start || list.__index || 0];
+            },
+            remain: function(list) {
+              return list.length - (list.__index || 0);
+            },
+            readList: function(list, start, options, amount) {
+              var res = [], entry, begin = start || 0, end = amount ? begin + amount : list.length;
+              for (var i = begin; i < end; i++) {
+                res.push(Array.isArray(entry = list[i]) ? this.read(entry, 0, options) : this.read(list, i, options, 1));
+              }
+              return res;
+            },
+            readNamed: function(list, name, start, options, amount) {
+              var value = this.getNamed(list, name), hasValue = value !== undefined2;
+              if (hasValue) {
+                var filtered = list.__filtered;
+                if (!filtered) {
+                  var source = this.getSource(list);
+                  filtered = list.__filtered = Base.create(source);
+                  filtered.__unfiltered = source;
+                }
+                filtered[name] = undefined2;
+              }
+              return this.read(hasValue ? [value] : list, start, options, amount);
+            },
+            readSupported: function(list, dest) {
+              var source = this.getSource(list), that = this, read = false;
+              if (source) {
+                Object.keys(source).forEach(function(key) {
+                  if (key in dest) {
+                    var value = that.readNamed(list, key);
+                    if (value !== undefined2) {
+                      dest[key] = value;
+                    }
+                    read = true;
+                  }
+                });
+              }
+              return read;
+            },
+            getSource: function(list) {
+              var source = list.__source;
+              if (source === undefined2) {
+                var arg = list.length === 1 && list[0];
+                source = list.__source = arg && Base.isPlainObject(arg) ? arg : null;
+              }
+              return source;
+            },
+            getNamed: function(list, name) {
+              var source = this.getSource(list);
+              if (source) {
+                return name ? source[name] : list.__filtered || source;
+              }
+            },
+            hasNamed: function(list, name) {
+              return !!this.getNamed(list, name);
+            },
+            filter: function(dest, source, exclude, prioritize) {
+              var processed;
+              function handleKey(key2) {
+                if (!(exclude && key2 in exclude) && !(processed && key2 in processed)) {
+                  var value = source[key2];
+                  if (value !== undefined2)
+                    dest[key2] = value;
+                }
+              }
+              if (prioritize) {
+                var keys = {};
+                for (var i = 0, key, l = prioritize.length; i < l; i++) {
+                  if ((key = prioritize[i]) in source) {
+                    handleKey(key);
+                    keys[key] = true;
+                  }
+                }
+                processed = keys;
+              }
+              Object.keys(source.__unfiltered || source).forEach(handleKey);
+              return dest;
+            },
+            isPlainValue: function(obj, asString) {
+              return Base.isPlainObject(obj) || Array.isArray(obj) || asString && typeof obj === "string";
+            },
+            serialize: function(obj, options, compact, dictionary) {
+              options = options || {};
+              var isRoot = !dictionary, res;
+              if (isRoot) {
+                options.formatter = new Formatter(options.precision);
+                dictionary = {
+                  length: 0,
+                  definitions: {},
+                  references: {},
+                  add: function(item, create) {
+                    var id = "#" + item._id, ref = this.references[id];
+                    if (!ref) {
+                      this.length++;
+                      var res2 = create.call(item), name2 = item._class;
+                      if (name2 && res2[0] !== name2)
+                        res2.unshift(name2);
+                      this.definitions[id] = res2;
+                      ref = this.references[id] = [id];
+                    }
+                    return ref;
+                  }
+                };
+              }
+              if (obj && obj._serialize) {
+                res = obj._serialize(options, dictionary);
+                var name = obj._class;
+                if (name && !obj._compactSerialize && (isRoot || !compact) && res[0] !== name) {
+                  res.unshift(name);
+                }
+              } else if (Array.isArray(obj)) {
+                res = [];
+                for (var i = 0, l = obj.length; i < l; i++)
+                  res[i] = Base.serialize(obj[i], options, compact, dictionary);
+              } else if (Base.isPlainObject(obj)) {
+                res = {};
+                var keys = Object.keys(obj);
+                for (var i = 0, l = keys.length; i < l; i++) {
+                  var key = keys[i];
+                  res[key] = Base.serialize(
+                    obj[key],
+                    options,
+                    compact,
+                    dictionary
+                  );
+                }
+              } else if (typeof obj === "number") {
+                res = options.formatter.number(obj, options.precision);
+              } else {
+                res = obj;
+              }
+              return isRoot && dictionary.length > 0 ? [["dictionary", dictionary.definitions], res] : res;
+            },
+            deserialize: function(json, create, _data, _setDictionary, _isRoot) {
+              var res = json, isFirst = !_data, hasDictionary = isFirst && json && json.length && json[0][0] === "dictionary";
+              _data = _data || {};
+              if (Array.isArray(json)) {
+                var type = json[0], isDictionary = type === "dictionary";
+                if (json.length == 1 && /^#/.test(type)) {
+                  return _data.dictionary[type];
+                }
+                type = Base.exports[type];
+                res = [];
+                for (var i = type ? 1 : 0, l = json.length; i < l; i++) {
+                  res.push(Base.deserialize(
+                    json[i],
+                    create,
+                    _data,
+                    isDictionary,
+                    hasDictionary
+                  ));
+                }
+                if (type) {
+                  var args = res;
+                  if (create) {
+                    res = create(type, args, isFirst || _isRoot);
+                  } else {
+                    res = new type(args);
+                  }
+                }
+              } else if (Base.isPlainObject(json)) {
+                res = {};
+                if (_setDictionary)
+                  _data.dictionary = res;
+                for (var key in json)
+                  res[key] = Base.deserialize(json[key], create, _data);
+              }
+              return hasDictionary ? res[1] : res;
+            },
+            exportJSON: function(obj, options) {
+              var json = Base.serialize(obj, options);
+              return options && options.asString == false ? json : JSON.stringify(json);
+            },
+            importJSON: function(json, target) {
+              return Base.deserialize(
+                typeof json === "string" ? JSON.parse(json) : json,
+                function(ctor, args, isRoot) {
+                  var useTarget = isRoot && target && target.constructor === ctor, obj = useTarget ? target : Base.create(ctor.prototype);
+                  if (args.length === 1 && obj instanceof Item && (useTarget || !(obj instanceof Layer))) {
+                    var arg = args[0];
+                    if (Base.isPlainObject(arg)) {
+                      arg.insert = false;
+                      if (useTarget) {
+                        args = args.concat([Item.INSERT]);
+                      }
+                    }
+                  }
+                  (useTarget ? obj.set : ctor).apply(obj, args);
+                  if (useTarget)
+                    target = null;
+                  return obj;
+                }
+              );
+            },
+            push: function(list, items) {
+              var itemsLength = items.length;
+              if (itemsLength < 4096) {
+                list.push.apply(list, items);
+              } else {
+                var startLength = list.length;
+                list.length += itemsLength;
+                for (var i = 0; i < itemsLength; i++) {
+                  list[startLength + i] = items[i];
+                }
+              }
+              return list;
+            },
+            splice: function(list, items, index, remove) {
+              var amount = items && items.length, append = index === undefined2;
+              index = append ? list.length : index;
+              if (index > list.length)
+                index = list.length;
+              for (var i = 0; i < amount; i++)
+                items[i]._index = index + i;
+              if (append) {
+                Base.push(list, items);
+                return [];
+              } else {
+                var args = [index, remove];
+                if (items)
+                  Base.push(args, items);
+                var removed = list.splice.apply(list, args);
+                for (var i = 0, l = removed.length; i < l; i++)
+                  removed[i]._index = undefined2;
+                for (var i = index + amount, l = list.length; i < l; i++)
+                  list[i]._index = i;
+                return removed;
+              }
+            },
+            capitalize: function(str) {
+              return str.replace(/\b[a-z]/g, function(match) {
+                return match.toUpperCase();
+              });
+            },
+            camelize: function(str) {
+              return str.replace(/-(.)/g, function(match, chr) {
+                return chr.toUpperCase();
+              });
+            },
+            hyphenate: function(str) {
+              return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+            }
+          }
+        });
+        var Emitter = {
+          on: function(type, func) {
+            if (typeof type !== "string") {
+              Base.each(type, function(value, key) {
+                this.on(key, value);
+              }, this);
+            } else {
+              var types = this._eventTypes, entry = types && types[type], handlers = this._callbacks = this._callbacks || {};
+              handlers = handlers[type] = handlers[type] || [];
+              if (handlers.indexOf(func) === -1) {
+                handlers.push(func);
+                if (entry && entry.install && handlers.length === 1)
+                  entry.install.call(this, type);
+              }
+            }
+            return this;
+          },
+          off: function(type, func) {
+            if (typeof type !== "string") {
+              Base.each(type, function(value, key) {
+                this.off(key, value);
+              }, this);
+              return;
+            }
+            var types = this._eventTypes, entry = types && types[type], handlers = this._callbacks && this._callbacks[type], index;
+            if (handlers) {
+              if (!func || (index = handlers.indexOf(func)) !== -1 && handlers.length === 1) {
+                if (entry && entry.uninstall)
+                  entry.uninstall.call(this, type);
+                delete this._callbacks[type];
+              } else if (index !== -1) {
+                handlers.splice(index, 1);
+              }
+            }
+            return this;
+          },
+          once: function(type, func) {
+            return this.on(type, function handler() {
+              func.apply(this, arguments);
+              this.off(type, handler);
+            });
+          },
+          emit: function(type, event) {
+            var handlers = this._callbacks && this._callbacks[type];
+            if (!handlers)
+              return false;
+            var args = Base.slice(arguments, 1), setTarget = event && event.target && !event.currentTarget;
+            handlers = handlers.slice();
+            if (setTarget)
+              event.currentTarget = this;
+            for (var i = 0, l = handlers.length; i < l; i++) {
+              if (handlers[i].apply(this, args) == false) {
+                if (event && event.stop)
+                  event.stop();
+                break;
+              }
+            }
+            if (setTarget)
+              delete event.currentTarget;
+            return true;
+          },
+          responds: function(type) {
+            return !!(this._callbacks && this._callbacks[type]);
+          },
+          attach: "#on",
+          detach: "#off",
+          fire: "#emit",
+          _installEvents: function(install) {
+            var types = this._eventTypes, handlers = this._callbacks, key = install ? "install" : "uninstall";
+            if (types) {
+              for (var type in handlers) {
+                if (handlers[type].length > 0) {
+                  var entry = types[type], func = entry && entry[key];
+                  if (func)
+                    func.call(this, type);
+                }
+              }
+            }
+          },
+          statics: {
+            inject: function inject(src) {
+              var events = src._events;
+              if (events) {
+                var types = {};
+                Base.each(events, function(entry, key) {
+                  var isString = typeof entry === "string", name = isString ? entry : key, part = Base.capitalize(name), type = name.substring(2).toLowerCase();
+                  types[type] = isString ? {} : entry;
+                  name = "_" + name;
+                  src["get" + part] = function() {
+                    return this[name];
+                  };
+                  src["set" + part] = function(func) {
+                    var prev = this[name];
+                    if (prev)
+                      this.off(type, prev);
+                    if (func)
+                      this.on(type, func);
+                    this[name] = func;
+                  };
+                });
+                src._eventTypes = types;
+              }
+              return inject.base.apply(this, arguments);
+            }
+          }
+        };
+        var PaperScope = Base.extend({
+          _class: "PaperScope",
+          initialize: function PaperScope2() {
+            paper2 = this;
+            this.settings = new Base({
+              applyMatrix: true,
+              insertItems: true,
+              handleSize: 4,
+              hitTolerance: 0
+            });
+            this.project = null;
+            this.projects = [];
+            this.tools = [];
+            this._id = PaperScope2._id++;
+            PaperScope2._scopes[this._id] = this;
+            var proto = PaperScope2.prototype;
+            if (!this.support) {
+              var ctx = CanvasProvider.getContext(1, 1) || {};
+              proto.support = {
+                nativeDash: "setLineDash" in ctx || "mozDash" in ctx,
+                nativeBlendModes: BlendMode.nativeModes
+              };
+              CanvasProvider.release(ctx);
+            }
+            if (!this.agent) {
+              var user = self2.navigator.userAgent.toLowerCase(), os = (/(darwin|win|mac|linux|freebsd|sunos)/.exec(user) || [])[0], platform = os === "darwin" ? "mac" : os, agent = proto.agent = proto.browser = { platform };
+              if (platform)
+                agent[platform] = true;
+              user.replace(
+                /(opera|chrome|safari|webkit|firefox|msie|trident|atom|node|jsdom)\/?\s*([.\d]+)(?:.*version\/([.\d]+))?(?:.*rv\:v?([.\d]+))?/g,
+                function(match, n, v1, v2, rv) {
+                  if (!agent.chrome) {
+                    var v = n === "opera" ? v2 : /^(node|trident)$/.test(n) ? rv : v1;
+                    agent.version = v;
+                    agent.versionNumber = parseFloat(v);
+                    n = { trident: "msie", jsdom: "node" }[n] || n;
+                    agent.name = n;
+                    agent[n] = true;
+                  }
+                }
+              );
+              if (agent.chrome)
+                delete agent.webkit;
+              if (agent.atom)
+                delete agent.chrome;
+            }
+          },
+          version: "0.12.17",
+          getView: function() {
+            var project = this.project;
+            return project && project._view;
+          },
+          getPaper: function() {
+            return this;
+          },
+          execute: function(code, options) {
+            var exports2 = paper2.PaperScript.execute(code, this, options);
+            View.updateFocus();
+            return exports2;
+          },
+          install: function(scope) {
+            var that = this;
+            Base.each(["project", "view", "tool"], function(key2) {
+              Base.define(scope, key2, {
+                configurable: true,
+                get: function() {
+                  return that[key2];
+                }
+              });
+            });
+            for (var key in this)
+              if (!/^_/.test(key) && this[key])
+                scope[key] = this[key];
+          },
+          setup: function(element) {
+            paper2 = this;
+            this.project = new Project(element);
+            return this;
+          },
+          createCanvas: function(width, height) {
+            return CanvasProvider.getCanvas(width, height);
+          },
+          activate: function() {
+            paper2 = this;
+          },
+          clear: function() {
+            var projects = this.projects, tools = this.tools;
+            for (var i = projects.length - 1; i >= 0; i--)
+              projects[i].remove();
+            for (var i = tools.length - 1; i >= 0; i--)
+              tools[i].remove();
+          },
+          remove: function() {
+            this.clear();
+            delete PaperScope._scopes[this._id];
+          },
+          statics: new function() {
+            function handleAttribute(name) {
+              name += "Attribute";
+              return function(el, attr2) {
+                return el[name](attr2) || el[name]("data-paper-" + attr2);
+              };
+            }
+            return {
+              _scopes: {},
+              _id: 0,
+              get: function(id) {
+                return this._scopes[id] || null;
+              },
+              getAttribute: handleAttribute("get"),
+              hasAttribute: handleAttribute("has")
+            };
+          }()
+        });
+        var PaperScopeItem = Base.extend(Emitter, {
+          initialize: function(activate) {
+            this._scope = paper2;
+            this._index = this._scope[this._list].push(this) - 1;
+            if (activate || !this._scope[this._reference])
+              this.activate();
+          },
+          activate: function() {
+            if (!this._scope)
+              return false;
+            var prev = this._scope[this._reference];
+            if (prev && prev !== this)
+              prev.emit("deactivate");
+            this._scope[this._reference] = this;
+            this.emit("activate", prev);
+            return true;
+          },
+          isActive: function() {
+            return this._scope[this._reference] === this;
+          },
+          remove: function() {
+            if (this._index == null)
+              return false;
+            Base.splice(this._scope[this._list], null, this._index, 1);
+            if (this._scope[this._reference] == this)
+              this._scope[this._reference] = null;
+            this._scope = null;
+            return true;
+          },
+          getView: function() {
+            return this._scope.getView();
+          }
+        });
+        var CollisionDetection = {
+          findItemBoundsCollisions: function(items1, items2, tolerance) {
+            function getBounds(items) {
+              var bounds = new Array(items.length);
+              for (var i = 0; i < items.length; i++) {
+                var rect = items[i].getBounds();
+                bounds[i] = [rect.left, rect.top, rect.right, rect.bottom];
+              }
+              return bounds;
+            }
+            var bounds1 = getBounds(items1), bounds2 = !items2 || items2 === items1 ? bounds1 : getBounds(items2);
+            return this.findBoundsCollisions(bounds1, bounds2, tolerance || 0);
+          },
+          findCurveBoundsCollisions: function(curves1, curves2, tolerance, bothAxis) {
+            function getBounds(curves) {
+              var min = Math.min, max = Math.max, bounds = new Array(curves.length);
+              for (var i2 = 0; i2 < curves.length; i2++) {
+                var v = curves[i2];
+                bounds[i2] = [
+                  min(v[0], v[2], v[4], v[6]),
+                  min(v[1], v[3], v[5], v[7]),
+                  max(v[0], v[2], v[4], v[6]),
+                  max(v[1], v[3], v[5], v[7])
+                ];
+              }
+              return bounds;
+            }
+            var bounds1 = getBounds(curves1), bounds2 = !curves2 || curves2 === curves1 ? bounds1 : getBounds(curves2);
+            if (bothAxis) {
+              var hor = this.findBoundsCollisions(
+                bounds1,
+                bounds2,
+                tolerance || 0,
+                false,
+                true
+              ), ver = this.findBoundsCollisions(
+                bounds1,
+                bounds2,
+                tolerance || 0,
+                true,
+                true
+              ), list = [];
+              for (var i = 0, l = hor.length; i < l; i++) {
+                list[i] = { hor: hor[i], ver: ver[i] };
+              }
+              return list;
+            }
+            return this.findBoundsCollisions(bounds1, bounds2, tolerance || 0);
+          },
+          findBoundsCollisions: function(boundsA, boundsB, tolerance, sweepVertical, onlySweepAxisCollisions) {
+            var self3 = !boundsB || boundsA === boundsB, allBounds = self3 ? boundsA : boundsA.concat(boundsB), lengthA = boundsA.length, lengthAll = allBounds.length;
+            function binarySearch(indices, coord, value) {
+              var lo = 0, hi = indices.length;
+              while (lo < hi) {
+                var mid = hi + lo >>> 1;
+                if (allBounds[indices[mid]][coord] < value) {
+                  lo = mid + 1;
+                } else {
+                  hi = mid;
+                }
+              }
+              return lo - 1;
+            }
+            var pri0 = sweepVertical ? 1 : 0, pri1 = pri0 + 2, sec0 = sweepVertical ? 0 : 1, sec1 = sec0 + 2;
+            var allIndicesByPri0 = new Array(lengthAll);
+            for (var i = 0; i < lengthAll; i++) {
+              allIndicesByPri0[i] = i;
+            }
+            allIndicesByPri0.sort(function(i1, i2) {
+              return allBounds[i1][pri0] - allBounds[i2][pri0];
+            });
+            var activeIndicesByPri1 = [], allCollisions = new Array(lengthA);
+            for (var i = 0; i < lengthAll; i++) {
+              var curIndex = allIndicesByPri0[i], curBounds = allBounds[curIndex], origIndex = self3 ? curIndex : curIndex - lengthA, isCurrentA = curIndex < lengthA, isCurrentB = self3 || !isCurrentA, curCollisions = isCurrentA ? [] : null;
+              if (activeIndicesByPri1.length) {
+                var pruneCount = binarySearch(
+                  activeIndicesByPri1,
+                  pri1,
+                  curBounds[pri0] - tolerance
+                ) + 1;
+                activeIndicesByPri1.splice(0, pruneCount);
+                if (self3 && onlySweepAxisCollisions) {
+                  curCollisions = curCollisions.concat(activeIndicesByPri1);
+                  for (var j = 0; j < activeIndicesByPri1.length; j++) {
+                    var activeIndex = activeIndicesByPri1[j];
+                    allCollisions[activeIndex].push(origIndex);
+                  }
+                } else {
+                  var curSec1 = curBounds[sec1], curSec0 = curBounds[sec0];
+                  for (var j = 0; j < activeIndicesByPri1.length; j++) {
+                    var activeIndex = activeIndicesByPri1[j], activeBounds = allBounds[activeIndex], isActiveA = activeIndex < lengthA, isActiveB = self3 || activeIndex >= lengthA;
+                    if (onlySweepAxisCollisions || (isCurrentA && isActiveB || isCurrentB && isActiveA) && (curSec1 >= activeBounds[sec0] - tolerance && curSec0 <= activeBounds[sec1] + tolerance)) {
+                      if (isCurrentA && isActiveB) {
+                        curCollisions.push(
+                          self3 ? activeIndex : activeIndex - lengthA
+                        );
+                      }
+                      if (isCurrentB && isActiveA) {
+                        allCollisions[activeIndex].push(origIndex);
+                      }
+                    }
+                  }
+                }
+              }
+              if (isCurrentA) {
+                if (boundsA === boundsB) {
+                  curCollisions.push(curIndex);
+                }
+                allCollisions[curIndex] = curCollisions;
+              }
+              if (activeIndicesByPri1.length) {
+                var curPri1 = curBounds[pri1], index = binarySearch(activeIndicesByPri1, pri1, curPri1);
+                activeIndicesByPri1.splice(index + 1, 0, curIndex);
+              } else {
+                activeIndicesByPri1.push(curIndex);
+              }
+            }
+            for (var i = 0; i < allCollisions.length; i++) {
+              var collisions = allCollisions[i];
+              if (collisions) {
+                collisions.sort(function(i1, i2) {
+                  return i1 - i2;
+                });
+              }
+            }
+            return allCollisions;
+          }
+        };
+        var Formatter = Base.extend({
+          initialize: function(precision) {
+            this.precision = Base.pick(precision, 5);
+            this.multiplier = Math.pow(10, this.precision);
+          },
+          number: function(val) {
+            return this.precision < 16 ? Math.round(val * this.multiplier) / this.multiplier : val;
+          },
+          pair: function(val1, val2, separator) {
+            return this.number(val1) + (separator || ",") + this.number(val2);
+          },
+          point: function(val, separator) {
+            return this.number(val.x) + (separator || ",") + this.number(val.y);
+          },
+          size: function(val, separator) {
+            return this.number(val.width) + (separator || ",") + this.number(val.height);
+          },
+          rectangle: function(val, separator) {
+            return this.point(val, separator) + (separator || ",") + this.size(val, separator);
+          }
+        });
+        Formatter.instance = new Formatter();
+        var Numerical = new function() {
+          var abscissas = [
+            [0.5773502691896257],
+            [0, 0.7745966692414834],
+            [0.33998104358485626, 0.8611363115940526],
+            [0, 0.5384693101056831, 0.906179845938664],
+            [0.2386191860831969, 0.6612093864662645, 0.932469514203152],
+            [0, 0.4058451513773972, 0.7415311855993945, 0.9491079123427585],
+            [0.1834346424956498, 0.525532409916329, 0.7966664774136267, 0.9602898564975363],
+            [0, 0.3242534234038089, 0.6133714327005904, 0.8360311073266358, 0.9681602395076261],
+            [0.14887433898163122, 0.4333953941292472, 0.6794095682990244, 0.8650633666889845, 0.9739065285171717],
+            [0, 0.26954315595234496, 0.5190961292068118, 0.7301520055740494, 0.8870625997680953, 0.978228658146057],
+            [0.1252334085114689, 0.3678314989981802, 0.5873179542866175, 0.7699026741943047, 0.9041172563704749, 0.9815606342467192],
+            [0, 0.2304583159551348, 0.44849275103644687, 0.6423493394403402, 0.8015780907333099, 0.9175983992229779, 0.9841830547185881],
+            [0.10805494870734367, 0.31911236892788974, 0.5152486363581541, 0.6872929048116855, 0.827201315069765, 0.9284348836635735, 0.9862838086968123],
+            [0, 0.20119409399743451, 0.3941513470775634, 0.5709721726085388, 0.7244177313601701, 0.8482065834104272, 0.937273392400706, 0.9879925180204854],
+            [0.09501250983763744, 0.2816035507792589, 0.45801677765722737, 0.6178762444026438, 0.755404408355003, 0.8656312023878318, 0.9445750230732326, 0.9894009349916499]
+          ];
+          var weights = [
+            [1],
+            [0.8888888888888888, 0.5555555555555556],
+            [0.6521451548625461, 0.34785484513745385],
+            [0.5688888888888889, 0.47862867049936647, 0.23692688505618908],
+            [0.46791393457269104, 0.3607615730481386, 0.17132449237917036],
+            [0.4179591836734694, 0.3818300505051189, 0.27970539148927664, 0.1294849661688697],
+            [0.362683783378362, 0.31370664587788727, 0.22238103445337448, 0.10122853629037626],
+            [0.3302393550012598, 0.31234707704000286, 0.26061069640293544, 0.1806481606948574, 0.08127438836157441],
+            [0.29552422471475287, 0.26926671930999635, 0.21908636251598204, 0.1494513491505806, 0.06667134430868814],
+            [0.2729250867779006, 0.26280454451024665, 0.23319376459199048, 0.18629021092773426, 0.1255803694649046, 0.05566856711617366],
+            [0.24914704581340277, 0.2334925365383548, 0.20316742672306592, 0.16007832854334622, 0.10693932599531843, 0.04717533638651183],
+            [0.2325515532308739, 0.22628318026289723, 0.2078160475368885, 0.17814598076194574, 0.13887351021978725, 0.09212149983772845, 0.04048400476531588],
+            [0.2152638534631578, 0.2051984637212956, 0.18553839747793782, 0.15720316715819355, 0.12151857068790319, 0.08015808715976021, 0.03511946033175186],
+            [0.2025782419255613, 0.19843148532711158, 0.1861610000155622, 0.16626920581699392, 0.13957067792615432, 0.10715922046717194, 0.07036604748810812, 0.03075324199611727],
+            [0.1894506104550685, 0.18260341504492358, 0.16915651939500254, 0.14959598881657674, 0.12462897125553388, 0.09515851168249279, 0.062253523938647894, 0.027152459411754096]
+          ];
+          var abs = Math.abs, sqrt = Math.sqrt, pow = Math.pow, log2 = Math.log2 || function(x) {
+            return Math.log(x) * Math.LOG2E;
+          }, EPSILON = 1e-12, MACHINE_EPSILON = 112e-18;
+          function clamp(value, min, max) {
+            return value < min ? min : value > max ? max : value;
+          }
+          function getDiscriminant(a, b, c) {
+            function split(v) {
+              var x = v * 134217729, y = v - x, hi = y + x, lo = v - hi;
+              return [hi, lo];
+            }
+            var D = b * b - a * c, E = b * b + a * c;
+            if (abs(D) * 3 < E) {
+              var ad = split(a), bd = split(b), cd = split(c), p = b * b, dp = bd[0] * bd[0] - p + 2 * bd[0] * bd[1] + bd[1] * bd[1], q = a * c, dq = ad[0] * cd[0] - q + ad[0] * cd[1] + ad[1] * cd[0] + ad[1] * cd[1];
+              D = p - q + (dp - dq);
+            }
+            return D;
+          }
+          function getNormalizationFactor() {
+            var norm = Math.max.apply(Math, arguments);
+            return norm && (norm < 1e-8 || norm > 1e8) ? pow(2, -Math.round(log2(norm))) : 0;
+          }
+          return {
+            EPSILON,
+            MACHINE_EPSILON,
+            CURVETIME_EPSILON: 1e-8,
+            GEOMETRIC_EPSILON: 1e-7,
+            TRIGONOMETRIC_EPSILON: 1e-8,
+            ANGULAR_EPSILON: 1e-5,
+            KAPPA: 4 * (sqrt(2) - 1) / 3,
+            isZero: function(val) {
+              return val >= -EPSILON && val <= EPSILON;
+            },
+            isMachineZero: function(val) {
+              return val >= -MACHINE_EPSILON && val <= MACHINE_EPSILON;
+            },
+            clamp,
+            integrate: function(f, a, b, n) {
+              var x = abscissas[n - 2], w = weights[n - 2], A = (b - a) * 0.5, B = A + a, i = 0, m = n + 1 >> 1, sum = n & 1 ? w[i++] * f(B) : 0;
+              while (i < m) {
+                var Ax = A * x[i];
+                sum += w[i++] * (f(B + Ax) + f(B - Ax));
+              }
+              return A * sum;
+            },
+            findRoot: function(f, df, x, a, b, n, tolerance) {
+              for (var i = 0; i < n; i++) {
+                var fx = f(x), dx = fx / df(x), nx = x - dx;
+                if (abs(dx) < tolerance) {
+                  x = nx;
+                  break;
+                }
+                if (fx > 0) {
+                  b = x;
+                  x = nx <= a ? (a + b) * 0.5 : nx;
+                } else {
+                  a = x;
+                  x = nx >= b ? (a + b) * 0.5 : nx;
+                }
+              }
+              return clamp(x, a, b);
+            },
+            solveQuadratic: function(a, b, c, roots, min, max) {
+              var x1, x2 = Infinity;
+              if (abs(a) < EPSILON) {
+                if (abs(b) < EPSILON)
+                  return abs(c) < EPSILON ? -1 : 0;
+                x1 = -c / b;
+              } else {
+                b *= -0.5;
+                var D = getDiscriminant(a, b, c);
+                if (D && abs(D) < MACHINE_EPSILON) {
+                  var f = getNormalizationFactor(abs(a), abs(b), abs(c));
+                  if (f) {
+                    a *= f;
+                    b *= f;
+                    c *= f;
+                    D = getDiscriminant(a, b, c);
+                  }
+                }
+                if (D >= -MACHINE_EPSILON) {
+                  var Q = D < 0 ? 0 : sqrt(D), R = b + (b < 0 ? -Q : Q);
+                  if (R === 0) {
+                    x1 = c / a;
+                    x2 = -x1;
+                  } else {
+                    x1 = R / a;
+                    x2 = c / R;
+                  }
+                }
+              }
+              var count = 0, boundless = min == null, minB = min - EPSILON, maxB = max + EPSILON;
+              if (isFinite(x1) && (boundless || x1 > minB && x1 < maxB))
+                roots[count++] = boundless ? x1 : clamp(x1, min, max);
+              if (x2 !== x1 && isFinite(x2) && (boundless || x2 > minB && x2 < maxB))
+                roots[count++] = boundless ? x2 : clamp(x2, min, max);
+              return count;
+            },
+            solveCubic: function(a, b, c, d, roots, min, max) {
+              var f = getNormalizationFactor(abs(a), abs(b), abs(c), abs(d)), x, b1, c2, qd, q;
+              if (f) {
+                a *= f;
+                b *= f;
+                c *= f;
+                d *= f;
+              }
+              function evaluate(x02) {
+                x = x02;
+                var tmp = a * x;
+                b1 = tmp + b;
+                c2 = b1 * x + c;
+                qd = (tmp + b1) * x + c2;
+                q = c2 * x + d;
+              }
+              if (abs(a) < EPSILON) {
+                a = b;
+                b1 = c;
+                c2 = d;
+                x = Infinity;
+              } else if (abs(d) < EPSILON) {
+                b1 = b;
+                c2 = c;
+                x = 0;
+              } else {
+                evaluate(-(b / a) / 3);
+                var t = q / a, r = pow(abs(t), 1 / 3), s = t < 0 ? -1 : 1, td = -qd / a, rd = td > 0 ? 1.324717957244746 * Math.max(r, sqrt(td)) : r, x0 = x - s * rd;
+                if (x0 !== x) {
+                  do {
+                    evaluate(x0);
+                    x0 = qd === 0 ? x : x - q / qd / (1 + MACHINE_EPSILON);
+                  } while (s * x0 > s * x);
+                  if (abs(a) * x * x > abs(d / x)) {
+                    c2 = -d / x;
+                    b1 = (c2 - c) / x;
+                  }
+                }
+              }
+              var count = Numerical.solveQuadratic(a, b1, c2, roots, min, max), boundless = min == null;
+              if (isFinite(x) && (count === 0 || count > 0 && x !== roots[0] && x !== roots[1]) && (boundless || x > min - EPSILON && x < max + EPSILON))
+                roots[count++] = boundless ? x : clamp(x, min, max);
+              return count;
+            }
+          };
+        }();
+        var UID = {
+          _id: 1,
+          _pools: {},
+          get: function(name) {
+            if (name) {
+              var pool = this._pools[name];
+              if (!pool)
+                pool = this._pools[name] = { _id: 1 };
+              return pool._id++;
+            } else {
+              return this._id++;
+            }
+          }
+        };
+        var Point = Base.extend({
+          _class: "Point",
+          _readIndex: true,
+          initialize: function Point2(arg0, arg1) {
+            var type = typeof arg0, reading = this.__read, read = 0;
+            if (type === "number") {
+              var hasY = typeof arg1 === "number";
+              this._set(arg0, hasY ? arg1 : arg0);
+              if (reading)
+                read = hasY ? 2 : 1;
+            } else if (type === "undefined" || arg0 === null) {
+              this._set(0, 0);
+              if (reading)
+                read = arg0 === null ? 1 : 0;
+            } else {
+              var obj = type === "string" ? arg0.split(/[\s,]+/) || [] : arg0;
+              read = 1;
+              if (Array.isArray(obj)) {
+                this._set(+obj[0], +(obj.length > 1 ? obj[1] : obj[0]));
+              } else if ("x" in obj) {
+                this._set(obj.x || 0, obj.y || 0);
+              } else if ("width" in obj) {
+                this._set(obj.width || 0, obj.height || 0);
+              } else if ("angle" in obj) {
+                this._set(obj.length || 0, 0);
+                this.setAngle(obj.angle || 0);
+              } else {
+                this._set(0, 0);
+                read = 0;
+              }
+            }
+            if (reading)
+              this.__read = read;
+            return this;
+          },
+          set: "#initialize",
+          _set: function(x, y) {
+            this.x = x;
+            this.y = y;
+            return this;
+          },
+          equals: function(point) {
+            return this === point || point && (this.x === point.x && this.y === point.y || Array.isArray(point) && this.x === point[0] && this.y === point[1]) || false;
+          },
+          clone: function() {
+            return new Point(this.x, this.y);
+          },
+          toString: function() {
+            var f = Formatter.instance;
+            return "{ x: " + f.number(this.x) + ", y: " + f.number(this.y) + " }";
+          },
+          _serialize: function(options) {
+            var f = options.formatter;
+            return [f.number(this.x), f.number(this.y)];
+          },
+          getLength: function() {
+            return Math.sqrt(this.x * this.x + this.y * this.y);
+          },
+          setLength: function(length) {
+            if (this.isZero()) {
+              var angle = this._angle || 0;
+              this._set(
+                Math.cos(angle) * length,
+                Math.sin(angle) * length
+              );
+            } else {
+              var scale = length / this.getLength();
+              if (Numerical.isZero(scale))
+                this.getAngle();
+              this._set(
+                this.x * scale,
+                this.y * scale
+              );
+            }
+          },
+          getAngle: function() {
+            return this.getAngleInRadians.apply(this, arguments) * 180 / Math.PI;
+          },
+          setAngle: function(angle) {
+            this.setAngleInRadians.call(this, angle * Math.PI / 180);
+          },
+          getAngleInDegrees: "#getAngle",
+          setAngleInDegrees: "#setAngle",
+          getAngleInRadians: function() {
+            if (!arguments.length) {
+              return this.isZero() ? this._angle || 0 : this._angle = Math.atan2(this.y, this.x);
+            } else {
+              var point = Point.read(arguments), div = this.getLength() * point.getLength();
+              if (Numerical.isZero(div)) {
+                return NaN;
+              } else {
+                var a = this.dot(point) / div;
+                return Math.acos(a < -1 ? -1 : a > 1 ? 1 : a);
+              }
+            }
+          },
+          setAngleInRadians: function(angle) {
+            this._angle = angle;
+            if (!this.isZero()) {
+              var length = this.getLength();
+              this._set(
+                Math.cos(angle) * length,
+                Math.sin(angle) * length
+              );
+            }
+          },
+          getQuadrant: function() {
+            return this.x >= 0 ? this.y >= 0 ? 1 : 4 : this.y >= 0 ? 2 : 3;
+          }
+        }, {
+          beans: false,
+          getDirectedAngle: function() {
+            var point = Point.read(arguments);
+            return Math.atan2(this.cross(point), this.dot(point)) * 180 / Math.PI;
+          },
+          getDistance: function() {
+            var args = arguments, point = Point.read(args), x = point.x - this.x, y = point.y - this.y, d = x * x + y * y, squared = Base.read(args);
+            return squared ? d : Math.sqrt(d);
+          },
+          normalize: function(length) {
+            if (length === undefined2)
+              length = 1;
+            var current = this.getLength(), scale = current !== 0 ? length / current : 0, point = new Point(this.x * scale, this.y * scale);
+            if (scale >= 0)
+              point._angle = this._angle;
+            return point;
+          },
+          rotate: function(angle, center) {
+            if (angle === 0)
+              return this.clone();
+            angle = angle * Math.PI / 180;
+            var point = center ? this.subtract(center) : this, sin = Math.sin(angle), cos = Math.cos(angle);
+            point = new Point(
+              point.x * cos - point.y * sin,
+              point.x * sin + point.y * cos
+            );
+            return center ? point.add(center) : point;
+          },
+          transform: function(matrix) {
+            return matrix ? matrix._transformPoint(this) : this;
+          },
+          add: function() {
+            var point = Point.read(arguments);
+            return new Point(this.x + point.x, this.y + point.y);
+          },
+          subtract: function() {
+            var point = Point.read(arguments);
+            return new Point(this.x - point.x, this.y - point.y);
+          },
+          multiply: function() {
+            var point = Point.read(arguments);
+            return new Point(this.x * point.x, this.y * point.y);
+          },
+          divide: function() {
+            var point = Point.read(arguments);
+            return new Point(this.x / point.x, this.y / point.y);
+          },
+          modulo: function() {
+            var point = Point.read(arguments);
+            return new Point(this.x % point.x, this.y % point.y);
+          },
+          negate: function() {
+            return new Point(-this.x, -this.y);
+          },
+          isInside: function() {
+            return Rectangle.read(arguments).contains(this);
+          },
+          isClose: function() {
+            var args = arguments, point = Point.read(args), tolerance = Base.read(args);
+            return this.getDistance(point) <= tolerance;
+          },
+          isCollinear: function() {
+            var point = Point.read(arguments);
+            return Point.isCollinear(this.x, this.y, point.x, point.y);
+          },
+          isColinear: "#isCollinear",
+          isOrthogonal: function() {
+            var point = Point.read(arguments);
+            return Point.isOrthogonal(this.x, this.y, point.x, point.y);
+          },
+          isZero: function() {
+            var isZero = Numerical.isZero;
+            return isZero(this.x) && isZero(this.y);
+          },
+          isNaN: function() {
+            return isNaN(this.x) || isNaN(this.y);
+          },
+          isInQuadrant: function(q) {
+            return this.x * (q > 1 && q < 4 ? -1 : 1) >= 0 && this.y * (q > 2 ? -1 : 1) >= 0;
+          },
+          dot: function() {
+            var point = Point.read(arguments);
+            return this.x * point.x + this.y * point.y;
+          },
+          cross: function() {
+            var point = Point.read(arguments);
+            return this.x * point.y - this.y * point.x;
+          },
+          project: function() {
+            var point = Point.read(arguments), scale = point.isZero() ? 0 : this.dot(point) / point.dot(point);
+            return new Point(
+              point.x * scale,
+              point.y * scale
+            );
+          },
+          statics: {
+            min: function() {
+              var args = arguments, point1 = Point.read(args), point2 = Point.read(args);
+              return new Point(
+                Math.min(point1.x, point2.x),
+                Math.min(point1.y, point2.y)
+              );
+            },
+            max: function() {
+              var args = arguments, point1 = Point.read(args), point2 = Point.read(args);
+              return new Point(
+                Math.max(point1.x, point2.x),
+                Math.max(point1.y, point2.y)
+              );
+            },
+            random: function() {
+              return new Point(Math.random(), Math.random());
+            },
+            isCollinear: function(x1, y1, x2, y2) {
+              return Math.abs(x1 * y2 - y1 * x2) <= Math.sqrt((x1 * x1 + y1 * y1) * (x2 * x2 + y2 * y2)) * 1e-8;
+            },
+            isOrthogonal: function(x1, y1, x2, y2) {
+              return Math.abs(x1 * x2 + y1 * y2) <= Math.sqrt((x1 * x1 + y1 * y1) * (x2 * x2 + y2 * y2)) * 1e-8;
+            }
+          }
+        }, Base.each(["round", "ceil", "floor", "abs"], function(key) {
+          var op = Math[key];
+          this[key] = function() {
+            return new Point(op(this.x), op(this.y));
+          };
+        }, {}));
+        var LinkedPoint = Point.extend({
+          initialize: function Point2(x, y, owner, setter) {
+            this._x = x;
+            this._y = y;
+            this._owner = owner;
+            this._setter = setter;
+          },
+          _set: function(x, y, _dontNotify) {
+            this._x = x;
+            this._y = y;
+            if (!_dontNotify)
+              this._owner[this._setter](this);
+            return this;
+          },
+          getX: function() {
+            return this._x;
+          },
+          setX: function(x) {
+            this._x = x;
+            this._owner[this._setter](this);
+          },
+          getY: function() {
+            return this._y;
+          },
+          setY: function(y) {
+            this._y = y;
+            this._owner[this._setter](this);
+          },
+          isSelected: function() {
+            return !!(this._owner._selection & this._getSelection());
+          },
+          setSelected: function(selected) {
+            this._owner._changeSelection(this._getSelection(), selected);
+          },
+          _getSelection: function() {
+            return this._setter === "setPosition" ? 4 : 0;
+          }
+        });
+        var Size = Base.extend({
+          _class: "Size",
+          _readIndex: true,
+          initialize: function Size2(arg0, arg1) {
+            var type = typeof arg0, reading = this.__read, read = 0;
+            if (type === "number") {
+              var hasHeight = typeof arg1 === "number";
+              this._set(arg0, hasHeight ? arg1 : arg0);
+              if (reading)
+                read = hasHeight ? 2 : 1;
+            } else if (type === "undefined" || arg0 === null) {
+              this._set(0, 0);
+              if (reading)
+                read = arg0 === null ? 1 : 0;
+            } else {
+              var obj = type === "string" ? arg0.split(/[\s,]+/) || [] : arg0;
+              read = 1;
+              if (Array.isArray(obj)) {
+                this._set(+obj[0], +(obj.length > 1 ? obj[1] : obj[0]));
+              } else if ("width" in obj) {
+                this._set(obj.width || 0, obj.height || 0);
+              } else if ("x" in obj) {
+                this._set(obj.x || 0, obj.y || 0);
+              } else {
+                this._set(0, 0);
+                read = 0;
+              }
+            }
+            if (reading)
+              this.__read = read;
+            return this;
+          },
+          set: "#initialize",
+          _set: function(width, height) {
+            this.width = width;
+            this.height = height;
+            return this;
+          },
+          equals: function(size) {
+            return size === this || size && (this.width === size.width && this.height === size.height || Array.isArray(size) && this.width === size[0] && this.height === size[1]) || false;
+          },
+          clone: function() {
+            return new Size(this.width, this.height);
+          },
+          toString: function() {
+            var f = Formatter.instance;
+            return "{ width: " + f.number(this.width) + ", height: " + f.number(this.height) + " }";
+          },
+          _serialize: function(options) {
+            var f = options.formatter;
+            return [
+              f.number(this.width),
+              f.number(this.height)
+            ];
+          },
+          add: function() {
+            var size = Size.read(arguments);
+            return new Size(this.width + size.width, this.height + size.height);
+          },
+          subtract: function() {
+            var size = Size.read(arguments);
+            return new Size(this.width - size.width, this.height - size.height);
+          },
+          multiply: function() {
+            var size = Size.read(arguments);
+            return new Size(this.width * size.width, this.height * size.height);
+          },
+          divide: function() {
+            var size = Size.read(arguments);
+            return new Size(this.width / size.width, this.height / size.height);
+          },
+          modulo: function() {
+            var size = Size.read(arguments);
+            return new Size(this.width % size.width, this.height % size.height);
+          },
+          negate: function() {
+            return new Size(-this.width, -this.height);
+          },
+          isZero: function() {
+            var isZero = Numerical.isZero;
+            return isZero(this.width) && isZero(this.height);
+          },
+          isNaN: function() {
+            return isNaN(this.width) || isNaN(this.height);
+          },
+          statics: {
+            min: function(size1, size2) {
+              return new Size(
+                Math.min(size1.width, size2.width),
+                Math.min(size1.height, size2.height)
+              );
+            },
+            max: function(size1, size2) {
+              return new Size(
+                Math.max(size1.width, size2.width),
+                Math.max(size1.height, size2.height)
+              );
+            },
+            random: function() {
+              return new Size(Math.random(), Math.random());
+            }
+          }
+        }, Base.each(["round", "ceil", "floor", "abs"], function(key) {
+          var op = Math[key];
+          this[key] = function() {
+            return new Size(op(this.width), op(this.height));
+          };
+        }, {}));
+        var LinkedSize = Size.extend({
+          initialize: function Size2(width, height, owner, setter) {
+            this._width = width;
+            this._height = height;
+            this._owner = owner;
+            this._setter = setter;
+          },
+          _set: function(width, height, _dontNotify) {
+            this._width = width;
+            this._height = height;
+            if (!_dontNotify)
+              this._owner[this._setter](this);
+            return this;
+          },
+          getWidth: function() {
+            return this._width;
+          },
+          setWidth: function(width) {
+            this._width = width;
+            this._owner[this._setter](this);
+          },
+          getHeight: function() {
+            return this._height;
+          },
+          setHeight: function(height) {
+            this._height = height;
+            this._owner[this._setter](this);
+          }
+        });
+        var Rectangle = Base.extend({
+          _class: "Rectangle",
+          _readIndex: true,
+          beans: true,
+          initialize: function Rectangle2(arg0, arg1, arg2, arg3) {
+            var args = arguments, type = typeof arg0, read;
+            if (type === "number") {
+              this._set(arg0, arg1, arg2, arg3);
+              read = 4;
+            } else if (type === "undefined" || arg0 === null) {
+              this._set(0, 0, 0, 0);
+              read = arg0 === null ? 1 : 0;
+            } else if (args.length === 1) {
+              if (Array.isArray(arg0)) {
+                this._set.apply(this, arg0);
+                read = 1;
+              } else if (arg0.x !== undefined2 || arg0.width !== undefined2) {
+                this._set(
+                  arg0.x || 0,
+                  arg0.y || 0,
+                  arg0.width || 0,
+                  arg0.height || 0
+                );
+                read = 1;
+              } else if (arg0.from === undefined2 && arg0.to === undefined2) {
+                this._set(0, 0, 0, 0);
+                if (Base.readSupported(args, this)) {
+                  read = 1;
+                }
+              }
+            }
+            if (read === undefined2) {
+              var frm = Point.readNamed(args, "from"), next = Base.peek(args), x = frm.x, y = frm.y, width, height;
+              if (next && next.x !== undefined2 || Base.hasNamed(args, "to")) {
+                var to = Point.readNamed(args, "to");
+                width = to.x - x;
+                height = to.y - y;
+                if (width < 0) {
+                  x = to.x;
+                  width = -width;
+                }
+                if (height < 0) {
+                  y = to.y;
+                  height = -height;
+                }
+              } else {
+                var size = Size.read(args);
+                width = size.width;
+                height = size.height;
+              }
+              this._set(x, y, width, height);
+              read = args.__index;
+            }
+            var filtered = args.__filtered;
+            if (filtered)
+              this.__filtered = filtered;
+            if (this.__read)
+              this.__read = read;
+            return this;
+          },
+          set: "#initialize",
+          _set: function(x, y, width, height) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            return this;
+          },
+          clone: function() {
+            return new Rectangle(this.x, this.y, this.width, this.height);
+          },
+          equals: function(rect) {
+            var rt = Base.isPlainValue(rect) ? Rectangle.read(arguments) : rect;
+            return rt === this || rt && this.x === rt.x && this.y === rt.y && this.width === rt.width && this.height === rt.height || false;
+          },
+          toString: function() {
+            var f = Formatter.instance;
+            return "{ x: " + f.number(this.x) + ", y: " + f.number(this.y) + ", width: " + f.number(this.width) + ", height: " + f.number(this.height) + " }";
+          },
+          _serialize: function(options) {
+            var f = options.formatter;
+            return [
+              f.number(this.x),
+              f.number(this.y),
+              f.number(this.width),
+              f.number(this.height)
+            ];
+          },
+          getPoint: function(_dontLink) {
+            var ctor = _dontLink ? Point : LinkedPoint;
+            return new ctor(this.x, this.y, this, "setPoint");
+          },
+          setPoint: function() {
+            var point = Point.read(arguments);
+            this.x = point.x;
+            this.y = point.y;
+          },
+          getSize: function(_dontLink) {
+            var ctor = _dontLink ? Size : LinkedSize;
+            return new ctor(this.width, this.height, this, "setSize");
+          },
+          _fw: 1,
+          _fh: 1,
+          setSize: function() {
+            var size = Size.read(arguments), sx = this._sx, sy = this._sy, w = size.width, h = size.height;
+            if (sx) {
+              this.x += (this.width - w) * sx;
+            }
+            if (sy) {
+              this.y += (this.height - h) * sy;
+            }
+            this.width = w;
+            this.height = h;
+            this._fw = this._fh = 1;
+          },
+          getLeft: function() {
+            return this.x;
+          },
+          setLeft: function(left) {
+            if (!this._fw) {
+              var amount = left - this.x;
+              this.width -= this._sx === 0.5 ? amount * 2 : amount;
+            }
+            this.x = left;
+            this._sx = this._fw = 0;
+          },
+          getTop: function() {
+            return this.y;
+          },
+          setTop: function(top) {
+            if (!this._fh) {
+              var amount = top - this.y;
+              this.height -= this._sy === 0.5 ? amount * 2 : amount;
+            }
+            this.y = top;
+            this._sy = this._fh = 0;
+          },
+          getRight: function() {
+            return this.x + this.width;
+          },
+          setRight: function(right) {
+            if (!this._fw) {
+              var amount = right - this.x;
+              this.width = this._sx === 0.5 ? amount * 2 : amount;
+            }
+            this.x = right - this.width;
+            this._sx = 1;
+            this._fw = 0;
+          },
+          getBottom: function() {
+            return this.y + this.height;
+          },
+          setBottom: function(bottom) {
+            if (!this._fh) {
+              var amount = bottom - this.y;
+              this.height = this._sy === 0.5 ? amount * 2 : amount;
+            }
+            this.y = bottom - this.height;
+            this._sy = 1;
+            this._fh = 0;
+          },
+          getCenterX: function() {
+            return this.x + this.width / 2;
+          },
+          setCenterX: function(x) {
+            if (this._fw || this._sx === 0.5) {
+              this.x = x - this.width / 2;
+            } else {
+              if (this._sx) {
+                this.x += (x - this.x) * 2 * this._sx;
+              }
+              this.width = (x - this.x) * 2;
+            }
+            this._sx = 0.5;
+            this._fw = 0;
+          },
+          getCenterY: function() {
+            return this.y + this.height / 2;
+          },
+          setCenterY: function(y) {
+            if (this._fh || this._sy === 0.5) {
+              this.y = y - this.height / 2;
+            } else {
+              if (this._sy) {
+                this.y += (y - this.y) * 2 * this._sy;
+              }
+              this.height = (y - this.y) * 2;
+            }
+            this._sy = 0.5;
+            this._fh = 0;
+          },
+          getCenter: function(_dontLink) {
+            var ctor = _dontLink ? Point : LinkedPoint;
+            return new ctor(this.getCenterX(), this.getCenterY(), this, "setCenter");
+          },
+          setCenter: function() {
+            var point = Point.read(arguments);
+            this.setCenterX(point.x);
+            this.setCenterY(point.y);
+            return this;
+          },
+          getArea: function() {
+            return this.width * this.height;
+          },
+          isEmpty: function() {
+            return this.width === 0 || this.height === 0;
+          },
+          contains: function(arg) {
+            return arg && arg.width !== undefined2 || (Array.isArray(arg) ? arg : arguments).length === 4 ? this._containsRectangle(Rectangle.read(arguments)) : this._containsPoint(Point.read(arguments));
+          },
+          _containsPoint: function(point) {
+            var x = point.x, y = point.y;
+            return x >= this.x && y >= this.y && x <= this.x + this.width && y <= this.y + this.height;
+          },
+          _containsRectangle: function(rect) {
+            var x = rect.x, y = rect.y;
+            return x >= this.x && y >= this.y && x + rect.width <= this.x + this.width && y + rect.height <= this.y + this.height;
+          },
+          intersects: function() {
+            var rect = Rectangle.read(arguments), epsilon = Base.read(arguments) || 0;
+            return rect.x + rect.width > this.x - epsilon && rect.y + rect.height > this.y - epsilon && rect.x < this.x + this.width + epsilon && rect.y < this.y + this.height + epsilon;
+          },
+          intersect: function() {
+            var rect = Rectangle.read(arguments), x1 = Math.max(this.x, rect.x), y1 = Math.max(this.y, rect.y), x2 = Math.min(this.x + this.width, rect.x + rect.width), y2 = Math.min(this.y + this.height, rect.y + rect.height);
+            return new Rectangle(x1, y1, x2 - x1, y2 - y1);
+          },
+          unite: function() {
+            var rect = Rectangle.read(arguments), x1 = Math.min(this.x, rect.x), y1 = Math.min(this.y, rect.y), x2 = Math.max(this.x + this.width, rect.x + rect.width), y2 = Math.max(this.y + this.height, rect.y + rect.height);
+            return new Rectangle(x1, y1, x2 - x1, y2 - y1);
+          },
+          include: function() {
+            var point = Point.read(arguments);
+            var x1 = Math.min(this.x, point.x), y1 = Math.min(this.y, point.y), x2 = Math.max(this.x + this.width, point.x), y2 = Math.max(this.y + this.height, point.y);
+            return new Rectangle(x1, y1, x2 - x1, y2 - y1);
+          },
+          expand: function() {
+            var amount = Size.read(arguments), hor = amount.width, ver = amount.height;
+            return new Rectangle(
+              this.x - hor / 2,
+              this.y - ver / 2,
+              this.width + hor,
+              this.height + ver
+            );
+          },
+          scale: function(hor, ver) {
+            return this.expand(
+              this.width * hor - this.width,
+              this.height * (ver === undefined2 ? hor : ver) - this.height
+            );
+          }
+        }, Base.each(
+          [
+            ["Top", "Left"],
+            ["Top", "Right"],
+            ["Bottom", "Left"],
+            ["Bottom", "Right"],
+            ["Left", "Center"],
+            ["Top", "Center"],
+            ["Right", "Center"],
+            ["Bottom", "Center"]
+          ],
+          function(parts, index) {
+            var part = parts.join(""), xFirst = /^[RL]/.test(part);
+            if (index >= 4)
+              parts[1] += xFirst ? "Y" : "X";
+            var x = parts[xFirst ? 0 : 1], y = parts[xFirst ? 1 : 0], getX = "get" + x, getY = "get" + y, setX = "set" + x, setY = "set" + y, get = "get" + part, set = "set" + part;
+            this[get] = function(_dontLink) {
+              var ctor = _dontLink ? Point : LinkedPoint;
+              return new ctor(this[getX](), this[getY](), this, set);
+            };
+            this[set] = function() {
+              var point = Point.read(arguments);
+              this[setX](point.x);
+              this[setY](point.y);
+            };
+          },
+          {
+            beans: true
+          }
+        ));
+        var LinkedRectangle = Rectangle.extend(
+          {
+            initialize: function Rectangle2(x, y, width, height, owner, setter) {
+              this._set(x, y, width, height, true);
+              this._owner = owner;
+              this._setter = setter;
+            },
+            _set: function(x, y, width, height, _dontNotify) {
+              this._x = x;
+              this._y = y;
+              this._width = width;
+              this._height = height;
+              if (!_dontNotify)
+                this._owner[this._setter](this);
+              return this;
+            }
+          },
+          new function() {
+            var proto = Rectangle.prototype;
+            return Base.each(
+              ["x", "y", "width", "height"],
+              function(key) {
+                var part = Base.capitalize(key), internal = "_" + key;
+                this["get" + part] = function() {
+                  return this[internal];
+                };
+                this["set" + part] = function(value) {
+                  this[internal] = value;
+                  if (!this._dontNotify)
+                    this._owner[this._setter](this);
+                };
+              },
+              Base.each(
+                [
+                  "Point",
+                  "Size",
+                  "Center",
+                  "Left",
+                  "Top",
+                  "Right",
+                  "Bottom",
+                  "CenterX",
+                  "CenterY",
+                  "TopLeft",
+                  "TopRight",
+                  "BottomLeft",
+                  "BottomRight",
+                  "LeftCenter",
+                  "TopCenter",
+                  "RightCenter",
+                  "BottomCenter"
+                ],
+                function(key) {
+                  var name = "set" + key;
+                  this[name] = function() {
+                    this._dontNotify = true;
+                    proto[name].apply(this, arguments);
+                    this._dontNotify = false;
+                    this._owner[this._setter](this);
+                  };
+                },
+                {
+                  isSelected: function() {
+                    return !!(this._owner._selection & 2);
+                  },
+                  setSelected: function(selected) {
+                    var owner = this._owner;
+                    if (owner._changeSelection) {
+                      owner._changeSelection(2, selected);
+                    }
+                  }
+                }
+              )
+            );
+          }()
+        );
+        var Matrix = Base.extend({
+          _class: "Matrix",
+          initialize: function Matrix2(arg, _dontNotify) {
+            var args = arguments, count = args.length, ok = true;
+            if (count >= 6) {
+              this._set.apply(this, args);
+            } else if (count === 1 || count === 2) {
+              if (arg instanceof Matrix2) {
+                this._set(
+                  arg._a,
+                  arg._b,
+                  arg._c,
+                  arg._d,
+                  arg._tx,
+                  arg._ty,
+                  _dontNotify
+                );
+              } else if (Array.isArray(arg)) {
+                this._set.apply(
+                  this,
+                  _dontNotify ? arg.concat([_dontNotify]) : arg
+                );
+              } else {
+                ok = false;
+              }
+            } else if (!count) {
+              this.reset();
+            } else {
+              ok = false;
+            }
+            if (!ok) {
+              throw new Error("Unsupported matrix parameters");
+            }
+            return this;
+          },
+          set: "#initialize",
+          _set: function(a, b, c, d, tx, ty, _dontNotify) {
+            this._a = a;
+            this._b = b;
+            this._c = c;
+            this._d = d;
+            this._tx = tx;
+            this._ty = ty;
+            if (!_dontNotify)
+              this._changed();
+            return this;
+          },
+          _serialize: function(options, dictionary) {
+            return Base.serialize(this.getValues(), options, true, dictionary);
+          },
+          _changed: function() {
+            var owner = this._owner;
+            if (owner) {
+              if (owner._applyMatrix) {
+                owner.transform(null, true);
+              } else {
+                owner._changed(25);
+              }
+            }
+          },
+          clone: function() {
+            return new Matrix(
+              this._a,
+              this._b,
+              this._c,
+              this._d,
+              this._tx,
+              this._ty
+            );
+          },
+          equals: function(mx) {
+            return mx === this || mx && this._a === mx._a && this._b === mx._b && this._c === mx._c && this._d === mx._d && this._tx === mx._tx && this._ty === mx._ty;
+          },
+          toString: function() {
+            var f = Formatter.instance;
+            return "[[" + [
+              f.number(this._a),
+              f.number(this._c),
+              f.number(this._tx)
+            ].join(", ") + "], [" + [
+              f.number(this._b),
+              f.number(this._d),
+              f.number(this._ty)
+            ].join(", ") + "]]";
+          },
+          reset: function(_dontNotify) {
+            this._a = this._d = 1;
+            this._b = this._c = this._tx = this._ty = 0;
+            if (!_dontNotify)
+              this._changed();
+            return this;
+          },
+          apply: function(recursively, _setApplyMatrix) {
+            var owner = this._owner;
+            if (owner) {
+              owner.transform(null, Base.pick(recursively, true), _setApplyMatrix);
+              return this.isIdentity();
+            }
+            return false;
+          },
+          translate: function() {
+            var point = Point.read(arguments), x = point.x, y = point.y;
+            this._tx += x * this._a + y * this._c;
+            this._ty += x * this._b + y * this._d;
+            this._changed();
+            return this;
+          },
+          scale: function() {
+            var args = arguments, scale = Point.read(args), center = Point.read(args, 0, { readNull: true });
+            if (center)
+              this.translate(center);
+            this._a *= scale.x;
+            this._b *= scale.x;
+            this._c *= scale.y;
+            this._d *= scale.y;
+            if (center)
+              this.translate(center.negate());
+            this._changed();
+            return this;
+          },
+          rotate: function(angle) {
+            angle *= Math.PI / 180;
+            var center = Point.read(arguments, 1), x = center.x, y = center.y, cos = Math.cos(angle), sin = Math.sin(angle), tx = x - x * cos + y * sin, ty = y - x * sin - y * cos, a = this._a, b = this._b, c = this._c, d = this._d;
+            this._a = cos * a + sin * c;
+            this._b = cos * b + sin * d;
+            this._c = -sin * a + cos * c;
+            this._d = -sin * b + cos * d;
+            this._tx += tx * a + ty * c;
+            this._ty += tx * b + ty * d;
+            this._changed();
+            return this;
+          },
+          shear: function() {
+            var args = arguments, shear = Point.read(args), center = Point.read(args, 0, { readNull: true });
+            if (center)
+              this.translate(center);
+            var a = this._a, b = this._b;
+            this._a += shear.y * this._c;
+            this._b += shear.y * this._d;
+            this._c += shear.x * a;
+            this._d += shear.x * b;
+            if (center)
+              this.translate(center.negate());
+            this._changed();
+            return this;
+          },
+          skew: function() {
+            var args = arguments, skew = Point.read(args), center = Point.read(args, 0, { readNull: true }), toRadians = Math.PI / 180, shear = new Point(
+              Math.tan(skew.x * toRadians),
+              Math.tan(skew.y * toRadians)
+            );
+            return this.shear(shear, center);
+          },
+          append: function(mx, _dontNotify) {
+            if (mx) {
+              var a1 = this._a, b1 = this._b, c1 = this._c, d1 = this._d, a2 = mx._a, b2 = mx._c, c2 = mx._b, d2 = mx._d, tx2 = mx._tx, ty2 = mx._ty;
+              this._a = a2 * a1 + c2 * c1;
+              this._c = b2 * a1 + d2 * c1;
+              this._b = a2 * b1 + c2 * d1;
+              this._d = b2 * b1 + d2 * d1;
+              this._tx += tx2 * a1 + ty2 * c1;
+              this._ty += tx2 * b1 + ty2 * d1;
+              if (!_dontNotify)
+                this._changed();
+            }
+            return this;
+          },
+          prepend: function(mx, _dontNotify) {
+            if (mx) {
+              var a1 = this._a, b1 = this._b, c1 = this._c, d1 = this._d, tx1 = this._tx, ty1 = this._ty, a2 = mx._a, b2 = mx._c, c2 = mx._b, d2 = mx._d, tx2 = mx._tx, ty2 = mx._ty;
+              this._a = a2 * a1 + b2 * b1;
+              this._c = a2 * c1 + b2 * d1;
+              this._b = c2 * a1 + d2 * b1;
+              this._d = c2 * c1 + d2 * d1;
+              this._tx = a2 * tx1 + b2 * ty1 + tx2;
+              this._ty = c2 * tx1 + d2 * ty1 + ty2;
+              if (!_dontNotify)
+                this._changed();
+            }
+            return this;
+          },
+          appended: function(mx) {
+            return this.clone().append(mx);
+          },
+          prepended: function(mx) {
+            return this.clone().prepend(mx);
+          },
+          invert: function() {
+            var a = this._a, b = this._b, c = this._c, d = this._d, tx = this._tx, ty = this._ty, det = a * d - b * c, res = null;
+            if (det && !isNaN(det) && isFinite(tx) && isFinite(ty)) {
+              this._a = d / det;
+              this._b = -b / det;
+              this._c = -c / det;
+              this._d = a / det;
+              this._tx = (c * ty - d * tx) / det;
+              this._ty = (b * tx - a * ty) / det;
+              res = this;
+            }
+            return res;
+          },
+          inverted: function() {
+            return this.clone().invert();
+          },
+          concatenate: "#append",
+          preConcatenate: "#prepend",
+          chain: "#appended",
+          _shiftless: function() {
+            return new Matrix(this._a, this._b, this._c, this._d, 0, 0);
+          },
+          _orNullIfIdentity: function() {
+            return this.isIdentity() ? null : this;
+          },
+          isIdentity: function() {
+            return this._a === 1 && this._b === 0 && this._c === 0 && this._d === 1 && this._tx === 0 && this._ty === 0;
+          },
+          isInvertible: function() {
+            var det = this._a * this._d - this._c * this._b;
+            return det && !isNaN(det) && isFinite(this._tx) && isFinite(this._ty);
+          },
+          isSingular: function() {
+            return !this.isInvertible();
+          },
+          transform: function(src, dst, count) {
+            return arguments.length < 3 ? this._transformPoint(Point.read(arguments)) : this._transformCoordinates(src, dst, count);
+          },
+          _transformPoint: function(point, dest, _dontNotify) {
+            var x = point.x, y = point.y;
+            if (!dest)
+              dest = new Point();
+            return dest._set(
+              x * this._a + y * this._c + this._tx,
+              x * this._b + y * this._d + this._ty,
+              _dontNotify
+            );
+          },
+          _transformCoordinates: function(src, dst, count) {
+            for (var i = 0, max = 2 * count; i < max; i += 2) {
+              var x = src[i], y = src[i + 1];
+              dst[i] = x * this._a + y * this._c + this._tx;
+              dst[i + 1] = x * this._b + y * this._d + this._ty;
+            }
+            return dst;
+          },
+          _transformCorners: function(rect) {
+            var x1 = rect.x, y1 = rect.y, x2 = x1 + rect.width, y2 = y1 + rect.height, coords = [x1, y1, x2, y1, x2, y2, x1, y2];
+            return this._transformCoordinates(coords, coords, 4);
+          },
+          _transformBounds: function(bounds, dest, _dontNotify) {
+            var coords = this._transformCorners(bounds), min = coords.slice(0, 2), max = min.slice();
+            for (var i = 2; i < 8; i++) {
+              var val = coords[i], j = i & 1;
+              if (val < min[j]) {
+                min[j] = val;
+              } else if (val > max[j]) {
+                max[j] = val;
+              }
+            }
+            if (!dest)
+              dest = new Rectangle();
+            return dest._set(
+              min[0],
+              min[1],
+              max[0] - min[0],
+              max[1] - min[1],
+              _dontNotify
+            );
+          },
+          inverseTransform: function() {
+            return this._inverseTransform(Point.read(arguments));
+          },
+          _inverseTransform: function(point, dest, _dontNotify) {
+            var a = this._a, b = this._b, c = this._c, d = this._d, tx = this._tx, ty = this._ty, det = a * d - b * c, res = null;
+            if (det && !isNaN(det) && isFinite(tx) && isFinite(ty)) {
+              var x = point.x - this._tx, y = point.y - this._ty;
+              if (!dest)
+                dest = new Point();
+              res = dest._set(
+                (x * d - y * c) / det,
+                (y * a - x * b) / det,
+                _dontNotify
+              );
+            }
+            return res;
+          },
+          decompose: function() {
+            var a = this._a, b = this._b, c = this._c, d = this._d, det = a * d - b * c, sqrt = Math.sqrt, atan2 = Math.atan2, degrees = 180 / Math.PI, rotate, scale, skew;
+            if (a !== 0 || b !== 0) {
+              var r = sqrt(a * a + b * b);
+              rotate = Math.acos(a / r) * (b > 0 ? 1 : -1);
+              scale = [r, det / r];
+              skew = [atan2(a * c + b * d, r * r), 0];
+            } else if (c !== 0 || d !== 0) {
+              var s = sqrt(c * c + d * d);
+              rotate = Math.asin(c / s) * (d > 0 ? 1 : -1);
+              scale = [det / s, s];
+              skew = [0, atan2(a * c + b * d, s * s)];
+            } else {
+              rotate = 0;
+              skew = scale = [0, 0];
+            }
+            return {
+              translation: this.getTranslation(),
+              rotation: rotate * degrees,
+              scaling: new Point(scale),
+              skewing: new Point(skew[0] * degrees, skew[1] * degrees)
+            };
+          },
+          getValues: function() {
+            return [this._a, this._b, this._c, this._d, this._tx, this._ty];
+          },
+          getTranslation: function() {
+            return new Point(this._tx, this._ty);
+          },
+          getScaling: function() {
+            return this.decompose().scaling;
+          },
+          getRotation: function() {
+            return this.decompose().rotation;
+          },
+          applyToContext: function(ctx) {
+            if (!this.isIdentity()) {
+              ctx.transform(
+                this._a,
+                this._b,
+                this._c,
+                this._d,
+                this._tx,
+                this._ty
+              );
+            }
+          }
+        }, Base.each(["a", "b", "c", "d", "tx", "ty"], function(key) {
+          var part = Base.capitalize(key), prop = "_" + key;
+          this["get" + part] = function() {
+            return this[prop];
+          };
+          this["set" + part] = function(value) {
+            this[prop] = value;
+            this._changed();
+          };
+        }, {}));
+        var Line = Base.extend({
+          _class: "Line",
+          initialize: function Line2(arg0, arg1, arg2, arg3, arg4) {
+            var asVector = false;
+            if (arguments.length >= 4) {
+              this._px = arg0;
+              this._py = arg1;
+              this._vx = arg2;
+              this._vy = arg3;
+              asVector = arg4;
+            } else {
+              this._px = arg0.x;
+              this._py = arg0.y;
+              this._vx = arg1.x;
+              this._vy = arg1.y;
+              asVector = arg2;
+            }
+            if (!asVector) {
+              this._vx -= this._px;
+              this._vy -= this._py;
+            }
+          },
+          getPoint: function() {
+            return new Point(this._px, this._py);
+          },
+          getVector: function() {
+            return new Point(this._vx, this._vy);
+          },
+          getLength: function() {
+            return this.getVector().getLength();
+          },
+          intersect: function(line, isInfinite) {
+            return Line.intersect(
+              this._px,
+              this._py,
+              this._vx,
+              this._vy,
+              line._px,
+              line._py,
+              line._vx,
+              line._vy,
+              true,
+              isInfinite
+            );
+          },
+          getSide: function(point, isInfinite) {
+            return Line.getSide(
+              this._px,
+              this._py,
+              this._vx,
+              this._vy,
+              point.x,
+              point.y,
+              true,
+              isInfinite
+            );
+          },
+          getDistance: function(point) {
+            return Math.abs(this.getSignedDistance(point));
+          },
+          getSignedDistance: function(point) {
+            return Line.getSignedDistance(
+              this._px,
+              this._py,
+              this._vx,
+              this._vy,
+              point.x,
+              point.y,
+              true
+            );
+          },
+          isCollinear: function(line) {
+            return Point.isCollinear(this._vx, this._vy, line._vx, line._vy);
+          },
+          isOrthogonal: function(line) {
+            return Point.isOrthogonal(this._vx, this._vy, line._vx, line._vy);
+          },
+          statics: {
+            intersect: function(p1x, p1y, v1x, v1y, p2x, p2y, v2x, v2y, asVector, isInfinite) {
+              if (!asVector) {
+                v1x -= p1x;
+                v1y -= p1y;
+                v2x -= p2x;
+                v2y -= p2y;
+              }
+              var cross = v1x * v2y - v1y * v2x;
+              if (!Numerical.isMachineZero(cross)) {
+                var dx = p1x - p2x, dy = p1y - p2y, u1 = (v2x * dy - v2y * dx) / cross, u2 = (v1x * dy - v1y * dx) / cross, epsilon = 1e-12, uMin = -epsilon, uMax = 1 + epsilon;
+                if (isInfinite || uMin < u1 && u1 < uMax && uMin < u2 && u2 < uMax) {
+                  if (!isInfinite) {
+                    u1 = u1 <= 0 ? 0 : u1 >= 1 ? 1 : u1;
+                  }
+                  return new Point(
+                    p1x + u1 * v1x,
+                    p1y + u1 * v1y
+                  );
+                }
+              }
+            },
+            getSide: function(px, py, vx, vy, x, y, asVector, isInfinite) {
+              if (!asVector) {
+                vx -= px;
+                vy -= py;
+              }
+              var v2x = x - px, v2y = y - py, ccw = v2x * vy - v2y * vx;
+              if (!isInfinite && Numerical.isMachineZero(ccw)) {
+                ccw = (v2x * vx + v2x * vx) / (vx * vx + vy * vy);
+                if (ccw >= 0 && ccw <= 1)
+                  ccw = 0;
+              }
+              return ccw < 0 ? -1 : ccw > 0 ? 1 : 0;
+            },
+            getSignedDistance: function(px, py, vx, vy, x, y, asVector) {
+              if (!asVector) {
+                vx -= px;
+                vy -= py;
+              }
+              return vx === 0 ? vy > 0 ? x - px : px - x : vy === 0 ? vx < 0 ? y - py : py - y : ((x - px) * vy - (y - py) * vx) / (vy > vx ? vy * Math.sqrt(1 + vx * vx / (vy * vy)) : vx * Math.sqrt(1 + vy * vy / (vx * vx)));
+            },
+            getDistance: function(px, py, vx, vy, x, y, asVector) {
+              return Math.abs(
+                Line.getSignedDistance(px, py, vx, vy, x, y, asVector)
+              );
+            }
+          }
+        });
+        var Project = PaperScopeItem.extend({
+          _class: "Project",
+          _list: "projects",
+          _reference: "project",
+          _compactSerialize: true,
+          initialize: function Project2(element) {
+            PaperScopeItem.call(this, true);
+            this._children = [];
+            this._namedChildren = {};
+            this._activeLayer = null;
+            this._currentStyle = new Style(null, null, this);
+            this._view = View.create(
+              this,
+              element || CanvasProvider.getCanvas(1, 1)
+            );
+            this._selectionItems = {};
+            this._selectionCount = 0;
+            this._updateVersion = 0;
+          },
+          _serialize: function(options, dictionary) {
+            return Base.serialize(this._children, options, true, dictionary);
+          },
+          _changed: function(flags, item) {
+            if (flags & 1) {
+              var view = this._view;
+              if (view) {
+                view._needsUpdate = true;
+                if (!view._requested && view._autoUpdate)
+                  view.requestUpdate();
+              }
+            }
+            var changes = this._changes;
+            if (changes && item) {
+              var changesById = this._changesById, id = item._id, entry = changesById[id];
+              if (entry) {
+                entry.flags |= flags;
+              } else {
+                changes.push(changesById[id] = { item, flags });
+              }
+            }
+          },
+          clear: function() {
+            var children = this._children;
+            for (var i = children.length - 1; i >= 0; i--)
+              children[i].remove();
+          },
+          isEmpty: function() {
+            return !this._children.length;
+          },
+          remove: function remove() {
+            if (!remove.base.call(this))
+              return false;
+            if (this._view)
+              this._view.remove();
+            return true;
+          },
+          getView: function() {
+            return this._view;
+          },
+          getCurrentStyle: function() {
+            return this._currentStyle;
+          },
+          setCurrentStyle: function(style) {
+            this._currentStyle.set(style);
+          },
+          getIndex: function() {
+            return this._index;
+          },
+          getOptions: function() {
+            return this._scope.settings;
+          },
+          getLayers: function() {
+            return this._children;
+          },
+          getActiveLayer: function() {
+            return this._activeLayer || new Layer({ project: this, insert: true });
+          },
+          getSymbolDefinitions: function() {
+            var definitions = [], ids = {};
+            this.getItems({
+              class: SymbolItem,
+              match: function(item) {
+                var definition = item._definition, id = definition._id;
+                if (!ids[id]) {
+                  ids[id] = true;
+                  definitions.push(definition);
+                }
+                return false;
+              }
+            });
+            return definitions;
+          },
+          getSymbols: "getSymbolDefinitions",
+          getSelectedItems: function() {
+            var selectionItems = this._selectionItems, items = [];
+            for (var id in selectionItems) {
+              var item = selectionItems[id], selection = item._selection;
+              if (selection & 1 && item.isInserted()) {
+                items.push(item);
+              } else if (!selection) {
+                this._updateSelection(item);
+              }
+            }
+            return items;
+          },
+          _updateSelection: function(item) {
+            var id = item._id, selectionItems = this._selectionItems;
+            if (item._selection) {
+              if (selectionItems[id] !== item) {
+                this._selectionCount++;
+                selectionItems[id] = item;
+              }
+            } else if (selectionItems[id] === item) {
+              this._selectionCount--;
+              delete selectionItems[id];
+            }
+          },
+          selectAll: function() {
+            var children = this._children;
+            for (var i = 0, l = children.length; i < l; i++)
+              children[i].setFullySelected(true);
+          },
+          deselectAll: function() {
+            var selectionItems = this._selectionItems;
+            for (var i in selectionItems)
+              selectionItems[i].setFullySelected(false);
+          },
+          addLayer: function(layer) {
+            return this.insertLayer(undefined2, layer);
+          },
+          insertLayer: function(index, layer) {
+            if (layer instanceof Layer) {
+              layer._remove(false, true);
+              Base.splice(this._children, [layer], index, 0);
+              layer._setProject(this, true);
+              var name = layer._name;
+              if (name)
+                layer.setName(name);
+              if (this._changes)
+                layer._changed(5);
+              if (!this._activeLayer)
+                this._activeLayer = layer;
+            } else {
+              layer = null;
+            }
+            return layer;
+          },
+          _insertItem: function(index, item, _created) {
+            item = this.insertLayer(index, item) || (this._activeLayer || this._insertItem(
+              undefined2,
+              new Layer(Item.NO_INSERT),
+              true
+            )).insertChild(index, item);
+            if (_created && item.activate)
+              item.activate();
+            return item;
+          },
+          getItems: function(options) {
+            return Item._getItems(this, options);
+          },
+          getItem: function(options) {
+            return Item._getItems(this, options, null, null, true)[0] || null;
+          },
+          importJSON: function(json) {
+            this.activate();
+            var layer = this._activeLayer;
+            return Base.importJSON(json, layer && layer.isEmpty() && layer);
+          },
+          removeOn: function(type) {
+            var sets = this._removeSets;
+            if (sets) {
+              if (type === "mouseup")
+                sets.mousedrag = null;
+              var set = sets[type];
+              if (set) {
+                for (var id in set) {
+                  var item = set[id];
+                  for (var key in sets) {
+                    var other = sets[key];
+                    if (other && other != set)
+                      delete other[item._id];
+                  }
+                  item.remove();
+                }
+                sets[type] = null;
+              }
+            }
+          },
+          draw: function(ctx, matrix, pixelRatio) {
+            this._updateVersion++;
+            ctx.save();
+            matrix.applyToContext(ctx);
+            var children = this._children, param = new Base({
+              offset: new Point(0, 0),
+              pixelRatio,
+              viewMatrix: matrix.isIdentity() ? null : matrix,
+              matrices: [new Matrix()],
+              updateMatrix: true
+            });
+            for (var i = 0, l = children.length; i < l; i++) {
+              children[i].draw(ctx, param);
+            }
+            ctx.restore();
+            if (this._selectionCount > 0) {
+              ctx.save();
+              ctx.strokeWidth = 1;
+              var items = this._selectionItems, size = this._scope.settings.handleSize, version = this._updateVersion;
+              for (var id in items) {
+                items[id]._drawSelection(ctx, matrix, size, items, version);
+              }
+              ctx.restore();
+            }
+          }
+        });
+        var Item = Base.extend(
+          Emitter,
+          {
+            statics: {
+              extend: function extend(src) {
+                if (src._serializeFields)
+                  src._serializeFields = Base.set(
+                    {},
+                    this.prototype._serializeFields,
+                    src._serializeFields
+                  );
+                return extend.base.apply(this, arguments);
+              },
+              INSERT: { insert: true },
+              NO_INSERT: { insert: false }
+            },
+            _class: "Item",
+            _name: null,
+            _applyMatrix: true,
+            _canApplyMatrix: true,
+            _canScaleStroke: false,
+            _pivot: null,
+            _visible: true,
+            _blendMode: "normal",
+            _opacity: 1,
+            _locked: false,
+            _guide: false,
+            _clipMask: false,
+            _selection: 0,
+            _selectBounds: true,
+            _selectChildren: false,
+            _serializeFields: {
+              name: null,
+              applyMatrix: null,
+              matrix: new Matrix(),
+              pivot: null,
+              visible: true,
+              blendMode: "normal",
+              opacity: 1,
+              locked: false,
+              guide: false,
+              clipMask: false,
+              selected: false,
+              data: {}
+            },
+            _prioritize: ["applyMatrix"]
+          },
+          new function() {
+            var handlers = [
+              "onMouseDown",
+              "onMouseUp",
+              "onMouseDrag",
+              "onClick",
+              "onDoubleClick",
+              "onMouseMove",
+              "onMouseEnter",
+              "onMouseLeave"
+            ];
+            return Base.each(
+              handlers,
+              function(name) {
+                this._events[name] = {
+                  install: function(type) {
+                    this.getView()._countItemEvent(type, 1);
+                  },
+                  uninstall: function(type) {
+                    this.getView()._countItemEvent(type, -1);
+                  }
+                };
+              },
+              {
+                _events: {
+                  onFrame: {
+                    install: function() {
+                      this.getView()._animateItem(this, true);
+                    },
+                    uninstall: function() {
+                      this.getView()._animateItem(this, false);
+                    }
+                  },
+                  onLoad: {},
+                  onError: {}
+                },
+                statics: {
+                  _itemHandlers: handlers
+                }
+              }
+            );
+          }(),
+          {
+            initialize: function Item2() {
+            },
+            _initialize: function(props, point) {
+              var hasProps = props && Base.isPlainObject(props), internal = hasProps && props.internal === true, matrix = this._matrix = new Matrix(), project = hasProps && props.project || paper2.project, settings = paper2.settings;
+              this._id = internal ? null : UID.get();
+              this._parent = this._index = null;
+              this._applyMatrix = this._canApplyMatrix && settings.applyMatrix;
+              if (point)
+                matrix.translate(point);
+              matrix._owner = this;
+              this._style = new Style(project._currentStyle, this, project);
+              if (internal || hasProps && props.insert == false || !settings.insertItems && !(hasProps && props.insert == true)) {
+                this._setProject(project);
+              } else {
+                (hasProps && props.parent || project)._insertItem(undefined2, this, true);
+              }
+              if (hasProps && props !== Item.NO_INSERT && props !== Item.INSERT) {
+                this.set(props, {
+                  internal: true,
+                  insert: true,
+                  project: true,
+                  parent: true
+                });
+              }
+              return hasProps;
+            },
+            _serialize: function(options, dictionary) {
+              var props = {}, that = this;
+              function serialize(fields) {
+                for (var key in fields) {
+                  var value = that[key];
+                  if (!Base.equals(value, key === "leading" ? fields.fontSize * 1.2 : fields[key])) {
+                    props[key] = Base.serialize(
+                      value,
+                      options,
+                      key !== "data",
+                      dictionary
+                    );
+                  }
+                }
+              }
+              serialize(this._serializeFields);
+              if (!(this instanceof Group))
+                serialize(this._style._defaults);
+              return [this._class, props];
+            },
+            _changed: function(flags) {
+              var symbol = this._symbol, cacheParent = this._parent || symbol, project = this._project;
+              if (flags & 8) {
+                this._bounds = this._position = this._decomposed = undefined2;
+              }
+              if (flags & 16) {
+                this._globalMatrix = undefined2;
+              }
+              if (cacheParent && flags & 72) {
+                Item._clearBoundsCache(cacheParent);
+              }
+              if (flags & 2) {
+                Item._clearBoundsCache(this);
+              }
+              if (project)
+                project._changed(flags, this);
+              if (symbol)
+                symbol._changed(flags);
+            },
+            getId: function() {
+              return this._id;
+            },
+            getName: function() {
+              return this._name;
+            },
+            setName: function(name) {
+              if (this._name)
+                this._removeNamed();
+              if (name === +name + "")
+                throw new Error(
+                  "Names consisting only of numbers are not supported."
+                );
+              var owner = this._getOwner();
+              if (name && owner) {
+                var children = owner._children, namedChildren = owner._namedChildren;
+                (namedChildren[name] = namedChildren[name] || []).push(this);
+                if (!(name in children))
+                  children[name] = this;
+              }
+              this._name = name || undefined2;
+              this._changed(256);
+            },
+            getStyle: function() {
+              return this._style;
+            },
+            setStyle: function(style) {
+              this.getStyle().set(style);
+            }
+          },
+          Base.each(
+            ["locked", "visible", "blendMode", "opacity", "guide"],
+            function(name) {
+              var part = Base.capitalize(name), key = "_" + name, flags = {
+                locked: 256,
+                visible: 265
+              };
+              this["get" + part] = function() {
+                return this[key];
+              };
+              this["set" + part] = function(value) {
+                if (value != this[key]) {
+                  this[key] = value;
+                  this._changed(flags[name] || 257);
+                }
+              };
+            },
+            {}
+          ),
+          {
+            beans: true,
+            getSelection: function() {
+              return this._selection;
+            },
+            setSelection: function(selection) {
+              if (selection !== this._selection) {
+                this._selection = selection;
+                var project = this._project;
+                if (project) {
+                  project._updateSelection(this);
+                  this._changed(257);
+                }
+              }
+            },
+            _changeSelection: function(flag, selected) {
+              var selection = this._selection;
+              this.setSelection(selected ? selection | flag : selection & ~flag);
+            },
+            isSelected: function() {
+              if (this._selectChildren) {
+                var children = this._children;
+                for (var i = 0, l = children.length; i < l; i++)
+                  if (children[i].isSelected())
+                    return true;
+              }
+              return !!(this._selection & 1);
+            },
+            setSelected: function(selected) {
+              if (this._selectChildren) {
+                var children = this._children;
+                for (var i = 0, l = children.length; i < l; i++)
+                  children[i].setSelected(selected);
+              }
+              this._changeSelection(1, selected);
+            },
+            isFullySelected: function() {
+              var children = this._children, selected = !!(this._selection & 1);
+              if (children && selected) {
+                for (var i = 0, l = children.length; i < l; i++)
+                  if (!children[i].isFullySelected())
+                    return false;
+                return true;
+              }
+              return selected;
+            },
+            setFullySelected: function(selected) {
+              var children = this._children;
+              if (children) {
+                for (var i = 0, l = children.length; i < l; i++)
+                  children[i].setFullySelected(selected);
+              }
+              this._changeSelection(1, selected);
+            },
+            isClipMask: function() {
+              return this._clipMask;
+            },
+            setClipMask: function(clipMask) {
+              if (this._clipMask != (clipMask = !!clipMask)) {
+                this._clipMask = clipMask;
+                if (clipMask) {
+                  this.setFillColor(null);
+                  this.setStrokeColor(null);
+                }
+                this._changed(257);
+                if (this._parent)
+                  this._parent._changed(2048);
+              }
+            },
+            getData: function() {
+              if (!this._data)
+                this._data = {};
+              return this._data;
+            },
+            setData: function(data) {
+              this._data = data;
+            },
+            getPosition: function(_dontLink) {
+              var ctor = _dontLink ? Point : LinkedPoint;
+              var position = this._position || (this._position = this._getPositionFromBounds());
+              return new ctor(position.x, position.y, this, "setPosition");
+            },
+            setPosition: function() {
+              this.translate(Point.read(arguments).subtract(this.getPosition(true)));
+            },
+            _getPositionFromBounds: function(bounds) {
+              return this._pivot ? this._matrix._transformPoint(this._pivot) : (bounds || this.getBounds()).getCenter(true);
+            },
+            getPivot: function() {
+              var pivot = this._pivot;
+              return pivot ? new LinkedPoint(pivot.x, pivot.y, this, "setPivot") : null;
+            },
+            setPivot: function() {
+              this._pivot = Point.read(arguments, 0, { clone: true, readNull: true });
+              this._position = undefined2;
+            }
+          },
+          Base.each(
+            {
+              getStrokeBounds: { stroke: true },
+              getHandleBounds: { handle: true },
+              getInternalBounds: { internal: true }
+            },
+            function(options, key) {
+              this[key] = function(matrix) {
+                return this.getBounds(matrix, options);
+              };
+            },
+            {
+              beans: true,
+              getBounds: function(matrix, options) {
+                var hasMatrix = options || matrix instanceof Matrix, opts = Base.set(
+                  {},
+                  hasMatrix ? options : matrix,
+                  this._boundsOptions
+                );
+                if (!opts.stroke || this.getStrokeScaling())
+                  opts.cacheItem = this;
+                var rect = this._getCachedBounds(hasMatrix && matrix, opts).rect;
+                return !arguments.length ? new LinkedRectangle(
+                  rect.x,
+                  rect.y,
+                  rect.width,
+                  rect.height,
+                  this,
+                  "setBounds"
+                ) : rect;
+              },
+              setBounds: function() {
+                var rect = Rectangle.read(arguments), bounds = this.getBounds(), _matrix = this._matrix, matrix = new Matrix(), center = rect.getCenter();
+                matrix.translate(center);
+                if (rect.width != bounds.width || rect.height != bounds.height) {
+                  if (!_matrix.isInvertible()) {
+                    _matrix.set(_matrix._backup || new Matrix().translate(_matrix.getTranslation()));
+                    bounds = this.getBounds();
+                  }
+                  matrix.scale(
+                    bounds.width !== 0 ? rect.width / bounds.width : 0,
+                    bounds.height !== 0 ? rect.height / bounds.height : 0
+                  );
+                }
+                center = bounds.getCenter();
+                matrix.translate(-center.x, -center.y);
+                this.transform(matrix);
+              },
+              _getBounds: function(matrix, options) {
+                var children = this._children;
+                if (!children || !children.length)
+                  return new Rectangle();
+                Item._updateBoundsCache(this, options.cacheItem);
+                return Item._getBounds(children, matrix, options);
+              },
+              _getBoundsCacheKey: function(options, internal) {
+                return [
+                  options.stroke ? 1 : 0,
+                  options.handle ? 1 : 0,
+                  internal ? 1 : 0
+                ].join("");
+              },
+              _getCachedBounds: function(matrix, options, noInternal) {
+                matrix = matrix && matrix._orNullIfIdentity();
+                var internal = options.internal && !noInternal, cacheItem = options.cacheItem, _matrix = internal ? null : this._matrix._orNullIfIdentity(), cacheKey = cacheItem && (!matrix || matrix.equals(_matrix)) && this._getBoundsCacheKey(options, internal), bounds = this._bounds;
+                Item._updateBoundsCache(this._parent || this._symbol, cacheItem);
+                if (cacheKey && bounds && cacheKey in bounds) {
+                  var cached = bounds[cacheKey];
+                  return {
+                    rect: cached.rect.clone(),
+                    nonscaling: cached.nonscaling
+                  };
+                }
+                var res = this._getBounds(matrix || _matrix, options), rect = res.rect || res, style = this._style, nonscaling = res.nonscaling || style.hasStroke() && !style.getStrokeScaling();
+                if (cacheKey) {
+                  if (!bounds) {
+                    this._bounds = bounds = {};
+                  }
+                  var cached = bounds[cacheKey] = {
+                    rect: rect.clone(),
+                    nonscaling,
+                    internal
+                  };
+                }
+                return {
+                  rect,
+                  nonscaling
+                };
+              },
+              _getStrokeMatrix: function(matrix, options) {
+                var parent = this.getStrokeScaling() ? null : options && options.internal ? this : this._parent || this._symbol && this._symbol._item, mx = parent ? parent.getViewMatrix().invert() : matrix;
+                return mx && mx._shiftless();
+              },
+              statics: {
+                _updateBoundsCache: function(parent, item) {
+                  if (parent && item) {
+                    var id = item._id, ref = parent._boundsCache = parent._boundsCache || {
+                      ids: {},
+                      list: []
+                    };
+                    if (!ref.ids[id]) {
+                      ref.list.push(item);
+                      ref.ids[id] = item;
+                    }
+                  }
+                },
+                _clearBoundsCache: function(item) {
+                  var cache = item._boundsCache;
+                  if (cache) {
+                    item._bounds = item._position = item._boundsCache = undefined2;
+                    for (var i = 0, list = cache.list, l = list.length; i < l; i++) {
+                      var other = list[i];
+                      if (other !== item) {
+                        other._bounds = other._position = undefined2;
+                        if (other._boundsCache)
+                          Item._clearBoundsCache(other);
+                      }
+                    }
+                  }
+                },
+                _getBounds: function(items, matrix, options) {
+                  var x1 = Infinity, x2 = -x1, y1 = x1, y2 = x2, nonscaling = false;
+                  options = options || {};
+                  for (var i = 0, l = items.length; i < l; i++) {
+                    var item = items[i];
+                    if (item._visible && !item.isEmpty(true)) {
+                      var bounds = item._getCachedBounds(
+                        matrix && matrix.appended(item._matrix),
+                        options,
+                        true
+                      ), rect = bounds.rect;
+                      x1 = Math.min(rect.x, x1);
+                      y1 = Math.min(rect.y, y1);
+                      x2 = Math.max(rect.x + rect.width, x2);
+                      y2 = Math.max(rect.y + rect.height, y2);
+                      if (bounds.nonscaling)
+                        nonscaling = true;
+                    }
+                  }
+                  return {
+                    rect: isFinite(x1) ? new Rectangle(x1, y1, x2 - x1, y2 - y1) : new Rectangle(),
+                    nonscaling
+                  };
+                }
+              }
+            }
+          ),
+          {
+            beans: true,
+            _decompose: function() {
+              return this._applyMatrix ? null : this._decomposed || (this._decomposed = this._matrix.decompose());
+            },
+            getRotation: function() {
+              var decomposed = this._decompose();
+              return decomposed ? decomposed.rotation : 0;
+            },
+            setRotation: function(rotation) {
+              var current = this.getRotation();
+              if (current != null && rotation != null) {
+                var decomposed = this._decomposed;
+                this.rotate(rotation - current);
+                if (decomposed) {
+                  decomposed.rotation = rotation;
+                  this._decomposed = decomposed;
+                }
+              }
+            },
+            getScaling: function() {
+              var decomposed = this._decompose(), s = decomposed && decomposed.scaling;
+              return new LinkedPoint(s ? s.x : 1, s ? s.y : 1, this, "setScaling");
+            },
+            setScaling: function() {
+              var current = this.getScaling(), scaling = Point.read(arguments, 0, { clone: true, readNull: true });
+              if (current && scaling && !current.equals(scaling)) {
+                var rotation = this.getRotation(), decomposed = this._decomposed, matrix = new Matrix(), isZero = Numerical.isZero;
+                if (isZero(current.x) || isZero(current.y)) {
+                  matrix.translate(decomposed.translation);
+                  if (rotation) {
+                    matrix.rotate(rotation);
+                  }
+                  matrix.scale(scaling.x, scaling.y);
+                  this._matrix.set(matrix);
+                } else {
+                  var center = this.getPosition(true);
+                  matrix.translate(center);
+                  if (rotation)
+                    matrix.rotate(rotation);
+                  matrix.scale(scaling.x / current.x, scaling.y / current.y);
+                  if (rotation)
+                    matrix.rotate(-rotation);
+                  matrix.translate(center.negate());
+                  this.transform(matrix);
+                }
+                if (decomposed) {
+                  decomposed.scaling = scaling;
+                  this._decomposed = decomposed;
+                }
+              }
+            },
+            getMatrix: function() {
+              return this._matrix;
+            },
+            setMatrix: function() {
+              var matrix = this._matrix;
+              matrix.set.apply(matrix, arguments);
+            },
+            getGlobalMatrix: function(_dontClone) {
+              var matrix = this._globalMatrix;
+              if (matrix) {
+                var parent = this._parent;
+                var parents = [];
+                while (parent) {
+                  if (!parent._globalMatrix) {
+                    matrix = null;
+                    for (var i = 0, l = parents.length; i < l; i++) {
+                      parents[i]._globalMatrix = null;
+                    }
+                    break;
+                  }
+                  parents.push(parent);
+                  parent = parent._parent;
+                }
+              }
+              if (!matrix) {
+                matrix = this._globalMatrix = this._matrix.clone();
+                var parent = this._parent;
+                if (parent)
+                  matrix.prepend(parent.getGlobalMatrix(true));
+              }
+              return _dontClone ? matrix : matrix.clone();
+            },
+            getViewMatrix: function() {
+              return this.getGlobalMatrix().prepend(this.getView()._matrix);
+            },
+            getApplyMatrix: function() {
+              return this._applyMatrix;
+            },
+            setApplyMatrix: function(apply) {
+              if (this._applyMatrix = this._canApplyMatrix && !!apply)
+                this.transform(null, true);
+            },
+            getTransformContent: "#getApplyMatrix",
+            setTransformContent: "#setApplyMatrix"
+          },
+          {
+            getProject: function() {
+              return this._project;
+            },
+            _setProject: function(project, installEvents) {
+              if (this._project !== project) {
+                if (this._project)
+                  this._installEvents(false);
+                this._project = project;
+                var children = this._children;
+                for (var i = 0, l = children && children.length; i < l; i++)
+                  children[i]._setProject(project);
+                installEvents = true;
+              }
+              if (installEvents)
+                this._installEvents(true);
+            },
+            getView: function() {
+              return this._project._view;
+            },
+            _installEvents: function _installEvents(install) {
+              _installEvents.base.call(this, install);
+              var children = this._children;
+              for (var i = 0, l = children && children.length; i < l; i++)
+                children[i]._installEvents(install);
+            },
+            getLayer: function() {
+              var parent = this;
+              while (parent = parent._parent) {
+                if (parent instanceof Layer)
+                  return parent;
+              }
+              return null;
+            },
+            getParent: function() {
+              return this._parent;
+            },
+            setParent: function(item) {
+              return item.addChild(this);
+            },
+            _getOwner: "#getParent",
+            getChildren: function() {
+              return this._children;
+            },
+            setChildren: function(items) {
+              this.removeChildren();
+              this.addChildren(items);
+            },
+            getFirstChild: function() {
+              return this._children && this._children[0] || null;
+            },
+            getLastChild: function() {
+              return this._children && this._children[this._children.length - 1] || null;
+            },
+            getNextSibling: function() {
+              var owner = this._getOwner();
+              return owner && owner._children[this._index + 1] || null;
+            },
+            getPreviousSibling: function() {
+              var owner = this._getOwner();
+              return owner && owner._children[this._index - 1] || null;
+            },
+            getIndex: function() {
+              return this._index;
+            },
+            equals: function(item) {
+              return item === this || item && this._class === item._class && this._style.equals(item._style) && this._matrix.equals(item._matrix) && this._locked === item._locked && this._visible === item._visible && this._blendMode === item._blendMode && this._opacity === item._opacity && this._clipMask === item._clipMask && this._guide === item._guide && this._equals(item) || false;
+            },
+            _equals: function(item) {
+              return Base.equals(this._children, item._children);
+            },
+            clone: function(options) {
+              var copy = new this.constructor(Item.NO_INSERT), children = this._children, insert = Base.pick(
+                options ? options.insert : undefined2,
+                options === undefined2 || options === true
+              ), deep = Base.pick(options ? options.deep : undefined2, true);
+              if (children)
+                copy.copyAttributes(this);
+              if (!children || deep)
+                copy.copyContent(this);
+              if (!children)
+                copy.copyAttributes(this);
+              if (insert)
+                copy.insertAbove(this);
+              var name = this._name, parent = this._parent;
+              if (name && parent) {
+                var children = parent._children, orig = name, i = 1;
+                while (children[name])
+                  name = orig + " " + i++;
+                if (name !== orig)
+                  copy.setName(name);
+              }
+              return copy;
+            },
+            copyContent: function(source) {
+              var children = source._children;
+              for (var i = 0, l = children && children.length; i < l; i++) {
+                this.addChild(children[i].clone(false), true);
+              }
+            },
+            copyAttributes: function(source, excludeMatrix) {
+              this.setStyle(source._style);
+              var keys = [
+                "_locked",
+                "_visible",
+                "_blendMode",
+                "_opacity",
+                "_clipMask",
+                "_guide"
+              ];
+              for (var i = 0, l = keys.length; i < l; i++) {
+                var key = keys[i];
+                if (source.hasOwnProperty(key))
+                  this[key] = source[key];
+              }
+              if (!excludeMatrix)
+                this._matrix.set(source._matrix, true);
+              this.setApplyMatrix(source._applyMatrix);
+              this.setPivot(source._pivot);
+              this.setSelection(source._selection);
+              var data = source._data, name = source._name;
+              this._data = data ? Base.clone(data) : null;
+              if (name)
+                this.setName(name);
+            },
+            rasterize: function(arg0, arg1) {
+              var resolution, insert, raster;
+              if (Base.isPlainObject(arg0)) {
+                resolution = arg0.resolution;
+                insert = arg0.insert;
+                raster = arg0.raster;
+              } else {
+                resolution = arg0;
+                insert = arg1;
+              }
+              if (!raster) {
+                raster = new Raster(Item.NO_INSERT);
+              }
+              var bounds = this.getStrokeBounds(), scale = (resolution || this.getView().getResolution()) / 72, topLeft = bounds.getTopLeft().floor(), bottomRight = bounds.getBottomRight().ceil(), boundsSize = new Size(bottomRight.subtract(topLeft)), rasterSize = boundsSize.multiply(scale);
+              raster.setSize(rasterSize, true);
+              if (!rasterSize.isZero()) {
+                var ctx = raster.getContext(true), matrix = new Matrix().scale(scale).translate(topLeft.negate());
+                ctx.save();
+                matrix.applyToContext(ctx);
+                this.draw(ctx, new Base({ matrices: [matrix] }));
+                ctx.restore();
+              }
+              raster._matrix.set(
+                new Matrix().translate(topLeft.add(boundsSize.divide(2))).scale(1 / scale)
+              );
+              if (insert === undefined2 || insert) {
+                raster.insertAbove(this);
+              }
+              return raster;
+            },
+            contains: function() {
+              var matrix = this._matrix;
+              return matrix.isInvertible() && !!this._contains(matrix._inverseTransform(Point.read(arguments)));
+            },
+            _contains: function(point) {
+              var children = this._children;
+              if (children) {
+                for (var i = children.length - 1; i >= 0; i--) {
+                  if (children[i].contains(point))
+                    return true;
+                }
+                return false;
+              }
+              return point.isInside(this.getInternalBounds());
+            },
+            isInside: function() {
+              return Rectangle.read(arguments).contains(this.getBounds());
+            },
+            _asPathItem: function() {
+              return new Path.Rectangle({
+                rectangle: this.getInternalBounds(),
+                matrix: this._matrix,
+                insert: false
+              });
+            },
+            intersects: function(item, _matrix) {
+              if (!(item instanceof Item))
+                return false;
+              return this._asPathItem().getIntersections(
+                item._asPathItem(),
+                null,
+                _matrix,
+                true
+              ).length > 0;
+            }
+          },
+          new function() {
+            function hitTest() {
+              var args = arguments;
+              return this._hitTest(
+                Point.read(args),
+                HitResult.getOptions(args)
+              );
+            }
+            function hitTestAll() {
+              var args = arguments, point = Point.read(args), options = HitResult.getOptions(args), all = [];
+              this._hitTest(point, new Base({ all }, options));
+              return all;
+            }
+            function hitTestChildren(point, options, viewMatrix, _exclude) {
+              var children = this._children;
+              if (children) {
+                for (var i = children.length - 1; i >= 0; i--) {
+                  var child = children[i];
+                  var res = child !== _exclude && child._hitTest(
+                    point,
+                    options,
+                    viewMatrix
+                  );
+                  if (res && !options.all)
+                    return res;
+                }
+              }
+              return null;
+            }
+            Project.inject({
+              hitTest,
+              hitTestAll,
+              _hitTest: hitTestChildren
+            });
+            return {
+              hitTest,
+              hitTestAll,
+              _hitTestChildren: hitTestChildren
+            };
+          }(),
+          {
+            _hitTest: function(point, options, parentViewMatrix) {
+              if (this._locked || !this._visible || this._guide && !options.guides || this.isEmpty()) {
+                return null;
+              }
+              var matrix = this._matrix, viewMatrix = parentViewMatrix ? parentViewMatrix.appended(matrix) : this.getGlobalMatrix().prepend(this.getView()._matrix), tolerance = Math.max(options.tolerance, 1e-12), tolerancePadding = options._tolerancePadding = new Size(
+                Path._getStrokePadding(
+                  tolerance,
+                  matrix._shiftless().invert()
+                )
+              );
+              point = matrix._inverseTransform(point);
+              if (!point || !this._children && !this.getBounds({ internal: true, stroke: true, handle: true }).expand(tolerancePadding.multiply(2))._containsPoint(point)) {
+                return null;
+              }
+              var checkSelf = !(options.guides && !this._guide || options.selected && !this.isSelected() || options.type && options.type !== Base.hyphenate(this._class) || options.class && !(this instanceof options.class)), match = options.match, that = this, bounds, res;
+              function filter(hit) {
+                if (hit && match && !match(hit))
+                  hit = null;
+                if (hit && options.all)
+                  options.all.push(hit);
+                return hit;
+              }
+              function checkPoint(type, part) {
+                var pt = part ? bounds["get" + part]() : that.getPosition();
+                if (point.subtract(pt).divide(tolerancePadding).length <= 1) {
+                  return new HitResult(type, that, {
+                    name: part ? Base.hyphenate(part) : type,
+                    point: pt
+                  });
+                }
+              }
+              var checkPosition = options.position, checkCenter = options.center, checkBounds = options.bounds;
+              if (checkSelf && this._parent && (checkPosition || checkCenter || checkBounds)) {
+                if (checkCenter || checkBounds) {
+                  bounds = this.getInternalBounds();
+                }
+                res = checkPosition && checkPoint("position") || checkCenter && checkPoint("center", "Center");
+                if (!res && checkBounds) {
+                  var points = [
+                    "TopLeft",
+                    "TopRight",
+                    "BottomLeft",
+                    "BottomRight",
+                    "LeftCenter",
+                    "TopCenter",
+                    "RightCenter",
+                    "BottomCenter"
+                  ];
+                  for (var i = 0; i < 8 && !res; i++) {
+                    res = checkPoint("bounds", points[i]);
+                  }
+                }
+                res = filter(res);
+              }
+              if (!res) {
+                res = this._hitTestChildren(point, options, viewMatrix) || checkSelf && filter(this._hitTestSelf(
+                  point,
+                  options,
+                  viewMatrix,
+                  this.getStrokeScaling() ? null : viewMatrix._shiftless().invert()
+                )) || null;
+              }
+              if (res && res.point) {
+                res.point = matrix.transform(res.point);
+              }
+              return res;
+            },
+            _hitTestSelf: function(point, options) {
+              if (options.fill && this.hasFill() && this._contains(point))
+                return new HitResult("fill", this);
+            },
+            matches: function(name, compare) {
+              function matchObject(obj1, obj2) {
+                for (var i in obj1) {
+                  if (obj1.hasOwnProperty(i)) {
+                    var val1 = obj1[i], val2 = obj2[i];
+                    if (Base.isPlainObject(val1) && Base.isPlainObject(val2)) {
+                      if (!matchObject(val1, val2))
+                        return false;
+                    } else if (!Base.equals(val1, val2)) {
+                      return false;
+                    }
+                  }
+                }
+                return true;
+              }
+              var type = typeof name;
+              if (type === "object") {
+                for (var key in name) {
+                  if (name.hasOwnProperty(key) && !this.matches(key, name[key]))
+                    return false;
+                }
+                return true;
+              } else if (type === "function") {
+                return name(this);
+              } else if (name === "match") {
+                return compare(this);
+              } else {
+                var value = /^(empty|editable)$/.test(name) ? this["is" + Base.capitalize(name)]() : name === "type" ? Base.hyphenate(this._class) : this[name];
+                if (name === "class") {
+                  if (typeof compare === "function")
+                    return this instanceof compare;
+                  value = this._class;
+                }
+                if (typeof compare === "function") {
+                  return !!compare(value);
+                } else if (compare) {
+                  if (compare.test) {
+                    return compare.test(value);
+                  } else if (Base.isPlainObject(compare)) {
+                    return matchObject(compare, value);
+                  }
+                }
+                return Base.equals(value, compare);
+              }
+            },
+            getItems: function(options) {
+              return Item._getItems(this, options, this._matrix);
+            },
+            getItem: function(options) {
+              return Item._getItems(this, options, this._matrix, null, true)[0] || null;
+            },
+            statics: {
+              _getItems: function _getItems(item, options, matrix, param, firstOnly) {
+                if (!param) {
+                  var obj = typeof options === "object" && options, overlapping = obj && obj.overlapping, inside = obj && obj.inside, bounds = overlapping || inside, rect = bounds && Rectangle.read([bounds]);
+                  param = {
+                    items: [],
+                    recursive: obj && obj.recursive !== false,
+                    inside: !!inside,
+                    overlapping: !!overlapping,
+                    rect,
+                    path: overlapping && new Path.Rectangle({
+                      rectangle: rect,
+                      insert: false
+                    })
+                  };
+                  if (obj) {
+                    options = Base.filter({}, options, {
+                      recursive: true,
+                      inside: true,
+                      overlapping: true
+                    });
+                  }
+                }
+                var children = item._children, items = param.items, rect = param.rect;
+                matrix = rect && (matrix || new Matrix());
+                for (var i = 0, l = children && children.length; i < l; i++) {
+                  var child = children[i], childMatrix = matrix && matrix.appended(child._matrix), add = true;
+                  if (rect) {
+                    var bounds = child.getBounds(childMatrix);
+                    if (!rect.intersects(bounds))
+                      continue;
+                    if (!(rect.contains(bounds) || param.overlapping && (bounds.contains(rect) || param.path.intersects(child, childMatrix))))
+                      add = false;
+                  }
+                  if (add && child.matches(options)) {
+                    items.push(child);
+                    if (firstOnly)
+                      break;
+                  }
+                  if (param.recursive !== false) {
+                    _getItems(child, options, childMatrix, param, firstOnly);
+                  }
+                  if (firstOnly && items.length > 0)
+                    break;
+                }
+                return items;
+              }
+            }
+          },
+          {
+            importJSON: function(json) {
+              var res = Base.importJSON(json, this);
+              return res !== this ? this.addChild(res) : res;
+            },
+            addChild: function(item) {
+              return this.insertChild(undefined2, item);
+            },
+            insertChild: function(index, item) {
+              var res = item ? this.insertChildren(index, [item]) : null;
+              return res && res[0];
+            },
+            addChildren: function(items) {
+              return this.insertChildren(this._children.length, items);
+            },
+            insertChildren: function(index, items) {
+              var children = this._children;
+              if (children && items && items.length > 0) {
+                items = Base.slice(items);
+                var inserted = {};
+                for (var i = items.length - 1; i >= 0; i--) {
+                  var item = items[i], id = item && item._id;
+                  if (!item || inserted[id]) {
+                    items.splice(i, 1);
+                  } else {
+                    item._remove(false, true);
+                    inserted[id] = true;
+                  }
+                }
+                Base.splice(children, items, index, 0);
+                var project = this._project, notifySelf = project._changes;
+                for (var i = 0, l = items.length; i < l; i++) {
+                  var item = items[i], name = item._name;
+                  item._parent = this;
+                  item._setProject(project, true);
+                  if (name)
+                    item.setName(name);
+                  if (notifySelf)
+                    item._changed(5);
+                }
+                this._changed(11);
+              } else {
+                items = null;
+              }
+              return items;
+            },
+            _insertItem: "#insertChild",
+            _insertAt: function(item, offset) {
+              var owner = item && item._getOwner(), res = item !== this && owner ? this : null;
+              if (res) {
+                res._remove(false, true);
+                owner._insertItem(item._index + offset, res);
+              }
+              return res;
+            },
+            insertAbove: function(item) {
+              return this._insertAt(item, 1);
+            },
+            insertBelow: function(item) {
+              return this._insertAt(item, 0);
+            },
+            sendToBack: function() {
+              var owner = this._getOwner();
+              return owner ? owner._insertItem(0, this) : null;
+            },
+            bringToFront: function() {
+              var owner = this._getOwner();
+              return owner ? owner._insertItem(undefined2, this) : null;
+            },
+            appendTop: "#addChild",
+            appendBottom: function(item) {
+              return this.insertChild(0, item);
+            },
+            moveAbove: "#insertAbove",
+            moveBelow: "#insertBelow",
+            addTo: function(owner) {
+              return owner._insertItem(undefined2, this);
+            },
+            copyTo: function(owner) {
+              return this.clone(false).addTo(owner);
+            },
+            reduce: function(options) {
+              var children = this._children;
+              if (children && children.length === 1) {
+                var child = children[0].reduce(options);
+                if (this._parent) {
+                  child.insertAbove(this);
+                  this.remove();
+                } else {
+                  child.remove();
+                }
+                return child;
+              }
+              return this;
+            },
+            _removeNamed: function() {
+              var owner = this._getOwner();
+              if (owner) {
+                var children = owner._children, namedChildren = owner._namedChildren, name = this._name, namedArray = namedChildren[name], index = namedArray ? namedArray.indexOf(this) : -1;
+                if (index !== -1) {
+                  if (children[name] == this)
+                    delete children[name];
+                  namedArray.splice(index, 1);
+                  if (namedArray.length) {
+                    children[name] = namedArray[0];
+                  } else {
+                    delete namedChildren[name];
+                  }
+                }
+              }
+            },
+            _remove: function(notifySelf, notifyParent) {
+              var owner = this._getOwner(), project = this._project, index = this._index;
+              if (this._style)
+                this._style._dispose();
+              if (owner) {
+                if (this._name)
+                  this._removeNamed();
+                if (index != null) {
+                  if (project._activeLayer === this)
+                    project._activeLayer = this.getNextSibling() || this.getPreviousSibling();
+                  Base.splice(owner._children, null, index, 1);
+                }
+                this._installEvents(false);
+                if (notifySelf && project._changes)
+                  this._changed(5);
+                if (notifyParent)
+                  owner._changed(11, this);
+                this._parent = null;
+                return true;
+              }
+              return false;
+            },
+            remove: function() {
+              return this._remove(true, true);
+            },
+            replaceWith: function(item) {
+              var ok = item && item.insertBelow(this);
+              if (ok)
+                this.remove();
+              return ok;
+            },
+            removeChildren: function(start, end) {
+              if (!this._children)
+                return null;
+              start = start || 0;
+              end = Base.pick(end, this._children.length);
+              var removed = Base.splice(this._children, null, start, end - start);
+              for (var i = removed.length - 1; i >= 0; i--) {
+                removed[i]._remove(true, false);
+              }
+              if (removed.length > 0)
+                this._changed(11);
+              return removed;
+            },
+            clear: "#removeChildren",
+            reverseChildren: function() {
+              if (this._children) {
+                this._children.reverse();
+                for (var i = 0, l = this._children.length; i < l; i++)
+                  this._children[i]._index = i;
+                this._changed(11);
+              }
+            },
+            isEmpty: function(recursively) {
+              var children = this._children;
+              var numChildren = children ? children.length : 0;
+              if (recursively) {
+                for (var i = 0; i < numChildren; i++) {
+                  if (!children[i].isEmpty(recursively)) {
+                    return false;
+                  }
+                }
+                return true;
+              }
+              return !numChildren;
+            },
+            isEditable: function() {
+              var item = this;
+              while (item) {
+                if (!item._visible || item._locked)
+                  return false;
+                item = item._parent;
+              }
+              return true;
+            },
+            hasFill: function() {
+              return this.getStyle().hasFill();
+            },
+            hasStroke: function() {
+              return this.getStyle().hasStroke();
+            },
+            hasShadow: function() {
+              return this.getStyle().hasShadow();
+            },
+            _getOrder: function(item) {
+              function getList(item2) {
+                var list = [];
+                do {
+                  list.unshift(item2);
+                } while (item2 = item2._parent);
+                return list;
+              }
+              var list1 = getList(this), list2 = getList(item);
+              for (var i = 0, l = Math.min(list1.length, list2.length); i < l; i++) {
+                if (list1[i] != list2[i]) {
+                  return list1[i]._index < list2[i]._index ? 1 : -1;
+                }
+              }
+              return 0;
+            },
+            hasChildren: function() {
+              return this._children && this._children.length > 0;
+            },
+            isInserted: function() {
+              return this._parent ? this._parent.isInserted() : false;
+            },
+            isAbove: function(item) {
+              return this._getOrder(item) === -1;
+            },
+            isBelow: function(item) {
+              return this._getOrder(item) === 1;
+            },
+            isParent: function(item) {
+              return this._parent === item;
+            },
+            isChild: function(item) {
+              return item && item._parent === this;
+            },
+            isDescendant: function(item) {
+              var parent = this;
+              while (parent = parent._parent) {
+                if (parent === item)
+                  return true;
+              }
+              return false;
+            },
+            isAncestor: function(item) {
+              return item ? item.isDescendant(this) : false;
+            },
+            isSibling: function(item) {
+              return this._parent === item._parent;
+            },
+            isGroupedWith: function(item) {
+              var parent = this._parent;
+              while (parent) {
+                if (parent._parent && /^(Group|Layer|CompoundPath)$/.test(parent._class) && item.isDescendant(parent))
+                  return true;
+                parent = parent._parent;
+              }
+              return false;
+            }
+          },
+          Base.each(["rotate", "scale", "shear", "skew"], function(key) {
+            var rotate = key === "rotate";
+            this[key] = function() {
+              var args = arguments, value = (rotate ? Base : Point).read(args), center = Point.read(args, 0, { readNull: true });
+              return this.transform(new Matrix()[key](
+                value,
+                center || this.getPosition(true)
+              ));
+            };
+          }, {
+            translate: function() {
+              var mx = new Matrix();
+              return this.transform(mx.translate.apply(mx, arguments));
+            },
+            transform: function(matrix, _applyRecursively, _setApplyMatrix) {
+              var _matrix = this._matrix, transformMatrix = matrix && !matrix.isIdentity(), applyMatrix = _setApplyMatrix && this._canApplyMatrix || this._applyMatrix && (transformMatrix || !_matrix.isIdentity() || _applyRecursively && this._children);
+              if (!transformMatrix && !applyMatrix)
+                return this;
+              if (transformMatrix) {
+                if (!matrix.isInvertible() && _matrix.isInvertible())
+                  _matrix._backup = _matrix.getValues();
+                _matrix.prepend(matrix, true);
+                var style = this._style, fillColor = style.getFillColor(true), strokeColor = style.getStrokeColor(true);
+                if (fillColor)
+                  fillColor.transform(matrix);
+                if (strokeColor)
+                  strokeColor.transform(matrix);
+              }
+              if (applyMatrix && (applyMatrix = this._transformContent(
+                _matrix,
+                _applyRecursively,
+                _setApplyMatrix
+              ))) {
+                var pivot = this._pivot;
+                if (pivot)
+                  _matrix._transformPoint(pivot, pivot, true);
+                _matrix.reset(true);
+                if (_setApplyMatrix && this._canApplyMatrix)
+                  this._applyMatrix = true;
+              }
+              var bounds = this._bounds, position = this._position;
+              if (transformMatrix || applyMatrix) {
+                this._changed(25);
+              }
+              var decomp = transformMatrix && bounds && matrix.decompose();
+              if (decomp && decomp.skewing.isZero() && decomp.rotation % 90 === 0) {
+                for (var key in bounds) {
+                  var cache = bounds[key];
+                  if (cache.nonscaling) {
+                    delete bounds[key];
+                  } else if (applyMatrix || !cache.internal) {
+                    var rect = cache.rect;
+                    matrix._transformBounds(rect, rect);
+                  }
+                }
+                this._bounds = bounds;
+                var cached = bounds[this._getBoundsCacheKey(
+                  this._boundsOptions || {}
+                )];
+                if (cached) {
+                  this._position = this._getPositionFromBounds(cached.rect);
+                }
+              } else if (transformMatrix && position && this._pivot) {
+                this._position = matrix._transformPoint(position, position);
+              }
+              return this;
+            },
+            _transformContent: function(matrix, applyRecursively, setApplyMatrix) {
+              var children = this._children;
+              if (children) {
+                for (var i = 0, l = children.length; i < l; i++) {
+                  children[i].transform(matrix, applyRecursively, setApplyMatrix);
+                }
+                return true;
+              }
+            },
+            globalToLocal: function() {
+              return this.getGlobalMatrix(true)._inverseTransform(
+                Point.read(arguments)
+              );
+            },
+            localToGlobal: function() {
+              return this.getGlobalMatrix(true)._transformPoint(
+                Point.read(arguments)
+              );
+            },
+            parentToLocal: function() {
+              return this._matrix._inverseTransform(Point.read(arguments));
+            },
+            localToParent: function() {
+              return this._matrix._transformPoint(Point.read(arguments));
+            },
+            fitBounds: function(rectangle, fill) {
+              rectangle = Rectangle.read(arguments);
+              var bounds = this.getBounds(), itemRatio = bounds.height / bounds.width, rectRatio = rectangle.height / rectangle.width, scale = (fill ? itemRatio > rectRatio : itemRatio < rectRatio) ? rectangle.width / bounds.width : rectangle.height / bounds.height, newBounds = new Rectangle(
+                new Point(),
+                new Size(bounds.width * scale, bounds.height * scale)
+              );
+              newBounds.setCenter(rectangle.getCenter());
+              this.setBounds(newBounds);
+            }
+          }),
+          {
+            _setStyles: function(ctx, param, viewMatrix) {
+              var style = this._style, matrix = this._matrix;
+              if (style.hasFill()) {
+                ctx.fillStyle = style.getFillColor().toCanvasStyle(ctx, matrix);
+              }
+              if (style.hasStroke()) {
+                ctx.strokeStyle = style.getStrokeColor().toCanvasStyle(ctx, matrix);
+                ctx.lineWidth = style.getStrokeWidth();
+                var strokeJoin = style.getStrokeJoin(), strokeCap = style.getStrokeCap(), miterLimit = style.getMiterLimit();
+                if (strokeJoin)
+                  ctx.lineJoin = strokeJoin;
+                if (strokeCap)
+                  ctx.lineCap = strokeCap;
+                if (miterLimit)
+                  ctx.miterLimit = miterLimit;
+                if (paper2.support.nativeDash) {
+                  var dashArray = style.getDashArray(), dashOffset = style.getDashOffset();
+                  if (dashArray && dashArray.length) {
+                    if ("setLineDash" in ctx) {
+                      ctx.setLineDash(dashArray);
+                      ctx.lineDashOffset = dashOffset;
+                    } else {
+                      ctx.mozDash = dashArray;
+                      ctx.mozDashOffset = dashOffset;
+                    }
+                  }
+                }
+              }
+              if (style.hasShadow()) {
+                var pixelRatio = param.pixelRatio || 1, mx = viewMatrix._shiftless().prepend(
+                  new Matrix().scale(pixelRatio, pixelRatio)
+                ), blur = mx.transform(new Point(style.getShadowBlur(), 0)), offset = mx.transform(this.getShadowOffset());
+                ctx.shadowColor = style.getShadowColor().toCanvasStyle(ctx);
+                ctx.shadowBlur = blur.getLength();
+                ctx.shadowOffsetX = offset.x;
+                ctx.shadowOffsetY = offset.y;
+              }
+            },
+            draw: function(ctx, param, parentStrokeMatrix) {
+              var updateVersion = this._updateVersion = this._project._updateVersion;
+              if (!this._visible || this._opacity === 0)
+                return;
+              var matrices = param.matrices, viewMatrix = param.viewMatrix, matrix = this._matrix, globalMatrix = matrices[matrices.length - 1].appended(matrix);
+              if (!globalMatrix.isInvertible())
+                return;
+              viewMatrix = viewMatrix ? viewMatrix.appended(globalMatrix) : globalMatrix;
+              matrices.push(globalMatrix);
+              if (param.updateMatrix) {
+                this._globalMatrix = globalMatrix;
+              }
+              var blendMode = this._blendMode, opacity = Numerical.clamp(this._opacity, 0, 1), normalBlend = blendMode === "normal", nativeBlend = BlendMode.nativeModes[blendMode], direct = normalBlend && opacity === 1 || param.dontStart || param.clip || (nativeBlend || normalBlend && opacity < 1) && this._canComposite(), pixelRatio = param.pixelRatio || 1, mainCtx, itemOffset, prevOffset;
+              if (!direct) {
+                var bounds = this.getStrokeBounds(viewMatrix);
+                if (!bounds.width || !bounds.height) {
+                  matrices.pop();
+                  return;
+                }
+                prevOffset = param.offset;
+                itemOffset = param.offset = bounds.getTopLeft().floor();
+                mainCtx = ctx;
+                ctx = CanvasProvider.getContext(bounds.getSize().ceil().add(1).multiply(pixelRatio));
+                if (pixelRatio !== 1)
+                  ctx.scale(pixelRatio, pixelRatio);
+              }
+              ctx.save();
+              var strokeMatrix = parentStrokeMatrix ? parentStrokeMatrix.appended(matrix) : this._canScaleStroke && !this.getStrokeScaling(true) && viewMatrix, clip = !direct && param.clipItem, transform = !strokeMatrix || clip;
+              if (direct) {
+                ctx.globalAlpha = opacity;
+                if (nativeBlend)
+                  ctx.globalCompositeOperation = blendMode;
+              } else if (transform) {
+                ctx.translate(-itemOffset.x, -itemOffset.y);
+              }
+              if (transform) {
+                (direct ? matrix : viewMatrix).applyToContext(ctx);
+              }
+              if (clip) {
+                param.clipItem.draw(ctx, param.extend({ clip: true }));
+              }
+              if (strokeMatrix) {
+                ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+                var offset = param.offset;
+                if (offset)
+                  ctx.translate(-offset.x, -offset.y);
+              }
+              this._draw(ctx, param, viewMatrix, strokeMatrix);
+              ctx.restore();
+              matrices.pop();
+              if (param.clip && !param.dontFinish) {
+                ctx.clip(this.getFillRule());
+              }
+              if (!direct) {
+                BlendMode.process(
+                  blendMode,
+                  ctx,
+                  mainCtx,
+                  opacity,
+                  itemOffset.subtract(prevOffset).multiply(pixelRatio)
+                );
+                CanvasProvider.release(ctx);
+                param.offset = prevOffset;
+              }
+            },
+            _isUpdated: function(updateVersion) {
+              var parent = this._parent;
+              if (parent instanceof CompoundPath)
+                return parent._isUpdated(updateVersion);
+              var updated = this._updateVersion === updateVersion;
+              if (!updated && parent && parent._visible && parent._isUpdated(updateVersion)) {
+                this._updateVersion = updateVersion;
+                updated = true;
+              }
+              return updated;
+            },
+            _drawSelection: function(ctx, matrix, size, selectionItems, updateVersion) {
+              var selection = this._selection, itemSelected = selection & 1, boundsSelected = selection & 2 || itemSelected && this._selectBounds, positionSelected = selection & 4;
+              if (!this._drawSelected)
+                itemSelected = false;
+              if ((itemSelected || boundsSelected || positionSelected) && this._isUpdated(updateVersion)) {
+                var layer, color = this.getSelectedColor(true) || (layer = this.getLayer()) && layer.getSelectedColor(true), mx = matrix.appended(this.getGlobalMatrix(true)), half = size / 2;
+                ctx.strokeStyle = ctx.fillStyle = color ? color.toCanvasStyle(ctx) : "#009dec";
+                if (itemSelected)
+                  this._drawSelected(ctx, mx, selectionItems);
+                if (positionSelected) {
+                  var pos = this.getPosition(true), parent = this._parent, point = parent ? parent.localToGlobal(pos) : pos, x = point.x, y = point.y;
+                  ctx.beginPath();
+                  ctx.arc(x, y, half, 0, Math.PI * 2, true);
+                  ctx.stroke();
+                  var deltas = [[0, -1], [1, 0], [0, 1], [-1, 0]], start = half, end = size + 1;
+                  for (var i = 0; i < 4; i++) {
+                    var delta = deltas[i], dx = delta[0], dy = delta[1];
+                    ctx.moveTo(x + dx * start, y + dy * start);
+                    ctx.lineTo(x + dx * end, y + dy * end);
+                    ctx.stroke();
+                  }
+                }
+                if (boundsSelected) {
+                  var coords = mx._transformCorners(this.getInternalBounds());
+                  ctx.beginPath();
+                  for (var i = 0; i < 8; i++) {
+                    ctx[!i ? "moveTo" : "lineTo"](coords[i], coords[++i]);
+                  }
+                  ctx.closePath();
+                  ctx.stroke();
+                  for (var i = 0; i < 8; i++) {
+                    ctx.fillRect(
+                      coords[i] - half,
+                      coords[++i] - half,
+                      size,
+                      size
+                    );
+                  }
+                }
+              }
+            },
+            _canComposite: function() {
+              return false;
+            }
+          },
+          Base.each(["down", "drag", "up", "move"], function(key) {
+            this["removeOn" + Base.capitalize(key)] = function() {
+              var hash = {};
+              hash[key] = true;
+              return this.removeOn(hash);
+            };
+          }, {
+            removeOn: function(obj) {
+              for (var name in obj) {
+                if (obj[name]) {
+                  var key = "mouse" + name, project = this._project, sets = project._removeSets = project._removeSets || {};
+                  sets[key] = sets[key] || {};
+                  sets[key][this._id] = this;
+                }
+              }
+              return this;
+            }
+          }),
+          {
+            tween: function(from, to, options) {
+              if (!options) {
+                options = to;
+                to = from;
+                from = null;
+                if (!options) {
+                  options = to;
+                  to = null;
+                }
+              }
+              var easing = options && options.easing, start = options && options.start, duration = options != null && (typeof options === "number" ? options : options.duration), tween = new Tween(this, from, to, duration, easing, start);
+              function onFrame(event) {
+                tween._handleFrame(event.time * 1e3);
+                if (!tween.running) {
+                  this.off("frame", onFrame);
+                }
+              }
+              if (duration) {
+                this.on("frame", onFrame);
+              }
+              return tween;
+            },
+            tweenTo: function(to, options) {
+              return this.tween(null, to, options);
+            },
+            tweenFrom: function(from, options) {
+              return this.tween(from, null, options);
+            }
+          }
+        );
+        var Group = Item.extend({
+          _class: "Group",
+          _selectBounds: false,
+          _selectChildren: true,
+          _serializeFields: {
+            children: []
+          },
+          initialize: function Group2(arg) {
+            this._children = [];
+            this._namedChildren = {};
+            if (!this._initialize(arg))
+              this.addChildren(Array.isArray(arg) ? arg : arguments);
+          },
+          _changed: function _changed(flags) {
+            _changed.base.call(this, flags);
+            if (flags & 2050) {
+              this._clipItem = undefined2;
+            }
+          },
+          _getClipItem: function() {
+            var clipItem = this._clipItem;
+            if (clipItem === undefined2) {
+              clipItem = null;
+              var children = this._children;
+              for (var i = 0, l = children.length; i < l; i++) {
+                if (children[i]._clipMask) {
+                  clipItem = children[i];
+                  break;
+                }
+              }
+              this._clipItem = clipItem;
+            }
+            return clipItem;
+          },
+          isClipped: function() {
+            return !!this._getClipItem();
+          },
+          setClipped: function(clipped) {
+            var child = this.getFirstChild();
+            if (child)
+              child.setClipMask(clipped);
+          },
+          _getBounds: function _getBounds(matrix, options) {
+            var clipItem = this._getClipItem();
+            return clipItem ? clipItem._getCachedBounds(
+              clipItem._matrix.prepended(matrix),
+              Base.set({}, options, { stroke: false })
+            ) : _getBounds.base.call(this, matrix, options);
+          },
+          _hitTestChildren: function _hitTestChildren(point, options, viewMatrix) {
+            var clipItem = this._getClipItem();
+            return (!clipItem || clipItem.contains(point)) && _hitTestChildren.base.call(
+              this,
+              point,
+              options,
+              viewMatrix,
+              clipItem
+            );
+          },
+          _draw: function(ctx, param) {
+            var clip = param.clip, clipItem = !clip && this._getClipItem();
+            param = param.extend({ clipItem, clip: false });
+            if (clip) {
+              ctx.beginPath();
+              param.dontStart = param.dontFinish = true;
+            } else if (clipItem) {
+              clipItem.draw(ctx, param.extend({ clip: true }));
+            }
+            var children = this._children;
+            for (var i = 0, l = children.length; i < l; i++) {
+              var item = children[i];
+              if (item !== clipItem)
+                item.draw(ctx, param);
+            }
+          }
+        });
+        var Layer = Group.extend({
+          _class: "Layer",
+          initialize: function Layer2() {
+            Group.apply(this, arguments);
+          },
+          _getOwner: function() {
+            return this._parent || this._index != null && this._project;
+          },
+          isInserted: function isInserted() {
+            return this._parent ? isInserted.base.call(this) : this._index != null;
+          },
+          activate: function() {
+            this._project._activeLayer = this;
+          },
+          _hitTestSelf: function() {
+          }
+        });
+        var Shape = Item.extend(
+          {
+            _class: "Shape",
+            _applyMatrix: false,
+            _canApplyMatrix: false,
+            _canScaleStroke: true,
+            _serializeFields: {
+              type: null,
+              size: null,
+              radius: null
+            },
+            initialize: function Shape2(props, point) {
+              this._initialize(props, point);
+            },
+            _equals: function(item) {
+              return this._type === item._type && this._size.equals(item._size) && Base.equals(this._radius, item._radius);
+            },
+            copyContent: function(source) {
+              this.setType(source._type);
+              this.setSize(source._size);
+              this.setRadius(source._radius);
+            },
+            getType: function() {
+              return this._type;
+            },
+            setType: function(type) {
+              this._type = type;
+            },
+            getShape: "#getType",
+            setShape: "#setType",
+            getSize: function() {
+              var size = this._size;
+              return new LinkedSize(size.width, size.height, this, "setSize");
+            },
+            setSize: function() {
+              var size = Size.read(arguments);
+              if (!this._size) {
+                this._size = size.clone();
+              } else if (!this._size.equals(size)) {
+                var type = this._type, width = size.width, height = size.height;
+                if (type === "rectangle") {
+                  this._radius.set(Size.min(this._radius, size.divide(2).abs()));
+                } else if (type === "circle") {
+                  width = height = (width + height) / 2;
+                  this._radius = width / 2;
+                } else if (type === "ellipse") {
+                  this._radius._set(width / 2, height / 2);
+                }
+                this._size._set(width, height);
+                this._changed(9);
+              }
+            },
+            getRadius: function() {
+              var rad = this._radius;
+              return this._type === "circle" ? rad : new LinkedSize(rad.width, rad.height, this, "setRadius");
+            },
+            setRadius: function(radius) {
+              var type = this._type;
+              if (type === "circle") {
+                if (radius === this._radius)
+                  return;
+                var size = radius * 2;
+                this._radius = radius;
+                this._size._set(size, size);
+              } else {
+                radius = Size.read(arguments);
+                if (!this._radius) {
+                  this._radius = radius.clone();
+                } else {
+                  if (this._radius.equals(radius))
+                    return;
+                  this._radius.set(radius);
+                  if (type === "rectangle") {
+                    var size = Size.max(this._size, radius.multiply(2));
+                    this._size.set(size);
+                  } else if (type === "ellipse") {
+                    this._size._set(radius.width * 2, radius.height * 2);
+                  }
+                }
+              }
+              this._changed(9);
+            },
+            isEmpty: function() {
+              return false;
+            },
+            toPath: function(insert) {
+              var path = new Path[Base.capitalize(this._type)]({
+                center: new Point(),
+                size: this._size,
+                radius: this._radius,
+                insert: false
+              });
+              path.copyAttributes(this);
+              if (paper2.settings.applyMatrix)
+                path.setApplyMatrix(true);
+              if (insert === undefined2 || insert)
+                path.insertAbove(this);
+              return path;
+            },
+            toShape: "#clone",
+            _asPathItem: function() {
+              return this.toPath(false);
+            },
+            _draw: function(ctx, param, viewMatrix, strokeMatrix) {
+              var style = this._style, hasFill = style.hasFill(), hasStroke = style.hasStroke(), dontPaint = param.dontFinish || param.clip, untransformed = !strokeMatrix;
+              if (hasFill || hasStroke || dontPaint) {
+                var type = this._type, radius = this._radius, isCircle = type === "circle";
+                if (!param.dontStart)
+                  ctx.beginPath();
+                if (untransformed && isCircle) {
+                  ctx.arc(0, 0, radius, 0, Math.PI * 2, true);
+                } else {
+                  var rx = isCircle ? radius : radius.width, ry = isCircle ? radius : radius.height, size = this._size, width = size.width, height = size.height;
+                  if (untransformed && type === "rectangle" && rx === 0 && ry === 0) {
+                    ctx.rect(-width / 2, -height / 2, width, height);
+                  } else {
+                    var x = width / 2, y = height / 2, kappa = 1 - 0.5522847498307936, cx = rx * kappa, cy = ry * kappa, c = [
+                      -x,
+                      -y + ry,
+                      -x,
+                      -y + cy,
+                      -x + cx,
+                      -y,
+                      -x + rx,
+                      -y,
+                      x - rx,
+                      -y,
+                      x - cx,
+                      -y,
+                      x,
+                      -y + cy,
+                      x,
+                      -y + ry,
+                      x,
+                      y - ry,
+                      x,
+                      y - cy,
+                      x - cx,
+                      y,
+                      x - rx,
+                      y,
+                      -x + rx,
+                      y,
+                      -x + cx,
+                      y,
+                      -x,
+                      y - cy,
+                      -x,
+                      y - ry
+                    ];
+                    if (strokeMatrix)
+                      strokeMatrix.transform(c, c, 32);
+                    ctx.moveTo(c[0], c[1]);
+                    ctx.bezierCurveTo(c[2], c[3], c[4], c[5], c[6], c[7]);
+                    if (x !== rx)
+                      ctx.lineTo(c[8], c[9]);
+                    ctx.bezierCurveTo(c[10], c[11], c[12], c[13], c[14], c[15]);
+                    if (y !== ry)
+                      ctx.lineTo(c[16], c[17]);
+                    ctx.bezierCurveTo(c[18], c[19], c[20], c[21], c[22], c[23]);
+                    if (x !== rx)
+                      ctx.lineTo(c[24], c[25]);
+                    ctx.bezierCurveTo(c[26], c[27], c[28], c[29], c[30], c[31]);
+                  }
+                }
+                ctx.closePath();
+              }
+              if (!dontPaint && (hasFill || hasStroke)) {
+                this._setStyles(ctx, param, viewMatrix);
+                if (hasFill) {
+                  ctx.fill(style.getFillRule());
+                  ctx.shadowColor = "rgba(0,0,0,0)";
+                }
+                if (hasStroke)
+                  ctx.stroke();
+              }
+            },
+            _canComposite: function() {
+              return !(this.hasFill() && this.hasStroke());
+            },
+            _getBounds: function(matrix, options) {
+              var rect = new Rectangle(this._size).setCenter(0, 0), style = this._style, strokeWidth = options.stroke && style.hasStroke() && style.getStrokeWidth();
+              if (matrix)
+                rect = matrix._transformBounds(rect);
+              return strokeWidth ? rect.expand(Path._getStrokePadding(
+                strokeWidth,
+                this._getStrokeMatrix(matrix, options)
+              )) : rect;
+            }
+          },
+          new function() {
+            function getCornerCenter(that, point, expand) {
+              var radius = that._radius;
+              if (!radius.isZero()) {
+                var halfSize = that._size.divide(2);
+                for (var q = 1; q <= 4; q++) {
+                  var dir = new Point(q > 1 && q < 4 ? -1 : 1, q > 2 ? -1 : 1), corner = dir.multiply(halfSize), center = corner.subtract(dir.multiply(radius)), rect = new Rectangle(
+                    expand ? corner.add(dir.multiply(expand)) : corner,
+                    center
+                  );
+                  if (rect.contains(point))
+                    return { point: center, quadrant: q };
+                }
+              }
+            }
+            function isOnEllipseStroke(point, radius, padding, quadrant) {
+              var vector = point.divide(radius);
+              return (!quadrant || vector.isInQuadrant(quadrant)) && vector.subtract(vector.normalize()).multiply(radius).divide(padding).length <= 1;
+            }
+            return {
+              _contains: function _contains(point) {
+                if (this._type === "rectangle") {
+                  var center = getCornerCenter(this, point);
+                  return center ? point.subtract(center.point).divide(this._radius).getLength() <= 1 : _contains.base.call(this, point);
+                } else {
+                  return point.divide(this.size).getLength() <= 0.5;
+                }
+              },
+              _hitTestSelf: function _hitTestSelf(point, options, viewMatrix, strokeMatrix) {
+                var hit = false, style = this._style, hitStroke = options.stroke && style.hasStroke(), hitFill = options.fill && style.hasFill();
+                if (hitStroke || hitFill) {
+                  var type = this._type, radius = this._radius, strokeRadius = hitStroke ? style.getStrokeWidth() / 2 : 0, strokePadding = options._tolerancePadding.add(
+                    Path._getStrokePadding(
+                      strokeRadius,
+                      !style.getStrokeScaling() && strokeMatrix
+                    )
+                  );
+                  if (type === "rectangle") {
+                    var padding = strokePadding.multiply(2), center = getCornerCenter(this, point, padding);
+                    if (center) {
+                      hit = isOnEllipseStroke(
+                        point.subtract(center.point),
+                        radius,
+                        strokePadding,
+                        center.quadrant
+                      );
+                    } else {
+                      var rect = new Rectangle(this._size).setCenter(0, 0), outer = rect.expand(padding), inner = rect.expand(padding.negate());
+                      hit = outer._containsPoint(point) && !inner._containsPoint(point);
+                    }
+                  } else {
+                    hit = isOnEllipseStroke(point, radius, strokePadding);
+                  }
+                }
+                return hit ? new HitResult(hitStroke ? "stroke" : "fill", this) : _hitTestSelf.base.apply(this, arguments);
+              }
+            };
+          }(),
+          {
+            statics: new function() {
+              function createShape(type, point, size, radius, args) {
+                var item = Base.create(Shape.prototype);
+                item._type = type;
+                item._size = size;
+                item._radius = radius;
+                item._initialize(Base.getNamed(args), point);
+                return item;
+              }
+              return {
+                Circle: function() {
+                  var args = arguments, center = Point.readNamed(args, "center"), radius = Base.readNamed(args, "radius");
+                  return createShape(
+                    "circle",
+                    center,
+                    new Size(radius * 2),
+                    radius,
+                    args
+                  );
+                },
+                Rectangle: function() {
+                  var args = arguments, rect = Rectangle.readNamed(args, "rectangle"), radius = Size.min(
+                    Size.readNamed(args, "radius"),
+                    rect.getSize(true).divide(2)
+                  );
+                  return createShape(
+                    "rectangle",
+                    rect.getCenter(true),
+                    rect.getSize(true),
+                    radius,
+                    args
+                  );
+                },
+                Ellipse: function() {
+                  var args = arguments, ellipse = Shape._readEllipse(args), radius = ellipse.radius;
+                  return createShape(
+                    "ellipse",
+                    ellipse.center,
+                    radius.multiply(2),
+                    radius,
+                    args
+                  );
+                },
+                _readEllipse: function(args) {
+                  var center, radius;
+                  if (Base.hasNamed(args, "radius")) {
+                    center = Point.readNamed(args, "center");
+                    radius = Size.readNamed(args, "radius");
+                  } else {
+                    var rect = Rectangle.readNamed(args, "rectangle");
+                    center = rect.getCenter(true);
+                    radius = rect.getSize(true).divide(2);
+                  }
+                  return { center, radius };
+                }
+              };
+            }()
+          }
+        );
+        var Raster = Item.extend({
+          _class: "Raster",
+          _applyMatrix: false,
+          _canApplyMatrix: false,
+          _boundsOptions: { stroke: false, handle: false },
+          _serializeFields: {
+            crossOrigin: null,
+            source: null
+          },
+          _prioritize: ["crossOrigin"],
+          _smoothing: "low",
+          beans: true,
+          initialize: function Raster2(source, position) {
+            if (!this._initialize(
+              source,
+              position !== undefined2 && Point.read(arguments)
+            )) {
+              var image, type = typeof source, object = type === "string" ? document2.getElementById(source) : type === "object" ? source : null;
+              if (object && object !== Item.NO_INSERT) {
+                if (object.getContext || object.naturalHeight != null) {
+                  image = object;
+                } else if (object) {
+                  var size = Size.read(arguments);
+                  if (!size.isZero()) {
+                    image = CanvasProvider.getCanvas(size);
+                  }
+                }
+              }
+              if (image) {
+                this.setImage(image);
+              } else {
+                this.setSource(source);
+              }
+            }
+            if (!this._size) {
+              this._size = new Size();
+              this._loaded = false;
+            }
+          },
+          _equals: function(item) {
+            return this.getSource() === item.getSource();
+          },
+          copyContent: function(source) {
+            var image = source._image, canvas = source._canvas;
+            if (image) {
+              this._setImage(image);
+            } else if (canvas) {
+              var copyCanvas = CanvasProvider.getCanvas(source._size);
+              copyCanvas.getContext("2d").drawImage(canvas, 0, 0);
+              this._setImage(copyCanvas);
+            }
+            this._crossOrigin = source._crossOrigin;
+          },
+          getSize: function() {
+            var size = this._size;
+            return new LinkedSize(
+              size ? size.width : 0,
+              size ? size.height : 0,
+              this,
+              "setSize"
+            );
+          },
+          setSize: function(_size, _clear) {
+            var size = Size.read(arguments);
+            if (!size.equals(this._size)) {
+              if (size.width > 0 && size.height > 0) {
+                var element = !_clear && this.getElement();
+                this._setImage(CanvasProvider.getCanvas(size));
+                if (element) {
+                  this.getContext(true).drawImage(
+                    element,
+                    0,
+                    0,
+                    size.width,
+                    size.height
+                  );
+                }
+              } else {
+                if (this._canvas)
+                  CanvasProvider.release(this._canvas);
+                this._size = size.clone();
+              }
+            } else if (_clear) {
+              this.clear();
+            }
+          },
+          getWidth: function() {
+            return this._size ? this._size.width : 0;
+          },
+          setWidth: function(width) {
+            this.setSize(width, this.getHeight());
+          },
+          getHeight: function() {
+            return this._size ? this._size.height : 0;
+          },
+          setHeight: function(height) {
+            this.setSize(this.getWidth(), height);
+          },
+          getLoaded: function() {
+            return this._loaded;
+          },
+          isEmpty: function() {
+            var size = this._size;
+            return !size || size.width === 0 && size.height === 0;
+          },
+          getResolution: function() {
+            var matrix = this._matrix, orig = new Point(0, 0).transform(matrix), u = new Point(1, 0).transform(matrix).subtract(orig), v = new Point(0, 1).transform(matrix).subtract(orig);
+            return new Size(
+              72 / u.getLength(),
+              72 / v.getLength()
+            );
+          },
+          getPpi: "#getResolution",
+          getImage: function() {
+            return this._image;
+          },
+          setImage: function(image) {
+            var that = this;
+            function emit(event) {
+              var view = that.getView(), type = event && event.type || "load";
+              if (view && that.responds(type)) {
+                paper2 = view._scope;
+                that.emit(type, new Event(event));
+              }
+            }
+            this._setImage(image);
+            if (this._loaded) {
+              setTimeout(emit, 0);
+            } else if (image) {
+              DomEvent.add(image, {
+                load: function(event) {
+                  that._setImage(image);
+                  emit(event);
+                },
+                error: emit
+              });
+            }
+          },
+          _setImage: function(image) {
+            if (this._canvas)
+              CanvasProvider.release(this._canvas);
+            if (image && image.getContext) {
+              this._image = null;
+              this._canvas = image;
+              this._loaded = true;
+            } else {
+              this._image = image;
+              this._canvas = null;
+              this._loaded = !!(image && image.src && image.complete);
+            }
+            this._size = new Size(
+              image ? image.naturalWidth || image.width : 0,
+              image ? image.naturalHeight || image.height : 0
+            );
+            this._context = null;
+            this._changed(1033);
+          },
+          getCanvas: function() {
+            if (!this._canvas) {
+              var ctx = CanvasProvider.getContext(this._size);
+              try {
+                if (this._image)
+                  ctx.drawImage(this._image, 0, 0);
+                this._canvas = ctx.canvas;
+              } catch (e) {
+                CanvasProvider.release(ctx);
+              }
+            }
+            return this._canvas;
+          },
+          setCanvas: "#setImage",
+          getContext: function(_change) {
+            if (!this._context)
+              this._context = this.getCanvas().getContext("2d");
+            if (_change) {
+              this._image = null;
+              this._changed(1025);
+            }
+            return this._context;
+          },
+          setContext: function(context) {
+            this._context = context;
+          },
+          getSource: function() {
+            var image = this._image;
+            return image && image.src || this.toDataURL();
+          },
+          setSource: function(src) {
+            var image = new self2.Image(), crossOrigin = this._crossOrigin;
+            if (crossOrigin)
+              image.crossOrigin = crossOrigin;
+            if (src)
+              image.src = src;
+            this.setImage(image);
+          },
+          getCrossOrigin: function() {
+            var image = this._image;
+            return image && image.crossOrigin || this._crossOrigin || "";
+          },
+          setCrossOrigin: function(crossOrigin) {
+            this._crossOrigin = crossOrigin;
+            var image = this._image;
+            if (image)
+              image.crossOrigin = crossOrigin;
+          },
+          getSmoothing: function() {
+            return this._smoothing;
+          },
+          setSmoothing: function(smoothing) {
+            this._smoothing = typeof smoothing === "string" ? smoothing : smoothing ? "low" : "off";
+            this._changed(257);
+          },
+          getElement: function() {
+            return this._canvas || this._loaded && this._image;
+          }
+        }, {
+          beans: false,
+          getSubCanvas: function() {
+            var rect = Rectangle.read(arguments), ctx = CanvasProvider.getContext(rect.getSize());
+            ctx.drawImage(
+              this.getCanvas(),
+              rect.x,
+              rect.y,
+              rect.width,
+              rect.height,
+              0,
+              0,
+              rect.width,
+              rect.height
+            );
+            return ctx.canvas;
+          },
+          getSubRaster: function() {
+            var rect = Rectangle.read(arguments), raster = new Raster(Item.NO_INSERT);
+            raster._setImage(this.getSubCanvas(rect));
+            raster.translate(rect.getCenter().subtract(this.getSize().divide(2)));
+            raster._matrix.prepend(this._matrix);
+            raster.insertAbove(this);
+            return raster;
+          },
+          toDataURL: function() {
+            var image = this._image, src = image && image.src;
+            if (/^data:/.test(src))
+              return src;
+            var canvas = this.getCanvas();
+            return canvas ? canvas.toDataURL.apply(canvas, arguments) : null;
+          },
+          drawImage: function(image) {
+            var point = Point.read(arguments, 1);
+            this.getContext(true).drawImage(image, point.x, point.y);
+          },
+          getAverageColor: function(object) {
+            var bounds, path;
+            if (!object) {
+              bounds = this.getBounds();
+            } else if (object instanceof PathItem) {
+              path = object;
+              bounds = object.getBounds();
+            } else if (typeof object === "object") {
+              if ("width" in object) {
+                bounds = new Rectangle(object);
+              } else if ("x" in object) {
+                bounds = new Rectangle(object.x - 0.5, object.y - 0.5, 1, 1);
+              }
+            }
+            if (!bounds)
+              return null;
+            var sampleSize = 32, width = Math.min(bounds.width, sampleSize), height = Math.min(bounds.height, sampleSize);
+            var ctx = Raster._sampleContext;
+            if (!ctx) {
+              ctx = Raster._sampleContext = CanvasProvider.getContext(
+                new Size(sampleSize)
+              );
+            } else {
+              ctx.clearRect(0, 0, sampleSize + 1, sampleSize + 1);
+            }
+            ctx.save();
+            var matrix = new Matrix().scale(width / bounds.width, height / bounds.height).translate(-bounds.x, -bounds.y);
+            matrix.applyToContext(ctx);
+            if (path)
+              path.draw(ctx, new Base({ clip: true, matrices: [matrix] }));
+            this._matrix.applyToContext(ctx);
+            var element = this.getElement(), size = this._size;
+            if (element)
+              ctx.drawImage(element, -size.width / 2, -size.height / 2);
+            ctx.restore();
+            var pixels = ctx.getImageData(
+              0.5,
+              0.5,
+              Math.ceil(width),
+              Math.ceil(height)
+            ).data, channels = [0, 0, 0], total = 0;
+            for (var i = 0, l = pixels.length; i < l; i += 4) {
+              var alpha = pixels[i + 3];
+              total += alpha;
+              alpha /= 255;
+              channels[0] += pixels[i] * alpha;
+              channels[1] += pixels[i + 1] * alpha;
+              channels[2] += pixels[i + 2] * alpha;
+            }
+            for (var i = 0; i < 3; i++)
+              channels[i] /= total;
+            return total ? Color.read(channels) : null;
+          },
+          getPixel: function() {
+            var point = Point.read(arguments);
+            var data = this.getContext().getImageData(point.x, point.y, 1, 1).data;
+            return new Color(
+              "rgb",
+              [data[0] / 255, data[1] / 255, data[2] / 255],
+              data[3] / 255
+            );
+          },
+          setPixel: function() {
+            var args = arguments, point = Point.read(args), color = Color.read(args), components = color._convert("rgb"), alpha = color._alpha, ctx = this.getContext(true), imageData = ctx.createImageData(1, 1), data = imageData.data;
+            data[0] = components[0] * 255;
+            data[1] = components[1] * 255;
+            data[2] = components[2] * 255;
+            data[3] = alpha != null ? alpha * 255 : 255;
+            ctx.putImageData(imageData, point.x, point.y);
+          },
+          clear: function() {
+            var size = this._size;
+            this.getContext(true).clearRect(0, 0, size.width + 1, size.height + 1);
+          },
+          createImageData: function() {
+            var size = Size.read(arguments);
+            return this.getContext().createImageData(size.width, size.height);
+          },
+          getImageData: function() {
+            var rect = Rectangle.read(arguments);
+            if (rect.isEmpty())
+              rect = new Rectangle(this._size);
+            return this.getContext().getImageData(
+              rect.x,
+              rect.y,
+              rect.width,
+              rect.height
+            );
+          },
+          putImageData: function(data) {
+            var point = Point.read(arguments, 1);
+            this.getContext(true).putImageData(data, point.x, point.y);
+          },
+          setImageData: function(data) {
+            this.setSize(data);
+            this.getContext(true).putImageData(data, 0, 0);
+          },
+          _getBounds: function(matrix, options) {
+            var rect = new Rectangle(this._size).setCenter(0, 0);
+            return matrix ? matrix._transformBounds(rect) : rect;
+          },
+          _hitTestSelf: function(point) {
+            if (this._contains(point)) {
+              var that = this;
+              return new HitResult("pixel", that, {
+                offset: point.add(that._size.divide(2)).round(),
+                color: {
+                  get: function() {
+                    return that.getPixel(this.offset);
+                  }
+                }
+              });
+            }
+          },
+          _draw: function(ctx, param, viewMatrix) {
+            var element = this.getElement();
+            if (element && element.width > 0 && element.height > 0) {
+              ctx.globalAlpha = Numerical.clamp(this._opacity, 0, 1);
+              this._setStyles(ctx, param, viewMatrix);
+              var smoothing = this._smoothing, disabled = smoothing === "off";
+              DomElement.setPrefixed(
+                ctx,
+                disabled ? "imageSmoothingEnabled" : "imageSmoothingQuality",
+                disabled ? false : smoothing
+              );
+              ctx.drawImage(
+                element,
+                -this._size.width / 2,
+                -this._size.height / 2
+              );
+            }
+          },
+          _canComposite: function() {
+            return true;
+          }
+        });
+        var SymbolItem = Item.extend({
+          _class: "SymbolItem",
+          _applyMatrix: false,
+          _canApplyMatrix: false,
+          _boundsOptions: { stroke: true },
+          _serializeFields: {
+            symbol: null
+          },
+          initialize: function SymbolItem2(arg0, arg1) {
+            if (!this._initialize(
+              arg0,
+              arg1 !== undefined2 && Point.read(arguments, 1)
+            ))
+              this.setDefinition(arg0 instanceof SymbolDefinition ? arg0 : new SymbolDefinition(arg0));
+          },
+          _equals: function(item) {
+            return this._definition === item._definition;
+          },
+          copyContent: function(source) {
+            this.setDefinition(source._definition);
+          },
+          getDefinition: function() {
+            return this._definition;
+          },
+          setDefinition: function(definition) {
+            this._definition = definition;
+            this._changed(9);
+          },
+          getSymbol: "#getDefinition",
+          setSymbol: "#setDefinition",
+          isEmpty: function() {
+            return this._definition._item.isEmpty();
+          },
+          _getBounds: function(matrix, options) {
+            var item = this._definition._item;
+            return item._getCachedBounds(item._matrix.prepended(matrix), options);
+          },
+          _hitTestSelf: function(point, options, viewMatrix) {
+            var opts = options.extend({ all: false });
+            var res = this._definition._item._hitTest(point, opts, viewMatrix);
+            if (res)
+              res.item = this;
+            return res;
+          },
+          _draw: function(ctx, param) {
+            this._definition._item.draw(ctx, param);
+          }
+        });
+        var SymbolDefinition = Base.extend({
+          _class: "SymbolDefinition",
+          initialize: function SymbolDefinition2(item, dontCenter) {
+            this._id = UID.get();
+            this.project = paper2.project;
+            if (item)
+              this.setItem(item, dontCenter);
+          },
+          _serialize: function(options, dictionary) {
+            return dictionary.add(this, function() {
+              return Base.serialize(
+                [this._class, this._item],
+                options,
+                false,
+                dictionary
+              );
+            });
+          },
+          _changed: function(flags) {
+            if (flags & 8)
+              Item._clearBoundsCache(this);
+            if (flags & 1)
+              this.project._changed(flags);
+          },
+          getItem: function() {
+            return this._item;
+          },
+          setItem: function(item, _dontCenter) {
+            if (item._symbol)
+              item = item.clone();
+            if (this._item)
+              this._item._symbol = null;
+            this._item = item;
+            item.remove();
+            item.setSelected(false);
+            if (!_dontCenter)
+              item.setPosition(new Point());
+            item._symbol = this;
+            this._changed(9);
+          },
+          getDefinition: "#getItem",
+          setDefinition: "#setItem",
+          place: function(position) {
+            return new SymbolItem(this, position);
+          },
+          clone: function() {
+            return new SymbolDefinition(this._item.clone(false));
+          },
+          equals: function(symbol) {
+            return symbol === this || symbol && this._item.equals(symbol._item) || false;
+          }
+        });
+        var HitResult = Base.extend({
+          _class: "HitResult",
+          initialize: function HitResult2(type, item, values) {
+            this.type = type;
+            this.item = item;
+            if (values)
+              this.inject(values);
+          },
+          statics: {
+            getOptions: function(args) {
+              var options = args && Base.read(args);
+              return new Base({
+                type: null,
+                tolerance: paper2.settings.hitTolerance,
+                fill: !options,
+                stroke: !options,
+                segments: !options,
+                handles: false,
+                ends: false,
+                position: false,
+                center: false,
+                bounds: false,
+                guides: false,
+                selected: false
+              }, options);
+            }
+          }
+        });
+        var Segment = Base.extend({
+          _class: "Segment",
+          beans: true,
+          _selection: 0,
+          initialize: function Segment2(arg0, arg1, arg2, arg3, arg4, arg5) {
+            var count = arguments.length, point, handleIn, handleOut, selection;
+            if (count > 0) {
+              if (arg0 == null || typeof arg0 === "object") {
+                if (count === 1 && arg0 && "point" in arg0) {
+                  point = arg0.point;
+                  handleIn = arg0.handleIn;
+                  handleOut = arg0.handleOut;
+                  selection = arg0.selection;
+                } else {
+                  point = arg0;
+                  handleIn = arg1;
+                  handleOut = arg2;
+                  selection = arg3;
+                }
+              } else {
+                point = [arg0, arg1];
+                handleIn = arg2 !== undefined2 ? [arg2, arg3] : null;
+                handleOut = arg4 !== undefined2 ? [arg4, arg5] : null;
+              }
+            }
+            new SegmentPoint(point, this, "_point");
+            new SegmentPoint(handleIn, this, "_handleIn");
+            new SegmentPoint(handleOut, this, "_handleOut");
+            if (selection)
+              this.setSelection(selection);
+          },
+          _serialize: function(options, dictionary) {
+            var point = this._point, selection = this._selection, obj = selection || this.hasHandles() ? [point, this._handleIn, this._handleOut] : point;
+            if (selection)
+              obj.push(selection);
+            return Base.serialize(obj, options, true, dictionary);
+          },
+          _changed: function(point) {
+            var path = this._path;
+            if (!path)
+              return;
+            var curves = path._curves, index = this._index, curve;
+            if (curves) {
+              if ((!point || point === this._point || point === this._handleIn) && (curve = index > 0 ? curves[index - 1] : path._closed ? curves[curves.length - 1] : null))
+                curve._changed();
+              if ((!point || point === this._point || point === this._handleOut) && (curve = curves[index]))
+                curve._changed();
+            }
+            path._changed(41);
+          },
+          getPoint: function() {
+            return this._point;
+          },
+          setPoint: function() {
+            this._point.set(Point.read(arguments));
+          },
+          getHandleIn: function() {
+            return this._handleIn;
+          },
+          setHandleIn: function() {
+            this._handleIn.set(Point.read(arguments));
+          },
+          getHandleOut: function() {
+            return this._handleOut;
+          },
+          setHandleOut: function() {
+            this._handleOut.set(Point.read(arguments));
+          },
+          hasHandles: function() {
+            return !this._handleIn.isZero() || !this._handleOut.isZero();
+          },
+          isSmooth: function() {
+            var handleIn = this._handleIn, handleOut = this._handleOut;
+            return !handleIn.isZero() && !handleOut.isZero() && handleIn.isCollinear(handleOut);
+          },
+          clearHandles: function() {
+            this._handleIn._set(0, 0);
+            this._handleOut._set(0, 0);
+          },
+          getSelection: function() {
+            return this._selection;
+          },
+          setSelection: function(selection) {
+            var oldSelection = this._selection, path = this._path;
+            this._selection = selection = selection || 0;
+            if (path && selection !== oldSelection) {
+              path._updateSelection(this, oldSelection, selection);
+              path._changed(257);
+            }
+          },
+          _changeSelection: function(flag, selected) {
+            var selection = this._selection;
+            this.setSelection(selected ? selection | flag : selection & ~flag);
+          },
+          isSelected: function() {
+            return !!(this._selection & 7);
+          },
+          setSelected: function(selected) {
+            this._changeSelection(7, selected);
+          },
+          getIndex: function() {
+            return this._index !== undefined2 ? this._index : null;
+          },
+          getPath: function() {
+            return this._path || null;
+          },
+          getCurve: function() {
+            var path = this._path, index = this._index;
+            if (path) {
+              if (index > 0 && !path._closed && index === path._segments.length - 1)
+                index--;
+              return path.getCurves()[index] || null;
+            }
+            return null;
+          },
+          getLocation: function() {
+            var curve = this.getCurve();
+            return curve ? new CurveLocation(curve, this === curve._segment1 ? 0 : 1) : null;
+          },
+          getNext: function() {
+            var segments = this._path && this._path._segments;
+            return segments && (segments[this._index + 1] || this._path._closed && segments[0]) || null;
+          },
+          smooth: function(options, _first, _last) {
+            var opts = options || {}, type = opts.type, factor = opts.factor, prev = this.getPrevious(), next = this.getNext(), p0 = (prev || this)._point, p1 = this._point, p2 = (next || this)._point, d1 = p0.getDistance(p1), d2 = p1.getDistance(p2);
+            if (!type || type === "catmull-rom") {
+              var a = factor === undefined2 ? 0.5 : factor, d1_a = Math.pow(d1, a), d1_2a = d1_a * d1_a, d2_a = Math.pow(d2, a), d2_2a = d2_a * d2_a;
+              if (!_first && prev) {
+                var A = 2 * d2_2a + 3 * d2_a * d1_a + d1_2a, N = 3 * d2_a * (d2_a + d1_a);
+                this.setHandleIn(N !== 0 ? new Point(
+                  (d2_2a * p0._x + A * p1._x - d1_2a * p2._x) / N - p1._x,
+                  (d2_2a * p0._y + A * p1._y - d1_2a * p2._y) / N - p1._y
+                ) : new Point());
+              }
+              if (!_last && next) {
+                var A = 2 * d1_2a + 3 * d1_a * d2_a + d2_2a, N = 3 * d1_a * (d1_a + d2_a);
+                this.setHandleOut(N !== 0 ? new Point(
+                  (d1_2a * p2._x + A * p1._x - d2_2a * p0._x) / N - p1._x,
+                  (d1_2a * p2._y + A * p1._y - d2_2a * p0._y) / N - p1._y
+                ) : new Point());
+              }
+            } else if (type === "geometric") {
+              if (prev && next) {
+                var vector = p0.subtract(p2), t = factor === undefined2 ? 0.4 : factor, k = t * d1 / (d1 + d2);
+                if (!_first)
+                  this.setHandleIn(vector.multiply(k));
+                if (!_last)
+                  this.setHandleOut(vector.multiply(k - t));
+              }
+            } else {
+              throw new Error("Smoothing method '" + type + "' not supported.");
+            }
+          },
+          getPrevious: function() {
+            var segments = this._path && this._path._segments;
+            return segments && (segments[this._index - 1] || this._path._closed && segments[segments.length - 1]) || null;
+          },
+          isFirst: function() {
+            return !this._index;
+          },
+          isLast: function() {
+            var path = this._path;
+            return path && this._index === path._segments.length - 1 || false;
+          },
+          reverse: function() {
+            var handleIn = this._handleIn, handleOut = this._handleOut, tmp = handleIn.clone();
+            handleIn.set(handleOut);
+            handleOut.set(tmp);
+          },
+          reversed: function() {
+            return new Segment(this._point, this._handleOut, this._handleIn);
+          },
+          remove: function() {
+            return this._path ? !!this._path.removeSegment(this._index) : false;
+          },
+          clone: function() {
+            return new Segment(this._point, this._handleIn, this._handleOut);
+          },
+          equals: function(segment) {
+            return segment === this || segment && this._class === segment._class && this._point.equals(segment._point) && this._handleIn.equals(segment._handleIn) && this._handleOut.equals(segment._handleOut) || false;
+          },
+          toString: function() {
+            var parts = ["point: " + this._point];
+            if (!this._handleIn.isZero())
+              parts.push("handleIn: " + this._handleIn);
+            if (!this._handleOut.isZero())
+              parts.push("handleOut: " + this._handleOut);
+            return "{ " + parts.join(", ") + " }";
+          },
+          transform: function(matrix) {
+            this._transformCoordinates(matrix, new Array(6), true);
+            this._changed();
+          },
+          interpolate: function(from, to, factor) {
+            var u = 1 - factor, v = factor, point1 = from._point, point2 = to._point, handleIn1 = from._handleIn, handleIn2 = to._handleIn, handleOut2 = to._handleOut, handleOut1 = from._handleOut;
+            this._point._set(
+              u * point1._x + v * point2._x,
+              u * point1._y + v * point2._y,
+              true
+            );
+            this._handleIn._set(
+              u * handleIn1._x + v * handleIn2._x,
+              u * handleIn1._y + v * handleIn2._y,
+              true
+            );
+            this._handleOut._set(
+              u * handleOut1._x + v * handleOut2._x,
+              u * handleOut1._y + v * handleOut2._y,
+              true
+            );
+            this._changed();
+          },
+          _transformCoordinates: function(matrix, coords, change) {
+            var point = this._point, handleIn = !change || !this._handleIn.isZero() ? this._handleIn : null, handleOut = !change || !this._handleOut.isZero() ? this._handleOut : null, x = point._x, y = point._y, i = 2;
+            coords[0] = x;
+            coords[1] = y;
+            if (handleIn) {
+              coords[i++] = handleIn._x + x;
+              coords[i++] = handleIn._y + y;
+            }
+            if (handleOut) {
+              coords[i++] = handleOut._x + x;
+              coords[i++] = handleOut._y + y;
+            }
+            if (matrix) {
+              matrix._transformCoordinates(coords, coords, i / 2);
+              x = coords[0];
+              y = coords[1];
+              if (change) {
+                point._x = x;
+                point._y = y;
+                i = 2;
+                if (handleIn) {
+                  handleIn._x = coords[i++] - x;
+                  handleIn._y = coords[i++] - y;
+                }
+                if (handleOut) {
+                  handleOut._x = coords[i++] - x;
+                  handleOut._y = coords[i++] - y;
+                }
+              } else {
+                if (!handleIn) {
+                  coords[i++] = x;
+                  coords[i++] = y;
+                }
+                if (!handleOut) {
+                  coords[i++] = x;
+                  coords[i++] = y;
+                }
+              }
+            }
+            return coords;
+          }
+        });
+        var SegmentPoint = Point.extend({
+          initialize: function SegmentPoint2(point, owner, key) {
+            var x, y, selected;
+            if (!point) {
+              x = y = 0;
+            } else if ((x = point[0]) !== undefined2) {
+              y = point[1];
+            } else {
+              var pt = point;
+              if ((x = pt.x) === undefined2) {
+                pt = Point.read(arguments);
+                x = pt.x;
+              }
+              y = pt.y;
+              selected = pt.selected;
+            }
+            this._x = x;
+            this._y = y;
+            this._owner = owner;
+            owner[key] = this;
+            if (selected)
+              this.setSelected(true);
+          },
+          _set: function(x, y) {
+            this._x = x;
+            this._y = y;
+            this._owner._changed(this);
+            return this;
+          },
+          getX: function() {
+            return this._x;
+          },
+          setX: function(x) {
+            this._x = x;
+            this._owner._changed(this);
+          },
+          getY: function() {
+            return this._y;
+          },
+          setY: function(y) {
+            this._y = y;
+            this._owner._changed(this);
+          },
+          isZero: function() {
+            var isZero = Numerical.isZero;
+            return isZero(this._x) && isZero(this._y);
+          },
+          isSelected: function() {
+            return !!(this._owner._selection & this._getSelection());
+          },
+          setSelected: function(selected) {
+            this._owner._changeSelection(this._getSelection(), selected);
+          },
+          _getSelection: function() {
+            var owner = this._owner;
+            return this === owner._point ? 1 : this === owner._handleIn ? 2 : this === owner._handleOut ? 4 : 0;
+          }
+        });
+        var Curve = Base.extend(
+          {
+            _class: "Curve",
+            beans: true,
+            initialize: function Curve2(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7) {
+              var count = arguments.length, seg1, seg2, point1, point2, handle1, handle2;
+              if (count === 3) {
+                this._path = arg0;
+                seg1 = arg1;
+                seg2 = arg2;
+              } else if (!count) {
+                seg1 = new Segment();
+                seg2 = new Segment();
+              } else if (count === 1) {
+                if ("segment1" in arg0) {
+                  seg1 = new Segment(arg0.segment1);
+                  seg2 = new Segment(arg0.segment2);
+                } else if ("point1" in arg0) {
+                  point1 = arg0.point1;
+                  handle1 = arg0.handle1;
+                  handle2 = arg0.handle2;
+                  point2 = arg0.point2;
+                } else if (Array.isArray(arg0)) {
+                  point1 = [arg0[0], arg0[1]];
+                  point2 = [arg0[6], arg0[7]];
+                  handle1 = [arg0[2] - arg0[0], arg0[3] - arg0[1]];
+                  handle2 = [arg0[4] - arg0[6], arg0[5] - arg0[7]];
+                }
+              } else if (count === 2) {
+                seg1 = new Segment(arg0);
+                seg2 = new Segment(arg1);
+              } else if (count === 4) {
+                point1 = arg0;
+                handle1 = arg1;
+                handle2 = arg2;
+                point2 = arg3;
+              } else if (count === 8) {
+                point1 = [arg0, arg1];
+                point2 = [arg6, arg7];
+                handle1 = [arg2 - arg0, arg3 - arg1];
+                handle2 = [arg4 - arg6, arg5 - arg7];
+              }
+              this._segment1 = seg1 || new Segment(point1, null, handle1);
+              this._segment2 = seg2 || new Segment(point2, handle2, null);
+            },
+            _serialize: function(options, dictionary) {
+              return Base.serialize(
+                this.hasHandles() ? [
+                  this.getPoint1(),
+                  this.getHandle1(),
+                  this.getHandle2(),
+                  this.getPoint2()
+                ] : [this.getPoint1(), this.getPoint2()],
+                options,
+                true,
+                dictionary
+              );
+            },
+            _changed: function() {
+              this._length = this._bounds = undefined2;
+            },
+            clone: function() {
+              return new Curve(this._segment1, this._segment2);
+            },
+            toString: function() {
+              var parts = ["point1: " + this._segment1._point];
+              if (!this._segment1._handleOut.isZero())
+                parts.push("handle1: " + this._segment1._handleOut);
+              if (!this._segment2._handleIn.isZero())
+                parts.push("handle2: " + this._segment2._handleIn);
+              parts.push("point2: " + this._segment2._point);
+              return "{ " + parts.join(", ") + " }";
+            },
+            classify: function() {
+              return Curve.classify(this.getValues());
+            },
+            remove: function() {
+              var removed = false;
+              if (this._path) {
+                var segment2 = this._segment2, handleOut = segment2._handleOut;
+                removed = segment2.remove();
+                if (removed)
+                  this._segment1._handleOut.set(handleOut);
+              }
+              return removed;
+            },
+            getPoint1: function() {
+              return this._segment1._point;
+            },
+            setPoint1: function() {
+              this._segment1._point.set(Point.read(arguments));
+            },
+            getPoint2: function() {
+              return this._segment2._point;
+            },
+            setPoint2: function() {
+              this._segment2._point.set(Point.read(arguments));
+            },
+            getHandle1: function() {
+              return this._segment1._handleOut;
+            },
+            setHandle1: function() {
+              this._segment1._handleOut.set(Point.read(arguments));
+            },
+            getHandle2: function() {
+              return this._segment2._handleIn;
+            },
+            setHandle2: function() {
+              this._segment2._handleIn.set(Point.read(arguments));
+            },
+            getSegment1: function() {
+              return this._segment1;
+            },
+            getSegment2: function() {
+              return this._segment2;
+            },
+            getPath: function() {
+              return this._path;
+            },
+            getIndex: function() {
+              return this._segment1._index;
+            },
+            getNext: function() {
+              var curves = this._path && this._path._curves;
+              return curves && (curves[this._segment1._index + 1] || this._path._closed && curves[0]) || null;
+            },
+            getPrevious: function() {
+              var curves = this._path && this._path._curves;
+              return curves && (curves[this._segment1._index - 1] || this._path._closed && curves[curves.length - 1]) || null;
+            },
+            isFirst: function() {
+              return !this._segment1._index;
+            },
+            isLast: function() {
+              var path = this._path;
+              return path && this._segment1._index === path._curves.length - 1 || false;
+            },
+            isSelected: function() {
+              return this.getPoint1().isSelected() && this.getHandle1().isSelected() && this.getHandle2().isSelected() && this.getPoint2().isSelected();
+            },
+            setSelected: function(selected) {
+              this.getPoint1().setSelected(selected);
+              this.getHandle1().setSelected(selected);
+              this.getHandle2().setSelected(selected);
+              this.getPoint2().setSelected(selected);
+            },
+            getValues: function(matrix) {
+              return Curve.getValues(this._segment1, this._segment2, matrix);
+            },
+            getPoints: function() {
+              var coords = this.getValues(), points = [];
+              for (var i = 0; i < 8; i += 2)
+                points.push(new Point(coords[i], coords[i + 1]));
+              return points;
+            }
+          },
+          {
+            getLength: function() {
+              if (this._length == null)
+                this._length = Curve.getLength(this.getValues(), 0, 1);
+              return this._length;
+            },
+            getArea: function() {
+              return Curve.getArea(this.getValues());
+            },
+            getLine: function() {
+              return new Line(this._segment1._point, this._segment2._point);
+            },
+            getPart: function(from, to) {
+              return new Curve(Curve.getPart(this.getValues(), from, to));
+            },
+            getPartLength: function(from, to) {
+              return Curve.getLength(this.getValues(), from, to);
+            },
+            divideAt: function(location) {
+              return this.divideAtTime(location && location.curve === this ? location.time : this.getTimeAt(location));
+            },
+            divideAtTime: function(time, _setHandles) {
+              var tMin = 1e-8, tMax = 1 - tMin, res = null;
+              if (time >= tMin && time <= tMax) {
+                var parts = Curve.subdivide(this.getValues(), time), left = parts[0], right = parts[1], setHandles = _setHandles || this.hasHandles(), seg1 = this._segment1, seg2 = this._segment2, path = this._path;
+                if (setHandles) {
+                  seg1._handleOut._set(left[2] - left[0], left[3] - left[1]);
+                  seg2._handleIn._set(right[4] - right[6], right[5] - right[7]);
+                }
+                var x = left[6], y = left[7], segment = new Segment(
+                  new Point(x, y),
+                  setHandles && new Point(left[4] - x, left[5] - y),
+                  setHandles && new Point(right[2] - x, right[3] - y)
+                );
+                if (path) {
+                  path.insert(seg1._index + 1, segment);
+                  res = this.getNext();
+                } else {
+                  this._segment2 = segment;
+                  this._changed();
+                  res = new Curve(segment, seg2);
+                }
+              }
+              return res;
+            },
+            splitAt: function(location) {
+              var path = this._path;
+              return path ? path.splitAt(location) : null;
+            },
+            splitAtTime: function(time) {
+              return this.splitAt(this.getLocationAtTime(time));
+            },
+            divide: function(offset, isTime) {
+              return this.divideAtTime(offset === undefined2 ? 0.5 : isTime ? offset : this.getTimeAt(offset));
+            },
+            split: function(offset, isTime) {
+              return this.splitAtTime(offset === undefined2 ? 0.5 : isTime ? offset : this.getTimeAt(offset));
+            },
+            reversed: function() {
+              return new Curve(this._segment2.reversed(), this._segment1.reversed());
+            },
+            clearHandles: function() {
+              this._segment1._handleOut._set(0, 0);
+              this._segment2._handleIn._set(0, 0);
+            },
+            statics: {
+              getValues: function(segment1, segment2, matrix, straight) {
+                var p1 = segment1._point, h1 = segment1._handleOut, h2 = segment2._handleIn, p2 = segment2._point, x1 = p1.x, y1 = p1.y, x2 = p2.x, y2 = p2.y, values = straight ? [x1, y1, x1, y1, x2, y2, x2, y2] : [
+                  x1,
+                  y1,
+                  x1 + h1._x,
+                  y1 + h1._y,
+                  x2 + h2._x,
+                  y2 + h2._y,
+                  x2,
+                  y2
+                ];
+                if (matrix)
+                  matrix._transformCoordinates(values, values, 4);
+                return values;
+              },
+              subdivide: function(v, t) {
+                var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7];
+                if (t === undefined2)
+                  t = 0.5;
+                var u = 1 - t, x4 = u * x0 + t * x1, y4 = u * y0 + t * y1, x5 = u * x1 + t * x2, y5 = u * y1 + t * y2, x6 = u * x2 + t * x3, y6 = u * y2 + t * y3, x7 = u * x4 + t * x5, y7 = u * y4 + t * y5, x8 = u * x5 + t * x6, y8 = u * y5 + t * y6, x9 = u * x7 + t * x8, y9 = u * y7 + t * y8;
+                return [
+                  [x0, y0, x4, y4, x7, y7, x9, y9],
+                  [x9, y9, x8, y8, x6, y6, x3, y3]
+                ];
+              },
+              getMonoCurves: function(v, dir) {
+                var curves = [], io = dir ? 0 : 1, o0 = v[io + 0], o1 = v[io + 2], o2 = v[io + 4], o3 = v[io + 6];
+                if (o0 >= o1 === o1 >= o2 && o1 >= o2 === o2 >= o3 || Curve.isStraight(v)) {
+                  curves.push(v);
+                } else {
+                  var a = 3 * (o1 - o2) - o0 + o3, b = 2 * (o0 + o2) - 4 * o1, c = o1 - o0, tMin = 1e-8, tMax = 1 - tMin, roots = [], n = Numerical.solveQuadratic(a, b, c, roots, tMin, tMax);
+                  if (!n) {
+                    curves.push(v);
+                  } else {
+                    roots.sort();
+                    var t = roots[0], parts = Curve.subdivide(v, t);
+                    curves.push(parts[0]);
+                    if (n > 1) {
+                      t = (roots[1] - t) / (1 - t);
+                      parts = Curve.subdivide(parts[1], t);
+                      curves.push(parts[0]);
+                    }
+                    curves.push(parts[1]);
+                  }
+                }
+                return curves;
+              },
+              solveCubic: function(v, coord, val, roots, min, max) {
+                var v0 = v[coord], v1 = v[coord + 2], v2 = v[coord + 4], v3 = v[coord + 6], res = 0;
+                if (!(v0 < val && v3 < val && v1 < val && v2 < val || v0 > val && v3 > val && v1 > val && v2 > val)) {
+                  var c = 3 * (v1 - v0), b = 3 * (v2 - v1) - c, a = v3 - v0 - c - b;
+                  res = Numerical.solveCubic(a, b, c, v0 - val, roots, min, max);
+                }
+                return res;
+              },
+              getTimeOf: function(v, point) {
+                var p0 = new Point(v[0], v[1]), p3 = new Point(v[6], v[7]), epsilon = 1e-12, geomEpsilon = 1e-7, t = point.isClose(p0, epsilon) ? 0 : point.isClose(p3, epsilon) ? 1 : null;
+                if (t === null) {
+                  var coords = [point.x, point.y], roots = [];
+                  for (var c = 0; c < 2; c++) {
+                    var count = Curve.solveCubic(v, c, coords[c], roots, 0, 1);
+                    for (var i = 0; i < count; i++) {
+                      var u = roots[i];
+                      if (point.isClose(Curve.getPoint(v, u), geomEpsilon))
+                        return u;
+                    }
+                  }
+                }
+                return point.isClose(p0, geomEpsilon) ? 0 : point.isClose(p3, geomEpsilon) ? 1 : null;
+              },
+              getNearestTime: function(v, point) {
+                if (Curve.isStraight(v)) {
+                  var x0 = v[0], y0 = v[1], x3 = v[6], y3 = v[7], vx = x3 - x0, vy = y3 - y0, det = vx * vx + vy * vy;
+                  if (det === 0)
+                    return 0;
+                  var u = ((point.x - x0) * vx + (point.y - y0) * vy) / det;
+                  return u < 1e-12 ? 0 : u > 0.999999999999 ? 1 : Curve.getTimeOf(
+                    v,
+                    new Point(x0 + u * vx, y0 + u * vy)
+                  );
+                }
+                var count = 100, minDist = Infinity, minT = 0;
+                function refine(t) {
+                  if (t >= 0 && t <= 1) {
+                    var dist = point.getDistance(Curve.getPoint(v, t), true);
+                    if (dist < minDist) {
+                      minDist = dist;
+                      minT = t;
+                      return true;
+                    }
+                  }
+                }
+                for (var i = 0; i <= count; i++)
+                  refine(i / count);
+                var step = 1 / (count * 2);
+                while (step > 1e-8) {
+                  if (!refine(minT - step) && !refine(minT + step))
+                    step /= 2;
+                }
+                return minT;
+              },
+              getPart: function(v, from, to) {
+                var flip = from > to;
+                if (flip) {
+                  var tmp = from;
+                  from = to;
+                  to = tmp;
+                }
+                if (from > 0)
+                  v = Curve.subdivide(v, from)[1];
+                if (to < 1)
+                  v = Curve.subdivide(v, (to - from) / (1 - from))[0];
+                return flip ? [v[6], v[7], v[4], v[5], v[2], v[3], v[0], v[1]] : v;
+              },
+              isFlatEnough: function(v, flatness) {
+                var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7], ux = 3 * x1 - 2 * x0 - x3, uy = 3 * y1 - 2 * y0 - y3, vx = 3 * x2 - 2 * x3 - x0, vy = 3 * y2 - 2 * y3 - y0;
+                return Math.max(ux * ux, vx * vx) + Math.max(uy * uy, vy * vy) <= 16 * flatness * flatness;
+              },
+              getArea: function(v) {
+                var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7];
+                return 3 * ((y3 - y0) * (x1 + x2) - (x3 - x0) * (y1 + y2) + y1 * (x0 - x2) - x1 * (y0 - y2) + y3 * (x2 + x0 / 3) - x3 * (y2 + y0 / 3)) / 20;
+              },
+              getBounds: function(v) {
+                var min = v.slice(0, 2), max = min.slice(), roots = [0, 0];
+                for (var i = 0; i < 2; i++)
+                  Curve._addBounds(
+                    v[i],
+                    v[i + 2],
+                    v[i + 4],
+                    v[i + 6],
+                    i,
+                    0,
+                    min,
+                    max,
+                    roots
+                  );
+                return new Rectangle(min[0], min[1], max[0] - min[0], max[1] - min[1]);
+              },
+              _addBounds: function(v0, v1, v2, v3, coord, padding, min, max, roots) {
+                function add(value, padding2) {
+                  var left = value - padding2, right = value + padding2;
+                  if (left < min[coord])
+                    min[coord] = left;
+                  if (right > max[coord])
+                    max[coord] = right;
+                }
+                padding /= 2;
+                var minPad = min[coord] + padding, maxPad = max[coord] - padding;
+                if (v0 < minPad || v1 < minPad || v2 < minPad || v3 < minPad || v0 > maxPad || v1 > maxPad || v2 > maxPad || v3 > maxPad) {
+                  if (v1 < v0 != v1 < v3 && v2 < v0 != v2 < v3) {
+                    add(v0, 0);
+                    add(v3, 0);
+                  } else {
+                    var a = 3 * (v1 - v2) - v0 + v3, b = 2 * (v0 + v2) - 4 * v1, c = v1 - v0, count = Numerical.solveQuadratic(a, b, c, roots), tMin = 1e-8, tMax = 1 - tMin;
+                    add(v3, 0);
+                    for (var i = 0; i < count; i++) {
+                      var t = roots[i], u = 1 - t;
+                      if (tMin <= t && t <= tMax)
+                        add(
+                          u * u * u * v0 + 3 * u * u * t * v1 + 3 * u * t * t * v2 + t * t * t * v3,
+                          padding
+                        );
+                    }
+                  }
+                }
+              }
+            }
+          },
+          Base.each(
+            ["getBounds", "getStrokeBounds", "getHandleBounds"],
+            function(name) {
+              this[name] = function() {
+                if (!this._bounds)
+                  this._bounds = {};
+                var bounds = this._bounds[name];
+                if (!bounds) {
+                  bounds = this._bounds[name] = Path[name](
+                    [this._segment1, this._segment2],
+                    false,
+                    this._path
+                  );
+                }
+                return bounds.clone();
+              };
+            },
+            {}
+          ),
+          Base.each({
+            isStraight: function(p1, h1, h2, p2) {
+              if (h1.isZero() && h2.isZero()) {
+                return true;
+              } else {
+                var v = p2.subtract(p1);
+                if (v.isZero()) {
+                  return false;
+                } else if (v.isCollinear(h1) && v.isCollinear(h2)) {
+                  var l = new Line(p1, p2), epsilon = 1e-7;
+                  if (l.getDistance(p1.add(h1)) < epsilon && l.getDistance(p2.add(h2)) < epsilon) {
+                    var div = v.dot(v), s1 = v.dot(h1) / div, s2 = v.dot(h2) / div;
+                    return s1 >= 0 && s1 <= 1 && s2 <= 0 && s2 >= -1;
+                  }
+                }
+              }
+              return false;
+            },
+            isLinear: function(p1, h1, h2, p2) {
+              var third = p2.subtract(p1).divide(3);
+              return h1.equals(third) && h2.negate().equals(third);
+            }
+          }, function(test, name) {
+            this[name] = function(epsilon) {
+              var seg1 = this._segment1, seg2 = this._segment2;
+              return test(
+                seg1._point,
+                seg1._handleOut,
+                seg2._handleIn,
+                seg2._point,
+                epsilon
+              );
+            };
+            this.statics[name] = function(v, epsilon) {
+              var x0 = v[0], y0 = v[1], x3 = v[6], y3 = v[7];
+              return test(
+                new Point(x0, y0),
+                new Point(v[2] - x0, v[3] - y0),
+                new Point(v[4] - x3, v[5] - y3),
+                new Point(x3, y3),
+                epsilon
+              );
+            };
+          }, {
+            statics: {},
+            hasHandles: function() {
+              return !this._segment1._handleOut.isZero() || !this._segment2._handleIn.isZero();
+            },
+            hasLength: function(epsilon) {
+              return (!this.getPoint1().equals(this.getPoint2()) || this.hasHandles()) && this.getLength() > (epsilon || 0);
+            },
+            isCollinear: function(curve) {
+              return curve && this.isStraight() && curve.isStraight() && this.getLine().isCollinear(curve.getLine());
+            },
+            isHorizontal: function() {
+              return this.isStraight() && Math.abs(this.getTangentAtTime(0.5).y) < 1e-8;
+            },
+            isVertical: function() {
+              return this.isStraight() && Math.abs(this.getTangentAtTime(0.5).x) < 1e-8;
+            }
+          }),
+          {
+            beans: false,
+            getLocationAt: function(offset, _isTime) {
+              return this.getLocationAtTime(
+                _isTime ? offset : this.getTimeAt(offset)
+              );
+            },
+            getLocationAtTime: function(t) {
+              return t != null && t >= 0 && t <= 1 ? new CurveLocation(this, t) : null;
+            },
+            getTimeAt: function(offset, start) {
+              return Curve.getTimeAt(this.getValues(), offset, start);
+            },
+            getParameterAt: "#getTimeAt",
+            getTimesWithTangent: function() {
+              var tangent = Point.read(arguments);
+              return tangent.isZero() ? [] : Curve.getTimesWithTangent(this.getValues(), tangent);
+            },
+            getOffsetAtTime: function(t) {
+              return this.getPartLength(0, t);
+            },
+            getLocationOf: function() {
+              return this.getLocationAtTime(this.getTimeOf(Point.read(arguments)));
+            },
+            getOffsetOf: function() {
+              var loc = this.getLocationOf.apply(this, arguments);
+              return loc ? loc.getOffset() : null;
+            },
+            getTimeOf: function() {
+              return Curve.getTimeOf(this.getValues(), Point.read(arguments));
+            },
+            getParameterOf: "#getTimeOf",
+            getNearestLocation: function() {
+              var point = Point.read(arguments), values = this.getValues(), t = Curve.getNearestTime(values, point), pt = Curve.getPoint(values, t);
+              return new CurveLocation(this, t, pt, null, point.getDistance(pt));
+            },
+            getNearestPoint: function() {
+              var loc = this.getNearestLocation.apply(this, arguments);
+              return loc ? loc.getPoint() : loc;
+            }
+          },
+          new function() {
+            var methods = [
+              "getPoint",
+              "getTangent",
+              "getNormal",
+              "getWeightedTangent",
+              "getWeightedNormal",
+              "getCurvature"
+            ];
+            return Base.each(
+              methods,
+              function(name) {
+                this[name + "At"] = function(location, _isTime) {
+                  var values = this.getValues();
+                  return Curve[name](values, _isTime ? location : Curve.getTimeAt(values, location));
+                };
+                this[name + "AtTime"] = function(time) {
+                  return Curve[name](this.getValues(), time);
+                };
+              },
+              {
+                statics: {
+                  _evaluateMethods: methods
+                }
+              }
+            );
+          }(),
+          new function() {
+            function getLengthIntegrand(v) {
+              var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7], ax = 9 * (x1 - x2) + 3 * (x3 - x0), bx = 6 * (x0 + x2) - 12 * x1, cx = 3 * (x1 - x0), ay = 9 * (y1 - y2) + 3 * (y3 - y0), by = 6 * (y0 + y2) - 12 * y1, cy = 3 * (y1 - y0);
+              return function(t) {
+                var dx = (ax * t + bx) * t + cx, dy = (ay * t + by) * t + cy;
+                return Math.sqrt(dx * dx + dy * dy);
+              };
+            }
+            function getIterations(a, b) {
+              return Math.max(2, Math.min(16, Math.ceil(Math.abs(b - a) * 32)));
+            }
+            function evaluate(v, t, type, normalized) {
+              if (t == null || t < 0 || t > 1)
+                return null;
+              var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7], isZero = Numerical.isZero;
+              if (isZero(x1 - x0) && isZero(y1 - y0)) {
+                x1 = x0;
+                y1 = y0;
+              }
+              if (isZero(x2 - x3) && isZero(y2 - y3)) {
+                x2 = x3;
+                y2 = y3;
+              }
+              var cx = 3 * (x1 - x0), bx = 3 * (x2 - x1) - cx, ax = x3 - x0 - cx - bx, cy = 3 * (y1 - y0), by = 3 * (y2 - y1) - cy, ay = y3 - y0 - cy - by, x, y;
+              if (type === 0) {
+                x = t === 0 ? x0 : t === 1 ? x3 : ((ax * t + bx) * t + cx) * t + x0;
+                y = t === 0 ? y0 : t === 1 ? y3 : ((ay * t + by) * t + cy) * t + y0;
+              } else {
+                var tMin = 1e-8, tMax = 1 - tMin;
+                if (t < tMin) {
+                  x = cx;
+                  y = cy;
+                } else if (t > tMax) {
+                  x = 3 * (x3 - x2);
+                  y = 3 * (y3 - y2);
+                } else {
+                  x = (3 * ax * t + 2 * bx) * t + cx;
+                  y = (3 * ay * t + 2 * by) * t + cy;
+                }
+                if (normalized) {
+                  if (x === 0 && y === 0 && (t < tMin || t > tMax)) {
+                    x = x2 - x1;
+                    y = y2 - y1;
+                  }
+                  var len = Math.sqrt(x * x + y * y);
+                  if (len) {
+                    x /= len;
+                    y /= len;
+                  }
+                }
+                if (type === 3) {
+                  var x2 = 6 * ax * t + 2 * bx, y2 = 6 * ay * t + 2 * by, d = Math.pow(x * x + y * y, 3 / 2);
+                  x = d !== 0 ? (x * y2 - y * x2) / d : 0;
+                  y = 0;
+                }
+              }
+              return type === 2 ? new Point(y, -x) : new Point(x, y);
+            }
+            return { statics: {
+              classify: function(v) {
+                var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7], a1 = x0 * (y3 - y2) + y0 * (x2 - x3) + x3 * y2 - y3 * x2, a2 = x1 * (y0 - y3) + y1 * (x3 - x0) + x0 * y3 - y0 * x3, a3 = x2 * (y1 - y0) + y2 * (x0 - x1) + x1 * y0 - y1 * x0, d3 = 3 * a3, d2 = d3 - a2, d1 = d2 - a2 + a1, l = Math.sqrt(d1 * d1 + d2 * d2 + d3 * d3), s = l !== 0 ? 1 / l : 0, isZero = Numerical.isZero, serpentine = "serpentine";
+                d1 *= s;
+                d2 *= s;
+                d3 *= s;
+                function type(type2, t1, t2) {
+                  var hasRoots = t1 !== undefined2, t1Ok = hasRoots && t1 > 0 && t1 < 1, t2Ok = hasRoots && t2 > 0 && t2 < 1;
+                  if (hasRoots && (!(t1Ok || t2Ok) || type2 === "loop" && !(t1Ok && t2Ok))) {
+                    type2 = "arch";
+                    t1Ok = t2Ok = false;
+                  }
+                  return {
+                    type: type2,
+                    roots: t1Ok || t2Ok ? t1Ok && t2Ok ? t1 < t2 ? [t1, t2] : [t2, t1] : [t1Ok ? t1 : t2] : null
+                  };
+                }
+                if (isZero(d1)) {
+                  return isZero(d2) ? type(isZero(d3) ? "line" : "quadratic") : type(serpentine, d3 / (3 * d2));
+                }
+                var d = 3 * d2 * d2 - 4 * d1 * d3;
+                if (isZero(d)) {
+                  return type("cusp", d2 / (2 * d1));
+                }
+                var f1 = d > 0 ? Math.sqrt(d / 3) : Math.sqrt(-d), f2 = 2 * d1;
+                return type(
+                  d > 0 ? serpentine : "loop",
+                  (d2 + f1) / f2,
+                  (d2 - f1) / f2
+                );
+              },
+              getLength: function(v, a, b, ds) {
+                if (a === undefined2)
+                  a = 0;
+                if (b === undefined2)
+                  b = 1;
+                if (Curve.isStraight(v)) {
+                  var c = v;
+                  if (b < 1) {
+                    c = Curve.subdivide(c, b)[0];
+                    a /= b;
+                  }
+                  if (a > 0) {
+                    c = Curve.subdivide(c, a)[1];
+                  }
+                  var dx = c[6] - c[0], dy = c[7] - c[1];
+                  return Math.sqrt(dx * dx + dy * dy);
+                }
+                return Numerical.integrate(
+                  ds || getLengthIntegrand(v),
+                  a,
+                  b,
+                  getIterations(a, b)
+                );
+              },
+              getTimeAt: function(v, offset, start) {
+                if (start === undefined2)
+                  start = offset < 0 ? 1 : 0;
+                if (offset === 0)
+                  return start;
+                var abs = Math.abs, epsilon = 1e-12, forward = offset > 0, a = forward ? start : 0, b = forward ? 1 : start, ds = getLengthIntegrand(v), rangeLength = Curve.getLength(v, a, b, ds), diff = abs(offset) - rangeLength;
+                if (abs(diff) < epsilon) {
+                  return forward ? b : a;
+                } else if (diff > epsilon) {
+                  return null;
+                }
+                var guess = offset / rangeLength, length = 0;
+                function f(t) {
+                  length += Numerical.integrate(
+                    ds,
+                    start,
+                    t,
+                    getIterations(start, t)
+                  );
+                  start = t;
+                  return length - offset;
+                }
+                return Numerical.findRoot(
+                  f,
+                  ds,
+                  start + guess,
+                  a,
+                  b,
+                  32,
+                  1e-12
+                );
+              },
+              getPoint: function(v, t) {
+                return evaluate(v, t, 0, false);
+              },
+              getTangent: function(v, t) {
+                return evaluate(v, t, 1, true);
+              },
+              getWeightedTangent: function(v, t) {
+                return evaluate(v, t, 1, false);
+              },
+              getNormal: function(v, t) {
+                return evaluate(v, t, 2, true);
+              },
+              getWeightedNormal: function(v, t) {
+                return evaluate(v, t, 2, false);
+              },
+              getCurvature: function(v, t) {
+                return evaluate(v, t, 3, false).x;
+              },
+              getPeaks: function(v) {
+                var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7], ax = -x0 + 3 * x1 - 3 * x2 + x3, bx = 3 * x0 - 6 * x1 + 3 * x2, cx = -3 * x0 + 3 * x1, ay = -y0 + 3 * y1 - 3 * y2 + y3, by = 3 * y0 - 6 * y1 + 3 * y2, cy = -3 * y0 + 3 * y1, tMin = 1e-8, tMax = 1 - tMin, roots = [];
+                Numerical.solveCubic(
+                  9 * (ax * ax + ay * ay),
+                  9 * (ax * bx + by * ay),
+                  2 * (bx * bx + by * by) + 3 * (cx * ax + cy * ay),
+                  cx * bx + by * cy,
+                  roots,
+                  tMin,
+                  tMax
+                );
+                return roots.sort();
+              }
+            } };
+          }(),
+          new function() {
+            function addLocation(locations, include, c1, t1, c2, t2, overlap) {
+              var excludeStart = !overlap && c1.getPrevious() === c2, excludeEnd = !overlap && c1 !== c2 && c1.getNext() === c2, tMin = 1e-8, tMax = 1 - tMin;
+              if (t1 !== null && t1 >= (excludeStart ? tMin : 0) && t1 <= (excludeEnd ? tMax : 1)) {
+                if (t2 !== null && t2 >= (excludeEnd ? tMin : 0) && t2 <= (excludeStart ? tMax : 1)) {
+                  var loc1 = new CurveLocation(c1, t1, null, overlap), loc2 = new CurveLocation(c2, t2, null, overlap);
+                  loc1._intersection = loc2;
+                  loc2._intersection = loc1;
+                  if (!include || include(loc1)) {
+                    CurveLocation.insert(locations, loc1, true);
+                  }
+                }
+              }
+            }
+            function addCurveIntersections(v1, v2, c1, c2, locations, include, flip, recursion, calls, tMin, tMax, uMin, uMax) {
+              if (++calls >= 4096 || ++recursion >= 40)
+                return calls;
+              var fatLineEpsilon = 1e-9, q0x = v2[0], q0y = v2[1], q3x = v2[6], q3y = v2[7], getSignedDistance = Line.getSignedDistance, d1 = getSignedDistance(q0x, q0y, q3x, q3y, v2[2], v2[3]), d2 = getSignedDistance(q0x, q0y, q3x, q3y, v2[4], v2[5]), factor = d1 * d2 > 0 ? 3 / 4 : 4 / 9, dMin = factor * Math.min(0, d1, d2), dMax = factor * Math.max(0, d1, d2), dp0 = getSignedDistance(q0x, q0y, q3x, q3y, v1[0], v1[1]), dp1 = getSignedDistance(q0x, q0y, q3x, q3y, v1[2], v1[3]), dp2 = getSignedDistance(q0x, q0y, q3x, q3y, v1[4], v1[5]), dp3 = getSignedDistance(q0x, q0y, q3x, q3y, v1[6], v1[7]), hull = getConvexHull(dp0, dp1, dp2, dp3), top = hull[0], bottom = hull[1], tMinClip, tMaxClip;
+              if (d1 === 0 && d2 === 0 && dp0 === 0 && dp1 === 0 && dp2 === 0 && dp3 === 0 || (tMinClip = clipConvexHull(top, bottom, dMin, dMax)) == null || (tMaxClip = clipConvexHull(
+                top.reverse(),
+                bottom.reverse(),
+                dMin,
+                dMax
+              )) == null)
+                return calls;
+              var tMinNew = tMin + (tMax - tMin) * tMinClip, tMaxNew = tMin + (tMax - tMin) * tMaxClip;
+              if (Math.max(uMax - uMin, tMaxNew - tMinNew) < fatLineEpsilon) {
+                var t = (tMinNew + tMaxNew) / 2, u = (uMin + uMax) / 2;
+                addLocation(
+                  locations,
+                  include,
+                  flip ? c2 : c1,
+                  flip ? u : t,
+                  flip ? c1 : c2,
+                  flip ? t : u
+                );
+              } else {
+                v1 = Curve.getPart(v1, tMinClip, tMaxClip);
+                var uDiff = uMax - uMin;
+                if (tMaxClip - tMinClip > 0.8) {
+                  if (tMaxNew - tMinNew > uDiff) {
+                    var parts = Curve.subdivide(v1, 0.5), t = (tMinNew + tMaxNew) / 2;
+                    calls = addCurveIntersections(
+                      v2,
+                      parts[0],
+                      c2,
+                      c1,
+                      locations,
+                      include,
+                      !flip,
+                      recursion,
+                      calls,
+                      uMin,
+                      uMax,
+                      tMinNew,
+                      t
+                    );
+                    calls = addCurveIntersections(
+                      v2,
+                      parts[1],
+                      c2,
+                      c1,
+                      locations,
+                      include,
+                      !flip,
+                      recursion,
+                      calls,
+                      uMin,
+                      uMax,
+                      t,
+                      tMaxNew
+                    );
+                  } else {
+                    var parts = Curve.subdivide(v2, 0.5), u = (uMin + uMax) / 2;
+                    calls = addCurveIntersections(
+                      parts[0],
+                      v1,
+                      c2,
+                      c1,
+                      locations,
+                      include,
+                      !flip,
+                      recursion,
+                      calls,
+                      uMin,
+                      u,
+                      tMinNew,
+                      tMaxNew
+                    );
+                    calls = addCurveIntersections(
+                      parts[1],
+                      v1,
+                      c2,
+                      c1,
+                      locations,
+                      include,
+                      !flip,
+                      recursion,
+                      calls,
+                      u,
+                      uMax,
+                      tMinNew,
+                      tMaxNew
+                    );
+                  }
+                } else {
+                  if (uDiff === 0 || uDiff >= fatLineEpsilon) {
+                    calls = addCurveIntersections(
+                      v2,
+                      v1,
+                      c2,
+                      c1,
+                      locations,
+                      include,
+                      !flip,
+                      recursion,
+                      calls,
+                      uMin,
+                      uMax,
+                      tMinNew,
+                      tMaxNew
+                    );
+                  } else {
+                    calls = addCurveIntersections(
+                      v1,
+                      v2,
+                      c1,
+                      c2,
+                      locations,
+                      include,
+                      flip,
+                      recursion,
+                      calls,
+                      tMinNew,
+                      tMaxNew,
+                      uMin,
+                      uMax
+                    );
+                  }
+                }
+              }
+              return calls;
+            }
+            function getConvexHull(dq0, dq1, dq2, dq3) {
+              var p0 = [0, dq0], p1 = [1 / 3, dq1], p2 = [2 / 3, dq2], p3 = [1, dq3], dist1 = dq1 - (2 * dq0 + dq3) / 3, dist2 = dq2 - (dq0 + 2 * dq3) / 3, hull;
+              if (dist1 * dist2 < 0) {
+                hull = [[p0, p1, p3], [p0, p2, p3]];
+              } else {
+                var distRatio = dist1 / dist2;
+                hull = [
+                  distRatio >= 2 ? [p0, p1, p3] : distRatio <= 0.5 ? [p0, p2, p3] : [p0, p1, p2, p3],
+                  [p0, p3]
+                ];
+              }
+              return (dist1 || dist2) < 0 ? hull.reverse() : hull;
+            }
+            function clipConvexHull(hullTop, hullBottom, dMin, dMax) {
+              if (hullTop[0][1] < dMin) {
+                return clipConvexHullPart(hullTop, true, dMin);
+              } else if (hullBottom[0][1] > dMax) {
+                return clipConvexHullPart(hullBottom, false, dMax);
+              } else {
+                return hullTop[0][0];
+              }
+            }
+            function clipConvexHullPart(part, top, threshold) {
+              var px = part[0][0], py = part[0][1];
+              for (var i = 1, l = part.length; i < l; i++) {
+                var qx = part[i][0], qy = part[i][1];
+                if (top ? qy >= threshold : qy <= threshold) {
+                  return qy === threshold ? qx : px + (threshold - py) * (qx - px) / (qy - py);
+                }
+                px = qx;
+                py = qy;
+              }
+              return null;
+            }
+            function getCurveLineIntersections(v, px, py, vx, vy) {
+              var isZero = Numerical.isZero;
+              if (isZero(vx) && isZero(vy)) {
+                var t = Curve.getTimeOf(v, new Point(px, py));
+                return t === null ? [] : [t];
+              }
+              var angle = Math.atan2(-vy, vx), sin = Math.sin(angle), cos = Math.cos(angle), rv = [], roots = [];
+              for (var i = 0; i < 8; i += 2) {
+                var x = v[i] - px, y = v[i + 1] - py;
+                rv.push(
+                  x * cos - y * sin,
+                  x * sin + y * cos
+                );
+              }
+              Curve.solveCubic(rv, 1, 0, roots, 0, 1);
+              return roots;
+            }
+            function addCurveLineIntersections(v1, v2, c1, c2, locations, include, flip) {
+              var x1 = v2[0], y1 = v2[1], x2 = v2[6], y2 = v2[7], roots = getCurveLineIntersections(v1, x1, y1, x2 - x1, y2 - y1);
+              for (var i = 0, l = roots.length; i < l; i++) {
+                var t1 = roots[i], p1 = Curve.getPoint(v1, t1), t2 = Curve.getTimeOf(v2, p1);
+                if (t2 !== null) {
+                  addLocation(
+                    locations,
+                    include,
+                    flip ? c2 : c1,
+                    flip ? t2 : t1,
+                    flip ? c1 : c2,
+                    flip ? t1 : t2
+                  );
+                }
+              }
+            }
+            function addLineIntersection(v1, v2, c1, c2, locations, include) {
+              var pt = Line.intersect(
+                v1[0],
+                v1[1],
+                v1[6],
+                v1[7],
+                v2[0],
+                v2[1],
+                v2[6],
+                v2[7]
+              );
+              if (pt) {
+                addLocation(
+                  locations,
+                  include,
+                  c1,
+                  Curve.getTimeOf(v1, pt),
+                  c2,
+                  Curve.getTimeOf(v2, pt)
+                );
+              }
+            }
+            function getCurveIntersections(v1, v2, c1, c2, locations, include) {
+              var epsilon = 1e-12, min = Math.min, max = Math.max;
+              if (max(v1[0], v1[2], v1[4], v1[6]) + epsilon > min(v2[0], v2[2], v2[4], v2[6]) && min(v1[0], v1[2], v1[4], v1[6]) - epsilon < max(v2[0], v2[2], v2[4], v2[6]) && max(v1[1], v1[3], v1[5], v1[7]) + epsilon > min(v2[1], v2[3], v2[5], v2[7]) && min(v1[1], v1[3], v1[5], v1[7]) - epsilon < max(v2[1], v2[3], v2[5], v2[7])) {
+                var overlaps = getOverlaps(v1, v2);
+                if (overlaps) {
+                  for (var i = 0; i < 2; i++) {
+                    var overlap = overlaps[i];
+                    addLocation(
+                      locations,
+                      include,
+                      c1,
+                      overlap[0],
+                      c2,
+                      overlap[1],
+                      true
+                    );
+                  }
+                } else {
+                  var straight1 = Curve.isStraight(v1), straight2 = Curve.isStraight(v2), straight = straight1 && straight2, flip = straight1 && !straight2, before = locations.length;
+                  (straight ? addLineIntersection : straight1 || straight2 ? addCurveLineIntersections : addCurveIntersections)(
+                    flip ? v2 : v1,
+                    flip ? v1 : v2,
+                    flip ? c2 : c1,
+                    flip ? c1 : c2,
+                    locations,
+                    include,
+                    flip,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    1
+                  );
+                  if (!straight || locations.length === before) {
+                    for (var i = 0; i < 4; i++) {
+                      var t1 = i >> 1, t2 = i & 1, i1 = t1 * 6, i2 = t2 * 6, p1 = new Point(v1[i1], v1[i1 + 1]), p2 = new Point(v2[i2], v2[i2 + 1]);
+                      if (p1.isClose(p2, epsilon)) {
+                        addLocation(
+                          locations,
+                          include,
+                          c1,
+                          t1,
+                          c2,
+                          t2
+                        );
+                      }
+                    }
+                  }
+                }
+              }
+              return locations;
+            }
+            function getSelfIntersection(v1, c1, locations, include) {
+              var info = Curve.classify(v1);
+              if (info.type === "loop") {
+                var roots = info.roots;
+                addLocation(
+                  locations,
+                  include,
+                  c1,
+                  roots[0],
+                  c1,
+                  roots[1]
+                );
+              }
+              return locations;
+            }
+            function getIntersections(curves1, curves2, include, matrix1, matrix2, _returnFirst) {
+              var epsilon = 1e-7, self3 = !curves2;
+              if (self3)
+                curves2 = curves1;
+              var length1 = curves1.length, length2 = curves2.length, values1 = new Array(length1), values2 = self3 ? values1 : new Array(length2), locations = [];
+              for (var i = 0; i < length1; i++) {
+                values1[i] = curves1[i].getValues(matrix1);
+              }
+              if (!self3) {
+                for (var i = 0; i < length2; i++) {
+                  values2[i] = curves2[i].getValues(matrix2);
+                }
+              }
+              var boundsCollisions = CollisionDetection.findCurveBoundsCollisions(
+                values1,
+                values2,
+                epsilon
+              );
+              for (var index1 = 0; index1 < length1; index1++) {
+                var curve1 = curves1[index1], v1 = values1[index1];
+                if (self3) {
+                  getSelfIntersection(v1, curve1, locations, include);
+                }
+                var collisions1 = boundsCollisions[index1];
+                if (collisions1) {
+                  for (var j = 0; j < collisions1.length; j++) {
+                    if (_returnFirst && locations.length)
+                      return locations;
+                    var index2 = collisions1[j];
+                    if (!self3 || index2 > index1) {
+                      var curve2 = curves2[index2], v2 = values2[index2];
+                      getCurveIntersections(
+                        v1,
+                        v2,
+                        curve1,
+                        curve2,
+                        locations,
+                        include
+                      );
+                    }
+                  }
+                }
+              }
+              return locations;
+            }
+            function getOverlaps(v1, v2) {
+              function getSquaredLineLength(v3) {
+                var x = v3[6] - v3[0], y = v3[7] - v3[1];
+                return x * x + y * y;
+              }
+              var abs = Math.abs, getDistance = Line.getDistance, timeEpsilon = 1e-8, geomEpsilon = 1e-7, straight1 = Curve.isStraight(v1), straight2 = Curve.isStraight(v2), straightBoth = straight1 && straight2, flip = getSquaredLineLength(v1) < getSquaredLineLength(v2), l1 = flip ? v2 : v1, l2 = flip ? v1 : v2, px = l1[0], py = l1[1], vx = l1[6] - px, vy = l1[7] - py;
+              if (getDistance(px, py, vx, vy, l2[0], l2[1], true) < geomEpsilon && getDistance(px, py, vx, vy, l2[6], l2[7], true) < geomEpsilon) {
+                if (!straightBoth && getDistance(px, py, vx, vy, l1[2], l1[3], true) < geomEpsilon && getDistance(px, py, vx, vy, l1[4], l1[5], true) < geomEpsilon && getDistance(px, py, vx, vy, l2[2], l2[3], true) < geomEpsilon && getDistance(px, py, vx, vy, l2[4], l2[5], true) < geomEpsilon) {
+                  straight1 = straight2 = straightBoth = true;
+                }
+              } else if (straightBoth) {
+                return null;
+              }
+              if (straight1 ^ straight2) {
+                return null;
+              }
+              var v = [v1, v2], pairs = [];
+              for (var i = 0; i < 4 && pairs.length < 2; i++) {
+                var i1 = i & 1, i2 = i1 ^ 1, t1 = i >> 1, t2 = Curve.getTimeOf(v[i1], new Point(
+                  v[i2][t1 ? 6 : 0],
+                  v[i2][t1 ? 7 : 1]
+                ));
+                if (t2 != null) {
+                  var pair = i1 ? [t1, t2] : [t2, t1];
+                  if (!pairs.length || abs(pair[0] - pairs[0][0]) > timeEpsilon && abs(pair[1] - pairs[0][1]) > timeEpsilon) {
+                    pairs.push(pair);
+                  }
+                }
+                if (i > 2 && !pairs.length)
+                  break;
+              }
+              if (pairs.length !== 2) {
+                pairs = null;
+              } else if (!straightBoth) {
+                var o1 = Curve.getPart(v1, pairs[0][0], pairs[1][0]), o2 = Curve.getPart(v2, pairs[0][1], pairs[1][1]);
+                if (abs(o2[2] - o1[2]) > geomEpsilon || abs(o2[3] - o1[3]) > geomEpsilon || abs(o2[4] - o1[4]) > geomEpsilon || abs(o2[5] - o1[5]) > geomEpsilon)
+                  pairs = null;
+              }
+              return pairs;
+            }
+            function getTimesWithTangent(v, tangent) {
+              var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7], normalized = tangent.normalize(), tx = normalized.x, ty = normalized.y, ax = 3 * x3 - 9 * x2 + 9 * x1 - 3 * x0, ay = 3 * y3 - 9 * y2 + 9 * y1 - 3 * y0, bx = 6 * x2 - 12 * x1 + 6 * x0, by = 6 * y2 - 12 * y1 + 6 * y0, cx = 3 * x1 - 3 * x0, cy = 3 * y1 - 3 * y0, den = 2 * ax * ty - 2 * ay * tx, times = [];
+              if (Math.abs(den) < Numerical.CURVETIME_EPSILON) {
+                var num = ax * cy - ay * cx, den = ax * by - ay * bx;
+                if (den != 0) {
+                  var t = -num / den;
+                  if (t >= 0 && t <= 1)
+                    times.push(t);
+                }
+              } else {
+                var delta = (bx * bx - 4 * ax * cx) * ty * ty + (-2 * bx * by + 4 * ay * cx + 4 * ax * cy) * tx * ty + (by * by - 4 * ay * cy) * tx * tx, k = bx * ty - by * tx;
+                if (delta >= 0 && den != 0) {
+                  var d = Math.sqrt(delta), t0 = -(k + d) / den, t1 = (-k + d) / den;
+                  if (t0 >= 0 && t0 <= 1)
+                    times.push(t0);
+                  if (t1 >= 0 && t1 <= 1)
+                    times.push(t1);
+                }
+              }
+              return times;
+            }
+            return {
+              getIntersections: function(curve) {
+                var v1 = this.getValues(), v2 = curve && curve !== this && curve.getValues();
+                return v2 ? getCurveIntersections(v1, v2, this, curve, []) : getSelfIntersection(v1, this, []);
+              },
+              statics: {
+                getOverlaps,
+                getIntersections,
+                getCurveLineIntersections,
+                getTimesWithTangent
+              }
+            };
+          }()
+        );
+        var CurveLocation = Base.extend(
+          {
+            _class: "CurveLocation",
+            initialize: function CurveLocation2(curve, time, point, _overlap, _distance) {
+              if (time >= 0.99999999) {
+                var next = curve.getNext();
+                if (next) {
+                  time = 0;
+                  curve = next;
+                }
+              }
+              this._setCurve(curve);
+              this._time = time;
+              this._point = point || curve.getPointAtTime(time);
+              this._overlap = _overlap;
+              this._distance = _distance;
+              this._intersection = this._next = this._previous = null;
+            },
+            _setPath: function(path) {
+              this._path = path;
+              this._version = path ? path._version : 0;
+            },
+            _setCurve: function(curve) {
+              this._setPath(curve._path);
+              this._curve = curve;
+              this._segment = null;
+              this._segment1 = curve._segment1;
+              this._segment2 = curve._segment2;
+            },
+            _setSegment: function(segment) {
+              var curve = segment.getCurve();
+              if (curve) {
+                this._setCurve(curve);
+              } else {
+                this._setPath(segment._path);
+                this._segment1 = segment;
+                this._segment2 = null;
+              }
+              this._segment = segment;
+              this._time = segment === this._segment1 ? 0 : 1;
+              this._point = segment._point.clone();
+            },
+            getSegment: function() {
+              var segment = this._segment;
+              if (!segment) {
+                var curve = this.getCurve(), time = this.getTime();
+                if (time === 0) {
+                  segment = curve._segment1;
+                } else if (time === 1) {
+                  segment = curve._segment2;
+                } else if (time != null) {
+                  segment = curve.getPartLength(0, time) < curve.getPartLength(time, 1) ? curve._segment1 : curve._segment2;
+                }
+                this._segment = segment;
+              }
+              return segment;
+            },
+            getCurve: function() {
+              var path = this._path, that = this;
+              if (path && path._version !== this._version) {
+                this._time = this._offset = this._curveOffset = this._curve = null;
+              }
+              function trySegment(segment) {
+                var curve = segment && segment.getCurve();
+                if (curve && (that._time = curve.getTimeOf(that._point)) != null) {
+                  that._setCurve(curve);
+                  return curve;
+                }
+              }
+              return this._curve || trySegment(this._segment) || trySegment(this._segment1) || trySegment(this._segment2.getPrevious());
+            },
+            getPath: function() {
+              var curve = this.getCurve();
+              return curve && curve._path;
+            },
+            getIndex: function() {
+              var curve = this.getCurve();
+              return curve && curve.getIndex();
+            },
+            getTime: function() {
+              var curve = this.getCurve(), time = this._time;
+              return curve && time == null ? this._time = curve.getTimeOf(this._point) : time;
+            },
+            getParameter: "#getTime",
+            getPoint: function() {
+              return this._point;
+            },
+            getOffset: function() {
+              var offset = this._offset;
+              if (offset == null) {
+                offset = 0;
+                var path = this.getPath(), index = this.getIndex();
+                if (path && index != null) {
+                  var curves = path.getCurves();
+                  for (var i = 0; i < index; i++)
+                    offset += curves[i].getLength();
+                }
+                this._offset = offset += this.getCurveOffset();
+              }
+              return offset;
+            },
+            getCurveOffset: function() {
+              var offset = this._curveOffset;
+              if (offset == null) {
+                var curve = this.getCurve(), time = this.getTime();
+                this._curveOffset = offset = time != null && curve && curve.getPartLength(0, time);
+              }
+              return offset;
+            },
+            getIntersection: function() {
+              return this._intersection;
+            },
+            getDistance: function() {
+              return this._distance;
+            },
+            divide: function() {
+              var curve = this.getCurve(), res = curve && curve.divideAtTime(this.getTime());
+              if (res) {
+                this._setSegment(res._segment1);
+              }
+              return res;
+            },
+            split: function() {
+              var curve = this.getCurve(), path = curve._path, res = curve && curve.splitAtTime(this.getTime());
+              if (res) {
+                this._setSegment(path.getLastSegment());
+              }
+              return res;
+            },
+            equals: function(loc, _ignoreOther) {
+              var res = this === loc;
+              if (!res && loc instanceof CurveLocation) {
+                var c1 = this.getCurve(), c2 = loc.getCurve(), p1 = c1._path, p2 = c2._path;
+                if (p1 === p2) {
+                  var abs = Math.abs, epsilon = 1e-7, diff = abs(this.getOffset() - loc.getOffset()), i1 = !_ignoreOther && this._intersection, i2 = !_ignoreOther && loc._intersection;
+                  res = (diff < epsilon || p1 && abs(p1.getLength() - diff) < epsilon) && (!i1 && !i2 || i1 && i2 && i1.equals(i2, true));
+                }
+              }
+              return res;
+            },
+            toString: function() {
+              var parts = [], point = this.getPoint(), f = Formatter.instance;
+              if (point)
+                parts.push("point: " + point);
+              var index = this.getIndex();
+              if (index != null)
+                parts.push("index: " + index);
+              var time = this.getTime();
+              if (time != null)
+                parts.push("time: " + f.number(time));
+              if (this._distance != null)
+                parts.push("distance: " + f.number(this._distance));
+              return "{ " + parts.join(", ") + " }";
+            },
+            isTouching: function() {
+              var inter = this._intersection;
+              if (inter && this.getTangent().isCollinear(inter.getTangent())) {
+                var curve1 = this.getCurve(), curve2 = inter.getCurve();
+                return !(curve1.isStraight() && curve2.isStraight() && curve1.getLine().intersect(curve2.getLine()));
+              }
+              return false;
+            },
+            isCrossing: function() {
+              var inter = this._intersection;
+              if (!inter)
+                return false;
+              var t1 = this.getTime(), t2 = inter.getTime(), tMin = 1e-8, tMax = 1 - tMin, t1Inside = t1 >= tMin && t1 <= tMax, t2Inside = t2 >= tMin && t2 <= tMax;
+              if (t1Inside && t2Inside)
+                return !this.isTouching();
+              var c2 = this.getCurve(), c1 = c2 && t1 < tMin ? c2.getPrevious() : c2, c4 = inter.getCurve(), c3 = c4 && t2 < tMin ? c4.getPrevious() : c4;
+              if (t1 > tMax)
+                c2 = c2.getNext();
+              if (t2 > tMax)
+                c4 = c4.getNext();
+              if (!c1 || !c2 || !c3 || !c4)
+                return false;
+              var offsets = [];
+              function addOffsets(curve, end) {
+                var v = curve.getValues(), roots = Curve.classify(v).roots || Curve.getPeaks(v), count = roots.length, offset2 = Curve.getLength(
+                  v,
+                  end && count ? roots[count - 1] : 0,
+                  !end && count ? roots[0] : 1
+                );
+                offsets.push(count ? offset2 : offset2 / 32);
+              }
+              function isInRange(angle, min, max) {
+                return min < max ? angle > min && angle < max : angle > min || angle < max;
+              }
+              if (!t1Inside) {
+                addOffsets(c1, true);
+                addOffsets(c2, false);
+              }
+              if (!t2Inside) {
+                addOffsets(c3, true);
+                addOffsets(c4, false);
+              }
+              var pt = this.getPoint(), offset = Math.min.apply(Math, offsets), v2 = t1Inside ? c2.getTangentAtTime(t1) : c2.getPointAt(offset).subtract(pt), v1 = t1Inside ? v2.negate() : c1.getPointAt(-offset).subtract(pt), v4 = t2Inside ? c4.getTangentAtTime(t2) : c4.getPointAt(offset).subtract(pt), v3 = t2Inside ? v4.negate() : c3.getPointAt(-offset).subtract(pt), a1 = v1.getAngle(), a2 = v2.getAngle(), a3 = v3.getAngle(), a4 = v4.getAngle();
+              return !!(t1Inside ? isInRange(a1, a3, a4) ^ isInRange(a2, a3, a4) && isInRange(a1, a4, a3) ^ isInRange(a2, a4, a3) : isInRange(a3, a1, a2) ^ isInRange(a4, a1, a2) && isInRange(a3, a2, a1) ^ isInRange(a4, a2, a1));
+            },
+            hasOverlap: function() {
+              return !!this._overlap;
+            }
+          },
+          Base.each(Curve._evaluateMethods, function(name) {
+            var get = name + "At";
+            this[name] = function() {
+              var curve = this.getCurve(), time = this.getTime();
+              return time != null && curve && curve[get](time, true);
+            };
+          }, {
+            preserve: true
+          }),
+          new function() {
+            function insert(locations, loc, merge) {
+              var length = locations.length, l = 0, r = length - 1;
+              function search(index, dir) {
+                for (var i = index + dir; i >= -1 && i <= length; i += dir) {
+                  var loc22 = locations[(i % length + length) % length];
+                  if (!loc.getPoint().isClose(
+                    loc22.getPoint(),
+                    1e-7
+                  ))
+                    break;
+                  if (loc.equals(loc22))
+                    return loc22;
+                }
+                return null;
+              }
+              while (l <= r) {
+                var m = l + r >>> 1, loc2 = locations[m], found;
+                if (merge && (found = loc.equals(loc2) ? loc2 : search(m, -1) || search(m, 1))) {
+                  if (loc._overlap) {
+                    found._overlap = found._intersection._overlap = true;
+                  }
+                  return found;
+                }
+                var path1 = loc.getPath(), path2 = loc2.getPath(), diff = path1 !== path2 ? path1._id - path2._id : loc.getIndex() + loc.getTime() - (loc2.getIndex() + loc2.getTime());
+                if (diff < 0) {
+                  r = m - 1;
+                } else {
+                  l = m + 1;
+                }
+              }
+              locations.splice(l, 0, loc);
+              return loc;
+            }
+            return { statics: {
+              insert,
+              expand: function(locations) {
+                var expanded = locations.slice();
+                for (var i = locations.length - 1; i >= 0; i--) {
+                  insert(expanded, locations[i]._intersection, false);
+                }
+                return expanded;
+              }
+            } };
+          }()
+        );
+        var PathItem = Item.extend({
+          _class: "PathItem",
+          _selectBounds: false,
+          _canScaleStroke: true,
+          beans: true,
+          initialize: function PathItem2() {
+          },
+          statics: {
+            create: function(arg) {
+              var data, segments, compound;
+              if (Base.isPlainObject(arg)) {
+                segments = arg.segments;
+                data = arg.pathData;
+              } else if (Array.isArray(arg)) {
+                segments = arg;
+              } else if (typeof arg === "string") {
+                data = arg;
+              }
+              if (segments) {
+                var first = segments[0];
+                compound = first && Array.isArray(first[0]);
+              } else if (data) {
+                compound = (data.match(/m/gi) || []).length > 1 || /z\s*\S+/i.test(data);
+              }
+              var ctor = compound ? CompoundPath : Path;
+              return new ctor(arg);
+            }
+          },
+          _asPathItem: function() {
+            return this;
+          },
+          isClockwise: function() {
+            return this.getArea() >= 0;
+          },
+          setClockwise: function(clockwise) {
+            if (this.isClockwise() != (clockwise = !!clockwise))
+              this.reverse();
+          },
+          setPathData: function(data) {
+            var parts = data && data.match(/[mlhvcsqtaz][^mlhvcsqtaz]*/ig), coords, relative = false, previous, control, current = new Point(), start = new Point();
+            function getCoord(index, coord2) {
+              var val = +coords[index];
+              if (relative)
+                val += current[coord2];
+              return val;
+            }
+            function getPoint(index) {
+              return new Point(
+                getCoord(index, "x"),
+                getCoord(index + 1, "y")
+              );
+            }
+            this.clear();
+            for (var i = 0, l = parts && parts.length; i < l; i++) {
+              var part = parts[i], command = part[0], lower = command.toLowerCase();
+              coords = part.match(/[+-]?(?:\d*\.\d+|\d+\.?)(?:[eE][+-]?\d+)?/g);
+              var length = coords && coords.length;
+              relative = command === lower;
+              if (previous === "z" && !/[mz]/.test(lower))
+                this.moveTo(current);
+              switch (lower) {
+                case "m":
+                case "l":
+                  var move = lower === "m";
+                  for (var j = 0; j < length; j += 2) {
+                    this[move ? "moveTo" : "lineTo"](current = getPoint(j));
+                    if (move) {
+                      start = current;
+                      move = false;
+                    }
+                  }
+                  control = current;
+                  break;
+                case "h":
+                case "v":
+                  var coord = lower === "h" ? "x" : "y";
+                  current = current.clone();
+                  for (var j = 0; j < length; j++) {
+                    current[coord] = getCoord(j, coord);
+                    this.lineTo(current);
+                  }
+                  control = current;
+                  break;
+                case "c":
+                  for (var j = 0; j < length; j += 6) {
+                    this.cubicCurveTo(
+                      getPoint(j),
+                      control = getPoint(j + 2),
+                      current = getPoint(j + 4)
+                    );
+                  }
+                  break;
+                case "s":
+                  for (var j = 0; j < length; j += 4) {
+                    this.cubicCurveTo(
+                      /[cs]/.test(previous) ? current.multiply(2).subtract(control) : current,
+                      control = getPoint(j),
+                      current = getPoint(j + 2)
+                    );
+                    previous = lower;
+                  }
+                  break;
+                case "q":
+                  for (var j = 0; j < length; j += 4) {
+                    this.quadraticCurveTo(
+                      control = getPoint(j),
+                      current = getPoint(j + 2)
+                    );
+                  }
+                  break;
+                case "t":
+                  for (var j = 0; j < length; j += 2) {
+                    this.quadraticCurveTo(
+                      control = /[qt]/.test(previous) ? current.multiply(2).subtract(control) : current,
+                      current = getPoint(j)
+                    );
+                    previous = lower;
+                  }
+                  break;
+                case "a":
+                  for (var j = 0; j < length; j += 7) {
+                    this.arcTo(
+                      current = getPoint(j + 5),
+                      new Size(+coords[j], +coords[j + 1]),
+                      +coords[j + 2],
+                      +coords[j + 4],
+                      +coords[j + 3]
+                    );
+                  }
+                  break;
+                case "z":
+                  this.closePath(1e-12);
+                  current = start;
+                  break;
+              }
+              previous = lower;
+            }
+          },
+          _canComposite: function() {
+            return !(this.hasFill() && this.hasStroke());
+          },
+          _contains: function(point) {
+            var winding = point.isInside(
+              this.getBounds({ internal: true, handle: true })
+            ) ? this._getWinding(point) : {};
+            return winding.onPath || !!(this.getFillRule() === "evenodd" ? winding.windingL & 1 || winding.windingR & 1 : winding.winding);
+          },
+          getIntersections: function(path, include, _matrix, _returnFirst) {
+            var self3 = this === path || !path, matrix1 = this._matrix._orNullIfIdentity(), matrix2 = self3 ? matrix1 : (_matrix || path._matrix)._orNullIfIdentity();
+            return self3 || this.getBounds(matrix1).intersects(
+              path.getBounds(matrix2),
+              1e-12
+            ) ? Curve.getIntersections(
+              this.getCurves(),
+              !self3 && path.getCurves(),
+              include,
+              matrix1,
+              matrix2,
+              _returnFirst
+            ) : [];
+          },
+          getCrossings: function(path) {
+            return this.getIntersections(path, function(inter) {
+              return inter.isCrossing();
+            });
+          },
+          getNearestLocation: function() {
+            var point = Point.read(arguments), curves = this.getCurves(), minDist = Infinity, minLoc = null;
+            for (var i = 0, l = curves.length; i < l; i++) {
+              var loc = curves[i].getNearestLocation(point);
+              if (loc._distance < minDist) {
+                minDist = loc._distance;
+                minLoc = loc;
+              }
+            }
+            return minLoc;
+          },
+          getNearestPoint: function() {
+            var loc = this.getNearestLocation.apply(this, arguments);
+            return loc ? loc.getPoint() : loc;
+          },
+          interpolate: function(from, to, factor) {
+            var isPath = !this._children, name = isPath ? "_segments" : "_children", itemsFrom = from[name], itemsTo = to[name], items = this[name];
+            if (!itemsFrom || !itemsTo || itemsFrom.length !== itemsTo.length) {
+              throw new Error("Invalid operands in interpolate() call: " + from + ", " + to);
+            }
+            var current = items.length, length = itemsTo.length;
+            if (current < length) {
+              var ctor = isPath ? Segment : Path;
+              for (var i = current; i < length; i++) {
+                this.add(new ctor());
+              }
+            } else if (current > length) {
+              this[isPath ? "removeSegments" : "removeChildren"](length, current);
+            }
+            for (var i = 0; i < length; i++) {
+              items[i].interpolate(itemsFrom[i], itemsTo[i], factor);
+            }
+            if (isPath) {
+              this.setClosed(from._closed);
+              this._changed(9);
+            }
+          },
+          compare: function(path) {
+            var ok = false;
+            if (path) {
+              var paths1 = this._children || [this], paths2 = path._children ? path._children.slice() : [path], length1 = paths1.length, length2 = paths2.length, matched = [], count = 0;
+              ok = true;
+              var boundsOverlaps = CollisionDetection.findItemBoundsCollisions(paths1, paths2, Numerical.GEOMETRIC_EPSILON);
+              for (var i1 = length1 - 1; i1 >= 0 && ok; i1--) {
+                var path1 = paths1[i1];
+                ok = false;
+                var pathBoundsOverlaps = boundsOverlaps[i1];
+                if (pathBoundsOverlaps) {
+                  for (var i2 = pathBoundsOverlaps.length - 1; i2 >= 0 && !ok; i2--) {
+                    if (path1.compare(paths2[pathBoundsOverlaps[i2]])) {
+                      if (!matched[pathBoundsOverlaps[i2]]) {
+                        matched[pathBoundsOverlaps[i2]] = true;
+                        count++;
+                      }
+                      ok = true;
+                    }
+                  }
+                }
+              }
+              ok = ok && count === length2;
+            }
+            return ok;
+          }
+        });
+        var Path = PathItem.extend(
+          {
+            _class: "Path",
+            _serializeFields: {
+              segments: [],
+              closed: false
+            },
+            initialize: function Path2(arg) {
+              this._closed = false;
+              this._segments = [];
+              this._version = 0;
+              var args = arguments, segments = Array.isArray(arg) ? typeof arg[0] === "object" ? arg : args : arg && (arg.size === undefined2 && (arg.x !== undefined2 || arg.point !== undefined2)) ? args : null;
+              if (segments && segments.length > 0) {
+                this.setSegments(segments);
+              } else {
+                this._curves = undefined2;
+                this._segmentSelection = 0;
+                if (!segments && typeof arg === "string") {
+                  this.setPathData(arg);
+                  arg = null;
+                }
+              }
+              this._initialize(!segments && arg);
+            },
+            _equals: function(item) {
+              return this._closed === item._closed && Base.equals(this._segments, item._segments);
+            },
+            copyContent: function(source) {
+              this.setSegments(source._segments);
+              this._closed = source._closed;
+            },
+            _changed: function _changed(flags) {
+              _changed.base.call(this, flags);
+              if (flags & 8) {
+                this._length = this._area = undefined2;
+                if (flags & 32) {
+                  this._version++;
+                } else if (this._curves) {
+                  for (var i = 0, l = this._curves.length; i < l; i++)
+                    this._curves[i]._changed();
+                }
+              } else if (flags & 64) {
+                this._bounds = undefined2;
+              }
+            },
+            getStyle: function() {
+              var parent = this._parent;
+              return (parent instanceof CompoundPath ? parent : this)._style;
+            },
+            getSegments: function() {
+              return this._segments;
+            },
+            setSegments: function(segments) {
+              var fullySelected = this.isFullySelected(), length = segments && segments.length;
+              this._segments.length = 0;
+              this._segmentSelection = 0;
+              this._curves = undefined2;
+              if (length) {
+                var last = segments[length - 1];
+                if (typeof last === "boolean") {
+                  this.setClosed(last);
+                  length--;
+                }
+                this._add(Segment.readList(segments, 0, {}, length));
+              }
+              if (fullySelected)
+                this.setFullySelected(true);
+            },
+            getFirstSegment: function() {
+              return this._segments[0];
+            },
+            getLastSegment: function() {
+              return this._segments[this._segments.length - 1];
+            },
+            getCurves: function() {
+              var curves = this._curves, segments = this._segments;
+              if (!curves) {
+                var length = this._countCurves();
+                curves = this._curves = new Array(length);
+                for (var i = 0; i < length; i++)
+                  curves[i] = new Curve(
+                    this,
+                    segments[i],
+                    segments[i + 1] || segments[0]
+                  );
+              }
+              return curves;
+            },
+            getFirstCurve: function() {
+              return this.getCurves()[0];
+            },
+            getLastCurve: function() {
+              var curves = this.getCurves();
+              return curves[curves.length - 1];
+            },
+            isClosed: function() {
+              return this._closed;
+            },
+            setClosed: function(closed) {
+              if (this._closed != (closed = !!closed)) {
+                this._closed = closed;
+                if (this._curves) {
+                  var length = this._curves.length = this._countCurves();
+                  if (closed)
+                    this._curves[length - 1] = new Curve(
+                      this,
+                      this._segments[length - 1],
+                      this._segments[0]
+                    );
+                }
+                this._changed(41);
+              }
+            }
+          },
+          {
+            beans: true,
+            getPathData: function(_matrix, _precision) {
+              var segments = this._segments, length = segments.length, f = new Formatter(_precision), coords = new Array(6), first = true, curX, curY, prevX, prevY, inX, inY, outX, outY, parts = [];
+              function addSegment(segment, skipLine) {
+                segment._transformCoordinates(_matrix, coords);
+                curX = coords[0];
+                curY = coords[1];
+                if (first) {
+                  parts.push("M" + f.pair(curX, curY));
+                  first = false;
+                } else {
+                  inX = coords[2];
+                  inY = coords[3];
+                  if (inX === curX && inY === curY && outX === prevX && outY === prevY) {
+                    if (!skipLine) {
+                      var dx = curX - prevX, dy = curY - prevY;
+                      parts.push(
+                        dx === 0 ? "v" + f.number(dy) : dy === 0 ? "h" + f.number(dx) : "l" + f.pair(dx, dy)
+                      );
+                    }
+                  } else {
+                    parts.push("c" + f.pair(outX - prevX, outY - prevY) + " " + f.pair(inX - prevX, inY - prevY) + " " + f.pair(curX - prevX, curY - prevY));
+                  }
+                }
+                prevX = curX;
+                prevY = curY;
+                outX = coords[4];
+                outY = coords[5];
+              }
+              if (!length)
+                return "";
+              for (var i = 0; i < length; i++)
+                addSegment(segments[i]);
+              if (this._closed && length > 0) {
+                addSegment(segments[0], true);
+                parts.push("z");
+              }
+              return parts.join("");
+            },
+            isEmpty: function() {
+              return !this._segments.length;
+            },
+            _transformContent: function(matrix) {
+              var segments = this._segments, coords = new Array(6);
+              for (var i = 0, l = segments.length; i < l; i++)
+                segments[i]._transformCoordinates(matrix, coords, true);
+              return true;
+            },
+            _add: function(segs, index) {
+              var segments = this._segments, curves = this._curves, amount = segs.length, append = index == null, index = append ? segments.length : index;
+              for (var i = 0; i < amount; i++) {
+                var segment = segs[i];
+                if (segment._path)
+                  segment = segs[i] = segment.clone();
+                segment._path = this;
+                segment._index = index + i;
+                if (segment._selection)
+                  this._updateSelection(segment, 0, segment._selection);
+              }
+              if (append) {
+                Base.push(segments, segs);
+              } else {
+                segments.splice.apply(segments, [index, 0].concat(segs));
+                for (var i = index + amount, l = segments.length; i < l; i++)
+                  segments[i]._index = i;
+              }
+              if (curves) {
+                var total = this._countCurves(), start = index > 0 && index + amount - 1 === total ? index - 1 : index, insert = start, end = Math.min(start + amount, total);
+                if (segs._curves) {
+                  curves.splice.apply(curves, [start, 0].concat(segs._curves));
+                  insert += segs._curves.length;
+                }
+                for (var i = insert; i < end; i++)
+                  curves.splice(i, 0, new Curve(this, null, null));
+                this._adjustCurves(start, end);
+              }
+              this._changed(41);
+              return segs;
+            },
+            _adjustCurves: function(start, end) {
+              var segments = this._segments, curves = this._curves, curve;
+              for (var i = start; i < end; i++) {
+                curve = curves[i];
+                curve._path = this;
+                curve._segment1 = segments[i];
+                curve._segment2 = segments[i + 1] || segments[0];
+                curve._changed();
+              }
+              if (curve = curves[this._closed && !start ? segments.length - 1 : start - 1]) {
+                curve._segment2 = segments[start] || segments[0];
+                curve._changed();
+              }
+              if (curve = curves[end]) {
+                curve._segment1 = segments[end];
+                curve._changed();
+              }
+            },
+            _countCurves: function() {
+              var length = this._segments.length;
+              return !this._closed && length > 0 ? length - 1 : length;
+            },
+            add: function(segment1) {
+              var args = arguments;
+              return args.length > 1 && typeof segment1 !== "number" ? this._add(Segment.readList(args)) : this._add([Segment.read(args)])[0];
+            },
+            insert: function(index, segment1) {
+              var args = arguments;
+              return args.length > 2 && typeof segment1 !== "number" ? this._add(Segment.readList(args, 1), index) : this._add([Segment.read(args, 1)], index)[0];
+            },
+            addSegment: function() {
+              return this._add([Segment.read(arguments)])[0];
+            },
+            insertSegment: function(index) {
+              return this._add([Segment.read(arguments, 1)], index)[0];
+            },
+            addSegments: function(segments) {
+              return this._add(Segment.readList(segments));
+            },
+            insertSegments: function(index, segments) {
+              return this._add(Segment.readList(segments), index);
+            },
+            removeSegment: function(index) {
+              return this.removeSegments(index, index + 1)[0] || null;
+            },
+            removeSegments: function(start, end, _includeCurves) {
+              start = start || 0;
+              end = Base.pick(end, this._segments.length);
+              var segments = this._segments, curves = this._curves, count = segments.length, removed = segments.splice(start, end - start), amount = removed.length;
+              if (!amount)
+                return removed;
+              for (var i = 0; i < amount; i++) {
+                var segment = removed[i];
+                if (segment._selection)
+                  this._updateSelection(segment, segment._selection, 0);
+                segment._index = segment._path = null;
+              }
+              for (var i = start, l = segments.length; i < l; i++)
+                segments[i]._index = i;
+              if (curves) {
+                var index = start > 0 && end === count + (this._closed ? 1 : 0) ? start - 1 : start, curves = curves.splice(index, amount);
+                for (var i = curves.length - 1; i >= 0; i--)
+                  curves[i]._path = null;
+                if (_includeCurves)
+                  removed._curves = curves.slice(1);
+                this._adjustCurves(index, index);
+              }
+              this._changed(41);
+              return removed;
+            },
+            clear: "#removeSegments",
+            hasHandles: function() {
+              var segments = this._segments;
+              for (var i = 0, l = segments.length; i < l; i++) {
+                if (segments[i].hasHandles())
+                  return true;
+              }
+              return false;
+            },
+            clearHandles: function() {
+              var segments = this._segments;
+              for (var i = 0, l = segments.length; i < l; i++)
+                segments[i].clearHandles();
+            },
+            getLength: function() {
+              if (this._length == null) {
+                var curves = this.getCurves(), length = 0;
+                for (var i = 0, l = curves.length; i < l; i++)
+                  length += curves[i].getLength();
+                this._length = length;
+              }
+              return this._length;
+            },
+            getArea: function() {
+              var area = this._area;
+              if (area == null) {
+                var segments = this._segments, closed = this._closed;
+                area = 0;
+                for (var i = 0, l = segments.length; i < l; i++) {
+                  var last = i + 1 === l;
+                  area += Curve.getArea(Curve.getValues(
+                    segments[i],
+                    segments[last ? 0 : i + 1],
+                    null,
+                    last && !closed
+                  ));
+                }
+                this._area = area;
+              }
+              return area;
+            },
+            isFullySelected: function() {
+              var length = this._segments.length;
+              return this.isSelected() && length > 0 && this._segmentSelection === length * 7;
+            },
+            setFullySelected: function(selected) {
+              if (selected)
+                this._selectSegments(true);
+              this.setSelected(selected);
+            },
+            setSelection: function setSelection(selection) {
+              if (!(selection & 1))
+                this._selectSegments(false);
+              setSelection.base.call(this, selection);
+            },
+            _selectSegments: function(selected) {
+              var segments = this._segments, length = segments.length, selection = selected ? 7 : 0;
+              this._segmentSelection = selection * length;
+              for (var i = 0; i < length; i++)
+                segments[i]._selection = selection;
+            },
+            _updateSelection: function(segment, oldSelection, newSelection) {
+              segment._selection = newSelection;
+              var selection = this._segmentSelection += newSelection - oldSelection;
+              if (selection > 0)
+                this.setSelected(true);
+            },
+            divideAt: function(location) {
+              var loc = this.getLocationAt(location), curve;
+              return loc && (curve = loc.getCurve().divideAt(loc.getCurveOffset())) ? curve._segment1 : null;
+            },
+            splitAt: function(location) {
+              var loc = this.getLocationAt(location), index = loc && loc.index, time = loc && loc.time, tMin = 1e-8, tMax = 1 - tMin;
+              if (time > tMax) {
+                index++;
+                time = 0;
+              }
+              var curves = this.getCurves();
+              if (index >= 0 && index < curves.length) {
+                if (time >= tMin) {
+                  curves[index++].divideAtTime(time);
+                }
+                var segs = this.removeSegments(index, this._segments.length, true), path;
+                if (this._closed) {
+                  this.setClosed(false);
+                  path = this;
+                } else {
+                  path = new Path(Item.NO_INSERT);
+                  path.insertAbove(this);
+                  path.copyAttributes(this);
+                }
+                path._add(segs, 0);
+                this.addSegment(segs[0]);
+                return path;
+              }
+              return null;
+            },
+            split: function(index, time) {
+              var curve, location = time === undefined2 ? index : (curve = this.getCurves()[index]) && curve.getLocationAtTime(time);
+              return location != null ? this.splitAt(location) : null;
+            },
+            join: function(path, tolerance) {
+              var epsilon = tolerance || 0;
+              if (path && path !== this) {
+                var segments = path._segments, last1 = this.getLastSegment(), last2 = path.getLastSegment();
+                if (!last2)
+                  return this;
+                if (last1 && last1._point.isClose(last2._point, epsilon))
+                  path.reverse();
+                var first2 = path.getFirstSegment();
+                if (last1 && last1._point.isClose(first2._point, epsilon)) {
+                  last1.setHandleOut(first2._handleOut);
+                  this._add(segments.slice(1));
+                } else {
+                  var first1 = this.getFirstSegment();
+                  if (first1 && first1._point.isClose(first2._point, epsilon))
+                    path.reverse();
+                  last2 = path.getLastSegment();
+                  if (first1 && first1._point.isClose(last2._point, epsilon)) {
+                    first1.setHandleIn(last2._handleIn);
+                    this._add(segments.slice(0, segments.length - 1), 0);
+                  } else {
+                    this._add(segments.slice());
+                  }
+                }
+                if (path._closed)
+                  this._add([segments[0]]);
+                path.remove();
+              }
+              var first = this.getFirstSegment(), last = this.getLastSegment();
+              if (first !== last && first._point.isClose(last._point, epsilon)) {
+                first.setHandleIn(last._handleIn);
+                last.remove();
+                this.setClosed(true);
+              }
+              return this;
+            },
+            reduce: function(options) {
+              var curves = this.getCurves(), simplify = options && options.simplify, tolerance = simplify ? 1e-7 : 0;
+              for (var i = curves.length - 1; i >= 0; i--) {
+                var curve = curves[i];
+                if (!curve.hasHandles() && (!curve.hasLength(tolerance) || simplify && curve.isCollinear(curve.getNext())))
+                  curve.remove();
+              }
+              return this;
+            },
+            reverse: function() {
+              this._segments.reverse();
+              for (var i = 0, l = this._segments.length; i < l; i++) {
+                var segment = this._segments[i];
+                var handleIn = segment._handleIn;
+                segment._handleIn = segment._handleOut;
+                segment._handleOut = handleIn;
+                segment._index = i;
+              }
+              this._curves = null;
+              this._changed(9);
+            },
+            flatten: function(flatness) {
+              var flattener = new PathFlattener(this, flatness || 0.25, 256, true), parts = flattener.parts, length = parts.length, segments = [];
+              for (var i = 0; i < length; i++) {
+                segments.push(new Segment(parts[i].curve.slice(0, 2)));
+              }
+              if (!this._closed && length > 0) {
+                segments.push(new Segment(parts[length - 1].curve.slice(6)));
+              }
+              this.setSegments(segments);
+            },
+            simplify: function(tolerance) {
+              var segments = new PathFitter(this).fit(tolerance || 2.5);
+              if (segments)
+                this.setSegments(segments);
+              return !!segments;
+            },
+            smooth: function(options) {
+              var that = this, opts = options || {}, type = opts.type || "asymmetric", segments = this._segments, length = segments.length, closed = this._closed;
+              function getIndex(value, _default) {
+                var index = value && value.index;
+                if (index != null) {
+                  var path = value.path;
+                  if (path && path !== that)
+                    throw new Error(value._class + " " + index + " of " + path + " is not part of " + that);
+                  if (_default && value instanceof Curve)
+                    index++;
+                } else {
+                  index = typeof value === "number" ? value : _default;
+                }
+                return Math.min(index < 0 && closed ? index % length : index < 0 ? index + length : index, length - 1);
+              }
+              var loop = closed && opts.from === undefined2 && opts.to === undefined2, from = getIndex(opts.from, 0), to = getIndex(opts.to, length - 1);
+              if (from > to) {
+                if (closed) {
+                  from -= length;
+                } else {
+                  var tmp = from;
+                  from = to;
+                  to = tmp;
+                }
+              }
+              if (/^(?:asymmetric|continuous)$/.test(type)) {
+                var asymmetric = type === "asymmetric", min = Math.min, amount = to - from + 1, n = amount - 1, padding = loop ? min(amount, 4) : 1, paddingLeft = padding, paddingRight = padding, knots = [];
+                if (!closed) {
+                  paddingLeft = min(1, from);
+                  paddingRight = min(1, length - to - 1);
+                }
+                n += paddingLeft + paddingRight;
+                if (n <= 1)
+                  return;
+                for (var i = 0, j = from - paddingLeft; i <= n; i++, j++) {
+                  knots[i] = segments[(j < 0 ? j + length : j) % length]._point;
+                }
+                var x = knots[0]._x + 2 * knots[1]._x, y = knots[0]._y + 2 * knots[1]._y, f = 2, n_1 = n - 1, rx = [x], ry = [y], rf = [f], px = [], py = [];
+                for (var i = 1; i < n; i++) {
+                  var internal = i < n_1, a = internal ? 1 : asymmetric ? 1 : 2, b = internal ? 4 : asymmetric ? 2 : 7, u = internal ? 4 : asymmetric ? 3 : 8, v = internal ? 2 : asymmetric ? 0 : 1, m = a / f;
+                  f = rf[i] = b - m;
+                  x = rx[i] = u * knots[i]._x + v * knots[i + 1]._x - m * x;
+                  y = ry[i] = u * knots[i]._y + v * knots[i + 1]._y - m * y;
+                }
+                px[n_1] = rx[n_1] / rf[n_1];
+                py[n_1] = ry[n_1] / rf[n_1];
+                for (var i = n - 2; i >= 0; i--) {
+                  px[i] = (rx[i] - px[i + 1]) / rf[i];
+                  py[i] = (ry[i] - py[i + 1]) / rf[i];
+                }
+                px[n] = (3 * knots[n]._x - px[n_1]) / 2;
+                py[n] = (3 * knots[n]._y - py[n_1]) / 2;
+                for (var i = paddingLeft, max = n - paddingRight, j = from; i <= max; i++, j++) {
+                  var segment = segments[j < 0 ? j + length : j], pt = segment._point, hx = px[i] - pt._x, hy = py[i] - pt._y;
+                  if (loop || i < max)
+                    segment.setHandleOut(hx, hy);
+                  if (loop || i > paddingLeft)
+                    segment.setHandleIn(-hx, -hy);
+                }
+              } else {
+                for (var i = from; i <= to; i++) {
+                  segments[i < 0 ? i + length : i].smooth(
+                    opts,
+                    !loop && i === from,
+                    !loop && i === to
+                  );
+                }
+              }
+            },
+            toShape: function(insert) {
+              if (!this._closed)
+                return null;
+              var segments = this._segments, type, size, radius, topCenter;
+              function isCollinear(i, j) {
+                var seg1 = segments[i], seg2 = seg1.getNext(), seg3 = segments[j], seg4 = seg3.getNext();
+                return seg1._handleOut.isZero() && seg2._handleIn.isZero() && seg3._handleOut.isZero() && seg4._handleIn.isZero() && seg2._point.subtract(seg1._point).isCollinear(
+                  seg4._point.subtract(seg3._point)
+                );
+              }
+              function isOrthogonal(i) {
+                var seg2 = segments[i], seg1 = seg2.getPrevious(), seg3 = seg2.getNext();
+                return seg1._handleOut.isZero() && seg2._handleIn.isZero() && seg2._handleOut.isZero() && seg3._handleIn.isZero() && seg2._point.subtract(seg1._point).isOrthogonal(
+                  seg3._point.subtract(seg2._point)
+                );
+              }
+              function isArc(i) {
+                var seg1 = segments[i], seg2 = seg1.getNext(), handle1 = seg1._handleOut, handle2 = seg2._handleIn, kappa = 0.5522847498307936;
+                if (handle1.isOrthogonal(handle2)) {
+                  var pt1 = seg1._point, pt2 = seg2._point, corner = new Line(pt1, handle1, true).intersect(
+                    new Line(pt2, handle2, true),
+                    true
+                  );
+                  return corner && Numerical.isZero(handle1.getLength() / corner.subtract(pt1).getLength() - kappa) && Numerical.isZero(handle2.getLength() / corner.subtract(pt2).getLength() - kappa);
+                }
+                return false;
+              }
+              function getDistance(i, j) {
+                return segments[i]._point.getDistance(segments[j]._point);
+              }
+              if (!this.hasHandles() && segments.length === 4 && isCollinear(0, 2) && isCollinear(1, 3) && isOrthogonal(1)) {
+                type = Shape.Rectangle;
+                size = new Size(getDistance(0, 3), getDistance(0, 1));
+                topCenter = segments[1]._point.add(segments[2]._point).divide(2);
+              } else if (segments.length === 8 && isArc(0) && isArc(2) && isArc(4) && isArc(6) && isCollinear(1, 5) && isCollinear(3, 7)) {
+                type = Shape.Rectangle;
+                size = new Size(getDistance(1, 6), getDistance(0, 3));
+                radius = size.subtract(new Size(
+                  getDistance(0, 7),
+                  getDistance(1, 2)
+                )).divide(2);
+                topCenter = segments[3]._point.add(segments[4]._point).divide(2);
+              } else if (segments.length === 4 && isArc(0) && isArc(1) && isArc(2) && isArc(3)) {
+                if (Numerical.isZero(getDistance(0, 2) - getDistance(1, 3))) {
+                  type = Shape.Circle;
+                  radius = getDistance(0, 2) / 2;
+                } else {
+                  type = Shape.Ellipse;
+                  radius = new Size(getDistance(2, 0) / 2, getDistance(3, 1) / 2);
+                }
+                topCenter = segments[1]._point;
+              }
+              if (type) {
+                var center = this.getPosition(true), shape = new type({
+                  center,
+                  size,
+                  radius,
+                  insert: false
+                });
+                shape.copyAttributes(this, true);
+                shape._matrix.prepend(this._matrix);
+                shape.rotate(topCenter.subtract(center).getAngle() + 90);
+                if (insert === undefined2 || insert)
+                  shape.insertAbove(this);
+                return shape;
+              }
+              return null;
+            },
+            toPath: "#clone",
+            compare: function compare(path) {
+              if (!path || path instanceof CompoundPath)
+                return compare.base.call(this, path);
+              var curves1 = this.getCurves(), curves2 = path.getCurves(), length1 = curves1.length, length2 = curves2.length;
+              if (!length1 || !length2) {
+                return length1 == length2;
+              }
+              var v1 = curves1[0].getValues(), values2 = [], pos1 = 0, pos2, end1 = 0, end2;
+              for (var i = 0; i < length2; i++) {
+                var v2 = curves2[i].getValues();
+                values2.push(v2);
+                var overlaps = Curve.getOverlaps(v1, v2);
+                if (overlaps) {
+                  pos2 = !i && overlaps[0][0] > 0 ? length2 - 1 : i;
+                  end2 = overlaps[0][1];
+                  break;
+                }
+              }
+              var abs = Math.abs, epsilon = 1e-8, v2 = values2[pos2], start2;
+              while (v1 && v2) {
+                var overlaps = Curve.getOverlaps(v1, v2);
+                if (overlaps) {
+                  var t1 = overlaps[0][0];
+                  if (abs(t1 - end1) < epsilon) {
+                    end1 = overlaps[1][0];
+                    if (end1 === 1) {
+                      v1 = ++pos1 < length1 ? curves1[pos1].getValues() : null;
+                      end1 = 0;
+                    }
+                    var t2 = overlaps[0][1];
+                    if (abs(t2 - end2) < epsilon) {
+                      if (!start2)
+                        start2 = [pos2, t2];
+                      end2 = overlaps[1][1];
+                      if (end2 === 1) {
+                        if (++pos2 >= length2)
+                          pos2 = 0;
+                        v2 = values2[pos2] || curves2[pos2].getValues();
+                        end2 = 0;
+                      }
+                      if (!v1) {
+                        return start2[0] === pos2 && start2[1] === end2;
+                      }
+                      continue;
+                    }
+                  }
+                }
+                break;
+              }
+              return false;
+            },
+            _hitTestSelf: function(point, options, viewMatrix, strokeMatrix) {
+              var that = this, style = this.getStyle(), segments = this._segments, numSegments = segments.length, closed = this._closed, tolerancePadding = options._tolerancePadding, strokePadding = tolerancePadding, join, cap, miterLimit, area, loc, res, hitStroke = options.stroke && style.hasStroke(), hitFill = options.fill && style.hasFill(), hitCurves = options.curves, strokeRadius = hitStroke ? style.getStrokeWidth() / 2 : hitFill && options.tolerance > 0 || hitCurves ? 0 : null;
+              if (strokeRadius !== null) {
+                if (strokeRadius > 0) {
+                  join = style.getStrokeJoin();
+                  cap = style.getStrokeCap();
+                  miterLimit = style.getMiterLimit();
+                  strokePadding = strokePadding.add(
+                    Path._getStrokePadding(strokeRadius, strokeMatrix)
+                  );
+                } else {
+                  join = cap = "round";
+                }
+              }
+              function isCloseEnough(pt, padding) {
+                return point.subtract(pt).divide(padding).length <= 1;
+              }
+              function checkSegmentPoint(seg, pt, name) {
+                if (!options.selected || pt.isSelected()) {
+                  var anchor = seg._point;
+                  if (pt !== anchor)
+                    pt = pt.add(anchor);
+                  if (isCloseEnough(pt, strokePadding)) {
+                    return new HitResult(name, that, {
+                      segment: seg,
+                      point: pt
+                    });
+                  }
+                }
+              }
+              function checkSegmentPoints(seg, ends) {
+                return (ends || options.segments) && checkSegmentPoint(seg, seg._point, "segment") || !ends && options.handles && (checkSegmentPoint(seg, seg._handleIn, "handle-in") || checkSegmentPoint(seg, seg._handleOut, "handle-out"));
+              }
+              function addToArea(point2) {
+                area.add(point2);
+              }
+              function checkSegmentStroke(segment2) {
+                var isJoin = closed || segment2._index > 0 && segment2._index < numSegments - 1;
+                if ((isJoin ? join : cap) === "round") {
+                  return isCloseEnough(segment2._point, strokePadding);
+                } else {
+                  area = new Path({ internal: true, closed: true });
+                  if (isJoin) {
+                    if (!segment2.isSmooth()) {
+                      Path._addBevelJoin(
+                        segment2,
+                        join,
+                        strokeRadius,
+                        miterLimit,
+                        null,
+                        strokeMatrix,
+                        addToArea,
+                        true
+                      );
+                    }
+                  } else if (cap === "square") {
+                    Path._addSquareCap(
+                      segment2,
+                      cap,
+                      strokeRadius,
+                      null,
+                      strokeMatrix,
+                      addToArea,
+                      true
+                    );
+                  }
+                  if (!area.isEmpty()) {
+                    var loc2;
+                    return area.contains(point) || (loc2 = area.getNearestLocation(point)) && isCloseEnough(loc2.getPoint(), tolerancePadding);
+                  }
+                }
+              }
+              if (options.ends && !options.segments && !closed) {
+                if (res = checkSegmentPoints(segments[0], true) || checkSegmentPoints(segments[numSegments - 1], true))
+                  return res;
+              } else if (options.segments || options.handles) {
+                for (var i = 0; i < numSegments; i++)
+                  if (res = checkSegmentPoints(segments[i]))
+                    return res;
+              }
+              if (strokeRadius !== null) {
+                loc = this.getNearestLocation(point);
+                if (loc) {
+                  var time = loc.getTime();
+                  if (time === 0 || time === 1 && numSegments > 1) {
+                    if (!checkSegmentStroke(loc.getSegment()))
+                      loc = null;
+                  } else if (!isCloseEnough(loc.getPoint(), strokePadding)) {
+                    loc = null;
+                  }
+                }
+                if (!loc && join === "miter" && numSegments > 1) {
+                  for (var i = 0; i < numSegments; i++) {
+                    var segment = segments[i];
+                    if (point.getDistance(segment._point) <= miterLimit * strokeRadius && checkSegmentStroke(segment)) {
+                      loc = segment.getLocation();
+                      break;
+                    }
+                  }
+                }
+              }
+              return !loc && hitFill && this._contains(point) || loc && !hitStroke && !hitCurves ? new HitResult("fill", this) : loc ? new HitResult(hitStroke ? "stroke" : "curve", this, {
+                location: loc,
+                point: loc.getPoint()
+              }) : null;
+            }
+          },
+          Base.each(
+            Curve._evaluateMethods,
+            function(name) {
+              this[name + "At"] = function(offset) {
+                var loc = this.getLocationAt(offset);
+                return loc && loc[name]();
+              };
+            },
+            {
+              beans: false,
+              getLocationOf: function() {
+                var point = Point.read(arguments), curves = this.getCurves();
+                for (var i = 0, l = curves.length; i < l; i++) {
+                  var loc = curves[i].getLocationOf(point);
+                  if (loc)
+                    return loc;
+                }
+                return null;
+              },
+              getOffsetOf: function() {
+                var loc = this.getLocationOf.apply(this, arguments);
+                return loc ? loc.getOffset() : null;
+              },
+              getLocationAt: function(offset) {
+                if (typeof offset === "number") {
+                  var curves = this.getCurves(), length = 0;
+                  for (var i = 0, l = curves.length; i < l; i++) {
+                    var start = length, curve = curves[i];
+                    length += curve.getLength();
+                    if (length > offset) {
+                      return curve.getLocationAt(offset - start);
+                    }
+                  }
+                  if (curves.length > 0 && offset <= this.getLength()) {
+                    return new CurveLocation(curves[curves.length - 1], 1);
+                  }
+                } else if (offset && offset.getPath && offset.getPath() === this) {
+                  return offset;
+                }
+                return null;
+              },
+              getOffsetsWithTangent: function() {
+                var tangent = Point.read(arguments);
+                if (tangent.isZero()) {
+                  return [];
+                }
+                var offsets = [];
+                var curveStart = 0;
+                var curves = this.getCurves();
+                for (var i = 0, l = curves.length; i < l; i++) {
+                  var curve = curves[i];
+                  var curveTimes = curve.getTimesWithTangent(tangent);
+                  for (var j = 0, m = curveTimes.length; j < m; j++) {
+                    var offset = curveStart + curve.getOffsetAtTime(curveTimes[j]);
+                    if (offsets.indexOf(offset) < 0) {
+                      offsets.push(offset);
+                    }
+                  }
+                  curveStart += curve.length;
+                }
+                return offsets;
+              }
+            }
+          ),
+          new function() {
+            function drawHandles(ctx, segments, matrix, size) {
+              if (size <= 0)
+                return;
+              var half = size / 2, miniSize = size - 2, miniHalf = half - 1, coords = new Array(6), pX, pY;
+              function drawHandle(index) {
+                var hX = coords[index], hY = coords[index + 1];
+                if (pX != hX || pY != hY) {
+                  ctx.beginPath();
+                  ctx.moveTo(pX, pY);
+                  ctx.lineTo(hX, hY);
+                  ctx.stroke();
+                  ctx.beginPath();
+                  ctx.arc(hX, hY, half, 0, Math.PI * 2, true);
+                  ctx.fill();
+                }
+              }
+              for (var i = 0, l = segments.length; i < l; i++) {
+                var segment = segments[i], selection = segment._selection;
+                segment._transformCoordinates(matrix, coords);
+                pX = coords[0];
+                pY = coords[1];
+                if (selection & 2)
+                  drawHandle(2);
+                if (selection & 4)
+                  drawHandle(4);
+                ctx.fillRect(pX - half, pY - half, size, size);
+                if (miniSize > 0 && !(selection & 1)) {
+                  var fillStyle = ctx.fillStyle;
+                  ctx.fillStyle = "#ffffff";
+                  ctx.fillRect(pX - miniHalf, pY - miniHalf, miniSize, miniSize);
+                  ctx.fillStyle = fillStyle;
+                }
+              }
+            }
+            function drawSegments(ctx, path, matrix) {
+              var segments = path._segments, length = segments.length, coords = new Array(6), first = true, curX, curY, prevX, prevY, inX, inY, outX, outY;
+              function drawSegment(segment) {
+                if (matrix) {
+                  segment._transformCoordinates(matrix, coords);
+                  curX = coords[0];
+                  curY = coords[1];
+                } else {
+                  var point = segment._point;
+                  curX = point._x;
+                  curY = point._y;
+                }
+                if (first) {
+                  ctx.moveTo(curX, curY);
+                  first = false;
+                } else {
+                  if (matrix) {
+                    inX = coords[2];
+                    inY = coords[3];
+                  } else {
+                    var handle = segment._handleIn;
+                    inX = curX + handle._x;
+                    inY = curY + handle._y;
+                  }
+                  if (inX === curX && inY === curY && outX === prevX && outY === prevY) {
+                    ctx.lineTo(curX, curY);
+                  } else {
+                    ctx.bezierCurveTo(outX, outY, inX, inY, curX, curY);
+                  }
+                }
+                prevX = curX;
+                prevY = curY;
+                if (matrix) {
+                  outX = coords[4];
+                  outY = coords[5];
+                } else {
+                  var handle = segment._handleOut;
+                  outX = prevX + handle._x;
+                  outY = prevY + handle._y;
+                }
+              }
+              for (var i = 0; i < length; i++)
+                drawSegment(segments[i]);
+              if (path._closed && length > 0)
+                drawSegment(segments[0]);
+            }
+            return {
+              _draw: function(ctx, param, viewMatrix, strokeMatrix) {
+                var dontStart = param.dontStart, dontPaint = param.dontFinish || param.clip, style = this.getStyle(), hasFill = style.hasFill(), hasStroke = style.hasStroke(), dashArray = style.getDashArray(), dashLength = !paper2.support.nativeDash && hasStroke && dashArray && dashArray.length;
+                if (!dontStart)
+                  ctx.beginPath();
+                if (hasFill || hasStroke && !dashLength || dontPaint) {
+                  drawSegments(ctx, this, strokeMatrix);
+                  if (this._closed)
+                    ctx.closePath();
+                }
+                function getOffset(i2) {
+                  return dashArray[(i2 % dashLength + dashLength) % dashLength];
+                }
+                if (!dontPaint && (hasFill || hasStroke)) {
+                  this._setStyles(ctx, param, viewMatrix);
+                  if (hasFill) {
+                    ctx.fill(style.getFillRule());
+                    ctx.shadowColor = "rgba(0,0,0,0)";
+                  }
+                  if (hasStroke) {
+                    if (dashLength) {
+                      if (!dontStart)
+                        ctx.beginPath();
+                      var flattener = new PathFlattener(
+                        this,
+                        0.25,
+                        32,
+                        false,
+                        strokeMatrix
+                      ), length = flattener.length, from = -style.getDashOffset(), to, i = 0;
+                      while (from > 0) {
+                        from -= getOffset(i--) + getOffset(i--);
+                      }
+                      while (from < length) {
+                        to = from + getOffset(i++);
+                        if (from > 0 || to > 0)
+                          flattener.drawPart(
+                            ctx,
+                            Math.max(from, 0),
+                            Math.max(to, 0)
+                          );
+                        from = to + getOffset(i++);
+                      }
+                    }
+                    ctx.stroke();
+                  }
+                }
+              },
+              _drawSelected: function(ctx, matrix) {
+                ctx.beginPath();
+                drawSegments(ctx, this, matrix);
+                ctx.stroke();
+                drawHandles(ctx, this._segments, matrix, paper2.settings.handleSize);
+              }
+            };
+          }(),
+          new function() {
+            function getCurrentSegment(that) {
+              var segments = that._segments;
+              if (!segments.length)
+                throw new Error("Use a moveTo() command first");
+              return segments[segments.length - 1];
+            }
+            return {
+              moveTo: function() {
+                var segments = this._segments;
+                if (segments.length === 1)
+                  this.removeSegment(0);
+                if (!segments.length)
+                  this._add([new Segment(Point.read(arguments))]);
+              },
+              moveBy: function() {
+                throw new Error("moveBy() is unsupported on Path items.");
+              },
+              lineTo: function() {
+                this._add([new Segment(Point.read(arguments))]);
+              },
+              cubicCurveTo: function() {
+                var args = arguments, handle1 = Point.read(args), handle2 = Point.read(args), to = Point.read(args), current = getCurrentSegment(this);
+                current.setHandleOut(handle1.subtract(current._point));
+                this._add([new Segment(to, handle2.subtract(to))]);
+              },
+              quadraticCurveTo: function() {
+                var args = arguments, handle = Point.read(args), to = Point.read(args), current = getCurrentSegment(this)._point;
+                this.cubicCurveTo(
+                  handle.add(current.subtract(handle).multiply(1 / 3)),
+                  handle.add(to.subtract(handle).multiply(1 / 3)),
+                  to
+                );
+              },
+              curveTo: function() {
+                var args = arguments, through = Point.read(args), to = Point.read(args), t = Base.pick(Base.read(args), 0.5), t1 = 1 - t, current = getCurrentSegment(this)._point, handle = through.subtract(current.multiply(t1 * t1)).subtract(to.multiply(t * t)).divide(2 * t * t1);
+                if (handle.isNaN())
+                  throw new Error(
+                    "Cannot put a curve through points with parameter = " + t
+                  );
+                this.quadraticCurveTo(handle, to);
+              },
+              arcTo: function() {
+                var args = arguments, abs = Math.abs, sqrt = Math.sqrt, current = getCurrentSegment(this), from = current._point, to = Point.read(args), through, peek = Base.peek(args), clockwise = Base.pick(peek, true), center, extent, vector, matrix;
+                if (typeof clockwise === "boolean") {
+                  var middle = from.add(to).divide(2), through = middle.add(middle.subtract(from).rotate(
+                    clockwise ? -90 : 90
+                  ));
+                } else if (Base.remain(args) <= 2) {
+                  through = to;
+                  to = Point.read(args);
+                } else if (!from.equals(to)) {
+                  var radius = Size.read(args), isZero = Numerical.isZero;
+                  if (isZero(radius.width) || isZero(radius.height))
+                    return this.lineTo(to);
+                  var rotation = Base.read(args), clockwise = !!Base.read(args), large = !!Base.read(args), middle = from.add(to).divide(2), pt = from.subtract(middle).rotate(-rotation), x = pt.x, y = pt.y, rx = abs(radius.width), ry = abs(radius.height), rxSq = rx * rx, rySq = ry * ry, xSq = x * x, ySq = y * y;
+                  var factor = sqrt(xSq / rxSq + ySq / rySq);
+                  if (factor > 1) {
+                    rx *= factor;
+                    ry *= factor;
+                    rxSq = rx * rx;
+                    rySq = ry * ry;
+                  }
+                  factor = (rxSq * rySq - rxSq * ySq - rySq * xSq) / (rxSq * ySq + rySq * xSq);
+                  if (abs(factor) < 1e-12)
+                    factor = 0;
+                  if (factor < 0)
+                    throw new Error(
+                      "Cannot create an arc with the given arguments"
+                    );
+                  center = new Point(rx * y / ry, -ry * x / rx).multiply((large === clockwise ? -1 : 1) * sqrt(factor)).rotate(rotation).add(middle);
+                  matrix = new Matrix().translate(center).rotate(rotation).scale(rx, ry);
+                  vector = matrix._inverseTransform(from);
+                  extent = vector.getDirectedAngle(matrix._inverseTransform(to));
+                  if (!clockwise && extent > 0)
+                    extent -= 360;
+                  else if (clockwise && extent < 0)
+                    extent += 360;
+                }
+                if (through) {
+                  var l1 = new Line(
+                    from.add(through).divide(2),
+                    through.subtract(from).rotate(90),
+                    true
+                  ), l2 = new Line(
+                    through.add(to).divide(2),
+                    to.subtract(through).rotate(90),
+                    true
+                  ), line = new Line(from, to), throughSide = line.getSide(through);
+                  center = l1.intersect(l2, true);
+                  if (!center) {
+                    if (!throughSide)
+                      return this.lineTo(to);
+                    throw new Error(
+                      "Cannot create an arc with the given arguments"
+                    );
+                  }
+                  vector = from.subtract(center);
+                  extent = vector.getDirectedAngle(to.subtract(center));
+                  var centerSide = line.getSide(center, true);
+                  if (centerSide === 0) {
+                    extent = throughSide * abs(extent);
+                  } else if (throughSide === centerSide) {
+                    extent += extent < 0 ? 360 : -360;
+                  }
+                }
+                if (extent) {
+                  var epsilon = 1e-5, ext = abs(extent), count = ext >= 360 ? 4 : Math.ceil((ext - epsilon) / 90), inc = extent / count, half = inc * Math.PI / 360, z = 4 / 3 * Math.sin(half) / (1 + Math.cos(half)), segments = [];
+                  for (var i = 0; i <= count; i++) {
+                    var pt = to, out = null;
+                    if (i < count) {
+                      out = vector.rotate(90).multiply(z);
+                      if (matrix) {
+                        pt = matrix._transformPoint(vector);
+                        out = matrix._transformPoint(vector.add(out)).subtract(pt);
+                      } else {
+                        pt = center.add(vector);
+                      }
+                    }
+                    if (!i) {
+                      current.setHandleOut(out);
+                    } else {
+                      var _in = vector.rotate(-90).multiply(z);
+                      if (matrix) {
+                        _in = matrix._transformPoint(vector.add(_in)).subtract(pt);
+                      }
+                      segments.push(new Segment(pt, _in, out));
+                    }
+                    vector = vector.rotate(inc);
+                  }
+                  this._add(segments);
+                }
+              },
+              lineBy: function() {
+                var to = Point.read(arguments), current = getCurrentSegment(this)._point;
+                this.lineTo(current.add(to));
+              },
+              curveBy: function() {
+                var args = arguments, through = Point.read(args), to = Point.read(args), parameter = Base.read(args), current = getCurrentSegment(this)._point;
+                this.curveTo(current.add(through), current.add(to), parameter);
+              },
+              cubicCurveBy: function() {
+                var args = arguments, handle1 = Point.read(args), handle2 = Point.read(args), to = Point.read(args), current = getCurrentSegment(this)._point;
+                this.cubicCurveTo(
+                  current.add(handle1),
+                  current.add(handle2),
+                  current.add(to)
+                );
+              },
+              quadraticCurveBy: function() {
+                var args = arguments, handle = Point.read(args), to = Point.read(args), current = getCurrentSegment(this)._point;
+                this.quadraticCurveTo(current.add(handle), current.add(to));
+              },
+              arcBy: function() {
+                var args = arguments, current = getCurrentSegment(this)._point, point = current.add(Point.read(args)), clockwise = Base.pick(Base.peek(args), true);
+                if (typeof clockwise === "boolean") {
+                  this.arcTo(point, clockwise);
+                } else {
+                  this.arcTo(point, current.add(Point.read(args)));
+                }
+              },
+              closePath: function(tolerance) {
+                this.setClosed(true);
+                this.join(this, tolerance);
+              }
+            };
+          }(),
+          {
+            _getBounds: function(matrix, options) {
+              var method = options.handle ? "getHandleBounds" : options.stroke ? "getStrokeBounds" : "getBounds";
+              return Path[method](this._segments, this._closed, this, matrix, options);
+            },
+            statics: {
+              getBounds: function(segments, closed, path, matrix, options, strokePadding) {
+                var first = segments[0];
+                if (!first)
+                  return new Rectangle();
+                var coords = new Array(6), prevCoords = first._transformCoordinates(matrix, new Array(6)), min = prevCoords.slice(0, 2), max = min.slice(), roots = new Array(2);
+                function processSegment(segment) {
+                  segment._transformCoordinates(matrix, coords);
+                  for (var i2 = 0; i2 < 2; i2++) {
+                    Curve._addBounds(
+                      prevCoords[i2],
+                      prevCoords[i2 + 4],
+                      coords[i2 + 2],
+                      coords[i2],
+                      i2,
+                      strokePadding ? strokePadding[i2] : 0,
+                      min,
+                      max,
+                      roots
+                    );
+                  }
+                  var tmp = prevCoords;
+                  prevCoords = coords;
+                  coords = tmp;
+                }
+                for (var i = 1, l = segments.length; i < l; i++)
+                  processSegment(segments[i]);
+                if (closed)
+                  processSegment(first);
+                return new Rectangle(min[0], min[1], max[0] - min[0], max[1] - min[1]);
+              },
+              getStrokeBounds: function(segments, closed, path, matrix, options) {
+                var style = path.getStyle(), stroke = style.hasStroke(), strokeWidth = style.getStrokeWidth(), strokeMatrix = stroke && path._getStrokeMatrix(matrix, options), strokePadding = stroke && Path._getStrokePadding(
+                  strokeWidth,
+                  strokeMatrix
+                ), bounds = Path.getBounds(
+                  segments,
+                  closed,
+                  path,
+                  matrix,
+                  options,
+                  strokePadding
+                );
+                if (!stroke)
+                  return bounds;
+                var strokeRadius = strokeWidth / 2, join = style.getStrokeJoin(), cap = style.getStrokeCap(), miterLimit = style.getMiterLimit(), joinBounds = new Rectangle(new Size(strokePadding));
+                function addPoint(point) {
+                  bounds = bounds.include(point);
+                }
+                function addRound(segment) {
+                  bounds = bounds.unite(
+                    joinBounds.setCenter(segment._point.transform(matrix))
+                  );
+                }
+                function addJoin(segment, join2) {
+                  if (join2 === "round" || segment.isSmooth()) {
+                    addRound(segment);
+                  } else {
+                    Path._addBevelJoin(
+                      segment,
+                      join2,
+                      strokeRadius,
+                      miterLimit,
+                      matrix,
+                      strokeMatrix,
+                      addPoint
+                    );
+                  }
+                }
+                function addCap(segment, cap2) {
+                  if (cap2 === "round") {
+                    addRound(segment);
+                  } else {
+                    Path._addSquareCap(
+                      segment,
+                      cap2,
+                      strokeRadius,
+                      matrix,
+                      strokeMatrix,
+                      addPoint
+                    );
+                  }
+                }
+                var length = segments.length - (closed ? 0 : 1);
+                if (length > 0) {
+                  for (var i = 1; i < length; i++) {
+                    addJoin(segments[i], join);
+                  }
+                  if (closed) {
+                    addJoin(segments[0], join);
+                  } else {
+                    addCap(segments[0], cap);
+                    addCap(segments[segments.length - 1], cap);
+                  }
+                }
+                return bounds;
+              },
+              _getStrokePadding: function(radius, matrix) {
+                if (!matrix)
+                  return [radius, radius];
+                var hor = new Point(radius, 0).transform(matrix), ver = new Point(0, radius).transform(matrix), phi = hor.getAngleInRadians(), a = hor.getLength(), b = ver.getLength();
+                var sin = Math.sin(phi), cos = Math.cos(phi), tan = Math.tan(phi), tx = Math.atan2(b * tan, a), ty = Math.atan2(b, tan * a);
+                return [
+                  Math.abs(a * Math.cos(tx) * cos + b * Math.sin(tx) * sin),
+                  Math.abs(b * Math.sin(ty) * cos + a * Math.cos(ty) * sin)
+                ];
+              },
+              _addBevelJoin: function(segment, join, radius, miterLimit, matrix, strokeMatrix, addPoint, isArea) {
+                var curve2 = segment.getCurve(), curve1 = curve2.getPrevious(), point = curve2.getPoint1().transform(matrix), normal1 = curve1.getNormalAtTime(1).multiply(radius).transform(strokeMatrix), normal2 = curve2.getNormalAtTime(0).multiply(radius).transform(strokeMatrix), angle = normal1.getDirectedAngle(normal2);
+                if (angle < 0 || angle >= 180) {
+                  normal1 = normal1.negate();
+                  normal2 = normal2.negate();
+                }
+                if (isArea)
+                  addPoint(point);
+                addPoint(point.add(normal1));
+                if (join === "miter") {
+                  var corner = new Line(
+                    point.add(normal1),
+                    new Point(-normal1.y, normal1.x),
+                    true
+                  ).intersect(new Line(
+                    point.add(normal2),
+                    new Point(-normal2.y, normal2.x),
+                    true
+                  ), true);
+                  if (corner && point.getDistance(corner) <= miterLimit * radius) {
+                    addPoint(corner);
+                  }
+                }
+                addPoint(point.add(normal2));
+              },
+              _addSquareCap: function(segment, cap, radius, matrix, strokeMatrix, addPoint, isArea) {
+                var point = segment._point.transform(matrix), loc = segment.getLocation(), normal = loc.getNormal().multiply(loc.getTime() === 0 ? radius : -radius).transform(strokeMatrix);
+                if (cap === "square") {
+                  if (isArea) {
+                    addPoint(point.subtract(normal));
+                    addPoint(point.add(normal));
+                  }
+                  point = point.add(normal.rotate(-90));
+                }
+                addPoint(point.add(normal));
+                addPoint(point.subtract(normal));
+              },
+              getHandleBounds: function(segments, closed, path, matrix, options) {
+                var style = path.getStyle(), stroke = options.stroke && style.hasStroke(), strokePadding, joinPadding;
+                if (stroke) {
+                  var strokeMatrix = path._getStrokeMatrix(matrix, options), strokeRadius = style.getStrokeWidth() / 2, joinRadius = strokeRadius;
+                  if (style.getStrokeJoin() === "miter")
+                    joinRadius = strokeRadius * style.getMiterLimit();
+                  if (style.getStrokeCap() === "square")
+                    joinRadius = Math.max(joinRadius, strokeRadius * Math.SQRT2);
+                  strokePadding = Path._getStrokePadding(strokeRadius, strokeMatrix);
+                  joinPadding = Path._getStrokePadding(joinRadius, strokeMatrix);
+                }
+                var coords = new Array(6), x1 = Infinity, x2 = -x1, y1 = x1, y2 = x2;
+                for (var i = 0, l = segments.length; i < l; i++) {
+                  var segment = segments[i];
+                  segment._transformCoordinates(matrix, coords);
+                  for (var j = 0; j < 6; j += 2) {
+                    var padding = !j ? joinPadding : strokePadding, paddingX = padding ? padding[0] : 0, paddingY = padding ? padding[1] : 0, x = coords[j], y = coords[j + 1], xn = x - paddingX, xx = x + paddingX, yn = y - paddingY, yx = y + paddingY;
+                    if (xn < x1)
+                      x1 = xn;
+                    if (xx > x2)
+                      x2 = xx;
+                    if (yn < y1)
+                      y1 = yn;
+                    if (yx > y2)
+                      y2 = yx;
+                  }
+                }
+                return new Rectangle(x1, y1, x2 - x1, y2 - y1);
+              }
+            }
+          }
+        );
+        Path.inject({ statics: new function() {
+          var kappa = 0.5522847498307936, ellipseSegments = [
+            new Segment([-1, 0], [0, kappa], [0, -kappa]),
+            new Segment([0, -1], [-kappa, 0], [kappa, 0]),
+            new Segment([1, 0], [0, -kappa], [0, kappa]),
+            new Segment([0, 1], [kappa, 0], [-kappa, 0])
+          ];
+          function createPath(segments, closed, args) {
+            var props = Base.getNamed(args), path = new Path(props && (props.insert == true ? Item.INSERT : props.insert == false ? Item.NO_INSERT : null));
+            path._add(segments);
+            path._closed = closed;
+            return path.set(props, Item.INSERT);
+          }
+          function createEllipse(center, radius, args) {
+            var segments = new Array(4);
+            for (var i = 0; i < 4; i++) {
+              var segment = ellipseSegments[i];
+              segments[i] = new Segment(
+                segment._point.multiply(radius).add(center),
+                segment._handleIn.multiply(radius),
+                segment._handleOut.multiply(radius)
+              );
+            }
+            return createPath(segments, true, args);
+          }
+          return {
+            Line: function() {
+              var args = arguments;
+              return createPath([
+                new Segment(Point.readNamed(args, "from")),
+                new Segment(Point.readNamed(args, "to"))
+              ], false, args);
+            },
+            Circle: function() {
+              var args = arguments, center = Point.readNamed(args, "center"), radius = Base.readNamed(args, "radius");
+              return createEllipse(center, new Size(radius), args);
+            },
+            Rectangle: function() {
+              var args = arguments, rect = Rectangle.readNamed(args, "rectangle"), radius = Size.readNamed(
+                args,
+                "radius",
+                0,
+                { readNull: true }
+              ), bl = rect.getBottomLeft(true), tl = rect.getTopLeft(true), tr = rect.getTopRight(true), br = rect.getBottomRight(true), segments;
+              if (!radius || radius.isZero()) {
+                segments = [
+                  new Segment(bl),
+                  new Segment(tl),
+                  new Segment(tr),
+                  new Segment(br)
+                ];
+              } else {
+                radius = Size.min(radius, rect.getSize(true).divide(2));
+                var rx = radius.width, ry = radius.height, hx = rx * kappa, hy = ry * kappa;
+                segments = [
+                  new Segment(bl.add(rx, 0), null, [-hx, 0]),
+                  new Segment(bl.subtract(0, ry), [0, hy]),
+                  new Segment(tl.add(0, ry), null, [0, -hy]),
+                  new Segment(tl.add(rx, 0), [-hx, 0], null),
+                  new Segment(tr.subtract(rx, 0), null, [hx, 0]),
+                  new Segment(tr.add(0, ry), [0, -hy], null),
+                  new Segment(br.subtract(0, ry), null, [0, hy]),
+                  new Segment(br.subtract(rx, 0), [hx, 0])
+                ];
+              }
+              return createPath(segments, true, args);
+            },
+            RoundRectangle: "#Rectangle",
+            Ellipse: function() {
+              var args = arguments, ellipse = Shape._readEllipse(args);
+              return createEllipse(ellipse.center, ellipse.radius, args);
+            },
+            Oval: "#Ellipse",
+            Arc: function() {
+              var args = arguments, from = Point.readNamed(args, "from"), through = Point.readNamed(args, "through"), to = Point.readNamed(args, "to"), props = Base.getNamed(args), path = new Path(props && props.insert == false && Item.NO_INSERT);
+              path.moveTo(from);
+              path.arcTo(through, to);
+              return path.set(props);
+            },
+            RegularPolygon: function() {
+              var args = arguments, center = Point.readNamed(args, "center"), sides = Base.readNamed(args, "sides"), radius = Base.readNamed(args, "radius"), step = 360 / sides, three = sides % 3 === 0, vector = new Point(0, three ? -radius : radius), offset = three ? -1 : 0.5, segments = new Array(sides);
+              for (var i = 0; i < sides; i++)
+                segments[i] = new Segment(center.add(
+                  vector.rotate((i + offset) * step)
+                ));
+              return createPath(segments, true, args);
+            },
+            Star: function() {
+              var args = arguments, center = Point.readNamed(args, "center"), points = Base.readNamed(args, "points") * 2, radius1 = Base.readNamed(args, "radius1"), radius2 = Base.readNamed(args, "radius2"), step = 360 / points, vector = new Point(0, -1), segments = new Array(points);
+              for (var i = 0; i < points; i++)
+                segments[i] = new Segment(center.add(vector.rotate(step * i).multiply(i % 2 ? radius2 : radius1)));
+              return createPath(segments, true, args);
+            }
+          };
+        }() });
+        var CompoundPath = PathItem.extend(
+          {
+            _class: "CompoundPath",
+            _serializeFields: {
+              children: []
+            },
+            beans: true,
+            initialize: function CompoundPath2(arg) {
+              this._children = [];
+              this._namedChildren = {};
+              if (!this._initialize(arg)) {
+                if (typeof arg === "string") {
+                  this.setPathData(arg);
+                } else {
+                  this.addChildren(Array.isArray(arg) ? arg : arguments);
+                }
+              }
+            },
+            insertChildren: function insertChildren(index, items) {
+              var list = items, first = list[0];
+              if (first && typeof first[0] === "number")
+                list = [list];
+              for (var i = items.length - 1; i >= 0; i--) {
+                var item = list[i];
+                if (list === items && !(item instanceof Path))
+                  list = Base.slice(list);
+                if (Array.isArray(item)) {
+                  list[i] = new Path({ segments: item, insert: false });
+                } else if (item instanceof CompoundPath) {
+                  list.splice.apply(list, [i, 1].concat(item.removeChildren()));
+                  item.remove();
+                }
+              }
+              return insertChildren.base.call(this, index, list);
+            },
+            reduce: function reduce(options) {
+              var children = this._children;
+              for (var i = children.length - 1; i >= 0; i--) {
+                var path = children[i].reduce(options);
+                if (path.isEmpty())
+                  path.remove();
+              }
+              if (!children.length) {
+                var path = new Path(Item.NO_INSERT);
+                path.copyAttributes(this);
+                path.insertAbove(this);
+                this.remove();
+                return path;
+              }
+              return reduce.base.call(this);
+            },
+            isClosed: function() {
+              var children = this._children;
+              for (var i = 0, l = children.length; i < l; i++) {
+                if (!children[i]._closed)
+                  return false;
+              }
+              return true;
+            },
+            setClosed: function(closed) {
+              var children = this._children;
+              for (var i = 0, l = children.length; i < l; i++) {
+                children[i].setClosed(closed);
+              }
+            },
+            getFirstSegment: function() {
+              var first = this.getFirstChild();
+              return first && first.getFirstSegment();
+            },
+            getLastSegment: function() {
+              var last = this.getLastChild();
+              return last && last.getLastSegment();
+            },
+            getCurves: function() {
+              var children = this._children, curves = [];
+              for (var i = 0, l = children.length; i < l; i++) {
+                Base.push(curves, children[i].getCurves());
+              }
+              return curves;
+            },
+            getFirstCurve: function() {
+              var first = this.getFirstChild();
+              return first && first.getFirstCurve();
+            },
+            getLastCurve: function() {
+              var last = this.getLastChild();
+              return last && last.getLastCurve();
+            },
+            getArea: function() {
+              var children = this._children, area = 0;
+              for (var i = 0, l = children.length; i < l; i++)
+                area += children[i].getArea();
+              return area;
+            },
+            getLength: function() {
+              var children = this._children, length = 0;
+              for (var i = 0, l = children.length; i < l; i++)
+                length += children[i].getLength();
+              return length;
+            },
+            getPathData: function(_matrix, _precision) {
+              var children = this._children, paths = [];
+              for (var i = 0, l = children.length; i < l; i++) {
+                var child = children[i], mx = child._matrix;
+                paths.push(child.getPathData(_matrix && !mx.isIdentity() ? _matrix.appended(mx) : _matrix, _precision));
+              }
+              return paths.join("");
+            },
+            _hitTestChildren: function _hitTestChildren(point, options, viewMatrix) {
+              return _hitTestChildren.base.call(
+                this,
+                point,
+                options.class === Path || options.type === "path" ? options : Base.set({}, options, { fill: false }),
+                viewMatrix
+              );
+            },
+            _draw: function(ctx, param, viewMatrix, strokeMatrix) {
+              var children = this._children;
+              if (!children.length)
+                return;
+              param = param.extend({ dontStart: true, dontFinish: true });
+              ctx.beginPath();
+              for (var i = 0, l = children.length; i < l; i++)
+                children[i].draw(ctx, param, strokeMatrix);
+              if (!param.clip) {
+                this._setStyles(ctx, param, viewMatrix);
+                var style = this._style;
+                if (style.hasFill()) {
+                  ctx.fill(style.getFillRule());
+                  ctx.shadowColor = "rgba(0,0,0,0)";
+                }
+                if (style.hasStroke())
+                  ctx.stroke();
+              }
+            },
+            _drawSelected: function(ctx, matrix, selectionItems) {
+              var children = this._children;
+              for (var i = 0, l = children.length; i < l; i++) {
+                var child = children[i], mx = child._matrix;
+                if (!selectionItems[child._id]) {
+                  child._drawSelected(ctx, mx.isIdentity() ? matrix : matrix.appended(mx));
+                }
+              }
+            }
+          },
+          new function() {
+            function getCurrentPath(that, check) {
+              var children = that._children;
+              if (check && !children.length)
+                throw new Error("Use a moveTo() command first");
+              return children[children.length - 1];
+            }
+            return Base.each(
+              [
+                "lineTo",
+                "cubicCurveTo",
+                "quadraticCurveTo",
+                "curveTo",
+                "arcTo",
+                "lineBy",
+                "cubicCurveBy",
+                "quadraticCurveBy",
+                "curveBy",
+                "arcBy"
+              ],
+              function(key) {
+                this[key] = function() {
+                  var path = getCurrentPath(this, true);
+                  path[key].apply(path, arguments);
+                };
+              },
+              {
+                moveTo: function() {
+                  var current = getCurrentPath(this), path = current && current.isEmpty() ? current : new Path(Item.NO_INSERT);
+                  if (path !== current)
+                    this.addChild(path);
+                  path.moveTo.apply(path, arguments);
+                },
+                moveBy: function() {
+                  var current = getCurrentPath(this, true), last = current && current.getLastSegment(), point = Point.read(arguments);
+                  this.moveTo(last ? point.add(last._point) : point);
+                },
+                closePath: function(tolerance) {
+                  getCurrentPath(this, true).closePath(tolerance);
+                }
+              }
+            );
+          }(),
+          Base.each(["reverse", "flatten", "simplify", "smooth"], function(key) {
+            this[key] = function(param) {
+              var children = this._children, res;
+              for (var i = 0, l = children.length; i < l; i++) {
+                res = children[i][key](param) || res;
+              }
+              return res;
+            };
+          }, {})
+        );
+        PathItem.inject(new function() {
+          var min = Math.min, max = Math.max, abs = Math.abs, operators = {
+            unite: { "1": true, "2": true },
+            intersect: { "2": true },
+            subtract: { "1": true },
+            exclude: { "1": true, "-1": true }
+          };
+          function getPaths(path) {
+            return path._children || [path];
+          }
+          function preparePath(path, resolve) {
+            var res = path.clone(false).reduce({ simplify: true }).transform(null, true, true);
+            if (resolve) {
+              var paths = getPaths(res);
+              for (var i = 0, l = paths.length; i < l; i++) {
+                var path = paths[i];
+                if (!path._closed && !path.isEmpty()) {
+                  path.closePath(1e-12);
+                  path.getFirstSegment().setHandleIn(0, 0);
+                  path.getLastSegment().setHandleOut(0, 0);
+                }
+              }
+              res = res.resolveCrossings().reorient(res.getFillRule() === "nonzero", true);
+            }
+            return res;
+          }
+          function createResult(paths, simplify, path1, path2, options) {
+            var result = new CompoundPath(Item.NO_INSERT);
+            result.addChildren(paths, true);
+            result = result.reduce({ simplify });
+            if (!(options && options.insert == false)) {
+              result.insertAbove(path2 && path1.isSibling(path2) && path1.getIndex() < path2.getIndex() ? path2 : path1);
+            }
+            result.copyAttributes(path1, true);
+            return result;
+          }
+          function filterIntersection(inter) {
+            return inter.hasOverlap() || inter.isCrossing();
+          }
+          function traceBoolean(path1, path2, operation, options) {
+            if (options && (options.trace == false || options.stroke) && /^(subtract|intersect)$/.test(operation))
+              return splitBoolean(path1, path2, operation);
+            var _path1 = preparePath(path1, true), _path2 = path2 && path1 !== path2 && preparePath(path2, true), operator = operators[operation];
+            operator[operation] = true;
+            if (_path2 && (operator.subtract || operator.exclude) ^ (_path2.isClockwise() ^ _path1.isClockwise()))
+              _path2.reverse();
+            var crossings = divideLocations(CurveLocation.expand(
+              _path1.getIntersections(_path2, filterIntersection)
+            )), paths1 = getPaths(_path1), paths2 = _path2 && getPaths(_path2), segments = [], curves = [], paths;
+            function collectPaths(paths3) {
+              for (var i2 = 0, l2 = paths3.length; i2 < l2; i2++) {
+                var path = paths3[i2];
+                Base.push(segments, path._segments);
+                Base.push(curves, path.getCurves());
+                path._overlapsOnly = true;
+              }
+            }
+            function getCurves(indices) {
+              var list = [];
+              for (var i2 = 0, l2 = indices && indices.length; i2 < l2; i2++) {
+                list.push(curves[indices[i2]]);
+              }
+              return list;
+            }
+            if (crossings.length) {
+              collectPaths(paths1);
+              if (paths2)
+                collectPaths(paths2);
+              var curvesValues = new Array(curves.length);
+              for (var i = 0, l = curves.length; i < l; i++) {
+                curvesValues[i] = curves[i].getValues();
+              }
+              var curveCollisions = CollisionDetection.findCurveBoundsCollisions(
+                curvesValues,
+                curvesValues,
+                0,
+                true
+              );
+              var curveCollisionsMap = {};
+              for (var i = 0; i < curves.length; i++) {
+                var curve = curves[i], id = curve._path._id, map = curveCollisionsMap[id] = curveCollisionsMap[id] || {};
+                map[curve.getIndex()] = {
+                  hor: getCurves(curveCollisions[i].hor),
+                  ver: getCurves(curveCollisions[i].ver)
+                };
+              }
+              for (var i = 0, l = crossings.length; i < l; i++) {
+                propagateWinding(
+                  crossings[i]._segment,
+                  _path1,
+                  _path2,
+                  curveCollisionsMap,
+                  operator
+                );
+              }
+              for (var i = 0, l = segments.length; i < l; i++) {
+                var segment = segments[i], inter = segment._intersection;
+                if (!segment._winding) {
+                  propagateWinding(
+                    segment,
+                    _path1,
+                    _path2,
+                    curveCollisionsMap,
+                    operator
+                  );
+                }
+                if (!(inter && inter._overlap))
+                  segment._path._overlapsOnly = false;
+              }
+              paths = tracePaths(segments, operator);
+            } else {
+              paths = reorientPaths(
+                paths2 ? paths1.concat(paths2) : paths1.slice(),
+                function(w) {
+                  return !!operator[w];
+                }
+              );
+            }
+            return createResult(paths, true, path1, path2, options);
+          }
+          function splitBoolean(path1, path2, operation) {
+            var _path1 = preparePath(path1), _path2 = preparePath(path2), crossings = _path1.getIntersections(_path2, filterIntersection), subtract = operation === "subtract", divide = operation === "divide", added = {}, paths = [];
+            function addPath(path3) {
+              if (!added[path3._id] && (divide || _path2.contains(path3.getPointAt(path3.getLength() / 2)) ^ subtract)) {
+                paths.unshift(path3);
+                return added[path3._id] = true;
+              }
+            }
+            for (var i = crossings.length - 1; i >= 0; i--) {
+              var path = crossings[i].split();
+              if (path) {
+                if (addPath(path))
+                  path.getFirstSegment().setHandleIn(0, 0);
+                _path1.getLastSegment().setHandleOut(0, 0);
+              }
+            }
+            addPath(_path1);
+            return createResult(paths, false, path1, path2);
+          }
+          function linkIntersections(from, to) {
+            var prev = from;
+            while (prev) {
+              if (prev === to)
+                return;
+              prev = prev._previous;
+            }
+            while (from._next && from._next !== to)
+              from = from._next;
+            if (!from._next) {
+              while (to._previous)
+                to = to._previous;
+              from._next = to;
+              to._previous = from;
+            }
+          }
+          function clearCurveHandles(curves) {
+            for (var i = curves.length - 1; i >= 0; i--)
+              curves[i].clearHandles();
+          }
+          function reorientPaths(paths, isInside, clockwise) {
+            var length = paths && paths.length;
+            if (length) {
+              var lookup = Base.each(paths, function(path, i2) {
+                this[path._id] = {
+                  container: null,
+                  winding: path.isClockwise() ? 1 : -1,
+                  index: i2
+                };
+              }, {}), sorted = paths.slice().sort(function(a, b) {
+                return abs(b.getArea()) - abs(a.getArea());
+              }), first = sorted[0];
+              var collisions = CollisionDetection.findItemBoundsCollisions(
+                sorted,
+                null,
+                Numerical.GEOMETRIC_EPSILON
+              );
+              if (clockwise == null)
+                clockwise = first.isClockwise();
+              for (var i = 0; i < length; i++) {
+                var path1 = sorted[i], entry1 = lookup[path1._id], containerWinding = 0, indices = collisions[i];
+                if (indices) {
+                  var point = null;
+                  for (var j = indices.length - 1; j >= 0; j--) {
+                    if (indices[j] < i) {
+                      point = point || path1.getInteriorPoint();
+                      var path2 = sorted[indices[j]];
+                      if (path2.contains(point)) {
+                        var entry2 = lookup[path2._id];
+                        containerWinding = entry2.winding;
+                        entry1.winding += containerWinding;
+                        entry1.container = entry2.exclude ? entry2.container : path2;
+                        break;
+                      }
+                    }
+                  }
+                }
+                if (isInside(entry1.winding) === isInside(containerWinding)) {
+                  entry1.exclude = true;
+                  paths[entry1.index] = null;
+                } else {
+                  var container = entry1.container;
+                  path1.setClockwise(
+                    container ? !container.isClockwise() : clockwise
+                  );
+                }
+              }
+            }
+            return paths;
+          }
+          function divideLocations(locations, include, clearLater) {
+            var results = include && [], tMin = 1e-8, tMax = 1 - tMin, clearHandles = false, clearCurves = clearLater || [], clearLookup = clearLater && {}, renormalizeLocs, prevCurve, prevTime;
+            function getId(curve2) {
+              return curve2._path._id + "." + curve2._segment1._index;
+            }
+            for (var i = (clearLater && clearLater.length) - 1; i >= 0; i--) {
+              var curve = clearLater[i];
+              if (curve._path)
+                clearLookup[getId(curve)] = true;
+            }
+            for (var i = locations.length - 1; i >= 0; i--) {
+              var loc = locations[i], time = loc._time, origTime = time, exclude = include && !include(loc), curve = loc._curve, segment;
+              if (curve) {
+                if (curve !== prevCurve) {
+                  clearHandles = !curve.hasHandles() || clearLookup && clearLookup[getId(curve)];
+                  renormalizeLocs = [];
+                  prevTime = null;
+                  prevCurve = curve;
+                } else if (prevTime >= tMin) {
+                  time /= prevTime;
+                }
+              }
+              if (exclude) {
+                if (renormalizeLocs)
+                  renormalizeLocs.push(loc);
+                continue;
+              } else if (include) {
+                results.unshift(loc);
+              }
+              prevTime = origTime;
+              if (time < tMin) {
+                segment = curve._segment1;
+              } else if (time > tMax) {
+                segment = curve._segment2;
+              } else {
+                var newCurve = curve.divideAtTime(time, true);
+                if (clearHandles)
+                  clearCurves.push(curve, newCurve);
+                segment = newCurve._segment1;
+                for (var j = renormalizeLocs.length - 1; j >= 0; j--) {
+                  var l = renormalizeLocs[j];
+                  l._time = (l._time - time) / (1 - time);
+                }
+              }
+              loc._setSegment(segment);
+              var inter = segment._intersection, dest = loc._intersection;
+              if (inter) {
+                linkIntersections(inter, dest);
+                var other = inter;
+                while (other) {
+                  linkIntersections(other._intersection, inter);
+                  other = other._next;
+                }
+              } else {
+                segment._intersection = dest;
+              }
+            }
+            if (!clearLater)
+              clearCurveHandles(clearCurves);
+            return results || locations;
+          }
+          function getWinding(point, curves, dir, closed, dontFlip) {
+            var curvesList = Array.isArray(curves) ? curves : curves[dir ? "hor" : "ver"];
+            var ia = dir ? 1 : 0, io = ia ^ 1, pv = [point.x, point.y], pa = pv[ia], po = pv[io], windingEpsilon = 1e-9, qualityEpsilon = 1e-6, paL = pa - windingEpsilon, paR = pa + windingEpsilon, windingL = 0, windingR = 0, pathWindingL = 0, pathWindingR = 0, onPath = false, onAnyPath = false, quality = 1, roots = [], vPrev, vClose;
+            function addWinding(v3) {
+              var o0 = v3[io + 0], o3 = v3[io + 6];
+              if (po < min(o0, o3) || po > max(o0, o3)) {
+                return;
+              }
+              var a0 = v3[ia + 0], a1 = v3[ia + 2], a2 = v3[ia + 4], a3 = v3[ia + 6];
+              if (o0 === o3) {
+                if (a0 < paR && a3 > paL || a3 < paR && a0 > paL) {
+                  onPath = true;
+                }
+                return;
+              }
+              var t = po === o0 ? 0 : po === o3 ? 1 : paL > max(a0, a1, a2, a3) || paR < min(a0, a1, a2, a3) ? 1 : Curve.solveCubic(v3, io, po, roots, 0, 1) > 0 ? roots[0] : 1, a = t === 0 ? a0 : t === 1 ? a3 : Curve.getPoint(v3, t)[dir ? "y" : "x"], winding = o0 > o3 ? 1 : -1, windingPrev = vPrev[io] > vPrev[io + 6] ? 1 : -1, a3Prev = vPrev[ia + 6];
+              if (po !== o0) {
+                if (a < paL) {
+                  pathWindingL += winding;
+                } else if (a > paR) {
+                  pathWindingR += winding;
+                } else {
+                  onPath = true;
+                }
+                if (a > pa - qualityEpsilon && a < pa + qualityEpsilon)
+                  quality /= 2;
+              } else {
+                if (winding !== windingPrev) {
+                  if (a0 < paL) {
+                    pathWindingL += winding;
+                  } else if (a0 > paR) {
+                    pathWindingR += winding;
+                  }
+                } else if (a0 != a3Prev) {
+                  if (a3Prev < paR && a > paR) {
+                    pathWindingR += winding;
+                    onPath = true;
+                  } else if (a3Prev > paL && a < paL) {
+                    pathWindingL += winding;
+                    onPath = true;
+                  }
+                }
+                quality /= 4;
+              }
+              vPrev = v3;
+              return !dontFlip && a > paL && a < paR && Curve.getTangent(v3, t)[dir ? "x" : "y"] === 0 && getWinding(point, curves, !dir, closed, true);
+            }
+            function handleCurve(v3) {
+              var o0 = v3[io + 0], o1 = v3[io + 2], o2 = v3[io + 4], o3 = v3[io + 6];
+              if (po <= max(o0, o1, o2, o3) && po >= min(o0, o1, o2, o3)) {
+                var a0 = v3[ia + 0], a1 = v3[ia + 2], a2 = v3[ia + 4], a3 = v3[ia + 6], monoCurves = paL > max(a0, a1, a2, a3) || paR < min(a0, a1, a2, a3) ? [v3] : Curve.getMonoCurves(v3, dir), res2;
+                for (var i2 = 0, l2 = monoCurves.length; i2 < l2; i2++) {
+                  if (res2 = addWinding(monoCurves[i2]))
+                    return res2;
+                }
+              }
+            }
+            for (var i = 0, l = curvesList.length; i < l; i++) {
+              var curve = curvesList[i], path = curve._path, v = curve.getValues(), res;
+              if (!i || curvesList[i - 1]._path !== path) {
+                vPrev = null;
+                if (!path._closed) {
+                  vClose = Curve.getValues(
+                    path.getLastCurve().getSegment2(),
+                    curve.getSegment1(),
+                    null,
+                    !closed
+                  );
+                  if (vClose[io] !== vClose[io + 6]) {
+                    vPrev = vClose;
+                  }
+                }
+                if (!vPrev) {
+                  vPrev = v;
+                  var prev = path.getLastCurve();
+                  while (prev && prev !== curve) {
+                    var v2 = prev.getValues();
+                    if (v2[io] !== v2[io + 6]) {
+                      vPrev = v2;
+                      break;
+                    }
+                    prev = prev.getPrevious();
+                  }
+                }
+              }
+              if (res = handleCurve(v))
+                return res;
+              if (i + 1 === l || curvesList[i + 1]._path !== path) {
+                if (vClose && (res = handleCurve(vClose)))
+                  return res;
+                if (onPath && !pathWindingL && !pathWindingR) {
+                  pathWindingL = pathWindingR = path.isClockwise(closed) ^ dir ? 1 : -1;
+                }
+                windingL += pathWindingL;
+                windingR += pathWindingR;
+                pathWindingL = pathWindingR = 0;
+                if (onPath) {
+                  onAnyPath = true;
+                  onPath = false;
+                }
+                vClose = null;
+              }
+            }
+            windingL = abs(windingL);
+            windingR = abs(windingR);
+            return {
+              winding: max(windingL, windingR),
+              windingL,
+              windingR,
+              quality,
+              onPath: onAnyPath
+            };
+          }
+          function propagateWinding(segment, path1, path2, curveCollisionsMap, operator) {
+            var chain = [], start = segment, totalLength = 0, winding;
+            do {
+              var curve = segment.getCurve();
+              if (curve) {
+                var length = curve.getLength();
+                chain.push({ segment, curve, length });
+                totalLength += length;
+              }
+              segment = segment.getNext();
+            } while (segment && !segment._intersection && segment !== start);
+            var offsets = [0.5, 0.25, 0.75], winding = { winding: 0, quality: -1 }, tMin = 1e-3, tMax = 1 - tMin;
+            for (var i = 0; i < offsets.length && winding.quality < 0.5; i++) {
+              var length = totalLength * offsets[i];
+              for (var j = 0, l = chain.length; j < l; j++) {
+                var entry = chain[j], curveLength = entry.length;
+                if (length <= curveLength) {
+                  var curve = entry.curve, path = curve._path, parent = path._parent, operand = parent instanceof CompoundPath ? parent : path, t = Numerical.clamp(curve.getTimeAt(length), tMin, tMax), pt = curve.getPointAtTime(t), dir = abs(curve.getTangentAtTime(t).y) < Math.SQRT1_2;
+                  var wind = null;
+                  if (operator.subtract && path2) {
+                    var otherPath = operand === path1 ? path2 : path1, pathWinding = otherPath._getWinding(pt, dir, true);
+                    if (operand === path1 && pathWinding.winding || operand === path2 && !pathWinding.winding) {
+                      if (pathWinding.quality < 1) {
+                        continue;
+                      } else {
+                        wind = { winding: 0, quality: 1 };
+                      }
+                    }
+                  }
+                  wind = wind || getWinding(
+                    pt,
+                    curveCollisionsMap[path._id][curve.getIndex()],
+                    dir,
+                    true
+                  );
+                  if (wind.quality > winding.quality)
+                    winding = wind;
+                  break;
+                }
+                length -= curveLength;
+              }
+            }
+            for (var j = chain.length - 1; j >= 0; j--) {
+              chain[j].segment._winding = winding;
+            }
+          }
+          function tracePaths(segments, operator) {
+            var paths = [], starts;
+            function isValid(seg2) {
+              var winding;
+              return !!(seg2 && !seg2._visited && (!operator || operator[(winding = seg2._winding || {}).winding] && !(operator.unite && winding.winding === 2 && winding.windingL && winding.windingR)));
+            }
+            function isStart(seg2) {
+              if (seg2) {
+                for (var i2 = 0, l2 = starts.length; i2 < l2; i2++) {
+                  if (seg2 === starts[i2])
+                    return true;
+                }
+              }
+              return false;
+            }
+            function visitPath(path3) {
+              var segments2 = path3._segments;
+              for (var i2 = 0, l2 = segments2.length; i2 < l2; i2++) {
+                segments2[i2]._visited = true;
+              }
+            }
+            function getCrossingSegments(segment, collectStarts) {
+              var inter = segment._intersection, start = inter, crossings2 = [];
+              if (collectStarts)
+                starts = [segment];
+              function collect(inter2, end) {
+                while (inter2 && inter2 !== end) {
+                  var other2 = inter2._segment, path3 = other2 && other2._path;
+                  if (path3) {
+                    var next2 = other2.getNext() || path3.getFirstSegment(), nextInter = next2._intersection;
+                    if (other2 !== segment && (isStart(other2) || isStart(next2) || next2 && (isValid(other2) && (isValid(next2) || nextInter && isValid(nextInter._segment))))) {
+                      crossings2.push(other2);
+                    }
+                    if (collectStarts)
+                      starts.push(other2);
+                  }
+                  inter2 = inter2._next;
+                }
+              }
+              if (inter) {
+                collect(inter);
+                while (inter && inter._previous)
+                  inter = inter._previous;
+                collect(inter, start);
+              }
+              return crossings2;
+            }
+            segments.sort(function(seg1, seg2) {
+              var inter1 = seg1._intersection, inter2 = seg2._intersection, over1 = !!(inter1 && inter1._overlap), over2 = !!(inter2 && inter2._overlap), path12 = seg1._path, path22 = seg2._path;
+              return over1 ^ over2 ? over1 ? 1 : -1 : !inter1 ^ !inter2 ? inter1 ? 1 : -1 : path12 !== path22 ? path12._id - path22._id : seg1._index - seg2._index;
+            });
+            for (var i = 0, l = segments.length; i < l; i++) {
+              var seg = segments[i], valid = isValid(seg), path = null, finished = false, closed = true, branches = [], branch, visited, handleIn;
+              if (valid && seg._path._overlapsOnly) {
+                var path1 = seg._path, path2 = seg._intersection._segment._path;
+                if (path1.compare(path2)) {
+                  if (path1.getArea())
+                    paths.push(path1.clone(false));
+                  visitPath(path1);
+                  visitPath(path2);
+                  valid = false;
+                }
+              }
+              while (valid) {
+                var first = !path, crossings = getCrossingSegments(seg, first), other = crossings.shift(), finished = !first && (isStart(seg) || isStart(other)), cross = !finished && other;
+                if (first) {
+                  path = new Path(Item.NO_INSERT);
+                  branch = null;
+                }
+                if (finished) {
+                  if (seg.isFirst() || seg.isLast())
+                    closed = seg._path._closed;
+                  seg._visited = true;
+                  break;
+                }
+                if (cross && branch) {
+                  branches.push(branch);
+                  branch = null;
+                }
+                if (!branch) {
+                  if (cross)
+                    crossings.push(seg);
+                  branch = {
+                    start: path._segments.length,
+                    crossings,
+                    visited: visited = [],
+                    handleIn
+                  };
+                }
+                if (cross)
+                  seg = other;
+                if (!isValid(seg)) {
+                  path.removeSegments(branch.start);
+                  for (var j = 0, k = visited.length; j < k; j++) {
+                    visited[j]._visited = false;
+                  }
+                  visited.length = 0;
+                  do {
+                    seg = branch && branch.crossings.shift();
+                    if (!seg || !seg._path) {
+                      seg = null;
+                      branch = branches.pop();
+                      if (branch) {
+                        visited = branch.visited;
+                        handleIn = branch.handleIn;
+                      }
+                    }
+                  } while (branch && !isValid(seg));
+                  if (!seg)
+                    break;
+                }
+                var next = seg.getNext();
+                path.add(new Segment(
+                  seg._point,
+                  handleIn,
+                  next && seg._handleOut
+                ));
+                seg._visited = true;
+                visited.push(seg);
+                seg = next || seg._path.getFirstSegment();
+                handleIn = next && next._handleIn;
+              }
+              if (finished) {
+                if (closed) {
+                  path.getFirstSegment().setHandleIn(handleIn);
+                  path.setClosed(closed);
+                }
+                if (path.getArea() !== 0) {
+                  paths.push(path);
+                }
+              }
+            }
+            return paths;
+          }
+          return {
+            _getWinding: function(point, dir, closed) {
+              return getWinding(point, this.getCurves(), dir, closed);
+            },
+            unite: function(path, options) {
+              return traceBoolean(this, path, "unite", options);
+            },
+            intersect: function(path, options) {
+              return traceBoolean(this, path, "intersect", options);
+            },
+            subtract: function(path, options) {
+              return traceBoolean(this, path, "subtract", options);
+            },
+            exclude: function(path, options) {
+              return traceBoolean(this, path, "exclude", options);
+            },
+            divide: function(path, options) {
+              return options && (options.trace == false || options.stroke) ? splitBoolean(this, path, "divide") : createResult([
+                this.subtract(path, options),
+                this.intersect(path, options)
+              ], true, this, path, options);
+            },
+            resolveCrossings: function() {
+              var children = this._children, paths = children || [this];
+              function hasOverlap(seg2, path2) {
+                var inter = seg2 && seg2._intersection;
+                return inter && inter._overlap && inter._path === path2;
+              }
+              var hasOverlaps = false, hasCrossings = false, intersections = this.getIntersections(null, function(inter) {
+                return inter.hasOverlap() && (hasOverlaps = true) || inter.isCrossing() && (hasCrossings = true);
+              }), clearCurves = hasOverlaps && hasCrossings && [];
+              intersections = CurveLocation.expand(intersections);
+              if (hasOverlaps) {
+                var overlaps = divideLocations(intersections, function(inter) {
+                  return inter.hasOverlap();
+                }, clearCurves);
+                for (var i = overlaps.length - 1; i >= 0; i--) {
+                  var overlap = overlaps[i], path = overlap._path, seg = overlap._segment, prev = seg.getPrevious(), next = seg.getNext();
+                  if (hasOverlap(prev, path) && hasOverlap(next, path)) {
+                    seg.remove();
+                    prev._handleOut._set(0, 0);
+                    next._handleIn._set(0, 0);
+                    if (prev !== seg && !prev.getCurve().hasLength()) {
+                      next._handleIn.set(prev._handleIn);
+                      prev.remove();
+                    }
+                  }
+                }
+              }
+              if (hasCrossings) {
+                divideLocations(intersections, hasOverlaps && function(inter) {
+                  var curve1 = inter.getCurve(), seg1 = inter.getSegment(), other = inter._intersection, curve2 = other._curve, seg2 = other._segment;
+                  if (curve1 && curve2 && curve1._path && curve2._path)
+                    return true;
+                  if (seg1)
+                    seg1._intersection = null;
+                  if (seg2)
+                    seg2._intersection = null;
+                }, clearCurves);
+                if (clearCurves)
+                  clearCurveHandles(clearCurves);
+                paths = tracePaths(Base.each(paths, function(path2) {
+                  Base.push(this, path2._segments);
+                }, []));
+              }
+              var length = paths.length, item;
+              if (length > 1 && children) {
+                if (paths !== children)
+                  this.setChildren(paths);
+                item = this;
+              } else if (length === 1 && !children) {
+                if (paths[0] !== this)
+                  this.setSegments(paths[0].removeSegments());
+                item = this;
+              }
+              if (!item) {
+                item = new CompoundPath(Item.NO_INSERT);
+                item.addChildren(paths);
+                item = item.reduce();
+                item.copyAttributes(this);
+                this.replaceWith(item);
+              }
+              return item;
+            },
+            reorient: function(nonZero, clockwise) {
+              var children = this._children;
+              if (children && children.length) {
+                this.setChildren(reorientPaths(
+                  this.removeChildren(),
+                  function(w) {
+                    return !!(nonZero ? w : w & 1);
+                  },
+                  clockwise
+                ));
+              } else if (clockwise !== undefined2) {
+                this.setClockwise(clockwise);
+              }
+              return this;
+            },
+            getInteriorPoint: function() {
+              var bounds = this.getBounds(), point = bounds.getCenter(true);
+              if (!this.contains(point)) {
+                var curves = this.getCurves(), y = point.y, intercepts = [], roots = [];
+                for (var i = 0, l = curves.length; i < l; i++) {
+                  var v = curves[i].getValues(), o0 = v[1], o1 = v[3], o2 = v[5], o3 = v[7];
+                  if (y >= min(o0, o1, o2, o3) && y <= max(o0, o1, o2, o3)) {
+                    var monoCurves = Curve.getMonoCurves(v);
+                    for (var j = 0, m = monoCurves.length; j < m; j++) {
+                      var mv = monoCurves[j], mo0 = mv[1], mo3 = mv[7];
+                      if (mo0 !== mo3 && (y >= mo0 && y <= mo3 || y >= mo3 && y <= mo0)) {
+                        var x = y === mo0 ? mv[0] : y === mo3 ? mv[6] : Curve.solveCubic(mv, 1, y, roots, 0, 1) === 1 ? Curve.getPoint(mv, roots[0]).x : (mv[0] + mv[6]) / 2;
+                        intercepts.push(x);
+                      }
+                    }
+                  }
+                }
+                if (intercepts.length > 1) {
+                  intercepts.sort(function(a, b) {
+                    return a - b;
+                  });
+                  point.x = (intercepts[0] + intercepts[1]) / 2;
+                }
+              }
+              return point;
+            }
+          };
+        }());
+        var PathFlattener = Base.extend(
+          {
+            _class: "PathFlattener",
+            initialize: function(path, flatness, maxRecursion, ignoreStraight, matrix) {
+              var curves = [], parts = [], length = 0, minSpan = 1 / (maxRecursion || 32), segments = path._segments, segment1 = segments[0], segment2;
+              function addCurve(segment12, segment22) {
+                var curve = Curve.getValues(segment12, segment22, matrix);
+                curves.push(curve);
+                computeParts(curve, segment12._index, 0, 1);
+              }
+              function computeParts(curve, index, t1, t2) {
+                if (t2 - t1 > minSpan && !(ignoreStraight && Curve.isStraight(curve)) && !Curve.isFlatEnough(curve, flatness || 0.25)) {
+                  var halves = Curve.subdivide(curve, 0.5), tMid = (t1 + t2) / 2;
+                  computeParts(halves[0], index, t1, tMid);
+                  computeParts(halves[1], index, tMid, t2);
+                } else {
+                  var dx = curve[6] - curve[0], dy = curve[7] - curve[1], dist = Math.sqrt(dx * dx + dy * dy);
+                  if (dist > 0) {
+                    length += dist;
+                    parts.push({
+                      offset: length,
+                      curve,
+                      index,
+                      time: t2
+                    });
+                  }
+                }
+              }
+              for (var i = 1, l = segments.length; i < l; i++) {
+                segment2 = segments[i];
+                addCurve(segment1, segment2);
+                segment1 = segment2;
+              }
+              if (path._closed)
+                addCurve(segment2 || segment1, segments[0]);
+              this.curves = curves;
+              this.parts = parts;
+              this.length = length;
+              this.index = 0;
+            },
+            _get: function(offset) {
+              var parts = this.parts, length = parts.length, start, i, j = this.index;
+              for (; ; ) {
+                i = j;
+                if (!j || parts[--j].offset < offset)
+                  break;
+              }
+              for (; i < length; i++) {
+                var part = parts[i];
+                if (part.offset >= offset) {
+                  this.index = i;
+                  var prev = parts[i - 1], prevTime = prev && prev.index === part.index ? prev.time : 0, prevOffset = prev ? prev.offset : 0;
+                  return {
+                    index: part.index,
+                    time: prevTime + (part.time - prevTime) * (offset - prevOffset) / (part.offset - prevOffset)
+                  };
+                }
+              }
+              return {
+                index: parts[length - 1].index,
+                time: 1
+              };
+            },
+            drawPart: function(ctx, from, to) {
+              var start = this._get(from), end = this._get(to);
+              for (var i = start.index, l = end.index; i <= l; i++) {
+                var curve = Curve.getPart(
+                  this.curves[i],
+                  i === start.index ? start.time : 0,
+                  i === end.index ? end.time : 1
+                );
+                if (i === start.index)
+                  ctx.moveTo(curve[0], curve[1]);
+                ctx.bezierCurveTo.apply(ctx, curve.slice(2));
+              }
+            }
+          },
+          Base.each(
+            Curve._evaluateMethods,
+            function(name) {
+              this[name + "At"] = function(offset) {
+                var param = this._get(offset);
+                return Curve[name](this.curves[param.index], param.time);
+              };
+            },
+            {}
+          )
+        );
+        var PathFitter = Base.extend({
+          initialize: function(path) {
+            var points = this.points = [], segments = path._segments, closed = path._closed;
+            for (var i = 0, prev, l = segments.length; i < l; i++) {
+              var point = segments[i].point;
+              if (!prev || !prev.equals(point)) {
+                points.push(prev = point.clone());
+              }
+            }
+            if (closed) {
+              points.unshift(points[points.length - 1]);
+              points.push(points[1]);
+            }
+            this.closed = closed;
+          },
+          fit: function(error) {
+            var points = this.points, length = points.length, segments = null;
+            if (length > 0) {
+              segments = [new Segment(points[0])];
+              if (length > 1) {
+                this.fitCubic(
+                  segments,
+                  error,
+                  0,
+                  length - 1,
+                  points[1].subtract(points[0]),
+                  points[length - 2].subtract(points[length - 1])
+                );
+                if (this.closed) {
+                  segments.shift();
+                  segments.pop();
+                }
+              }
+            }
+            return segments;
+          },
+          fitCubic: function(segments, error, first, last, tan1, tan2) {
+            var points = this.points;
+            if (last - first === 1) {
+              var pt1 = points[first], pt2 = points[last], dist = pt1.getDistance(pt2) / 3;
+              this.addCurve(segments, [
+                pt1,
+                pt1.add(tan1.normalize(dist)),
+                pt2.add(tan2.normalize(dist)),
+                pt2
+              ]);
+              return;
+            }
+            var uPrime = this.chordLengthParameterize(first, last), maxError = Math.max(error, error * error), split, parametersInOrder = true;
+            for (var i = 0; i <= 4; i++) {
+              var curve = this.generateBezier(first, last, uPrime, tan1, tan2);
+              var max = this.findMaxError(first, last, curve, uPrime);
+              if (max.error < error && parametersInOrder) {
+                this.addCurve(segments, curve);
+                return;
+              }
+              split = max.index;
+              if (max.error >= maxError)
+                break;
+              parametersInOrder = this.reparameterize(first, last, uPrime, curve);
+              maxError = max.error;
+            }
+            var tanCenter = points[split - 1].subtract(points[split + 1]);
+            this.fitCubic(segments, error, first, split, tan1, tanCenter);
+            this.fitCubic(segments, error, split, last, tanCenter.negate(), tan2);
+          },
+          addCurve: function(segments, curve) {
+            var prev = segments[segments.length - 1];
+            prev.setHandleOut(curve[1].subtract(curve[0]));
+            segments.push(new Segment(curve[3], curve[2].subtract(curve[3])));
+          },
+          generateBezier: function(first, last, uPrime, tan1, tan2) {
+            var epsilon = 1e-12, abs = Math.abs, points = this.points, pt1 = points[first], pt2 = points[last], C = [[0, 0], [0, 0]], X = [0, 0];
+            for (var i = 0, l = last - first + 1; i < l; i++) {
+              var u = uPrime[i], t = 1 - u, b = 3 * u * t, b0 = t * t * t, b1 = b * t, b2 = b * u, b3 = u * u * u, a1 = tan1.normalize(b1), a2 = tan2.normalize(b2), tmp = points[first + i].subtract(pt1.multiply(b0 + b1)).subtract(pt2.multiply(b2 + b3));
+              C[0][0] += a1.dot(a1);
+              C[0][1] += a1.dot(a2);
+              C[1][0] = C[0][1];
+              C[1][1] += a2.dot(a2);
+              X[0] += a1.dot(tmp);
+              X[1] += a2.dot(tmp);
+            }
+            var detC0C1 = C[0][0] * C[1][1] - C[1][0] * C[0][1], alpha1, alpha2;
+            if (abs(detC0C1) > epsilon) {
+              var detC0X = C[0][0] * X[1] - C[1][0] * X[0], detXC1 = X[0] * C[1][1] - X[1] * C[0][1];
+              alpha1 = detXC1 / detC0C1;
+              alpha2 = detC0X / detC0C1;
+            } else {
+              var c0 = C[0][0] + C[0][1], c1 = C[1][0] + C[1][1];
+              alpha1 = alpha2 = abs(c0) > epsilon ? X[0] / c0 : abs(c1) > epsilon ? X[1] / c1 : 0;
+            }
+            var segLength = pt2.getDistance(pt1), eps = epsilon * segLength, handle1, handle2;
+            if (alpha1 < eps || alpha2 < eps) {
+              alpha1 = alpha2 = segLength / 3;
+            } else {
+              var line = pt2.subtract(pt1);
+              handle1 = tan1.normalize(alpha1);
+              handle2 = tan2.normalize(alpha2);
+              if (handle1.dot(line) - handle2.dot(line) > segLength * segLength) {
+                alpha1 = alpha2 = segLength / 3;
+                handle1 = handle2 = null;
+              }
+            }
+            return [
+              pt1,
+              pt1.add(handle1 || tan1.normalize(alpha1)),
+              pt2.add(handle2 || tan2.normalize(alpha2)),
+              pt2
+            ];
+          },
+          reparameterize: function(first, last, u, curve) {
+            for (var i = first; i <= last; i++) {
+              u[i - first] = this.findRoot(curve, this.points[i], u[i - first]);
+            }
+            for (var i = 1, l = u.length; i < l; i++) {
+              if (u[i] <= u[i - 1])
+                return false;
+            }
+            return true;
+          },
+          findRoot: function(curve, point, u) {
+            var curve1 = [], curve2 = [];
+            for (var i = 0; i <= 2; i++) {
+              curve1[i] = curve[i + 1].subtract(curve[i]).multiply(3);
+            }
+            for (var i = 0; i <= 1; i++) {
+              curve2[i] = curve1[i + 1].subtract(curve1[i]).multiply(2);
+            }
+            var pt = this.evaluate(3, curve, u), pt1 = this.evaluate(2, curve1, u), pt2 = this.evaluate(1, curve2, u), diff = pt.subtract(point), df = pt1.dot(pt1) + diff.dot(pt2);
+            return Numerical.isMachineZero(df) ? u : u - diff.dot(pt1) / df;
+          },
+          evaluate: function(degree, curve, t) {
+            var tmp = curve.slice();
+            for (var i = 1; i <= degree; i++) {
+              for (var j = 0; j <= degree - i; j++) {
+                tmp[j] = tmp[j].multiply(1 - t).add(tmp[j + 1].multiply(t));
+              }
+            }
+            return tmp[0];
+          },
+          chordLengthParameterize: function(first, last) {
+            var u = [0];
+            for (var i = first + 1; i <= last; i++) {
+              u[i - first] = u[i - first - 1] + this.points[i].getDistance(this.points[i - 1]);
+            }
+            for (var i = 1, m = last - first; i <= m; i++) {
+              u[i] /= u[m];
+            }
+            return u;
+          },
+          findMaxError: function(first, last, curve, u) {
+            var index = Math.floor((last - first + 1) / 2), maxDist = 0;
+            for (var i = first + 1; i < last; i++) {
+              var P = this.evaluate(3, curve, u[i - first]);
+              var v = P.subtract(this.points[i]);
+              var dist = v.x * v.x + v.y * v.y;
+              if (dist >= maxDist) {
+                maxDist = dist;
+                index = i;
+              }
+            }
+            return {
+              error: maxDist,
+              index
+            };
+          }
+        });
+        var TextItem = Item.extend({
+          _class: "TextItem",
+          _applyMatrix: false,
+          _canApplyMatrix: false,
+          _serializeFields: {
+            content: null
+          },
+          _boundsOptions: { stroke: false, handle: false },
+          initialize: function TextItem2(arg) {
+            this._content = "";
+            this._lines = [];
+            var hasProps = arg && Base.isPlainObject(arg) && arg.x === undefined2 && arg.y === undefined2;
+            this._initialize(hasProps && arg, !hasProps && Point.read(arguments));
+          },
+          _equals: function(item) {
+            return this._content === item._content;
+          },
+          copyContent: function(source) {
+            this.setContent(source._content);
+          },
+          getContent: function() {
+            return this._content;
+          },
+          setContent: function(content) {
+            this._content = "" + content;
+            this._lines = this._content.split(/\r\n|\n|\r/mg);
+            this._changed(521);
+          },
+          isEmpty: function() {
+            return !this._content;
+          },
+          getCharacterStyle: "#getStyle",
+          setCharacterStyle: "#setStyle",
+          getParagraphStyle: "#getStyle",
+          setParagraphStyle: "#setStyle"
+        });
+        var PointText = TextItem.extend({
+          _class: "PointText",
+          initialize: function PointText2() {
+            TextItem.apply(this, arguments);
+          },
+          getPoint: function() {
+            var point = this._matrix.getTranslation();
+            return new LinkedPoint(point.x, point.y, this, "setPoint");
+          },
+          setPoint: function() {
+            var point = Point.read(arguments);
+            this.translate(point.subtract(this._matrix.getTranslation()));
+          },
+          _draw: function(ctx, param, viewMatrix) {
+            if (!this._content)
+              return;
+            this._setStyles(ctx, param, viewMatrix);
+            var lines = this._lines, style = this._style, hasFill = style.hasFill(), hasStroke = style.hasStroke(), leading = style.getLeading(), shadowColor = ctx.shadowColor;
+            ctx.font = style.getFontStyle();
+            ctx.textAlign = style.getJustification();
+            for (var i = 0, l = lines.length; i < l; i++) {
+              ctx.shadowColor = shadowColor;
+              var line = lines[i];
+              if (hasFill) {
+                ctx.fillText(line, 0, 0);
+                ctx.shadowColor = "rgba(0,0,0,0)";
+              }
+              if (hasStroke)
+                ctx.strokeText(line, 0, 0);
+              ctx.translate(0, leading);
+            }
+          },
+          _getBounds: function(matrix, options) {
+            var style = this._style, lines = this._lines, numLines = lines.length, justification = style.getJustification(), leading = style.getLeading(), width = this.getView().getTextWidth(style.getFontStyle(), lines), x = 0;
+            if (justification !== "left")
+              x -= width / (justification === "center" ? 2 : 1);
+            var rect = new Rectangle(
+              x,
+              numLines ? -0.75 * leading : 0,
+              width,
+              numLines * leading
+            );
+            return matrix ? matrix._transformBounds(rect, rect) : rect;
+          }
+        });
+        var Color = Base.extend(
+          new function() {
+            var types = {
+              gray: ["gray"],
+              rgb: ["red", "green", "blue"],
+              hsb: ["hue", "saturation", "brightness"],
+              hsl: ["hue", "saturation", "lightness"],
+              gradient: ["gradient", "origin", "destination", "highlight"]
+            };
+            var componentParsers = {}, namedColors = {
+              transparent: [0, 0, 0, 0]
+            }, colorCtx;
+            function fromCSS(string) {
+              var match = string.match(
+                /^#([\da-f]{2})([\da-f]{2})([\da-f]{2})([\da-f]{2})?$/i
+              ) || string.match(
+                /^#([\da-f])([\da-f])([\da-f])([\da-f])?$/i
+              ), type = "rgb", components;
+              if (match) {
+                var amount = match[4] ? 4 : 3;
+                components = new Array(amount);
+                for (var i = 0; i < amount; i++) {
+                  var value = match[i + 1];
+                  components[i] = parseInt(value.length == 1 ? value + value : value, 16) / 255;
+                }
+              } else if (match = string.match(/^(rgb|hsl)a?\((.*)\)$/)) {
+                type = match[1];
+                components = match[2].trim().split(/[,\s]+/g);
+                var isHSL = type === "hsl";
+                for (var i = 0, l = Math.min(components.length, 4); i < l; i++) {
+                  var component = components[i];
+                  var value = parseFloat(component);
+                  if (isHSL) {
+                    if (i === 0) {
+                      var unit = component.match(/([a-z]*)$/)[1];
+                      value *= {
+                        turn: 360,
+                        rad: 180 / Math.PI,
+                        grad: 0.9
+                      }[unit] || 1;
+                    } else if (i < 3) {
+                      value /= 100;
+                    }
+                  } else if (i < 3) {
+                    value /= /%$/.test(component) ? 100 : 255;
+                  }
+                  components[i] = value;
+                }
+              } else {
+                var color = namedColors[string];
+                if (!color) {
+                  if (window2) {
+                    if (!colorCtx) {
+                      colorCtx = CanvasProvider.getContext(1, 1, {
+                        willReadFrequently: true
+                      });
+                      colorCtx.globalCompositeOperation = "copy";
+                    }
+                    colorCtx.fillStyle = "rgba(0,0,0,0)";
+                    colorCtx.fillStyle = string;
+                    colorCtx.fillRect(0, 0, 1, 1);
+                    var data = colorCtx.getImageData(0, 0, 1, 1).data;
+                    color = namedColors[string] = [
+                      data[0] / 255,
+                      data[1] / 255,
+                      data[2] / 255
+                    ];
+                  } else {
+                    color = [0, 0, 0];
+                  }
+                }
+                components = color.slice();
+              }
+              return [type, components];
+            }
+            var hsbIndices = [
+              [0, 3, 1],
+              [2, 0, 1],
+              [1, 0, 3],
+              [1, 2, 0],
+              [3, 1, 0],
+              [0, 1, 2]
+            ];
+            var converters = {
+              "rgb-hsb": function(r, g, b) {
+                var max = Math.max(r, g, b), min = Math.min(r, g, b), delta = max - min, h = delta === 0 ? 0 : (max == r ? (g - b) / delta + (g < b ? 6 : 0) : max == g ? (b - r) / delta + 2 : (r - g) / delta + 4) * 60;
+                return [h, max === 0 ? 0 : delta / max, max];
+              },
+              "hsb-rgb": function(h, s, b) {
+                h = (h / 60 % 6 + 6) % 6;
+                var i = Math.floor(h), f = h - i, i = hsbIndices[i], v = [
+                  b,
+                  b * (1 - s),
+                  b * (1 - s * f),
+                  b * (1 - s * (1 - f))
+                ];
+                return [v[i[0]], v[i[1]], v[i[2]]];
+              },
+              "rgb-hsl": function(r, g, b) {
+                var max = Math.max(r, g, b), min = Math.min(r, g, b), delta = max - min, achromatic = delta === 0, h = achromatic ? 0 : (max == r ? (g - b) / delta + (g < b ? 6 : 0) : max == g ? (b - r) / delta + 2 : (r - g) / delta + 4) * 60, l = (max + min) / 2, s = achromatic ? 0 : l < 0.5 ? delta / (max + min) : delta / (2 - max - min);
+                return [h, s, l];
+              },
+              "hsl-rgb": function(h, s, l) {
+                h = (h / 360 % 1 + 1) % 1;
+                if (s === 0)
+                  return [l, l, l];
+                var t3s = [h + 1 / 3, h, h - 1 / 3], t2 = l < 0.5 ? l * (1 + s) : l + s - l * s, t1 = 2 * l - t2, c = [];
+                for (var i = 0; i < 3; i++) {
+                  var t3 = t3s[i];
+                  if (t3 < 0)
+                    t3 += 1;
+                  if (t3 > 1)
+                    t3 -= 1;
+                  c[i] = 6 * t3 < 1 ? t1 + (t2 - t1) * 6 * t3 : 2 * t3 < 1 ? t2 : 3 * t3 < 2 ? t1 + (t2 - t1) * (2 / 3 - t3) * 6 : t1;
+                }
+                return c;
+              },
+              "rgb-gray": function(r, g, b) {
+                return [r * 0.2989 + g * 0.587 + b * 0.114];
+              },
+              "gray-rgb": function(g) {
+                return [g, g, g];
+              },
+              "gray-hsb": function(g) {
+                return [0, 0, g];
+              },
+              "gray-hsl": function(g) {
+                return [0, 0, g];
+              },
+              "gradient-rgb": function() {
+                return [];
+              },
+              "rgb-gradient": function() {
+                return [];
+              }
+            };
+            return Base.each(types, function(properties, type) {
+              componentParsers[type] = [];
+              Base.each(properties, function(name, index) {
+                var part = Base.capitalize(name), hasOverlap = /^(hue|saturation)$/.test(name), parser = componentParsers[type][index] = type === "gradient" ? name === "gradient" ? function(value) {
+                  var current = this._components[0];
+                  value = Gradient.read(
+                    Array.isArray(value) ? value : arguments,
+                    0,
+                    { readNull: true }
+                  );
+                  if (current !== value) {
+                    if (current)
+                      current._removeOwner(this);
+                    if (value)
+                      value._addOwner(this);
+                  }
+                  return value;
+                } : function() {
+                  return Point.read(arguments, 0, {
+                    readNull: name === "highlight",
+                    clone: true
+                  });
+                } : function(value) {
+                  return value == null || isNaN(value) ? 0 : +value;
+                };
+                this["get" + part] = function() {
+                  return this._type === type || hasOverlap && /^hs[bl]$/.test(this._type) ? this._components[index] : this._convert(type)[index];
+                };
+                this["set" + part] = function(value) {
+                  if (this._type !== type && !(hasOverlap && /^hs[bl]$/.test(this._type))) {
+                    this._components = this._convert(type);
+                    this._properties = types[type];
+                    this._type = type;
+                  }
+                  this._components[index] = parser.call(this, value);
+                  this._changed();
+                };
+              }, this);
+            }, {
+              _class: "Color",
+              _readIndex: true,
+              initialize: function Color2(arg) {
+                var args = arguments, reading = this.__read, read = 0, type, components, alpha, values;
+                if (Array.isArray(arg)) {
+                  args = arg;
+                  arg = args[0];
+                }
+                var argType = arg != null && typeof arg;
+                if (argType === "string" && arg in types) {
+                  type = arg;
+                  arg = args[1];
+                  if (Array.isArray(arg)) {
+                    components = arg;
+                    alpha = args[2];
+                  } else {
+                    if (reading)
+                      read = 1;
+                    args = Base.slice(args, 1);
+                    argType = typeof arg;
+                  }
+                }
+                if (!components) {
+                  values = argType === "number" ? args : argType === "object" && arg.length != null ? arg : null;
+                  if (values) {
+                    if (!type)
+                      type = values.length >= 3 ? "rgb" : "gray";
+                    var length = types[type].length;
+                    alpha = values[length];
+                    if (reading) {
+                      read += values === arguments ? length + (alpha != null ? 1 : 0) : 1;
+                    }
+                    if (values.length > length)
+                      values = Base.slice(values, 0, length);
+                  } else if (argType === "string") {
+                    var converted = fromCSS(arg);
+                    type = converted[0];
+                    components = converted[1];
+                    if (components.length === 4) {
+                      alpha = components[3];
+                      components.length--;
+                    }
+                  } else if (argType === "object") {
+                    if (arg.constructor === Color2) {
+                      type = arg._type;
+                      components = arg._components.slice();
+                      alpha = arg._alpha;
+                      if (type === "gradient") {
+                        for (var i = 1, l = components.length; i < l; i++) {
+                          var point = components[i];
+                          if (point)
+                            components[i] = point.clone();
+                        }
+                      }
+                    } else if (arg.constructor === Gradient) {
+                      type = "gradient";
+                      values = args;
+                    } else {
+                      type = "hue" in arg ? "lightness" in arg ? "hsl" : "hsb" : "gradient" in arg || "stops" in arg || "radial" in arg ? "gradient" : "gray" in arg ? "gray" : "rgb";
+                      var properties = types[type], parsers = componentParsers[type];
+                      this._components = components = [];
+                      for (var i = 0, l = properties.length; i < l; i++) {
+                        var value = arg[properties[i]];
+                        if (value == null && !i && type === "gradient" && "stops" in arg) {
+                          value = {
+                            stops: arg.stops,
+                            radial: arg.radial
+                          };
+                        }
+                        value = parsers[i].call(this, value);
+                        if (value != null)
+                          components[i] = value;
+                      }
+                      alpha = arg.alpha;
+                    }
+                  }
+                  if (reading && type)
+                    read = 1;
+                }
+                this._type = type || "rgb";
+                if (!components) {
+                  this._components = components = [];
+                  var parsers = componentParsers[this._type];
+                  for (var i = 0, l = parsers.length; i < l; i++) {
+                    var value = parsers[i].call(this, values && values[i]);
+                    if (value != null)
+                      components[i] = value;
+                  }
+                }
+                this._components = components;
+                this._properties = types[this._type];
+                this._alpha = alpha;
+                if (reading)
+                  this.__read = read;
+                return this;
+              },
+              set: "#initialize",
+              _serialize: function(options, dictionary) {
+                var components = this.getComponents();
+                return Base.serialize(
+                  /^(gray|rgb)$/.test(this._type) ? components : [this._type].concat(components),
+                  options,
+                  true,
+                  dictionary
+                );
+              },
+              _changed: function() {
+                this._canvasStyle = null;
+                if (this._owner) {
+                  if (this._setter) {
+                    this._owner[this._setter](this);
+                  } else {
+                    this._owner._changed(129);
+                  }
+                }
+              },
+              _convert: function(type) {
+                var converter;
+                return this._type === type ? this._components.slice() : (converter = converters[this._type + "-" + type]) ? converter.apply(this, this._components) : converters["rgb-" + type].apply(
+                  this,
+                  converters[this._type + "-rgb"].apply(
+                    this,
+                    this._components
+                  )
+                );
+              },
+              convert: function(type) {
+                return new Color(type, this._convert(type), this._alpha);
+              },
+              getType: function() {
+                return this._type;
+              },
+              setType: function(type) {
+                this._components = this._convert(type);
+                this._properties = types[type];
+                this._type = type;
+              },
+              getComponents: function() {
+                var components = this._components.slice();
+                if (this._alpha != null)
+                  components.push(this._alpha);
+                return components;
+              },
+              getAlpha: function() {
+                return this._alpha != null ? this._alpha : 1;
+              },
+              setAlpha: function(alpha) {
+                this._alpha = alpha == null ? null : Math.min(Math.max(alpha, 0), 1);
+                this._changed();
+              },
+              hasAlpha: function() {
+                return this._alpha != null;
+              },
+              equals: function(color) {
+                var col = Base.isPlainValue(color, true) ? Color.read(arguments) : color;
+                return col === this || col && this._class === col._class && this._type === col._type && this.getAlpha() === col.getAlpha() && Base.equals(this._components, col._components) || false;
+              },
+              toString: function() {
+                var properties = this._properties, parts = [], isGradient = this._type === "gradient", f = Formatter.instance;
+                for (var i = 0, l = properties.length; i < l; i++) {
+                  var value = this._components[i];
+                  if (value != null)
+                    parts.push(properties[i] + ": " + (isGradient ? value : f.number(value)));
+                }
+                if (this._alpha != null)
+                  parts.push("alpha: " + f.number(this._alpha));
+                return "{ " + parts.join(", ") + " }";
+              },
+              toCSS: function(hex) {
+                var components = this._convert("rgb"), alpha = hex || this._alpha == null ? 1 : this._alpha;
+                function convert(val) {
+                  return Math.round((val < 0 ? 0 : val > 1 ? 1 : val) * 255);
+                }
+                components = [
+                  convert(components[0]),
+                  convert(components[1]),
+                  convert(components[2])
+                ];
+                if (alpha < 1)
+                  components.push(alpha < 0 ? 0 : alpha);
+                return hex ? "#" + ((1 << 24) + (components[0] << 16) + (components[1] << 8) + components[2]).toString(16).slice(1) : (components.length == 4 ? "rgba(" : "rgb(") + components.join(",") + ")";
+              },
+              toCanvasStyle: function(ctx, matrix) {
+                if (this._canvasStyle)
+                  return this._canvasStyle;
+                if (this._type !== "gradient")
+                  return this._canvasStyle = this.toCSS();
+                var components = this._components, gradient = components[0], stops = gradient._stops, origin = components[1], destination = components[2], highlight = components[3], inverse = matrix && matrix.inverted(), canvasGradient;
+                if (inverse) {
+                  origin = inverse._transformPoint(origin);
+                  destination = inverse._transformPoint(destination);
+                  if (highlight)
+                    highlight = inverse._transformPoint(highlight);
+                }
+                if (gradient._radial) {
+                  var radius = destination.getDistance(origin);
+                  if (highlight) {
+                    var vector = highlight.subtract(origin);
+                    if (vector.getLength() > radius)
+                      highlight = origin.add(vector.normalize(radius - 0.1));
+                  }
+                  var start = highlight || origin;
+                  canvasGradient = ctx.createRadialGradient(
+                    start.x,
+                    start.y,
+                    0,
+                    origin.x,
+                    origin.y,
+                    radius
+                  );
+                } else {
+                  canvasGradient = ctx.createLinearGradient(
+                    origin.x,
+                    origin.y,
+                    destination.x,
+                    destination.y
+                  );
+                }
+                for (var i = 0, l = stops.length; i < l; i++) {
+                  var stop = stops[i], offset = stop._offset;
+                  canvasGradient.addColorStop(
+                    offset == null ? i / (l - 1) : offset,
+                    stop._color.toCanvasStyle()
+                  );
+                }
+                return this._canvasStyle = canvasGradient;
+              },
+              transform: function(matrix) {
+                if (this._type === "gradient") {
+                  var components = this._components;
+                  for (var i = 1, l = components.length; i < l; i++) {
+                    var point = components[i];
+                    matrix._transformPoint(point, point, true);
+                  }
+                  this._changed();
+                }
+              },
+              statics: {
+                _types: types,
+                random: function() {
+                  var random = Math.random;
+                  return new Color(random(), random(), random());
+                },
+                _setOwner: function(color, owner, setter) {
+                  if (color) {
+                    if (color._owner && owner && color._owner !== owner) {
+                      color = color.clone();
+                    }
+                    if (!color._owner ^ !owner) {
+                      color._owner = owner || null;
+                      color._setter = setter || null;
+                    }
+                  }
+                  return color;
+                }
+              }
+            });
+          }(),
+          new function() {
+            var operators = {
+              add: function(a, b) {
+                return a + b;
+              },
+              subtract: function(a, b) {
+                return a - b;
+              },
+              multiply: function(a, b) {
+                return a * b;
+              },
+              divide: function(a, b) {
+                return a / b;
+              }
+            };
+            return Base.each(operators, function(operator, name) {
+              this[name] = function(color) {
+                color = Color.read(arguments);
+                var type = this._type, components1 = this._components, components2 = color._convert(type);
+                for (var i = 0, l = components1.length; i < l; i++)
+                  components2[i] = operator(components1[i], components2[i]);
+                return new Color(
+                  type,
+                  components2,
+                  this._alpha != null ? operator(this._alpha, color.getAlpha()) : null
+                );
+              };
+            }, {});
+          }()
+        );
+        var Gradient = Base.extend({
+          _class: "Gradient",
+          initialize: function Gradient2(stops, radial) {
+            this._id = UID.get();
+            if (stops && Base.isPlainObject(stops)) {
+              this.set(stops);
+              stops = radial = null;
+            }
+            if (this._stops == null) {
+              this.setStops(stops || ["white", "black"]);
+            }
+            if (this._radial == null) {
+              this.setRadial(typeof radial === "string" && radial === "radial" || radial || false);
+            }
+          },
+          _serialize: function(options, dictionary) {
+            return dictionary.add(this, function() {
+              return Base.serialize(
+                [this._stops, this._radial],
+                options,
+                true,
+                dictionary
+              );
+            });
+          },
+          _changed: function() {
+            for (var i = 0, l = this._owners && this._owners.length; i < l; i++) {
+              this._owners[i]._changed();
+            }
+          },
+          _addOwner: function(color) {
+            if (!this._owners)
+              this._owners = [];
+            this._owners.push(color);
+          },
+          _removeOwner: function(color) {
+            var index = this._owners ? this._owners.indexOf(color) : -1;
+            if (index != -1) {
+              this._owners.splice(index, 1);
+              if (!this._owners.length)
+                this._owners = undefined2;
+            }
+          },
+          clone: function() {
+            var stops = [];
+            for (var i = 0, l = this._stops.length; i < l; i++) {
+              stops[i] = this._stops[i].clone();
+            }
+            return new Gradient(stops, this._radial);
+          },
+          getStops: function() {
+            return this._stops;
+          },
+          setStops: function(stops) {
+            if (stops.length < 2) {
+              throw new Error(
+                "Gradient stop list needs to contain at least two stops."
+              );
+            }
+            var _stops = this._stops;
+            if (_stops) {
+              for (var i = 0, l = _stops.length; i < l; i++)
+                _stops[i]._owner = undefined2;
+            }
+            _stops = this._stops = GradientStop.readList(stops, 0, { clone: true });
+            for (var i = 0, l = _stops.length; i < l; i++)
+              _stops[i]._owner = this;
+            this._changed();
+          },
+          getRadial: function() {
+            return this._radial;
+          },
+          setRadial: function(radial) {
+            this._radial = radial;
+            this._changed();
+          },
+          equals: function(gradient) {
+            if (gradient === this)
+              return true;
+            if (gradient && this._class === gradient._class) {
+              var stops1 = this._stops, stops2 = gradient._stops, length = stops1.length;
+              if (length === stops2.length) {
+                for (var i = 0; i < length; i++) {
+                  if (!stops1[i].equals(stops2[i]))
+                    return false;
+                }
+                return true;
+              }
+            }
+            return false;
+          }
+        });
+        var GradientStop = Base.extend({
+          _class: "GradientStop",
+          initialize: function GradientStop2(arg0, arg1) {
+            var color = arg0, offset = arg1;
+            if (typeof arg0 === "object" && arg1 === undefined2) {
+              if (Array.isArray(arg0) && typeof arg0[0] !== "number") {
+                color = arg0[0];
+                offset = arg0[1];
+              } else if ("color" in arg0 || "offset" in arg0 || "rampPoint" in arg0) {
+                color = arg0.color;
+                offset = arg0.offset || arg0.rampPoint || 0;
+              }
+            }
+            this.setColor(color);
+            this.setOffset(offset);
+          },
+          clone: function() {
+            return new GradientStop(this._color.clone(), this._offset);
+          },
+          _serialize: function(options, dictionary) {
+            var color = this._color, offset = this._offset;
+            return Base.serialize(
+              offset == null ? [color] : [color, offset],
+              options,
+              true,
+              dictionary
+            );
+          },
+          _changed: function() {
+            if (this._owner)
+              this._owner._changed(129);
+          },
+          getOffset: function() {
+            return this._offset;
+          },
+          setOffset: function(offset) {
+            this._offset = offset;
+            this._changed();
+          },
+          getRampPoint: "#getOffset",
+          setRampPoint: "#setOffset",
+          getColor: function() {
+            return this._color;
+          },
+          setColor: function() {
+            Color._setOwner(this._color, null);
+            this._color = Color._setOwner(
+              Color.read(arguments, 0),
+              this,
+              "setColor"
+            );
+            this._changed();
+          },
+          equals: function(stop) {
+            return stop === this || stop && this._class === stop._class && this._color.equals(stop._color) && this._offset == stop._offset || false;
+          }
+        });
+        var Style = Base.extend(new function() {
+          var itemDefaults = {
+            fillColor: null,
+            fillRule: "nonzero",
+            strokeColor: null,
+            strokeWidth: 1,
+            strokeCap: "butt",
+            strokeJoin: "miter",
+            strokeScaling: true,
+            miterLimit: 10,
+            dashOffset: 0,
+            dashArray: [],
+            shadowColor: null,
+            shadowBlur: 0,
+            shadowOffset: new Point(),
+            selectedColor: null
+          }, groupDefaults = Base.set({}, itemDefaults, {
+            fontFamily: "sans-serif",
+            fontWeight: "normal",
+            fontSize: 12,
+            leading: null,
+            justification: "left"
+          }), textDefaults = Base.set({}, groupDefaults, {
+            fillColor: new Color()
+          }), flags = {
+            strokeWidth: 193,
+            strokeCap: 193,
+            strokeJoin: 193,
+            strokeScaling: 201,
+            miterLimit: 193,
+            fontFamily: 9,
+            fontWeight: 9,
+            fontSize: 9,
+            font: 9,
+            leading: 9,
+            justification: 9
+          }, item = {
+            beans: true
+          }, fields = {
+            _class: "Style",
+            beans: true,
+            initialize: function Style2(style, _owner, _project) {
+              this._values = {};
+              this._owner = _owner;
+              this._project = _owner && _owner._project || _project || paper2.project;
+              this._defaults = !_owner || _owner instanceof Group ? groupDefaults : _owner instanceof TextItem ? textDefaults : itemDefaults;
+              if (style)
+                this.set(style);
+            }
+          };
+          Base.each(groupDefaults, function(value, key) {
+            var isColor = /Color$/.test(key), isPoint = key === "shadowOffset", part = Base.capitalize(key), flag = flags[key], set = "set" + part, get = "get" + part;
+            fields[set] = function(value2) {
+              var owner = this._owner, children = owner && owner._children, applyToChildren = children && children.length > 0 && !(owner instanceof CompoundPath);
+              if (applyToChildren) {
+                for (var i = 0, l = children.length; i < l; i++)
+                  children[i]._style[set](value2);
+              }
+              if ((key === "selectedColor" || !applyToChildren) && key in this._defaults) {
+                var old = this._values[key];
+                if (old !== value2) {
+                  if (isColor) {
+                    if (old) {
+                      Color._setOwner(old, null);
+                      old._canvasStyle = null;
+                    }
+                    if (value2 && value2.constructor === Color) {
+                      value2 = Color._setOwner(
+                        value2,
+                        owner,
+                        applyToChildren && set
+                      );
+                    }
+                  }
+                  this._values[key] = value2;
+                  if (owner)
+                    owner._changed(flag || 129);
+                }
+              }
+            };
+            fields[get] = function(_dontMerge) {
+              var owner = this._owner, children = owner && owner._children, applyToChildren = children && children.length > 0 && !(owner instanceof CompoundPath), value2;
+              if (applyToChildren && !_dontMerge) {
+                for (var i = 0, l = children.length; i < l; i++) {
+                  var childValue = children[i]._style[get]();
+                  if (!i) {
+                    value2 = childValue;
+                  } else if (!Base.equals(value2, childValue)) {
+                    return undefined2;
+                  }
+                }
+              } else if (key in this._defaults) {
+                var value2 = this._values[key];
+                if (value2 === undefined2) {
+                  value2 = this._defaults[key];
+                  if (value2 && value2.clone) {
+                    value2 = value2.clone();
+                  }
+                } else {
+                  var ctor = isColor ? Color : isPoint ? Point : null;
+                  if (ctor && !(value2 && value2.constructor === ctor)) {
+                    this._values[key] = value2 = ctor.read(
+                      [value2],
+                      0,
+                      { readNull: true, clone: true }
+                    );
+                  }
+                }
+              }
+              if (value2 && isColor) {
+                value2 = Color._setOwner(value2, owner, applyToChildren && set);
+              }
+              return value2;
+            };
+            item[get] = function(_dontMerge) {
+              return this._style[get](_dontMerge);
+            };
+            item[set] = function(value2) {
+              this._style[set](value2);
+            };
+          });
+          Base.each({
+            Font: "FontFamily",
+            WindingRule: "FillRule"
+          }, function(value, key) {
+            var get = "get" + key, set = "set" + key;
+            fields[get] = item[get] = "#get" + value;
+            fields[set] = item[set] = "#set" + value;
+          });
+          Item.inject(item);
+          return fields;
+        }(), {
+          set: function(style) {
+            var isStyle = style instanceof Style, values = isStyle ? style._values : style;
+            if (values) {
+              for (var key in values) {
+                if (key in this._defaults) {
+                  var value = values[key];
+                  this[key] = value && isStyle && value.clone ? value.clone() : value;
+                }
+              }
+            }
+          },
+          equals: function(style) {
+            function compare(style1, style2, secondary) {
+              var values1 = style1._values, values2 = style2._values, defaults2 = style2._defaults;
+              for (var key in values1) {
+                var value1 = values1[key], value2 = values2[key];
+                if (!(secondary && key in values2) && !Base.equals(
+                  value1,
+                  value2 === undefined2 ? defaults2[key] : value2
+                ))
+                  return false;
+              }
+              return true;
+            }
+            return style === this || style && this._class === style._class && compare(this, style) && compare(style, this, true) || false;
+          },
+          _dispose: function() {
+            var color;
+            color = this.getFillColor();
+            if (color)
+              color._canvasStyle = null;
+            color = this.getStrokeColor();
+            if (color)
+              color._canvasStyle = null;
+            color = this.getShadowColor();
+            if (color)
+              color._canvasStyle = null;
+          },
+          hasFill: function() {
+            var color = this.getFillColor();
+            return !!color && color.alpha > 0;
+          },
+          hasStroke: function() {
+            var color = this.getStrokeColor();
+            return !!color && color.alpha > 0 && this.getStrokeWidth() > 0;
+          },
+          hasShadow: function() {
+            var color = this.getShadowColor();
+            return !!color && color.alpha > 0 && (this.getShadowBlur() > 0 || !this.getShadowOffset().isZero());
+          },
+          getView: function() {
+            return this._project._view;
+          },
+          getFontStyle: function() {
+            var fontSize = this.getFontSize();
+            return this.getFontWeight() + " " + fontSize + (/[a-z]/i.test(fontSize + "") ? " " : "px ") + this.getFontFamily();
+          },
+          getFont: "#getFontFamily",
+          setFont: "#setFontFamily",
+          getLeading: function getLeading() {
+            var leading = getLeading.base.call(this), fontSize = this.getFontSize();
+            if (/pt|em|%|px/.test(fontSize))
+              fontSize = this.getView().getPixelSize(fontSize);
+            return leading != null ? leading : fontSize * 1.2;
+          }
+        });
+        var DomElement = new function() {
+          function handlePrefix(el, name, set, value) {
+            var prefixes = ["", "webkit", "moz", "Moz", "ms", "o"], suffix = name[0].toUpperCase() + name.substring(1);
+            for (var i = 0; i < 6; i++) {
+              var prefix = prefixes[i], key = prefix ? prefix + suffix : name;
+              if (key in el) {
+                if (set) {
+                  el[key] = value;
+                } else {
+                  return el[key];
+                }
+                break;
+              }
+            }
+          }
+          return {
+            getStyles: function(el) {
+              var doc = el && el.nodeType !== 9 ? el.ownerDocument : el, view = doc && doc.defaultView;
+              return view && view.getComputedStyle(el, "");
+            },
+            getBounds: function(el, viewport) {
+              var doc = el.ownerDocument, body = doc.body, html = doc.documentElement, rect;
+              try {
+                rect = el.getBoundingClientRect();
+              } catch (e) {
+                rect = { left: 0, top: 0, width: 0, height: 0 };
+              }
+              var x = rect.left - (html.clientLeft || body.clientLeft || 0), y = rect.top - (html.clientTop || body.clientTop || 0);
+              if (!viewport) {
+                var view = doc.defaultView;
+                x += view.pageXOffset || html.scrollLeft || body.scrollLeft;
+                y += view.pageYOffset || html.scrollTop || body.scrollTop;
+              }
+              return new Rectangle(x, y, rect.width, rect.height);
+            },
+            getViewportBounds: function(el) {
+              var doc = el.ownerDocument, view = doc.defaultView, html = doc.documentElement;
+              return new Rectangle(
+                0,
+                0,
+                view.innerWidth || html.clientWidth,
+                view.innerHeight || html.clientHeight
+              );
+            },
+            getOffset: function(el, viewport) {
+              return DomElement.getBounds(el, viewport).getPoint();
+            },
+            getSize: function(el) {
+              return DomElement.getBounds(el, true).getSize();
+            },
+            isInvisible: function(el) {
+              return DomElement.getSize(el).equals(new Size(0, 0));
+            },
+            isInView: function(el) {
+              return !DomElement.isInvisible(el) && DomElement.getViewportBounds(el).intersects(
+                DomElement.getBounds(el, true)
+              );
+            },
+            isInserted: function(el) {
+              return document2.body.contains(el);
+            },
+            getPrefixed: function(el, name) {
+              return el && handlePrefix(el, name);
+            },
+            setPrefixed: function(el, name, value) {
+              if (typeof name === "object") {
+                for (var key in name)
+                  handlePrefix(el, key, true, name[key]);
+              } else {
+                handlePrefix(el, name, true, value);
+              }
+            }
+          };
+        }();
+        var DomEvent = {
+          add: function(el, events) {
+            if (el) {
+              for (var type in events) {
+                var func = events[type], parts = type.split(/[\s,]+/g);
+                for (var i = 0, l = parts.length; i < l; i++) {
+                  var name = parts[i];
+                  var options = el === document2 && (name === "touchstart" || name === "touchmove") ? { passive: false } : false;
+                  el.addEventListener(name, func, options);
+                }
+              }
+            }
+          },
+          remove: function(el, events) {
+            if (el) {
+              for (var type in events) {
+                var func = events[type], parts = type.split(/[\s,]+/g);
+                for (var i = 0, l = parts.length; i < l; i++)
+                  el.removeEventListener(parts[i], func, false);
+              }
+            }
+          },
+          getPoint: function(event) {
+            var pos = event.targetTouches ? event.targetTouches.length ? event.targetTouches[0] : event.changedTouches[0] : event;
+            return new Point(
+              pos.pageX || pos.clientX + document2.documentElement.scrollLeft,
+              pos.pageY || pos.clientY + document2.documentElement.scrollTop
+            );
+          },
+          getTarget: function(event) {
+            return event.target || event.srcElement;
+          },
+          getRelatedTarget: function(event) {
+            return event.relatedTarget || event.toElement;
+          },
+          getOffset: function(event, target) {
+            return DomEvent.getPoint(event).subtract(DomElement.getOffset(
+              target || DomEvent.getTarget(event)
+            ));
+          }
+        };
+        DomEvent.requestAnimationFrame = new function() {
+          var nativeRequest = DomElement.getPrefixed(window2, "requestAnimationFrame"), requested = false, callbacks = [], timer;
+          function handleCallbacks() {
+            var functions = callbacks;
+            callbacks = [];
+            for (var i = 0, l = functions.length; i < l; i++)
+              functions[i]();
+            requested = nativeRequest && callbacks.length;
+            if (requested)
+              nativeRequest(handleCallbacks);
+          }
+          return function(callback) {
+            callbacks.push(callback);
+            if (nativeRequest) {
+              if (!requested) {
+                nativeRequest(handleCallbacks);
+                requested = true;
+              }
+            } else if (!timer) {
+              timer = setInterval(handleCallbacks, 1e3 / 60);
+            }
+          };
+        }();
+        var View = Base.extend(
+          Emitter,
+          {
+            _class: "View",
+            initialize: function View2(project, element) {
+              function getSize(name) {
+                return element[name] || parseInt(element.getAttribute(name), 10);
+              }
+              function getCanvasSize() {
+                var size2 = DomElement.getSize(element);
+                return size2.isNaN() || size2.isZero() ? new Size(getSize("width"), getSize("height")) : size2;
+              }
+              var size;
+              if (window2 && element) {
+                this._id = element.getAttribute("id");
+                if (this._id == null)
+                  element.setAttribute("id", this._id = "paper-view-" + View2._id++);
+                DomEvent.add(element, this._viewEvents);
+                var none = "none";
+                DomElement.setPrefixed(element.style, {
+                  userDrag: none,
+                  userSelect: none,
+                  touchCallout: none,
+                  contentZooming: none,
+                  tapHighlightColor: "rgba(0,0,0,0)"
+                });
+                if (PaperScope.hasAttribute(element, "resize")) {
+                  var that = this;
+                  DomEvent.add(window2, this._windowEvents = {
+                    resize: function() {
+                      that.setViewSize(getCanvasSize());
+                    }
+                  });
+                }
+                size = getCanvasSize();
+                if (PaperScope.hasAttribute(element, "stats") && typeof Stats !== "undefined") {
+                  this._stats = new Stats();
+                  var stats = this._stats.domElement, style = stats.style, offset = DomElement.getOffset(element);
+                  style.position = "absolute";
+                  style.left = offset.x + "px";
+                  style.top = offset.y + "px";
+                  document2.body.appendChild(stats);
+                }
+              } else {
+                size = new Size(element);
+                element = null;
+              }
+              this._project = project;
+              this._scope = project._scope;
+              this._element = element;
+              if (!this._pixelRatio)
+                this._pixelRatio = window2 && window2.devicePixelRatio || 1;
+              this._setElementSize(size.width, size.height);
+              this._viewSize = size;
+              View2._views.push(this);
+              View2._viewsById[this._id] = this;
+              (this._matrix = new Matrix())._owner = this;
+              if (!View2._focused)
+                View2._focused = this;
+              this._frameItems = {};
+              this._frameItemCount = 0;
+              this._itemEvents = { native: {}, virtual: {} };
+              this._autoUpdate = !paper2.agent.node;
+              this._needsUpdate = false;
+            },
+            remove: function() {
+              if (!this._project)
+                return false;
+              if (View._focused === this)
+                View._focused = null;
+              View._views.splice(View._views.indexOf(this), 1);
+              delete View._viewsById[this._id];
+              var project = this._project;
+              if (project._view === this)
+                project._view = null;
+              DomEvent.remove(this._element, this._viewEvents);
+              DomEvent.remove(window2, this._windowEvents);
+              this._element = this._project = null;
+              this.off("frame");
+              this._animate = false;
+              this._frameItems = {};
+              return true;
+            },
+            _events: Base.each(
+              Item._itemHandlers.concat(["onResize", "onKeyDown", "onKeyUp"]),
+              function(name) {
+                this[name] = {};
+              },
+              {
+                onFrame: {
+                  install: function() {
+                    this.play();
+                  },
+                  uninstall: function() {
+                    this.pause();
+                  }
+                }
+              }
+            ),
+            _animate: false,
+            _time: 0,
+            _count: 0,
+            getAutoUpdate: function() {
+              return this._autoUpdate;
+            },
+            setAutoUpdate: function(autoUpdate) {
+              this._autoUpdate = autoUpdate;
+              if (autoUpdate)
+                this.requestUpdate();
+            },
+            update: function() {
+            },
+            draw: function() {
+              this.update();
+            },
+            requestUpdate: function() {
+              if (!this._requested) {
+                var that = this;
+                DomEvent.requestAnimationFrame(function() {
+                  that._requested = false;
+                  if (that._animate) {
+                    that.requestUpdate();
+                    var element = that._element;
+                    if ((!DomElement.getPrefixed(document2, "hidden") || PaperScope.getAttribute(element, "keepalive") === "true") && DomElement.isInView(element)) {
+                      that._handleFrame();
+                    }
+                  }
+                  if (that._autoUpdate)
+                    that.update();
+                });
+                this._requested = true;
+              }
+            },
+            play: function() {
+              this._animate = true;
+              this.requestUpdate();
+            },
+            pause: function() {
+              this._animate = false;
+            },
+            _handleFrame: function() {
+              paper2 = this._scope;
+              var now = Date.now() / 1e3, delta = this._last ? now - this._last : 0;
+              this._last = now;
+              this.emit("frame", new Base({
+                delta,
+                time: this._time += delta,
+                count: this._count++
+              }));
+              if (this._stats)
+                this._stats.update();
+            },
+            _animateItem: function(item, animate) {
+              var items = this._frameItems;
+              if (animate) {
+                items[item._id] = {
+                  item,
+                  time: 0,
+                  count: 0
+                };
+                if (++this._frameItemCount === 1)
+                  this.on("frame", this._handleFrameItems);
+              } else {
+                delete items[item._id];
+                if (--this._frameItemCount === 0) {
+                  this.off("frame", this._handleFrameItems);
+                }
+              }
+            },
+            _handleFrameItems: function(event) {
+              for (var i in this._frameItems) {
+                var entry = this._frameItems[i];
+                entry.item.emit("frame", new Base(event, {
+                  time: entry.time += event.delta,
+                  count: entry.count++
+                }));
+              }
+            },
+            _changed: function() {
+              this._project._changed(4097);
+              this._bounds = this._decomposed = undefined2;
+            },
+            getElement: function() {
+              return this._element;
+            },
+            getPixelRatio: function() {
+              return this._pixelRatio;
+            },
+            getResolution: function() {
+              return this._pixelRatio * 72;
+            },
+            getViewSize: function() {
+              var size = this._viewSize;
+              return new LinkedSize(size.width, size.height, this, "setViewSize");
+            },
+            setViewSize: function() {
+              var size = Size.read(arguments), delta = size.subtract(this._viewSize);
+              if (delta.isZero())
+                return;
+              this._setElementSize(size.width, size.height);
+              this._viewSize.set(size);
+              this._changed();
+              this.emit("resize", { size, delta });
+              if (this._autoUpdate) {
+                this.update();
+              }
+            },
+            _setElementSize: function(width, height) {
+              var element = this._element;
+              if (element) {
+                if (element.width !== width)
+                  element.width = width;
+                if (element.height !== height)
+                  element.height = height;
+              }
+            },
+            getBounds: function() {
+              if (!this._bounds)
+                this._bounds = this._matrix.inverted()._transformBounds(
+                  new Rectangle(new Point(), this._viewSize)
+                );
+              return this._bounds;
+            },
+            getSize: function() {
+              return this.getBounds().getSize();
+            },
+            isVisible: function() {
+              return DomElement.isInView(this._element);
+            },
+            isInserted: function() {
+              return DomElement.isInserted(this._element);
+            },
+            getPixelSize: function(size) {
+              var element = this._element, pixels;
+              if (element) {
+                var parent = element.parentNode, temp = document2.createElement("div");
+                temp.style.fontSize = size;
+                parent.appendChild(temp);
+                pixels = parseFloat(DomElement.getStyles(temp).fontSize);
+                parent.removeChild(temp);
+              } else {
+                pixels = parseFloat(pixels);
+              }
+              return pixels;
+            },
+            getTextWidth: function(font, lines) {
+              return 0;
+            }
+          },
+          Base.each(["rotate", "scale", "shear", "skew"], function(key) {
+            var rotate = key === "rotate";
+            this[key] = function() {
+              var args = arguments, value = (rotate ? Base : Point).read(args), center = Point.read(args, 0, { readNull: true });
+              return this.transform(new Matrix()[key](
+                value,
+                center || this.getCenter(true)
+              ));
+            };
+          }, {
+            _decompose: function() {
+              return this._decomposed || (this._decomposed = this._matrix.decompose());
+            },
+            translate: function() {
+              var mx = new Matrix();
+              return this.transform(mx.translate.apply(mx, arguments));
+            },
+            getCenter: function() {
+              return this.getBounds().getCenter();
+            },
+            setCenter: function() {
+              var center = Point.read(arguments);
+              this.translate(this.getCenter().subtract(center));
+            },
+            getZoom: function() {
+              var scaling = this._decompose().scaling;
+              return (scaling.x + scaling.y) / 2;
+            },
+            setZoom: function(zoom) {
+              this.transform(new Matrix().scale(
+                zoom / this.getZoom(),
+                this.getCenter()
+              ));
+            },
+            getRotation: function() {
+              return this._decompose().rotation;
+            },
+            setRotation: function(rotation) {
+              var current = this.getRotation();
+              if (current != null && rotation != null) {
+                this.rotate(rotation - current);
+              }
+            },
+            getScaling: function() {
+              var scaling = this._decompose().scaling;
+              return new LinkedPoint(scaling.x, scaling.y, this, "setScaling");
+            },
+            setScaling: function() {
+              var current = this.getScaling(), scaling = Point.read(arguments, 0, { clone: true, readNull: true });
+              if (current && scaling) {
+                this.scale(scaling.x / current.x, scaling.y / current.y);
+              }
+            },
+            getMatrix: function() {
+              return this._matrix;
+            },
+            setMatrix: function() {
+              var matrix = this._matrix;
+              matrix.set.apply(matrix, arguments);
+            },
+            transform: function(matrix) {
+              this._matrix.append(matrix);
+            },
+            scrollBy: function() {
+              this.translate(Point.read(arguments).negate());
+            }
+          }),
+          {
+            projectToView: function() {
+              return this._matrix._transformPoint(Point.read(arguments));
+            },
+            viewToProject: function() {
+              return this._matrix._inverseTransform(Point.read(arguments));
+            },
+            getEventPoint: function(event) {
+              return this.viewToProject(DomEvent.getOffset(event, this._element));
+            }
+          },
+          {
+            statics: {
+              _views: [],
+              _viewsById: {},
+              _id: 0,
+              create: function(project, element) {
+                if (document2 && typeof element === "string")
+                  element = document2.getElementById(element);
+                var ctor = window2 ? CanvasView : View;
+                return new ctor(project, element);
+              }
+            }
+          },
+          new function() {
+            if (!window2)
+              return;
+            var prevFocus, tempFocus, dragging = false, mouseDown = false;
+            function getView(event) {
+              var target = DomEvent.getTarget(event);
+              return target.getAttribute && View._viewsById[target.getAttribute("id")];
+            }
+            function updateFocus() {
+              var view = View._focused;
+              if (!view || !view.isVisible()) {
+                for (var i = 0, l = View._views.length; i < l; i++) {
+                  if ((view = View._views[i]).isVisible()) {
+                    View._focused = tempFocus = view;
+                    break;
+                  }
+                }
+              }
+            }
+            function handleMouseMove(view, event, point) {
+              view._handleMouseEvent("mousemove", event, point);
+            }
+            var navigator = window2.navigator, mousedown, mousemove, mouseup;
+            if (navigator.pointerEnabled || navigator.msPointerEnabled) {
+              mousedown = "pointerdown MSPointerDown";
+              mousemove = "pointermove MSPointerMove";
+              mouseup = "pointerup pointercancel MSPointerUp MSPointerCancel";
+            } else {
+              mousedown = "touchstart";
+              mousemove = "touchmove";
+              mouseup = "touchend touchcancel";
+              if (!("ontouchstart" in window2 && navigator.userAgent.match(
+                /mobile|tablet|ip(ad|hone|od)|android|silk/i
+              ))) {
+                mousedown += " mousedown";
+                mousemove += " mousemove";
+                mouseup += " mouseup";
+              }
+            }
+            var viewEvents = {}, docEvents = {
+              mouseout: function(event) {
+                var view = View._focused, target = DomEvent.getRelatedTarget(event);
+                if (view && (!target || target.nodeName === "HTML")) {
+                  var offset = DomEvent.getOffset(event, view._element), x = offset.x, abs = Math.abs, ax = abs(x), max = 1 << 25, diff = ax - max;
+                  offset.x = abs(diff) < ax ? diff * (x < 0 ? -1 : 1) : x;
+                  handleMouseMove(view, event, view.viewToProject(offset));
+                }
+              },
+              scroll: updateFocus
+            };
+            viewEvents[mousedown] = function(event) {
+              var view = View._focused = getView(event);
+              if (!dragging) {
+                dragging = true;
+                view._handleMouseEvent("mousedown", event);
+              }
+            };
+            docEvents[mousemove] = function(event) {
+              var view = View._focused;
+              if (!mouseDown) {
+                var target = getView(event);
+                if (target) {
+                  if (view !== target) {
+                    if (view)
+                      handleMouseMove(view, event);
+                    if (!prevFocus)
+                      prevFocus = view;
+                    view = View._focused = tempFocus = target;
+                  }
+                } else if (tempFocus && tempFocus === view) {
+                  if (prevFocus && !prevFocus.isInserted())
+                    prevFocus = null;
+                  view = View._focused = prevFocus;
+                  prevFocus = null;
+                  updateFocus();
+                }
+              }
+              if (view)
+                handleMouseMove(view, event);
+            };
+            docEvents[mousedown] = function() {
+              mouseDown = true;
+            };
+            docEvents[mouseup] = function(event) {
+              var view = View._focused;
+              if (view && dragging)
+                view._handleMouseEvent("mouseup", event);
+              mouseDown = dragging = false;
+            };
+            DomEvent.add(document2, docEvents);
+            DomEvent.add(window2, {
+              load: updateFocus
+            });
+            var called = false, prevented = false, fallbacks = {
+              doubleclick: "click",
+              mousedrag: "mousemove"
+            }, wasInView = false, overView, downPoint, lastPoint, downItem, overItem, dragItem, clickItem, clickTime, dblClick;
+            function emitMouseEvent(obj, target, type, event, point, prevPoint, stopItem) {
+              var stopped = false, mouseEvent;
+              function emit(obj2, type2) {
+                if (obj2.responds(type2)) {
+                  if (!mouseEvent) {
+                    mouseEvent = new MouseEvent(
+                      type2,
+                      event,
+                      point,
+                      target || obj2,
+                      prevPoint ? point.subtract(prevPoint) : null
+                    );
+                  }
+                  if (obj2.emit(type2, mouseEvent)) {
+                    called = true;
+                    if (mouseEvent.prevented)
+                      prevented = true;
+                    if (mouseEvent.stopped)
+                      return stopped = true;
+                  }
+                } else {
+                  var fallback = fallbacks[type2];
+                  if (fallback)
+                    return emit(obj2, fallback);
+                }
+              }
+              while (obj && obj !== stopItem) {
+                if (emit(obj, type))
+                  break;
+                obj = obj._parent;
+              }
+              return stopped;
+            }
+            function emitMouseEvents(view, hitItem, type, event, point, prevPoint) {
+              view._project.removeOn(type);
+              prevented = called = false;
+              return dragItem && emitMouseEvent(
+                dragItem,
+                null,
+                type,
+                event,
+                point,
+                prevPoint
+              ) || hitItem && hitItem !== dragItem && !hitItem.isDescendant(dragItem) && emitMouseEvent(hitItem, null, type === "mousedrag" ? "mousemove" : type, event, point, prevPoint, dragItem) || emitMouseEvent(
+                view,
+                dragItem || hitItem || view,
+                type,
+                event,
+                point,
+                prevPoint
+              );
+            }
+            var itemEventsMap = {
+              mousedown: {
+                mousedown: 1,
+                mousedrag: 1,
+                click: 1,
+                doubleclick: 1
+              },
+              mouseup: {
+                mouseup: 1,
+                mousedrag: 1,
+                click: 1,
+                doubleclick: 1
+              },
+              mousemove: {
+                mousedrag: 1,
+                mousemove: 1,
+                mouseenter: 1,
+                mouseleave: 1
+              }
+            };
+            return {
+              _viewEvents: viewEvents,
+              _handleMouseEvent: function(type, event, point) {
+                var itemEvents = this._itemEvents, hitItems = itemEvents.native[type], nativeMove = type === "mousemove", tool = this._scope.tool, view = this;
+                function responds(type2) {
+                  return itemEvents.virtual[type2] || view.responds(type2) || tool && tool.responds(type2);
+                }
+                if (nativeMove && dragging && responds("mousedrag"))
+                  type = "mousedrag";
+                if (!point)
+                  point = this.getEventPoint(event);
+                var inView = this.getBounds().contains(point), hit = hitItems && inView && view._project.hitTest(point, {
+                  tolerance: 0,
+                  fill: true,
+                  stroke: true
+                }), hitItem = hit && hit.item || null, handle = false, mouse = {};
+                mouse[type.substr(5)] = true;
+                if (hitItems && hitItem !== overItem) {
+                  if (overItem) {
+                    emitMouseEvent(overItem, null, "mouseleave", event, point);
+                  }
+                  if (hitItem) {
+                    emitMouseEvent(hitItem, null, "mouseenter", event, point);
+                  }
+                  overItem = hitItem;
+                }
+                if (wasInView ^ inView) {
+                  emitMouseEvent(
+                    this,
+                    null,
+                    inView ? "mouseenter" : "mouseleave",
+                    event,
+                    point
+                  );
+                  overView = inView ? this : null;
+                  handle = true;
+                }
+                if ((inView || mouse.drag) && !point.equals(lastPoint)) {
+                  emitMouseEvents(
+                    this,
+                    hitItem,
+                    nativeMove ? type : "mousemove",
+                    event,
+                    point,
+                    lastPoint
+                  );
+                  handle = true;
+                }
+                wasInView = inView;
+                if (mouse.down && inView || mouse.up && downPoint) {
+                  emitMouseEvents(this, hitItem, type, event, point, downPoint);
+                  if (mouse.down) {
+                    dblClick = hitItem === clickItem && Date.now() - clickTime < 300;
+                    downItem = clickItem = hitItem;
+                    if (!prevented && hitItem) {
+                      var item = hitItem;
+                      while (item && !item.responds("mousedrag"))
+                        item = item._parent;
+                      if (item)
+                        dragItem = hitItem;
+                    }
+                    downPoint = point;
+                  } else if (mouse.up) {
+                    if (!prevented && hitItem === downItem) {
+                      clickTime = Date.now();
+                      emitMouseEvents(this, hitItem, dblClick ? "doubleclick" : "click", event, point, downPoint);
+                      dblClick = false;
+                    }
+                    downItem = dragItem = null;
+                  }
+                  wasInView = false;
+                  handle = true;
+                }
+                lastPoint = point;
+                if (handle && tool) {
+                  called = tool._handleMouseEvent(type, event, point, mouse) || called;
+                }
+                if (event.cancelable !== false && (called && !mouse.move || mouse.down && responds("mouseup"))) {
+                  event.preventDefault();
+                }
+              },
+              _handleKeyEvent: function(type, event, key, character) {
+                var scope = this._scope, tool = scope.tool, keyEvent;
+                function emit(obj) {
+                  if (obj.responds(type)) {
+                    paper2 = scope;
+                    obj.emit(type, keyEvent = keyEvent || new KeyEvent(type, event, key, character));
+                  }
+                }
+                if (this.isVisible()) {
+                  emit(this);
+                  if (tool && tool.responds(type))
+                    emit(tool);
+                }
+              },
+              _countItemEvent: function(type, sign) {
+                var itemEvents = this._itemEvents, native = itemEvents.native, virtual = itemEvents.virtual;
+                for (var key in itemEventsMap) {
+                  native[key] = (native[key] || 0) + (itemEventsMap[key][type] || 0) * sign;
+                }
+                virtual[type] = (virtual[type] || 0) + sign;
+              },
+              statics: {
+                updateFocus,
+                _resetState: function() {
+                  dragging = mouseDown = called = wasInView = false;
+                  prevFocus = tempFocus = overView = downPoint = lastPoint = downItem = overItem = dragItem = clickItem = clickTime = dblClick = null;
+                }
+              }
+            };
+          }()
+        );
+        var CanvasView = View.extend({
+          _class: "CanvasView",
+          initialize: function CanvasView2(project, canvas) {
+            if (!(canvas instanceof window2.HTMLCanvasElement)) {
+              var size = Size.read(arguments, 1);
+              if (size.isZero())
+                throw new Error(
+                  "Cannot create CanvasView with the provided argument: " + Base.slice(arguments, 1)
+                );
+              canvas = CanvasProvider.getCanvas(size);
+            }
+            var ctx = this._context = canvas.getContext("2d");
+            ctx.save();
+            this._pixelRatio = 1;
+            if (!/^off|false$/.test(PaperScope.getAttribute(canvas, "hidpi"))) {
+              var deviceRatio = window2.devicePixelRatio || 1, backingStoreRatio = DomElement.getPrefixed(
+                ctx,
+                "backingStorePixelRatio"
+              ) || 1;
+              this._pixelRatio = deviceRatio / backingStoreRatio;
+            }
+            View.call(this, project, canvas);
+            this._needsUpdate = true;
+          },
+          remove: function remove() {
+            this._context.restore();
+            return remove.base.call(this);
+          },
+          _setElementSize: function _setElementSize(width, height) {
+            var pixelRatio = this._pixelRatio;
+            _setElementSize.base.call(this, width * pixelRatio, height * pixelRatio);
+            if (pixelRatio !== 1) {
+              var element = this._element, ctx = this._context;
+              if (!PaperScope.hasAttribute(element, "resize")) {
+                var style = element.style;
+                style.width = width + "px";
+                style.height = height + "px";
+              }
+              ctx.restore();
+              ctx.save();
+              ctx.scale(pixelRatio, pixelRatio);
+            }
+          },
+          getContext: function() {
+            return this._context;
+          },
+          getPixelSize: function getPixelSize(size) {
+            var agent = paper2.agent, pixels;
+            if (agent && agent.firefox) {
+              pixels = getPixelSize.base.call(this, size);
+            } else {
+              var ctx = this._context, prevFont = ctx.font;
+              ctx.font = size + " serif";
+              pixels = parseFloat(ctx.font);
+              ctx.font = prevFont;
+            }
+            return pixels;
+          },
+          getTextWidth: function(font, lines) {
+            var ctx = this._context, prevFont = ctx.font, width = 0;
+            ctx.font = font;
+            for (var i = 0, l = lines.length; i < l; i++)
+              width = Math.max(width, ctx.measureText(lines[i]).width);
+            ctx.font = prevFont;
+            return width;
+          },
+          update: function() {
+            if (!this._needsUpdate)
+              return false;
+            var project = this._project, ctx = this._context, size = this._viewSize;
+            ctx.clearRect(0, 0, size.width + 1, size.height + 1);
+            if (project)
+              project.draw(ctx, this._matrix, this._pixelRatio);
+            this._needsUpdate = false;
+            return true;
+          }
+        });
+        var Event = Base.extend({
+          _class: "Event",
+          initialize: function Event2(event) {
+            this.event = event;
+            this.type = event && event.type;
+          },
+          prevented: false,
+          stopped: false,
+          preventDefault: function() {
+            this.prevented = true;
+            this.event.preventDefault();
+          },
+          stopPropagation: function() {
+            this.stopped = true;
+            this.event.stopPropagation();
+          },
+          stop: function() {
+            this.stopPropagation();
+            this.preventDefault();
+          },
+          getTimeStamp: function() {
+            return this.event.timeStamp;
+          },
+          getModifiers: function() {
+            return Key.modifiers;
+          }
+        });
+        var KeyEvent = Event.extend({
+          _class: "KeyEvent",
+          initialize: function KeyEvent2(type, event, key, character) {
+            this.type = type;
+            this.event = event;
+            this.key = key;
+            this.character = character;
+          },
+          toString: function() {
+            return "{ type: '" + this.type + "', key: '" + this.key + "', character: '" + this.character + "', modifiers: " + this.getModifiers() + " }";
+          }
+        });
+        var Key = new function() {
+          var keyLookup = {
+            "	": "tab",
+            " ": "space",
+            "\b": "backspace",
+            "\x7F": "delete",
+            "Spacebar": "space",
+            "Del": "delete",
+            "Win": "meta",
+            "Esc": "escape"
+          }, charLookup = {
+            "tab": "	",
+            "space": " ",
+            "enter": "\r"
+          }, keyMap = {}, charMap = {}, metaFixMap, downKey, modifiers = new Base({
+            shift: false,
+            control: false,
+            alt: false,
+            meta: false,
+            capsLock: false,
+            space: false
+          }).inject({
+            option: {
+              get: function() {
+                return this.alt;
+              }
+            },
+            command: {
+              get: function() {
+                var agent = paper2 && paper2.agent;
+                return agent && agent.mac ? this.meta : this.control;
+              }
+            }
+          });
+          function getKey(event) {
+            var key = event.key || event.keyIdentifier;
+            key = /^U\+/.test(key) ? String.fromCharCode(parseInt(key.substr(2), 16)) : /^Arrow[A-Z]/.test(key) ? key.substr(5) : key === "Unidentified" || key === undefined2 ? String.fromCharCode(event.keyCode) : key;
+            return keyLookup[key] || (key.length > 1 ? Base.hyphenate(key) : key.toLowerCase());
+          }
+          function handleKey(down, key, character, event) {
+            var type = down ? "keydown" : "keyup", view = View._focused, name;
+            keyMap[key] = down;
+            if (down) {
+              charMap[key] = character;
+            } else {
+              delete charMap[key];
+            }
+            if (key.length > 1 && (name = Base.camelize(key)) in modifiers) {
+              modifiers[name] = down;
+              var agent = paper2 && paper2.agent;
+              if (name === "meta" && agent && agent.mac) {
+                if (down) {
+                  metaFixMap = {};
+                } else {
+                  for (var k in metaFixMap) {
+                    if (k in charMap)
+                      handleKey(false, k, metaFixMap[k], event);
+                  }
+                  metaFixMap = null;
+                }
+              }
+            } else if (down && metaFixMap) {
+              metaFixMap[key] = character;
+            }
+            if (view) {
+              view._handleKeyEvent(
+                down ? "keydown" : "keyup",
+                event,
+                key,
+                character
+              );
+            }
+          }
+          DomEvent.add(document2, {
+            keydown: function(event) {
+              var key = getKey(event), agent = paper2 && paper2.agent;
+              if (key.length > 1 || agent && (agent.chrome && (event.altKey || agent.mac && event.metaKey || !agent.mac && event.ctrlKey))) {
+                handleKey(
+                  true,
+                  key,
+                  charLookup[key] || (key.length > 1 ? "" : key),
+                  event
+                );
+              } else {
+                downKey = key;
+              }
+            },
+            keypress: function(event) {
+              if (downKey) {
+                var key = getKey(event), code = event.charCode, character = code >= 32 ? String.fromCharCode(code) : key.length > 1 ? "" : key;
+                if (key !== downKey) {
+                  key = character.toLowerCase();
+                }
+                handleKey(true, key, character, event);
+                downKey = null;
+              }
+            },
+            keyup: function(event) {
+              var key = getKey(event);
+              if (key in charMap)
+                handleKey(false, key, charMap[key], event);
+            }
+          });
+          DomEvent.add(window2, {
+            blur: function(event) {
+              for (var key in charMap)
+                handleKey(false, key, charMap[key], event);
+            }
+          });
+          return {
+            modifiers,
+            isDown: function(key) {
+              return !!keyMap[key];
+            }
+          };
+        }();
+        var MouseEvent = Event.extend({
+          _class: "MouseEvent",
+          initialize: function MouseEvent2(type, event, point, target, delta) {
+            this.type = type;
+            this.event = event;
+            this.point = point;
+            this.target = target;
+            this.delta = delta;
+          },
+          toString: function() {
+            return "{ type: '" + this.type + "', point: " + this.point + ", target: " + this.target + (this.delta ? ", delta: " + this.delta : "") + ", modifiers: " + this.getModifiers() + " }";
+          }
+        });
+        var ToolEvent = Event.extend({
+          _class: "ToolEvent",
+          _item: null,
+          initialize: function ToolEvent2(tool, type, event) {
+            this.tool = tool;
+            this.type = type;
+            this.event = event;
+          },
+          _choosePoint: function(point, toolPoint) {
+            return point ? point : toolPoint ? toolPoint.clone() : null;
+          },
+          getPoint: function() {
+            return this._choosePoint(this._point, this.tool._point);
+          },
+          setPoint: function(point) {
+            this._point = point;
+          },
+          getLastPoint: function() {
+            return this._choosePoint(this._lastPoint, this.tool._lastPoint);
+          },
+          setLastPoint: function(lastPoint) {
+            this._lastPoint = lastPoint;
+          },
+          getDownPoint: function() {
+            return this._choosePoint(this._downPoint, this.tool._downPoint);
+          },
+          setDownPoint: function(downPoint) {
+            this._downPoint = downPoint;
+          },
+          getMiddlePoint: function() {
+            if (!this._middlePoint && this.tool._lastPoint) {
+              return this.tool._point.add(this.tool._lastPoint).divide(2);
+            }
+            return this._middlePoint;
+          },
+          setMiddlePoint: function(middlePoint) {
+            this._middlePoint = middlePoint;
+          },
+          getDelta: function() {
+            return !this._delta && this.tool._lastPoint ? this.tool._point.subtract(this.tool._lastPoint) : this._delta;
+          },
+          setDelta: function(delta) {
+            this._delta = delta;
+          },
+          getCount: function() {
+            return this.tool[/^mouse(down|up)$/.test(this.type) ? "_downCount" : "_moveCount"];
+          },
+          setCount: function(count) {
+            this.tool[/^mouse(down|up)$/.test(this.type) ? "downCount" : "count"] = count;
+          },
+          getItem: function() {
+            if (!this._item) {
+              var result = this.tool._scope.project.hitTest(this.getPoint());
+              if (result) {
+                var item = result.item, parent = item._parent;
+                while (/^(Group|CompoundPath)$/.test(parent._class)) {
+                  item = parent;
+                  parent = parent._parent;
+                }
+                this._item = item;
+              }
+            }
+            return this._item;
+          },
+          setItem: function(item) {
+            this._item = item;
+          },
+          toString: function() {
+            return "{ type: " + this.type + ", point: " + this.getPoint() + ", count: " + this.getCount() + ", modifiers: " + this.getModifiers() + " }";
+          }
+        });
+        var Tool = PaperScopeItem.extend({
+          _class: "Tool",
+          _list: "tools",
+          _reference: "tool",
+          _events: [
+            "onMouseDown",
+            "onMouseUp",
+            "onMouseDrag",
+            "onMouseMove",
+            "onActivate",
+            "onDeactivate",
+            "onEditOptions",
+            "onKeyDown",
+            "onKeyUp"
+          ],
+          initialize: function Tool2(props) {
+            PaperScopeItem.call(this);
+            this._moveCount = -1;
+            this._downCount = -1;
+            this.set(props);
+          },
+          getMinDistance: function() {
+            return this._minDistance;
+          },
+          setMinDistance: function(minDistance) {
+            this._minDistance = minDistance;
+            if (minDistance != null && this._maxDistance != null && minDistance > this._maxDistance) {
+              this._maxDistance = minDistance;
+            }
+          },
+          getMaxDistance: function() {
+            return this._maxDistance;
+          },
+          setMaxDistance: function(maxDistance) {
+            this._maxDistance = maxDistance;
+            if (this._minDistance != null && maxDistance != null && maxDistance < this._minDistance) {
+              this._minDistance = maxDistance;
+            }
+          },
+          getFixedDistance: function() {
+            return this._minDistance == this._maxDistance ? this._minDistance : null;
+          },
+          setFixedDistance: function(distance) {
+            this._minDistance = this._maxDistance = distance;
+          },
+          _handleMouseEvent: function(type, event, point, mouse) {
+            paper2 = this._scope;
+            if (mouse.drag && !this.responds(type))
+              type = "mousemove";
+            var move = mouse.move || mouse.drag, responds = this.responds(type), minDistance = this.minDistance, maxDistance = this.maxDistance, called = false, tool = this;
+            function update(minDistance2, maxDistance2) {
+              var pt = point, toolPoint = move ? tool._point : tool._downPoint || pt;
+              if (move) {
+                if (tool._moveCount >= 0 && pt.equals(toolPoint)) {
+                  return false;
+                }
+                if (toolPoint && (minDistance2 != null || maxDistance2 != null)) {
+                  var vector = pt.subtract(toolPoint), distance = vector.getLength();
+                  if (distance < (minDistance2 || 0))
+                    return false;
+                  if (maxDistance2) {
+                    pt = toolPoint.add(vector.normalize(
+                      Math.min(distance, maxDistance2)
+                    ));
+                  }
+                }
+                tool._moveCount++;
+              }
+              tool._point = pt;
+              tool._lastPoint = toolPoint || pt;
+              if (mouse.down) {
+                tool._moveCount = -1;
+                tool._downPoint = pt;
+                tool._downCount++;
+              }
+              return true;
+            }
+            function emit() {
+              if (responds) {
+                called = tool.emit(type, new ToolEvent(tool, type, event)) || called;
+              }
+            }
+            if (mouse.down) {
+              update();
+              emit();
+            } else if (mouse.up) {
+              update(null, maxDistance);
+              emit();
+            } else if (responds) {
+              while (update(minDistance, maxDistance))
+                emit();
+            }
+            return called;
+          }
+        });
+        var Tween = Base.extend(Emitter, {
+          _class: "Tween",
+          statics: {
+            easings: new Base({
+              linear: function(t) {
+                return t;
+              },
+              easeInQuad: function(t) {
+                return t * t;
+              },
+              easeOutQuad: function(t) {
+                return t * (2 - t);
+              },
+              easeInOutQuad: function(t) {
+                return t < 0.5 ? 2 * t * t : -1 + 2 * (2 - t) * t;
+              },
+              easeInCubic: function(t) {
+                return t * t * t;
+              },
+              easeOutCubic: function(t) {
+                return --t * t * t + 1;
+              },
+              easeInOutCubic: function(t) {
+                return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+              },
+              easeInQuart: function(t) {
+                return t * t * t * t;
+              },
+              easeOutQuart: function(t) {
+                return 1 - --t * t * t * t;
+              },
+              easeInOutQuart: function(t) {
+                return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t;
+              },
+              easeInQuint: function(t) {
+                return t * t * t * t * t;
+              },
+              easeOutQuint: function(t) {
+                return 1 + --t * t * t * t * t;
+              },
+              easeInOutQuint: function(t) {
+                return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
+              }
+            })
+          },
+          initialize: function Tween2(object, from, to, duration, easing, start) {
+            this.object = object;
+            var type = typeof easing;
+            var isFunction = type === "function";
+            this.type = isFunction ? type : type === "string" ? easing : "linear";
+            this.easing = isFunction ? easing : Tween2.easings[this.type];
+            this.duration = duration;
+            this.running = false;
+            this._then = null;
+            this._startTime = null;
+            var state = from || to;
+            this._keys = state ? Object.keys(state) : [];
+            this._parsedKeys = this._parseKeys(this._keys);
+            this._from = state && this._getState(from);
+            this._to = state && this._getState(to);
+            if (start !== false) {
+              this.start();
+            }
+          },
+          then: function(then) {
+            this._then = then;
+            return this;
+          },
+          start: function() {
+            this._startTime = null;
+            this.running = true;
+            return this;
+          },
+          stop: function() {
+            this.running = false;
+            return this;
+          },
+          update: function(progress2) {
+            if (this.running) {
+              if (progress2 >= 1) {
+                progress2 = 1;
+                this.running = false;
+              }
+              var factor = this.easing(progress2), keys = this._keys, getValue = function(value2) {
+                return typeof value2 === "function" ? value2(factor, progress2) : value2;
+              };
+              for (var i = 0, l = keys && keys.length; i < l; i++) {
+                var key = keys[i], from = getValue(this._from[key]), to = getValue(this._to[key]), value = from && to && from.__add && to.__add ? to.__subtract(from).__multiply(factor).__add(from) : (to - from) * factor + from;
+                this._setProperty(this._parsedKeys[key], value);
+              }
+              if (this.responds("update")) {
+                this.emit("update", new Base({
+                  progress: progress2,
+                  factor
+                }));
+              }
+              if (!this.running && this._then) {
+                this._then(this.object);
+              }
+            }
+            return this;
+          },
+          _events: {
+            onUpdate: {}
+          },
+          _handleFrame: function(time) {
+            var startTime = this._startTime, progress2 = startTime ? (time - startTime) / this.duration : 0;
+            if (!startTime) {
+              this._startTime = time;
+            }
+            this.update(progress2);
+          },
+          _getState: function(state) {
+            var keys = this._keys, result = {};
+            for (var i = 0, l = keys.length; i < l; i++) {
+              var key = keys[i], path = this._parsedKeys[key], current = this._getProperty(path), value;
+              if (state) {
+                var resolved = this._resolveValue(current, state[key]);
+                this._setProperty(path, resolved);
+                value = this._getProperty(path);
+                value = value && value.clone ? value.clone() : value;
+                this._setProperty(path, current);
+              } else {
+                value = current && current.clone ? current.clone() : current;
+              }
+              result[key] = value;
+            }
+            return result;
+          },
+          _resolveValue: function(current, value) {
+            if (value) {
+              if (Array.isArray(value) && value.length === 2) {
+                var operator = value[0];
+                return operator && operator.match && operator.match(/^[+\-\*\/]=/) ? this._calculate(current, operator[0], value[1]) : value;
+              } else if (typeof value === "string") {
+                var match = value.match(/^[+\-*/]=(.*)/);
+                if (match) {
+                  var parsed = JSON.parse(match[1].replace(
+                    /(['"])?([a-zA-Z0-9_]+)(['"])?:/g,
+                    '"$2": '
+                  ));
+                  return this._calculate(current, value[0], parsed);
+                }
+              }
+            }
+            return value;
+          },
+          _calculate: function(left, operator, right) {
+            return paper2.PaperScript.calculateBinary(left, operator, right);
+          },
+          _parseKeys: function(keys) {
+            var parsed = {};
+            for (var i = 0, l = keys.length; i < l; i++) {
+              var key = keys[i], path = key.replace(/\.([^.]*)/g, "/$1").replace(/\[['"]?([^'"\]]*)['"]?\]/g, "/$1");
+              parsed[key] = path.split("/");
+            }
+            return parsed;
+          },
+          _getProperty: function(path, offset) {
+            var obj = this.object;
+            for (var i = 0, l = path.length - (offset || 0); i < l && obj; i++) {
+              obj = obj[path[i]];
+            }
+            return obj;
+          },
+          _setProperty: function(path, value) {
+            var dest = this._getProperty(path, 1);
+            if (dest) {
+              dest[path[path.length - 1]] = value;
+            }
+          }
+        });
+        var Http = {
+          request: function(options) {
+            var xhr = new self2.XMLHttpRequest();
+            xhr.open(
+              (options.method || "get").toUpperCase(),
+              options.url,
+              Base.pick(options.async, true)
+            );
+            if (options.mimeType)
+              xhr.overrideMimeType(options.mimeType);
+            xhr.onload = function() {
+              var status = xhr.status;
+              if (status === 0 || status === 200) {
+                if (options.onLoad) {
+                  options.onLoad.call(xhr, xhr.responseText);
+                }
+              } else {
+                xhr.onerror();
+              }
+            };
+            xhr.onerror = function() {
+              var status = xhr.status, message = 'Could not load "' + options.url + '" (Status: ' + status + ")";
+              if (options.onError) {
+                options.onError(message, status);
+              } else {
+                throw new Error(message);
+              }
+            };
+            return xhr.send(null);
+          }
+        };
+        var CanvasProvider = Base.exports.CanvasProvider = {
+          canvases: [],
+          getCanvas: function(width, height, options) {
+            if (!window2)
+              return null;
+            var canvas, clear = true;
+            if (typeof width === "object") {
+              height = width.height;
+              width = width.width;
+            }
+            if (this.canvases.length) {
+              canvas = this.canvases.pop();
+            } else {
+              canvas = document2.createElement("canvas");
+              clear = false;
+            }
+            var ctx = canvas.getContext("2d", options || {});
+            if (!ctx) {
+              throw new Error("Canvas " + canvas + " is unable to provide a 2D context.");
+            }
+            if (canvas.width === width && canvas.height === height) {
+              if (clear)
+                ctx.clearRect(0, 0, width + 1, height + 1);
+            } else {
+              canvas.width = width;
+              canvas.height = height;
+            }
+            ctx.save();
+            return canvas;
+          },
+          getContext: function(width, height, options) {
+            var canvas = this.getCanvas(width, height, options);
+            return canvas ? canvas.getContext("2d", options || {}) : null;
+          },
+          release: function(obj) {
+            var canvas = obj && obj.canvas ? obj.canvas : obj;
+            if (canvas && canvas.getContext) {
+              canvas.getContext("2d").restore();
+              this.canvases.push(canvas);
+            }
+          }
+        };
+        var BlendMode = new function() {
+          var min = Math.min, max = Math.max, abs = Math.abs, sr, sg, sb, sa, br, bg, bb, ba, dr, dg, db;
+          function getLum(r, g, b) {
+            return 0.2989 * r + 0.587 * g + 0.114 * b;
+          }
+          function setLum(r, g, b, l) {
+            var d = l - getLum(r, g, b);
+            dr = r + d;
+            dg = g + d;
+            db = b + d;
+            var l = getLum(dr, dg, db), mn = min(dr, dg, db), mx = max(dr, dg, db);
+            if (mn < 0) {
+              var lmn = l - mn;
+              dr = l + (dr - l) * l / lmn;
+              dg = l + (dg - l) * l / lmn;
+              db = l + (db - l) * l / lmn;
+            }
+            if (mx > 255) {
+              var ln = 255 - l, mxl = mx - l;
+              dr = l + (dr - l) * ln / mxl;
+              dg = l + (dg - l) * ln / mxl;
+              db = l + (db - l) * ln / mxl;
+            }
+          }
+          function getSat(r, g, b) {
+            return max(r, g, b) - min(r, g, b);
+          }
+          function setSat(r, g, b, s) {
+            var col = [r, g, b], mx = max(r, g, b), mn = min(r, g, b), md;
+            mn = mn === r ? 0 : mn === g ? 1 : 2;
+            mx = mx === r ? 0 : mx === g ? 1 : 2;
+            md = min(mn, mx) === 0 ? max(mn, mx) === 1 ? 2 : 1 : 0;
+            if (col[mx] > col[mn]) {
+              col[md] = (col[md] - col[mn]) * s / (col[mx] - col[mn]);
+              col[mx] = s;
+            } else {
+              col[md] = col[mx] = 0;
+            }
+            col[mn] = 0;
+            dr = col[0];
+            dg = col[1];
+            db = col[2];
+          }
+          var modes = {
+            multiply: function() {
+              dr = br * sr / 255;
+              dg = bg * sg / 255;
+              db = bb * sb / 255;
+            },
+            screen: function() {
+              dr = br + sr - br * sr / 255;
+              dg = bg + sg - bg * sg / 255;
+              db = bb + sb - bb * sb / 255;
+            },
+            overlay: function() {
+              dr = br < 128 ? 2 * br * sr / 255 : 255 - 2 * (255 - br) * (255 - sr) / 255;
+              dg = bg < 128 ? 2 * bg * sg / 255 : 255 - 2 * (255 - bg) * (255 - sg) / 255;
+              db = bb < 128 ? 2 * bb * sb / 255 : 255 - 2 * (255 - bb) * (255 - sb) / 255;
+            },
+            "soft-light": function() {
+              var t = sr * br / 255;
+              dr = t + br * (255 - (255 - br) * (255 - sr) / 255 - t) / 255;
+              t = sg * bg / 255;
+              dg = t + bg * (255 - (255 - bg) * (255 - sg) / 255 - t) / 255;
+              t = sb * bb / 255;
+              db = t + bb * (255 - (255 - bb) * (255 - sb) / 255 - t) / 255;
+            },
+            "hard-light": function() {
+              dr = sr < 128 ? 2 * sr * br / 255 : 255 - 2 * (255 - sr) * (255 - br) / 255;
+              dg = sg < 128 ? 2 * sg * bg / 255 : 255 - 2 * (255 - sg) * (255 - bg) / 255;
+              db = sb < 128 ? 2 * sb * bb / 255 : 255 - 2 * (255 - sb) * (255 - bb) / 255;
+            },
+            "color-dodge": function() {
+              dr = br === 0 ? 0 : sr === 255 ? 255 : min(255, 255 * br / (255 - sr));
+              dg = bg === 0 ? 0 : sg === 255 ? 255 : min(255, 255 * bg / (255 - sg));
+              db = bb === 0 ? 0 : sb === 255 ? 255 : min(255, 255 * bb / (255 - sb));
+            },
+            "color-burn": function() {
+              dr = br === 255 ? 255 : sr === 0 ? 0 : max(0, 255 - (255 - br) * 255 / sr);
+              dg = bg === 255 ? 255 : sg === 0 ? 0 : max(0, 255 - (255 - bg) * 255 / sg);
+              db = bb === 255 ? 255 : sb === 0 ? 0 : max(0, 255 - (255 - bb) * 255 / sb);
+            },
+            darken: function() {
+              dr = br < sr ? br : sr;
+              dg = bg < sg ? bg : sg;
+              db = bb < sb ? bb : sb;
+            },
+            lighten: function() {
+              dr = br > sr ? br : sr;
+              dg = bg > sg ? bg : sg;
+              db = bb > sb ? bb : sb;
+            },
+            difference: function() {
+              dr = br - sr;
+              if (dr < 0)
+                dr = -dr;
+              dg = bg - sg;
+              if (dg < 0)
+                dg = -dg;
+              db = bb - sb;
+              if (db < 0)
+                db = -db;
+            },
+            exclusion: function() {
+              dr = br + sr * (255 - br - br) / 255;
+              dg = bg + sg * (255 - bg - bg) / 255;
+              db = bb + sb * (255 - bb - bb) / 255;
+            },
+            hue: function() {
+              setSat(sr, sg, sb, getSat(br, bg, bb));
+              setLum(dr, dg, db, getLum(br, bg, bb));
+            },
+            saturation: function() {
+              setSat(br, bg, bb, getSat(sr, sg, sb));
+              setLum(dr, dg, db, getLum(br, bg, bb));
+            },
+            luminosity: function() {
+              setLum(br, bg, bb, getLum(sr, sg, sb));
+            },
+            color: function() {
+              setLum(sr, sg, sb, getLum(br, bg, bb));
+            },
+            add: function() {
+              dr = min(br + sr, 255);
+              dg = min(bg + sg, 255);
+              db = min(bb + sb, 255);
+            },
+            subtract: function() {
+              dr = max(br - sr, 0);
+              dg = max(bg - sg, 0);
+              db = max(bb - sb, 0);
+            },
+            average: function() {
+              dr = (br + sr) / 2;
+              dg = (bg + sg) / 2;
+              db = (bb + sb) / 2;
+            },
+            negation: function() {
+              dr = 255 - abs(255 - sr - br);
+              dg = 255 - abs(255 - sg - bg);
+              db = 255 - abs(255 - sb - bb);
+            }
+          };
+          var nativeModes = this.nativeModes = Base.each([
+            "source-over",
+            "source-in",
+            "source-out",
+            "source-atop",
+            "destination-over",
+            "destination-in",
+            "destination-out",
+            "destination-atop",
+            "lighter",
+            "darker",
+            "copy",
+            "xor"
+          ], function(mode) {
+            this[mode] = true;
+          }, {});
+          var ctx = CanvasProvider.getContext(1, 1, { willReadFrequently: true });
+          if (ctx) {
+            Base.each(modes, function(func, mode) {
+              var darken = mode === "darken", ok = false;
+              ctx.save();
+              try {
+                ctx.fillStyle = darken ? "#300" : "#a00";
+                ctx.fillRect(0, 0, 1, 1);
+                ctx.globalCompositeOperation = mode;
+                if (ctx.globalCompositeOperation === mode) {
+                  ctx.fillStyle = darken ? "#a00" : "#300";
+                  ctx.fillRect(0, 0, 1, 1);
+                  ok = ctx.getImageData(0, 0, 1, 1).data[0] !== darken ? 170 : 51;
+                }
+              } catch (e) {
+              }
+              ctx.restore();
+              nativeModes[mode] = ok;
+            });
+            CanvasProvider.release(ctx);
+          }
+          this.process = function(mode, srcContext, dstContext, alpha, offset) {
+            var srcCanvas = srcContext.canvas, normal = mode === "normal";
+            if (normal || nativeModes[mode]) {
+              dstContext.save();
+              dstContext.setTransform(1, 0, 0, 1, 0, 0);
+              dstContext.globalAlpha = alpha;
+              if (!normal)
+                dstContext.globalCompositeOperation = mode;
+              dstContext.drawImage(srcCanvas, offset.x, offset.y);
+              dstContext.restore();
+            } else {
+              var process2 = modes[mode];
+              if (!process2)
+                return;
+              var dstData = dstContext.getImageData(
+                offset.x,
+                offset.y,
+                srcCanvas.width,
+                srcCanvas.height
+              ), dst = dstData.data, src = srcContext.getImageData(
+                0,
+                0,
+                srcCanvas.width,
+                srcCanvas.height
+              ).data;
+              for (var i = 0, l = dst.length; i < l; i += 4) {
+                sr = src[i];
+                br = dst[i];
+                sg = src[i + 1];
+                bg = dst[i + 1];
+                sb = src[i + 2];
+                bb = dst[i + 2];
+                sa = src[i + 3];
+                ba = dst[i + 3];
+                process2();
+                var a1 = sa * alpha / 255, a2 = 1 - a1;
+                dst[i] = a1 * dr + a2 * br;
+                dst[i + 1] = a1 * dg + a2 * bg;
+                dst[i + 2] = a1 * db + a2 * bb;
+                dst[i + 3] = sa * alpha + a2 * ba;
+              }
+              dstContext.putImageData(dstData, offset.x, offset.y);
+            }
+          };
+        }();
+        var SvgElement = new function() {
+          var svg = "http://www.w3.org/2000/svg", xmlns = "http://www.w3.org/2000/xmlns", xlink = "http://www.w3.org/1999/xlink", attributeNamespace = {
+            href: xlink,
+            xlink: xmlns,
+            xmlns: xmlns + "/",
+            "xmlns:xlink": xmlns + "/"
+          };
+          function create(tag, attributes, formatter) {
+            return set(document2.createElementNS(svg, tag), attributes, formatter);
+          }
+          function get(node, name) {
+            var namespace = attributeNamespace[name], value = namespace ? node.getAttributeNS(namespace, name) : node.getAttribute(name);
+            return value === "null" ? null : value;
+          }
+          function set(node, attributes, formatter) {
+            for (var name in attributes) {
+              var value = attributes[name], namespace = attributeNamespace[name];
+              if (typeof value === "number" && formatter)
+                value = formatter.number(value);
+              if (namespace) {
+                node.setAttributeNS(namespace, name, value);
+              } else {
+                node.setAttribute(name, value);
+              }
+            }
+            return node;
+          }
+          return {
+            svg,
+            xmlns,
+            xlink,
+            create,
+            get,
+            set
+          };
+        }();
+        var SvgStyles = Base.each({
+          fillColor: ["fill", "color"],
+          fillRule: ["fill-rule", "string"],
+          strokeColor: ["stroke", "color"],
+          strokeWidth: ["stroke-width", "number"],
+          strokeCap: ["stroke-linecap", "string"],
+          strokeJoin: ["stroke-linejoin", "string"],
+          strokeScaling: ["vector-effect", "lookup", {
+            true: "none",
+            false: "non-scaling-stroke"
+          }, function(item, value) {
+            return !value && (item instanceof PathItem || item instanceof Shape || item instanceof TextItem);
+          }],
+          miterLimit: ["stroke-miterlimit", "number"],
+          dashArray: ["stroke-dasharray", "array"],
+          dashOffset: ["stroke-dashoffset", "number"],
+          fontFamily: ["font-family", "string"],
+          fontWeight: ["font-weight", "string"],
+          fontSize: ["font-size", "number"],
+          justification: ["text-anchor", "lookup", {
+            left: "start",
+            center: "middle",
+            right: "end"
+          }],
+          opacity: ["opacity", "number"],
+          blendMode: ["mix-blend-mode", "style"]
+        }, function(entry, key) {
+          var part = Base.capitalize(key), lookup = entry[2];
+          this[key] = {
+            type: entry[1],
+            property: key,
+            attribute: entry[0],
+            toSVG: lookup,
+            fromSVG: lookup && Base.each(lookup, function(value, name) {
+              this[value] = name;
+            }, {}),
+            exportFilter: entry[3],
+            get: "get" + part,
+            set: "set" + part
+          };
+        }, {});
+        new function() {
+          var formatter;
+          function getTransform(matrix, coordinates, center) {
+            var attrs = new Base(), trans = matrix.getTranslation();
+            if (coordinates) {
+              var point;
+              if (matrix.isInvertible()) {
+                matrix = matrix._shiftless();
+                point = matrix._inverseTransform(trans);
+                trans = null;
+              } else {
+                point = new Point();
+              }
+              attrs[center ? "cx" : "x"] = point.x;
+              attrs[center ? "cy" : "y"] = point.y;
+            }
+            if (!matrix.isIdentity()) {
+              var decomposed = matrix.decompose();
+              if (decomposed) {
+                var parts = [], angle = decomposed.rotation, scale = decomposed.scaling, skew = decomposed.skewing;
+                if (trans && !trans.isZero())
+                  parts.push("translate(" + formatter.point(trans) + ")");
+                if (angle)
+                  parts.push("rotate(" + formatter.number(angle) + ")");
+                if (!Numerical.isZero(scale.x - 1) || !Numerical.isZero(scale.y - 1))
+                  parts.push("scale(" + formatter.point(scale) + ")");
+                if (skew.x)
+                  parts.push("skewX(" + formatter.number(skew.x) + ")");
+                if (skew.y)
+                  parts.push("skewY(" + formatter.number(skew.y) + ")");
+                attrs.transform = parts.join(" ");
+              } else {
+                attrs.transform = "matrix(" + matrix.getValues().join(",") + ")";
+              }
+            }
+            return attrs;
+          }
+          function exportGroup(item, options) {
+            var attrs = getTransform(item._matrix), children = item._children;
+            var node = SvgElement.create("g", attrs, formatter);
+            for (var i = 0, l = children.length; i < l; i++) {
+              var child = children[i];
+              var childNode = exportSVG(child, options);
+              if (childNode) {
+                if (child.isClipMask()) {
+                  var clip = SvgElement.create("clipPath");
+                  clip.appendChild(childNode);
+                  setDefinition(child, clip, "clip");
+                  SvgElement.set(node, {
+                    "clip-path": "url(#" + clip.id + ")"
+                  });
+                } else {
+                  node.appendChild(childNode);
+                }
+              }
+            }
+            return node;
+          }
+          function exportRaster(item, options) {
+            var attrs = getTransform(item._matrix, true), size = item.getSize(), image = item.getImage();
+            attrs.x -= size.width / 2;
+            attrs.y -= size.height / 2;
+            attrs.width = size.width;
+            attrs.height = size.height;
+            attrs.href = options.embedImages == false && image && image.src || item.toDataURL();
+            return SvgElement.create("image", attrs, formatter);
+          }
+          function exportPath(item, options) {
+            var matchShapes = options.matchShapes;
+            if (matchShapes) {
+              var shape = item.toShape(false);
+              if (shape)
+                return exportShape(shape, options);
+            }
+            var segments = item._segments, length = segments.length, type, attrs = getTransform(item._matrix);
+            if (matchShapes && length >= 2 && !item.hasHandles()) {
+              if (length > 2) {
+                type = item._closed ? "polygon" : "polyline";
+                var parts = [];
+                for (var i = 0; i < length; i++) {
+                  parts.push(formatter.point(segments[i]._point));
+                }
+                attrs.points = parts.join(" ");
+              } else {
+                type = "line";
+                var start = segments[0]._point, end = segments[1]._point;
+                attrs.set({
+                  x1: start.x,
+                  y1: start.y,
+                  x2: end.x,
+                  y2: end.y
+                });
+              }
+            } else {
+              type = "path";
+              attrs.d = item.getPathData(null, options.precision);
+            }
+            return SvgElement.create(type, attrs, formatter);
+          }
+          function exportShape(item) {
+            var type = item._type, radius = item._radius, attrs = getTransform(item._matrix, true, type !== "rectangle");
+            if (type === "rectangle") {
+              type = "rect";
+              var size = item._size, width = size.width, height = size.height;
+              attrs.x -= width / 2;
+              attrs.y -= height / 2;
+              attrs.width = width;
+              attrs.height = height;
+              if (radius.isZero())
+                radius = null;
+            }
+            if (radius) {
+              if (type === "circle") {
+                attrs.r = radius;
+              } else {
+                attrs.rx = radius.width;
+                attrs.ry = radius.height;
+              }
+            }
+            return SvgElement.create(type, attrs, formatter);
+          }
+          function exportCompoundPath(item, options) {
+            var attrs = getTransform(item._matrix);
+            var data = item.getPathData(null, options.precision);
+            if (data)
+              attrs.d = data;
+            return SvgElement.create("path", attrs, formatter);
+          }
+          function exportSymbolItem(item, options) {
+            var attrs = getTransform(item._matrix, true), definition = item._definition, node = getDefinition(definition, "symbol"), definitionItem = definition._item, bounds = definitionItem.getStrokeBounds();
+            if (!node) {
+              node = SvgElement.create("symbol", {
+                viewBox: formatter.rectangle(bounds)
+              });
+              node.appendChild(exportSVG(definitionItem, options));
+              setDefinition(definition, node, "symbol");
+            }
+            attrs.href = "#" + node.id;
+            attrs.x += bounds.x;
+            attrs.y += bounds.y;
+            attrs.width = bounds.width;
+            attrs.height = bounds.height;
+            attrs.overflow = "visible";
+            return SvgElement.create("use", attrs, formatter);
+          }
+          function exportGradient(color) {
+            var gradientNode = getDefinition(color, "color");
+            if (!gradientNode) {
+              var gradient = color.getGradient(), radial = gradient._radial, origin = color.getOrigin(), destination = color.getDestination(), attrs;
+              if (radial) {
+                attrs = {
+                  cx: origin.x,
+                  cy: origin.y,
+                  r: origin.getDistance(destination)
+                };
+                var highlight = color.getHighlight();
+                if (highlight) {
+                  attrs.fx = highlight.x;
+                  attrs.fy = highlight.y;
+                }
+              } else {
+                attrs = {
+                  x1: origin.x,
+                  y1: origin.y,
+                  x2: destination.x,
+                  y2: destination.y
+                };
+              }
+              attrs.gradientUnits = "userSpaceOnUse";
+              gradientNode = SvgElement.create((radial ? "radial" : "linear") + "Gradient", attrs, formatter);
+              var stops = gradient._stops;
+              for (var i = 0, l = stops.length; i < l; i++) {
+                var stop = stops[i], stopColor = stop._color, alpha = stopColor.getAlpha(), offset = stop._offset;
+                attrs = {
+                  offset: offset == null ? i / (l - 1) : offset
+                };
+                if (stopColor)
+                  attrs["stop-color"] = stopColor.toCSS(true);
+                if (alpha < 1)
+                  attrs["stop-opacity"] = alpha;
+                gradientNode.appendChild(
+                  SvgElement.create("stop", attrs, formatter)
+                );
+              }
+              setDefinition(color, gradientNode, "color");
+            }
+            return "url(#" + gradientNode.id + ")";
+          }
+          function exportText(item) {
+            var node = SvgElement.create(
+              "text",
+              getTransform(item._matrix, true),
+              formatter
+            );
+            node.textContent = item._content;
+            return node;
+          }
+          var exporters = {
+            Group: exportGroup,
+            Layer: exportGroup,
+            Raster: exportRaster,
+            Path: exportPath,
+            Shape: exportShape,
+            CompoundPath: exportCompoundPath,
+            SymbolItem: exportSymbolItem,
+            PointText: exportText
+          };
+          function applyStyle(item, node, isRoot) {
+            var attrs = {}, parent = !isRoot && item.getParent(), style = [];
+            if (item._name != null)
+              attrs.id = item._name;
+            Base.each(SvgStyles, function(entry) {
+              var get = entry.get, type = entry.type, value = item[get]();
+              if (entry.exportFilter ? entry.exportFilter(item, value) : !parent || !Base.equals(parent[get](), value)) {
+                if (type === "color" && value != null) {
+                  var alpha = value.getAlpha();
+                  if (alpha < 1)
+                    attrs[entry.attribute + "-opacity"] = alpha;
+                }
+                if (type === "style") {
+                  style.push(entry.attribute + ": " + value);
+                } else {
+                  attrs[entry.attribute] = value == null ? "none" : type === "color" ? value.gradient ? exportGradient(value, item) : value.toCSS(true) : type === "array" ? value.join(",") : type === "lookup" ? entry.toSVG[value] : value;
+                }
+              }
+            });
+            if (style.length)
+              attrs.style = style.join(";");
+            if (attrs.opacity === 1)
+              delete attrs.opacity;
+            if (!item._visible)
+              attrs.visibility = "hidden";
+            return SvgElement.set(node, attrs, formatter);
+          }
+          var definitions;
+          function getDefinition(item, type) {
+            if (!definitions)
+              definitions = { ids: {}, svgs: {} };
+            return item && definitions.svgs[type + "-" + (item._id || item.__id || (item.__id = UID.get("svg")))];
+          }
+          function setDefinition(item, node, type) {
+            if (!definitions)
+              getDefinition();
+            var typeId = definitions.ids[type] = (definitions.ids[type] || 0) + 1;
+            node.id = type + "-" + typeId;
+            definitions.svgs[type + "-" + (item._id || item.__id)] = node;
+          }
+          function exportDefinitions(node, options) {
+            var svg = node, defs = null;
+            if (definitions) {
+              svg = node.nodeName.toLowerCase() === "svg" && node;
+              for (var i in definitions.svgs) {
+                if (!defs) {
+                  if (!svg) {
+                    svg = SvgElement.create("svg");
+                    svg.appendChild(node);
+                  }
+                  defs = svg.insertBefore(
+                    SvgElement.create("defs"),
+                    svg.firstChild
+                  );
+                }
+                defs.appendChild(definitions.svgs[i]);
+              }
+              definitions = null;
+            }
+            return options.asString ? new self2.XMLSerializer().serializeToString(svg) : svg;
+          }
+          function exportSVG(item, options, isRoot) {
+            var exporter = exporters[item._class], node = exporter && exporter(item, options);
+            if (node) {
+              var onExport = options.onExport;
+              if (onExport)
+                node = onExport(item, node, options) || node;
+              var data = JSON.stringify(item._data);
+              if (data && data !== "{}" && data !== "null")
+                node.setAttribute("data-paper-data", data);
+            }
+            return node && applyStyle(item, node, isRoot);
+          }
+          function setOptions(options) {
+            if (!options)
+              options = {};
+            formatter = new Formatter(options.precision);
+            return options;
+          }
+          Item.inject({
+            exportSVG: function(options) {
+              options = setOptions(options);
+              return exportDefinitions(exportSVG(this, options, true), options);
+            }
+          });
+          Project.inject({
+            exportSVG: function(options) {
+              options = setOptions(options);
+              var children = this._children, view = this.getView(), bounds = Base.pick(options.bounds, "view"), mx = options.matrix || bounds === "view" && view._matrix, matrix = mx && Matrix.read([mx]), rect = bounds === "view" ? new Rectangle([0, 0], view.getViewSize()) : bounds === "content" ? Item._getBounds(children, matrix, { stroke: true }).rect : Rectangle.read([bounds], 0, { readNull: true }), attrs = {
+                version: "1.1",
+                xmlns: SvgElement.svg,
+                "xmlns:xlink": SvgElement.xlink
+              };
+              if (rect) {
+                attrs.width = rect.width;
+                attrs.height = rect.height;
+                if (rect.x || rect.x === 0 || rect.y || rect.y === 0)
+                  attrs.viewBox = formatter.rectangle(rect);
+              }
+              var node = SvgElement.create("svg", attrs, formatter), parent = node;
+              if (matrix && !matrix.isIdentity()) {
+                parent = node.appendChild(SvgElement.create(
+                  "g",
+                  getTransform(matrix),
+                  formatter
+                ));
+              }
+              for (var i = 0, l = children.length; i < l; i++) {
+                parent.appendChild(exportSVG(children[i], options, true));
+              }
+              return exportDefinitions(node, options);
+            }
+          });
+        }();
+        new function() {
+          var definitions = {}, rootSize;
+          function getValue(node, name, isString, allowNull, allowPercent, defaultValue) {
+            var value = SvgElement.get(node, name) || defaultValue, res = value == null ? allowNull ? null : isString ? "" : 0 : isString ? value : parseFloat(value);
+            return /%\s*$/.test(value) ? res / 100 * (allowPercent ? 1 : rootSize[/x|^width/.test(name) ? "width" : "height"]) : res;
+          }
+          function getPoint(node, x, y, allowNull, allowPercent, defaultX, defaultY) {
+            x = getValue(node, x || "x", false, allowNull, allowPercent, defaultX);
+            y = getValue(node, y || "y", false, allowNull, allowPercent, defaultY);
+            return allowNull && (x == null || y == null) ? null : new Point(x, y);
+          }
+          function getSize(node, w, h, allowNull, allowPercent) {
+            w = getValue(node, w || "width", false, allowNull, allowPercent);
+            h = getValue(node, h || "height", false, allowNull, allowPercent);
+            return allowNull && (w == null || h == null) ? null : new Size(w, h);
+          }
+          function convertValue(value, type, lookup) {
+            return value === "none" ? null : type === "number" ? parseFloat(value) : type === "array" ? value ? value.split(/[\s,]+/g).map(parseFloat) : [] : type === "color" ? getDefinition(value) || value : type === "lookup" ? lookup[value] : value;
+          }
+          function importGroup(node, type, options, isRoot) {
+            var nodes = node.childNodes, isClip = type === "clippath", isDefs = type === "defs", item = new Group(), project = item._project, currentStyle = project._currentStyle, children = [];
+            if (!isClip && !isDefs) {
+              item = applyAttributes(item, node, isRoot);
+              project._currentStyle = item._style.clone();
+            }
+            if (isRoot) {
+              var defs = node.querySelectorAll("defs");
+              for (var i = 0, l = defs.length; i < l; i++) {
+                importNode(defs[i], options, false);
+              }
+            }
+            for (var i = 0, l = nodes.length; i < l; i++) {
+              var childNode = nodes[i], child;
+              if (childNode.nodeType === 1 && !/^defs$/i.test(childNode.nodeName) && (child = importNode(childNode, options, false)) && !(child instanceof SymbolDefinition))
+                children.push(child);
+            }
+            item.addChildren(children);
+            if (isClip)
+              item = applyAttributes(item.reduce(), node, isRoot);
+            project._currentStyle = currentStyle;
+            if (isClip || isDefs) {
+              item.remove();
+              item = null;
+            }
+            return item;
+          }
+          function importPoly(node, type) {
+            var coords = node.getAttribute("points").match(
+              /[+-]?(?:\d*\.\d+|\d+\.?)(?:[eE][+-]?\d+)?/g
+            ), points = [];
+            for (var i = 0, l = coords.length; i < l; i += 2)
+              points.push(new Point(
+                parseFloat(coords[i]),
+                parseFloat(coords[i + 1])
+              ));
+            var path = new Path(points);
+            if (type === "polygon")
+              path.closePath();
+            return path;
+          }
+          function importPath(node) {
+            return PathItem.create(node.getAttribute("d"));
+          }
+          function importGradient(node, type) {
+            var id = (getValue(node, "href", true) || "").substring(1), radial = type === "radialgradient", gradient;
+            if (id) {
+              gradient = definitions[id].getGradient();
+              if (gradient._radial ^ radial) {
+                gradient = gradient.clone();
+                gradient._radial = radial;
+              }
+            } else {
+              var nodes = node.childNodes, stops = [];
+              for (var i = 0, l = nodes.length; i < l; i++) {
+                var child = nodes[i];
+                if (child.nodeType === 1)
+                  stops.push(applyAttributes(new GradientStop(), child));
+              }
+              gradient = new Gradient(stops, radial);
+            }
+            var origin, destination, highlight, scaleToBounds = getValue(node, "gradientUnits", true) !== "userSpaceOnUse";
+            if (radial) {
+              origin = getPoint(
+                node,
+                "cx",
+                "cy",
+                false,
+                scaleToBounds,
+                "50%",
+                "50%"
+              );
+              destination = origin.add(
+                getValue(node, "r", false, false, scaleToBounds, "50%"),
+                0
+              );
+              highlight = getPoint(node, "fx", "fy", true, scaleToBounds);
+            } else {
+              origin = getPoint(
+                node,
+                "x1",
+                "y1",
+                false,
+                scaleToBounds,
+                "0%",
+                "0%"
+              );
+              destination = getPoint(
+                node,
+                "x2",
+                "y2",
+                false,
+                scaleToBounds,
+                "100%",
+                "0%"
+              );
+            }
+            var color = applyAttributes(
+              new Color(gradient, origin, destination, highlight),
+              node
+            );
+            color._scaleToBounds = scaleToBounds;
+            return null;
+          }
+          var importers = {
+            "#document": function(node, type, options, isRoot) {
+              var nodes = node.childNodes;
+              for (var i = 0, l = nodes.length; i < l; i++) {
+                var child = nodes[i];
+                if (child.nodeType === 1)
+                  return importNode(child, options, isRoot);
+              }
+            },
+            g: importGroup,
+            svg: importGroup,
+            clippath: importGroup,
+            polygon: importPoly,
+            polyline: importPoly,
+            path: importPath,
+            lineargradient: importGradient,
+            radialgradient: importGradient,
+            image: function(node) {
+              var raster = new Raster(getValue(node, "href", true));
+              raster.on("load", function() {
+                var size = getSize(node);
+                this.setSize(size);
+                var center = getPoint(node).add(size.divide(2));
+                this._matrix.append(new Matrix().translate(center));
+              });
+              return raster;
+            },
+            symbol: function(node, type, options, isRoot) {
+              return new SymbolDefinition(
+                importGroup(node, type, options, isRoot),
+                true
+              );
+            },
+            defs: importGroup,
+            use: function(node) {
+              var id = (getValue(node, "href", true) || "").substring(1), definition = definitions[id], point = getPoint(node);
+              return definition ? definition instanceof SymbolDefinition ? definition.place(point) : definition.clone().translate(point) : null;
+            },
+            circle: function(node) {
+              return new Shape.Circle(
+                getPoint(node, "cx", "cy"),
+                getValue(node, "r")
+              );
+            },
+            ellipse: function(node) {
+              return new Shape.Ellipse({
+                center: getPoint(node, "cx", "cy"),
+                radius: getSize(node, "rx", "ry")
+              });
+            },
+            rect: function(node) {
+              return new Shape.Rectangle(new Rectangle(
+                getPoint(node),
+                getSize(node)
+              ), getSize(node, "rx", "ry"));
+            },
+            line: function(node) {
+              return new Path.Line(
+                getPoint(node, "x1", "y1"),
+                getPoint(node, "x2", "y2")
+              );
+            },
+            text: function(node) {
+              var text = new PointText(getPoint(node).add(
+                getPoint(node, "dx", "dy")
+              ));
+              text.setContent(node.textContent.trim() || "");
+              return text;
+            },
+            switch: importGroup
+          };
+          function applyTransform(item, value, name, node) {
+            if (item.transform) {
+              var transforms = (node.getAttribute(name) || "").split(/\)\s*/g), matrix = new Matrix();
+              for (var i = 0, l = transforms.length; i < l; i++) {
+                var transform = transforms[i];
+                if (!transform)
+                  break;
+                var parts = transform.split(/\(\s*/), command = parts[0], v = parts[1].split(/[\s,]+/g);
+                for (var j = 0, m = v.length; j < m; j++)
+                  v[j] = parseFloat(v[j]);
+                switch (command) {
+                  case "matrix":
+                    matrix.append(
+                      new Matrix(v[0], v[1], v[2], v[3], v[4], v[5])
+                    );
+                    break;
+                  case "rotate":
+                    matrix.rotate(v[0], v[1] || 0, v[2] || 0);
+                    break;
+                  case "translate":
+                    matrix.translate(v[0], v[1] || 0);
+                    break;
+                  case "scale":
+                    matrix.scale(v);
+                    break;
+                  case "skewX":
+                    matrix.skew(v[0], 0);
+                    break;
+                  case "skewY":
+                    matrix.skew(0, v[0]);
+                    break;
+                }
+              }
+              item.transform(matrix);
+            }
+          }
+          function applyOpacity(item, value, name) {
+            var key = name === "fill-opacity" ? "getFillColor" : "getStrokeColor", color = item[key] && item[key]();
+            if (color)
+              color.setAlpha(parseFloat(value));
+          }
+          var attributes = Base.set(Base.each(SvgStyles, function(entry) {
+            this[entry.attribute] = function(item, value) {
+              if (item[entry.set]) {
+                item[entry.set](convertValue(value, entry.type, entry.fromSVG));
+                if (entry.type === "color") {
+                  var color = item[entry.get]();
+                  if (color) {
+                    if (color._scaleToBounds) {
+                      var bounds = item.getBounds();
+                      color.transform(new Matrix().translate(bounds.getPoint()).scale(bounds.getSize()));
+                    }
+                  }
+                }
+              }
+            };
+          }, {}), {
+            id: function(item, value) {
+              definitions[value] = item;
+              if (item.setName)
+                item.setName(value);
+            },
+            "clip-path": function(item, value) {
+              var clip = getDefinition(value);
+              if (clip) {
+                clip = clip.clone();
+                clip.setClipMask(true);
+                if (item instanceof Group) {
+                  item.insertChild(0, clip);
+                } else {
+                  return new Group(clip, item);
+                }
+              }
+            },
+            gradientTransform: applyTransform,
+            transform: applyTransform,
+            "fill-opacity": applyOpacity,
+            "stroke-opacity": applyOpacity,
+            visibility: function(item, value) {
+              if (item.setVisible)
+                item.setVisible(value === "visible");
+            },
+            display: function(item, value) {
+              if (item.setVisible)
+                item.setVisible(value !== null);
+            },
+            "stop-color": function(item, value) {
+              if (item.setColor)
+                item.setColor(value);
+            },
+            "stop-opacity": function(item, value) {
+              if (item._color)
+                item._color.setAlpha(parseFloat(value));
+            },
+            offset: function(item, value) {
+              if (item.setOffset) {
+                var percent = value.match(/(.*)%$/);
+                item.setOffset(percent ? percent[1] / 100 : parseFloat(value));
+              }
+            },
+            viewBox: function(item, value, name, node, styles) {
+              var rect = new Rectangle(convertValue(value, "array")), size = getSize(node, null, null, true), group, matrix;
+              if (item instanceof Group) {
+                var scale = size ? size.divide(rect.getSize()) : 1, matrix = new Matrix().scale(scale).translate(rect.getPoint().negate());
+                group = item;
+              } else if (item instanceof SymbolDefinition) {
+                if (size)
+                  rect.setSize(size);
+                group = item._item;
+              }
+              if (group) {
+                if (getAttribute(node, "overflow", styles) !== "visible") {
+                  var clip = new Shape.Rectangle(rect);
+                  clip.setClipMask(true);
+                  group.addChild(clip);
+                }
+                if (matrix)
+                  group.transform(matrix);
+              }
+            }
+          });
+          function getAttribute(node, name, styles) {
+            var attr2 = node.attributes[name], value = attr2 && attr2.value;
+            if (!value && node.style) {
+              var style = Base.camelize(name);
+              value = node.style[style];
+              if (!value && styles.node[style] !== styles.parent[style])
+                value = styles.node[style];
+            }
+            return !value ? undefined2 : value === "none" ? null : value;
+          }
+          function applyAttributes(item, node, isRoot) {
+            var parent = node.parentNode, styles = {
+              node: DomElement.getStyles(node) || {},
+              parent: !isRoot && !/^defs$/i.test(parent.tagName) && DomElement.getStyles(parent) || {}
+            };
+            Base.each(attributes, function(apply, name) {
+              var value = getAttribute(node, name, styles);
+              item = value !== undefined2 && apply(item, value, name, node, styles) || item;
+            });
+            return item;
+          }
+          function getDefinition(value) {
+            var match = value && value.match(/\((?:["'#]*)([^"')]+)/), name = match && match[1], res = name && definitions[window2 ? name.replace(window2.location.href.split("#")[0] + "#", "") : name];
+            if (res && res._scaleToBounds) {
+              res = res.clone();
+              res._scaleToBounds = true;
+            }
+            return res;
+          }
+          function importNode(node, options, isRoot) {
+            var type = node.nodeName.toLowerCase(), isElement = type !== "#document", body = document2.body, container, parent, next;
+            if (isRoot && isElement) {
+              rootSize = paper2.getView().getSize();
+              rootSize = getSize(node, null, null, true) || rootSize;
+              container = SvgElement.create("svg", {
+                style: "stroke-width: 1px; stroke-miterlimit: 10"
+              });
+              parent = node.parentNode;
+              next = node.nextSibling;
+              container.appendChild(node);
+              body.appendChild(container);
+            }
+            var settings = paper2.settings, applyMatrix = settings.applyMatrix, insertItems = settings.insertItems;
+            settings.applyMatrix = false;
+            settings.insertItems = false;
+            var importer = importers[type], item = importer && importer(node, type, options, isRoot) || null;
+            settings.insertItems = insertItems;
+            settings.applyMatrix = applyMatrix;
+            if (item) {
+              if (isElement && !(item instanceof Group))
+                item = applyAttributes(item, node, isRoot);
+              var onImport = options.onImport, data = isElement && node.getAttribute("data-paper-data");
+              if (onImport)
+                item = onImport(node, item, options) || item;
+              if (options.expandShapes && item instanceof Shape) {
+                item.remove();
+                item = item.toPath();
+              }
+              if (data)
+                item._data = JSON.parse(data);
+            }
+            if (container) {
+              body.removeChild(container);
+              if (parent) {
+                if (next) {
+                  parent.insertBefore(node, next);
+                } else {
+                  parent.appendChild(node);
+                }
+              }
+            }
+            if (isRoot) {
+              definitions = {};
+              if (item && Base.pick(options.applyMatrix, applyMatrix))
+                item.matrix.apply(true, true);
+            }
+            return item;
+          }
+          function importSVG(source, options, owner) {
+            if (!source)
+              return null;
+            options = typeof options === "function" ? { onLoad: options } : options || {};
+            var scope = paper2, item = null;
+            function onLoad(svg) {
+              try {
+                var node2 = typeof svg === "object" ? svg : new self2.DOMParser().parseFromString(
+                  svg.trim(),
+                  "image/svg+xml"
+                );
+                if (!node2.nodeName) {
+                  node2 = null;
+                  throw new Error("Unsupported SVG source: " + source);
+                }
+                paper2 = scope;
+                item = importNode(node2, options, true);
+                if (!options || options.insert !== false) {
+                  owner._insertItem(undefined2, item);
+                }
+                var onLoad2 = options.onLoad;
+                if (onLoad2)
+                  onLoad2(item, svg);
+              } catch (e) {
+                onError(e);
+              }
+            }
+            function onError(message, status) {
+              var onError2 = options.onError;
+              if (onError2) {
+                onError2(message, status);
+              } else {
+                throw new Error(message);
+              }
+            }
+            if (typeof source === "string" && !/^[\s\S]*</.test(source)) {
+              var node = document2.getElementById(source);
+              if (node) {
+                onLoad(node);
+              } else {
+                Http.request({
+                  url: source,
+                  async: true,
+                  onLoad,
+                  onError
+                });
+              }
+            } else if (typeof File !== "undefined" && source instanceof File) {
+              var reader = new FileReader();
+              reader.onload = function() {
+                onLoad(reader.result);
+              };
+              reader.onerror = function() {
+                onError(reader.error);
+              };
+              return reader.readAsText(source);
+            } else {
+              onLoad(source);
+            }
+            return item;
+          }
+          Item.inject({
+            importSVG: function(node, options) {
+              return importSVG(node, options, this);
+            }
+          });
+          Project.inject({
+            importSVG: function(node, options) {
+              this.activate();
+              return importSVG(node, options, this);
+            }
+          });
+        }();
+        Base.exports.PaperScript = function() {
+          var global = this, acorn = global.acorn;
+          if (!acorn && typeof __require !== "undefined") {
+            try {
+              acorn = __require("acorn");
+            } catch (e) {
+            }
+          }
+          if (!acorn) {
+            var exports2, module2;
+            acorn = exports2 = module2 = {};
+            (function(root, mod) {
+              if (typeof exports2 == "object" && typeof module2 == "object")
+                return mod(exports2);
+              if (typeof define == "function" && define.amd)
+                return define(["exports"], mod);
+              mod(root.acorn || (root.acorn = {}));
+            })(this, function(exports3) {
+              "use strict";
+              exports3.version = "0.5.0";
+              var options, input, inputLen, sourceFile;
+              exports3.parse = function(inpt, opts) {
+                input = String(inpt);
+                inputLen = input.length;
+                setOptions(opts);
+                initTokenState();
+                return parseTopLevel(options.program);
+              };
+              var defaultOptions = exports3.defaultOptions = {
+                ecmaVersion: 5,
+                strictSemicolons: false,
+                allowTrailingCommas: true,
+                forbidReserved: false,
+                allowReturnOutsideFunction: false,
+                locations: false,
+                onComment: null,
+                ranges: false,
+                program: null,
+                sourceFile: null,
+                directSourceFile: null
+              };
+              function setOptions(opts) {
+                options = opts || {};
+                for (var opt in defaultOptions)
+                  if (!Object.prototype.hasOwnProperty.call(options, opt))
+                    options[opt] = defaultOptions[opt];
+                sourceFile = options.sourceFile || null;
+              }
+              var getLineInfo = exports3.getLineInfo = function(input2, offset) {
+                for (var line = 1, cur = 0; ; ) {
+                  lineBreak.lastIndex = cur;
+                  var match = lineBreak.exec(input2);
+                  if (match && match.index < offset) {
+                    ++line;
+                    cur = match.index + match[0].length;
+                  } else
+                    break;
+                }
+                return { line, column: offset - cur };
+              };
+              exports3.tokenize = function(inpt, opts) {
+                input = String(inpt);
+                inputLen = input.length;
+                setOptions(opts);
+                initTokenState();
+                var t = {};
+                function getToken(forceRegexp) {
+                  lastEnd = tokEnd;
+                  readToken(forceRegexp);
+                  t.start = tokStart;
+                  t.end = tokEnd;
+                  t.startLoc = tokStartLoc;
+                  t.endLoc = tokEndLoc;
+                  t.type = tokType;
+                  t.value = tokVal;
+                  return t;
+                }
+                getToken.jumpTo = function(pos, reAllowed) {
+                  tokPos = pos;
+                  if (options.locations) {
+                    tokCurLine = 1;
+                    tokLineStart = lineBreak.lastIndex = 0;
+                    var match;
+                    while ((match = lineBreak.exec(input)) && match.index < pos) {
+                      ++tokCurLine;
+                      tokLineStart = match.index + match[0].length;
+                    }
+                  }
+                  tokRegexpAllowed = reAllowed;
+                  skipSpace();
+                };
+                return getToken;
+              };
+              var tokPos;
+              var tokStart, tokEnd;
+              var tokStartLoc, tokEndLoc;
+              var tokType, tokVal;
+              var tokRegexpAllowed;
+              var tokCurLine, tokLineStart;
+              var lastStart, lastEnd, lastEndLoc;
+              var inFunction, labels, strict;
+              function raise(pos, message) {
+                var loc = getLineInfo(input, pos);
+                message += " (" + loc.line + ":" + loc.column + ")";
+                var err = new SyntaxError(message);
+                err.pos = pos;
+                err.loc = loc;
+                err.raisedAt = tokPos;
+                throw err;
+              }
+              var empty = [];
+              var _num = { type: "num" }, _regexp = { type: "regexp" }, _string = { type: "string" };
+              var _name = { type: "name" }, _eof = { type: "eof" };
+              var _break = { keyword: "break" }, _case = { keyword: "case", beforeExpr: true }, _catch = { keyword: "catch" };
+              var _continue = { keyword: "continue" }, _debugger = { keyword: "debugger" }, _default = { keyword: "default" };
+              var _do = { keyword: "do", isLoop: true }, _else = { keyword: "else", beforeExpr: true };
+              var _finally = { keyword: "finally" }, _for = { keyword: "for", isLoop: true }, _function = { keyword: "function" };
+              var _if = { keyword: "if" }, _return = { keyword: "return", beforeExpr: true }, _switch = { keyword: "switch" };
+              var _throw = { keyword: "throw", beforeExpr: true }, _try = { keyword: "try" }, _var = { keyword: "var" };
+              var _while = { keyword: "while", isLoop: true }, _with = { keyword: "with" }, _new = { keyword: "new", beforeExpr: true };
+              var _this = { keyword: "this" };
+              var _null = { keyword: "null", atomValue: null }, _true = { keyword: "true", atomValue: true };
+              var _false = { keyword: "false", atomValue: false };
+              var _in = { keyword: "in", binop: 7, beforeExpr: true };
+              var keywordTypes = {
+                "break": _break,
+                "case": _case,
+                "catch": _catch,
+                "continue": _continue,
+                "debugger": _debugger,
+                "default": _default,
+                "do": _do,
+                "else": _else,
+                "finally": _finally,
+                "for": _for,
+                "function": _function,
+                "if": _if,
+                "return": _return,
+                "switch": _switch,
+                "throw": _throw,
+                "try": _try,
+                "var": _var,
+                "while": _while,
+                "with": _with,
+                "null": _null,
+                "true": _true,
+                "false": _false,
+                "new": _new,
+                "in": _in,
+                "instanceof": { keyword: "instanceof", binop: 7, beforeExpr: true },
+                "this": _this,
+                "typeof": { keyword: "typeof", prefix: true, beforeExpr: true },
+                "void": { keyword: "void", prefix: true, beforeExpr: true },
+                "delete": { keyword: "delete", prefix: true, beforeExpr: true }
+              };
+              var _bracketL = { type: "[", beforeExpr: true }, _bracketR = { type: "]" }, _braceL = { type: "{", beforeExpr: true };
+              var _braceR = { type: "}" }, _parenL = { type: "(", beforeExpr: true }, _parenR = { type: ")" };
+              var _comma = { type: ",", beforeExpr: true }, _semi = { type: ";", beforeExpr: true };
+              var _colon = { type: ":", beforeExpr: true }, _dot = { type: "." }, _question = { type: "?", beforeExpr: true };
+              var _slash = { binop: 10, beforeExpr: true }, _eq = { isAssign: true, beforeExpr: true };
+              var _assign = { isAssign: true, beforeExpr: true };
+              var _incDec = { postfix: true, prefix: true, isUpdate: true }, _prefix = { prefix: true, beforeExpr: true };
+              var _logicalOR = { binop: 1, beforeExpr: true };
+              var _logicalAND = { binop: 2, beforeExpr: true };
+              var _bitwiseOR = { binop: 3, beforeExpr: true };
+              var _bitwiseXOR = { binop: 4, beforeExpr: true };
+              var _bitwiseAND = { binop: 5, beforeExpr: true };
+              var _equality = { binop: 6, beforeExpr: true };
+              var _relational = { binop: 7, beforeExpr: true };
+              var _bitShift = { binop: 8, beforeExpr: true };
+              var _plusMin = { binop: 9, prefix: true, beforeExpr: true };
+              var _multiplyModulo = { binop: 10, beforeExpr: true };
+              exports3.tokTypes = {
+                bracketL: _bracketL,
+                bracketR: _bracketR,
+                braceL: _braceL,
+                braceR: _braceR,
+                parenL: _parenL,
+                parenR: _parenR,
+                comma: _comma,
+                semi: _semi,
+                colon: _colon,
+                dot: _dot,
+                question: _question,
+                slash: _slash,
+                eq: _eq,
+                name: _name,
+                eof: _eof,
+                num: _num,
+                regexp: _regexp,
+                string: _string
+              };
+              for (var kw in keywordTypes)
+                exports3.tokTypes["_" + kw] = keywordTypes[kw];
+              function makePredicate(words) {
+                words = words.split(" ");
+                var f = "", cats = [];
+                out:
+                  for (var i = 0; i < words.length; ++i) {
+                    for (var j = 0; j < cats.length; ++j)
+                      if (cats[j][0].length == words[i].length) {
+                        cats[j].push(words[i]);
+                        continue out;
+                      }
+                    cats.push([words[i]]);
+                  }
+                function compareTo(arr) {
+                  if (arr.length == 1)
+                    return f += "return str === " + JSON.stringify(arr[0]) + ";";
+                  f += "switch(str){";
+                  for (var i2 = 0; i2 < arr.length; ++i2)
+                    f += "case " + JSON.stringify(arr[i2]) + ":";
+                  f += "return true}return false;";
+                }
+                if (cats.length > 3) {
+                  cats.sort(function(a, b) {
+                    return b.length - a.length;
+                  });
+                  f += "switch(str.length){";
+                  for (var i = 0; i < cats.length; ++i) {
+                    var cat = cats[i];
+                    f += "case " + cat[0].length + ":";
+                    compareTo(cat);
+                  }
+                  f += "}";
+                } else {
+                  compareTo(words);
+                }
+                return new Function("str", f);
+              }
+              var isReservedWord3 = makePredicate("abstract boolean byte char class double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile");
+              var isReservedWord5 = makePredicate("class enum extends super const export import");
+              var isStrictReservedWord = makePredicate("implements interface let package private protected public static yield");
+              var isStrictBadIdWord = makePredicate("eval arguments");
+              var isKeyword = makePredicate("break case catch continue debugger default do else finally for function if return switch throw try var while with null true false instanceof typeof void delete new in this");
+              var nonASCIIwhitespace = /[\u1680\u180e\u2000-\u200a\u202f\u205f\u3000\ufeff]/;
+              var nonASCIIidentifierStartChars = "\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u0527\u0531-\u0556\u0559\u0561-\u0587\u05D0-\u05EA\u05F0-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u08A0\u08A2-\u08AC\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0977\u0979-\u097F\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C33\u0C35-\u0C39\u0C3D\u0C58\u0C59\u0C60\u0C61\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D05-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D60\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E87\u0E88\u0E8A\u0E8D\u0E94-\u0E97\u0E99-\u0E9F\u0EA1-\u0EA3\u0EA5\u0EA7\u0EAA\u0EAB\u0EAD-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F4\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16EE-\u16F0\u1700-\u170C\u170E-\u1711\u1720-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1877\u1880-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191C\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19C1-\u19C7\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4B\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1CE9-\u1CEC\u1CEE-\u1CF1\u1CF5\u1CF6\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2160-\u2188\u2C00-\u2C2E\u2C30-\u2C5E\u2C60-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005-\u3007\u3021-\u3029\u3031-\u3035\u3038-\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312D\u3131-\u318E\u31A0-\u31BA\u31F0-\u31FF\u3400-\u4DB5\u4E00-\u9FCC\uA000-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA697\uA6A0-\uA6EF\uA717-\uA71F\uA722-\uA788\uA78B-\uA78E\uA790-\uA793\uA7A0-\uA7AA\uA7F8-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA80-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uABC0-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC";
+              var nonASCIIidentifierChars = "\u0300-\u036F\u0483-\u0487\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7\u0610-\u061A\u0620-\u0649\u0672-\u06D3\u06E7-\u06E8\u06FB-\u06FC\u0730-\u074A\u0800-\u0814\u081B-\u0823\u0825-\u0827\u0829-\u082D\u0840-\u0857\u08E4-\u08FE\u0900-\u0903\u093A-\u093C\u093E-\u094F\u0951-\u0957\u0962-\u0963\u0966-\u096F\u0981-\u0983\u09BC\u09BE-\u09C4\u09C7\u09C8\u09D7\u09DF-\u09E0\u0A01-\u0A03\u0A3C\u0A3E-\u0A42\u0A47\u0A48\u0A4B-\u0A4D\u0A51\u0A66-\u0A71\u0A75\u0A81-\u0A83\u0ABC\u0ABE-\u0AC5\u0AC7-\u0AC9\u0ACB-\u0ACD\u0AE2-\u0AE3\u0AE6-\u0AEF\u0B01-\u0B03\u0B3C\u0B3E-\u0B44\u0B47\u0B48\u0B4B-\u0B4D\u0B56\u0B57\u0B5F-\u0B60\u0B66-\u0B6F\u0B82\u0BBE-\u0BC2\u0BC6-\u0BC8\u0BCA-\u0BCD\u0BD7\u0BE6-\u0BEF\u0C01-\u0C03\u0C46-\u0C48\u0C4A-\u0C4D\u0C55\u0C56\u0C62-\u0C63\u0C66-\u0C6F\u0C82\u0C83\u0CBC\u0CBE-\u0CC4\u0CC6-\u0CC8\u0CCA-\u0CCD\u0CD5\u0CD6\u0CE2-\u0CE3\u0CE6-\u0CEF\u0D02\u0D03\u0D46-\u0D48\u0D57\u0D62-\u0D63\u0D66-\u0D6F\u0D82\u0D83\u0DCA\u0DCF-\u0DD4\u0DD6\u0DD8-\u0DDF\u0DF2\u0DF3\u0E34-\u0E3A\u0E40-\u0E45\u0E50-\u0E59\u0EB4-\u0EB9\u0EC8-\u0ECD\u0ED0-\u0ED9\u0F18\u0F19\u0F20-\u0F29\u0F35\u0F37\u0F39\u0F41-\u0F47\u0F71-\u0F84\u0F86-\u0F87\u0F8D-\u0F97\u0F99-\u0FBC\u0FC6\u1000-\u1029\u1040-\u1049\u1067-\u106D\u1071-\u1074\u1082-\u108D\u108F-\u109D\u135D-\u135F\u170E-\u1710\u1720-\u1730\u1740-\u1750\u1772\u1773\u1780-\u17B2\u17DD\u17E0-\u17E9\u180B-\u180D\u1810-\u1819\u1920-\u192B\u1930-\u193B\u1951-\u196D\u19B0-\u19C0\u19C8-\u19C9\u19D0-\u19D9\u1A00-\u1A15\u1A20-\u1A53\u1A60-\u1A7C\u1A7F-\u1A89\u1A90-\u1A99\u1B46-\u1B4B\u1B50-\u1B59\u1B6B-\u1B73\u1BB0-\u1BB9\u1BE6-\u1BF3\u1C00-\u1C22\u1C40-\u1C49\u1C5B-\u1C7D\u1CD0-\u1CD2\u1D00-\u1DBE\u1E01-\u1F15\u200C\u200D\u203F\u2040\u2054\u20D0-\u20DC\u20E1\u20E5-\u20F0\u2D81-\u2D96\u2DE0-\u2DFF\u3021-\u3028\u3099\u309A\uA640-\uA66D\uA674-\uA67D\uA69F\uA6F0-\uA6F1\uA7F8-\uA800\uA806\uA80B\uA823-\uA827\uA880-\uA881\uA8B4-\uA8C4\uA8D0-\uA8D9\uA8F3-\uA8F7\uA900-\uA909\uA926-\uA92D\uA930-\uA945\uA980-\uA983\uA9B3-\uA9C0\uAA00-\uAA27\uAA40-\uAA41\uAA4C-\uAA4D\uAA50-\uAA59\uAA7B\uAAE0-\uAAE9\uAAF2-\uAAF3\uABC0-\uABE1\uABEC\uABED\uABF0-\uABF9\uFB20-\uFB28\uFE00-\uFE0F\uFE20-\uFE26\uFE33\uFE34\uFE4D-\uFE4F\uFF10-\uFF19\uFF3F";
+              var nonASCIIidentifierStart = new RegExp("[" + nonASCIIidentifierStartChars + "]");
+              var nonASCIIidentifier = new RegExp("[" + nonASCIIidentifierStartChars + nonASCIIidentifierChars + "]");
+              var newline = /[\n\r\u2028\u2029]/;
+              var lineBreak = /\r\n|[\n\r\u2028\u2029]/g;
+              var isIdentifierStart = exports3.isIdentifierStart = function(code) {
+                if (code < 65)
+                  return code === 36;
+                if (code < 91)
+                  return true;
+                if (code < 97)
+                  return code === 95;
+                if (code < 123)
+                  return true;
+                return code >= 170 && nonASCIIidentifierStart.test(String.fromCharCode(code));
+              };
+              var isIdentifierChar = exports3.isIdentifierChar = function(code) {
+                if (code < 48)
+                  return code === 36;
+                if (code < 58)
+                  return true;
+                if (code < 65)
+                  return false;
+                if (code < 91)
+                  return true;
+                if (code < 97)
+                  return code === 95;
+                if (code < 123)
+                  return true;
+                return code >= 170 && nonASCIIidentifier.test(String.fromCharCode(code));
+              };
+              function line_loc_t() {
+                this.line = tokCurLine;
+                this.column = tokPos - tokLineStart;
+              }
+              function initTokenState() {
+                tokCurLine = 1;
+                tokPos = tokLineStart = 0;
+                tokRegexpAllowed = true;
+                skipSpace();
+              }
+              function finishToken(type, val) {
+                tokEnd = tokPos;
+                if (options.locations)
+                  tokEndLoc = new line_loc_t();
+                tokType = type;
+                skipSpace();
+                tokVal = val;
+                tokRegexpAllowed = type.beforeExpr;
+              }
+              function skipBlockComment() {
+                var startLoc = options.onComment && options.locations && new line_loc_t();
+                var start = tokPos, end = input.indexOf("*/", tokPos += 2);
+                if (end === -1)
+                  raise(tokPos - 2, "Unterminated comment");
+                tokPos = end + 2;
+                if (options.locations) {
+                  lineBreak.lastIndex = start;
+                  var match;
+                  while ((match = lineBreak.exec(input)) && match.index < tokPos) {
+                    ++tokCurLine;
+                    tokLineStart = match.index + match[0].length;
+                  }
+                }
+                if (options.onComment)
+                  options.onComment(
+                    true,
+                    input.slice(start + 2, end),
+                    start,
+                    tokPos,
+                    startLoc,
+                    options.locations && new line_loc_t()
+                  );
+              }
+              function skipLineComment() {
+                var start = tokPos;
+                var startLoc = options.onComment && options.locations && new line_loc_t();
+                var ch = input.charCodeAt(tokPos += 2);
+                while (tokPos < inputLen && ch !== 10 && ch !== 13 && ch !== 8232 && ch !== 8233) {
+                  ++tokPos;
+                  ch = input.charCodeAt(tokPos);
+                }
+                if (options.onComment)
+                  options.onComment(
+                    false,
+                    input.slice(start + 2, tokPos),
+                    start,
+                    tokPos,
+                    startLoc,
+                    options.locations && new line_loc_t()
+                  );
+              }
+              function skipSpace() {
+                while (tokPos < inputLen) {
+                  var ch = input.charCodeAt(tokPos);
+                  if (ch === 32) {
+                    ++tokPos;
+                  } else if (ch === 13) {
+                    ++tokPos;
+                    var next2 = input.charCodeAt(tokPos);
+                    if (next2 === 10) {
+                      ++tokPos;
+                    }
+                    if (options.locations) {
+                      ++tokCurLine;
+                      tokLineStart = tokPos;
+                    }
+                  } else if (ch === 10 || ch === 8232 || ch === 8233) {
+                    ++tokPos;
+                    if (options.locations) {
+                      ++tokCurLine;
+                      tokLineStart = tokPos;
+                    }
+                  } else if (ch > 8 && ch < 14) {
+                    ++tokPos;
+                  } else if (ch === 47) {
+                    var next2 = input.charCodeAt(tokPos + 1);
+                    if (next2 === 42) {
+                      skipBlockComment();
+                    } else if (next2 === 47) {
+                      skipLineComment();
+                    } else
+                      break;
+                  } else if (ch === 160) {
+                    ++tokPos;
+                  } else if (ch >= 5760 && nonASCIIwhitespace.test(String.fromCharCode(ch))) {
+                    ++tokPos;
+                  } else {
+                    break;
+                  }
+                }
+              }
+              function readToken_dot() {
+                var next2 = input.charCodeAt(tokPos + 1);
+                if (next2 >= 48 && next2 <= 57)
+                  return readNumber(true);
+                ++tokPos;
+                return finishToken(_dot);
+              }
+              function readToken_slash() {
+                var next2 = input.charCodeAt(tokPos + 1);
+                if (tokRegexpAllowed) {
+                  ++tokPos;
+                  return readRegexp();
+                }
+                if (next2 === 61)
+                  return finishOp(_assign, 2);
+                return finishOp(_slash, 1);
+              }
+              function readToken_mult_modulo() {
+                var next2 = input.charCodeAt(tokPos + 1);
+                if (next2 === 61)
+                  return finishOp(_assign, 2);
+                return finishOp(_multiplyModulo, 1);
+              }
+              function readToken_pipe_amp(code) {
+                var next2 = input.charCodeAt(tokPos + 1);
+                if (next2 === code)
+                  return finishOp(code === 124 ? _logicalOR : _logicalAND, 2);
+                if (next2 === 61)
+                  return finishOp(_assign, 2);
+                return finishOp(code === 124 ? _bitwiseOR : _bitwiseAND, 1);
+              }
+              function readToken_caret() {
+                var next2 = input.charCodeAt(tokPos + 1);
+                if (next2 === 61)
+                  return finishOp(_assign, 2);
+                return finishOp(_bitwiseXOR, 1);
+              }
+              function readToken_plus_min(code) {
+                var next2 = input.charCodeAt(tokPos + 1);
+                if (next2 === code) {
+                  if (next2 == 45 && input.charCodeAt(tokPos + 2) == 62 && newline.test(input.slice(lastEnd, tokPos))) {
+                    tokPos += 3;
+                    skipLineComment();
+                    skipSpace();
+                    return readToken();
+                  }
+                  return finishOp(_incDec, 2);
+                }
+                if (next2 === 61)
+                  return finishOp(_assign, 2);
+                return finishOp(_plusMin, 1);
+              }
+              function readToken_lt_gt(code) {
+                var next2 = input.charCodeAt(tokPos + 1);
+                var size = 1;
+                if (next2 === code) {
+                  size = code === 62 && input.charCodeAt(tokPos + 2) === 62 ? 3 : 2;
+                  if (input.charCodeAt(tokPos + size) === 61)
+                    return finishOp(_assign, size + 1);
+                  return finishOp(_bitShift, size);
+                }
+                if (next2 == 33 && code == 60 && input.charCodeAt(tokPos + 2) == 45 && input.charCodeAt(tokPos + 3) == 45) {
+                  tokPos += 4;
+                  skipLineComment();
+                  skipSpace();
+                  return readToken();
+                }
+                if (next2 === 61)
+                  size = input.charCodeAt(tokPos + 2) === 61 ? 3 : 2;
+                return finishOp(_relational, size);
+              }
+              function readToken_eq_excl(code) {
+                var next2 = input.charCodeAt(tokPos + 1);
+                if (next2 === 61)
+                  return finishOp(_equality, input.charCodeAt(tokPos + 2) === 61 ? 3 : 2);
+                return finishOp(code === 61 ? _eq : _prefix, 1);
+              }
+              function getTokenFromCode(code) {
+                switch (code) {
+                  case 46:
+                    return readToken_dot();
+                  case 40:
+                    ++tokPos;
+                    return finishToken(_parenL);
+                  case 41:
+                    ++tokPos;
+                    return finishToken(_parenR);
+                  case 59:
+                    ++tokPos;
+                    return finishToken(_semi);
+                  case 44:
+                    ++tokPos;
+                    return finishToken(_comma);
+                  case 91:
+                    ++tokPos;
+                    return finishToken(_bracketL);
+                  case 93:
+                    ++tokPos;
+                    return finishToken(_bracketR);
+                  case 123:
+                    ++tokPos;
+                    return finishToken(_braceL);
+                  case 125:
+                    ++tokPos;
+                    return finishToken(_braceR);
+                  case 58:
+                    ++tokPos;
+                    return finishToken(_colon);
+                  case 63:
+                    ++tokPos;
+                    return finishToken(_question);
+                  case 48:
+                    var next2 = input.charCodeAt(tokPos + 1);
+                    if (next2 === 120 || next2 === 88)
+                      return readHexNumber();
+                  case 49:
+                  case 50:
+                  case 51:
+                  case 52:
+                  case 53:
+                  case 54:
+                  case 55:
+                  case 56:
+                  case 57:
+                    return readNumber(false);
+                  case 34:
+                  case 39:
+                    return readString(code);
+                  case 47:
+                    return readToken_slash(code);
+                  case 37:
+                  case 42:
+                    return readToken_mult_modulo();
+                  case 124:
+                  case 38:
+                    return readToken_pipe_amp(code);
+                  case 94:
+                    return readToken_caret();
+                  case 43:
+                  case 45:
+                    return readToken_plus_min(code);
+                  case 60:
+                  case 62:
+                    return readToken_lt_gt(code);
+                  case 61:
+                  case 33:
+                    return readToken_eq_excl(code);
+                  case 126:
+                    return finishOp(_prefix, 1);
+                }
+                return false;
+              }
+              function readToken(forceRegexp) {
+                if (!forceRegexp)
+                  tokStart = tokPos;
+                else
+                  tokPos = tokStart + 1;
+                if (options.locations)
+                  tokStartLoc = new line_loc_t();
+                if (forceRegexp)
+                  return readRegexp();
+                if (tokPos >= inputLen)
+                  return finishToken(_eof);
+                var code = input.charCodeAt(tokPos);
+                if (isIdentifierStart(code) || code === 92)
+                  return readWord();
+                var tok = getTokenFromCode(code);
+                if (tok === false) {
+                  var ch = String.fromCharCode(code);
+                  if (ch === "\\" || nonASCIIidentifierStart.test(ch))
+                    return readWord();
+                  raise(tokPos, "Unexpected character '" + ch + "'");
+                }
+                return tok;
+              }
+              function finishOp(type, size) {
+                var str = input.slice(tokPos, tokPos + size);
+                tokPos += size;
+                finishToken(type, str);
+              }
+              function readRegexp() {
+                var content = "", escaped, inClass, start = tokPos;
+                for (; ; ) {
+                  if (tokPos >= inputLen)
+                    raise(start, "Unterminated regular expression");
+                  var ch = input.charAt(tokPos);
+                  if (newline.test(ch))
+                    raise(start, "Unterminated regular expression");
+                  if (!escaped) {
+                    if (ch === "[")
+                      inClass = true;
+                    else if (ch === "]" && inClass)
+                      inClass = false;
+                    else if (ch === "/" && !inClass)
+                      break;
+                    escaped = ch === "\\";
+                  } else
+                    escaped = false;
+                  ++tokPos;
+                }
+                var content = input.slice(start, tokPos);
+                ++tokPos;
+                var mods = readWord1();
+                if (mods && !/^[gmsiy]*$/.test(mods))
+                  raise(start, "Invalid regexp flag");
+                try {
+                  var value = new RegExp(content, mods);
+                } catch (e) {
+                  if (e instanceof SyntaxError)
+                    raise(start, e.message);
+                  raise(e);
+                }
+                return finishToken(_regexp, value);
+              }
+              function readInt(radix, len) {
+                var start = tokPos, total = 0;
+                for (var i = 0, e = len == null ? Infinity : len; i < e; ++i) {
+                  var code = input.charCodeAt(tokPos), val;
+                  if (code >= 97)
+                    val = code - 97 + 10;
+                  else if (code >= 65)
+                    val = code - 65 + 10;
+                  else if (code >= 48 && code <= 57)
+                    val = code - 48;
+                  else
+                    val = Infinity;
+                  if (val >= radix)
+                    break;
+                  ++tokPos;
+                  total = total * radix + val;
+                }
+                if (tokPos === start || len != null && tokPos - start !== len)
+                  return null;
+                return total;
+              }
+              function readHexNumber() {
+                tokPos += 2;
+                var val = readInt(16);
+                if (val == null)
+                  raise(tokStart + 2, "Expected hexadecimal number");
+                if (isIdentifierStart(input.charCodeAt(tokPos)))
+                  raise(tokPos, "Identifier directly after number");
+                return finishToken(_num, val);
+              }
+              function readNumber(startsWithDot) {
+                var start = tokPos, isFloat = false, octal = input.charCodeAt(tokPos) === 48;
+                if (!startsWithDot && readInt(10) === null)
+                  raise(start, "Invalid number");
+                if (input.charCodeAt(tokPos) === 46) {
+                  ++tokPos;
+                  readInt(10);
+                  isFloat = true;
+                }
+                var next2 = input.charCodeAt(tokPos);
+                if (next2 === 69 || next2 === 101) {
+                  next2 = input.charCodeAt(++tokPos);
+                  if (next2 === 43 || next2 === 45)
+                    ++tokPos;
+                  if (readInt(10) === null)
+                    raise(start, "Invalid number");
+                  isFloat = true;
+                }
+                if (isIdentifierStart(input.charCodeAt(tokPos)))
+                  raise(tokPos, "Identifier directly after number");
+                var str = input.slice(start, tokPos), val;
+                if (isFloat)
+                  val = parseFloat(str);
+                else if (!octal || str.length === 1)
+                  val = parseInt(str, 10);
+                else if (/[89]/.test(str) || strict)
+                  raise(start, "Invalid number");
+                else
+                  val = parseInt(str, 8);
+                return finishToken(_num, val);
+              }
+              function readString(quote) {
+                tokPos++;
+                var out = "";
+                for (; ; ) {
+                  if (tokPos >= inputLen)
+                    raise(tokStart, "Unterminated string constant");
+                  var ch = input.charCodeAt(tokPos);
+                  if (ch === quote) {
+                    ++tokPos;
+                    return finishToken(_string, out);
+                  }
+                  if (ch === 92) {
+                    ch = input.charCodeAt(++tokPos);
+                    var octal = /^[0-7]+/.exec(input.slice(tokPos, tokPos + 3));
+                    if (octal)
+                      octal = octal[0];
+                    while (octal && parseInt(octal, 8) > 255)
+                      octal = octal.slice(0, -1);
+                    if (octal === "0")
+                      octal = null;
+                    ++tokPos;
+                    if (octal) {
+                      if (strict)
+                        raise(tokPos - 2, "Octal literal in strict mode");
+                      out += String.fromCharCode(parseInt(octal, 8));
+                      tokPos += octal.length - 1;
+                    } else {
+                      switch (ch) {
+                        case 110:
+                          out += "\n";
+                          break;
+                        case 114:
+                          out += "\r";
+                          break;
+                        case 120:
+                          out += String.fromCharCode(readHexChar(2));
+                          break;
+                        case 117:
+                          out += String.fromCharCode(readHexChar(4));
+                          break;
+                        case 85:
+                          out += String.fromCharCode(readHexChar(8));
+                          break;
+                        case 116:
+                          out += "	";
+                          break;
+                        case 98:
+                          out += "\b";
+                          break;
+                        case 118:
+                          out += "\v";
+                          break;
+                        case 102:
+                          out += "\f";
+                          break;
+                        case 48:
+                          out += "\0";
+                          break;
+                        case 13:
+                          if (input.charCodeAt(tokPos) === 10)
+                            ++tokPos;
+                        case 10:
+                          if (options.locations) {
+                            tokLineStart = tokPos;
+                            ++tokCurLine;
+                          }
+                          break;
+                        default:
+                          out += String.fromCharCode(ch);
+                          break;
+                      }
+                    }
+                  } else {
+                    if (ch === 13 || ch === 10 || ch === 8232 || ch === 8233)
+                      raise(tokStart, "Unterminated string constant");
+                    out += String.fromCharCode(ch);
+                    ++tokPos;
+                  }
+                }
+              }
+              function readHexChar(len) {
+                var n = readInt(16, len);
+                if (n === null)
+                  raise(tokStart, "Bad character escape sequence");
+                return n;
+              }
+              var containsEsc;
+              function readWord1() {
+                containsEsc = false;
+                var word, first = true, start = tokPos;
+                for (; ; ) {
+                  var ch = input.charCodeAt(tokPos);
+                  if (isIdentifierChar(ch)) {
+                    if (containsEsc)
+                      word += input.charAt(tokPos);
+                    ++tokPos;
+                  } else if (ch === 92) {
+                    if (!containsEsc)
+                      word = input.slice(start, tokPos);
+                    containsEsc = true;
+                    if (input.charCodeAt(++tokPos) != 117)
+                      raise(tokPos, "Expecting Unicode escape sequence \\uXXXX");
+                    ++tokPos;
+                    var esc = readHexChar(4);
+                    var escStr = String.fromCharCode(esc);
+                    if (!escStr)
+                      raise(tokPos - 1, "Invalid Unicode escape");
+                    if (!(first ? isIdentifierStart(esc) : isIdentifierChar(esc)))
+                      raise(tokPos - 4, "Invalid Unicode escape");
+                    word += escStr;
+                  } else {
+                    break;
+                  }
+                  first = false;
+                }
+                return containsEsc ? word : input.slice(start, tokPos);
+              }
+              function readWord() {
+                var word = readWord1();
+                var type = _name;
+                if (!containsEsc && isKeyword(word))
+                  type = keywordTypes[word];
+                return finishToken(type, word);
+              }
+              function next() {
+                lastStart = tokStart;
+                lastEnd = tokEnd;
+                lastEndLoc = tokEndLoc;
+                readToken();
+              }
+              function setStrict(strct) {
+                strict = strct;
+                tokPos = tokStart;
+                if (options.locations) {
+                  while (tokPos < tokLineStart) {
+                    tokLineStart = input.lastIndexOf("\n", tokLineStart - 2) + 1;
+                    --tokCurLine;
+                  }
+                }
+                skipSpace();
+                readToken();
+              }
+              function node_t() {
+                this.type = null;
+                this.start = tokStart;
+                this.end = null;
+              }
+              function node_loc_t() {
+                this.start = tokStartLoc;
+                this.end = null;
+                if (sourceFile !== null)
+                  this.source = sourceFile;
+              }
+              function startNode() {
+                var node = new node_t();
+                if (options.locations)
+                  node.loc = new node_loc_t();
+                if (options.directSourceFile)
+                  node.sourceFile = options.directSourceFile;
+                if (options.ranges)
+                  node.range = [tokStart, 0];
+                return node;
+              }
+              function startNodeFrom(other) {
+                var node = new node_t();
+                node.start = other.start;
+                if (options.locations) {
+                  node.loc = new node_loc_t();
+                  node.loc.start = other.loc.start;
+                }
+                if (options.ranges)
+                  node.range = [other.range[0], 0];
+                return node;
+              }
+              function finishNode(node, type) {
+                node.type = type;
+                node.end = lastEnd;
+                if (options.locations)
+                  node.loc.end = lastEndLoc;
+                if (options.ranges)
+                  node.range[1] = lastEnd;
+                return node;
+              }
+              function isUseStrict(stmt) {
+                return options.ecmaVersion >= 5 && stmt.type === "ExpressionStatement" && stmt.expression.type === "Literal" && stmt.expression.value === "use strict";
+              }
+              function eat(type) {
+                if (tokType === type) {
+                  next();
+                  return true;
+                }
+              }
+              function canInsertSemicolon() {
+                return !options.strictSemicolons && (tokType === _eof || tokType === _braceR || newline.test(input.slice(lastEnd, tokStart)));
+              }
+              function semicolon() {
+                if (!eat(_semi) && !canInsertSemicolon())
+                  unexpected();
+              }
+              function expect(type) {
+                if (tokType === type)
+                  next();
+                else
+                  unexpected();
+              }
+              function unexpected() {
+                raise(tokStart, "Unexpected token");
+              }
+              function checkLVal(expr) {
+                if (expr.type !== "Identifier" && expr.type !== "MemberExpression")
+                  raise(expr.start, "Assigning to rvalue");
+                if (strict && expr.type === "Identifier" && isStrictBadIdWord(expr.name))
+                  raise(expr.start, "Assigning to " + expr.name + " in strict mode");
+              }
+              function parseTopLevel(program) {
+                lastStart = lastEnd = tokPos;
+                if (options.locations)
+                  lastEndLoc = new line_loc_t();
+                inFunction = strict = null;
+                labels = [];
+                readToken();
+                var node = program || startNode(), first = true;
+                if (!program)
+                  node.body = [];
+                while (tokType !== _eof) {
+                  var stmt = parseStatement();
+                  node.body.push(stmt);
+                  if (first && isUseStrict(stmt))
+                    setStrict(true);
+                  first = false;
+                }
+                return finishNode(node, "Program");
+              }
+              var loopLabel = { kind: "loop" }, switchLabel = { kind: "switch" };
+              function parseStatement() {
+                if (tokType === _slash || tokType === _assign && tokVal == "/=")
+                  readToken(true);
+                var starttype = tokType, node = startNode();
+                switch (starttype) {
+                  case _break:
+                  case _continue:
+                    next();
+                    var isBreak = starttype === _break;
+                    if (eat(_semi) || canInsertSemicolon())
+                      node.label = null;
+                    else if (tokType !== _name)
+                      unexpected();
+                    else {
+                      node.label = parseIdent();
+                      semicolon();
+                    }
+                    for (var i = 0; i < labels.length; ++i) {
+                      var lab = labels[i];
+                      if (node.label == null || lab.name === node.label.name) {
+                        if (lab.kind != null && (isBreak || lab.kind === "loop"))
+                          break;
+                        if (node.label && isBreak)
+                          break;
+                      }
+                    }
+                    if (i === labels.length)
+                      raise(node.start, "Unsyntactic " + starttype.keyword);
+                    return finishNode(node, isBreak ? "BreakStatement" : "ContinueStatement");
+                  case _debugger:
+                    next();
+                    semicolon();
+                    return finishNode(node, "DebuggerStatement");
+                  case _do:
+                    next();
+                    labels.push(loopLabel);
+                    node.body = parseStatement();
+                    labels.pop();
+                    expect(_while);
+                    node.test = parseParenExpression();
+                    semicolon();
+                    return finishNode(node, "DoWhileStatement");
+                  case _for:
+                    next();
+                    labels.push(loopLabel);
+                    expect(_parenL);
+                    if (tokType === _semi)
+                      return parseFor(node, null);
+                    if (tokType === _var) {
+                      var init = startNode();
+                      next();
+                      parseVar(init, true);
+                      finishNode(init, "VariableDeclaration");
+                      if (init.declarations.length === 1 && eat(_in))
+                        return parseForIn(node, init);
+                      return parseFor(node, init);
+                    }
+                    var init = parseExpression(false, true);
+                    if (eat(_in)) {
+                      checkLVal(init);
+                      return parseForIn(node, init);
+                    }
+                    return parseFor(node, init);
+                  case _function:
+                    next();
+                    return parseFunction(node, true);
+                  case _if:
+                    next();
+                    node.test = parseParenExpression();
+                    node.consequent = parseStatement();
+                    node.alternate = eat(_else) ? parseStatement() : null;
+                    return finishNode(node, "IfStatement");
+                  case _return:
+                    if (!inFunction && !options.allowReturnOutsideFunction)
+                      raise(tokStart, "'return' outside of function");
+                    next();
+                    if (eat(_semi) || canInsertSemicolon())
+                      node.argument = null;
+                    else {
+                      node.argument = parseExpression();
+                      semicolon();
+                    }
+                    return finishNode(node, "ReturnStatement");
+                  case _switch:
+                    next();
+                    node.discriminant = parseParenExpression();
+                    node.cases = [];
+                    expect(_braceL);
+                    labels.push(switchLabel);
+                    for (var cur, sawDefault; tokType != _braceR; ) {
+                      if (tokType === _case || tokType === _default) {
+                        var isCase = tokType === _case;
+                        if (cur)
+                          finishNode(cur, "SwitchCase");
+                        node.cases.push(cur = startNode());
+                        cur.consequent = [];
+                        next();
+                        if (isCase)
+                          cur.test = parseExpression();
+                        else {
+                          if (sawDefault)
+                            raise(lastStart, "Multiple default clauses");
+                          sawDefault = true;
+                          cur.test = null;
+                        }
+                        expect(_colon);
+                      } else {
+                        if (!cur)
+                          unexpected();
+                        cur.consequent.push(parseStatement());
+                      }
+                    }
+                    if (cur)
+                      finishNode(cur, "SwitchCase");
+                    next();
+                    labels.pop();
+                    return finishNode(node, "SwitchStatement");
+                  case _throw:
+                    next();
+                    if (newline.test(input.slice(lastEnd, tokStart)))
+                      raise(lastEnd, "Illegal newline after throw");
+                    node.argument = parseExpression();
+                    semicolon();
+                    return finishNode(node, "ThrowStatement");
+                  case _try:
+                    next();
+                    node.block = parseBlock();
+                    node.handler = null;
+                    if (tokType === _catch) {
+                      var clause = startNode();
+                      next();
+                      expect(_parenL);
+                      clause.param = parseIdent();
+                      if (strict && isStrictBadIdWord(clause.param.name))
+                        raise(clause.param.start, "Binding " + clause.param.name + " in strict mode");
+                      expect(_parenR);
+                      clause.guard = null;
+                      clause.body = parseBlock();
+                      node.handler = finishNode(clause, "CatchClause");
+                    }
+                    node.guardedHandlers = empty;
+                    node.finalizer = eat(_finally) ? parseBlock() : null;
+                    if (!node.handler && !node.finalizer)
+                      raise(node.start, "Missing catch or finally clause");
+                    return finishNode(node, "TryStatement");
+                  case _var:
+                    next();
+                    parseVar(node);
+                    semicolon();
+                    return finishNode(node, "VariableDeclaration");
+                  case _while:
+                    next();
+                    node.test = parseParenExpression();
+                    labels.push(loopLabel);
+                    node.body = parseStatement();
+                    labels.pop();
+                    return finishNode(node, "WhileStatement");
+                  case _with:
+                    if (strict)
+                      raise(tokStart, "'with' in strict mode");
+                    next();
+                    node.object = parseParenExpression();
+                    node.body = parseStatement();
+                    return finishNode(node, "WithStatement");
+                  case _braceL:
+                    return parseBlock();
+                  case _semi:
+                    next();
+                    return finishNode(node, "EmptyStatement");
+                  default:
+                    var maybeName = tokVal, expr = parseExpression();
+                    if (starttype === _name && expr.type === "Identifier" && eat(_colon)) {
+                      for (var i = 0; i < labels.length; ++i)
+                        if (labels[i].name === maybeName)
+                          raise(expr.start, "Label '" + maybeName + "' is already declared");
+                      var kind = tokType.isLoop ? "loop" : tokType === _switch ? "switch" : null;
+                      labels.push({ name: maybeName, kind });
+                      node.body = parseStatement();
+                      labels.pop();
+                      node.label = expr;
+                      return finishNode(node, "LabeledStatement");
+                    } else {
+                      node.expression = expr;
+                      semicolon();
+                      return finishNode(node, "ExpressionStatement");
+                    }
+                }
+              }
+              function parseParenExpression() {
+                expect(_parenL);
+                var val = parseExpression();
+                expect(_parenR);
+                return val;
+              }
+              function parseBlock(allowStrict) {
+                var node = startNode(), first = true, strict2 = false, oldStrict;
+                node.body = [];
+                expect(_braceL);
+                while (!eat(_braceR)) {
+                  var stmt = parseStatement();
+                  node.body.push(stmt);
+                  if (first && allowStrict && isUseStrict(stmt)) {
+                    oldStrict = strict2;
+                    setStrict(strict2 = true);
+                  }
+                  first = false;
+                }
+                if (strict2 && !oldStrict)
+                  setStrict(false);
+                return finishNode(node, "BlockStatement");
+              }
+              function parseFor(node, init) {
+                node.init = init;
+                expect(_semi);
+                node.test = tokType === _semi ? null : parseExpression();
+                expect(_semi);
+                node.update = tokType === _parenR ? null : parseExpression();
+                expect(_parenR);
+                node.body = parseStatement();
+                labels.pop();
+                return finishNode(node, "ForStatement");
+              }
+              function parseForIn(node, init) {
+                node.left = init;
+                node.right = parseExpression();
+                expect(_parenR);
+                node.body = parseStatement();
+                labels.pop();
+                return finishNode(node, "ForInStatement");
+              }
+              function parseVar(node, noIn) {
+                node.declarations = [];
+                node.kind = "var";
+                for (; ; ) {
+                  var decl = startNode();
+                  decl.id = parseIdent();
+                  if (strict && isStrictBadIdWord(decl.id.name))
+                    raise(decl.id.start, "Binding " + decl.id.name + " in strict mode");
+                  decl.init = eat(_eq) ? parseExpression(true, noIn) : null;
+                  node.declarations.push(finishNode(decl, "VariableDeclarator"));
+                  if (!eat(_comma))
+                    break;
+                }
+                return node;
+              }
+              function parseExpression(noComma, noIn) {
+                var expr = parseMaybeAssign(noIn);
+                if (!noComma && tokType === _comma) {
+                  var node = startNodeFrom(expr);
+                  node.expressions = [expr];
+                  while (eat(_comma))
+                    node.expressions.push(parseMaybeAssign(noIn));
+                  return finishNode(node, "SequenceExpression");
+                }
+                return expr;
+              }
+              function parseMaybeAssign(noIn) {
+                var left = parseMaybeConditional(noIn);
+                if (tokType.isAssign) {
+                  var node = startNodeFrom(left);
+                  node.operator = tokVal;
+                  node.left = left;
+                  next();
+                  node.right = parseMaybeAssign(noIn);
+                  checkLVal(left);
+                  return finishNode(node, "AssignmentExpression");
+                }
+                return left;
+              }
+              function parseMaybeConditional(noIn) {
+                var expr = parseExprOps(noIn);
+                if (eat(_question)) {
+                  var node = startNodeFrom(expr);
+                  node.test = expr;
+                  node.consequent = parseExpression(true);
+                  expect(_colon);
+                  node.alternate = parseExpression(true, noIn);
+                  return finishNode(node, "ConditionalExpression");
+                }
+                return expr;
+              }
+              function parseExprOps(noIn) {
+                return parseExprOp(parseMaybeUnary(), -1, noIn);
+              }
+              function parseExprOp(left, minPrec, noIn) {
+                var prec = tokType.binop;
+                if (prec != null && (!noIn || tokType !== _in)) {
+                  if (prec > minPrec) {
+                    var node = startNodeFrom(left);
+                    node.left = left;
+                    node.operator = tokVal;
+                    var op = tokType;
+                    next();
+                    node.right = parseExprOp(parseMaybeUnary(), prec, noIn);
+                    var exprNode = finishNode(node, op === _logicalOR || op === _logicalAND ? "LogicalExpression" : "BinaryExpression");
+                    return parseExprOp(exprNode, minPrec, noIn);
+                  }
+                }
+                return left;
+              }
+              function parseMaybeUnary() {
+                if (tokType.prefix) {
+                  var node = startNode(), update = tokType.isUpdate;
+                  node.operator = tokVal;
+                  node.prefix = true;
+                  tokRegexpAllowed = true;
+                  next();
+                  node.argument = parseMaybeUnary();
+                  if (update)
+                    checkLVal(node.argument);
+                  else if (strict && node.operator === "delete" && node.argument.type === "Identifier")
+                    raise(node.start, "Deleting local variable in strict mode");
+                  return finishNode(node, update ? "UpdateExpression" : "UnaryExpression");
+                }
+                var expr = parseExprSubscripts();
+                while (tokType.postfix && !canInsertSemicolon()) {
+                  var node = startNodeFrom(expr);
+                  node.operator = tokVal;
+                  node.prefix = false;
+                  node.argument = expr;
+                  checkLVal(expr);
+                  next();
+                  expr = finishNode(node, "UpdateExpression");
+                }
+                return expr;
+              }
+              function parseExprSubscripts() {
+                return parseSubscripts(parseExprAtom());
+              }
+              function parseSubscripts(base, noCalls) {
+                if (eat(_dot)) {
+                  var node = startNodeFrom(base);
+                  node.object = base;
+                  node.property = parseIdent(true);
+                  node.computed = false;
+                  return parseSubscripts(finishNode(node, "MemberExpression"), noCalls);
+                } else if (eat(_bracketL)) {
+                  var node = startNodeFrom(base);
+                  node.object = base;
+                  node.property = parseExpression();
+                  node.computed = true;
+                  expect(_bracketR);
+                  return parseSubscripts(finishNode(node, "MemberExpression"), noCalls);
+                } else if (!noCalls && eat(_parenL)) {
+                  var node = startNodeFrom(base);
+                  node.callee = base;
+                  node.arguments = parseExprList(_parenR, false);
+                  return parseSubscripts(finishNode(node, "CallExpression"), noCalls);
+                } else
+                  return base;
+              }
+              function parseExprAtom() {
+                switch (tokType) {
+                  case _this:
+                    var node = startNode();
+                    next();
+                    return finishNode(node, "ThisExpression");
+                  case _name:
+                    return parseIdent();
+                  case _num:
+                  case _string:
+                  case _regexp:
+                    var node = startNode();
+                    node.value = tokVal;
+                    node.raw = input.slice(tokStart, tokEnd);
+                    next();
+                    return finishNode(node, "Literal");
+                  case _null:
+                  case _true:
+                  case _false:
+                    var node = startNode();
+                    node.value = tokType.atomValue;
+                    node.raw = tokType.keyword;
+                    next();
+                    return finishNode(node, "Literal");
+                  case _parenL:
+                    var tokStartLoc1 = tokStartLoc, tokStart1 = tokStart;
+                    next();
+                    var val = parseExpression();
+                    val.start = tokStart1;
+                    val.end = tokEnd;
+                    if (options.locations) {
+                      val.loc.start = tokStartLoc1;
+                      val.loc.end = tokEndLoc;
+                    }
+                    if (options.ranges)
+                      val.range = [tokStart1, tokEnd];
+                    expect(_parenR);
+                    return val;
+                  case _bracketL:
+                    var node = startNode();
+                    next();
+                    node.elements = parseExprList(_bracketR, true, true);
+                    return finishNode(node, "ArrayExpression");
+                  case _braceL:
+                    return parseObj();
+                  case _function:
+                    var node = startNode();
+                    next();
+                    return parseFunction(node, false);
+                  case _new:
+                    return parseNew();
+                  default:
+                    unexpected();
+                }
+              }
+              function parseNew() {
+                var node = startNode();
+                next();
+                node.callee = parseSubscripts(parseExprAtom(), true);
+                if (eat(_parenL))
+                  node.arguments = parseExprList(_parenR, false);
+                else
+                  node.arguments = empty;
+                return finishNode(node, "NewExpression");
+              }
+              function parseObj() {
+                var node = startNode(), first = true, sawGetSet = false;
+                node.properties = [];
+                next();
+                while (!eat(_braceR)) {
+                  if (!first) {
+                    expect(_comma);
+                    if (options.allowTrailingCommas && eat(_braceR))
+                      break;
+                  } else
+                    first = false;
+                  var prop = { key: parsePropertyName() }, isGetSet = false, kind;
+                  if (eat(_colon)) {
+                    prop.value = parseExpression(true);
+                    kind = prop.kind = "init";
+                  } else if (options.ecmaVersion >= 5 && prop.key.type === "Identifier" && (prop.key.name === "get" || prop.key.name === "set")) {
+                    isGetSet = sawGetSet = true;
+                    kind = prop.kind = prop.key.name;
+                    prop.key = parsePropertyName();
+                    if (tokType !== _parenL)
+                      unexpected();
+                    prop.value = parseFunction(startNode(), false);
+                  } else
+                    unexpected();
+                  if (prop.key.type === "Identifier" && (strict || sawGetSet)) {
+                    for (var i = 0; i < node.properties.length; ++i) {
+                      var other = node.properties[i];
+                      if (other.key.name === prop.key.name) {
+                        var conflict = kind == other.kind || isGetSet && other.kind === "init" || kind === "init" && (other.kind === "get" || other.kind === "set");
+                        if (conflict && !strict && kind === "init" && other.kind === "init")
+                          conflict = false;
+                        if (conflict)
+                          raise(prop.key.start, "Redefinition of property");
+                      }
+                    }
+                  }
+                  node.properties.push(prop);
+                }
+                return finishNode(node, "ObjectExpression");
+              }
+              function parsePropertyName() {
+                if (tokType === _num || tokType === _string)
+                  return parseExprAtom();
+                return parseIdent(true);
+              }
+              function parseFunction(node, isStatement) {
+                if (tokType === _name)
+                  node.id = parseIdent();
+                else if (isStatement)
+                  unexpected();
+                else
+                  node.id = null;
+                node.params = [];
+                var first = true;
+                expect(_parenL);
+                while (!eat(_parenR)) {
+                  if (!first)
+                    expect(_comma);
+                  else
+                    first = false;
+                  node.params.push(parseIdent());
+                }
+                var oldInFunc = inFunction, oldLabels = labels;
+                inFunction = true;
+                labels = [];
+                node.body = parseBlock(true);
+                inFunction = oldInFunc;
+                labels = oldLabels;
+                if (strict || node.body.body.length && isUseStrict(node.body.body[0])) {
+                  for (var i = node.id ? -1 : 0; i < node.params.length; ++i) {
+                    var id = i < 0 ? node.id : node.params[i];
+                    if (isStrictReservedWord(id.name) || isStrictBadIdWord(id.name))
+                      raise(id.start, "Defining '" + id.name + "' in strict mode");
+                    if (i >= 0) {
+                      for (var j = 0; j < i; ++j)
+                        if (id.name === node.params[j].name)
+                          raise(id.start, "Argument name clash in strict mode");
+                    }
+                  }
+                }
+                return finishNode(node, isStatement ? "FunctionDeclaration" : "FunctionExpression");
+              }
+              function parseExprList(close, allowTrailingComma, allowEmpty) {
+                var elts = [], first = true;
+                while (!eat(close)) {
+                  if (!first) {
+                    expect(_comma);
+                    if (allowTrailingComma && options.allowTrailingCommas && eat(close))
+                      break;
+                  } else
+                    first = false;
+                  if (allowEmpty && tokType === _comma)
+                    elts.push(null);
+                  else
+                    elts.push(parseExpression(true));
+                }
+                return elts;
+              }
+              function parseIdent(liberal) {
+                var node = startNode();
+                if (liberal && options.forbidReserved == "everywhere")
+                  liberal = false;
+                if (tokType === _name) {
+                  if (!liberal && (options.forbidReserved && (options.ecmaVersion === 3 ? isReservedWord3 : isReservedWord5)(tokVal) || strict && isStrictReservedWord(tokVal)) && input.slice(tokStart, tokEnd).indexOf("\\") == -1)
+                    raise(tokStart, "The keyword '" + tokVal + "' is reserved");
+                  node.name = tokVal;
+                } else if (liberal && tokType.keyword) {
+                  node.name = tokType.keyword;
+                } else {
+                  unexpected();
+                }
+                tokRegexpAllowed = false;
+                next();
+                return finishNode(node, "Identifier");
+              }
+            });
+            if (!acorn.version)
+              acorn = null;
+          }
+          function parse(code, options) {
+            return (global.acorn || acorn).parse(code, options);
+          }
+          var binaryOperators = {
+            "+": "__add",
+            "-": "__subtract",
+            "*": "__multiply",
+            "/": "__divide",
+            "%": "__modulo",
+            "==": "__equals",
+            "!=": "__equals"
+          };
+          var unaryOperators = {
+            "-": "__negate",
+            "+": "__self"
+          };
+          var fields = Base.each(
+            ["add", "subtract", "multiply", "divide", "modulo", "equals", "negate"],
+            function(name) {
+              this["__" + name] = "#" + name;
+            },
+            {
+              __self: function() {
+                return this;
+              }
+            }
+          );
+          Point.inject(fields);
+          Size.inject(fields);
+          Color.inject(fields);
+          function __$__(left, operator, right) {
+            var handler = binaryOperators[operator];
+            if (left && left[handler]) {
+              var res = left[handler](right);
+              return operator === "!=" ? !res : res;
+            }
+            switch (operator) {
+              case "+":
+                return left + right;
+              case "-":
+                return left - right;
+              case "*":
+                return left * right;
+              case "/":
+                return left / right;
+              case "%":
+                return left % right;
+              case "==":
+                return left == right;
+              case "!=":
+                return left != right;
+            }
+          }
+          function $__(operator, value) {
+            var handler = unaryOperators[operator];
+            if (value && value[handler])
+              return value[handler]();
+            switch (operator) {
+              case "+":
+                return +value;
+              case "-":
+                return -value;
+            }
+          }
+          function compile(code, options) {
+            if (!code)
+              return "";
+            options = options || {};
+            var insertions = [];
+            function getOffset(offset2) {
+              for (var i = 0, l = insertions.length; i < l; i++) {
+                var insertion = insertions[i];
+                if (insertion[0] >= offset2)
+                  break;
+                offset2 += insertion[1];
+              }
+              return offset2;
+            }
+            function getCode(node) {
+              return code.substring(
+                getOffset(node.range[0]),
+                getOffset(node.range[1])
+              );
+            }
+            function getBetween(left, right) {
+              return code.substring(
+                getOffset(left.range[1]),
+                getOffset(right.range[0])
+              );
+            }
+            function replaceCode(node, str) {
+              var start = getOffset(node.range[0]), end = getOffset(node.range[1]), insert = 0;
+              for (var i = insertions.length - 1; i >= 0; i--) {
+                if (start > insertions[i][0]) {
+                  insert = i + 1;
+                  break;
+                }
+              }
+              insertions.splice(insert, 0, [start, str.length - end + start]);
+              code = code.substring(0, start) + str + code.substring(end);
+            }
+            function handleOverloading(node, parent) {
+              switch (node.type) {
+                case "UnaryExpression":
+                  if (node.operator in unaryOperators && node.argument.type !== "Literal") {
+                    var arg = getCode(node.argument);
+                    replaceCode(node, '$__("' + node.operator + '", ' + arg + ")");
+                  }
+                  break;
+                case "BinaryExpression":
+                  if (node.operator in binaryOperators && node.left.type !== "Literal") {
+                    var left = getCode(node.left), right = getCode(node.right), between = getBetween(node.left, node.right), operator = node.operator;
+                    replaceCode(node, "__$__(" + left + "," + between.replace(
+                      new RegExp("\\" + operator),
+                      '"' + operator + '"'
+                    ) + ", " + right + ")");
+                  }
+                  break;
+                case "UpdateExpression":
+                case "AssignmentExpression":
+                  var parentType = parent && parent.type;
+                  if (!(parentType === "ForStatement" || parentType === "BinaryExpression" && /^[=!<>]/.test(parent.operator) || parentType === "MemberExpression" && parent.computed)) {
+                    if (node.type === "UpdateExpression") {
+                      var arg = getCode(node.argument), exp = "__$__(" + arg + ', "' + node.operator[0] + '", 1)', str = arg + " = " + exp;
+                      if (node.prefix) {
+                        str = "(" + str + ")";
+                      } else if (parentType === "AssignmentExpression" || parentType === "VariableDeclarator" || parentType === "BinaryExpression") {
+                        if (getCode(parent.left || parent.id) === arg)
+                          str = exp;
+                        str = arg + "; " + str;
+                      }
+                      replaceCode(node, str);
+                    } else {
+                      if (/^.=$/.test(node.operator) && node.left.type !== "Literal") {
+                        var left = getCode(node.left), right = getCode(node.right), exp = left + " = __$__(" + left + ', "' + node.operator[0] + '", ' + right + ")";
+                        replaceCode(node, /^\(.*\)$/.test(getCode(node)) ? "(" + exp + ")" : exp);
+                      }
+                    }
+                  }
+                  break;
+              }
+            }
+            function handleExports(node) {
+              switch (node.type) {
+                case "ExportDefaultDeclaration":
+                  replaceCode({
+                    range: [node.start, node.declaration.start]
+                  }, "module.exports = ");
+                  break;
+                case "ExportNamedDeclaration":
+                  var declaration = node.declaration;
+                  var specifiers = node.specifiers;
+                  if (declaration) {
+                    var declarations = declaration.declarations;
+                    if (declarations) {
+                      declarations.forEach(function(dec) {
+                        replaceCode(dec, "module.exports." + getCode(dec));
+                      });
+                      replaceCode({
+                        range: [
+                          node.start,
+                          declaration.start + declaration.kind.length
+                        ]
+                      }, "");
+                    }
+                  } else if (specifiers) {
+                    var exports3 = specifiers.map(function(specifier) {
+                      var name = getCode(specifier);
+                      return "module.exports." + name + " = " + name + "; ";
+                    }).join("");
+                    if (exports3) {
+                      replaceCode(node, exports3);
+                    }
+                  }
+                  break;
+              }
+            }
+            function walkAST(node, parent, paperFeatures2) {
+              if (node) {
+                for (var key in node) {
+                  if (key !== "range" && key !== "loc") {
+                    var value = node[key];
+                    if (Array.isArray(value)) {
+                      for (var i = 0, l = value.length; i < l; i++) {
+                        walkAST(value[i], node, paperFeatures2);
+                      }
+                    } else if (value && typeof value === "object") {
+                      walkAST(value, node, paperFeatures2);
+                    }
+                  }
+                }
+                if (paperFeatures2.operatorOverloading !== false) {
+                  handleOverloading(node, parent);
+                }
+                if (paperFeatures2.moduleExports !== false) {
+                  handleExports(node);
+                }
+              }
+            }
+            function encodeVLQ(value) {
+              var res = "", base64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+              value = (Math.abs(value) << 1) + (value < 0 ? 1 : 0);
+              while (value || !res) {
+                var next = value & 32 - 1;
+                value >>= 5;
+                if (value)
+                  next |= 32;
+                res += base64[next];
+              }
+              return res;
+            }
+            var url = options.url || "", sourceMaps = options.sourceMaps, paperFeatures = options.paperFeatures || {}, source = options.source || code, offset = options.offset || 0, agent = paper2.agent, version = agent.versionNumber, offsetCode = false, lineBreaks = /\r\n|\n|\r/mg, map;
+            if (sourceMaps && (agent.chrome && version >= 30 || agent.webkit && version >= 537.76 || agent.firefox && version >= 23 || agent.node)) {
+              if (agent.node) {
+                offset -= 2;
+              } else if (window2 && url && !window2.location.href.indexOf(url)) {
+                var html = document2.getElementsByTagName("html")[0].innerHTML;
+                offset = html.substr(0, html.indexOf(code) + 1).match(
+                  lineBreaks
+                ).length + 1;
+              }
+              offsetCode = offset > 0 && !(agent.chrome && version >= 36 || agent.safari && version >= 600 || agent.firefox && version >= 40 || agent.node);
+              var mappings = ["AA" + encodeVLQ(offsetCode ? 0 : offset) + "A"];
+              mappings.length = (code.match(lineBreaks) || []).length + 1 + (offsetCode ? offset : 0);
+              map = {
+                version: 3,
+                file: url,
+                names: [],
+                mappings: mappings.join(";AACA"),
+                sourceRoot: "",
+                sources: [url],
+                sourcesContent: [source]
+              };
+            }
+            if (paperFeatures.operatorOverloading !== false || paperFeatures.moduleExports !== false) {
+              walkAST(parse(code, {
+                ranges: true,
+                preserveParens: true,
+                sourceType: "module"
+              }), null, paperFeatures);
+            }
+            if (map) {
+              if (offsetCode) {
+                code = new Array(offset + 1).join("\n") + code;
+              }
+              if (/^(inline|both)$/.test(sourceMaps)) {
+                code += "\n//# sourceMappingURL=data:application/json;base64," + self2.btoa(unescape(encodeURIComponent(
+                  JSON.stringify(map)
+                )));
+              }
+              code += "\n//# sourceURL=" + (url || "paperscript");
+            }
+            return {
+              url,
+              source,
+              code,
+              map
+            };
+          }
+          function execute(code, scope, options) {
+            paper2 = scope;
+            var view = scope.getView(), tool = /\btool\.\w+|\s+on(?:Key|Mouse)(?:Up|Down|Move|Drag)\b/.test(code) && !/\bnew\s+Tool\b/.test(code) ? new Tool() : null, toolHandlers = tool ? tool._events : [], handlers = ["onFrame", "onResize"].concat(toolHandlers), params = [], args = [], func, compiled = typeof code === "object" ? code : compile(code, options);
+            code = compiled.code;
+            function expose(scope2, hidden) {
+              for (var key in scope2) {
+                if ((hidden || !/^_/.test(key)) && new RegExp("([\\b\\s\\W]|^)" + key.replace(/\$/g, "\\$") + "\\b").test(code)) {
+                  params.push(key);
+                  args.push(scope2[key]);
+                }
+              }
+            }
+            expose(
+              { __$__, $__, paper: scope, tool },
+              true
+            );
+            expose(scope);
+            code = "var module = { exports: {} }; " + code;
+            var exports3 = Base.each(handlers, function(key) {
+              if (new RegExp("\\s+" + key + "\\b").test(code)) {
+                params.push(key);
+                this.push("module.exports." + key + " = " + key + ";");
+              }
+            }, []).join("\n");
+            if (exports3) {
+              code += "\n" + exports3;
+            }
+            code += "\nreturn module.exports;";
+            var agent = paper2.agent;
+            if (document2 && (agent.chrome || agent.firefox && agent.versionNumber < 40)) {
+              var script = document2.createElement("script"), head = document2.head || document2.getElementsByTagName("head")[0];
+              if (agent.firefox)
+                code = "\n" + code;
+              script.appendChild(document2.createTextNode(
+                "document.__paperscript__ = function(" + params + ") {" + code + "\n}"
+              ));
+              head.appendChild(script);
+              func = document2.__paperscript__;
+              delete document2.__paperscript__;
+              head.removeChild(script);
+            } else {
+              func = Function(params, code);
+            }
+            var exports3 = func && func.apply(scope, args);
+            var obj = exports3 || {};
+            Base.each(toolHandlers, function(key) {
+              var value = obj[key];
+              if (value)
+                tool[key] = value;
+            });
+            if (view) {
+              if (obj.onResize)
+                view.setOnResize(obj.onResize);
+              view.emit("resize", {
+                size: view.size,
+                delta: new Point()
+              });
+              if (obj.onFrame)
+                view.setOnFrame(obj.onFrame);
+              view.requestUpdate();
+            }
+            return exports3;
+          }
+          function loadScript(script) {
+            if (/^text\/(?:x-|)paperscript$/.test(script.type) && PaperScope.getAttribute(script, "ignore") !== "true") {
+              var canvasId = PaperScope.getAttribute(script, "canvas"), canvas = document2.getElementById(canvasId), src = script.src || script.getAttribute("data-src"), async = PaperScope.hasAttribute(script, "async"), scopeAttribute = "data-paper-scope";
+              if (!canvas)
+                throw new Error('Unable to find canvas with id "' + canvasId + '"');
+              var scope = PaperScope.get(canvas.getAttribute(scopeAttribute)) || new PaperScope().setup(canvas);
+              canvas.setAttribute(scopeAttribute, scope._id);
+              if (src) {
+                Http.request({
+                  url: src,
+                  async,
+                  mimeType: "text/plain",
+                  onLoad: function(code) {
+                    execute(code, scope, src);
+                  }
+                });
+              } else {
+                execute(script.innerHTML, scope, script.baseURI);
+              }
+              script.setAttribute("data-paper-ignore", "true");
+              return scope;
+            }
+          }
+          function loadAll() {
+            Base.each(
+              document2 && document2.getElementsByTagName("script"),
+              loadScript
+            );
+          }
+          function load(script) {
+            return script ? loadScript(script) : loadAll();
+          }
+          if (window2) {
+            if (document2.readyState === "complete") {
+              setTimeout(loadAll);
+            } else {
+              DomEvent.add(window2, { load: loadAll });
+            }
+          }
+          return {
+            compile,
+            execute,
+            load,
+            parse,
+            calculateBinary: __$__,
+            calculateUnary: $__
+          };
+        }.call(this);
+        var paper2 = new (PaperScope.inject(Base.exports, {
+          Base,
+          Numerical,
+          Key,
+          DomEvent,
+          DomElement,
+          document: document2,
+          window: window2,
+          Symbol: SymbolDefinition,
+          PlacedSymbol: SymbolItem
+        }))();
+        if (paper2.agent.node) {
+          require_extend()(paper2);
+        }
+        if (typeof define === "function" && define.amd) {
+          define("paper", paper2);
+        } else if (typeof module === "object" && module) {
+          module.exports = paper2;
+        }
+        return paper2;
+      }.call(exports, typeof self === "object" ? self : null);
+    }
+  });
+
+  // src/utilities/attributes.js
+  var attr = function(defaultVal, attrVal) {
+    const defaultValType = typeof defaultVal;
+    if (typeof attrVal !== "string" || attrVal.trim() === "")
+      return defaultVal;
+    if (attrVal === "true" && defaultValType === "boolean")
+      return true;
+    if (attrVal === "false" && defaultValType === "boolean")
+      return false;
+    if (isNaN(attrVal) && defaultValType === "string")
+      return attrVal;
+    if (!isNaN(attrVal) && defaultValType === "number")
+      return +attrVal;
+    return defaultVal;
+  };
+
+  // src/utilities/line.js
+  var scrollLines = function(trigger2, mobile = false) {
+    let scrollStart = attr("top 90%", trigger2.getAttribute("scroll-start"));
+    let scrollEnd = attr("bottom 90%", trigger2.getAttribute("scroll-end"));
+    const lineTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: trigger2,
+        start: scrollStart,
+        end: scrollEnd,
+        scrub: 0.5
+      },
+      defaults: {
+        duration: 1,
+        ease: "none"
+      }
+    });
+    const plusElements = trigger2.querySelectorAll(".plus_component");
+    plusElements.forEach((plus) => {
+      lineTL.from(
+        plus,
+        {
+          scale: 0
+        },
+        0
+      );
+    });
+    const lines = trigger2.querySelectorAll(".line-fill");
+    lines.forEach((line) => {
+      if (line.hasAttribute("scroll-false") || line.offsetParent === null) {
+        return;
+      }
+      let horizontal = true;
+      if (!mobile && line.hasAttribute("scroll-desktop-v")) {
+        horizontal = false;
+      }
+      if (mobile && line.hasAttribute("scroll-mobile-v")) {
+        horizontal = false;
+      }
+      lineTL.from(
+        line,
+        {
+          width: horizontal ? "0%" : "100%",
+          height: horizontal ? "100%" : "0%"
+        },
+        0
+      );
+    });
+  };
+
+  // src/utilities/accordion.js
+  var accordionAnimation = function() {
+    const accordionLists = document.querySelectorAll('[cr-accordion="list"]');
+    const ACCORDION_ITEM = '[cr-accordion="item"]';
+    const ACCORDION_TOP = '[cr-accordion="top"]';
+    const ACCORDION_OPEN = '[cr-accordion="open"]';
+    const ACCORDION_CLOSE = '[cr-accordion="close"]';
+    const OPTION_FIRST_OPEN = "cr-accordion-first-open";
+    const OPTION_ONE_ACTIVE = "cr-accordion-one-active";
+    const OPTION_KEEP_ONE_OPEN = "cr-accordion-keep-one-open";
+    const OPTION_HOVER = "cr-accordion-hover";
+    const ACTIVE_CLASS3 = "is-active";
+    if (accordionLists.length === 0 || accordionLists === void 0)
+      return;
+    accordionLists.forEach((list) => {
+      let firstOpen = attr(false, list.getAttribute(OPTION_FIRST_OPEN));
+      let oneActive = attr(false, list.getAttribute(OPTION_ONE_ACTIVE));
+      let keepOneOpen = attr(false, list.getAttribute(OPTION_KEEP_ONE_OPEN));
+      let hoverOnly = attr(false, list.getAttribute(OPTION_HOVER));
+      const firstItem = list.firstElementChild;
+      if (firstOpen) {
+        firstItem.classList.add(ACTIVE_CLASS3);
+        firstItem.querySelector(ACCORDION_OPEN).click();
+      }
+      if (!hoverOnly) {
+        list.addEventListener("click", function(e) {
+          const clickedEl = e.target.closest(ACCORDION_TOP);
+          if (!clickedEl)
+            return;
+          const clickedItem = clickedEl.closest(ACCORDION_ITEM);
+          const accordionItems = list.querySelectorAll(ACCORDION_ITEM);
+          let clickedItemAlreadyActive = clickedItem.classList.contains(ACTIVE_CLASS3);
+          if (!clickedItemAlreadyActive) {
+            if (oneActive) {
+              accordionItems.forEach((item) => {
+                if (item === clickedItem) {
+                  item.classList.add(ACTIVE_CLASS3);
+                  item.querySelector(ACCORDION_OPEN).click();
+                } else {
+                  item.classList.remove(ACTIVE_CLASS3);
+                  item.querySelector(ACCORDION_CLOSE).click();
+                }
+              });
+            }
+            if (!oneActive) {
+              clickedItem.classList.add(ACTIVE_CLASS3);
+              clickedItem.querySelector(ACCORDION_OPEN).click();
+            }
+          }
+          if (clickedItemAlreadyActive && !keepOneOpen) {
+            clickedItem.classList.remove(ACTIVE_CLASS3);
+            clickedItem.querySelector(ACCORDION_CLOSE).click();
+          }
+        });
+      }
+      if (hoverOnly) {
+        const accordionItems = list.querySelectorAll(ACCORDION_ITEM);
+        accordionItems.forEach((item) => {
+          item.addEventListener("mouseover", function() {
+            this.classList.add(ACTIVE_CLASS3);
+            item.querySelector(ACCORDION_OPEN).click();
+          });
+          item.addEventListener("mouseout", function() {
+            this.classList.remove(ACTIVE_CLASS3);
+            item.querySelector(ACCORDION_CLOSE).click();
+          });
+        });
+      }
+    });
+  };
+
+  // src/pages/home.js
+  var homeHeader = function() {
+    const images = document.querySelectorAll("[header-main-image]");
+    const tl = gsap.timeline({
+      repeat: -1,
+      yoyo: true,
+      defaults: {
+        duration: 0.8,
+        ease: "none"
+      }
+    });
+    images.forEach((image, index) => {
+      tl.to(image, {
+        opacity: 1
+      });
+    });
+  };
+  var homeSplitScroll = function() {
+    const triggerEl = document.querySelector('[cr-home-split="component"]');
+    const allItems = document.querySelectorAll('[cr-home-split="item"]');
+    const allImages = document.querySelectorAll('[cr-home-split="image"]');
+    if (!triggerEl || allItems.length === 0 || allImages.length === 0)
+      return;
+    let scrollStart = "top top";
+    let scrollEnd = "bottom bottom";
+    if (triggerEl.hasAttribute("cr-home-split-start")) {
+      scrollStart = trigger.getAttribute("cr-home-split-start");
+    }
+    if (triggerEl.hasAttribute("cr-home-split-end")) {
+      scrollEnd = trigger.getAttribute("cr-home-split-end");
+    }
+    const updateClass = function(currentItem, currentIndex, allItems2) {
+      allItems2.forEach((item, index) => {
+        let state = Flip.getState(item);
+        if (item === currentItem) {
+          item.classList.add(ACTIVE_CLASS2);
+        } else {
+          item.classList.remove(ACTIVE_CLASS2);
+        }
+        Flip.from(state, {
+          duration: 0.3,
+          ease: "power1.out"
+        });
+      });
+    };
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerEl,
+        start: scrollStart,
+        end: scrollEnd,
+        scrub: true
+      },
+      defaults: {
+        duration: 0.5,
+        delay: 1,
+        ease: "none"
+      }
+    });
+    allItems.forEach((currentItem, currentIndex) => {
+      currentImage = allImages[currentIndex];
+      tl.to(currentImage, {
+        opacity: 1
+      });
+      tl.call(updateClass, [currentItem, currentIndex, allItems], "<");
+    });
+  };
+  var homeSplitScrollMobile = function() {
+    const splitItems = document.querySelectorAll(".split-hover_item");
+    const splitImages = document.querySelectorAll(".split-hover_image");
+    splitItems.forEach((item, itemIndex) => {
+      item.addEventListener("click", () => {
+        if (!item)
+          return;
+        splitItems.forEach((item2) => item2.classList.remove(ACTIVE_CLASS2));
+        splitImages.forEach((image) => image.classList.remove(ACTIVE_CLASS2));
+        item.classList.add(ACTIVE_CLASS2);
+        splitImages[itemIndex].classList.add(ACTIVE_CLASS2);
+      });
+    });
+  };
+
+  // src/pages/product.js
+  var import_paper = __toESM(require_paper_full(), 1);
+  var productHeader = function(reduceMotion = false, isMobile = false) {
+    let headerTL2;
+    let progress2 = 0;
+    const { Path, Point, Group, Color } = import_paper.default;
+    const canvas = document.querySelector("#paper-canvas");
+    const headerComponent = document.querySelector("#process-header");
+    if (!canvas || !headerComponent)
+      return;
+    import_paper.default.setup(canvas);
+    import_paper.default.project.clear();
+    let NUM_COLS = 80;
+    if (isMobile) {
+      NUM_COLS = 40;
+    }
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    const FILL_COLORS = ["#00585c", "#008484", "#91c9c5", "#d3efed", "#cde200", "#e4ea7d", "#f9f9d7"];
+    const randomInt = (min, max) => Math.floor(Math.random() * (max - min) + 1) + min;
+    const createSquares = function(w2, h2, numCols) {
+      let squares = [];
+      let space = w2 / numCols;
+      for (let x = 0; x < w2; x += space) {
+        for (let y = 0; y < h2; y += space) {
+          let seed = randomInt(0, 20);
+          if (seed < 3) {
+            let color = FILL_COLORS[randomInt(0, 7) - 1];
+            const square = new Path.Rectangle({
+              point: new Point(x, y),
+              size: [space, space],
+              applyMatrix: false
+            });
+            square.fillColor = color;
+            squares.push(square);
+          }
+        }
+      }
+      return squares;
+    };
+    const squarePaths = createSquares(w, h, NUM_COLS);
+    if (reduceMotion)
+      return;
+    let start = "top 6rem";
+    if (isMobile) {
+      start = "top 4rem";
+    }
+    headerFadeTL = gsap.timeline({
+      defaults: {
+        duration: 0.2,
+        ease: "power2.out"
+      }
+    });
+    headerFadeTL.fromTo(
+      squarePaths,
+      {
+        opacity: 0
+      },
+      {
+        opacity: 1,
+        stagger: { each: 5e-3, from: "random" }
+      },
+      0
+    );
+    headerScrollTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: headerComponent,
+        start: "top 6rem",
+        end: "bottom 10rem",
+        scrub: 0.5
+      },
+      defaults: {
+        duration: 1,
+        ease: "none"
+      }
+    });
+    headerScrollTL.fromTo(
+      squarePaths,
+      {
+        scaling: 1
+      },
+      {
+        scaling: 1e-3,
+        stagger: { each: 0.02, from: "random" }
+      },
+      0
+    );
+    headerScrollTL.progress(progress2);
+  };
+  var process = function() {
+    const processItems = document.querySelectorAll('[cr-process="item"]');
+    const processImages = document.querySelectorAll('[cr-process="image"]');
+    processItems.forEach((item, index) => {
+      if (!item)
+        return;
+      const image = processImages[index];
+      const imageTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          start: "top center",
+          end: "bottom center",
+          scrub: 0,
+          onEnter: () => {
+            image.classList.add(ACTIVE_CLASS2);
+          },
+          onLeave: () => {
+            if (index !== processImages.length - 1) {
+              image.classList.remove(ACTIVE_CLASS2);
+            }
+          },
+          onEnterBack: () => {
+            image.classList.add(ACTIVE_CLASS2);
+          },
+          onLeaveBack: () => {
+            if (index !== 0) {
+              image.classList.remove(ACTIVE_CLASS2);
+            }
+          }
+        }
+      });
+      const itemSquare = item.querySelector('[cr-process="square"]');
+      const itemContents = item.querySelectorAll("h2, h3, p, .button");
+      const fadeTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          start: "top 80%",
+          end: "top 10%",
+          scrub: 0.5
+        }
+      });
+      fadeTL.fromTo(
+        itemContents,
+        {
+          opacity: 0
+        },
+        {
+          opacity: 1
+        }
+      );
+      fadeTL.from(
+        itemSquare,
+        {
+          backgroundColor: "#f9f9d7"
+        },
+        "<"
+      );
+    });
+  };
+  var iconHighlight = function(start = "top 1%", end = "bottom 99%") {
+    const iconSection = document.querySelector('[cr-icon-highlight="section"]');
+    const iconItems = document.querySelectorAll('[cr-icon-highlight="item"]');
+    const iconTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: iconSection,
+        start,
+        end,
+        scrub: 0.5
+      },
+      defaults: {
+        duration: 0.5,
+        ease: "power1.out"
+      }
+    });
+    iconItems.forEach((item, index) => {
+      const itemIcon = item.querySelector('[cr-icon-highlight="icon"]');
+      const itemText = item.querySelector('[cr-icon-highlight="span"]');
+      if (!itemIcon) {
+        return;
+      }
+      if (index === 0) {
+        iconTL.set(
+          itemIcon,
+          {
+            opacity: 0
+          },
+          "<"
+        );
+        iconTL.set(itemIcon, {
+          opacity: 1,
+          delay: 1
+        });
+      }
+      if (index !== 0) {
+        iconTL.set(itemIcon, {
+          opacity: 1
+        });
+      }
+      if (itemText) {
+        iconTL.set(
+          itemText,
+          {
+            fontWeight: 600
+          },
+          "<"
+        );
+      }
+      iconTL.set(itemIcon, {
+        opacity: 0,
+        delay: 1
+      });
+      if (itemText) {
+        iconTL.set(
+          itemText,
+          {
+            fontWeight: 300
+          },
+          "<"
+        );
+      }
+      if (index === iconItems.length - 1) {
+        iconTL.to(itemIcon, {
+          delay: 0.5
+        });
+      }
+    });
+  };
+  var productData = function(start = "top 1%", end = "bottom 99%") {
+    const items = document.querySelectorAll("[cr-produducts-data-item]");
+    if (!items)
+      return;
+    items.forEach((item) => {
+      const itemSquare = item.querySelector("[cr-produducts-data-square]");
+      const itemContents = item.querySelectorAll("h2, h3, p, .button");
+      const fadeTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          start: "top bottom",
+          end: "top center",
+          scrub: 0.5
+        },
+        defaults: {
+          ease: "none",
+          duration: 1
+        }
+      });
+      fadeTL.from(itemContents, {
+        opacity: 0.1
+      });
+      fadeTL.from(
+        itemSquare,
+        {
+          backgroundColor: "#d3efed"
+        },
+        "<"
+      );
+    });
+  };
+
+  // src/pages/use-cases.js
+  var scrollTable = function(mobile = false) {
+    HIGHLIGHT_COLOR = "#f9f9d7";
+    ACTIVE_CLASS = "is-active";
+    const rows = document.querySelectorAll(".case-table_row");
+    rows.forEach((row) => {
+      if (row.hasAttribute("scroll-false")) {
+        return;
+      }
+      const icon = row.querySelector(".case-table_icon");
+      const cells = row.querySelectorAll(".case-table_cell");
+      const setIconToActive = function(setToActive = true) {
+        if (!icon || mobile)
+          return;
+        let state = Flip.getState(icon);
+        if (setToActive) {
+          icon.classList.add(ACTIVE_CLASS);
+        } else {
+          icon.classList.remove(ACTIVE_CLASS);
+        }
+        Flip.from(state, {
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      };
+      const setRowToActive = function(setToActive = true) {
+        if (setToActive) {
+          row.classList.add(ACTIVE_CLASS);
+        } else {
+          row.classList.remove(ACTIVE_CLASS);
+        }
+      };
+      const rowTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: row,
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "restart reverse restart reverse",
+          onEnter: () => {
+            setIconToActive();
+            setRowToActive();
+          },
+          onLeave: () => {
+            setIconToActive(false);
+            setRowToActive(false);
+          },
+          onEnterBack: () => {
+            setIconToActive();
+            setRowToActive();
+          },
+          onLeaveBack: () => {
+            setIconToActive(false);
+            setRowToActive(false);
+          }
+        }
+      });
+    });
+  };
+
+  // src/index.js
+  var import_paper2 = __toESM(require_paper_full(), 1);
+  var ACTIVE_CLASS2 = "is-active";
+  document.addEventListener("DOMContentLoaded", function(e) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(Flip);
+    let mm = gsap.matchMedia();
+    const lineSections = document.querySelectorAll("[scroll-section]");
+    const gsapInit = function() {
+      mm.add(
+        {
+          isMobile: "(max-width: 767px)",
+          isTablet: "(min-width: 768px)  and (max-width: 991px)",
+          isDesktop: "(min-width: 992px)",
+          reduceMotion: "(prefers-reduced-motion: reduce)"
+        },
+        (context) => {
+          let { isMobile, isTablet, isDesktop, reduceMotion } = context.conditions;
+          accordionAnimation();
+          productHeader(reduceMotion, isMobile);
+          if (!reduceMotion) {
+            homeHeader();
+            lineSections.forEach((section) => {
+              scrollLines(section, isMobile);
+            });
+            scrollTable(isMobile);
+          }
+          if (isDesktop) {
+            homeSplitScroll();
+            process();
+            iconHighlight();
+            productData();
+            window.addEventListener("resize", function() {
+              progress = headerTL.progress;
+              headerTL.kill();
+              productHeader(reduceMotion, isMobile);
+            });
+          }
+          if (isMobile) {
+            homeSplitScrollMobile();
+            iconHighlight("top 40%", "bottom 40%");
+          }
+        }
+      );
+    };
+    gsapInit();
+  });
+})();
 /*!
  * Paper.js v0.12.17 - The Swiss Army Knife of Vector Graphics Scripting.
  * http://paperjs.org/

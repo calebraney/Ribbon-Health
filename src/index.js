@@ -1,9 +1,9 @@
 import { scrollLines } from './utilities/line.js';
 import { accordionAnimation } from './utilities/accordion.js';
+import { countUp } from './utilities/count.js';
 import { homeHeader, homeSplitScroll, homeSplitScrollMobile } from './pages/home.js';
 import { productHeader, process, iconHighlight, productData } from './pages/product.js';
 import { scrollTable } from './pages/use-cases.js';
-import paperCore from 'paper';
 
 //constants
 export const ACTIVE_CLASS = 'is-active';
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
   let mm = gsap.matchMedia();
   //Select Elements
   const lineSections = document.querySelectorAll('[scroll-section]');
-
+  console.log('dev');
   //activate animations
   const gsapInit = function () {
     mm.add(
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
       (context) => {
         let { isMobile, isTablet, isDesktop, reduceMotion } = context.conditions;
         accordionAnimation();
+        countUp();
         productHeader(reduceMotion, isMobile);
         //Run if reduce motion is off
         if (!reduceMotion) {

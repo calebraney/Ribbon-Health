@@ -48,17 +48,17 @@
         var window2 = self2.window, document2 = self2.document;
         var Base = new function() {
           var hidden = /^(statics|enumerable|beans|preserve)$/, array = [], slice = array.slice, create = Object.create, describe = Object.getOwnPropertyDescriptor, define2 = Object.defineProperty, forEach = array.forEach || function(iter, bind) {
-            for (var i = 0, l = this.length; i < l; i++) {
-              iter.call(bind, this[i], i, this);
+            for (var i2 = 0, l = this.length; i2 < l; i2++) {
+              iter.call(bind, this[i2], i2, this);
             }
           }, forIn = function(iter, bind) {
-            for (var i in this) {
-              if (this.hasOwnProperty(i))
-                iter.call(bind, this[i], i, this);
+            for (var i2 in this) {
+              if (this.hasOwnProperty(i2))
+                iter.call(bind, this[i2], i2, this);
             }
           }, set = Object.assign || function(dst) {
-            for (var i = 1, l = arguments.length; i < l; i++) {
-              var src = arguments[i];
+            for (var i2 = 1, l = arguments.length; i2 < l; i2++) {
+              var src = arguments[i2];
               for (var key in src) {
                 if (src.hasOwnProperty(key))
                   dst[key] = src[key];
@@ -108,8 +108,8 @@
             return dest;
           }
           function Base2() {
-            for (var i = 0, l = arguments.length; i < l; i++) {
-              var src = arguments[i];
+            for (var i2 = 0, l = arguments.length; i2 < l; i2++) {
+              var src = arguments[i2];
               if (src)
                 set(this, src);
             }
@@ -123,14 +123,14 @@
                   inject(this.prototype, src, src.enumerable, beans, preserve);
                 inject(this, statics, null, beans, preserve);
               }
-              for (var i = 1, l = arguments.length; i < l; i++)
-                this.inject(arguments[i]);
+              for (var i2 = 1, l = arguments.length; i2 < l; i2++)
+                this.inject(arguments[i2]);
               return this;
             },
             extend: function() {
               var base = this, ctor, proto;
-              for (var i = 0, obj, l = arguments.length; i < l && !(ctor && proto); i++) {
-                obj = arguments[i];
+              for (var i2 = 0, obj, l = arguments.length; i2 < l && !(ctor && proto); i2++) {
+                obj = arguments[i2];
                 ctor = ctor || obj.initialize;
                 proto = proto || obj.prototype;
               }
@@ -154,8 +154,8 @@
             initialize: Base2,
             set: Base2,
             inject: function() {
-              for (var i = 0, l = arguments.length; i < l; i++) {
-                var src = arguments[i];
+              for (var i2 = 0, l = arguments.length; i2 < l; i2++) {
+                var src = arguments[i2];
                 if (src) {
                   inject(this, src, src.enumerable, src.beans, src.preserve);
                 }
@@ -299,8 +299,8 @@
             },
             readList: function(list, start, options, amount) {
               var res = [], entry, begin = start || 0, end = amount ? begin + amount : list.length;
-              for (var i = begin; i < end; i++) {
-                res.push(Array.isArray(entry = list[i]) ? this.read(entry, 0, options) : this.read(list, i, options, 1));
+              for (var i2 = begin; i2 < end; i2++) {
+                res.push(Array.isArray(entry = list[i2]) ? this.read(entry, 0, options) : this.read(list, i2, options, 1));
               }
               return res;
             },
@@ -360,8 +360,8 @@
               }
               if (prioritize) {
                 var keys = {};
-                for (var i = 0, key, l = prioritize.length; i < l; i++) {
-                  if ((key = prioritize[i]) in source) {
+                for (var i2 = 0, key, l = prioritize.length; i2 < l; i2++) {
+                  if ((key = prioritize[i2]) in source) {
                     handleKey(key);
                     keys[key] = true;
                   }
@@ -405,13 +405,13 @@
                 }
               } else if (Array.isArray(obj)) {
                 res = [];
-                for (var i = 0, l = obj.length; i < l; i++)
-                  res[i] = Base.serialize(obj[i], options, compact, dictionary);
+                for (var i2 = 0, l = obj.length; i2 < l; i2++)
+                  res[i2] = Base.serialize(obj[i2], options, compact, dictionary);
               } else if (Base.isPlainObject(obj)) {
                 res = {};
                 var keys = Object.keys(obj);
-                for (var i = 0, l = keys.length; i < l; i++) {
-                  var key = keys[i];
+                for (var i2 = 0, l = keys.length; i2 < l; i2++) {
+                  var key = keys[i2];
                   res[key] = Base.serialize(
                     obj[key],
                     options,
@@ -436,9 +436,9 @@
                 }
                 type = Base.exports[type];
                 res = [];
-                for (var i = type ? 1 : 0, l = json.length; i < l; i++) {
+                for (var i2 = type ? 1 : 0, l = json.length; i2 < l; i2++) {
                   res.push(Base.deserialize(
-                    json[i],
+                    json[i2],
                     create,
                     _data,
                     isDictionary,
@@ -494,8 +494,8 @@
               } else {
                 var startLength = list.length;
                 list.length += itemsLength;
-                for (var i = 0; i < itemsLength; i++) {
-                  list[startLength + i] = items[i];
+                for (var i2 = 0; i2 < itemsLength; i2++) {
+                  list[startLength + i2] = items[i2];
                 }
               }
               return list;
@@ -505,8 +505,8 @@
               index = append ? list.length : index;
               if (index > list.length)
                 index = list.length;
-              for (var i = 0; i < amount; i++)
-                items[i]._index = index + i;
+              for (var i2 = 0; i2 < amount; i2++)
+                items[i2]._index = index + i2;
               if (append) {
                 Base.push(list, items);
                 return [];
@@ -515,10 +515,10 @@
                 if (items)
                   Base.push(args, items);
                 var removed = list.splice.apply(list, args);
-                for (var i = 0, l = removed.length; i < l; i++)
-                  removed[i]._index = undefined2;
-                for (var i = index + amount, l = list.length; i < l; i++)
-                  list[i]._index = i;
+                for (var i2 = 0, l = removed.length; i2 < l; i2++)
+                  removed[i2]._index = undefined2;
+                for (var i2 = index + amount, l = list.length; i2 < l; i2++)
+                  list[i2]._index = i2;
                 return removed;
               }
             },
@@ -587,8 +587,8 @@
             handlers = handlers.slice();
             if (setTarget)
               event.currentTarget = this;
-            for (var i = 0, l = handlers.length; i < l; i++) {
-              if (handlers[i].apply(this, args) == false) {
+            for (var i2 = 0, l = handlers.length; i2 < l; i2++) {
+              if (handlers[i2].apply(this, args) == false) {
                 if (event && event.stop)
                   event.stop();
                 break;
@@ -730,10 +730,10 @@
           },
           clear: function() {
             var projects = this.projects, tools = this.tools;
-            for (var i = projects.length - 1; i >= 0; i--)
-              projects[i].remove();
-            for (var i = tools.length - 1; i >= 0; i--)
-              tools[i].remove();
+            for (var i2 = projects.length - 1; i2 >= 0; i2--)
+              projects[i2].remove();
+            for (var i2 = tools.length - 1; i2 >= 0; i2--)
+              tools[i2].remove();
           },
           remove: function() {
             this.clear();
@@ -794,9 +794,9 @@
           findItemBoundsCollisions: function(items1, items2, tolerance) {
             function getBounds(items) {
               var bounds = new Array(items.length);
-              for (var i = 0; i < items.length; i++) {
-                var rect = items[i].getBounds();
-                bounds[i] = [rect.left, rect.top, rect.right, rect.bottom];
+              for (var i2 = 0; i2 < items.length; i2++) {
+                var rect = items[i2].getBounds();
+                bounds[i2] = [rect.left, rect.top, rect.right, rect.bottom];
               }
               return bounds;
             }
@@ -806,9 +806,9 @@
           findCurveBoundsCollisions: function(curves1, curves2, tolerance, bothAxis) {
             function getBounds(curves) {
               var min = Math.min, max = Math.max, bounds = new Array(curves.length);
-              for (var i2 = 0; i2 < curves.length; i2++) {
-                var v = curves[i2];
-                bounds[i2] = [
+              for (var i3 = 0; i3 < curves.length; i3++) {
+                var v = curves[i3];
+                bounds[i3] = [
                   min(v[0], v[2], v[4], v[6]),
                   min(v[1], v[3], v[5], v[7]),
                   max(v[0], v[2], v[4], v[6]),
@@ -832,8 +832,8 @@
                 true,
                 true
               ), list = [];
-              for (var i = 0, l = hor.length; i < l; i++) {
-                list[i] = { hor: hor[i], ver: ver[i] };
+              for (var i2 = 0, l = hor.length; i2 < l; i2++) {
+                list[i2] = { hor: hor[i2], ver: ver[i2] };
               }
               return list;
             }
@@ -855,15 +855,15 @@
             }
             var pri0 = sweepVertical ? 1 : 0, pri1 = pri0 + 2, sec0 = sweepVertical ? 0 : 1, sec1 = sec0 + 2;
             var allIndicesByPri0 = new Array(lengthAll);
-            for (var i = 0; i < lengthAll; i++) {
-              allIndicesByPri0[i] = i;
+            for (var i2 = 0; i2 < lengthAll; i2++) {
+              allIndicesByPri0[i2] = i2;
             }
-            allIndicesByPri0.sort(function(i1, i2) {
-              return allBounds[i1][pri0] - allBounds[i2][pri0];
+            allIndicesByPri0.sort(function(i1, i22) {
+              return allBounds[i1][pri0] - allBounds[i22][pri0];
             });
             var activeIndicesByPri1 = [], allCollisions = new Array(lengthA);
-            for (var i = 0; i < lengthAll; i++) {
-              var curIndex = allIndicesByPri0[i], curBounds = allBounds[curIndex], origIndex = self3 ? curIndex : curIndex - lengthA, isCurrentA = curIndex < lengthA, isCurrentB = self3 || !isCurrentA, curCollisions = isCurrentA ? [] : null;
+            for (var i2 = 0; i2 < lengthAll; i2++) {
+              var curIndex = allIndicesByPri0[i2], curBounds = allBounds[curIndex], origIndex = self3 ? curIndex : curIndex - lengthA, isCurrentA = curIndex < lengthA, isCurrentB = self3 || !isCurrentA, curCollisions = isCurrentA ? [] : null;
               if (activeIndicesByPri1.length) {
                 var pruneCount = binarySearch(
                   activeIndicesByPri1,
@@ -907,11 +907,11 @@
                 activeIndicesByPri1.push(curIndex);
               }
             }
-            for (var i = 0; i < allCollisions.length; i++) {
-              var collisions = allCollisions[i];
+            for (var i2 = 0; i2 < allCollisions.length; i2++) {
+              var collisions = allCollisions[i2];
               if (collisions) {
-                collisions.sort(function(i1, i2) {
-                  return i1 - i2;
+                collisions.sort(function(i1, i22) {
+                  return i1 - i22;
                 });
               }
             }
@@ -1013,15 +1013,15 @@
             },
             clamp,
             integrate: function(f, a, b, n) {
-              var x = abscissas[n - 2], w = weights[n - 2], A = (b - a) * 0.5, B = A + a, i = 0, m = n + 1 >> 1, sum = n & 1 ? w[i++] * f(B) : 0;
-              while (i < m) {
-                var Ax = A * x[i];
-                sum += w[i++] * (f(B + Ax) + f(B - Ax));
+              var x = abscissas[n - 2], w = weights[n - 2], A = (b - a) * 0.5, B = A + a, i2 = 0, m = n + 1 >> 1, sum = n & 1 ? w[i2++] * f(B) : 0;
+              while (i2 < m) {
+                var Ax = A * x[i2];
+                sum += w[i2++] * (f(B + Ax) + f(B - Ax));
               }
               return A * sum;
             },
             findRoot: function(f, df, x, a, b, n, tolerance) {
-              for (var i = 0; i < n; i++) {
+              for (var i2 = 0; i2 < n; i2++) {
                 var fx = f(x), dx = fx / df(x), nx = x - dx;
                 if (abs(dx) < tolerance) {
                   x = nx;
@@ -1100,7 +1100,7 @@
                 x = 0;
               } else {
                 evaluate(-(b / a) / 3);
-                var t = q / a, r = pow(abs(t), 1 / 3), s = t < 0 ? -1 : 1, td = -qd / a, rd = td > 0 ? 1.324717957244746 * Math.max(r, sqrt(td)) : r, x0 = x - s * rd;
+                var t2 = q / a, r = pow(abs(t2), 1 / 3), s = t2 < 0 ? -1 : 1, td = -qd / a, rd = td > 0 ? 1.324717957244746 * Math.max(r, sqrt(td)) : r, x0 = x - s * rd;
                 if (x0 !== x) {
                   do {
                     evaluate(x0);
@@ -2136,10 +2136,10 @@
             );
           },
           _transformCoordinates: function(src, dst, count) {
-            for (var i = 0, max = 2 * count; i < max; i += 2) {
-              var x = src[i], y = src[i + 1];
-              dst[i] = x * this._a + y * this._c + this._tx;
-              dst[i + 1] = x * this._b + y * this._d + this._ty;
+            for (var i2 = 0, max = 2 * count; i2 < max; i2 += 2) {
+              var x = src[i2], y = src[i2 + 1];
+              dst[i2] = x * this._a + y * this._c + this._tx;
+              dst[i2 + 1] = x * this._b + y * this._d + this._ty;
             }
             return dst;
           },
@@ -2149,8 +2149,8 @@
           },
           _transformBounds: function(bounds, dest, _dontNotify) {
             var coords = this._transformCorners(bounds), min = coords.slice(0, 2), max = min.slice();
-            for (var i = 2; i < 8; i++) {
-              var val = coords[i], j = i & 1;
+            for (var i2 = 2; i2 < 8; i2++) {
+              var val = coords[i2], j = i2 & 1;
               if (val < min[j]) {
                 min[j] = val;
               } else if (val > max[j]) {
@@ -2410,8 +2410,8 @@
           },
           clear: function() {
             var children = this._children;
-            for (var i = children.length - 1; i >= 0; i--)
-              children[i].remove();
+            for (var i2 = children.length - 1; i2 >= 0; i2--)
+              children[i2].remove();
           },
           isEmpty: function() {
             return !this._children.length;
@@ -2486,13 +2486,13 @@
           },
           selectAll: function() {
             var children = this._children;
-            for (var i = 0, l = children.length; i < l; i++)
-              children[i].setFullySelected(true);
+            for (var i2 = 0, l = children.length; i2 < l; i2++)
+              children[i2].setFullySelected(true);
           },
           deselectAll: function() {
             var selectionItems = this._selectionItems;
-            for (var i in selectionItems)
-              selectionItems[i].setFullySelected(false);
+            for (var i2 in selectionItems)
+              selectionItems[i2].setFullySelected(false);
           },
           addLayer: function(layer) {
             return this.insertLayer(undefined2, layer);
@@ -2566,8 +2566,8 @@
               matrices: [new Matrix()],
               updateMatrix: true
             });
-            for (var i = 0, l = children.length; i < l; i++) {
-              children[i].draw(ctx, param);
+            for (var i2 = 0, l = children.length; i2 < l; i2++) {
+              children[i2].draw(ctx, param);
             }
             ctx.restore();
             if (this._selectionCount > 0) {
@@ -2807,8 +2807,8 @@
             isSelected: function() {
               if (this._selectChildren) {
                 var children = this._children;
-                for (var i = 0, l = children.length; i < l; i++)
-                  if (children[i].isSelected())
+                for (var i2 = 0, l = children.length; i2 < l; i2++)
+                  if (children[i2].isSelected())
                     return true;
               }
               return !!(this._selection & 1);
@@ -2816,16 +2816,16 @@
             setSelected: function(selected) {
               if (this._selectChildren) {
                 var children = this._children;
-                for (var i = 0, l = children.length; i < l; i++)
-                  children[i].setSelected(selected);
+                for (var i2 = 0, l = children.length; i2 < l; i2++)
+                  children[i2].setSelected(selected);
               }
               this._changeSelection(1, selected);
             },
             isFullySelected: function() {
               var children = this._children, selected = !!(this._selection & 1);
               if (children && selected) {
-                for (var i = 0, l = children.length; i < l; i++)
-                  if (!children[i].isFullySelected())
+                for (var i2 = 0, l = children.length; i2 < l; i2++)
+                  if (!children[i2].isFullySelected())
                     return false;
                 return true;
               }
@@ -2834,8 +2834,8 @@
             setFullySelected: function(selected) {
               var children = this._children;
               if (children) {
-                for (var i = 0, l = children.length; i < l; i++)
-                  children[i].setFullySelected(selected);
+                for (var i2 = 0, l = children.length; i2 < l; i2++)
+                  children[i2].setFullySelected(selected);
               }
               this._changeSelection(1, selected);
             },
@@ -2992,8 +2992,8 @@
                   var cache = item._boundsCache;
                   if (cache) {
                     item._bounds = item._position = item._boundsCache = undefined2;
-                    for (var i = 0, list = cache.list, l = list.length; i < l; i++) {
-                      var other = list[i];
+                    for (var i2 = 0, list = cache.list, l = list.length; i2 < l; i2++) {
+                      var other = list[i2];
                       if (other !== item) {
                         other._bounds = other._position = undefined2;
                         if (other._boundsCache)
@@ -3005,8 +3005,8 @@
                 _getBounds: function(items, matrix, options) {
                   var x1 = Infinity, x2 = -x1, y1 = x1, y2 = x2, nonscaling = false;
                   options = options || {};
-                  for (var i = 0, l = items.length; i < l; i++) {
-                    var item = items[i];
+                  for (var i2 = 0, l = items.length; i2 < l; i2++) {
+                    var item = items[i2];
                     if (item._visible && !item.isEmpty(true)) {
                       var bounds = item._getCachedBounds(
                         matrix && matrix.appended(item._matrix),
@@ -3096,8 +3096,8 @@
                 while (parent) {
                   if (!parent._globalMatrix) {
                     matrix = null;
-                    for (var i = 0, l = parents.length; i < l; i++) {
-                      parents[i]._globalMatrix = null;
+                    for (var i2 = 0, l = parents.length; i2 < l; i2++) {
+                      parents[i2]._globalMatrix = null;
                     }
                     break;
                   }
@@ -3136,8 +3136,8 @@
                   this._installEvents(false);
                 this._project = project;
                 var children = this._children;
-                for (var i = 0, l = children && children.length; i < l; i++)
-                  children[i]._setProject(project);
+                for (var i2 = 0, l = children && children.length; i2 < l; i2++)
+                  children[i2]._setProject(project);
                 installEvents = true;
               }
               if (installEvents)
@@ -3149,8 +3149,8 @@
             _installEvents: function _installEvents(install) {
               _installEvents.base.call(this, install);
               var children = this._children;
-              for (var i = 0, l = children && children.length; i < l; i++)
-                children[i]._installEvents(install);
+              for (var i2 = 0, l = children && children.length; i2 < l; i2++)
+                children[i2]._installEvents(install);
             },
             getLayer: function() {
               var parent = this;
@@ -3212,9 +3212,9 @@
                 copy.insertAbove(this);
               var name = this._name, parent = this._parent;
               if (name && parent) {
-                var children = parent._children, orig = name, i = 1;
+                var children = parent._children, orig = name, i2 = 1;
                 while (children[name])
-                  name = orig + " " + i++;
+                  name = orig + " " + i2++;
                 if (name !== orig)
                   copy.setName(name);
               }
@@ -3222,8 +3222,8 @@
             },
             copyContent: function(source) {
               var children = source._children;
-              for (var i = 0, l = children && children.length; i < l; i++) {
-                this.addChild(children[i].clone(false), true);
+              for (var i2 = 0, l = children && children.length; i2 < l; i2++) {
+                this.addChild(children[i2].clone(false), true);
               }
             },
             copyAttributes: function(source, excludeMatrix) {
@@ -3236,8 +3236,8 @@
                 "_clipMask",
                 "_guide"
               ];
-              for (var i = 0, l = keys.length; i < l; i++) {
-                var key = keys[i];
+              for (var i2 = 0, l = keys.length; i2 < l; i2++) {
+                var key = keys[i2];
                 if (source.hasOwnProperty(key))
                   this[key] = source[key];
               }
@@ -3288,8 +3288,8 @@
             _contains: function(point) {
               var children = this._children;
               if (children) {
-                for (var i = children.length - 1; i >= 0; i--) {
-                  if (children[i].contains(point))
+                for (var i2 = children.length - 1; i2 >= 0; i2--) {
+                  if (children[i2].contains(point))
                     return true;
                 }
                 return false;
@@ -3333,8 +3333,8 @@
             function hitTestChildren(point, options, viewMatrix, _exclude) {
               var children = this._children;
               if (children) {
-                for (var i = children.length - 1; i >= 0; i--) {
-                  var child = children[i];
+                for (var i2 = children.length - 1; i2 >= 0; i2--) {
+                  var child = children[i2];
                   var res = child !== _exclude && child._hitTest(
                     point,
                     options,
@@ -3406,8 +3406,8 @@
                     "RightCenter",
                     "BottomCenter"
                   ];
-                  for (var i = 0; i < 8 && !res; i++) {
-                    res = checkPoint("bounds", points[i]);
+                  for (var i2 = 0; i2 < 8 && !res; i2++) {
+                    res = checkPoint("bounds", points[i2]);
                   }
                 }
                 res = filter(res);
@@ -3431,9 +3431,9 @@
             },
             matches: function(name, compare) {
               function matchObject(obj1, obj2) {
-                for (var i in obj1) {
-                  if (obj1.hasOwnProperty(i)) {
-                    var val1 = obj1[i], val2 = obj2[i];
+                for (var i2 in obj1) {
+                  if (obj1.hasOwnProperty(i2)) {
+                    var val1 = obj1[i2], val2 = obj2[i2];
                     if (Base.isPlainObject(val1) && Base.isPlainObject(val2)) {
                       if (!matchObject(val1, val2))
                         return false;
@@ -3505,8 +3505,8 @@
                 }
                 var children = item._children, items = param.items, rect = param.rect;
                 matrix = rect && (matrix || new Matrix());
-                for (var i = 0, l = children && children.length; i < l; i++) {
-                  var child = children[i], childMatrix = matrix && matrix.appended(child._matrix), add = true;
+                for (var i2 = 0, l = children && children.length; i2 < l; i2++) {
+                  var child = children[i2], childMatrix = matrix && matrix.appended(child._matrix), add = true;
                   if (rect) {
                     var bounds = child.getBounds(childMatrix);
                     if (!rect.intersects(bounds))
@@ -3549,10 +3549,10 @@
               if (children && items && items.length > 0) {
                 items = Base.slice(items);
                 var inserted = {};
-                for (var i = items.length - 1; i >= 0; i--) {
-                  var item = items[i], id = item && item._id;
+                for (var i2 = items.length - 1; i2 >= 0; i2--) {
+                  var item = items[i2], id = item && item._id;
                   if (!item || inserted[id]) {
-                    items.splice(i, 1);
+                    items.splice(i2, 1);
                   } else {
                     item._remove(false, true);
                     inserted[id] = true;
@@ -3560,8 +3560,8 @@
                 }
                 Base.splice(children, items, index, 0);
                 var project = this._project, notifySelf = project._changes;
-                for (var i = 0, l = items.length; i < l; i++) {
-                  var item = items[i], name = item._name;
+                for (var i2 = 0, l = items.length; i2 < l; i2++) {
+                  var item = items[i2], name = item._name;
                   item._parent = this;
                   item._setProject(project, true);
                   if (name)
@@ -3677,8 +3677,8 @@
               start = start || 0;
               end = Base.pick(end, this._children.length);
               var removed = Base.splice(this._children, null, start, end - start);
-              for (var i = removed.length - 1; i >= 0; i--) {
-                removed[i]._remove(true, false);
+              for (var i2 = removed.length - 1; i2 >= 0; i2--) {
+                removed[i2]._remove(true, false);
               }
               if (removed.length > 0)
                 this._changed(11);
@@ -3688,8 +3688,8 @@
             reverseChildren: function() {
               if (this._children) {
                 this._children.reverse();
-                for (var i = 0, l = this._children.length; i < l; i++)
-                  this._children[i]._index = i;
+                for (var i2 = 0, l = this._children.length; i2 < l; i2++)
+                  this._children[i2]._index = i2;
                 this._changed(11);
               }
             },
@@ -3697,8 +3697,8 @@
               var children = this._children;
               var numChildren = children ? children.length : 0;
               if (recursively) {
-                for (var i = 0; i < numChildren; i++) {
-                  if (!children[i].isEmpty(recursively)) {
+                for (var i2 = 0; i2 < numChildren; i2++) {
+                  if (!children[i2].isEmpty(recursively)) {
                     return false;
                   }
                 }
@@ -3733,9 +3733,9 @@
                 return list;
               }
               var list1 = getList(this), list2 = getList(item);
-              for (var i = 0, l = Math.min(list1.length, list2.length); i < l; i++) {
-                if (list1[i] != list2[i]) {
-                  return list1[i]._index < list2[i]._index ? 1 : -1;
+              for (var i2 = 0, l = Math.min(list1.length, list2.length); i2 < l; i2++) {
+                if (list1[i2] != list2[i2]) {
+                  return list1[i2]._index < list2[i2]._index ? 1 : -1;
                 }
               }
               return 0;
@@ -3852,8 +3852,8 @@
             _transformContent: function(matrix, applyRecursively, setApplyMatrix) {
               var children = this._children;
               if (children) {
-                for (var i = 0, l = children.length; i < l; i++) {
-                  children[i].transform(matrix, applyRecursively, setApplyMatrix);
+                for (var i2 = 0, l = children.length; i2 < l; i2++) {
+                  children[i2].transform(matrix, applyRecursively, setApplyMatrix);
                 }
                 return true;
               }
@@ -4014,8 +4014,8 @@
                   ctx.arc(x, y, half, 0, Math.PI * 2, true);
                   ctx.stroke();
                   var deltas = [[0, -1], [1, 0], [0, 1], [-1, 0]], start = half, end = size + 1;
-                  for (var i = 0; i < 4; i++) {
-                    var delta = deltas[i], dx = delta[0], dy = delta[1];
+                  for (var i2 = 0; i2 < 4; i2++) {
+                    var delta = deltas[i2], dx = delta[0], dy = delta[1];
                     ctx.moveTo(x + dx * start, y + dy * start);
                     ctx.lineTo(x + dx * end, y + dy * end);
                     ctx.stroke();
@@ -4024,15 +4024,15 @@
                 if (boundsSelected) {
                   var coords = mx._transformCorners(this.getInternalBounds());
                   ctx.beginPath();
-                  for (var i = 0; i < 8; i++) {
-                    ctx[!i ? "moveTo" : "lineTo"](coords[i], coords[++i]);
+                  for (var i2 = 0; i2 < 8; i2++) {
+                    ctx[!i2 ? "moveTo" : "lineTo"](coords[i2], coords[++i2]);
                   }
                   ctx.closePath();
                   ctx.stroke();
-                  for (var i = 0; i < 8; i++) {
+                  for (var i2 = 0; i2 < 8; i2++) {
                     ctx.fillRect(
-                      coords[i] - half,
-                      coords[++i] - half,
+                      coords[i2] - half,
+                      coords[++i2] - half,
                       size,
                       size
                     );
@@ -4117,9 +4117,9 @@
             if (clipItem === undefined2) {
               clipItem = null;
               var children = this._children;
-              for (var i = 0, l = children.length; i < l; i++) {
-                if (children[i]._clipMask) {
-                  clipItem = children[i];
+              for (var i2 = 0, l = children.length; i2 < l; i2++) {
+                if (children[i2]._clipMask) {
+                  clipItem = children[i2];
                   break;
                 }
               }
@@ -4162,8 +4162,8 @@
               clipItem.draw(ctx, param.extend({ clip: true }));
             }
             var children = this._children;
-            for (var i = 0, l = children.length; i < l; i++) {
-              var item = children[i];
+            for (var i2 = 0, l = children.length; i2 < l; i2++) {
+              var item = children[i2];
               if (item !== clipItem)
                 item.draw(ctx, param);
             }
@@ -4786,16 +4786,16 @@
               Math.ceil(width),
               Math.ceil(height)
             ).data, channels = [0, 0, 0], total = 0;
-            for (var i = 0, l = pixels.length; i < l; i += 4) {
-              var alpha = pixels[i + 3];
+            for (var i2 = 0, l = pixels.length; i2 < l; i2 += 4) {
+              var alpha = pixels[i2 + 3];
               total += alpha;
               alpha /= 255;
-              channels[0] += pixels[i] * alpha;
-              channels[1] += pixels[i + 1] * alpha;
-              channels[2] += pixels[i + 2] * alpha;
+              channels[0] += pixels[i2] * alpha;
+              channels[1] += pixels[i2 + 1] * alpha;
+              channels[2] += pixels[i2 + 2] * alpha;
             }
-            for (var i = 0; i < 3; i++)
-              channels[i] /= total;
+            for (var i2 = 0; i2 < 3; i2++)
+              channels[i2] /= total;
             return total ? Color.read(channels) : null;
           },
           getPixel: function() {
@@ -5152,11 +5152,11 @@
               }
             } else if (type === "geometric") {
               if (prev && next) {
-                var vector = p0.subtract(p2), t = factor === undefined2 ? 0.4 : factor, k = t * d1 / (d1 + d2);
+                var vector = p0.subtract(p2), t2 = factor === undefined2 ? 0.4 : factor, k = t2 * d1 / (d1 + d2);
                 if (!_first)
                   this.setHandleIn(vector.multiply(k));
                 if (!_last)
-                  this.setHandleOut(vector.multiply(k - t));
+                  this.setHandleOut(vector.multiply(k - t2));
               }
             } else {
               throw new Error("Smoothing method '" + type + "' not supported.");
@@ -5222,41 +5222,41 @@
             this._changed();
           },
           _transformCoordinates: function(matrix, coords, change) {
-            var point = this._point, handleIn = !change || !this._handleIn.isZero() ? this._handleIn : null, handleOut = !change || !this._handleOut.isZero() ? this._handleOut : null, x = point._x, y = point._y, i = 2;
+            var point = this._point, handleIn = !change || !this._handleIn.isZero() ? this._handleIn : null, handleOut = !change || !this._handleOut.isZero() ? this._handleOut : null, x = point._x, y = point._y, i2 = 2;
             coords[0] = x;
             coords[1] = y;
             if (handleIn) {
-              coords[i++] = handleIn._x + x;
-              coords[i++] = handleIn._y + y;
+              coords[i2++] = handleIn._x + x;
+              coords[i2++] = handleIn._y + y;
             }
             if (handleOut) {
-              coords[i++] = handleOut._x + x;
-              coords[i++] = handleOut._y + y;
+              coords[i2++] = handleOut._x + x;
+              coords[i2++] = handleOut._y + y;
             }
             if (matrix) {
-              matrix._transformCoordinates(coords, coords, i / 2);
+              matrix._transformCoordinates(coords, coords, i2 / 2);
               x = coords[0];
               y = coords[1];
               if (change) {
                 point._x = x;
                 point._y = y;
-                i = 2;
+                i2 = 2;
                 if (handleIn) {
-                  handleIn._x = coords[i++] - x;
-                  handleIn._y = coords[i++] - y;
+                  handleIn._x = coords[i2++] - x;
+                  handleIn._y = coords[i2++] - y;
                 }
                 if (handleOut) {
-                  handleOut._x = coords[i++] - x;
-                  handleOut._y = coords[i++] - y;
+                  handleOut._x = coords[i2++] - x;
+                  handleOut._y = coords[i2++] - y;
                 }
               } else {
                 if (!handleIn) {
-                  coords[i++] = x;
-                  coords[i++] = y;
+                  coords[i2++] = x;
+                  coords[i2++] = y;
                 }
                 if (!handleOut) {
-                  coords[i++] = x;
-                  coords[i++] = y;
+                  coords[i2++] = x;
+                  coords[i2++] = y;
                 }
               }
             }
@@ -5472,8 +5472,8 @@
             },
             getPoints: function() {
               var coords = this.getValues(), points = [];
-              for (var i = 0; i < 8; i += 2)
-                points.push(new Point(coords[i], coords[i + 1]));
+              for (var i2 = 0; i2 < 8; i2 += 2)
+                points.push(new Point(coords[i2], coords[i2 + 1]));
               return points;
             }
           },
@@ -5558,11 +5558,11 @@
                   matrix._transformCoordinates(values, values, 4);
                 return values;
               },
-              subdivide: function(v, t) {
+              subdivide: function(v, t2) {
                 var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7];
-                if (t === undefined2)
-                  t = 0.5;
-                var u = 1 - t, x4 = u * x0 + t * x1, y4 = u * y0 + t * y1, x5 = u * x1 + t * x2, y5 = u * y1 + t * y2, x6 = u * x2 + t * x3, y6 = u * y2 + t * y3, x7 = u * x4 + t * x5, y7 = u * y4 + t * y5, x8 = u * x5 + t * x6, y8 = u * y5 + t * y6, x9 = u * x7 + t * x8, y9 = u * y7 + t * y8;
+                if (t2 === undefined2)
+                  t2 = 0.5;
+                var u = 1 - t2, x4 = u * x0 + t2 * x1, y4 = u * y0 + t2 * y1, x5 = u * x1 + t2 * x2, y5 = u * y1 + t2 * y2, x6 = u * x2 + t2 * x3, y6 = u * y2 + t2 * y3, x7 = u * x4 + t2 * x5, y7 = u * y4 + t2 * y5, x8 = u * x5 + t2 * x6, y8 = u * y5 + t2 * y6, x9 = u * x7 + t2 * x8, y9 = u * y7 + t2 * y8;
                 return [
                   [x0, y0, x4, y4, x7, y7, x9, y9],
                   [x9, y9, x8, y8, x6, y6, x3, y3]
@@ -5578,11 +5578,11 @@
                     curves.push(v);
                   } else {
                     roots.sort();
-                    var t = roots[0], parts = Curve.subdivide(v, t);
+                    var t2 = roots[0], parts = Curve.subdivide(v, t2);
                     curves.push(parts[0]);
                     if (n > 1) {
-                      t = (roots[1] - t) / (1 - t);
-                      parts = Curve.subdivide(parts[1], t);
+                      t2 = (roots[1] - t2) / (1 - t2);
+                      parts = Curve.subdivide(parts[1], t2);
                       curves.push(parts[0]);
                     }
                     curves.push(parts[1]);
@@ -5599,13 +5599,13 @@
                 return res;
               },
               getTimeOf: function(v, point) {
-                var p0 = new Point(v[0], v[1]), p3 = new Point(v[6], v[7]), epsilon = 1e-12, geomEpsilon = 1e-7, t = point.isClose(p0, epsilon) ? 0 : point.isClose(p3, epsilon) ? 1 : null;
-                if (t === null) {
+                var p0 = new Point(v[0], v[1]), p3 = new Point(v[6], v[7]), epsilon = 1e-12, geomEpsilon = 1e-7, t2 = point.isClose(p0, epsilon) ? 0 : point.isClose(p3, epsilon) ? 1 : null;
+                if (t2 === null) {
                   var coords = [point.x, point.y], roots = [];
                   for (var c = 0; c < 2; c++) {
                     var count = Curve.solveCubic(v, c, coords[c], roots, 0, 1);
-                    for (var i = 0; i < count; i++) {
-                      var u = roots[i];
+                    for (var i2 = 0; i2 < count; i2++) {
+                      var u = roots[i2];
                       if (point.isClose(Curve.getPoint(v, u), geomEpsilon))
                         return u;
                     }
@@ -5625,18 +5625,18 @@
                   );
                 }
                 var count = 100, minDist = Infinity, minT = 0;
-                function refine(t) {
-                  if (t >= 0 && t <= 1) {
-                    var dist = point.getDistance(Curve.getPoint(v, t), true);
+                function refine(t2) {
+                  if (t2 >= 0 && t2 <= 1) {
+                    var dist = point.getDistance(Curve.getPoint(v, t2), true);
                     if (dist < minDist) {
                       minDist = dist;
-                      minT = t;
+                      minT = t2;
                       return true;
                     }
                   }
                 }
-                for (var i = 0; i <= count; i++)
-                  refine(i / count);
+                for (var i2 = 0; i2 <= count; i2++)
+                  refine(i2 / count);
                 var step = 1 / (count * 2);
                 while (step > 1e-8) {
                   if (!refine(minT - step) && !refine(minT + step))
@@ -5667,13 +5667,13 @@
               },
               getBounds: function(v) {
                 var min = v.slice(0, 2), max = min.slice(), roots = [0, 0];
-                for (var i = 0; i < 2; i++)
+                for (var i2 = 0; i2 < 2; i2++)
                   Curve._addBounds(
-                    v[i],
-                    v[i + 2],
-                    v[i + 4],
-                    v[i + 6],
-                    i,
+                    v[i2],
+                    v[i2 + 2],
+                    v[i2 + 4],
+                    v[i2 + 6],
+                    i2,
                     0,
                     min,
                     max,
@@ -5698,11 +5698,11 @@
                   } else {
                     var a = 3 * (v1 - v2) - v0 + v3, b = 2 * (v0 + v2) - 4 * v1, c = v1 - v0, count = Numerical.solveQuadratic(a, b, c, roots), tMin = 1e-8, tMax = 1 - tMin;
                     add(v3, 0);
-                    for (var i = 0; i < count; i++) {
-                      var t = roots[i], u = 1 - t;
-                      if (tMin <= t && t <= tMax)
+                    for (var i2 = 0; i2 < count; i2++) {
+                      var t2 = roots[i2], u = 1 - t2;
+                      if (tMin <= t2 && t2 <= tMax)
                         add(
-                          u * u * u * v0 + 3 * u * u * t * v1 + 3 * u * t * t * v2 + t * t * t * v3,
+                          u * u * u * v0 + 3 * u * u * t2 * v1 + 3 * u * t2 * t2 * v2 + t2 * t2 * t2 * v3,
                           padding
                         );
                     }
@@ -5798,8 +5798,8 @@
                 _isTime ? offset : this.getTimeAt(offset)
               );
             },
-            getLocationAtTime: function(t) {
-              return t != null && t >= 0 && t <= 1 ? new CurveLocation(this, t) : null;
+            getLocationAtTime: function(t2) {
+              return t2 != null && t2 >= 0 && t2 <= 1 ? new CurveLocation(this, t2) : null;
             },
             getTimeAt: function(offset, start) {
               return Curve.getTimeAt(this.getValues(), offset, start);
@@ -5809,8 +5809,8 @@
               var tangent = Point.read(arguments);
               return tangent.isZero() ? [] : Curve.getTimesWithTangent(this.getValues(), tangent);
             },
-            getOffsetAtTime: function(t) {
-              return this.getPartLength(0, t);
+            getOffsetAtTime: function(t2) {
+              return this.getPartLength(0, t2);
             },
             getLocationOf: function() {
               return this.getLocationAtTime(this.getTimeOf(Point.read(arguments)));
@@ -5824,8 +5824,8 @@
             },
             getParameterOf: "#getTimeOf",
             getNearestLocation: function() {
-              var point = Point.read(arguments), values = this.getValues(), t = Curve.getNearestTime(values, point), pt = Curve.getPoint(values, t);
-              return new CurveLocation(this, t, pt, null, point.getDistance(pt));
+              var point = Point.read(arguments), values = this.getValues(), t2 = Curve.getNearestTime(values, point), pt = Curve.getPoint(values, t2);
+              return new CurveLocation(this, t2, pt, null, point.getDistance(pt));
             },
             getNearestPoint: function() {
               var loc = this.getNearestLocation.apply(this, arguments);
@@ -5862,16 +5862,16 @@
           new function() {
             function getLengthIntegrand(v) {
               var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7], ax = 9 * (x1 - x2) + 3 * (x3 - x0), bx = 6 * (x0 + x2) - 12 * x1, cx = 3 * (x1 - x0), ay = 9 * (y1 - y2) + 3 * (y3 - y0), by = 6 * (y0 + y2) - 12 * y1, cy = 3 * (y1 - y0);
-              return function(t) {
-                var dx = (ax * t + bx) * t + cx, dy = (ay * t + by) * t + cy;
+              return function(t2) {
+                var dx = (ax * t2 + bx) * t2 + cx, dy = (ay * t2 + by) * t2 + cy;
                 return Math.sqrt(dx * dx + dy * dy);
               };
             }
             function getIterations(a, b) {
               return Math.max(2, Math.min(16, Math.ceil(Math.abs(b - a) * 32)));
             }
-            function evaluate(v, t, type, normalized) {
-              if (t == null || t < 0 || t > 1)
+            function evaluate(v, t2, type, normalized) {
+              if (t2 == null || t2 < 0 || t2 > 1)
                 return null;
               var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7], isZero = Numerical.isZero;
               if (isZero(x1 - x0) && isZero(y1 - y0)) {
@@ -5884,22 +5884,22 @@
               }
               var cx = 3 * (x1 - x0), bx = 3 * (x2 - x1) - cx, ax = x3 - x0 - cx - bx, cy = 3 * (y1 - y0), by = 3 * (y2 - y1) - cy, ay = y3 - y0 - cy - by, x, y;
               if (type === 0) {
-                x = t === 0 ? x0 : t === 1 ? x3 : ((ax * t + bx) * t + cx) * t + x0;
-                y = t === 0 ? y0 : t === 1 ? y3 : ((ay * t + by) * t + cy) * t + y0;
+                x = t2 === 0 ? x0 : t2 === 1 ? x3 : ((ax * t2 + bx) * t2 + cx) * t2 + x0;
+                y = t2 === 0 ? y0 : t2 === 1 ? y3 : ((ay * t2 + by) * t2 + cy) * t2 + y0;
               } else {
                 var tMin = 1e-8, tMax = 1 - tMin;
-                if (t < tMin) {
+                if (t2 < tMin) {
                   x = cx;
                   y = cy;
-                } else if (t > tMax) {
+                } else if (t2 > tMax) {
                   x = 3 * (x3 - x2);
                   y = 3 * (y3 - y2);
                 } else {
-                  x = (3 * ax * t + 2 * bx) * t + cx;
-                  y = (3 * ay * t + 2 * by) * t + cy;
+                  x = (3 * ax * t2 + 2 * bx) * t2 + cx;
+                  y = (3 * ay * t2 + 2 * by) * t2 + cy;
                 }
                 if (normalized) {
-                  if (x === 0 && y === 0 && (t < tMin || t > tMax)) {
+                  if (x === 0 && y === 0 && (t2 < tMin || t2 > tMax)) {
                     x = x2 - x1;
                     y = y2 - y1;
                   }
@@ -5910,7 +5910,7 @@
                   }
                 }
                 if (type === 3) {
-                  var x2 = 6 * ax * t + 2 * bx, y2 = 6 * ay * t + 2 * by, d = Math.pow(x * x + y * y, 3 / 2);
+                  var x2 = 6 * ax * t2 + 2 * bx, y2 = 6 * ay * t2 + 2 * by, d = Math.pow(x * x + y * y, 3 / 2);
                   x = d !== 0 ? (x * y2 - y * x2) / d : 0;
                   y = 0;
                 }
@@ -5984,14 +5984,14 @@
                   return null;
                 }
                 var guess = offset / rangeLength, length = 0;
-                function f(t) {
+                function f(t2) {
                   length += Numerical.integrate(
                     ds,
                     start,
-                    t,
-                    getIterations(start, t)
+                    t2,
+                    getIterations(start, t2)
                   );
-                  start = t;
+                  start = t2;
                   return length - offset;
                 }
                 return Numerical.findRoot(
@@ -6004,23 +6004,23 @@
                   1e-12
                 );
               },
-              getPoint: function(v, t) {
-                return evaluate(v, t, 0, false);
+              getPoint: function(v, t2) {
+                return evaluate(v, t2, 0, false);
               },
-              getTangent: function(v, t) {
-                return evaluate(v, t, 1, true);
+              getTangent: function(v, t2) {
+                return evaluate(v, t2, 1, true);
               },
-              getWeightedTangent: function(v, t) {
-                return evaluate(v, t, 1, false);
+              getWeightedTangent: function(v, t2) {
+                return evaluate(v, t2, 1, false);
               },
-              getNormal: function(v, t) {
-                return evaluate(v, t, 2, true);
+              getNormal: function(v, t2) {
+                return evaluate(v, t2, 2, true);
               },
-              getWeightedNormal: function(v, t) {
-                return evaluate(v, t, 2, false);
+              getWeightedNormal: function(v, t2) {
+                return evaluate(v, t2, 2, false);
               },
-              getCurvature: function(v, t) {
-                return evaluate(v, t, 3, false).x;
+              getCurvature: function(v, t2) {
+                return evaluate(v, t2, 3, false).x;
               },
               getPeaks: function(v) {
                 var x0 = v[0], y0 = v[1], x1 = v[2], y1 = v[3], x2 = v[4], y2 = v[5], x3 = v[6], y3 = v[7], ax = -x0 + 3 * x1 - 3 * x2 + x3, bx = 3 * x0 - 6 * x1 + 3 * x2, cx = -3 * x0 + 3 * x1, ay = -y0 + 3 * y1 - 3 * y2 + y3, by = 3 * y0 - 6 * y1 + 3 * y2, cy = -3 * y0 + 3 * y1, tMin = 1e-8, tMax = 1 - tMin, roots = [];
@@ -6064,21 +6064,21 @@
                 return calls;
               var tMinNew = tMin + (tMax - tMin) * tMinClip, tMaxNew = tMin + (tMax - tMin) * tMaxClip;
               if (Math.max(uMax - uMin, tMaxNew - tMinNew) < fatLineEpsilon) {
-                var t = (tMinNew + tMaxNew) / 2, u = (uMin + uMax) / 2;
+                var t2 = (tMinNew + tMaxNew) / 2, u = (uMin + uMax) / 2;
                 addLocation(
                   locations,
                   include,
                   flip ? c2 : c1,
-                  flip ? u : t,
+                  flip ? u : t2,
                   flip ? c1 : c2,
-                  flip ? t : u
+                  flip ? t2 : u
                 );
               } else {
                 v1 = Curve.getPart(v1, tMinClip, tMaxClip);
                 var uDiff = uMax - uMin;
                 if (tMaxClip - tMinClip > 0.8) {
                   if (tMaxNew - tMinNew > uDiff) {
-                    var parts = Curve.subdivide(v1, 0.5), t = (tMinNew + tMaxNew) / 2;
+                    var parts = Curve.subdivide(v1, 0.5), t2 = (tMinNew + tMaxNew) / 2;
                     calls = addCurveIntersections(
                       v2,
                       parts[0],
@@ -6092,7 +6092,7 @@
                       uMin,
                       uMax,
                       tMinNew,
-                      t
+                      t2
                     );
                     calls = addCurveIntersections(
                       v2,
@@ -6106,7 +6106,7 @@
                       calls,
                       uMin,
                       uMax,
-                      t,
+                      t2,
                       tMaxNew
                     );
                   } else {
@@ -6204,8 +6204,8 @@
             }
             function clipConvexHullPart(part, top, threshold) {
               var px = part[0][0], py = part[0][1];
-              for (var i = 1, l = part.length; i < l; i++) {
-                var qx = part[i][0], qy = part[i][1];
+              for (var i2 = 1, l = part.length; i2 < l; i2++) {
+                var qx = part[i2][0], qy = part[i2][1];
                 if (top ? qy >= threshold : qy <= threshold) {
                   return qy === threshold ? qx : px + (threshold - py) * (qx - px) / (qy - py);
                 }
@@ -6217,12 +6217,12 @@
             function getCurveLineIntersections(v, px, py, vx, vy) {
               var isZero = Numerical.isZero;
               if (isZero(vx) && isZero(vy)) {
-                var t = Curve.getTimeOf(v, new Point(px, py));
-                return t === null ? [] : [t];
+                var t2 = Curve.getTimeOf(v, new Point(px, py));
+                return t2 === null ? [] : [t2];
               }
               var angle = Math.atan2(-vy, vx), sin = Math.sin(angle), cos = Math.cos(angle), rv = [], roots = [];
-              for (var i = 0; i < 8; i += 2) {
-                var x = v[i] - px, y = v[i + 1] - py;
+              for (var i2 = 0; i2 < 8; i2 += 2) {
+                var x = v[i2] - px, y = v[i2 + 1] - py;
                 rv.push(
                   x * cos - y * sin,
                   x * sin + y * cos
@@ -6233,8 +6233,8 @@
             }
             function addCurveLineIntersections(v1, v2, c1, c2, locations, include, flip) {
               var x1 = v2[0], y1 = v2[1], x2 = v2[6], y2 = v2[7], roots = getCurveLineIntersections(v1, x1, y1, x2 - x1, y2 - y1);
-              for (var i = 0, l = roots.length; i < l; i++) {
-                var t1 = roots[i], p1 = Curve.getPoint(v1, t1), t2 = Curve.getTimeOf(v2, p1);
+              for (var i2 = 0, l = roots.length; i2 < l; i2++) {
+                var t1 = roots[i2], p1 = Curve.getPoint(v1, t1), t2 = Curve.getTimeOf(v2, p1);
                 if (t2 !== null) {
                   addLocation(
                     locations,
@@ -6274,8 +6274,8 @@
               if (max(v1[0], v1[2], v1[4], v1[6]) + epsilon > min(v2[0], v2[2], v2[4], v2[6]) && min(v1[0], v1[2], v1[4], v1[6]) - epsilon < max(v2[0], v2[2], v2[4], v2[6]) && max(v1[1], v1[3], v1[5], v1[7]) + epsilon > min(v2[1], v2[3], v2[5], v2[7]) && min(v1[1], v1[3], v1[5], v1[7]) - epsilon < max(v2[1], v2[3], v2[5], v2[7])) {
                 var overlaps = getOverlaps(v1, v2);
                 if (overlaps) {
-                  for (var i = 0; i < 2; i++) {
-                    var overlap = overlaps[i];
+                  for (var i2 = 0; i2 < 2; i2++) {
+                    var overlap = overlaps[i2];
                     addLocation(
                       locations,
                       include,
@@ -6304,8 +6304,8 @@
                     1
                   );
                   if (!straight || locations.length === before) {
-                    for (var i = 0; i < 4; i++) {
-                      var t1 = i >> 1, t2 = i & 1, i1 = t1 * 6, i2 = t2 * 6, p1 = new Point(v1[i1], v1[i1 + 1]), p2 = new Point(v2[i2], v2[i2 + 1]);
+                    for (var i2 = 0; i2 < 4; i2++) {
+                      var t1 = i2 >> 1, t2 = i2 & 1, i1 = t1 * 6, i22 = t2 * 6, p1 = new Point(v1[i1], v1[i1 + 1]), p2 = new Point(v2[i22], v2[i22 + 1]);
                       if (p1.isClose(p2, epsilon)) {
                         addLocation(
                           locations,
@@ -6342,12 +6342,12 @@
               if (self3)
                 curves2 = curves1;
               var length1 = curves1.length, length2 = curves2.length, values1 = new Array(length1), values2 = self3 ? values1 : new Array(length2), locations = [];
-              for (var i = 0; i < length1; i++) {
-                values1[i] = curves1[i].getValues(matrix1);
+              for (var i2 = 0; i2 < length1; i2++) {
+                values1[i2] = curves1[i2].getValues(matrix1);
               }
               if (!self3) {
-                for (var i = 0; i < length2; i++) {
-                  values2[i] = curves2[i].getValues(matrix2);
+                for (var i2 = 0; i2 < length2; i2++) {
+                  values2[i2] = curves2[i2].getValues(matrix2);
                 }
               }
               var boundsCollisions = CollisionDetection.findCurveBoundsCollisions(
@@ -6399,10 +6399,10 @@
                 return null;
               }
               var v = [v1, v2], pairs = [];
-              for (var i = 0; i < 4 && pairs.length < 2; i++) {
-                var i1 = i & 1, i2 = i1 ^ 1, t1 = i >> 1, t2 = Curve.getTimeOf(v[i1], new Point(
-                  v[i2][t1 ? 6 : 0],
-                  v[i2][t1 ? 7 : 1]
+              for (var i2 = 0; i2 < 4 && pairs.length < 2; i2++) {
+                var i1 = i2 & 1, i22 = i1 ^ 1, t1 = i2 >> 1, t2 = Curve.getTimeOf(v[i1], new Point(
+                  v[i22][t1 ? 6 : 0],
+                  v[i22][t1 ? 7 : 1]
                 ));
                 if (t2 != null) {
                   var pair = i1 ? [t1, t2] : [t2, t1];
@@ -6410,7 +6410,7 @@
                     pairs.push(pair);
                   }
                 }
-                if (i > 2 && !pairs.length)
+                if (i2 > 2 && !pairs.length)
                   break;
               }
               if (pairs.length !== 2) {
@@ -6427,9 +6427,9 @@
               if (Math.abs(den) < Numerical.CURVETIME_EPSILON) {
                 var num = ax * cy - ay * cx, den = ax * by - ay * bx;
                 if (den != 0) {
-                  var t = -num / den;
-                  if (t >= 0 && t <= 1)
-                    times.push(t);
+                  var t2 = -num / den;
+                  if (t2 >= 0 && t2 <= 1)
+                    times.push(t2);
                 }
               } else {
                 var delta = (bx * bx - 4 * ax * cx) * ty * ty + (-2 * bx * by + 4 * ay * cx + 4 * ax * cy) * tx * ty + (by * by - 4 * ay * cy) * tx * tx, k = bx * ty - by * tx;
@@ -6551,8 +6551,8 @@
                 var path = this.getPath(), index = this.getIndex();
                 if (path && index != null) {
                   var curves = path.getCurves();
-                  for (var i = 0; i < index; i++)
-                    offset += curves[i].getLength();
+                  for (var i2 = 0; i2 < index; i2++)
+                    offset += curves[i2].getLength();
                 }
                 this._offset = offset += this.getCurveOffset();
               }
@@ -6673,8 +6673,8 @@
             function insert(locations, loc, merge) {
               var length = locations.length, l = 0, r = length - 1;
               function search(index, dir) {
-                for (var i = index + dir; i >= -1 && i <= length; i += dir) {
-                  var loc22 = locations[(i % length + length) % length];
+                for (var i2 = index + dir; i2 >= -1 && i2 <= length; i2 += dir) {
+                  var loc22 = locations[(i2 % length + length) % length];
                   if (!loc.getPoint().isClose(
                     loc22.getPoint(),
                     1e-7
@@ -6707,8 +6707,8 @@
               insert,
               expand: function(locations) {
                 var expanded = locations.slice();
-                for (var i = locations.length - 1; i >= 0; i--) {
-                  insert(expanded, locations[i]._intersection, false);
+                for (var i2 = locations.length - 1; i2 >= 0; i2--) {
+                  insert(expanded, locations[i2]._intersection, false);
                 }
                 return expanded;
               }
@@ -6768,8 +6768,8 @@
               );
             }
             this.clear();
-            for (var i = 0, l = parts && parts.length; i < l; i++) {
-              var part = parts[i], command = part[0], lower = command.toLowerCase();
+            for (var i2 = 0, l = parts && parts.length; i2 < l; i2++) {
+              var part = parts[i2], command = part[0], lower = command.toLowerCase();
               coords = part.match(/[+-]?(?:\d*\.\d+|\d+\.?)(?:[eE][+-]?\d+)?/g);
               var length = coords && coords.length;
               relative = command === lower;
@@ -6883,8 +6883,8 @@
           },
           getNearestLocation: function() {
             var point = Point.read(arguments), curves = this.getCurves(), minDist = Infinity, minLoc = null;
-            for (var i = 0, l = curves.length; i < l; i++) {
-              var loc = curves[i].getNearestLocation(point);
+            for (var i2 = 0, l = curves.length; i2 < l; i2++) {
+              var loc = curves[i2].getNearestLocation(point);
               if (loc._distance < minDist) {
                 minDist = loc._distance;
                 minLoc = loc;
@@ -6904,14 +6904,14 @@
             var current = items.length, length = itemsTo.length;
             if (current < length) {
               var ctor = isPath ? Segment : Path;
-              for (var i = current; i < length; i++) {
+              for (var i2 = current; i2 < length; i2++) {
                 this.add(new ctor());
               }
             } else if (current > length) {
               this[isPath ? "removeSegments" : "removeChildren"](length, current);
             }
-            for (var i = 0; i < length; i++) {
-              items[i].interpolate(itemsFrom[i], itemsTo[i], factor);
+            for (var i2 = 0; i2 < length; i2++) {
+              items[i2].interpolate(itemsFrom[i2], itemsTo[i2], factor);
             }
             if (isPath) {
               this.setClosed(from._closed);
@@ -6983,8 +6983,8 @@
                 if (flags & 32) {
                   this._version++;
                 } else if (this._curves) {
-                  for (var i = 0, l = this._curves.length; i < l; i++)
-                    this._curves[i]._changed();
+                  for (var i2 = 0, l = this._curves.length; i2 < l; i2++)
+                    this._curves[i2]._changed();
                 }
               } else if (flags & 64) {
                 this._bounds = undefined2;
@@ -7024,11 +7024,11 @@
               if (!curves) {
                 var length = this._countCurves();
                 curves = this._curves = new Array(length);
-                for (var i = 0; i < length; i++)
-                  curves[i] = new Curve(
+                for (var i2 = 0; i2 < length; i2++)
+                  curves[i2] = new Curve(
                     this,
-                    segments[i],
-                    segments[i + 1] || segments[0]
+                    segments[i2],
+                    segments[i2 + 1] || segments[0]
                   );
               }
               return curves;
@@ -7091,8 +7091,8 @@
               }
               if (!length)
                 return "";
-              for (var i = 0; i < length; i++)
-                addSegment(segments[i]);
+              for (var i2 = 0; i2 < length; i2++)
+                addSegment(segments[i2]);
               if (this._closed && length > 0) {
                 addSegment(segments[0], true);
                 parts.push("z");
@@ -7104,18 +7104,18 @@
             },
             _transformContent: function(matrix) {
               var segments = this._segments, coords = new Array(6);
-              for (var i = 0, l = segments.length; i < l; i++)
-                segments[i]._transformCoordinates(matrix, coords, true);
+              for (var i2 = 0, l = segments.length; i2 < l; i2++)
+                segments[i2]._transformCoordinates(matrix, coords, true);
               return true;
             },
             _add: function(segs, index) {
               var segments = this._segments, curves = this._curves, amount = segs.length, append = index == null, index = append ? segments.length : index;
-              for (var i = 0; i < amount; i++) {
-                var segment = segs[i];
+              for (var i2 = 0; i2 < amount; i2++) {
+                var segment = segs[i2];
                 if (segment._path)
-                  segment = segs[i] = segment.clone();
+                  segment = segs[i2] = segment.clone();
                 segment._path = this;
-                segment._index = index + i;
+                segment._index = index + i2;
                 if (segment._selection)
                   this._updateSelection(segment, 0, segment._selection);
               }
@@ -7123,8 +7123,8 @@
                 Base.push(segments, segs);
               } else {
                 segments.splice.apply(segments, [index, 0].concat(segs));
-                for (var i = index + amount, l = segments.length; i < l; i++)
-                  segments[i]._index = i;
+                for (var i2 = index + amount, l = segments.length; i2 < l; i2++)
+                  segments[i2]._index = i2;
               }
               if (curves) {
                 var total = this._countCurves(), start = index > 0 && index + amount - 1 === total ? index - 1 : index, insert = start, end = Math.min(start + amount, total);
@@ -7132,8 +7132,8 @@
                   curves.splice.apply(curves, [start, 0].concat(segs._curves));
                   insert += segs._curves.length;
                 }
-                for (var i = insert; i < end; i++)
-                  curves.splice(i, 0, new Curve(this, null, null));
+                for (var i2 = insert; i2 < end; i2++)
+                  curves.splice(i2, 0, new Curve(this, null, null));
                 this._adjustCurves(start, end);
               }
               this._changed(41);
@@ -7141,11 +7141,11 @@
             },
             _adjustCurves: function(start, end) {
               var segments = this._segments, curves = this._curves, curve;
-              for (var i = start; i < end; i++) {
-                curve = curves[i];
+              for (var i2 = start; i2 < end; i2++) {
+                curve = curves[i2];
                 curve._path = this;
-                curve._segment1 = segments[i];
-                curve._segment2 = segments[i + 1] || segments[0];
+                curve._segment1 = segments[i2];
+                curve._segment2 = segments[i2 + 1] || segments[0];
                 curve._changed();
               }
               if (curve = curves[this._closed && !start ? segments.length - 1 : start - 1]) {
@@ -7190,18 +7190,18 @@
               var segments = this._segments, curves = this._curves, count = segments.length, removed = segments.splice(start, end - start), amount = removed.length;
               if (!amount)
                 return removed;
-              for (var i = 0; i < amount; i++) {
-                var segment = removed[i];
+              for (var i2 = 0; i2 < amount; i2++) {
+                var segment = removed[i2];
                 if (segment._selection)
                   this._updateSelection(segment, segment._selection, 0);
                 segment._index = segment._path = null;
               }
-              for (var i = start, l = segments.length; i < l; i++)
-                segments[i]._index = i;
+              for (var i2 = start, l = segments.length; i2 < l; i2++)
+                segments[i2]._index = i2;
               if (curves) {
                 var index = start > 0 && end === count + (this._closed ? 1 : 0) ? start - 1 : start, curves = curves.splice(index, amount);
-                for (var i = curves.length - 1; i >= 0; i--)
-                  curves[i]._path = null;
+                for (var i2 = curves.length - 1; i2 >= 0; i2--)
+                  curves[i2]._path = null;
                 if (_includeCurves)
                   removed._curves = curves.slice(1);
                 this._adjustCurves(index, index);
@@ -7212,22 +7212,22 @@
             clear: "#removeSegments",
             hasHandles: function() {
               var segments = this._segments;
-              for (var i = 0, l = segments.length; i < l; i++) {
-                if (segments[i].hasHandles())
+              for (var i2 = 0, l = segments.length; i2 < l; i2++) {
+                if (segments[i2].hasHandles())
                   return true;
               }
               return false;
             },
             clearHandles: function() {
               var segments = this._segments;
-              for (var i = 0, l = segments.length; i < l; i++)
-                segments[i].clearHandles();
+              for (var i2 = 0, l = segments.length; i2 < l; i2++)
+                segments[i2].clearHandles();
             },
             getLength: function() {
               if (this._length == null) {
                 var curves = this.getCurves(), length = 0;
-                for (var i = 0, l = curves.length; i < l; i++)
-                  length += curves[i].getLength();
+                for (var i2 = 0, l = curves.length; i2 < l; i2++)
+                  length += curves[i2].getLength();
                 this._length = length;
               }
               return this._length;
@@ -7237,11 +7237,11 @@
               if (area == null) {
                 var segments = this._segments, closed = this._closed;
                 area = 0;
-                for (var i = 0, l = segments.length; i < l; i++) {
-                  var last = i + 1 === l;
+                for (var i2 = 0, l = segments.length; i2 < l; i2++) {
+                  var last = i2 + 1 === l;
                   area += Curve.getArea(Curve.getValues(
-                    segments[i],
-                    segments[last ? 0 : i + 1],
+                    segments[i2],
+                    segments[last ? 0 : i2 + 1],
                     null,
                     last && !closed
                   ));
@@ -7267,8 +7267,8 @@
             _selectSegments: function(selected) {
               var segments = this._segments, length = segments.length, selection = selected ? 7 : 0;
               this._segmentSelection = selection * length;
-              for (var i = 0; i < length; i++)
-                segments[i]._selection = selection;
+              for (var i2 = 0; i2 < length; i2++)
+                segments[i2]._selection = selection;
             },
             _updateSelection: function(segment, oldSelection, newSelection) {
               segment._selection = newSelection;
@@ -7348,8 +7348,8 @@
             },
             reduce: function(options) {
               var curves = this.getCurves(), simplify = options && options.simplify, tolerance = simplify ? 1e-7 : 0;
-              for (var i = curves.length - 1; i >= 0; i--) {
-                var curve = curves[i];
+              for (var i2 = curves.length - 1; i2 >= 0; i2--) {
+                var curve = curves[i2];
                 if (!curve.hasHandles() && (!curve.hasLength(tolerance) || simplify && curve.isCollinear(curve.getNext())))
                   curve.remove();
               }
@@ -7357,20 +7357,20 @@
             },
             reverse: function() {
               this._segments.reverse();
-              for (var i = 0, l = this._segments.length; i < l; i++) {
-                var segment = this._segments[i];
+              for (var i2 = 0, l = this._segments.length; i2 < l; i2++) {
+                var segment = this._segments[i2];
                 var handleIn = segment._handleIn;
                 segment._handleIn = segment._handleOut;
                 segment._handleOut = handleIn;
-                segment._index = i;
+                segment._index = i2;
               }
               this._curves = null;
               this._changed(9);
             },
             flatten: function(flatness) {
               var flattener = new PathFlattener(this, flatness || 0.25, 256, true), parts = flattener.parts, length = parts.length, segments = [];
-              for (var i = 0; i < length; i++) {
-                segments.push(new Segment(parts[i].curve.slice(0, 2)));
+              for (var i2 = 0; i2 < length; i2++) {
+                segments.push(new Segment(parts[i2].curve.slice(0, 2)));
               }
               if (!this._closed && length > 0) {
                 segments.push(new Segment(parts[length - 1].curve.slice(6)));
@@ -7417,37 +7417,37 @@
                 n += paddingLeft + paddingRight;
                 if (n <= 1)
                   return;
-                for (var i = 0, j = from - paddingLeft; i <= n; i++, j++) {
-                  knots[i] = segments[(j < 0 ? j + length : j) % length]._point;
+                for (var i2 = 0, j = from - paddingLeft; i2 <= n; i2++, j++) {
+                  knots[i2] = segments[(j < 0 ? j + length : j) % length]._point;
                 }
                 var x = knots[0]._x + 2 * knots[1]._x, y = knots[0]._y + 2 * knots[1]._y, f = 2, n_1 = n - 1, rx = [x], ry = [y], rf = [f], px = [], py = [];
-                for (var i = 1; i < n; i++) {
-                  var internal = i < n_1, a = internal ? 1 : asymmetric ? 1 : 2, b = internal ? 4 : asymmetric ? 2 : 7, u = internal ? 4 : asymmetric ? 3 : 8, v = internal ? 2 : asymmetric ? 0 : 1, m = a / f;
-                  f = rf[i] = b - m;
-                  x = rx[i] = u * knots[i]._x + v * knots[i + 1]._x - m * x;
-                  y = ry[i] = u * knots[i]._y + v * knots[i + 1]._y - m * y;
+                for (var i2 = 1; i2 < n; i2++) {
+                  var internal = i2 < n_1, a = internal ? 1 : asymmetric ? 1 : 2, b = internal ? 4 : asymmetric ? 2 : 7, u = internal ? 4 : asymmetric ? 3 : 8, v = internal ? 2 : asymmetric ? 0 : 1, m = a / f;
+                  f = rf[i2] = b - m;
+                  x = rx[i2] = u * knots[i2]._x + v * knots[i2 + 1]._x - m * x;
+                  y = ry[i2] = u * knots[i2]._y + v * knots[i2 + 1]._y - m * y;
                 }
                 px[n_1] = rx[n_1] / rf[n_1];
                 py[n_1] = ry[n_1] / rf[n_1];
-                for (var i = n - 2; i >= 0; i--) {
-                  px[i] = (rx[i] - px[i + 1]) / rf[i];
-                  py[i] = (ry[i] - py[i + 1]) / rf[i];
+                for (var i2 = n - 2; i2 >= 0; i2--) {
+                  px[i2] = (rx[i2] - px[i2 + 1]) / rf[i2];
+                  py[i2] = (ry[i2] - py[i2 + 1]) / rf[i2];
                 }
                 px[n] = (3 * knots[n]._x - px[n_1]) / 2;
                 py[n] = (3 * knots[n]._y - py[n_1]) / 2;
-                for (var i = paddingLeft, max = n - paddingRight, j = from; i <= max; i++, j++) {
-                  var segment = segments[j < 0 ? j + length : j], pt = segment._point, hx = px[i] - pt._x, hy = py[i] - pt._y;
-                  if (loop || i < max)
+                for (var i2 = paddingLeft, max = n - paddingRight, j = from; i2 <= max; i2++, j++) {
+                  var segment = segments[j < 0 ? j + length : j], pt = segment._point, hx = px[i2] - pt._x, hy = py[i2] - pt._y;
+                  if (loop || i2 < max)
                     segment.setHandleOut(hx, hy);
-                  if (loop || i > paddingLeft)
+                  if (loop || i2 > paddingLeft)
                     segment.setHandleIn(-hx, -hy);
                 }
               } else {
-                for (var i = from; i <= to; i++) {
-                  segments[i < 0 ? i + length : i].smooth(
+                for (var i2 = from; i2 <= to; i2++) {
+                  segments[i2 < 0 ? i2 + length : i2].smooth(
                     opts,
-                    !loop && i === from,
-                    !loop && i === to
+                    !loop && i2 === from,
+                    !loop && i2 === to
                   );
                 }
               }
@@ -7456,20 +7456,20 @@
               if (!this._closed)
                 return null;
               var segments = this._segments, type, size, radius, topCenter;
-              function isCollinear(i, j) {
-                var seg1 = segments[i], seg2 = seg1.getNext(), seg3 = segments[j], seg4 = seg3.getNext();
+              function isCollinear(i2, j) {
+                var seg1 = segments[i2], seg2 = seg1.getNext(), seg3 = segments[j], seg4 = seg3.getNext();
                 return seg1._handleOut.isZero() && seg2._handleIn.isZero() && seg3._handleOut.isZero() && seg4._handleIn.isZero() && seg2._point.subtract(seg1._point).isCollinear(
                   seg4._point.subtract(seg3._point)
                 );
               }
-              function isOrthogonal(i) {
-                var seg2 = segments[i], seg1 = seg2.getPrevious(), seg3 = seg2.getNext();
+              function isOrthogonal(i2) {
+                var seg2 = segments[i2], seg1 = seg2.getPrevious(), seg3 = seg2.getNext();
                 return seg1._handleOut.isZero() && seg2._handleIn.isZero() && seg2._handleOut.isZero() && seg3._handleIn.isZero() && seg2._point.subtract(seg1._point).isOrthogonal(
                   seg3._point.subtract(seg2._point)
                 );
               }
-              function isArc(i) {
-                var seg1 = segments[i], seg2 = seg1.getNext(), handle1 = seg1._handleOut, handle2 = seg2._handleIn, kappa = 0.5522847498307936;
+              function isArc(i2) {
+                var seg1 = segments[i2], seg2 = seg1.getNext(), handle1 = seg1._handleOut, handle2 = seg2._handleIn, kappa = 0.5522847498307936;
                 if (handle1.isOrthogonal(handle2)) {
                   var pt1 = seg1._point, pt2 = seg2._point, corner = new Line(pt1, handle1, true).intersect(
                     new Line(pt2, handle2, true),
@@ -7479,8 +7479,8 @@
                 }
                 return false;
               }
-              function getDistance(i, j) {
-                return segments[i]._point.getDistance(segments[j]._point);
+              function getDistance(i2, j) {
+                return segments[i2]._point.getDistance(segments[j]._point);
               }
               if (!this.hasHandles() && segments.length === 4 && isCollinear(0, 2) && isCollinear(1, 3) && isOrthogonal(1)) {
                 type = Shape.Rectangle;
@@ -7529,12 +7529,12 @@
                 return length1 == length2;
               }
               var v1 = curves1[0].getValues(), values2 = [], pos1 = 0, pos2, end1 = 0, end2;
-              for (var i = 0; i < length2; i++) {
-                var v2 = curves2[i].getValues();
+              for (var i2 = 0; i2 < length2; i2++) {
+                var v2 = curves2[i2].getValues();
                 values2.push(v2);
                 var overlaps = Curve.getOverlaps(v1, v2);
                 if (overlaps) {
-                  pos2 = !i && overlaps[0][0] > 0 ? length2 - 1 : i;
+                  pos2 = !i2 && overlaps[0][0] > 0 ? length2 - 1 : i2;
                   end2 = overlaps[0][1];
                   break;
                 }
@@ -7648,8 +7648,8 @@
                 if (res = checkSegmentPoints(segments[0], true) || checkSegmentPoints(segments[numSegments - 1], true))
                   return res;
               } else if (options.segments || options.handles) {
-                for (var i = 0; i < numSegments; i++)
-                  if (res = checkSegmentPoints(segments[i]))
+                for (var i2 = 0; i2 < numSegments; i2++)
+                  if (res = checkSegmentPoints(segments[i2]))
                     return res;
               }
               if (strokeRadius !== null) {
@@ -7664,8 +7664,8 @@
                   }
                 }
                 if (!loc && join === "miter" && numSegments > 1) {
-                  for (var i = 0; i < numSegments; i++) {
-                    var segment = segments[i];
+                  for (var i2 = 0; i2 < numSegments; i2++) {
+                    var segment = segments[i2];
                     if (point.getDistance(segment._point) <= miterLimit * strokeRadius && checkSegmentStroke(segment)) {
                       loc = segment.getLocation();
                       break;
@@ -7691,8 +7691,8 @@
               beans: false,
               getLocationOf: function() {
                 var point = Point.read(arguments), curves = this.getCurves();
-                for (var i = 0, l = curves.length; i < l; i++) {
-                  var loc = curves[i].getLocationOf(point);
+                for (var i2 = 0, l = curves.length; i2 < l; i2++) {
+                  var loc = curves[i2].getLocationOf(point);
                   if (loc)
                     return loc;
                 }
@@ -7705,8 +7705,8 @@
               getLocationAt: function(offset) {
                 if (typeof offset === "number") {
                   var curves = this.getCurves(), length = 0;
-                  for (var i = 0, l = curves.length; i < l; i++) {
-                    var start = length, curve = curves[i];
+                  for (var i2 = 0, l = curves.length; i2 < l; i2++) {
+                    var start = length, curve = curves[i2];
                     length += curve.getLength();
                     if (length > offset) {
                       return curve.getLocationAt(offset - start);
@@ -7728,8 +7728,8 @@
                 var offsets = [];
                 var curveStart = 0;
                 var curves = this.getCurves();
-                for (var i = 0, l = curves.length; i < l; i++) {
-                  var curve = curves[i];
+                for (var i2 = 0, l = curves.length; i2 < l; i2++) {
+                  var curve = curves[i2];
                   var curveTimes = curve.getTimesWithTangent(tangent);
                   for (var j = 0, m = curveTimes.length; j < m; j++) {
                     var offset = curveStart + curve.getOffsetAtTime(curveTimes[j]);
@@ -7760,8 +7760,8 @@
                   ctx.fill();
                 }
               }
-              for (var i = 0, l = segments.length; i < l; i++) {
-                var segment = segments[i], selection = segment._selection;
+              for (var i2 = 0, l = segments.length; i2 < l; i2++) {
+                var segment = segments[i2], selection = segment._selection;
                 segment._transformCoordinates(matrix, coords);
                 pX = coords[0];
                 pY = coords[1];
@@ -7819,8 +7819,8 @@
                   outY = prevY + handle._y;
                 }
               }
-              for (var i = 0; i < length; i++)
-                drawSegment(segments[i]);
+              for (var i2 = 0; i2 < length; i2++)
+                drawSegment(segments[i2]);
               if (path._closed && length > 0)
                 drawSegment(segments[0]);
             }
@@ -7834,8 +7834,8 @@
                   if (this._closed)
                     ctx.closePath();
                 }
-                function getOffset(i2) {
-                  return dashArray[(i2 % dashLength + dashLength) % dashLength];
+                function getOffset(i3) {
+                  return dashArray[(i3 % dashLength + dashLength) % dashLength];
                 }
                 if (!dontPaint && (hasFill || hasStroke)) {
                   this._setStyles(ctx, param, viewMatrix);
@@ -7853,19 +7853,19 @@
                         32,
                         false,
                         strokeMatrix
-                      ), length = flattener.length, from = -style.getDashOffset(), to, i = 0;
+                      ), length = flattener.length, from = -style.getDashOffset(), to, i2 = 0;
                       while (from > 0) {
-                        from -= getOffset(i--) + getOffset(i--);
+                        from -= getOffset(i2--) + getOffset(i2--);
                       }
                       while (from < length) {
-                        to = from + getOffset(i++);
+                        to = from + getOffset(i2++);
                         if (from > 0 || to > 0)
                           flattener.drawPart(
                             ctx,
                             Math.max(from, 0),
                             Math.max(to, 0)
                           );
-                        from = to + getOffset(i++);
+                        from = to + getOffset(i2++);
                       }
                     }
                     ctx.stroke();
@@ -7915,10 +7915,10 @@
                 );
               },
               curveTo: function() {
-                var args = arguments, through = Point.read(args), to = Point.read(args), t = Base.pick(Base.read(args), 0.5), t1 = 1 - t, current = getCurrentSegment(this)._point, handle = through.subtract(current.multiply(t1 * t1)).subtract(to.multiply(t * t)).divide(2 * t * t1);
+                var args = arguments, through = Point.read(args), to = Point.read(args), t2 = Base.pick(Base.read(args), 0.5), t1 = 1 - t2, current = getCurrentSegment(this)._point, handle = through.subtract(current.multiply(t1 * t1)).subtract(to.multiply(t2 * t2)).divide(2 * t2 * t1);
                 if (handle.isNaN())
                   throw new Error(
-                    "Cannot put a curve through points with parameter = " + t
+                    "Cannot put a curve through points with parameter = " + t2
                   );
                 this.quadraticCurveTo(handle, to);
               },
@@ -7988,9 +7988,9 @@
                 }
                 if (extent) {
                   var epsilon = 1e-5, ext = abs(extent), count = ext >= 360 ? 4 : Math.ceil((ext - epsilon) / 90), inc = extent / count, half = inc * Math.PI / 360, z = 4 / 3 * Math.sin(half) / (1 + Math.cos(half)), segments = [];
-                  for (var i = 0; i <= count; i++) {
+                  for (var i2 = 0; i2 <= count; i2++) {
                     var pt = to, out = null;
-                    if (i < count) {
+                    if (i2 < count) {
                       out = vector.rotate(90).multiply(z);
                       if (matrix) {
                         pt = matrix._transformPoint(vector);
@@ -7999,7 +7999,7 @@
                         pt = center.add(vector);
                       }
                     }
-                    if (!i) {
+                    if (!i2) {
                       current.setHandleOut(out);
                     } else {
                       var _in = vector.rotate(-90).multiply(z);
@@ -8060,14 +8060,14 @@
                 var coords = new Array(6), prevCoords = first._transformCoordinates(matrix, new Array(6)), min = prevCoords.slice(0, 2), max = min.slice(), roots = new Array(2);
                 function processSegment(segment) {
                   segment._transformCoordinates(matrix, coords);
-                  for (var i2 = 0; i2 < 2; i2++) {
+                  for (var i3 = 0; i3 < 2; i3++) {
                     Curve._addBounds(
-                      prevCoords[i2],
-                      prevCoords[i2 + 4],
-                      coords[i2 + 2],
-                      coords[i2],
-                      i2,
-                      strokePadding ? strokePadding[i2] : 0,
+                      prevCoords[i3],
+                      prevCoords[i3 + 4],
+                      coords[i3 + 2],
+                      coords[i3],
+                      i3,
+                      strokePadding ? strokePadding[i3] : 0,
                       min,
                       max,
                       roots
@@ -8077,8 +8077,8 @@
                   prevCoords = coords;
                   coords = tmp;
                 }
-                for (var i = 1, l = segments.length; i < l; i++)
-                  processSegment(segments[i]);
+                for (var i2 = 1, l = segments.length; i2 < l; i2++)
+                  processSegment(segments[i2]);
                 if (closed)
                   processSegment(first);
                 return new Rectangle(min[0], min[1], max[0] - min[0], max[1] - min[1]);
@@ -8137,8 +8137,8 @@
                 }
                 var length = segments.length - (closed ? 0 : 1);
                 if (length > 0) {
-                  for (var i = 1; i < length; i++) {
-                    addJoin(segments[i], join);
+                  for (var i2 = 1; i2 < length; i2++) {
+                    addJoin(segments[i2], join);
                   }
                   if (closed) {
                     addJoin(segments[0], join);
@@ -8208,8 +8208,8 @@
                   joinPadding = Path._getStrokePadding(joinRadius, strokeMatrix);
                 }
                 var coords = new Array(6), x1 = Infinity, x2 = -x1, y1 = x1, y2 = x2;
-                for (var i = 0, l = segments.length; i < l; i++) {
-                  var segment = segments[i];
+                for (var i2 = 0, l = segments.length; i2 < l; i2++) {
+                  var segment = segments[i2];
                   segment._transformCoordinates(matrix, coords);
                   for (var j = 0; j < 6; j += 2) {
                     var padding = !j ? joinPadding : strokePadding, paddingX = padding ? padding[0] : 0, paddingY = padding ? padding[1] : 0, x = coords[j], y = coords[j + 1], xn = x - paddingX, xx = x + paddingX, yn = y - paddingY, yx = y + paddingY;
@@ -8243,9 +8243,9 @@
           }
           function createEllipse(center, radius, args) {
             var segments = new Array(4);
-            for (var i = 0; i < 4; i++) {
-              var segment = ellipseSegments[i];
-              segments[i] = new Segment(
+            for (var i2 = 0; i2 < 4; i2++) {
+              var segment = ellipseSegments[i2];
+              segments[i2] = new Segment(
                 segment._point.multiply(radius).add(center),
                 segment._handleIn.multiply(radius),
                 segment._handleOut.multiply(radius)
@@ -8309,16 +8309,16 @@
             },
             RegularPolygon: function() {
               var args = arguments, center = Point.readNamed(args, "center"), sides = Base.readNamed(args, "sides"), radius = Base.readNamed(args, "radius"), step = 360 / sides, three = sides % 3 === 0, vector = new Point(0, three ? -radius : radius), offset = three ? -1 : 0.5, segments = new Array(sides);
-              for (var i = 0; i < sides; i++)
-                segments[i] = new Segment(center.add(
-                  vector.rotate((i + offset) * step)
+              for (var i2 = 0; i2 < sides; i2++)
+                segments[i2] = new Segment(center.add(
+                  vector.rotate((i2 + offset) * step)
                 ));
               return createPath(segments, true, args);
             },
             Star: function() {
               var args = arguments, center = Point.readNamed(args, "center"), points = Base.readNamed(args, "points") * 2, radius1 = Base.readNamed(args, "radius1"), radius2 = Base.readNamed(args, "radius2"), step = 360 / points, vector = new Point(0, -1), segments = new Array(points);
-              for (var i = 0; i < points; i++)
-                segments[i] = new Segment(center.add(vector.rotate(step * i).multiply(i % 2 ? radius2 : radius1)));
+              for (var i2 = 0; i2 < points; i2++)
+                segments[i2] = new Segment(center.add(vector.rotate(step * i2).multiply(i2 % 2 ? radius2 : radius1)));
               return createPath(segments, true, args);
             }
           };
@@ -8345,14 +8345,14 @@
               var list = items, first = list[0];
               if (first && typeof first[0] === "number")
                 list = [list];
-              for (var i = items.length - 1; i >= 0; i--) {
-                var item = list[i];
+              for (var i2 = items.length - 1; i2 >= 0; i2--) {
+                var item = list[i2];
                 if (list === items && !(item instanceof Path))
                   list = Base.slice(list);
                 if (Array.isArray(item)) {
-                  list[i] = new Path({ segments: item, insert: false });
+                  list[i2] = new Path({ segments: item, insert: false });
                 } else if (item instanceof CompoundPath) {
-                  list.splice.apply(list, [i, 1].concat(item.removeChildren()));
+                  list.splice.apply(list, [i2, 1].concat(item.removeChildren()));
                   item.remove();
                 }
               }
@@ -8360,8 +8360,8 @@
             },
             reduce: function reduce(options) {
               var children = this._children;
-              for (var i = children.length - 1; i >= 0; i--) {
-                var path = children[i].reduce(options);
+              for (var i2 = children.length - 1; i2 >= 0; i2--) {
+                var path = children[i2].reduce(options);
                 if (path.isEmpty())
                   path.remove();
               }
@@ -8376,16 +8376,16 @@
             },
             isClosed: function() {
               var children = this._children;
-              for (var i = 0, l = children.length; i < l; i++) {
-                if (!children[i]._closed)
+              for (var i2 = 0, l = children.length; i2 < l; i2++) {
+                if (!children[i2]._closed)
                   return false;
               }
               return true;
             },
             setClosed: function(closed) {
               var children = this._children;
-              for (var i = 0, l = children.length; i < l; i++) {
-                children[i].setClosed(closed);
+              for (var i2 = 0, l = children.length; i2 < l; i2++) {
+                children[i2].setClosed(closed);
               }
             },
             getFirstSegment: function() {
@@ -8398,8 +8398,8 @@
             },
             getCurves: function() {
               var children = this._children, curves = [];
-              for (var i = 0, l = children.length; i < l; i++) {
-                Base.push(curves, children[i].getCurves());
+              for (var i2 = 0, l = children.length; i2 < l; i2++) {
+                Base.push(curves, children[i2].getCurves());
               }
               return curves;
             },
@@ -8413,20 +8413,20 @@
             },
             getArea: function() {
               var children = this._children, area = 0;
-              for (var i = 0, l = children.length; i < l; i++)
-                area += children[i].getArea();
+              for (var i2 = 0, l = children.length; i2 < l; i2++)
+                area += children[i2].getArea();
               return area;
             },
             getLength: function() {
               var children = this._children, length = 0;
-              for (var i = 0, l = children.length; i < l; i++)
-                length += children[i].getLength();
+              for (var i2 = 0, l = children.length; i2 < l; i2++)
+                length += children[i2].getLength();
               return length;
             },
             getPathData: function(_matrix, _precision) {
               var children = this._children, paths = [];
-              for (var i = 0, l = children.length; i < l; i++) {
-                var child = children[i], mx = child._matrix;
+              for (var i2 = 0, l = children.length; i2 < l; i2++) {
+                var child = children[i2], mx = child._matrix;
                 paths.push(child.getPathData(_matrix && !mx.isIdentity() ? _matrix.appended(mx) : _matrix, _precision));
               }
               return paths.join("");
@@ -8445,8 +8445,8 @@
                 return;
               param = param.extend({ dontStart: true, dontFinish: true });
               ctx.beginPath();
-              for (var i = 0, l = children.length; i < l; i++)
-                children[i].draw(ctx, param, strokeMatrix);
+              for (var i2 = 0, l = children.length; i2 < l; i2++)
+                children[i2].draw(ctx, param, strokeMatrix);
               if (!param.clip) {
                 this._setStyles(ctx, param, viewMatrix);
                 var style = this._style;
@@ -8460,8 +8460,8 @@
             },
             _drawSelected: function(ctx, matrix, selectionItems) {
               var children = this._children;
-              for (var i = 0, l = children.length; i < l; i++) {
-                var child = children[i], mx = child._matrix;
+              for (var i2 = 0, l = children.length; i2 < l; i2++) {
+                var child = children[i2], mx = child._matrix;
                 if (!selectionItems[child._id]) {
                   child._drawSelected(ctx, mx.isIdentity() ? matrix : matrix.appended(mx));
                 }
@@ -8514,8 +8514,8 @@
           Base.each(["reverse", "flatten", "simplify", "smooth"], function(key) {
             this[key] = function(param) {
               var children = this._children, res;
-              for (var i = 0, l = children.length; i < l; i++) {
-                res = children[i][key](param) || res;
+              for (var i2 = 0, l = children.length; i2 < l; i2++) {
+                res = children[i2][key](param) || res;
               }
               return res;
             };
@@ -8535,8 +8535,8 @@
             var res = path.clone(false).reduce({ simplify: true }).transform(null, true, true);
             if (resolve) {
               var paths = getPaths(res);
-              for (var i = 0, l = paths.length; i < l; i++) {
-                var path = paths[i];
+              for (var i2 = 0, l = paths.length; i2 < l; i2++) {
+                var path = paths[i2];
                 if (!path._closed && !path.isEmpty()) {
                   path.closePath(1e-12);
                   path.getFirstSegment().setHandleIn(0, 0);
@@ -8571,8 +8571,8 @@
               _path1.getIntersections(_path2, filterIntersection)
             )), paths1 = getPaths(_path1), paths2 = _path2 && getPaths(_path2), segments = [], curves = [], paths;
             function collectPaths(paths3) {
-              for (var i2 = 0, l2 = paths3.length; i2 < l2; i2++) {
-                var path = paths3[i2];
+              for (var i3 = 0, l2 = paths3.length; i3 < l2; i3++) {
+                var path = paths3[i3];
                 Base.push(segments, path._segments);
                 Base.push(curves, path.getCurves());
                 path._overlapsOnly = true;
@@ -8580,8 +8580,8 @@
             }
             function getCurves(indices) {
               var list = [];
-              for (var i2 = 0, l2 = indices && indices.length; i2 < l2; i2++) {
-                list.push(curves[indices[i2]]);
+              for (var i3 = 0, l2 = indices && indices.length; i3 < l2; i3++) {
+                list.push(curves[indices[i3]]);
               }
               return list;
             }
@@ -8590,8 +8590,8 @@
               if (paths2)
                 collectPaths(paths2);
               var curvesValues = new Array(curves.length);
-              for (var i = 0, l = curves.length; i < l; i++) {
-                curvesValues[i] = curves[i].getValues();
+              for (var i2 = 0, l = curves.length; i2 < l; i2++) {
+                curvesValues[i2] = curves[i2].getValues();
               }
               var curveCollisions = CollisionDetection.findCurveBoundsCollisions(
                 curvesValues,
@@ -8600,24 +8600,24 @@
                 true
               );
               var curveCollisionsMap = {};
-              for (var i = 0; i < curves.length; i++) {
-                var curve = curves[i], id = curve._path._id, map = curveCollisionsMap[id] = curveCollisionsMap[id] || {};
+              for (var i2 = 0; i2 < curves.length; i2++) {
+                var curve = curves[i2], id = curve._path._id, map = curveCollisionsMap[id] = curveCollisionsMap[id] || {};
                 map[curve.getIndex()] = {
-                  hor: getCurves(curveCollisions[i].hor),
-                  ver: getCurves(curveCollisions[i].ver)
+                  hor: getCurves(curveCollisions[i2].hor),
+                  ver: getCurves(curveCollisions[i2].ver)
                 };
               }
-              for (var i = 0, l = crossings.length; i < l; i++) {
+              for (var i2 = 0, l = crossings.length; i2 < l; i2++) {
                 propagateWinding(
-                  crossings[i]._segment,
+                  crossings[i2]._segment,
                   _path1,
                   _path2,
                   curveCollisionsMap,
                   operator
                 );
               }
-              for (var i = 0, l = segments.length; i < l; i++) {
-                var segment = segments[i], inter = segment._intersection;
+              for (var i2 = 0, l = segments.length; i2 < l; i2++) {
+                var segment = segments[i2], inter = segment._intersection;
                 if (!segment._winding) {
                   propagateWinding(
                     segment,
@@ -8649,8 +8649,8 @@
                 return added[path3._id] = true;
               }
             }
-            for (var i = crossings.length - 1; i >= 0; i--) {
-              var path = crossings[i].split();
+            for (var i2 = crossings.length - 1; i2 >= 0; i2--) {
+              var path = crossings[i2].split();
               if (path) {
                 if (addPath(path))
                   path.getFirstSegment().setHandleIn(0, 0);
@@ -8677,17 +8677,17 @@
             }
           }
           function clearCurveHandles(curves) {
-            for (var i = curves.length - 1; i >= 0; i--)
-              curves[i].clearHandles();
+            for (var i2 = curves.length - 1; i2 >= 0; i2--)
+              curves[i2].clearHandles();
           }
           function reorientPaths(paths, isInside, clockwise) {
             var length = paths && paths.length;
             if (length) {
-              var lookup = Base.each(paths, function(path, i2) {
+              var lookup = Base.each(paths, function(path, i3) {
                 this[path._id] = {
                   container: null,
                   winding: path.isClockwise() ? 1 : -1,
-                  index: i2
+                  index: i3
                 };
               }, {}), sorted = paths.slice().sort(function(a, b) {
                 return abs(b.getArea()) - abs(a.getArea());
@@ -8699,12 +8699,12 @@
               );
               if (clockwise == null)
                 clockwise = first.isClockwise();
-              for (var i = 0; i < length; i++) {
-                var path1 = sorted[i], entry1 = lookup[path1._id], containerWinding = 0, indices = collisions[i];
+              for (var i2 = 0; i2 < length; i2++) {
+                var path1 = sorted[i2], entry1 = lookup[path1._id], containerWinding = 0, indices = collisions[i2];
                 if (indices) {
                   var point = null;
                   for (var j = indices.length - 1; j >= 0; j--) {
-                    if (indices[j] < i) {
+                    if (indices[j] < i2) {
                       point = point || path1.getInteriorPoint();
                       var path2 = sorted[indices[j]];
                       if (path2.contains(point)) {
@@ -8735,13 +8735,13 @@
             function getId(curve2) {
               return curve2._path._id + "." + curve2._segment1._index;
             }
-            for (var i = (clearLater && clearLater.length) - 1; i >= 0; i--) {
-              var curve = clearLater[i];
+            for (var i2 = (clearLater && clearLater.length) - 1; i2 >= 0; i2--) {
+              var curve = clearLater[i2];
               if (curve._path)
                 clearLookup[getId(curve)] = true;
             }
-            for (var i = locations.length - 1; i >= 0; i--) {
-              var loc = locations[i], time = loc._time, origTime = time, exclude = include && !include(loc), curve = loc._curve, segment;
+            for (var i2 = locations.length - 1; i2 >= 0; i2--) {
+              var loc = locations[i2], time = loc._time, origTime = time, exclude = include && !include(loc), curve = loc._curve, segment;
               if (curve) {
                 if (curve !== prevCurve) {
                   clearHandles = !curve.hasHandles() || clearLookup && clearLookup[getId(curve)];
@@ -8806,7 +8806,7 @@
                 }
                 return;
               }
-              var t = po === o0 ? 0 : po === o3 ? 1 : paL > max(a0, a1, a2, a3) || paR < min(a0, a1, a2, a3) ? 1 : Curve.solveCubic(v3, io, po, roots, 0, 1) > 0 ? roots[0] : 1, a = t === 0 ? a0 : t === 1 ? a3 : Curve.getPoint(v3, t)[dir ? "y" : "x"], winding = o0 > o3 ? 1 : -1, windingPrev = vPrev[io] > vPrev[io + 6] ? 1 : -1, a3Prev = vPrev[ia + 6];
+              var t2 = po === o0 ? 0 : po === o3 ? 1 : paL > max(a0, a1, a2, a3) || paR < min(a0, a1, a2, a3) ? 1 : Curve.solveCubic(v3, io, po, roots, 0, 1) > 0 ? roots[0] : 1, a = t2 === 0 ? a0 : t2 === 1 ? a3 : Curve.getPoint(v3, t2)[dir ? "y" : "x"], winding = o0 > o3 ? 1 : -1, windingPrev = vPrev[io] > vPrev[io + 6] ? 1 : -1, a3Prev = vPrev[ia + 6];
               if (po !== o0) {
                 if (a < paL) {
                   pathWindingL += winding;
@@ -8836,21 +8836,21 @@
                 quality /= 4;
               }
               vPrev = v3;
-              return !dontFlip && a > paL && a < paR && Curve.getTangent(v3, t)[dir ? "x" : "y"] === 0 && getWinding(point, curves, !dir, closed, true);
+              return !dontFlip && a > paL && a < paR && Curve.getTangent(v3, t2)[dir ? "x" : "y"] === 0 && getWinding(point, curves, !dir, closed, true);
             }
             function handleCurve(v3) {
               var o0 = v3[io + 0], o1 = v3[io + 2], o2 = v3[io + 4], o3 = v3[io + 6];
               if (po <= max(o0, o1, o2, o3) && po >= min(o0, o1, o2, o3)) {
                 var a0 = v3[ia + 0], a1 = v3[ia + 2], a2 = v3[ia + 4], a3 = v3[ia + 6], monoCurves = paL > max(a0, a1, a2, a3) || paR < min(a0, a1, a2, a3) ? [v3] : Curve.getMonoCurves(v3, dir), res2;
-                for (var i2 = 0, l2 = monoCurves.length; i2 < l2; i2++) {
-                  if (res2 = addWinding(monoCurves[i2]))
+                for (var i3 = 0, l2 = monoCurves.length; i3 < l2; i3++) {
+                  if (res2 = addWinding(monoCurves[i3]))
                     return res2;
                 }
               }
             }
-            for (var i = 0, l = curvesList.length; i < l; i++) {
-              var curve = curvesList[i], path = curve._path, v = curve.getValues(), res;
-              if (!i || curvesList[i - 1]._path !== path) {
+            for (var i2 = 0, l = curvesList.length; i2 < l; i2++) {
+              var curve = curvesList[i2], path = curve._path, v = curve.getValues(), res;
+              if (!i2 || curvesList[i2 - 1]._path !== path) {
                 vPrev = null;
                 if (!path._closed) {
                   vClose = Curve.getValues(
@@ -8878,7 +8878,7 @@
               }
               if (res = handleCurve(v))
                 return res;
-              if (i + 1 === l || curvesList[i + 1]._path !== path) {
+              if (i2 + 1 === l || curvesList[i2 + 1]._path !== path) {
                 if (vClose && (res = handleCurve(vClose)))
                   return res;
                 if (onPath && !pathWindingL && !pathWindingR) {
@@ -8916,12 +8916,12 @@
               segment = segment.getNext();
             } while (segment && !segment._intersection && segment !== start);
             var offsets = [0.5, 0.25, 0.75], winding = { winding: 0, quality: -1 }, tMin = 1e-3, tMax = 1 - tMin;
-            for (var i = 0; i < offsets.length && winding.quality < 0.5; i++) {
-              var length = totalLength * offsets[i];
+            for (var i2 = 0; i2 < offsets.length && winding.quality < 0.5; i2++) {
+              var length = totalLength * offsets[i2];
               for (var j = 0, l = chain.length; j < l; j++) {
                 var entry = chain[j], curveLength = entry.length;
                 if (length <= curveLength) {
-                  var curve = entry.curve, path = curve._path, parent = path._parent, operand = parent instanceof CompoundPath ? parent : path, t = Numerical.clamp(curve.getTimeAt(length), tMin, tMax), pt = curve.getPointAtTime(t), dir = abs(curve.getTangentAtTime(t).y) < Math.SQRT1_2;
+                  var curve = entry.curve, path = curve._path, parent = path._parent, operand = parent instanceof CompoundPath ? parent : path, t2 = Numerical.clamp(curve.getTimeAt(length), tMin, tMax), pt = curve.getPointAtTime(t2), dir = abs(curve.getTangentAtTime(t2).y) < Math.SQRT1_2;
                   var wind = null;
                   if (operator.subtract && path2) {
                     var otherPath = operand === path1 ? path2 : path1, pathWinding = otherPath._getWinding(pt, dir, true);
@@ -8958,8 +8958,8 @@
             }
             function isStart(seg2) {
               if (seg2) {
-                for (var i2 = 0, l2 = starts.length; i2 < l2; i2++) {
-                  if (seg2 === starts[i2])
+                for (var i3 = 0, l2 = starts.length; i3 < l2; i3++) {
+                  if (seg2 === starts[i3])
                     return true;
                 }
               }
@@ -8967,8 +8967,8 @@
             }
             function visitPath(path3) {
               var segments2 = path3._segments;
-              for (var i2 = 0, l2 = segments2.length; i2 < l2; i2++) {
-                segments2[i2]._visited = true;
+              for (var i3 = 0, l2 = segments2.length; i3 < l2; i3++) {
+                segments2[i3]._visited = true;
               }
             }
             function getCrossingSegments(segment, collectStarts) {
@@ -9001,8 +9001,8 @@
               var inter1 = seg1._intersection, inter2 = seg2._intersection, over1 = !!(inter1 && inter1._overlap), over2 = !!(inter2 && inter2._overlap), path12 = seg1._path, path22 = seg2._path;
               return over1 ^ over2 ? over1 ? 1 : -1 : !inter1 ^ !inter2 ? inter1 ? 1 : -1 : path12 !== path22 ? path12._id - path22._id : seg1._index - seg2._index;
             });
-            for (var i = 0, l = segments.length; i < l; i++) {
-              var seg = segments[i], valid = isValid(seg), path = null, finished = false, closed = true, branches = [], branch, visited, handleIn;
+            for (var i2 = 0, l = segments.length; i2 < l; i2++) {
+              var seg = segments[i2], valid = isValid(seg), path = null, finished = false, closed = true, branches = [], branch, visited, handleIn;
               if (valid && seg._path._overlapsOnly) {
                 var path1 = seg._path, path2 = seg._intersection._segment._path;
                 if (path1.compare(path2)) {
@@ -9120,8 +9120,8 @@
                 var overlaps = divideLocations(intersections, function(inter) {
                   return inter.hasOverlap();
                 }, clearCurves);
-                for (var i = overlaps.length - 1; i >= 0; i--) {
-                  var overlap = overlaps[i], path = overlap._path, seg = overlap._segment, prev = seg.getPrevious(), next = seg.getNext();
+                for (var i2 = overlaps.length - 1; i2 >= 0; i2--) {
+                  var overlap = overlaps[i2], path = overlap._path, seg = overlap._segment, prev = seg.getPrevious(), next = seg.getNext();
                   if (hasOverlap(prev, path) && hasOverlap(next, path)) {
                     seg.remove();
                     prev._handleOut._set(0, 0);
@@ -9187,8 +9187,8 @@
               var bounds = this.getBounds(), point = bounds.getCenter(true);
               if (!this.contains(point)) {
                 var curves = this.getCurves(), y = point.y, intercepts = [], roots = [];
-                for (var i = 0, l = curves.length; i < l; i++) {
-                  var v = curves[i].getValues(), o0 = v[1], o1 = v[3], o2 = v[5], o3 = v[7];
+                for (var i2 = 0, l = curves.length; i2 < l; i2++) {
+                  var v = curves[i2].getValues(), o0 = v[1], o1 = v[3], o2 = v[5], o3 = v[7];
                   if (y >= min(o0, o1, o2, o3) && y <= max(o0, o1, o2, o3)) {
                     var monoCurves = Curve.getMonoCurves(v);
                     for (var j = 0, m = monoCurves.length; j < m; j++) {
@@ -9239,8 +9239,8 @@
                   }
                 }
               }
-              for (var i = 1, l = segments.length; i < l; i++) {
-                segment2 = segments[i];
+              for (var i2 = 1, l = segments.length; i2 < l; i2++) {
+                segment2 = segments[i2];
                 addCurve(segment1, segment2);
                 segment1 = segment2;
               }
@@ -9252,17 +9252,17 @@
               this.index = 0;
             },
             _get: function(offset) {
-              var parts = this.parts, length = parts.length, start, i, j = this.index;
+              var parts = this.parts, length = parts.length, start, i2, j = this.index;
               for (; ; ) {
-                i = j;
+                i2 = j;
                 if (!j || parts[--j].offset < offset)
                   break;
               }
-              for (; i < length; i++) {
-                var part = parts[i];
+              for (; i2 < length; i2++) {
+                var part = parts[i2];
                 if (part.offset >= offset) {
-                  this.index = i;
-                  var prev = parts[i - 1], prevTime = prev && prev.index === part.index ? prev.time : 0, prevOffset = prev ? prev.offset : 0;
+                  this.index = i2;
+                  var prev = parts[i2 - 1], prevTime = prev && prev.index === part.index ? prev.time : 0, prevOffset = prev ? prev.offset : 0;
                   return {
                     index: part.index,
                     time: prevTime + (part.time - prevTime) * (offset - prevOffset) / (part.offset - prevOffset)
@@ -9276,13 +9276,13 @@
             },
             drawPart: function(ctx, from, to) {
               var start = this._get(from), end = this._get(to);
-              for (var i = start.index, l = end.index; i <= l; i++) {
+              for (var i2 = start.index, l = end.index; i2 <= l; i2++) {
                 var curve = Curve.getPart(
-                  this.curves[i],
-                  i === start.index ? start.time : 0,
-                  i === end.index ? end.time : 1
+                  this.curves[i2],
+                  i2 === start.index ? start.time : 0,
+                  i2 === end.index ? end.time : 1
                 );
-                if (i === start.index)
+                if (i2 === start.index)
                   ctx.moveTo(curve[0], curve[1]);
                 ctx.bezierCurveTo.apply(ctx, curve.slice(2));
               }
@@ -9302,8 +9302,8 @@
         var PathFitter = Base.extend({
           initialize: function(path) {
             var points = this.points = [], segments = path._segments, closed = path._closed;
-            for (var i = 0, prev, l = segments.length; i < l; i++) {
-              var point = segments[i].point;
+            for (var i2 = 0, prev, l = segments.length; i2 < l; i2++) {
+              var point = segments[i2].point;
               if (!prev || !prev.equals(point)) {
                 points.push(prev = point.clone());
               }
@@ -9348,7 +9348,7 @@
               return;
             }
             var uPrime = this.chordLengthParameterize(first, last), maxError = Math.max(error, error * error), split, parametersInOrder = true;
-            for (var i = 0; i <= 4; i++) {
+            for (var i2 = 0; i2 <= 4; i2++) {
               var curve = this.generateBezier(first, last, uPrime, tan1, tan2);
               var max = this.findMaxError(first, last, curve, uPrime);
               if (max.error < error && parametersInOrder) {
@@ -9372,8 +9372,8 @@
           },
           generateBezier: function(first, last, uPrime, tan1, tan2) {
             var epsilon = 1e-12, abs = Math.abs, points = this.points, pt1 = points[first], pt2 = points[last], C = [[0, 0], [0, 0]], X = [0, 0];
-            for (var i = 0, l = last - first + 1; i < l; i++) {
-              var u = uPrime[i], t = 1 - u, b = 3 * u * t, b0 = t * t * t, b1 = b * t, b2 = b * u, b3 = u * u * u, a1 = tan1.normalize(b1), a2 = tan2.normalize(b2), tmp = points[first + i].subtract(pt1.multiply(b0 + b1)).subtract(pt2.multiply(b2 + b3));
+            for (var i2 = 0, l = last - first + 1; i2 < l; i2++) {
+              var u = uPrime[i2], t2 = 1 - u, b = 3 * u * t2, b0 = t2 * t2 * t2, b1 = b * t2, b2 = b * u, b3 = u * u * u, a1 = tan1.normalize(b1), a2 = tan2.normalize(b2), tmp = points[first + i2].subtract(pt1.multiply(b0 + b1)).subtract(pt2.multiply(b2 + b3));
               C[0][0] += a1.dot(a1);
               C[0][1] += a1.dot(a2);
               C[1][0] = C[0][1];
@@ -9410,54 +9410,54 @@
             ];
           },
           reparameterize: function(first, last, u, curve) {
-            for (var i = first; i <= last; i++) {
-              u[i - first] = this.findRoot(curve, this.points[i], u[i - first]);
+            for (var i2 = first; i2 <= last; i2++) {
+              u[i2 - first] = this.findRoot(curve, this.points[i2], u[i2 - first]);
             }
-            for (var i = 1, l = u.length; i < l; i++) {
-              if (u[i] <= u[i - 1])
+            for (var i2 = 1, l = u.length; i2 < l; i2++) {
+              if (u[i2] <= u[i2 - 1])
                 return false;
             }
             return true;
           },
           findRoot: function(curve, point, u) {
             var curve1 = [], curve2 = [];
-            for (var i = 0; i <= 2; i++) {
-              curve1[i] = curve[i + 1].subtract(curve[i]).multiply(3);
+            for (var i2 = 0; i2 <= 2; i2++) {
+              curve1[i2] = curve[i2 + 1].subtract(curve[i2]).multiply(3);
             }
-            for (var i = 0; i <= 1; i++) {
-              curve2[i] = curve1[i + 1].subtract(curve1[i]).multiply(2);
+            for (var i2 = 0; i2 <= 1; i2++) {
+              curve2[i2] = curve1[i2 + 1].subtract(curve1[i2]).multiply(2);
             }
             var pt = this.evaluate(3, curve, u), pt1 = this.evaluate(2, curve1, u), pt2 = this.evaluate(1, curve2, u), diff = pt.subtract(point), df = pt1.dot(pt1) + diff.dot(pt2);
             return Numerical.isMachineZero(df) ? u : u - diff.dot(pt1) / df;
           },
-          evaluate: function(degree, curve, t) {
+          evaluate: function(degree, curve, t2) {
             var tmp = curve.slice();
-            for (var i = 1; i <= degree; i++) {
-              for (var j = 0; j <= degree - i; j++) {
-                tmp[j] = tmp[j].multiply(1 - t).add(tmp[j + 1].multiply(t));
+            for (var i2 = 1; i2 <= degree; i2++) {
+              for (var j = 0; j <= degree - i2; j++) {
+                tmp[j] = tmp[j].multiply(1 - t2).add(tmp[j + 1].multiply(t2));
               }
             }
             return tmp[0];
           },
           chordLengthParameterize: function(first, last) {
             var u = [0];
-            for (var i = first + 1; i <= last; i++) {
-              u[i - first] = u[i - first - 1] + this.points[i].getDistance(this.points[i - 1]);
+            for (var i2 = first + 1; i2 <= last; i2++) {
+              u[i2 - first] = u[i2 - first - 1] + this.points[i2].getDistance(this.points[i2 - 1]);
             }
-            for (var i = 1, m = last - first; i <= m; i++) {
-              u[i] /= u[m];
+            for (var i2 = 1, m = last - first; i2 <= m; i2++) {
+              u[i2] /= u[m];
             }
             return u;
           },
           findMaxError: function(first, last, curve, u) {
             var index = Math.floor((last - first + 1) / 2), maxDist = 0;
-            for (var i = first + 1; i < last; i++) {
-              var P = this.evaluate(3, curve, u[i - first]);
-              var v = P.subtract(this.points[i]);
+            for (var i2 = first + 1; i2 < last; i2++) {
+              var P = this.evaluate(3, curve, u[i2 - first]);
+              var v = P.subtract(this.points[i2]);
               var dist = v.x * v.x + v.y * v.y;
               if (dist >= maxDist) {
                 maxDist = dist;
-                index = i;
+                index = i2;
               }
             }
             return {
@@ -9522,9 +9522,9 @@
             var lines = this._lines, style = this._style, hasFill = style.hasFill(), hasStroke = style.hasStroke(), leading = style.getLeading(), shadowColor = ctx.shadowColor;
             ctx.font = style.getFontStyle();
             ctx.textAlign = style.getJustification();
-            for (var i = 0, l = lines.length; i < l; i++) {
+            for (var i2 = 0, l = lines.length; i2 < l; i2++) {
               ctx.shadowColor = shadowColor;
-              var line = lines[i];
+              var line = lines[i2];
               if (hasFill) {
                 ctx.fillText(line, 0, 0);
                 ctx.shadowColor = "rgba(0,0,0,0)";
@@ -9568,32 +9568,32 @@
               if (match) {
                 var amount = match[4] ? 4 : 3;
                 components = new Array(amount);
-                for (var i = 0; i < amount; i++) {
-                  var value = match[i + 1];
-                  components[i] = parseInt(value.length == 1 ? value + value : value, 16) / 255;
+                for (var i2 = 0; i2 < amount; i2++) {
+                  var value = match[i2 + 1];
+                  components[i2] = parseInt(value.length == 1 ? value + value : value, 16) / 255;
                 }
               } else if (match = string.match(/^(rgb|hsl)a?\((.*)\)$/)) {
                 type = match[1];
                 components = match[2].trim().split(/[,\s]+/g);
                 var isHSL = type === "hsl";
-                for (var i = 0, l = Math.min(components.length, 4); i < l; i++) {
-                  var component = components[i];
+                for (var i2 = 0, l = Math.min(components.length, 4); i2 < l; i2++) {
+                  var component = components[i2];
                   var value = parseFloat(component);
                   if (isHSL) {
-                    if (i === 0) {
+                    if (i2 === 0) {
                       var unit = component.match(/([a-z]*)$/)[1];
                       value *= {
                         turn: 360,
                         rad: 180 / Math.PI,
                         grad: 0.9
                       }[unit] || 1;
-                    } else if (i < 3) {
+                    } else if (i2 < 3) {
                       value /= 100;
                     }
-                  } else if (i < 3) {
+                  } else if (i2 < 3) {
                     value /= /%$/.test(component) ? 100 : 255;
                   }
-                  components[i] = value;
+                  components[i2] = value;
                 }
               } else {
                 var color = namedColors[string];
@@ -9637,13 +9637,13 @@
               },
               "hsb-rgb": function(h, s, b) {
                 h = (h / 60 % 6 + 6) % 6;
-                var i = Math.floor(h), f = h - i, i = hsbIndices[i], v = [
+                var i2 = Math.floor(h), f = h - i2, i2 = hsbIndices[i2], v = [
                   b,
                   b * (1 - s),
                   b * (1 - s * f),
                   b * (1 - s * (1 - f))
                 ];
-                return [v[i[0]], v[i[1]], v[i[2]]];
+                return [v[i2[0]], v[i2[1]], v[i2[2]]];
               },
               "rgb-hsl": function(r, g, b) {
                 var max = Math.max(r, g, b), min = Math.min(r, g, b), delta = max - min, achromatic = delta === 0, h = achromatic ? 0 : (max == r ? (g - b) / delta + (g < b ? 6 : 0) : max == g ? (b - r) / delta + 2 : (r - g) / delta + 4) * 60, l = (max + min) / 2, s = achromatic ? 0 : l < 0.5 ? delta / (max + min) : delta / (2 - max - min);
@@ -9654,13 +9654,13 @@
                 if (s === 0)
                   return [l, l, l];
                 var t3s = [h + 1 / 3, h, h - 1 / 3], t2 = l < 0.5 ? l * (1 + s) : l + s - l * s, t1 = 2 * l - t2, c = [];
-                for (var i = 0; i < 3; i++) {
-                  var t3 = t3s[i];
+                for (var i2 = 0; i2 < 3; i2++) {
+                  var t3 = t3s[i2];
                   if (t3 < 0)
                     t3 += 1;
                   if (t3 > 1)
                     t3 -= 1;
-                  c[i] = 6 * t3 < 1 ? t1 + (t2 - t1) * 6 * t3 : 2 * t3 < 1 ? t2 : 3 * t3 < 2 ? t1 + (t2 - t1) * (2 / 3 - t3) * 6 : t1;
+                  c[i2] = 6 * t3 < 1 ? t1 + (t2 - t1) * 6 * t3 : 2 * t3 < 1 ? t2 : 3 * t3 < 2 ? t1 + (t2 - t1) * (2 / 3 - t3) * 6 : t1;
                 }
                 return c;
               },
@@ -9770,10 +9770,10 @@
                       components = arg._components.slice();
                       alpha = arg._alpha;
                       if (type === "gradient") {
-                        for (var i = 1, l = components.length; i < l; i++) {
-                          var point = components[i];
+                        for (var i2 = 1, l = components.length; i2 < l; i2++) {
+                          var point = components[i2];
                           if (point)
-                            components[i] = point.clone();
+                            components[i2] = point.clone();
                         }
                       }
                     } else if (arg.constructor === Gradient) {
@@ -9783,17 +9783,17 @@
                       type = "hue" in arg ? "lightness" in arg ? "hsl" : "hsb" : "gradient" in arg || "stops" in arg || "radial" in arg ? "gradient" : "gray" in arg ? "gray" : "rgb";
                       var properties = types[type], parsers = componentParsers[type];
                       this._components = components = [];
-                      for (var i = 0, l = properties.length; i < l; i++) {
-                        var value = arg[properties[i]];
-                        if (value == null && !i && type === "gradient" && "stops" in arg) {
+                      for (var i2 = 0, l = properties.length; i2 < l; i2++) {
+                        var value = arg[properties[i2]];
+                        if (value == null && !i2 && type === "gradient" && "stops" in arg) {
                           value = {
                             stops: arg.stops,
                             radial: arg.radial
                           };
                         }
-                        value = parsers[i].call(this, value);
+                        value = parsers[i2].call(this, value);
                         if (value != null)
-                          components[i] = value;
+                          components[i2] = value;
                       }
                       alpha = arg.alpha;
                     }
@@ -9805,10 +9805,10 @@
                 if (!components) {
                   this._components = components = [];
                   var parsers = componentParsers[this._type];
-                  for (var i = 0, l = parsers.length; i < l; i++) {
-                    var value = parsers[i].call(this, values && values[i]);
+                  for (var i2 = 0, l = parsers.length; i2 < l; i2++) {
+                    var value = parsers[i2].call(this, values && values[i2]);
                     if (value != null)
-                      components[i] = value;
+                      components[i2] = value;
                   }
                 }
                 this._components = components;
@@ -9881,10 +9881,10 @@
               },
               toString: function() {
                 var properties = this._properties, parts = [], isGradient = this._type === "gradient", f = Formatter.instance;
-                for (var i = 0, l = properties.length; i < l; i++) {
-                  var value = this._components[i];
+                for (var i2 = 0, l = properties.length; i2 < l; i2++) {
+                  var value = this._components[i2];
                   if (value != null)
-                    parts.push(properties[i] + ": " + (isGradient ? value : f.number(value)));
+                    parts.push(properties[i2] + ": " + (isGradient ? value : f.number(value)));
                 }
                 if (this._alpha != null)
                   parts.push("alpha: " + f.number(this._alpha));
@@ -9940,10 +9940,10 @@
                     destination.y
                   );
                 }
-                for (var i = 0, l = stops.length; i < l; i++) {
-                  var stop = stops[i], offset = stop._offset;
+                for (var i2 = 0, l = stops.length; i2 < l; i2++) {
+                  var stop = stops[i2], offset = stop._offset;
                   canvasGradient.addColorStop(
-                    offset == null ? i / (l - 1) : offset,
+                    offset == null ? i2 / (l - 1) : offset,
                     stop._color.toCanvasStyle()
                   );
                 }
@@ -9952,8 +9952,8 @@
               transform: function(matrix) {
                 if (this._type === "gradient") {
                   var components = this._components;
-                  for (var i = 1, l = components.length; i < l; i++) {
-                    var point = components[i];
+                  for (var i2 = 1, l = components.length; i2 < l; i2++) {
+                    var point = components[i2];
                     matrix._transformPoint(point, point, true);
                   }
                   this._changed();
@@ -9999,8 +9999,8 @@
               this[name] = function(color) {
                 color = Color.read(arguments);
                 var type = this._type, components1 = this._components, components2 = color._convert(type);
-                for (var i = 0, l = components1.length; i < l; i++)
-                  components2[i] = operator(components1[i], components2[i]);
+                for (var i2 = 0, l = components1.length; i2 < l; i2++)
+                  components2[i2] = operator(components1[i2], components2[i2]);
                 return new Color(
                   type,
                   components2,
@@ -10036,8 +10036,8 @@
             });
           },
           _changed: function() {
-            for (var i = 0, l = this._owners && this._owners.length; i < l; i++) {
-              this._owners[i]._changed();
+            for (var i2 = 0, l = this._owners && this._owners.length; i2 < l; i2++) {
+              this._owners[i2]._changed();
             }
           },
           _addOwner: function(color) {
@@ -10055,8 +10055,8 @@
           },
           clone: function() {
             var stops = [];
-            for (var i = 0, l = this._stops.length; i < l; i++) {
-              stops[i] = this._stops[i].clone();
+            for (var i2 = 0, l = this._stops.length; i2 < l; i2++) {
+              stops[i2] = this._stops[i2].clone();
             }
             return new Gradient(stops, this._radial);
           },
@@ -10071,12 +10071,12 @@
             }
             var _stops = this._stops;
             if (_stops) {
-              for (var i = 0, l = _stops.length; i < l; i++)
-                _stops[i]._owner = undefined2;
+              for (var i2 = 0, l = _stops.length; i2 < l; i2++)
+                _stops[i2]._owner = undefined2;
             }
             _stops = this._stops = GradientStop.readList(stops, 0, { clone: true });
-            for (var i = 0, l = _stops.length; i < l; i++)
-              _stops[i]._owner = this;
+            for (var i2 = 0, l = _stops.length; i2 < l; i2++)
+              _stops[i2]._owner = this;
             this._changed();
           },
           getRadial: function() {
@@ -10092,8 +10092,8 @@
             if (gradient && this._class === gradient._class) {
               var stops1 = this._stops, stops2 = gradient._stops, length = stops1.length;
               if (length === stops2.length) {
-                for (var i = 0; i < length; i++) {
-                  if (!stops1[i].equals(stops2[i]))
+                for (var i2 = 0; i2 < length; i2++) {
+                  if (!stops1[i2].equals(stops2[i2]))
                     return false;
                 }
                 return true;
@@ -10214,8 +10214,8 @@
             fields[set] = function(value2) {
               var owner = this._owner, children = owner && owner._children, applyToChildren = children && children.length > 0 && !(owner instanceof CompoundPath);
               if (applyToChildren) {
-                for (var i = 0, l = children.length; i < l; i++)
-                  children[i]._style[set](value2);
+                for (var i2 = 0, l = children.length; i2 < l; i2++)
+                  children[i2]._style[set](value2);
               }
               if ((key === "selectedColor" || !applyToChildren) && key in this._defaults) {
                 var old = this._values[key];
@@ -10242,9 +10242,9 @@
             fields[get] = function(_dontMerge) {
               var owner = this._owner, children = owner && owner._children, applyToChildren = children && children.length > 0 && !(owner instanceof CompoundPath), value2;
               if (applyToChildren && !_dontMerge) {
-                for (var i = 0, l = children.length; i < l; i++) {
-                  var childValue = children[i]._style[get]();
-                  if (!i) {
+                for (var i2 = 0, l = children.length; i2 < l; i2++) {
+                  var childValue = children[i2]._style[get]();
+                  if (!i2) {
                     value2 = childValue;
                   } else if (!Base.equals(value2, childValue)) {
                     return undefined2;
@@ -10360,8 +10360,8 @@
         var DomElement = new function() {
           function handlePrefix(el, name, set, value) {
             var prefixes = ["", "webkit", "moz", "Moz", "ms", "o"], suffix = name[0].toUpperCase() + name.substring(1);
-            for (var i = 0; i < 6; i++) {
-              var prefix = prefixes[i], key = prefix ? prefix + suffix : name;
+            for (var i2 = 0; i2 < 6; i2++) {
+              var prefix = prefixes[i2], key = prefix ? prefix + suffix : name;
               if (key in el) {
                 if (set) {
                   el[key] = value;
@@ -10436,8 +10436,8 @@
             if (el) {
               for (var type in events) {
                 var func = events[type], parts = type.split(/[\s,]+/g);
-                for (var i = 0, l = parts.length; i < l; i++) {
-                  var name = parts[i];
+                for (var i2 = 0, l = parts.length; i2 < l; i2++) {
+                  var name = parts[i2];
                   var options = el === document2 && (name === "touchstart" || name === "touchmove") ? { passive: false } : false;
                   el.addEventListener(name, func, options);
                 }
@@ -10448,8 +10448,8 @@
             if (el) {
               for (var type in events) {
                 var func = events[type], parts = type.split(/[\s,]+/g);
-                for (var i = 0, l = parts.length; i < l; i++)
-                  el.removeEventListener(parts[i], func, false);
+                for (var i2 = 0, l = parts.length; i2 < l; i2++)
+                  el.removeEventListener(parts[i2], func, false);
               }
             }
           },
@@ -10477,8 +10477,8 @@
           function handleCallbacks() {
             var functions = callbacks;
             callbacks = [];
-            for (var i = 0, l = functions.length; i < l; i++)
-              functions[i]();
+            for (var i2 = 0, l = functions.length; i2 < l; i2++)
+              functions[i2]();
             requested = nativeRequest && callbacks.length;
             if (requested)
               nativeRequest(handleCallbacks);
@@ -10665,8 +10665,8 @@
               }
             },
             _handleFrameItems: function(event) {
-              for (var i in this._frameItems) {
-                var entry = this._frameItems[i];
+              for (var i2 in this._frameItems) {
+                var entry = this._frameItems[i2];
                 entry.item.emit("frame", new Base(event, {
                   time: entry.time += event.delta,
                   count: entry.count++
@@ -10846,8 +10846,8 @@
             function updateFocus() {
               var view = View._focused;
               if (!view || !view.isVisible()) {
-                for (var i = 0, l = View._views.length; i < l; i++) {
-                  if ((view = View._views[i]).isVisible()) {
+                for (var i2 = 0, l = View._views.length; i2 < l; i2++) {
+                  if ((view = View._views[i2]).isVisible()) {
                     View._focused = tempFocus = view;
                     break;
                   }
@@ -11177,8 +11177,8 @@
           getTextWidth: function(font, lines) {
             var ctx = this._context, prevFont = ctx.font, width = 0;
             ctx.font = font;
-            for (var i = 0, l = lines.length; i < l; i++)
-              width = Math.max(width, ctx.measureText(lines[i]).width);
+            for (var i2 = 0, l = lines.length; i2 < l; i2++)
+              width = Math.max(width, ctx.measureText(lines[i2]).width);
             ctx.font = prevFont;
             return width;
           },
@@ -11531,44 +11531,44 @@
           _class: "Tween",
           statics: {
             easings: new Base({
-              linear: function(t) {
-                return t;
+              linear: function(t2) {
+                return t2;
               },
-              easeInQuad: function(t) {
-                return t * t;
+              easeInQuad: function(t2) {
+                return t2 * t2;
               },
-              easeOutQuad: function(t) {
-                return t * (2 - t);
+              easeOutQuad: function(t2) {
+                return t2 * (2 - t2);
               },
-              easeInOutQuad: function(t) {
-                return t < 0.5 ? 2 * t * t : -1 + 2 * (2 - t) * t;
+              easeInOutQuad: function(t2) {
+                return t2 < 0.5 ? 2 * t2 * t2 : -1 + 2 * (2 - t2) * t2;
               },
-              easeInCubic: function(t) {
-                return t * t * t;
+              easeInCubic: function(t2) {
+                return t2 * t2 * t2;
               },
-              easeOutCubic: function(t) {
-                return --t * t * t + 1;
+              easeOutCubic: function(t2) {
+                return --t2 * t2 * t2 + 1;
               },
-              easeInOutCubic: function(t) {
-                return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+              easeInOutCubic: function(t2) {
+                return t2 < 0.5 ? 4 * t2 * t2 * t2 : (t2 - 1) * (2 * t2 - 2) * (2 * t2 - 2) + 1;
               },
-              easeInQuart: function(t) {
-                return t * t * t * t;
+              easeInQuart: function(t2) {
+                return t2 * t2 * t2 * t2;
               },
-              easeOutQuart: function(t) {
-                return 1 - --t * t * t * t;
+              easeOutQuart: function(t2) {
+                return 1 - --t2 * t2 * t2 * t2;
               },
-              easeInOutQuart: function(t) {
-                return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t;
+              easeInOutQuart: function(t2) {
+                return t2 < 0.5 ? 8 * t2 * t2 * t2 * t2 : 1 - 8 * --t2 * t2 * t2 * t2;
               },
-              easeInQuint: function(t) {
-                return t * t * t * t * t;
+              easeInQuint: function(t2) {
+                return t2 * t2 * t2 * t2 * t2;
               },
-              easeOutQuint: function(t) {
-                return 1 + --t * t * t * t * t;
+              easeOutQuint: function(t2) {
+                return 1 + --t2 * t2 * t2 * t2 * t2;
               },
-              easeInOutQuint: function(t) {
-                return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
+              easeInOutQuint: function(t2) {
+                return t2 < 0.5 ? 16 * t2 * t2 * t2 * t2 * t2 : 1 + 16 * --t2 * t2 * t2 * t2 * t2;
               }
             })
           },
@@ -11613,8 +11613,8 @@
               var factor = this.easing(progress2), keys = this._keys, getValue = function(value2) {
                 return typeof value2 === "function" ? value2(factor, progress2) : value2;
               };
-              for (var i = 0, l = keys && keys.length; i < l; i++) {
-                var key = keys[i], from = getValue(this._from[key]), to = getValue(this._to[key]), value = from && to && from.__add && to.__add ? to.__subtract(from).__multiply(factor).__add(from) : (to - from) * factor + from;
+              for (var i2 = 0, l = keys && keys.length; i2 < l; i2++) {
+                var key = keys[i2], from = getValue(this._from[key]), to = getValue(this._to[key]), value = from && to && from.__add && to.__add ? to.__subtract(from).__multiply(factor).__add(from) : (to - from) * factor + from;
                 this._setProperty(this._parsedKeys[key], value);
               }
               if (this.responds("update")) {
@@ -11641,8 +11641,8 @@
           },
           _getState: function(state) {
             var keys = this._keys, result = {};
-            for (var i = 0, l = keys.length; i < l; i++) {
-              var key = keys[i], path = this._parsedKeys[key], current = this._getProperty(path), value;
+            for (var i2 = 0, l = keys.length; i2 < l; i2++) {
+              var key = keys[i2], path = this._parsedKeys[key], current = this._getProperty(path), value;
               if (state) {
                 var resolved = this._resolveValue(current, state[key]);
                 this._setProperty(path, resolved);
@@ -11679,16 +11679,16 @@
           },
           _parseKeys: function(keys) {
             var parsed = {};
-            for (var i = 0, l = keys.length; i < l; i++) {
-              var key = keys[i], path = key.replace(/\.([^.]*)/g, "/$1").replace(/\[['"]?([^'"\]]*)['"]?\]/g, "/$1");
+            for (var i2 = 0, l = keys.length; i2 < l; i2++) {
+              var key = keys[i2], path = key.replace(/\.([^.]*)/g, "/$1").replace(/\[['"]?([^'"\]]*)['"]?\]/g, "/$1");
               parsed[key] = path.split("/");
             }
             return parsed;
           },
           _getProperty: function(path, offset) {
             var obj = this.object;
-            for (var i = 0, l = path.length - (offset || 0); i < l && obj; i++) {
-              obj = obj[path[i]];
+            for (var i2 = 0, l = path.length - (offset || 0); i2 < l && obj; i2++) {
+              obj = obj[path[i2]];
             }
             return obj;
           },
@@ -11832,12 +11832,12 @@
               db = bb < 128 ? 2 * bb * sb / 255 : 255 - 2 * (255 - bb) * (255 - sb) / 255;
             },
             "soft-light": function() {
-              var t = sr * br / 255;
-              dr = t + br * (255 - (255 - br) * (255 - sr) / 255 - t) / 255;
-              t = sg * bg / 255;
-              dg = t + bg * (255 - (255 - bg) * (255 - sg) / 255 - t) / 255;
-              t = sb * bb / 255;
-              db = t + bb * (255 - (255 - bb) * (255 - sb) / 255 - t) / 255;
+              var t2 = sr * br / 255;
+              dr = t2 + br * (255 - (255 - br) * (255 - sr) / 255 - t2) / 255;
+              t2 = sg * bg / 255;
+              dg = t2 + bg * (255 - (255 - bg) * (255 - sg) / 255 - t2) / 255;
+              t2 = sb * bb / 255;
+              db = t2 + bb * (255 - (255 - bb) * (255 - sb) / 255 - t2) / 255;
             },
             "hard-light": function() {
               dr = sr < 128 ? 2 * sr * br / 255 : 255 - 2 * (255 - sr) * (255 - br) / 255;
@@ -11977,21 +11977,21 @@
                 srcCanvas.width,
                 srcCanvas.height
               ).data;
-              for (var i = 0, l = dst.length; i < l; i += 4) {
-                sr = src[i];
-                br = dst[i];
-                sg = src[i + 1];
-                bg = dst[i + 1];
-                sb = src[i + 2];
-                bb = dst[i + 2];
-                sa = src[i + 3];
-                ba = dst[i + 3];
+              for (var i2 = 0, l = dst.length; i2 < l; i2 += 4) {
+                sr = src[i2];
+                br = dst[i2];
+                sg = src[i2 + 1];
+                bg = dst[i2 + 1];
+                sb = src[i2 + 2];
+                bb = dst[i2 + 2];
+                sa = src[i2 + 3];
+                ba = dst[i2 + 3];
                 process2();
                 var a1 = sa * alpha / 255, a2 = 1 - a1;
-                dst[i] = a1 * dr + a2 * br;
-                dst[i + 1] = a1 * dg + a2 * bg;
-                dst[i + 2] = a1 * db + a2 * bb;
-                dst[i + 3] = sa * alpha + a2 * ba;
+                dst[i2] = a1 * dr + a2 * br;
+                dst[i2 + 1] = a1 * dg + a2 * bg;
+                dst[i2 + 2] = a1 * db + a2 * bb;
+                dst[i2 + 3] = sa * alpha + a2 * ba;
               }
               dstContext.putImageData(dstData, offset.x, offset.y);
             }
@@ -12114,8 +12114,8 @@
           function exportGroup(item, options) {
             var attrs = getTransform(item._matrix), children = item._children;
             var node = SvgElement.create("g", attrs, formatter);
-            for (var i = 0, l = children.length; i < l; i++) {
-              var child = children[i];
+            for (var i2 = 0, l = children.length; i2 < l; i2++) {
+              var child = children[i2];
               var childNode = exportSVG(child, options);
               if (childNode) {
                 if (child.isClipMask()) {
@@ -12153,8 +12153,8 @@
               if (length > 2) {
                 type = item._closed ? "polygon" : "polyline";
                 var parts = [];
-                for (var i = 0; i < length; i++) {
-                  parts.push(formatter.point(segments[i]._point));
+                for (var i2 = 0; i2 < length; i2++) {
+                  parts.push(formatter.point(segments[i2]._point));
                 }
                 attrs.points = parts.join(" ");
               } else {
@@ -12245,10 +12245,10 @@
               attrs.gradientUnits = "userSpaceOnUse";
               gradientNode = SvgElement.create((radial ? "radial" : "linear") + "Gradient", attrs, formatter);
               var stops = gradient._stops;
-              for (var i = 0, l = stops.length; i < l; i++) {
-                var stop = stops[i], stopColor = stop._color, alpha = stopColor.getAlpha(), offset = stop._offset;
+              for (var i2 = 0, l = stops.length; i2 < l; i2++) {
+                var stop = stops[i2], stopColor = stop._color, alpha = stopColor.getAlpha(), offset = stop._offset;
                 attrs = {
-                  offset: offset == null ? i / (l - 1) : offset
+                  offset: offset == null ? i2 / (l - 1) : offset
                 };
                 if (stopColor)
                   attrs["stop-color"] = stopColor.toCSS(true);
@@ -12325,7 +12325,7 @@
             var svg = node, defs = null;
             if (definitions) {
               svg = node.nodeName.toLowerCase() === "svg" && node;
-              for (var i in definitions.svgs) {
+              for (var i2 in definitions.svgs) {
                 if (!defs) {
                   if (!svg) {
                     svg = SvgElement.create("svg");
@@ -12336,7 +12336,7 @@
                     svg.firstChild
                   );
                 }
-                defs.appendChild(definitions.svgs[i]);
+                defs.appendChild(definitions.svgs[i2]);
               }
               definitions = null;
             }
@@ -12388,8 +12388,8 @@
                   formatter
                 ));
               }
-              for (var i = 0, l = children.length; i < l; i++) {
-                parent.appendChild(exportSVG(children[i], options, true));
+              for (var i2 = 0, l = children.length; i2 < l; i2++) {
+                parent.appendChild(exportSVG(children[i2], options, true));
               }
               return exportDefinitions(node, options);
             }
@@ -12422,12 +12422,12 @@
             }
             if (isRoot) {
               var defs = node.querySelectorAll("defs");
-              for (var i = 0, l = defs.length; i < l; i++) {
-                importNode(defs[i], options, false);
+              for (var i2 = 0, l = defs.length; i2 < l; i2++) {
+                importNode(defs[i2], options, false);
               }
             }
-            for (var i = 0, l = nodes.length; i < l; i++) {
-              var childNode = nodes[i], child;
+            for (var i2 = 0, l = nodes.length; i2 < l; i2++) {
+              var childNode = nodes[i2], child;
               if (childNode.nodeType === 1 && !/^defs$/i.test(childNode.nodeName) && (child = importNode(childNode, options, false)) && !(child instanceof SymbolDefinition))
                 children.push(child);
             }
@@ -12445,10 +12445,10 @@
             var coords = node.getAttribute("points").match(
               /[+-]?(?:\d*\.\d+|\d+\.?)(?:[eE][+-]?\d+)?/g
             ), points = [];
-            for (var i = 0, l = coords.length; i < l; i += 2)
+            for (var i2 = 0, l = coords.length; i2 < l; i2 += 2)
               points.push(new Point(
-                parseFloat(coords[i]),
-                parseFloat(coords[i + 1])
+                parseFloat(coords[i2]),
+                parseFloat(coords[i2 + 1])
               ));
             var path = new Path(points);
             if (type === "polygon")
@@ -12468,8 +12468,8 @@
               }
             } else {
               var nodes = node.childNodes, stops = [];
-              for (var i = 0, l = nodes.length; i < l; i++) {
-                var child = nodes[i];
+              for (var i2 = 0, l = nodes.length; i2 < l; i2++) {
+                var child = nodes[i2];
                 if (child.nodeType === 1)
                   stops.push(applyAttributes(new GradientStop(), child));
               }
@@ -12521,8 +12521,8 @@
           var importers = {
             "#document": function(node, type, options, isRoot) {
               var nodes = node.childNodes;
-              for (var i = 0, l = nodes.length; i < l; i++) {
-                var child = nodes[i];
+              for (var i2 = 0, l = nodes.length; i2 < l; i2++) {
+                var child = nodes[i2];
                 if (child.nodeType === 1)
                   return importNode(child, options, isRoot);
               }
@@ -12592,8 +12592,8 @@
           function applyTransform(item, value, name, node) {
             if (item.transform) {
               var transforms = (node.getAttribute(name) || "").split(/\)\s*/g), matrix = new Matrix();
-              for (var i = 0, l = transforms.length; i < l; i++) {
-                var transform = transforms[i];
+              for (var i2 = 0, l = transforms.length; i2 < l; i2++) {
+                var transform = transforms[i2];
                 if (!transform)
                   break;
                 var parts = transform.split(/\(\s*/), command = parts[0], v = parts[1].split(/[\s,]+/g);
@@ -12926,17 +12926,17 @@
                 inputLen = input.length;
                 setOptions(opts);
                 initTokenState();
-                var t = {};
+                var t2 = {};
                 function getToken(forceRegexp) {
                   lastEnd = tokEnd;
                   readToken(forceRegexp);
-                  t.start = tokStart;
-                  t.end = tokEnd;
-                  t.startLoc = tokStartLoc;
-                  t.endLoc = tokEndLoc;
-                  t.type = tokType;
-                  t.value = tokVal;
-                  return t;
+                  t2.start = tokStart;
+                  t2.end = tokEnd;
+                  t2.startLoc = tokStartLoc;
+                  t2.endLoc = tokEndLoc;
+                  t2.type = tokType;
+                  t2.value = tokVal;
+                  return t2;
                 }
                 getToken.jumpTo = function(pos, reAllowed) {
                   tokPos = pos;
@@ -13059,20 +13059,20 @@
                 words = words.split(" ");
                 var f = "", cats = [];
                 out:
-                  for (var i = 0; i < words.length; ++i) {
+                  for (var i2 = 0; i2 < words.length; ++i2) {
                     for (var j = 0; j < cats.length; ++j)
-                      if (cats[j][0].length == words[i].length) {
-                        cats[j].push(words[i]);
+                      if (cats[j][0].length == words[i2].length) {
+                        cats[j].push(words[i2]);
                         continue out;
                       }
-                    cats.push([words[i]]);
+                    cats.push([words[i2]]);
                   }
                 function compareTo(arr) {
                   if (arr.length == 1)
                     return f += "return str === " + JSON.stringify(arr[0]) + ";";
                   f += "switch(str){";
-                  for (var i2 = 0; i2 < arr.length; ++i2)
-                    f += "case " + JSON.stringify(arr[i2]) + ":";
+                  for (var i3 = 0; i3 < arr.length; ++i3)
+                    f += "case " + JSON.stringify(arr[i3]) + ":";
                   f += "return true}return false;";
                 }
                 if (cats.length > 3) {
@@ -13080,8 +13080,8 @@
                     return b.length - a.length;
                   });
                   f += "switch(str.length){";
-                  for (var i = 0; i < cats.length; ++i) {
-                    var cat = cats[i];
+                  for (var i2 = 0; i2 < cats.length; ++i2) {
+                    var cat = cats[i2];
                     f += "case " + cat[0].length + ":";
                     compareTo(cat);
                   }
@@ -13446,7 +13446,7 @@
               }
               function readInt(radix, len) {
                 var start = tokPos, total = 0;
-                for (var i = 0, e = len == null ? Infinity : len; i < e; ++i) {
+                for (var i2 = 0, e = len == null ? Infinity : len; i2 < e; ++i2) {
                   var code = input.charCodeAt(tokPos), val;
                   if (code >= 97)
                     val = code - 97 + 10;
@@ -13756,8 +13756,8 @@
                       node.label = parseIdent();
                       semicolon();
                     }
-                    for (var i = 0; i < labels.length; ++i) {
-                      var lab = labels[i];
+                    for (var i2 = 0; i2 < labels.length; ++i2) {
+                      var lab = labels[i2];
                       if (node.label == null || lab.name === node.label.name) {
                         if (lab.kind != null && (isBreak || lab.kind === "loop"))
                           break;
@@ -13765,7 +13765,7 @@
                           break;
                       }
                     }
-                    if (i === labels.length)
+                    if (i2 === labels.length)
                       raise(node.start, "Unsyntactic " + starttype.keyword);
                     return finishNode(node, isBreak ? "BreakStatement" : "ContinueStatement");
                   case _debugger:
@@ -13911,8 +13911,8 @@
                   default:
                     var maybeName = tokVal, expr = parseExpression();
                     if (starttype === _name && expr.type === "Identifier" && eat(_colon)) {
-                      for (var i = 0; i < labels.length; ++i)
-                        if (labels[i].name === maybeName)
+                      for (var i2 = 0; i2 < labels.length; ++i2)
+                        if (labels[i2].name === maybeName)
                           raise(expr.start, "Label '" + maybeName + "' is already declared");
                       var kind = tokType.isLoop ? "loop" : tokType === _switch ? "switch" : null;
                       labels.push({ name: maybeName, kind });
@@ -14180,8 +14180,8 @@
                   } else
                     unexpected();
                   if (prop.key.type === "Identifier" && (strict || sawGetSet)) {
-                    for (var i = 0; i < node.properties.length; ++i) {
-                      var other = node.properties[i];
+                    for (var i2 = 0; i2 < node.properties.length; ++i2) {
+                      var other = node.properties[i2];
                       if (other.key.name === prop.key.name) {
                         var conflict = kind == other.kind || isGetSet && other.kind === "init" || kind === "init" && (other.kind === "get" || other.kind === "set");
                         if (conflict && !strict && kind === "init" && other.kind === "init")
@@ -14224,12 +14224,12 @@
                 inFunction = oldInFunc;
                 labels = oldLabels;
                 if (strict || node.body.body.length && isUseStrict(node.body.body[0])) {
-                  for (var i = node.id ? -1 : 0; i < node.params.length; ++i) {
-                    var id = i < 0 ? node.id : node.params[i];
+                  for (var i2 = node.id ? -1 : 0; i2 < node.params.length; ++i2) {
+                    var id = i2 < 0 ? node.id : node.params[i2];
                     if (isStrictReservedWord(id.name) || isStrictBadIdWord(id.name))
                       raise(id.start, "Defining '" + id.name + "' in strict mode");
-                    if (i >= 0) {
-                      for (var j = 0; j < i; ++j)
+                    if (i2 >= 0) {
+                      for (var j = 0; j < i2; ++j)
                         if (id.name === node.params[j].name)
                           raise(id.start, "Argument name clash in strict mode");
                     }
@@ -14344,8 +14344,8 @@
             options = options || {};
             var insertions = [];
             function getOffset(offset2) {
-              for (var i = 0, l = insertions.length; i < l; i++) {
-                var insertion = insertions[i];
+              for (var i2 = 0, l = insertions.length; i2 < l; i2++) {
+                var insertion = insertions[i2];
                 if (insertion[0] >= offset2)
                   break;
                 offset2 += insertion[1];
@@ -14366,9 +14366,9 @@
             }
             function replaceCode(node, str) {
               var start = getOffset(node.range[0]), end = getOffset(node.range[1]), insert = 0;
-              for (var i = insertions.length - 1; i >= 0; i--) {
-                if (start > insertions[i][0]) {
-                  insert = i + 1;
+              for (var i2 = insertions.length - 1; i2 >= 0; i2--) {
+                if (start > insertions[i2][0]) {
+                  insert = i2 + 1;
                   break;
                 }
               }
@@ -14457,8 +14457,8 @@
                   if (key !== "range" && key !== "loc") {
                     var value = node[key];
                     if (Array.isArray(value)) {
-                      for (var i = 0, l = value.length; i < l; i++) {
-                        walkAST(value[i], node, paperFeatures2);
+                      for (var i2 = 0, l = value.length; i2 < l; i2++) {
+                        walkAST(value[i2], node, paperFeatures2);
                       }
                     } else if (value && typeof value === "object") {
                       walkAST(value, node, paperFeatures2);
@@ -14803,6 +14803,131 @@
       }
     });
   };
+
+  // node_modules/countup.js/dist/countUp.min.js
+  var t = function() {
+    return t = Object.assign || function(t2) {
+      for (var i2, n = 1, s = arguments.length; n < s; n++)
+        for (var a in i2 = arguments[n])
+          Object.prototype.hasOwnProperty.call(i2, a) && (t2[a] = i2[a]);
+      return t2;
+    }, t.apply(this, arguments);
+  };
+  var i = function() {
+    function i2(i3, n, s) {
+      var a = this;
+      this.endVal = n, this.options = s, this.version = "2.8.0", this.defaults = { startVal: 0, decimalPlaces: 0, duration: 2, useEasing: true, useGrouping: true, useIndianSeparators: false, smartEasingThreshold: 999, smartEasingAmount: 333, separator: ",", decimal: ".", prefix: "", suffix: "", enableScrollSpy: false, scrollSpyDelay: 200, scrollSpyOnce: false }, this.finalEndVal = null, this.useEasing = true, this.countDown = false, this.error = "", this.startVal = 0, this.paused = true, this.once = false, this.count = function(t2) {
+        a.startTime || (a.startTime = t2);
+        var i4 = t2 - a.startTime;
+        a.remaining = a.duration - i4, a.useEasing ? a.countDown ? a.frameVal = a.startVal - a.easingFn(i4, 0, a.startVal - a.endVal, a.duration) : a.frameVal = a.easingFn(i4, a.startVal, a.endVal - a.startVal, a.duration) : a.frameVal = a.startVal + (a.endVal - a.startVal) * (i4 / a.duration);
+        var n2 = a.countDown ? a.frameVal < a.endVal : a.frameVal > a.endVal;
+        a.frameVal = n2 ? a.endVal : a.frameVal, a.frameVal = Number(a.frameVal.toFixed(a.options.decimalPlaces)), a.printValue(a.frameVal), i4 < a.duration ? a.rAF = requestAnimationFrame(a.count) : null !== a.finalEndVal ? a.update(a.finalEndVal) : a.options.onCompleteCallback && a.options.onCompleteCallback();
+      }, this.formatNumber = function(t2) {
+        var i4, n2, s2, e, o = t2 < 0 ? "-" : "";
+        i4 = Math.abs(t2).toFixed(a.options.decimalPlaces);
+        var r = (i4 += "").split(".");
+        if (n2 = r[0], s2 = r.length > 1 ? a.options.decimal + r[1] : "", a.options.useGrouping) {
+          e = "";
+          for (var l = 3, h = 0, u = 0, p = n2.length; u < p; ++u)
+            a.options.useIndianSeparators && 4 === u && (l = 2, h = 1), 0 !== u && h % l == 0 && (e = a.options.separator + e), h++, e = n2[p - u - 1] + e;
+          n2 = e;
+        }
+        return a.options.numerals && a.options.numerals.length && (n2 = n2.replace(/[0-9]/g, function(t3) {
+          return a.options.numerals[+t3];
+        }), s2 = s2.replace(/[0-9]/g, function(t3) {
+          return a.options.numerals[+t3];
+        })), o + a.options.prefix + n2 + s2 + a.options.suffix;
+      }, this.easeOutExpo = function(t2, i4, n2, s2) {
+        return n2 * (1 - Math.pow(2, -10 * t2 / s2)) * 1024 / 1023 + i4;
+      }, this.options = t(t({}, this.defaults), s), this.formattingFn = this.options.formattingFn ? this.options.formattingFn : this.formatNumber, this.easingFn = this.options.easingFn ? this.options.easingFn : this.easeOutExpo, this.startVal = this.validateValue(this.options.startVal), this.frameVal = this.startVal, this.endVal = this.validateValue(n), this.options.decimalPlaces = Math.max(this.options.decimalPlaces), this.resetDuration(), this.options.separator = String(this.options.separator), this.useEasing = this.options.useEasing, "" === this.options.separator && (this.options.useGrouping = false), this.el = "string" == typeof i3 ? document.getElementById(i3) : i3, this.el ? this.printValue(this.startVal) : this.error = "[CountUp] target is null or undefined", "undefined" != typeof window && this.options.enableScrollSpy && (this.error ? console.error(this.error, i3) : (window.onScrollFns = window.onScrollFns || [], window.onScrollFns.push(function() {
+        return a.handleScroll(a);
+      }), window.onscroll = function() {
+        window.onScrollFns.forEach(function(t2) {
+          return t2();
+        });
+      }, this.handleScroll(this)));
+    }
+    return i2.prototype.handleScroll = function(t2) {
+      if (t2 && window && !t2.once) {
+        var i3 = window.innerHeight + window.scrollY, n = t2.el.getBoundingClientRect(), s = n.top + window.pageYOffset, a = n.top + n.height + window.pageYOffset;
+        a < i3 && a > window.scrollY && t2.paused ? (t2.paused = false, setTimeout(function() {
+          return t2.start();
+        }, t2.options.scrollSpyDelay), t2.options.scrollSpyOnce && (t2.once = true)) : (window.scrollY > a || s > i3) && !t2.paused && t2.reset();
+      }
+    }, i2.prototype.determineDirectionAndSmartEasing = function() {
+      var t2 = this.finalEndVal ? this.finalEndVal : this.endVal;
+      this.countDown = this.startVal > t2;
+      var i3 = t2 - this.startVal;
+      if (Math.abs(i3) > this.options.smartEasingThreshold && this.options.useEasing) {
+        this.finalEndVal = t2;
+        var n = this.countDown ? 1 : -1;
+        this.endVal = t2 + n * this.options.smartEasingAmount, this.duration = this.duration / 2;
+      } else
+        this.endVal = t2, this.finalEndVal = null;
+      null !== this.finalEndVal ? this.useEasing = false : this.useEasing = this.options.useEasing;
+    }, i2.prototype.start = function(t2) {
+      this.error || (this.options.onStartCallback && this.options.onStartCallback(), t2 && (this.options.onCompleteCallback = t2), this.duration > 0 ? (this.determineDirectionAndSmartEasing(), this.paused = false, this.rAF = requestAnimationFrame(this.count)) : this.printValue(this.endVal));
+    }, i2.prototype.pauseResume = function() {
+      this.paused ? (this.startTime = null, this.duration = this.remaining, this.startVal = this.frameVal, this.determineDirectionAndSmartEasing(), this.rAF = requestAnimationFrame(this.count)) : cancelAnimationFrame(this.rAF), this.paused = !this.paused;
+    }, i2.prototype.reset = function() {
+      cancelAnimationFrame(this.rAF), this.paused = true, this.resetDuration(), this.startVal = this.validateValue(this.options.startVal), this.frameVal = this.startVal, this.printValue(this.startVal);
+    }, i2.prototype.update = function(t2) {
+      cancelAnimationFrame(this.rAF), this.startTime = null, this.endVal = this.validateValue(t2), this.endVal !== this.frameVal && (this.startVal = this.frameVal, null == this.finalEndVal && this.resetDuration(), this.finalEndVal = null, this.determineDirectionAndSmartEasing(), this.rAF = requestAnimationFrame(this.count));
+    }, i2.prototype.printValue = function(t2) {
+      var i3;
+      if (this.el) {
+        var n = this.formattingFn(t2);
+        if (null === (i3 = this.options.plugin) || void 0 === i3 ? void 0 : i3.render)
+          this.options.plugin.render(this.el, n);
+        else if ("INPUT" === this.el.tagName)
+          this.el.value = n;
+        else
+          "text" === this.el.tagName || "tspan" === this.el.tagName ? this.el.textContent = n : this.el.innerHTML = n;
+      }
+    }, i2.prototype.ensureNumber = function(t2) {
+      return "number" == typeof t2 && !isNaN(t2);
+    }, i2.prototype.validateValue = function(t2) {
+      var i3 = Number(t2);
+      return this.ensureNumber(i3) ? i3 : (this.error = "[CountUp] invalid start or end value: ".concat(t2), null);
+    }, i2.prototype.resetDuration = function() {
+      this.startTime = null, this.duration = 1e3 * Number(this.options.duration), this.remaining = this.duration;
+    }, i2;
+  }();
+
+  // src/utilities/count.js
+  var countUp = function(data) {
+    const items = document.querySelectorAll("[cr-count-number]");
+    items.forEach((item) => {
+      const number = +item.textContent;
+      if (!number || Number.isNaN(number))
+        return;
+      decimalPoints = countDecimalPoints(number);
+      const countUp2 = new i(item, number, {
+        useGrouping: false,
+        decimalPlaces: decimalPoints,
+        duration: 2.5
+      });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          start: "top bottom",
+          end: "top 10%",
+          scrub: 1,
+          onEnter: () => {
+            countUp2.start();
+          }
+        }
+      });
+    });
+  };
+  function countDecimalPoints(number) {
+    const numberString = number.toString();
+    const parts = numberString.split(".");
+    if (parts.length === 1) {
+      return 0;
+    }
+    return parts[1].length;
+  }
 
   // src/pages/home.js
   var homeHeader = function() {
@@ -15193,13 +15318,13 @@
   };
 
   // src/index.js
-  var import_paper2 = __toESM(require_paper_full(), 1);
   var ACTIVE_CLASS2 = "is-active";
   document.addEventListener("DOMContentLoaded", function(e) {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(Flip);
     let mm = gsap.matchMedia();
     const lineSections = document.querySelectorAll("[scroll-section]");
+    console.log("dev");
     const gsapInit = function() {
       mm.add(
         {
@@ -15211,6 +15336,7 @@
         (context) => {
           let { isMobile, isTablet, isDesktop, reduceMotion } = context.conditions;
           accordionAnimation();
+          countUp();
           productHeader(reduceMotion, isMobile);
           if (!reduceMotion) {
             homeHeader();

@@ -3,7 +3,7 @@ import { attr } from './attributes.js';
 // Animation for What We Do Dropdowns
 export const accordionAnimation = function () {
   // select the relevant items from the DOM
-  const accordionLists = document.querySelectorAll('[cr-accordion="list"]');
+  const accordionLists = gsap.utils.toArray('[cr-accordion="list"]');
   const ACCORDION_ITEM = '[cr-accordion="item"]';
   const ACCORDION_TOP = '[cr-accordion="top"]';
   const ACCORDION_OPEN = '[cr-accordion="open"]';

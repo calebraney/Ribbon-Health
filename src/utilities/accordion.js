@@ -12,6 +12,7 @@ export const accordionAnimation = function () {
   const OPTION_ONE_ACTIVE = 'cr-accordion-one-active';
   const OPTION_KEEP_ONE_OPEN = 'cr-accordion-keep-one-open';
   const OPTION_HOVER_OPEN = 'cr-accordion-hover';
+  const OPTION_SCROLL_OPEN = 'cr-accordion-scroll';
   const ACTIVE_CLASS = 'is-active';
 
   if (accordionLists.length === 0 || accordionLists === undefined) return;
@@ -21,13 +22,15 @@ export const accordionAnimation = function () {
     let oneActive = attr(false, list.getAttribute(OPTION_ONE_ACTIVE));
     let keepOneOpen = attr(false, list.getAttribute(OPTION_KEEP_ONE_OPEN));
     let hoverOnly = attr(false, list.getAttribute(OPTION_HOVER_OPEN));
+    let scrollOnly = attr(false, list.getAttribute(OPTION_SCROLL_OPEN));
     //open the first accordion
     const firstItem = list.firstElementChild;
-    if (firstOpen) {
-      firstItem.classList.add(ACTIVE_CLASS);
-      firstItem.querySelector(ACCORDION_OPEN).click();
-    }
-    if (!hoverOnly) {
+
+    if (!hoverOnly && !scrollOnly) {
+      if (firstOpen && firstItem) {
+        firstItem.classList.add(ACTIVE_CLASS);
+        firstItem.querySelector(ACCORDION_OPEN).click();
+      }
       // Add event listener for when accordion lists are clicked
       list.addEventListener('click', function (e) {
         // check if the clicked element was the top of an accordion and get that accordion
@@ -82,6 +85,49 @@ export const accordionAnimation = function () {
         item.addEventListener('mouseout', function () {
           this.classList.remove(ACTIVE_CLASS);
           item.querySelector(ACCORDION_CLOSE).click();
+        });
+      });
+    }
+    if (scrollOnly) {
+      const accordionItems = list.querySelectorAll(ACCORDION_ITEM);
+      const listArray = gsap.utils.toArray(accordionItems);
+      accordionItems.forEach((item, index) => {
+        // start with the first item open
+        firstItem.classList.add(ACTIVE_CLASS);
+        firstItem.querySelector(ACCORDION_OPEN).click();
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: item,
+            start: 'top center',
+            end: 'bottom center',
+            scrub: 0,
+            onEnter: () => {
+              item.classList.add(ACTIVE_CLASS);
+              item.querySelector(ACCORDION_OPEN).click();
+              // console.log(`open ${item}`);
+            },
+            onLeave: () => {
+              // don't remove class on leave of the last item
+              if (index !== listArray.length - 1) {
+                item.classList.remove(ACTIVE_CLASS);
+                item.querySelector(ACCORDION_CLOSE).click();
+              }
+            },
+            onEnterBack: () => {
+              item.classList.add(ACTIVE_CLASS);
+              item.querySelector(ACCORDION_OPEN).click();
+              // console.log(`open ${item}`);
+            },
+            onLeaveBack: () => {
+              // don't remove class on leaveback of the last item
+              if (index !== 0) {
+                item.classList.remove(ACTIVE_CLASS);
+                item.querySelector(ACCORDION_CLOSE).click();
+                // console.log(`close ${item}`);
+              }
+            },
+          },
         });
       });
     }

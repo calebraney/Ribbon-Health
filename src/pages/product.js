@@ -1,18 +1,21 @@
 import paperCore from 'paper';
 import { ACTIVE_CLASS } from '../index';
+import { attr } from '../utilities/attributes';
+import { headerTL, progress } from '../index';
 
 // Header Animation
 export const productHeader = function (reduceMotion = false, isMobile = false) {
-  // global variables
-  let headerTL;
-  let progress = 0;
   // get core variables
   const { Path, Point, Group, Color } = paperCore;
   const canvas = document.querySelector('#paper-canvas');
   const headerComponent = document.querySelector('#process-header');
+  //if project exists clear it
+  if (paperCore.project) {
+    paperCore.project.clear();
+  }
+
   if (!canvas || !headerComponent) return;
   paperCore.setup(canvas);
-  paperCore.project.clear();
   let NUM_COLS = 80;
   // change number of columns on mobile
   if (isMobile) {
@@ -264,5 +267,67 @@ export const productData = function (start = 'top 1%', end = 'bottom 99%') {
       },
       '<'
     );
+  });
+};
+
+export const platform = function () {
+  //tracking attributes
+  const ANIMATION_ID = 'cr-platform';
+  const PLATFORM_NUMBER = 'cr-platform-number';
+  //elements
+  const WRAP = '[cr-platform="wrap"]';
+  const ITEM = '[cr-platform="item"]';
+  const NAV_ITEM = '[cr-platform="nav-item"]';
+  const NAV_BG = '[cr-platform="nav-bg"]';
+  const components = gsap.utils.toArray(WRAP);
+  if (components.length === 0) return;
+  components.forEach((component) => {
+    const items = component.querySelectorAll(ITEM);
+    const navItems = component.querySelectorAll(NAV_ITEM);
+    if (items.length === 0 || navItems.length === 0) return;
+    items.forEach((item) => {
+      const itemNumber = attr(0, item.getAttribute(PLATFORM_NUMBER));
+      let matchingNavItem, matchingNavBg;
+      //if the item number is not set return.
+      if (itemNumber === 0) return;
+      //get the matching nav item
+      navItems.forEach((navItem) => {
+        const navNumber = attr(0, navItem.getAttribute(PLATFORM_NUMBER));
+        if (navNumber === itemNumber) {
+          matchingNavItem = navItem;
+          matchingNavBg = navItem.querySelector(NAV_BG);
+        }
+      });
+      // if the matching nav item or background isn't found exit
+      if (!matchingNavItem || !matchingNavBg) return;
+      //scrolltrigger animation
+      tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          start: 'top center',
+          end: 'bottom center',
+          scrub: true,
+        },
+        defaults: {
+          duration: 1,
+          ease: 'none',
+        },
+      });
+      tl.fromTo(
+        matchingNavBg,
+        {
+          width: '0%',
+        },
+        { width: '100%' }
+      );
+      tl.fromTo(
+        matchingNavItem,
+        {
+          color: '#fff',
+        },
+        { color: '#000', duration: 0.5 },
+        '<.25'
+      );
+    });
   });
 };

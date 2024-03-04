@@ -25,8 +25,8 @@ export const homeSplitScroll = function () {
   const allImages = document.querySelectorAll('[cr-home-split="image"]');
   if (!triggerEl || allItems.length === 0 || allImages.length === 0) return;
   // define start and end positions
-  let scrollStart = 'top top';
   let scrollEnd = 'bottom bottom';
+  let scrollStart = 'top top';
   if (triggerEl.hasAttribute('cr-home-split-start')) {
     scrollStart = trigger.getAttribute('cr-home-split-start');
   }
@@ -78,8 +78,10 @@ export const homeSplitScroll = function () {
 };
 
 export const homeSplitScrollMobile = function () {
-  const splitItems = document.querySelectorAll('.split-hover_item');
-  const splitImages = document.querySelectorAll('.split-hover_image');
+  const splitItems = document.querySelectorAll('[cr-home-split="item"]');
+  const splitImages = document.querySelectorAll('[cr-home-split="image"]');
+  //return if the elements are't found
+  if (splitItems.length === 0 || splitImages.length === 0) return;
 
   splitItems.forEach((item, itemIndex) => {
     item.addEventListener('click', () => {

@@ -1,7 +1,8 @@
 import paperCore from 'paper';
-import { scrollLines } from './utilities/line.js';
-import { accordionAnimation } from './utilities/accordion.js';
-import { countUp } from './utilities/count.js';
+import { scrollLines } from './interactions/line.js';
+import { accordionAnimation } from './interactions/accordion.js';
+import { countUp } from './interactions/count.js';
+import { hoverActive } from './interactions/hoverActive.js';
 import { homeHeader, homeSplitScroll, homeSplitScrollMobile } from './pages/home.js';
 import { productHeader, process, iconHighlight, productData, platform } from './pages/product.js';
 import { scrollTable } from './pages/use-cases.js';
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         let { isMobile, isTablet, isDesktop, reduceMotion } = context.conditions;
         accordionAnimation();
         countUp();
+        hoverActive();
         productHeader(reduceMotion, isMobile);
         //Run if reduce motion is off
         if (!reduceMotion) {

@@ -1,6 +1,6 @@
 import paperCore from 'paper';
 import { ACTIVE_CLASS } from '../index';
-import { attr } from '../utilities/attributes';
+import { attr } from '../interactions/attributes';
 import { headerTL, progress } from '../index';
 
 // Header Animation

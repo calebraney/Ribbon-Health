@@ -742,8 +742,8 @@
           statics: new function() {
             function handleAttribute(name) {
               name += "Attribute";
-              return function(el, attr2) {
-                return el[name](attr2) || el[name]("data-paper-" + attr2);
+              return function(el, attr3) {
+                return el[name](attr3) || el[name]("data-paper-" + attr3);
               };
             }
             return {
@@ -12711,7 +12711,7 @@
             }
           });
           function getAttribute(node, name, styles) {
-            var attr2 = node.attributes[name], value = attr2 && attr2.value;
+            var attr3 = node.attributes[name], value = attr3 && attr3.value;
             if (!value && node.style) {
               var style = Base.camelize(name);
               value = node.style[style];
@@ -14671,7 +14671,7 @@
   // src/index.js
   var import_paper2 = __toESM(require_paper_full(), 1);
 
-  // src/utilities/attributes.js
+  // src/interactions/attributes.js
   var attr = function(defaultVal, attrVal) {
     const defaultValType = typeof defaultVal;
     if (typeof attrVal !== "string" || attrVal.trim() === "")
@@ -14687,7 +14687,7 @@
     return defaultVal;
   };
 
-  // src/utilities/line.js
+  // src/interactions/line.js
   var scrollLines = function(trigger2, mobile = false) {
     let scrollStart = attr("top 90%", trigger2.getAttribute("scroll-start"));
     let scrollEnd = attr("bottom 90%", trigger2.getAttribute("scroll-end"));
@@ -14736,7 +14736,7 @@
     });
   };
 
-  // src/utilities/accordion.js
+  // src/interactions/accordion.js
   var accordionAnimation = function() {
     const accordionLists = gsap.utils.toArray('[cr-accordion="list"]');
     const ACCORDION_ITEM = '[cr-accordion="item"]';
@@ -14935,7 +14935,7 @@
     }, i2;
   }();
 
-  // src/utilities/count.js
+  // src/interactions/count.js
   var countUp = function(data) {
     const items = document.querySelectorAll("[cr-count-number]");
     items.forEach((item) => {
@@ -14969,6 +14969,63 @@
     }
     return parts[1].length;
   }
+
+  // src/utilities.js
+  var attr2 = function(defaultVal, attrVal) {
+    const defaultValType = typeof defaultVal;
+    if (typeof attrVal !== "string" || attrVal.trim() === "")
+      return defaultVal;
+    if (attrVal === "true" && defaultValType === "boolean")
+      return true;
+    if (attrVal === "false" && defaultValType === "boolean")
+      return false;
+    if (isNaN(attrVal) && defaultValType === "string")
+      return attrVal;
+    if (!isNaN(attrVal) && defaultValType === "number")
+      return +attrVal;
+    return defaultVal;
+  };
+
+  // src/interactions/hoverActive.js
+  var hoverActive = function() {
+    const ANIMATION_ID = "hoveractive";
+    const WRAP = '[cr-hoveractive="wrap"]';
+    const ITEM = '[cr-hoveractive="item"]';
+    const OPTION_ACTIVE_CLASS = "cr-hoveractive-class";
+    const OPTION_KEEP_ACTIVE = "cr-hoveractive-keep-active";
+    const ACTIVE_CLASS3 = "is-active";
+    const wraps = gsap.utils.toArray(WRAP);
+    const activateOnHover = function(parent) {
+      const children = parent.querySelectorAll(ITEM);
+      let activeClass = attr2(ACTIVE_CLASS3, parent.getAttribute(OPTION_ACTIVE_CLASS));
+      let keepActive = attr2(false, parent.getAttribute(OPTION_KEEP_ACTIVE));
+      console.log("enter");
+      children.forEach((currentItem) => {
+        currentItem.addEventListener("mouseover", function(e) {
+          children.forEach((child) => {
+            if (child === currentItem) {
+              child.classList.add(activeClass);
+            } else {
+              child.classList.remove(activeClass);
+            }
+          });
+        });
+        currentItem.addEventListener("mouseleave", function(e) {
+          if (!keepActive) {
+            currentItem.classList.remove(activeClass);
+          }
+        });
+      });
+    };
+    if (wraps.length >= 0) {
+      wraps.forEach((wrap) => {
+        activateOnHover(wrap);
+      });
+    } else {
+      const body = document.querySelector(body);
+      activateOnHover(body);
+    }
+  };
 
   // src/pages/home.js
   var homeHeader = function() {
@@ -15440,6 +15497,7 @@
           let { isMobile, isTablet, isDesktop, reduceMotion } = context.conditions;
           accordionAnimation();
           countUp();
+          hoverActive();
           productHeader(reduceMotion, isMobile);
           if (!reduceMotion) {
             homeHeader();

@@ -15067,7 +15067,7 @@
 
   // src/interactions/tabs.js
   var tabsAnimation = function() {
-    const ANIMATION_ID = "hoveractive";
+    const ANIMATION_ID = "cr-tabs";
     const WRAP = '[cr-tabs="wrap"]';
     const TAB_LINK = ".w-tab-link";
     const LINK_ACTIVE_CLASS = "w--current";

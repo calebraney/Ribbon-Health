@@ -14985,6 +14985,42 @@
       return +attrVal;
     return defaultVal;
   };
+  var ClassWatcher = class {
+    constructor(targetNode, classToWatch, classAddedCallback, classRemovedCallback) {
+      this.targetNode = targetNode;
+      this.classToWatch = classToWatch;
+      this.classAddedCallback = classAddedCallback;
+      this.classRemovedCallback = classRemovedCallback;
+      this.observer = null;
+      this.lastClassState = targetNode.classList.contains(this.classToWatch);
+      this.init();
+    }
+    init() {
+      this.observer = new MutationObserver(this.mutationCallback);
+      this.observe();
+    }
+    observe() {
+      this.observer.observe(this.targetNode, { attributes: true });
+    }
+    disconnect() {
+      this.observer.disconnect();
+    }
+    mutationCallback = (mutationsList) => {
+      for (let mutation of mutationsList) {
+        if (mutation.type === "attributes" && mutation.attributeName === "class") {
+          let currentClassState = mutation.target.classList.contains(this.classToWatch);
+          if (this.lastClassState !== currentClassState) {
+            this.lastClassState = currentClassState;
+            if (currentClassState) {
+              this.classAddedCallback();
+            } else {
+              this.classRemovedCallback();
+            }
+          }
+        }
+      }
+    };
+  };
 
   // src/interactions/hoverActive.js
   var hoverActive = function() {
@@ -14999,7 +15035,6 @@
       const children = parent.querySelectorAll(ITEM);
       let activeClass = attr2(ACTIVE_CLASS3, parent.getAttribute(OPTION_ACTIVE_CLASS));
       let keepActive = attr2(false, parent.getAttribute(OPTION_KEEP_ACTIVE));
-      console.log("enter");
       children.forEach((currentItem) => {
         currentItem.addEventListener("mouseover", function(e) {
           children.forEach((child) => {
@@ -15025,6 +15060,57 @@
       const body = document.querySelector(body);
       activateOnHover(body);
     }
+  };
+
+  // src/interactions/tabs.js
+  var tabsAnimation = function() {
+    const ANIMATION_ID = "hoveractive";
+    const WRAP = '[cr-tabs="wrap"]';
+    const TAB_LINK = ".w-tab-link";
+    const LINK_ACTIVE_CLASS = "w--current";
+    const TAB_ITEM = ".w-tab-pane";
+    const ITEM_ACTIVE_CLASS = "w--tab-active";
+    const TAB_EL = "[cr-tabs-el]";
+    const wraps = [...document.querySelectorAll(WRAP)];
+    if (wraps.length === 0)
+      return;
+    wraps.forEach((wrap) => {
+      const items = [...wrap.querySelectorAll(TAB_ITEM)];
+      const links = [...wrap.querySelectorAll(TAB_LINK)];
+      if (items.length === 0)
+        return;
+      items.forEach((item, index) => {
+        const link = links[index];
+        let elements = [...item.querySelectorAll(TAB_EL)];
+        if (elements.length === 0) {
+          elements = [...item.children];
+        }
+        const tl2 = gsap.timeline({
+          paused: true,
+          defaults: {
+            duration: 0.4,
+            ease: "power2.out"
+          }
+        });
+        tl2.fromTo(
+          elements,
+          { opacity: 0, y: "2rem" },
+          {
+            opacity: 1,
+            y: "0rem",
+            stagger: { each: 0.2, from: "start" }
+          }
+        );
+        tl2.progress(1);
+        function tabActivated() {
+          tl2.progress(0);
+          tl2.restart();
+        }
+        function tabDeactivated() {
+        }
+        let classWatcher = new ClassWatcher(item, ITEM_ACTIVE_CLASS, tabActivated, tabDeactivated);
+      });
+    });
   };
 
   // src/pages/home.js
@@ -15496,6 +15582,7 @@
         (context) => {
           let { isMobile, isTablet, isDesktop, reduceMotion } = context.conditions;
           accordionAnimation();
+          tabsAnimation();
           countUp();
           hoverActive();
           productHeader(reduceMotion, isMobile);

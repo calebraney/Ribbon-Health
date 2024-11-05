@@ -3,6 +3,7 @@ import { scrollLines } from './interactions/line.js';
 import { accordionAnimation } from './interactions/accordion.js';
 import { countUp } from './interactions/count.js';
 import { hoverActive } from './interactions/hoverActive.js';
+import { tabsAnimation } from './interactions/tabs.js';
 import { homeHeader, homeSplitScroll, homeSplitScrollMobile } from './pages/home.js';
 import { productHeader, process, iconHighlight, productData, platform } from './pages/product.js';
 import { scrollTable } from './pages/use-cases.js';
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
   let mm = gsap.matchMedia();
   //Select Elements
   const lineSections = document.querySelectorAll('[scroll-section]');
+
   //activate animations
   const gsapInit = function () {
     mm.add(
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
       (context) => {
         let { isMobile, isTablet, isDesktop, reduceMotion } = context.conditions;
         accordionAnimation();
+        tabsAnimation();
         countUp();
         hoverActive();
         productHeader(reduceMotion, isMobile);

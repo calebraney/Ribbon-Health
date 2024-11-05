@@ -21,7 +21,7 @@ export const hoverActive = function () {
     let keepActive = attr(false, parent.getAttribute(OPTION_KEEP_ACTIVE));
 
     //on each child
-    console.log('enter');
+    // console.log('enter');
     children.forEach((currentItem) => {
       //when hovered in
       currentItem.addEventListener('mouseover', function (e) {

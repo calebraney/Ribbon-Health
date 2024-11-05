@@ -16,13 +16,19 @@ export let headerTL;
 export let progress = 0;
 
 document.addEventListener('DOMContentLoaded', function (e) {
-  // register gsap plugin
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(Flip);
-  let mm = gsap.matchMedia();
+  // register gsap plugins if available
+  if (gsap.ScrollTrigger !== undefined) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+  if (gsap.Flip !== undefined) {
+    gsap.registerPlugin(Flip);
+  }
+
   //Select Elements
   const lineSections = document.querySelectorAll('[scroll-section]');
 
+  //run media query
+  let mm = gsap.matchMedia();
   //activate animations
   const gsapInit = function () {
     mm.add(

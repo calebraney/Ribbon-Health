@@ -15567,10 +15567,14 @@
   var headerTL;
   var progress = 0;
   document.addEventListener("DOMContentLoaded", function(e) {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(Flip);
-    let mm = gsap.matchMedia();
+    if (gsap.ScrollTrigger !== void 0) {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+    if (gsap.Flip !== void 0) {
+      gsap.registerPlugin(Flip);
+    }
     const lineSections = document.querySelectorAll("[scroll-section]");
+    let mm = gsap.matchMedia();
     const gsapInit = function() {
       mm.add(
         {

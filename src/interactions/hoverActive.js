@@ -6,11 +6,12 @@ export const hoverActive = function () {
   //elements
   const WRAP = '[cr-hoveractive="wrap"]';
   const ITEM = '[cr-hoveractive="item"]';
-  //option for active class and default class
+  //options
   const OPTION_ACTIVE_CLASS = 'cr-hoveractive-class';
   const OPTION_KEEP_ACTIVE = 'cr-hoveractive-keep-active';
   const ACTIVE_CLASS = 'is-active';
-  // get all links without a no-hover attribute and any other elements with a hover attribute into an array
+
+  //select all the wrap elements
   const wraps = gsap.utils.toArray(WRAP);
 
   const activateOnHover = function (parent) {

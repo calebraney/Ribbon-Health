@@ -14956,6 +14956,9 @@
           scrub: 1,
           onEnter: () => {
             countUp2.start();
+          },
+          onEnterBack: () => {
+            countUp2.start();
           }
         }
       });

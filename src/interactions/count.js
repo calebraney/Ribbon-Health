@@ -20,6 +20,9 @@ export const countUp = function (data) {
         onEnter: () => {
           countUp.start();
         },
+        onEnterBack: () => {
+          countUp.start();
+        },
       },
     });
   });

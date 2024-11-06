@@ -56,7 +56,7 @@
               if (this.hasOwnProperty(i2))
                 iter.call(bind, this[i2], i2, this);
             }
-          }, set = Object.assign || function(dst) {
+          }, set2 = Object.assign || function(dst) {
             for (var i2 = 1, l = arguments.length; i2 < l; i2++) {
               var src = arguments[i2];
               for (var key in src) {
@@ -100,9 +100,9 @@
                   field(name);
               }
               for (var name in beansNames) {
-                var part = beansNames[name], set2 = dest["set" + part], get = dest["get" + part] || set2 && dest["is" + part];
-                if (get && (beans === true || get.length === 0))
-                  field(name, { get, set: set2 });
+                var part = beansNames[name], set3 = dest["set" + part], get2 = dest["get" + part] || set3 && dest["is" + part];
+                if (get2 && (beans === true || get2.length === 0))
+                  field(name, { get: get2, set: set3 });
               }
             }
             return dest;
@@ -111,7 +111,7 @@
             for (var i2 = 0, l = arguments.length; i2 < l; i2++) {
               var src = arguments[i2];
               if (src)
-                set(this, src);
+                set2(this, src);
             }
             return this;
           }
@@ -173,13 +173,13 @@
               return new this.constructor(this);
             },
             statics: {
-              set,
+              set: set2,
               each,
               create,
               define: define2,
               describe,
               clone: function(obj) {
-                return set(new obj.constructor(), obj);
+                return set2(new obj.constructor(), obj);
               },
               isPlainObject: function(obj) {
                 var ctor = obj != null && obj.constructor;
@@ -227,8 +227,8 @@
           beans: false,
           statics: {
             exports: {},
-            extend: function extend() {
-              var res = extend.base.apply(this, arguments), name = res.prototype._class;
+            extend: function extend2() {
+              var res = extend2.base.apply(this, arguments), name = res.prototype._class;
               if (name && !Base.exports[name])
                 Base.exports[name] = res;
               return res;
@@ -500,7 +500,7 @@
               }
               return list;
             },
-            splice: function(list, items, index, remove) {
+            splice: function(list, items, index, remove2) {
               var amount = items && items.length, append = index === undefined2;
               index = append ? list.length : index;
               if (index > list.length)
@@ -511,7 +511,7 @@
                 Base.push(list, items);
                 return [];
               } else {
-                var args = [index, remove];
+                var args = [index, remove2];
                 if (items)
                   Base.push(args, items);
                 var removed = list.splice.apply(list, args);
@@ -622,8 +622,8 @@
               if (events) {
                 var types = {};
                 Base.each(events, function(entry, key) {
-                  var isString = typeof entry === "string", name = isString ? entry : key, part = Base.capitalize(name), type = name.substring(2).toLowerCase();
-                  types[type] = isString ? {} : entry;
+                  var isString2 = typeof entry === "string", name = isString2 ? entry : key, part = Base.capitalize(name), type = name.substring(2).toLowerCase();
+                  types[type] = isString2 ? {} : entry;
                   name = "_" + name;
                   src["get" + part] = function() {
                     return this[name];
@@ -982,13 +982,13 @@
             return value < min ? min : value > max ? max : value;
           }
           function getDiscriminant(a, b, c) {
-            function split(v) {
+            function split2(v) {
               var x = v * 134217729, y = v - x, hi = y + x, lo = v - hi;
               return [hi, lo];
             }
             var D = b * b - a * c, E = b * b + a * c;
             if (abs(D) * 3 < E) {
-              var ad = split(a), bd = split(b), cd = split(c), p = b * b, dp = bd[0] * bd[0] - p + 2 * bd[0] * bd[1] + bd[1] * bd[1], q = a * c, dq = ad[0] * cd[0] - q + ad[0] * cd[1] + ad[1] * cd[0] + ad[1] * cd[1];
+              var ad = split2(a), bd = split2(b), cd = split2(c), p = b * b, dp = bd[0] * bd[0] - p + 2 * bd[0] * bd[1] + bd[1] * bd[1], q = a * c, dq = ad[0] * cd[0] - q + ad[0] * cd[1] + ad[1] * cd[0] + ad[1] * cd[1];
               D = p - q + (dp - dq);
             }
             return D;
@@ -1809,12 +1809,12 @@
             var part = parts.join(""), xFirst = /^[RL]/.test(part);
             if (index >= 4)
               parts[1] += xFirst ? "Y" : "X";
-            var x = parts[xFirst ? 0 : 1], y = parts[xFirst ? 1 : 0], getX = "get" + x, getY = "get" + y, setX = "set" + x, setY = "set" + y, get = "get" + part, set = "set" + part;
-            this[get] = function(_dontLink) {
+            var x = parts[xFirst ? 0 : 1], y = parts[xFirst ? 1 : 0], getX = "get" + x, getY = "get" + y, setX = "set" + x, setY = "set" + y, get2 = "get" + part, set2 = "set" + part;
+            this[get2] = function(_dontLink) {
               var ctor = _dontLink ? Point : LinkedPoint;
-              return new ctor(this[getX](), this[getY](), this, set);
+              return new ctor(this[getX](), this[getY](), this, set2);
             };
-            this[set] = function() {
+            this[set2] = function() {
               var point = Point.read(arguments);
               this[setX](point.x);
               this[setY](point.y);
@@ -2416,8 +2416,8 @@
           isEmpty: function() {
             return !this._children.length;
           },
-          remove: function remove() {
-            if (!remove.base.call(this))
+          remove: function remove2() {
+            if (!remove2.base.call(this))
               return false;
             if (this._view)
               this._view.remove();
@@ -2540,13 +2540,13 @@
             if (sets) {
               if (type === "mouseup")
                 sets.mousedrag = null;
-              var set = sets[type];
-              if (set) {
-                for (var id in set) {
-                  var item = set[id];
+              var set2 = sets[type];
+              if (set2) {
+                for (var id in set2) {
+                  var item = set2[id];
                   for (var key in sets) {
                     var other = sets[key];
-                    if (other && other != set)
+                    if (other && other != set2)
                       delete other[item._id];
                   }
                   item.remove();
@@ -2585,14 +2585,14 @@
           Emitter,
           {
             statics: {
-              extend: function extend(src) {
+              extend: function extend2(src) {
                 if (src._serializeFields)
                   src._serializeFields = Base.set(
                     {},
                     this.prototype._serializeFields,
                     src._serializeFields
                   );
-                return extend.base.apply(this, arguments);
+                return extend2.base.apply(this, arguments);
               },
               INSERT: { insert: true },
               NO_INSERT: { insert: false }
@@ -2989,10 +2989,10 @@
                   }
                 },
                 _clearBoundsCache: function(item) {
-                  var cache = item._boundsCache;
-                  if (cache) {
+                  var cache2 = item._boundsCache;
+                  if (cache2) {
                     item._bounds = item._position = item._boundsCache = undefined2;
-                    for (var i2 = 0, list = cache.list, l = list.length; i2 < l; i2++) {
+                    for (var i2 = 0, list = cache2.list, l = list.length; i2 < l; i2++) {
                       var other = list[i2];
                       if (other !== item) {
                         other._bounds = other._position = undefined2;
@@ -3829,11 +3829,11 @@
               var decomp = transformMatrix && bounds && matrix.decompose();
               if (decomp && decomp.skewing.isZero() && decomp.rotation % 90 === 0) {
                 for (var key in bounds) {
-                  var cache = bounds[key];
-                  if (cache.nonscaling) {
+                  var cache2 = bounds[key];
+                  if (cache2.nonscaling) {
                     delete bounds[key];
-                  } else if (applyMatrix || !cache.internal) {
-                    var rect = cache.rect;
+                  } else if (applyMatrix || !cache2.internal) {
+                    var rect = cache2.rect;
                     matrix._transformBounds(rect, rect);
                   }
                 }
@@ -6661,10 +6661,10 @@
             }
           },
           Base.each(Curve._evaluateMethods, function(name) {
-            var get = name + "At";
+            var get2 = name + "At";
             this[name] = function() {
               var curve = this.getCurve(), time = this.getTime();
-              return time != null && curve && curve[get](time, true);
+              return time != null && curve && curve[get2](time, true);
             };
           }, {
             preserve: true
@@ -9347,7 +9347,7 @@
               ]);
               return;
             }
-            var uPrime = this.chordLengthParameterize(first, last), maxError = Math.max(error, error * error), split, parametersInOrder = true;
+            var uPrime = this.chordLengthParameterize(first, last), maxError = Math.max(error, error * error), split2, parametersInOrder = true;
             for (var i2 = 0; i2 <= 4; i2++) {
               var curve = this.generateBezier(first, last, uPrime, tan1, tan2);
               var max = this.findMaxError(first, last, curve, uPrime);
@@ -9355,15 +9355,15 @@
                 this.addCurve(segments, curve);
                 return;
               }
-              split = max.index;
+              split2 = max.index;
               if (max.error >= maxError)
                 break;
               parametersInOrder = this.reparameterize(first, last, uPrime, curve);
               maxError = max.error;
             }
-            var tanCenter = points[split - 1].subtract(points[split + 1]);
-            this.fitCubic(segments, error, first, split, tan1, tanCenter);
-            this.fitCubic(segments, error, split, last, tanCenter.negate(), tan2);
+            var tanCenter = points[split2 - 1].subtract(points[split2 + 1]);
+            this.fitCubic(segments, error, first, split2, tan1, tanCenter);
+            this.fitCubic(segments, error, split2, last, tanCenter.negate(), tan2);
           },
           addCurve: function(segments, curve) {
             var prev = segments[segments.length - 1];
@@ -10210,12 +10210,12 @@
             }
           };
           Base.each(groupDefaults, function(value, key) {
-            var isColor = /Color$/.test(key), isPoint = key === "shadowOffset", part = Base.capitalize(key), flag = flags[key], set = "set" + part, get = "get" + part;
-            fields[set] = function(value2) {
+            var isColor = /Color$/.test(key), isPoint = key === "shadowOffset", part = Base.capitalize(key), flag = flags[key], set2 = "set" + part, get2 = "get" + part;
+            fields[set2] = function(value2) {
               var owner = this._owner, children = owner && owner._children, applyToChildren = children && children.length > 0 && !(owner instanceof CompoundPath);
               if (applyToChildren) {
                 for (var i2 = 0, l = children.length; i2 < l; i2++)
-                  children[i2]._style[set](value2);
+                  children[i2]._style[set2](value2);
               }
               if ((key === "selectedColor" || !applyToChildren) && key in this._defaults) {
                 var old = this._values[key];
@@ -10229,7 +10229,7 @@
                       value2 = Color._setOwner(
                         value2,
                         owner,
-                        applyToChildren && set
+                        applyToChildren && set2
                       );
                     }
                   }
@@ -10239,11 +10239,11 @@
                 }
               }
             };
-            fields[get] = function(_dontMerge) {
+            fields[get2] = function(_dontMerge) {
               var owner = this._owner, children = owner && owner._children, applyToChildren = children && children.length > 0 && !(owner instanceof CompoundPath), value2;
               if (applyToChildren && !_dontMerge) {
                 for (var i2 = 0, l = children.length; i2 < l; i2++) {
-                  var childValue = children[i2]._style[get]();
+                  var childValue = children[i2]._style[get2]();
                   if (!i2) {
                     value2 = childValue;
                   } else if (!Base.equals(value2, childValue)) {
@@ -10269,24 +10269,24 @@
                 }
               }
               if (value2 && isColor) {
-                value2 = Color._setOwner(value2, owner, applyToChildren && set);
+                value2 = Color._setOwner(value2, owner, applyToChildren && set2);
               }
               return value2;
             };
-            item[get] = function(_dontMerge) {
-              return this._style[get](_dontMerge);
+            item[get2] = function(_dontMerge) {
+              return this._style[get2](_dontMerge);
             };
-            item[set] = function(value2) {
-              this._style[set](value2);
+            item[set2] = function(value2) {
+              this._style[set2](value2);
             };
           });
           Base.each({
             Font: "FontFamily",
             WindingRule: "FillRule"
           }, function(value, key) {
-            var get = "get" + key, set = "set" + key;
-            fields[get] = item[get] = "#get" + value;
-            fields[set] = item[set] = "#set" + value;
+            var get2 = "get" + key, set2 = "set" + key;
+            fields[get2] = item[get2] = "#get" + value;
+            fields[set2] = item[set2] = "#set" + value;
           });
           Item.inject(item);
           return fields;
@@ -10358,12 +10358,12 @@
           }
         });
         var DomElement = new function() {
-          function handlePrefix(el, name, set, value) {
+          function handlePrefix(el, name, set2, value) {
             var prefixes = ["", "webkit", "moz", "Moz", "ms", "o"], suffix = name[0].toUpperCase() + name.substring(1);
             for (var i2 = 0; i2 < 6; i2++) {
               var prefix = prefixes[i2], key = prefix ? prefix + suffix : name;
               if (key in el) {
-                if (set) {
+                if (set2) {
                   el[key] = value;
                 } else {
                   return el[key];
@@ -11140,9 +11140,9 @@
             View.call(this, project, canvas);
             this._needsUpdate = true;
           },
-          remove: function remove() {
+          remove: function remove2() {
             this._context.restore();
-            return remove.base.call(this);
+            return remove2.base.call(this);
           },
           _setElementSize: function _setElementSize(width, height) {
             var pixelRatio = this._pixelRatio;
@@ -11735,7 +11735,7 @@
           getCanvas: function(width, height, options) {
             if (!window2)
               return null;
-            var canvas, clear = true;
+            var canvas, clear2 = true;
             if (typeof width === "object") {
               height = width.height;
               width = width.width;
@@ -11744,14 +11744,14 @@
               canvas = this.canvases.pop();
             } else {
               canvas = document2.createElement("canvas");
-              clear = false;
+              clear2 = false;
             }
             var ctx = canvas.getContext("2d", options || {});
             if (!ctx) {
               throw new Error("Canvas " + canvas + " is unable to provide a 2D context.");
             }
             if (canvas.width === width && canvas.height === height) {
-              if (clear)
+              if (clear2)
                 ctx.clearRect(0, 0, width + 1, height + 1);
             } else {
               canvas.width = width;
@@ -12005,13 +12005,13 @@
             "xmlns:xlink": xmlns + "/"
           };
           function create(tag, attributes, formatter) {
-            return set(document2.createElementNS(svg, tag), attributes, formatter);
+            return set2(document2.createElementNS(svg, tag), attributes, formatter);
           }
-          function get(node, name) {
+          function get2(node, name) {
             var namespace = attributeNamespace[name], value = namespace ? node.getAttributeNS(namespace, name) : node.getAttribute(name);
             return value === "null" ? null : value;
           }
-          function set(node, attributes, formatter) {
+          function set2(node, attributes, formatter) {
             for (var name in attributes) {
               var value = attributes[name], namespace = attributeNamespace[name];
               if (typeof value === "number" && formatter)
@@ -12029,8 +12029,8 @@
             xmlns,
             xlink,
             create,
-            get,
-            set
+            get: get2,
+            set: set2
           };
         }();
         var SvgStyles = Base.each({
@@ -12286,8 +12286,8 @@
             if (item._name != null)
               attrs.id = item._name;
             Base.each(SvgStyles, function(entry) {
-              var get = entry.get, type = entry.type, value = item[get]();
-              if (entry.exportFilter ? entry.exportFilter(item, value) : !parent || !Base.equals(parent[get](), value)) {
+              var get2 = entry.get, type = entry.type, value = item[get2]();
+              if (entry.exportFilter ? entry.exportFilter(item, value) : !parent || !Base.equals(parent[get2](), value)) {
                 if (type === "color" && value != null) {
                   var alpha = value.getAlpha();
                   if (alpha < 1)
@@ -12397,8 +12397,8 @@
         }();
         new function() {
           var definitions = {}, rootSize;
-          function getValue(node, name, isString, allowNull, allowPercent, defaultValue) {
-            var value = SvgElement.get(node, name) || defaultValue, res = value == null ? allowNull ? null : isString ? "" : 0 : isString ? value : parseFloat(value);
+          function getValue(node, name, isString2, allowNull, allowPercent, defaultValue) {
+            var value = SvgElement.get(node, name) || defaultValue, res = value == null ? allowNull ? null : isString2 ? "" : 0 : isString2 ? value : parseFloat(value);
             return /%\s*$/.test(value) ? res / 100 * (allowPercent ? 1 : rootSize[/x|^width/.test(name) ? "width" : "height"]) : res;
           }
           function getPoint(node, x, y, allowNull, allowPercent, defaultX, defaultY) {
@@ -14736,6 +14736,1013 @@
     });
   };
 
+  // node_modules/split-type/dist/index.js
+  (function() {
+    function append() {
+      var length = arguments.length;
+      for (var i2 = 0; i2 < length; i2++) {
+        var node = i2 < 0 || arguments.length <= i2 ? void 0 : arguments[i2];
+        if (node.nodeType === 1 || node.nodeType === 11)
+          this.appendChild(node);
+        else
+          this.appendChild(document.createTextNode(String(node)));
+      }
+    }
+    function replaceChildren() {
+      while (this.lastChild) {
+        this.removeChild(this.lastChild);
+      }
+      if (arguments.length)
+        this.append.apply(this, arguments);
+    }
+    function replaceWith() {
+      var parent = this.parentNode;
+      for (var _len = arguments.length, nodes = new Array(_len), _key = 0; _key < _len; _key++) {
+        nodes[_key] = arguments[_key];
+      }
+      var i2 = nodes.length;
+      if (!parent)
+        return;
+      if (!i2)
+        parent.removeChild(this);
+      while (i2--) {
+        var node = nodes[i2];
+        if (typeof node !== "object") {
+          node = this.ownerDocument.createTextNode(node);
+        } else if (node.parentNode) {
+          node.parentNode.removeChild(node);
+        }
+        if (!i2) {
+          parent.replaceChild(node, this);
+        } else {
+          parent.insertBefore(this.previousSibling, node);
+        }
+      }
+    }
+    if (typeof Element !== "undefined") {
+      if (!Element.prototype.append) {
+        Element.prototype.append = append;
+        DocumentFragment.prototype.append = append;
+      }
+      if (!Element.prototype.replaceChildren) {
+        Element.prototype.replaceChildren = replaceChildren;
+        DocumentFragment.prototype.replaceChildren = replaceChildren;
+      }
+      if (!Element.prototype.replaceWith) {
+        Element.prototype.replaceWith = replaceWith;
+        DocumentFragment.prototype.replaceWith = replaceWith;
+      }
+    }
+  })();
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+  function _defineProperties(target, props) {
+    for (var i2 = 0; i2 < props.length; i2++) {
+      var descriptor = props[i2];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor)
+        descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps)
+      _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps)
+      _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+    return obj;
+  }
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly)
+        symbols = symbols.filter(function(sym) {
+          return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        });
+      keys.push.apply(keys, symbols);
+    }
+    return keys;
+  }
+  function _objectSpread2(target) {
+    for (var i2 = 1; i2 < arguments.length; i2++) {
+      var source = arguments[i2] != null ? arguments[i2] : {};
+      if (i2 % 2) {
+        ownKeys(Object(source), true).forEach(function(key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function(key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+    return target;
+  }
+  function _slicedToArray(arr, i2) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i2) || _unsupportedIterableToArray(arr, i2) || _nonIterableRest();
+  }
+  function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+  }
+  function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr))
+      return _arrayLikeToArray(arr);
+  }
+  function _arrayWithHoles(arr) {
+    if (Array.isArray(arr))
+      return arr;
+  }
+  function _iterableToArray(iter) {
+    if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter))
+      return Array.from(iter);
+  }
+  function _iterableToArrayLimit(arr, i2) {
+    if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr)))
+      return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = void 0;
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+        if (i2 && _arr.length === i2)
+          break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null)
+          _i["return"]();
+      } finally {
+        if (_d)
+          throw _e;
+      }
+    }
+    return _arr;
+  }
+  function _unsupportedIterableToArray(o, minLen) {
+    if (!o)
+      return;
+    if (typeof o === "string")
+      return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor)
+      n = o.constructor.name;
+    if (n === "Map" || n === "Set")
+      return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
+      return _arrayLikeToArray(o, minLen);
+  }
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length)
+      len = arr.length;
+    for (var i2 = 0, arr2 = new Array(len); i2 < len; i2++)
+      arr2[i2] = arr[i2];
+    return arr2;
+  }
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  function extend(target, object) {
+    return Object.getOwnPropertyNames(Object(target)).reduce(function(extended, key) {
+      var currentValue = Object.getOwnPropertyDescriptor(Object(target), key);
+      var newValue = Object.getOwnPropertyDescriptor(Object(object), key);
+      return Object.defineProperty(extended, key, newValue || currentValue);
+    }, {});
+  }
+  function isString(value) {
+    return typeof value === "string";
+  }
+  function isArray(value) {
+    return Array.isArray(value);
+  }
+  function parseSettings() {
+    var settings = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+    var object = extend(settings);
+    var types;
+    if (object.types !== void 0) {
+      types = object.types;
+    } else if (object.split !== void 0) {
+      types = object.split;
+    }
+    if (types !== void 0) {
+      object.types = (isString(types) || isArray(types) ? String(types) : "").split(",").map(function(type) {
+        return String(type).trim();
+      }).filter(function(type) {
+        return /((line)|(word)|(char))/i.test(type);
+      });
+    }
+    if (object.absolute || object.position) {
+      object.absolute = object.absolute || /absolute/.test(settings.position);
+    }
+    return object;
+  }
+  function parseTypes(value) {
+    var types = isString(value) || isArray(value) ? String(value) : "";
+    return {
+      none: !types,
+      lines: /line/i.test(types),
+      words: /word/i.test(types),
+      chars: /char/i.test(types)
+    };
+  }
+  function isObject(value) {
+    return value !== null && typeof value === "object";
+  }
+  function isNode(input) {
+    return isObject(input) && /^(1|3|11)$/.test(input.nodeType);
+  }
+  function isLength(value) {
+    return typeof value === "number" && value > -1 && value % 1 === 0;
+  }
+  function isArrayLike(value) {
+    return isObject(value) && isLength(value.length);
+  }
+  function toArray(value) {
+    if (isArray(value))
+      return value;
+    if (value == null)
+      return [];
+    return isArrayLike(value) ? Array.prototype.slice.call(value) : [value];
+  }
+  function getTargetElements(target) {
+    var elements = target;
+    if (isString(target)) {
+      if (/^(#[a-z]\w+)$/.test(target.trim())) {
+        elements = document.getElementById(target.trim().slice(1));
+      } else {
+        elements = document.querySelectorAll(target);
+      }
+    }
+    return toArray(elements).reduce(function(result, element) {
+      return [].concat(_toConsumableArray(result), _toConsumableArray(toArray(element).filter(isNode)));
+    }, []);
+  }
+  var entries = Object.entries;
+  var expando = "_splittype";
+  var cache = {};
+  var uid = 0;
+  function set(owner, key, value) {
+    if (!isObject(owner)) {
+      console.warn("[data.set] owner is not an object");
+      return null;
+    }
+    var id = owner[expando] || (owner[expando] = ++uid);
+    var data = cache[id] || (cache[id] = {});
+    if (value === void 0) {
+      if (!!key && Object.getPrototypeOf(key) === Object.prototype) {
+        cache[id] = _objectSpread2(_objectSpread2({}, data), key);
+      }
+    } else if (key !== void 0) {
+      data[key] = value;
+    }
+    return value;
+  }
+  function get(owner, key) {
+    var id = isObject(owner) ? owner[expando] : null;
+    var data = id && cache[id] || {};
+    if (key === void 0) {
+      return data;
+    }
+    return data[key];
+  }
+  function remove(element) {
+    var id = element && element[expando];
+    if (id) {
+      delete element[id];
+      delete cache[id];
+    }
+  }
+  function clear() {
+    Object.keys(cache).forEach(function(key) {
+      delete cache[key];
+    });
+  }
+  function cleanup() {
+    entries(cache).forEach(function(_ref) {
+      var _ref2 = _slicedToArray(_ref, 2), id = _ref2[0], _ref2$ = _ref2[1], isRoot = _ref2$.isRoot, isSplit = _ref2$.isSplit;
+      if (!isRoot || !isSplit) {
+        cache[id] = null;
+        delete cache[id];
+      }
+    });
+  }
+  function toWords(value) {
+    var separator = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : " ";
+    var string = value ? String(value) : "";
+    return string.trim().replace(/\s+/g, " ").split(separator);
+  }
+  var rsAstralRange = "\\ud800-\\udfff";
+  var rsComboMarksRange = "\\u0300-\\u036f\\ufe20-\\ufe23";
+  var rsComboSymbolsRange = "\\u20d0-\\u20f0";
+  var rsVarRange = "\\ufe0e\\ufe0f";
+  var rsAstral = "[".concat(rsAstralRange, "]");
+  var rsCombo = "[".concat(rsComboMarksRange).concat(rsComboSymbolsRange, "]");
+  var rsFitz = "\\ud83c[\\udffb-\\udfff]";
+  var rsModifier = "(?:".concat(rsCombo, "|").concat(rsFitz, ")");
+  var rsNonAstral = "[^".concat(rsAstralRange, "]");
+  var rsRegional = "(?:\\ud83c[\\udde6-\\uddff]){2}";
+  var rsSurrPair = "[\\ud800-\\udbff][\\udc00-\\udfff]";
+  var rsZWJ = "\\u200d";
+  var reOptMod = "".concat(rsModifier, "?");
+  var rsOptVar = "[".concat(rsVarRange, "]?");
+  var rsOptJoin = "(?:" + rsZWJ + "(?:" + [rsNonAstral, rsRegional, rsSurrPair].join("|") + ")" + rsOptVar + reOptMod + ")*";
+  var rsSeq = rsOptVar + reOptMod + rsOptJoin;
+  var rsSymbol = "(?:".concat(["".concat(rsNonAstral).concat(rsCombo, "?"), rsCombo, rsRegional, rsSurrPair, rsAstral].join("|"), "\n)");
+  var reUnicode = RegExp("".concat(rsFitz, "(?=").concat(rsFitz, ")|").concat(rsSymbol).concat(rsSeq), "g");
+  var unicodeRange = [rsZWJ, rsAstralRange, rsComboMarksRange, rsComboSymbolsRange, rsVarRange];
+  var reHasUnicode = RegExp("[".concat(unicodeRange.join(""), "]"));
+  function asciiToArray(string) {
+    return string.split("");
+  }
+  function hasUnicode(string) {
+    return reHasUnicode.test(string);
+  }
+  function unicodeToArray(string) {
+    return string.match(reUnicode) || [];
+  }
+  function stringToArray(string) {
+    return hasUnicode(string) ? unicodeToArray(string) : asciiToArray(string);
+  }
+  function toString(value) {
+    return value == null ? "" : String(value);
+  }
+  function toChars(string) {
+    var separator = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "";
+    string = toString(string);
+    if (string && isString(string)) {
+      if (!separator && hasUnicode(string)) {
+        return stringToArray(string);
+      }
+    }
+    return string.split(separator);
+  }
+  function createElement(name, attributes) {
+    var element = document.createElement(name);
+    if (!attributes) {
+      return element;
+    }
+    Object.keys(attributes).forEach(function(attribute) {
+      var rawValue = attributes[attribute];
+      var value = isString(rawValue) ? rawValue.trim() : rawValue;
+      if (value === null || value === "")
+        return;
+      if (attribute === "children") {
+        element.append.apply(element, _toConsumableArray(toArray(value)));
+      } else {
+        element.setAttribute(attribute, value);
+      }
+    });
+    return element;
+  }
+  var defaults = {
+    splitClass: "",
+    lineClass: "line",
+    wordClass: "word",
+    charClass: "char",
+    types: ["lines", "words", "chars"],
+    absolute: false,
+    tagName: "div"
+  };
+  function splitWordsAndChars(textNode, settings) {
+    settings = extend(defaults, settings);
+    var types = parseTypes(settings.types);
+    var TAG_NAME = settings.tagName;
+    var VALUE = textNode.nodeValue;
+    var splitText = document.createDocumentFragment();
+    var words = [];
+    var chars = [];
+    if (/^\s/.test(VALUE)) {
+      splitText.append(" ");
+    }
+    words = toWords(VALUE).reduce(function(result, WORD, idx, arr) {
+      var wordElement;
+      var characterElementsForCurrentWord;
+      if (types.chars) {
+        characterElementsForCurrentWord = toChars(WORD).map(function(CHAR) {
+          var characterElement = createElement(TAG_NAME, {
+            "class": "".concat(settings.splitClass, " ").concat(settings.charClass),
+            style: "display: inline-block;",
+            children: CHAR
+          });
+          set(characterElement, "isChar", true);
+          chars = [].concat(_toConsumableArray(chars), [characterElement]);
+          return characterElement;
+        });
+      }
+      if (types.words || types.lines) {
+        wordElement = createElement(TAG_NAME, {
+          "class": "".concat(settings.wordClass, " ").concat(settings.splitClass),
+          style: "display: inline-block; ".concat(types.words && settings.absolute ? "position: relative;" : ""),
+          children: types.chars ? characterElementsForCurrentWord : WORD
+        });
+        set(wordElement, {
+          isWord: true,
+          isWordStart: true,
+          isWordEnd: true
+        });
+        splitText.appendChild(wordElement);
+      } else {
+        characterElementsForCurrentWord.forEach(function(characterElement) {
+          splitText.appendChild(characterElement);
+        });
+      }
+      if (idx < arr.length - 1) {
+        splitText.append(" ");
+      }
+      return types.words ? result.concat(wordElement) : result;
+    }, []);
+    if (/\s$/.test(VALUE)) {
+      splitText.append(" ");
+    }
+    textNode.replaceWith(splitText);
+    return {
+      words,
+      chars
+    };
+  }
+  function split(node, settings) {
+    var type = node.nodeType;
+    var wordsAndChars = {
+      words: [],
+      chars: []
+    };
+    if (!/(1|3|11)/.test(type)) {
+      return wordsAndChars;
+    }
+    if (type === 3 && /\S/.test(node.nodeValue)) {
+      return splitWordsAndChars(node, settings);
+    }
+    var childNodes = toArray(node.childNodes);
+    if (childNodes.length) {
+      set(node, "isSplit", true);
+      if (!get(node).isRoot) {
+        node.style.display = "inline-block";
+        node.style.position = "relative";
+        var nextSibling = node.nextSibling;
+        var prevSibling = node.previousSibling;
+        var text = node.textContent || "";
+        var textAfter = nextSibling ? nextSibling.textContent : " ";
+        var textBefore = prevSibling ? prevSibling.textContent : " ";
+        set(node, {
+          isWordEnd: /\s$/.test(text) || /^\s/.test(textAfter),
+          isWordStart: /^\s/.test(text) || /\s$/.test(textBefore)
+        });
+      }
+    }
+    return childNodes.reduce(function(result, child) {
+      var _split = split(child, settings), words = _split.words, chars = _split.chars;
+      return {
+        words: [].concat(_toConsumableArray(result.words), _toConsumableArray(words)),
+        chars: [].concat(_toConsumableArray(result.chars), _toConsumableArray(chars))
+      };
+    }, wordsAndChars);
+  }
+  function getPosition(node, isWord, settings, scrollPos) {
+    if (!settings.absolute) {
+      return {
+        top: isWord ? node.offsetTop : null
+      };
+    }
+    var parent = node.offsetParent;
+    var _scrollPos = _slicedToArray(scrollPos, 2), scrollX = _scrollPos[0], scrollY = _scrollPos[1];
+    var parentX = 0;
+    var parentY = 0;
+    if (parent && parent !== document.body) {
+      var parentRect = parent.getBoundingClientRect();
+      parentX = parentRect.x + scrollX;
+      parentY = parentRect.y + scrollY;
+    }
+    var _node$getBoundingClie = node.getBoundingClientRect(), width = _node$getBoundingClie.width, height = _node$getBoundingClie.height, x = _node$getBoundingClie.x, y = _node$getBoundingClie.y;
+    var top = y + scrollY - parentY;
+    var left = x + scrollX - parentX;
+    return {
+      width,
+      height,
+      top,
+      left
+    };
+  }
+  function unSplitWords(element) {
+    if (!get(element).isWord) {
+      toArray(element.children).forEach(function(child) {
+        return unSplitWords(child);
+      });
+    } else {
+      remove(element);
+      element.replaceWith.apply(element, _toConsumableArray(element.childNodes));
+    }
+  }
+  var createFragment = function createFragment2() {
+    return document.createDocumentFragment();
+  };
+  function repositionAfterSplit(element, settings, scrollPos) {
+    var types = parseTypes(settings.types);
+    var TAG_NAME = settings.tagName;
+    var nodes = element.getElementsByTagName("*");
+    var wordsInEachLine = [];
+    var wordsInCurrentLine = [];
+    var lineOffsetY = null;
+    var elementHeight;
+    var elementWidth;
+    var contentBox;
+    var lines = [];
+    var parent = element.parentElement;
+    var nextSibling = element.nextElementSibling;
+    var splitText = createFragment();
+    var cs = window.getComputedStyle(element);
+    var align = cs.textAlign;
+    var fontSize = parseFloat(cs.fontSize);
+    var lineThreshold = fontSize * 0.2;
+    if (settings.absolute) {
+      contentBox = {
+        left: element.offsetLeft,
+        top: element.offsetTop,
+        width: element.offsetWidth
+      };
+      elementWidth = element.offsetWidth;
+      elementHeight = element.offsetHeight;
+      set(element, {
+        cssWidth: element.style.width,
+        cssHeight: element.style.height
+      });
+    }
+    toArray(nodes).forEach(function(node) {
+      var isWordLike = node.parentElement === element;
+      var _getPosition = getPosition(node, isWordLike, settings, scrollPos), width = _getPosition.width, height = _getPosition.height, top = _getPosition.top, left = _getPosition.left;
+      if (/^br$/i.test(node.nodeName))
+        return;
+      if (types.lines && isWordLike) {
+        if (lineOffsetY === null || top - lineOffsetY >= lineThreshold) {
+          lineOffsetY = top;
+          wordsInEachLine.push(wordsInCurrentLine = []);
+        }
+        wordsInCurrentLine.push(node);
+      }
+      if (settings.absolute) {
+        set(node, {
+          top,
+          left,
+          width,
+          height
+        });
+      }
+    });
+    if (parent) {
+      parent.removeChild(element);
+    }
+    if (types.lines) {
+      lines = wordsInEachLine.map(function(wordsInThisLine) {
+        var lineElement = createElement(TAG_NAME, {
+          "class": "".concat(settings.splitClass, " ").concat(settings.lineClass),
+          style: "display: block; text-align: ".concat(align, "; width: 100%;")
+        });
+        set(lineElement, "isLine", true);
+        var lineDimensions = {
+          height: 0,
+          top: 1e4
+        };
+        splitText.appendChild(lineElement);
+        wordsInThisLine.forEach(function(wordOrElement, idx, arr) {
+          var _data$get = get(wordOrElement), isWordEnd = _data$get.isWordEnd, top = _data$get.top, height = _data$get.height;
+          var next = arr[idx + 1];
+          lineDimensions.height = Math.max(lineDimensions.height, height);
+          lineDimensions.top = Math.min(lineDimensions.top, top);
+          lineElement.appendChild(wordOrElement);
+          if (isWordEnd && get(next).isWordStart) {
+            lineElement.append(" ");
+          }
+        });
+        if (settings.absolute) {
+          set(lineElement, {
+            height: lineDimensions.height,
+            top: lineDimensions.top
+          });
+        }
+        return lineElement;
+      });
+      if (!types.words) {
+        unSplitWords(splitText);
+      }
+      element.replaceChildren(splitText);
+    }
+    if (settings.absolute) {
+      element.style.width = "".concat(element.style.width || elementWidth, "px");
+      element.style.height = "".concat(elementHeight, "px");
+      toArray(nodes).forEach(function(node) {
+        var _data$get2 = get(node), isLine = _data$get2.isLine, top = _data$get2.top, left = _data$get2.left, width = _data$get2.width, height = _data$get2.height;
+        var parentData = get(node.parentElement);
+        var isChildOfLineNode = !isLine && parentData.isLine;
+        node.style.top = "".concat(isChildOfLineNode ? top - parentData.top : top, "px");
+        node.style.left = isLine ? "".concat(contentBox.left, "px") : "".concat(left - (isChildOfLineNode ? contentBox.left : 0), "px");
+        node.style.height = "".concat(height, "px");
+        node.style.width = isLine ? "".concat(contentBox.width, "px") : "".concat(width, "px");
+        node.style.position = "absolute";
+      });
+    }
+    if (parent) {
+      if (nextSibling)
+        parent.insertBefore(element, nextSibling);
+      else
+        parent.appendChild(element);
+    }
+    return lines;
+  }
+  var _defaults = extend(defaults, {});
+  var SplitType = /* @__PURE__ */ function() {
+    _createClass(SplitType2, null, [{
+      key: "clearData",
+      value: function clearData() {
+        clear();
+      }
+    }, {
+      key: "setDefaults",
+      value: function setDefaults(options) {
+        _defaults = extend(_defaults, parseSettings(options));
+        return defaults;
+      }
+    }, {
+      key: "revert",
+      value: function revert(elements) {
+        getTargetElements(elements).forEach(function(element) {
+          var _data$get = get(element), isSplit = _data$get.isSplit, html = _data$get.html, cssWidth = _data$get.cssWidth, cssHeight = _data$get.cssHeight;
+          if (isSplit) {
+            element.innerHTML = html;
+            element.style.width = cssWidth || "";
+            element.style.height = cssHeight || "";
+            remove(element);
+          }
+        });
+      }
+    }, {
+      key: "create",
+      value: function create(target, options) {
+        return new SplitType2(target, options);
+      }
+    }, {
+      key: "data",
+      get: function get2() {
+        return cache;
+      }
+    }, {
+      key: "defaults",
+      get: function get2() {
+        return _defaults;
+      },
+      set: function set2(options) {
+        _defaults = extend(_defaults, parseSettings(options));
+      }
+    }]);
+    function SplitType2(elements, options) {
+      _classCallCheck(this, SplitType2);
+      this.isSplit = false;
+      this.settings = extend(_defaults, parseSettings(options));
+      this.elements = getTargetElements(elements);
+      this.split();
+    }
+    _createClass(SplitType2, [{
+      key: "split",
+      value: function split$1(options) {
+        var _this = this;
+        this.revert();
+        this.elements.forEach(function(element) {
+          set(element, "html", element.innerHTML);
+        });
+        this.lines = [];
+        this.words = [];
+        this.chars = [];
+        var scrollPos = [window.pageXOffset, window.pageYOffset];
+        if (options !== void 0) {
+          this.settings = extend(this.settings, parseSettings(options));
+        }
+        var types = parseTypes(this.settings.types);
+        if (types.none) {
+          return;
+        }
+        this.elements.forEach(function(element) {
+          set(element, "isRoot", true);
+          var _split2 = split(element, _this.settings), words = _split2.words, chars = _split2.chars;
+          _this.words = [].concat(_toConsumableArray(_this.words), _toConsumableArray(words));
+          _this.chars = [].concat(_toConsumableArray(_this.chars), _toConsumableArray(chars));
+        });
+        this.elements.forEach(function(element) {
+          if (types.lines || _this.settings.absolute) {
+            var lines = repositionAfterSplit(element, _this.settings, scrollPos);
+            _this.lines = [].concat(_toConsumableArray(_this.lines), _toConsumableArray(lines));
+          }
+        });
+        this.isSplit = true;
+        window.scrollTo(scrollPos[0], scrollPos[1]);
+        cleanup();
+      }
+    }, {
+      key: "revert",
+      value: function revert() {
+        if (this.isSplit) {
+          this.lines = null;
+          this.words = null;
+          this.chars = null;
+          this.isSplit = false;
+        }
+        SplitType2.revert(this.elements);
+      }
+    }]);
+    return SplitType2;
+  }();
+
+  // src/utilities.js
+  var attr2 = function(defaultVal, attrVal) {
+    const defaultValType = typeof defaultVal;
+    if (typeof attrVal !== "string" || attrVal.trim() === "")
+      return defaultVal;
+    if (attrVal === "true" && defaultValType === "boolean")
+      return true;
+    if (attrVal === "false" && defaultValType === "boolean")
+      return false;
+    if (isNaN(attrVal) && defaultValType === "string")
+      return attrVal;
+    if (!isNaN(attrVal) && defaultValType === "number")
+      return +attrVal;
+    return defaultVal;
+  };
+  var runSplit = function(text, types = "lines, words") {
+    if (!text)
+      return;
+    typeSplit = new SplitType(text, {
+      types
+    });
+    return typeSplit;
+  };
+  var ClassWatcher = class {
+    constructor(targetNode, classToWatch, classAddedCallback, classRemovedCallback) {
+      this.targetNode = targetNode;
+      this.classToWatch = classToWatch;
+      this.classAddedCallback = classAddedCallback;
+      this.classRemovedCallback = classRemovedCallback;
+      this.observer = null;
+      this.lastClassState = targetNode.classList.contains(this.classToWatch);
+      this.init();
+    }
+    init() {
+      this.observer = new MutationObserver(this.mutationCallback);
+      this.observe();
+    }
+    observe() {
+      this.observer.observe(this.targetNode, { attributes: true });
+    }
+    disconnect() {
+      this.observer.disconnect();
+    }
+    mutationCallback = (mutationsList) => {
+      for (let mutation of mutationsList) {
+        if (mutation.type === "attributes" && mutation.attributeName === "class") {
+          let currentClassState = mutation.target.classList.contains(this.classToWatch);
+          if (this.lastClassState !== currentClassState) {
+            this.lastClassState = currentClassState;
+            if (currentClassState) {
+              this.classAddedCallback();
+            } else {
+              this.classRemovedCallback();
+            }
+          }
+        }
+      }
+    };
+  };
+
+  // src/interactions/scrollIn.js
+  var scrollIn = function(gsapContext) {
+    const ANIMATION_ID = "scrollin";
+    const ELEMENT = "data-ix-scrollin";
+    const HEADING = "heading";
+    const ITEM = "item";
+    const CONTAINER = "container";
+    const STAGGER = "stagger";
+    const RICH_TEXT = "rich-text";
+    const IMAGE_WRAP = "image-wrap";
+    const IMAGE = "image";
+    const LINE = "line";
+    const SCROLL_TOGGLE_ACTIONS = "data-ix-scrollin-toggle-actions";
+    const SCROLL_SCRUB = "data-ix-scrollin-scrub";
+    const SCROLL_START = "data-ix-scrollin-start";
+    const SCROLL_END = "data-ix-scrollin-end";
+    const CLIP_DIRECTION = "data-ix-scrollin-direction";
+    const scrollInTL = function(item) {
+      const settings = {
+        scrub: false,
+        toggleActions: "play none none none",
+        start: "top 90%",
+        end: "top 75%"
+      };
+      settings.toggleActions = attr2(settings.toggleActions, item.getAttribute(SCROLL_TOGGLE_ACTIONS));
+      settings.scrub = attr2(settings.scrub, item.getAttribute(SCROLL_SCRUB));
+      settings.start = attr2(settings.start, item.getAttribute(SCROLL_START));
+      settings.end = attr2(settings.end, item.getAttribute(SCROLL_END));
+      const tl2 = gsap.timeline({
+        defaults: {
+          duration: 0.6,
+          ease: "power1.out"
+        },
+        scrollTrigger: {
+          trigger: item,
+          start: settings.start,
+          end: settings.end,
+          toggleActions: settings.toggleActions,
+          scrub: settings.scrub
+        }
+      });
+      return tl2;
+    };
+    const defaultTween = function(item, tl2, options = {}) {
+      const varsFrom = {
+        opacity: 0,
+        y: "2rem"
+      };
+      const varsTo = {
+        opacity: 1,
+        y: "0rem"
+      };
+      if (options.stagger === true) {
+        varsTo.stagger = { each: 0.1, from: "start" };
+      }
+      const tween = tl2.fromTo(item, varsFrom, varsTo);
+      return tween;
+    };
+    const scrollInHeading = function(item) {
+      const splitText = runSplit(item);
+      if (!splitText)
+        return;
+      const tl2 = scrollInTL(item);
+      const tween = defaultTween(splitText.words, tl2, { stagger: true });
+      tl2.eventCallback("onComplete", () => {
+      });
+    };
+    const scrollInItem = function(item) {
+      if (!item)
+        return;
+      if (item.classList.contains("w-richtext")) {
+        const children = gsap.utils.toArray(item.children);
+        if (children.length === 0)
+          return;
+        children.forEach((child) => {
+          const tl2 = scrollInTL(child);
+          const tween = defaultTween(child, tl2);
+        });
+      } else {
+        const tl2 = scrollInTL(item);
+        const tween = defaultTween(item, tl2);
+      }
+    };
+    const getCLipStart = function(item) {
+      let defaultDirection = "right";
+      let clipStart;
+      const direction = attr2(defaultDirection, item.getAttribute(CLIP_DIRECTION));
+      const clipDirections = {
+        left: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
+        right: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
+        top: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        bottom: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)"
+      };
+      if (direction === "left") {
+        clipStart = clipDirections.left;
+      }
+      if (direction === "right") {
+        clipStart = clipDirections.right;
+      }
+      if (direction === "top") {
+        clipStart = clipDirections.top;
+      }
+      if (direction === "bottom") {
+        clipStart = clipDirections.bottom;
+      }
+      return clipStart;
+    };
+    const scrollInImage = function(item) {
+      if (!item)
+        return;
+      const clipStart = getCLipStart(item);
+      const clipEnd = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
+      const tl2 = scrollInTL(item);
+      tl2.fromTo(
+        item,
+        {
+          clipPath: clipStart
+        },
+        {
+          clipPath: clipEnd,
+          duration: 1
+        }
+      );
+    };
+    const scrollInLine = function(item) {
+      if (!item)
+        return;
+      const clipStart = getCLipStart(item);
+      const clipEnd = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
+      const tl2 = scrollInTL(item);
+      tl2.fromTo(
+        item,
+        {
+          clipPath: clipStart
+        },
+        {
+          clipPath: clipEnd
+        }
+      );
+    };
+    const scrollInContainer = function(item) {
+      if (!item)
+        return;
+      const children = gsap.utils.toArray(item.children);
+      if (children.length === 0)
+        return;
+      children.forEach((child) => {
+        const tl2 = scrollInTL(child);
+        const tween = defaultTween(child, tl2);
+      });
+    };
+    const scrollInStagger = function(item) {
+      if (!item)
+        return;
+      const children = gsap.utils.toArray(item.children);
+      if (children.length === 0)
+        return;
+      const tl2 = scrollInTL(item);
+      const tween = defaultTween(children, tl2, { stagger: true });
+    };
+    const scrollInRichText = function(item) {
+      if (!item)
+        return;
+      const children = gsap.utils.toArray(item.children);
+      if (children.length === 0)
+        return;
+      children.forEach((child) => {
+        const childTag = child.tagName;
+        if (["H1", "H2", "H3", "H4", "H5", "H6"].includes(childTag)) {
+          scrollInHeading(child);
+        }
+        if (childTag === "FIGURE") {
+          scrollInImage(child);
+        } else {
+          scrollInItem(child);
+        }
+      });
+    };
+    const items = gsap.utils.toArray(`[${ELEMENT}]`);
+    items.forEach((item) => {
+      if (!item)
+        return;
+      const scrollInType = item.getAttribute(ELEMENT);
+      if (scrollInType === HEADING) {
+        scrollInHeading(item);
+      }
+      if (scrollInType === ITEM) {
+        scrollInItem(item);
+      }
+      if (scrollInType === IMAGE) {
+        scrollInImage(item);
+      }
+      if (scrollInType === LINE) {
+        scrollInLine(item);
+      }
+      if (scrollInType === CONTAINER) {
+        scrollInContainer(item);
+      }
+      if (scrollInType === STAGGER) {
+        scrollInStagger(item);
+      }
+      if (scrollInType === RICH_TEXT) {
+        scrollInRichText(item);
+      }
+    });
+  };
+
   // src/interactions/accordion.js
   var accordionAnimation = function() {
     const accordionLists = gsap.utils.toArray('[cr-accordion="list"]');
@@ -14958,6 +15965,7 @@
             countUp2.start();
           },
           onEnterBack: () => {
+            countUp2.reset();
             countUp2.start();
           }
         }
@@ -14972,58 +15980,6 @@
     }
     return parts[1].length;
   }
-
-  // src/utilities.js
-  var attr2 = function(defaultVal, attrVal) {
-    const defaultValType = typeof defaultVal;
-    if (typeof attrVal !== "string" || attrVal.trim() === "")
-      return defaultVal;
-    if (attrVal === "true" && defaultValType === "boolean")
-      return true;
-    if (attrVal === "false" && defaultValType === "boolean")
-      return false;
-    if (isNaN(attrVal) && defaultValType === "string")
-      return attrVal;
-    if (!isNaN(attrVal) && defaultValType === "number")
-      return +attrVal;
-    return defaultVal;
-  };
-  var ClassWatcher = class {
-    constructor(targetNode, classToWatch, classAddedCallback, classRemovedCallback) {
-      this.targetNode = targetNode;
-      this.classToWatch = classToWatch;
-      this.classAddedCallback = classAddedCallback;
-      this.classRemovedCallback = classRemovedCallback;
-      this.observer = null;
-      this.lastClassState = targetNode.classList.contains(this.classToWatch);
-      this.init();
-    }
-    init() {
-      this.observer = new MutationObserver(this.mutationCallback);
-      this.observe();
-    }
-    observe() {
-      this.observer.observe(this.targetNode, { attributes: true });
-    }
-    disconnect() {
-      this.observer.disconnect();
-    }
-    mutationCallback = (mutationsList) => {
-      for (let mutation of mutationsList) {
-        if (mutation.type === "attributes" && mutation.attributeName === "class") {
-          let currentClassState = mutation.target.classList.contains(this.classToWatch);
-          if (this.lastClassState !== currentClassState) {
-            this.lastClassState = currentClassState;
-            if (currentClassState) {
-              this.classAddedCallback();
-            } else {
-              this.classRemovedCallback();
-            }
-          }
-        }
-      }
-    };
-  };
 
   // src/interactions/hoverActive.js
   var hoverActive = function() {
@@ -15589,6 +16545,7 @@
         (context) => {
           let { isMobile, isTablet, isDesktop, reduceMotion } = context.conditions;
           accordionAnimation();
+          scrollIn();
           tabsAnimation();
           countUp();
           hoverActive();

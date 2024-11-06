@@ -1,3 +1,5 @@
+import SplitType from 'split-type';
+
 // attribute value checker
 export const attr = function (defaultVal, attrVal) {
   //get the type of the default
@@ -11,13 +13,13 @@ export const attr = function (defaultVal, attrVal) {
 };
 
 //split text utility
-// export const runSplit = function (text, types = 'lines, words') {
-//   if (!text) return;
-//   typeSplit = new SplitType(text, {
-//     types: types,
-//   });
-//   return typeSplit;
-// };
+export const runSplit = function (text, types = 'lines, words') {
+  if (!text) return;
+  typeSplit = new SplitType(text, {
+    types: types,
+  });
+  return typeSplit;
+};
 
 //check for attributes to stop animation on specific breakpoints
 export const checkBreakpoints = function (item, animationID, gsapContext) {

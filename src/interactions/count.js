@@ -21,6 +21,7 @@ export const countUp = function (data) {
           countUp.start();
         },
         onEnterBack: () => {
+          countUp.reset();
           countUp.start();
         },
       },

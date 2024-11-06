@@ -1,5 +1,6 @@
 import paperCore from 'paper';
 import { scrollLines } from './interactions/line.js';
+import { scrollIn } from './interactions/scrollIn.js';
 import { accordionAnimation } from './interactions/accordion.js';
 import { countUp } from './interactions/count.js';
 import { hoverActive } from './interactions/hoverActive.js';
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
       (context) => {
         let { isMobile, isTablet, isDesktop, reduceMotion } = context.conditions;
         accordionAnimation();
+        scrollIn();
         tabsAnimation();
         countUp();
         hoverActive();

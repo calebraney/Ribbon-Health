@@ -24,6 +24,7 @@
   "dependencies": {
     "countup.js": "^2.8.0",
     "gsap": "^3.11.5",
-    "paper": "^0.12.17"
+    "paper": "^0.12.17",
+    "split-type": "^0.3.4"
   }
 }

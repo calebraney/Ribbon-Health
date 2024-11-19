@@ -21,6 +21,7 @@ export const tabsAnimation = function () {
     if (items.length === 0) return;
     //listen for click event
     items.forEach((item, index) => {
+      //handle the gsap interactions for each item
       const link = links[index];
       //get all items to animate within each tab
       let elements = [...item.querySelectorAll(TAB_EL)];
@@ -45,6 +46,7 @@ export const tabsAnimation = function () {
           stagger: { each: 0.2, from: 'start' },
         }
       );
+
       //set to visible state
       tl.progress(1);
 

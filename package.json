@@ -22,6 +22,7 @@
     "serve": "^14.1.2"
   },
   "dependencies": {
+    "@rive-app/canvas": "^2.23.8",
     "countup.js": "^2.8.0",
     "gsap": "^3.11.5",
     "paper": "^0.12.17",

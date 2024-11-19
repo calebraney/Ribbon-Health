@@ -5,6 +5,7 @@ import { accordionAnimation } from './interactions/accordion.js';
 import { countUp } from './interactions/count.js';
 import { hoverActive } from './interactions/hoverActive.js';
 import { tabsAnimation } from './interactions/tabs.js';
+import { riveTabs } from './interactions/riveTabs.js';
 import { homeHeader, homeSplitScroll, homeSplitScrollMobile } from './pages/home.js';
 import { productHeader, process, iconHighlight, productData, platform } from './pages/product.js';
 import { scrollTable } from './pages/use-cases.js';
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         accordionAnimation();
         scrollIn();
         tabsAnimation();
+        riveTabs();
         countUp();
         hoverActive();
         productHeader(reduceMotion, isMobile);

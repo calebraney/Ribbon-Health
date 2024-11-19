@@ -46,6 +46,7 @@ export const riveTabs = function () {
       //   console.log(riveStateMachine);
       //   console.log(riveURL);
 
+      //Getting console error
       const riveInstance = new rive.Rive({
         src: riveURL,
         canvas: riveCanvas,

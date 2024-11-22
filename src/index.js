@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         accordionAnimation();
         scrollIn();
         tabsAnimation();
-        riveTabs();
+        // riveTabs();
         countUp();
         hoverActive();
         productHeader(reduceMotion, isMobile);

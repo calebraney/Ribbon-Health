@@ -13,11 +13,12 @@
   "type": "module",
   "scripts": {
     "serve": "serve",
-    "build-old": "esbuild src/index.js --bundle --outfile=dist/index.js --watch",
-    "build": "node builder.js"
+    "build": "cross-env NODE_ENV=production node ./bin/build.js",
+    "dev": "cross-env NODE_ENV=development node ./bin/build.js"
   },
   "devDependencies": {
-    "esbuild": "^0.15.18",
+    "esbuild": "^0.21.5",
+    "cross-env": "^7.0.3",
     "prettier": "2.8.1",
     "serve": "^14.1.2"
   },

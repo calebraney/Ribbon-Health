@@ -41,10 +41,8 @@ export const riveTabs = function () {
       const riveURL = riveEl.getAttribute(RIVE_URL);
       const riveArtboard = riveEl.getAttribute(RIVE_ARTBOARD);
       const riveStateMachine = riveEl.getAttribute(RIVE_STATE_MACHINE);
-
       const riveCanvas = riveEl.firstChild;
-      //   console.log(riveStateMachine);
-      //   console.log(riveURL);
+      console.log(riveCanvas);
 
       //Getting console error
       const riveInstance = new rive.Rive({
